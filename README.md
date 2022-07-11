@@ -9,7 +9,7 @@ Data science and artificial intelligence have the potential to generate fundamen
 This project aims to accompany researchers to progress on the following development axes:
 
 * General axis
-*   Reproducible research
+*   [Use of reproducible research practices in public health](https://github.com/Thaliehln/ds4ph/wiki/Reproducible-Public-Health-Research)
 *   Relative value of distinct data sources for the development of public health indicators
 * Technical axis
   * Open-source tools for reproducible research
@@ -30,5 +30,6 @@ To be completed
 
 ## Acknowledgements
 
-This project was developed with the support of the [Leading House Africa (LHA)](https://www.swisstph.ch/en/research/leading-house-africa/) which promotes and fosters bilateral collaboration with partner institutions in Africa.
-This GitHub project was developed based on R Markdown and **bookdown** starting from the minimal example (https://github.com/rstudio/bookdown).
+This project is developed with the support of the [Leading House Africa (LHA)](https://www.swisstph.ch/en/research/leading-house-africa/) which promotes and fosters bilateral collaboration with partner institutions in Africa.
+
+This GitHub R project relies on **bookdown** and was initiated from the [minimal example]((https://github.com/rstudio/bookdown) provided by the developers.
