@@ -9,12 +9,12 @@ Data science and artificial intelligence have the potential to generate fundamen
 This project aims to accompany researchers to progress on the following development axes:
 
 * General axis
-*   [Use of reproducible research practices in public health](https://github.com/Thaliehln/ds4ph/wiki/Reproducible-Public-Health-Research)
-*   Relative value of distinct data sources for the development of public health indicators
+    * [Use of reproducible research practices in public health](https://github.com/Thaliehln/ds4ph/wiki/1.-Use-of-reproducible-research-practices-in-public-health)
+    * Relative value of distinct data sources for the development of public health indicators
 * Technical axis
-  * Open-source tools for reproducible research
-  * [Move from Stata to R](https://github.com/Thaliehln/ds4ph/wiki/Moving-from-Stata-to-R)
-  * Use Python and R for data science
+    * Open-source tools for reproducible research
+    * [Move from Stata to R](https://github.com/Thaliehln/ds4ph/wiki/Moving-from-Stata-to-R)
+    * Use Python and R for data science
 
 ## Target Audience
 
