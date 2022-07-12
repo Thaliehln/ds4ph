@@ -13,11 +13,13 @@ This project aims to accompany researchers to progress on the following developm
     * Use of distinct data sources for the development of public health indicators
 * Technical axis
     * Open-source tools for reproducible research (no prerequisite)
+        * GitHub 
         * Rmarkdown
+        * Environments
     * [Move from Stata to R](https://github.com/Thaliehln/ds4ph/wiki/Moving-from-Stata-to-R) (prerequisite: Stata)
     * Use R for Data Science (prerequisite: independent R user)
     * Use Python for Data Science (prerequisite: independent Python user)
-        * `scikit-learn`
+        * scikit-learn
 
 ## Target Audience
 
