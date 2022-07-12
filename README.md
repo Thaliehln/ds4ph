@@ -12,7 +12,7 @@ This project aims to accompany researchers to progress on the following developm
     * [Use of reproducible research practices in public health](https://github.com/Thaliehln/ds4ph/wiki/1.-Use-of-reproducible-research-practices-in-public-health)
     * Use of distinct data sources for the development of public health indicators
 * Technical axis
-    * Open-source tools for reproducible research (no prerequisite)
+    * Open-source tools for reproducible research (basic coding skills/principles)
         * GitHub 
         * Rmarkdown
         * Environments
