@@ -13,7 +13,7 @@ This project aims to accompany researchers to progress on the following developm
     * Data provenance
         * Use of distinct data sources for the development of public health indicators
         * Research data vs. real world evidence data
-* Technical axis - Open-source computational tools for reproducible research (basic coding skills/principles)
+* Open-source computational tools for reproducible research (technical axis)
         * Rmarkdown
         * Environments
     * Reproducible code
