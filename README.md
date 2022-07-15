@@ -20,16 +20,16 @@ This project aims to accompany researchers to progress on the following developm
         * Use Python for Data Science (prerequisite: independent Python user)
             * scikit-learn
     * Reproducible code
-        * Versioning using GitHub
-        * Using Docker
+        * Versioning using GitHub (all)
+        * Using Docker (advanced)
     * Reproducible documentation (dynamic report generation)
         * Using Stata (prerequisite: Stata)
         * Using R/Rmarkdown (prerequisite: R basics)
-        * Notebooks (Python Jupyter Notebook, Rmarkdown as a notebook)
+        * Notebooks (Python Jupyter Notebook, Rmarkdown as a notebook - prerequisite: Python/R basics)
     * Reproducible data
-        * Use APIs
-        * Open access data
-    * Statistical methods for reproducible science
+        * Use APIs (prerequisite: IT programming basics)
+        * Open access data (all)
+    * Statistical methods for reproducible science (advanced)
 
 ## Target Audience
 
