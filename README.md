@@ -25,6 +25,7 @@ This project aims to accompany researchers to progress on the following developm
     * Reproducible documentation (dynamic report generation)
         * Using Stata (prerequisite: Stata)
         * Using R/Rmarkdown (prerequisite: R basics)
+        * Notebooks
     * Reproducible data
     * Statistical methods for reproducible science
 
