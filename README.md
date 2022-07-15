@@ -28,7 +28,7 @@ This project aims to accompany researchers to progress on the following developm
     * Reproducible environments
         * Using Docker (advanced)
         * Using renv (prerequisite: independent R user)
-    * Reproducible documentation (dynamic report generation)
+    * Dynamic report generation
         * Using Stata (prerequisite: Stata)
         * Using R/Rmarkdown (prerequisite: R basics)
         * Notebooks (Python Jupyter Notebook, Rmarkdown as a notebook - prerequisite: Python/R basics)
