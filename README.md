@@ -10,17 +10,21 @@ This project aims to accompany researchers to progress on the following developm
 
 * General axis
     * [Use of reproducible research practices in public health](https://github.com/Thaliehln/ds4ph/wiki/1.-Use-of-reproducible-research-practices-in-public-health)
-    * Use of distinct data sources for the development of public health indicators
+    * Data provenance
+        * Use of distinct data sources for the development of public health indicators
         * Research data vs. real world evidence data
-* Technical axis
-    * Open-source tools for reproducible research (basic coding skills/principles)
-        * GitHub 
+* Technical axis - Open-source computational tools for reproducible research (basic coding skills/principles)
         * Rmarkdown
         * Environments
-    * [Move from Stata to R](https://github.com/Thaliehln/ds4ph/wiki/Moving-from-Stata-to-R) (prerequisite: Stata)
-    * Use R for Data Science (prerequisite: independent R user)
-    * Use Python for Data Science (prerequisite: independent Python user)
-        * scikit-learn
+    * Reproducible code
+        * Versioning with GitHub 
+        * [Move from Stata to R](https://github.com/Thaliehln/ds4ph/wiki/Moving-from-Stata-to-R) (prerequisite: Stata)
+        * Use R for Data Science (prerequisite: independent R user)
+        * Use Python for Data Science (prerequisite: independent Python user)
+            * scikit-learn
+    * Reproducible documentation (dynamic report generation)
+        * With Stata (prerequisite: Stata)
+        * With R/Rmarkdown (prerequisite: R basics)
 
 ## Target Audience
 
