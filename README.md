@@ -23,10 +23,11 @@ This project aims to accompany researchers to progress on the following developm
         * Python programming
             * pandas
             * scikit-learn (prerequisite: independent Python user)
-    * Reproducible code
+    * Code quality
         * Versioning using GitHub (all)
         * Using targets (prerequisite: independent R user)
     * Reproducible environments
+        * Using Binder
         * Using Docker (advanced)
         * Using renv (prerequisite: independent R user)
     * Dynamic report generation
