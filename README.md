@@ -13,6 +13,7 @@ This project aims to accompany researchers to progress on the following developm
     * Data provenance
         * Use of distinct data sources for the development of public health indicators
         * Research data vs. real world evidence data
+    * Ethical data science
     * Data papers
 * Open-source computational tools for reproducible data science (technical axis)
     * Programming tools
