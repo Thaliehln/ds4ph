@@ -13,20 +13,22 @@ This project aims to accompany researchers to progress on the following developm
     * Data provenance
         * Use of distinct data sources for the development of public health indicators
         * Research data vs. real world evidence data
-* Open-source computational tools for reproducible research (technical axis)
+* Open-source computational tools for reproducible data science (technical axis)
     * Code
         * [Move from Stata to R](https://github.com/Thaliehln/ds4ph/wiki/Moving-from-Stata-to-R) (prerequisite: Stata)
         * Use R for Data Science (prerequisite: independent R user)
         * Use Python for Data Science (prerequisite: independent Python user)
             * scikit-learn
     * Reproducible code
-        * Versioning with GitHub
+        * Versioning using GitHub
         * Using Docker
     * Reproducible documentation (dynamic report generation)
         * Using Stata (prerequisite: Stata)
         * Using R/Rmarkdown (prerequisite: R basics)
-        * Notebooks
+        * Notebooks (Python Jupyter Notebook, Rmarkdown as a notebook)
     * Reproducible data
+        * Use APIs
+        * Open access data
     * Statistical methods for reproducible science
 
 ## Target Audience
