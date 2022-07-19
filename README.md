@@ -26,8 +26,8 @@ Two complementary aspects of moving into data science are:
 
 Upon completing the workshop, participants will have gained:
 
+* exposure to data science approach, tools and collaborative practices
 * hands-on experience on how to interface between Stata and R, learned the basics of working with data in R/RStudio, and how to incrementally incorporate R into your existing data analysis workflows in Stata. The idea is not to replace everything you do in Stata into R but that you can continue your learning after this workshop at your own pace.
-* R individually and as collaborators.
 
 This project aims to accompany researchers to progress on the following development axes:
 
