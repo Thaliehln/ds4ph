@@ -1,21 +1,41 @@
 # Data Science for Public Health
 
-## Description
+A workshop developed by the Ifakara Health Institute (IHI) and the Swiss Tropical & Public Health Institute (Swiss TPH), with the support of the [Leading House Africa (LHA)](https://www.swisstph.ch/en/research/leading-house-africa/) which promotes and fosters bilateral collaboration with partner institutions in Africa.
+
+-----
+
+**Welcome!** 
+
+-----
+
+:spiral_calendar: September 26 and 27, 2022  
+:alarm_clock: 09:00 - 17:00  
+:city_sunrise: Dar-es-Salaam, Tanzania
+-----
+
+## Overview
 
 Data science and artificial intelligence have the potential to generate fundamentally new insights on global health policies in Africa, but the full realization of this potential depends on the availability of a critical mass of highly trained health data scientists on the continent. The goal of this project is to jointly develop and implement a public health data science curriculum to enable researchers from the Ifakara Health Institute (IHI) in Tanzania to strengthen their expertise in the area.
 
-## Objectives
+## Learning objectives
 
-This project aims to accompany researchers to progress on the following development axes:
+Two complementary aspects of moving into data science is 1) the mindset about how scientists think and collaborate about data and 2) the skillsets which is composed of an ecosystem of tools (mostly open-source) and practices.
 
-* General axis
+Upon completing the workshop, participants will have gained:
+
+* hands-on experience on how to interface between Stata and R, learned the basics of working with data in R/RStudio, and how to incrementally incorporate R into your existing data analysis workflows in Stata. The idea is not to replace everything you do in Stata into R but that you can continue your learning after this workshop at your own pace.
+* R individually and as collaborators.
+
+This project aims to accompany researchers to progress on the following development axes: We will be learning three main things all at the same time:
+
+* Data science mindset
     * [Use of reproducible research practices in public health](https://github.com/Thaliehln/ds4ph/wiki/1.-Use-of-reproducible-research-practices-in-public-health)
     * Data provenance
         * Use of distinct data sources for the development of public health indicators
         * Research data vs. real world evidence data
     * Ethical data science
     * Data papers
-* Open-source computational tools for reproducible data science (technical axis)
+* Data science skillset
     * Programming tools
         * [Move from Stata to R](https://github.com/Thaliehln/ds4ph/wiki/Moving-from-Stata-to-R) (prerequisite: Stata)
         * R programming
@@ -23,14 +43,14 @@ This project aims to accompany researchers to progress on the following developm
         * Python programming
             * pandas
             * scikit-learn (prerequisite: independent Python user)
-    * Code quality
+    * Coding with best practices (R/RStudio/tidyverse)
         * Versioning using GitHub (all)
         * Using targets (prerequisite: independent R user)
     * Reproducible environments
         * Using Binder
         * Using Docker (advanced)
         * Using renv (prerequisite: independent R user)
-    * Dynamic report generation
+    * Reporting and publishing: Dynamic report generation
         * Using Stata (prerequisite: Stata)
         * Using R/Rmarkdown (prerequisite: R basics)
         * Notebooks (Python Jupyter Notebook, Rmarkdown as a notebook - prerequisite: Python/R basics)
@@ -39,20 +59,29 @@ This project aims to accompany researchers to progress on the following developm
         * Open access data (all)
     * Statistical methods for reproducible research (advanced)
 
-## Target Audience
+## Is this workshop for me?
 
-Researchers with a strong quantitative background (data managers, data scientists, clinicians with basic coding skills)
+This workshop is relevant for individuals who answer yes to the following questions:
 
-## Experience Level
+* Are you a researcher who wants to develop projects in data science?
+* Are you a researcher (Stata user - strong quantitative background (data managers, data scientists, clinicians with basic coding skills)) who wants to expand your data analysis toolset with R?
+* Do you want to bridge analyses between data analysis tools (Stata, R or Python) or to more easily collaborate with collaborators who use another tool? 
 
-To be completed
+## Schedule
 
-## Prerequisite Skills
-
-To be completed
+|Time       |      Day 1|      Day 2|
+|:----------|----------:|----------:|
+|Time       |      Stream 1|      Stream 2|
+|:----------|----------:|----------:|
+|8:30-9:00    |  Welcome | Welcome |
+|9:00-10:30    |  Data science introduction |  TBD |
+|break      |  | |
+|11-12:30   | Public Health challenge | TBD |
+|lunch      |  ||
+|13:30-15:00 | Overview, R & RStudio, RMarkdown | Synthesis |
+|break      |  | |
+|15:30-17:00 | Technical work | Wrap-up |
 
 ## Acknowledgements
-
-This project is developed with the support of the [Leading House Africa (LHA)](https://www.swisstph.ch/en/research/leading-house-africa/) which promotes and fosters bilateral collaboration with partner institutions in Africa.
 
 This GitHub R project relies on **bookdown** and was initiated from the [minimal example](https://github.com/rstudio/bookdown) provided by the developers.
