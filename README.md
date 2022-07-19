@@ -79,7 +79,7 @@ This workshop is relevant for individuals who answer yes to the following questi
 |9:00-10:30    |  Data science introduction |  Data science introduction | Sharing | Sharing |
 |Break      |  | | | |
 |11:00-11:30    |  Introduction to Git |   Introduction to Git  | | |
-|11.30-13:00   | Public Health question | Public Health question | TBD  | Machine learning analysis |
+|11.30-13:00   | Public Health question (need) | Public Health question (data strategy) | TBD  | Machine learning analysis |
 |Lunch break      |  || | |
 |14:00-15:30 | Analysis Plan | R, RStudio and RMarkdown | Sharing | Sharing |
 |Break      |  | | | |
