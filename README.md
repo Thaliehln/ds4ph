@@ -19,14 +19,17 @@ Data science and artificial intelligence have the potential to generate fundamen
 
 ## Learning objectives
 
-Two complementary aspects of moving into data science is 1) the mindset about how scientists think and collaborate about data and 2) the skillsets which is composed of an ecosystem of tools (mostly open-source) and practices.
+Two complementary aspects of moving into data science are:
+
+1. the mindset about how scientists think and collaborate about data, and
+2. the skillsets which is composed of an ecosystem of tools (mostly open-source) and practices.
 
 Upon completing the workshop, participants will have gained:
 
 * hands-on experience on how to interface between Stata and R, learned the basics of working with data in R/RStudio, and how to incrementally incorporate R into your existing data analysis workflows in Stata. The idea is not to replace everything you do in Stata into R but that you can continue your learning after this workshop at your own pace.
 * R individually and as collaborators.
 
-This project aims to accompany researchers to progress on the following development axes: We will be learning three main things all at the same time:
+This project aims to accompany researchers to progress on the following development axes:
 
 * Data science mindset
     * [Use of reproducible research practices in public health](https://github.com/Thaliehln/ds4ph/wiki/1.-Use-of-reproducible-research-practices-in-public-health)
@@ -71,16 +74,16 @@ This workshop is relevant for individuals who answer yes to the following questi
 
 |Time       |      Day 1|      Day 2|
 |:----------|----------:|----------:|
-|Time       |      Stream 1|      Stream 2|
+|Group      |      Stream 1|      Stream 2|
 |:----------|----------:|----------:|
 |8:30-9:00    |  Welcome | Welcome |
 |9:00-10:30    |  Data science introduction |  TBD |
-|break      |  | |
+|Break      |  | |
 |11-12:30   | Public Health challenge | TBD |
-|lunch      |  ||
+|Lunch break      |  ||
 |13:30-15:00 | Overview, R & RStudio, RMarkdown | Synthesis |
-|break      |  | |
-|15:30-17:00 | Technical work | Wrap-up |
+|Break      |  | |
+|15:30-17:00 | Technical developments | Wrap-up |
 
 ## Acknowledgements
 
