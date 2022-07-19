@@ -78,11 +78,11 @@ This workshop is relevant for individuals who answer yes to the following questi
 |8:30-9:00    |  Welcome | Welcome | Welcome | Welcome |
 |9:00-10:30    |  Data science introduction |  Data science introduction | Sharing | Sharing |
 |Break      |  | | | |
-|11-12:30   | Public Health challenge | Public Health challenge | Technical developments  | TBD |
+|11-12:30   | Public Health challenge | Overview, R & RStudio, RMarkdown | Technical developments  | TBD |
 |Lunch break      |  || | |
-|13:30-15:00 | Overview, R & RStudio, RMarkdown | TBD | Sharing | Sharing |
+|13:30-15:00 | Sharing | Sharing | Sharing | Sharing |
 |Break      |  | | | |
-|15:30-17:00 | Technical developments | TBD | Wrap-up | Wrap-up |
+|15:30-17:00 | TBD | Overview, R & RStudio, RMarkdown | Wrap-up | Wrap-up |
 
 ## Acknowledgements
 
