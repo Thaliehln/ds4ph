@@ -1,6 +1,6 @@
 # Data Science for Public Health
 
-This workshop has been developed by the Ifakara Health Institute (IHI) and the Swiss Tropical & Public Health Institute (Swiss TPH), with the support of the [Leading House Africa (LHA)](https://www.swisstph.ch/en/research/leading-house-africa/) which promotes and fosters bilateral collaboration with partner institutions in Africa.
+This workshop has been developed by the [Ifakara Health Institute (IHI)](https://ihi.or.tz/) and the [Swiss Tropical & Public Health Institute (Swiss TPH)](https://www.swisstph.ch), with the support of the [Leading House Africa (LHA)](https://www.swisstph.ch/en/research/leading-house-africa/) which promotes and fosters bilateral collaboration with partner institutions in Africa.
 
 -----
 
@@ -84,6 +84,16 @@ This workshop is relevant for individuals who answer yes to the following questi
 |14:00-15:30 | Sharing | Sharing | Sharing | Sharing |
 |Break      |  | | | |
 |16:00-17:30 | N/A | Technical developments | Wrap-up | Wrap-up |
+
+## Instructors
+
+### From the Ifakara Health Institute (IHI)
+
+TBD
+
+### From the Swiss Tropical & Public Health Institute (Swiss TPH)
+
+TBD
 
 ## Acknowledgements
 
