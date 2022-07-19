@@ -1,6 +1,6 @@
 # Data Science for Public Health
 
-A workshop developed by the Ifakara Health Institute (IHI) and the Swiss Tropical & Public Health Institute (Swiss TPH), with the support of the [Leading House Africa (LHA)](https://www.swisstph.ch/en/research/leading-house-africa/) which promotes and fosters bilateral collaboration with partner institutions in Africa.
+This workshop has been developed by the Ifakara Health Institute (IHI) and the Swiss Tropical & Public Health Institute (Swiss TPH), with the support of the [Leading House Africa (LHA)](https://www.swisstph.ch/en/research/leading-house-africa/) which promotes and fosters bilateral collaboration with partner institutions in Africa.
 
 -----
 
@@ -9,7 +9,7 @@ A workshop developed by the Ifakara Health Institute (IHI) and the Swiss Tropica
 -----
 
 :spiral_calendar: September 26 and 27, 2022  
-:alarm_clock: 09:00 - 17:00  
+:clock9: 09:00 - 17:00  
 :city_sunrise: Dar-es-Salaam, Tanzania
 -----
 
@@ -66,24 +66,23 @@ This project aims to accompany researchers to progress on the following developm
 
 This workshop is relevant for individuals who answer yes to the following questions:
 
-* Are you a researcher who wants to develop projects in data science?
-* Are you a researcher (Stata user - strong quantitative background (data managers, data scientists, clinicians with basic coding skills)) who wants to expand your data analysis toolset with R?
-* Do you want to bridge analyses between data analysis tools (Stata, R or Python) or to more easily collaborate with collaborators who use another tool? 
+- [ ] Are you a researcher who wants to develop data science projects in public health?
+- [ ] Are you a researcher who wants to rely on open and reproducible science approaches?
+- [ ] Are you a researcher (Stata user - strong quantitative background (data managers, data scientists, clinicians with basic coding skills)) who wants to expand your data analysis toolset with R?
+- [ ] Are you a reseracher who wants to bridge analyses between data analysis tools (Stata, R or Python) or to more easily collaborate with collaborators who use another tool? 
 
 ## Schedule
 
-|Time       |      Day 1|      Day 2|
-|:----------|----------:|----------:|
-|Group      |      Stream 1|      Stream 2|
-|:----------|----------:|----------:|
-|8:30-9:00    |  Welcome | Welcome |
-|9:00-10:30    |  Data science introduction |  TBD |
-|Break      |  | |
-|11-12:30   | Public Health challenge | TBD |
-|Lunch break      |  ||
-|13:30-15:00 | Overview, R & RStudio, RMarkdown | Synthesis |
-|Break      |  | |
-|15:30-17:00 | Technical developments | Wrap-up |
+|Time (group)      |      Day 1 (stream 1)|      Day 1 (stream 2)|      Day 2 (stream 1)|      Day 2 (stream 2)|
+|:----------|----------:|----------:|----------:|----------:|
+|8:30-9:00    |  Welcome | Welcome | Welcome | Welcome |
+|9:00-10:30    |  Data science introduction |  Data science introduction | Sharing | Sharing |
+|Break      |  | | | |
+|11-12:30   | Public Health challenge | Public Health challenge | Technical developments  | TBD |
+|Lunch break      |  || | |
+|13:30-15:00 | Overview, R & RStudio, RMarkdown | TBD | Sharing | Sharing |
+|Break      |  | | | |
+|15:30-17:00 | Technical developments | TBD | Wrap-up | Wrap-up |
 
 ## Acknowledgements
 
