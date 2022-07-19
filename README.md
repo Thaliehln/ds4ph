@@ -81,9 +81,9 @@ This workshop is relevant for individuals who answer yes to the following questi
 |11:00-11:30    |  Introduction to Git |   Introduction to Git  | | |
 |11.30-13:00   | Public Health question | R, RStudio and RMarkdown | Technical developments  | TBD |
 |Lunch break      |  || | |
-|13:30-15:00 | Sharing | Sharing | Sharing | Sharing |
+|14:00-15:30 | Sharing | Sharing | Sharing | Sharing |
 |Break      |  | | | |
-|15:30-17:00 | TBD | Overview, R & RStudio, RMarkdown | Wrap-up | Wrap-up |
+|16:00-17:30 | N/A | Technical developments | Wrap-up | Wrap-up |
 
 ## Acknowledgements
 
