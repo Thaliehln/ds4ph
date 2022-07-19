@@ -83,7 +83,7 @@ This workshop is relevant for individuals who answer yes to the following questi
 |Lunch break      |  || | |
 |14:00-15:30 | Sharing | Sharing | Sharing | Sharing |
 |Break      |  | | | |
-|16:00-17:30 | N/A | Technical developments | Wrap-up | Wrap-up |
+|16:00-17:30 | N/A | ODK Central API, ruODK | Wrap-up | Wrap-up |
 
 ## Instructors
 
