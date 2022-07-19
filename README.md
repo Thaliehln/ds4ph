@@ -78,7 +78,8 @@ This workshop is relevant for individuals who answer yes to the following questi
 |8:30-9:00    |  Welcome | Welcome | Welcome | Welcome |
 |9:00-10:30    |  Data science introduction |  Data science introduction | Sharing | Sharing |
 |Break      |  | | | |
-|11-12:30   | Public Health challenge | Overview, R & RStudio, RMarkdown | Technical developments  | TBD |
+|11:00-11:30    |  Introduction to Git |   Introduction to Git  | | |
+|11.30-13:00   | Public Health question | R, RStudio and RMarkdown | Technical developments  | TBD |
 |Lunch break      |  || | |
 |13:30-15:00 | Sharing | Sharing | Sharing | Sharing |
 |Break      |  | | | |
