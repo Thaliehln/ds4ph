@@ -29,39 +29,6 @@ Upon completing the workshop, participants will have gained:
 * exposure to data science approach, tools and collaborative practices
 * hands-on experience on how to interface between Stata and R, learned the basics of working with data in R/RStudio, and how to incrementally incorporate R into your existing data analysis workflows in Stata. The idea is not to replace everything you do in Stata into R but that you can continue your learning after this workshop at your own pace.
 
-This project aims to accompany researchers to progress on the following development axes:
-
-* Data science mindset
-    * [Use of reproducible research practices in public health](https://github.com/Thaliehln/ds4ph/wiki/1.-Use-of-reproducible-research-practices-in-public-health)
-    * Data provenance
-        * Use of distinct data sources for the development of public health indicators
-        * Research data vs. real world evidence data
-    * Ethical data science
-    * Data papers
-* Data science skillset
-    * Programming tools
-        * [Move from Stata to R](https://github.com/Thaliehln/ds4ph/wiki/Moving-from-Stata-to-R) (prerequisite: Stata)
-        * R programming
-            * dplyr
-        * Python programming
-            * pandas
-            * scikit-learn (prerequisite: independent Python user)
-    * Coding with best practices (R/RStudio/tidyverse)
-        * Versioning using GitHub (all)
-        * Using targets (prerequisite: independent R user)
-    * Reproducible environments
-        * Using Binder
-        * Using Docker (advanced)
-        * Using renv (prerequisite: independent R user)
-    * Reporting and publishing: Dynamic report generation
-        * Using Stata (prerequisite: Stata)
-        * Using R/Rmarkdown (prerequisite: R basics)
-        * Notebooks (Python Jupyter Notebook, Rmarkdown as a notebook - prerequisite: Python/R basics)
-    * Reproducible data
-        * Use APIs (prerequisite: IT programming basics)
-        * Open access data (all)
-    * Statistical methods for reproducible research (advanced)
-
 ## Is this workshop for me?
 
 This workshop is relevant for individuals who answer yes to the following questions:
@@ -84,6 +51,42 @@ This workshop is relevant for individuals who answer yes to the following questi
 |14:00-15:30 | Analysis Plan | R, RStudio and RMarkdown | Sharing | Sharing |
 |Break      |  | | | |
 |16:00-17:30 | N/A | ODK Central API, ruODK | Wrap-up | Wrap-up |
+
+This project aims to accompany researchers to progress on the following development axes:
+
+* Data science mindset
+    * [Use of reproducible research practices in public health](https://github.com/Thaliehln/ds4ph/wiki/1.-Use-of-reproducible-research-practices-in-public-health)
+    * Data provenance
+        * Use of distinct data sources for the development of public health indicators
+        * Research data vs. real world evidence data
+    * Ethical data science
+    * Data papers
+* Data science skillset
+    * Programming tools
+        * [Move from Stata to R](https://github.com/Thaliehln/ds4ph/wiki/Moving-from-Stata-to-R) (prerequisite: Stata)
+        * R programming
+            * dplyr
+        * Python programming
+            * pandas
+            * scikit-learn (prerequisite: independent Python user)
+    * Coding with best practices (R/RStudio/tidyverse)
+        * Versioning using GitHub (all)
+        * Using targets (prerequisite: independent R user)
+    * Reporting and publishing: Dynamic report generation
+        * Using Stata (prerequisite: Stata)
+        * Using R/Rmarkdown (prerequisite: R basics)
+        * Notebooks (Python Jupyter Notebook, Rmarkdown as a notebook - prerequisite: Python/R basics)
+    * Reproducible data
+        * Use APIs (prerequisite: IT programming basics)
+        * Open access data (all)
+    * Statistical methods for reproducible research (advanced)
+
+### Wrap-up 
+
+What is not covered
+
+* Reproducible workflows (targets)
+* Reproducible environments (Binder, Docker, renv, etc)
 
 ## Instructors
 
