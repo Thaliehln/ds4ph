@@ -93,7 +93,8 @@ TBD
 
 ### From the Swiss Tropical & Public Health Institute (Swiss TPH)
 
-TBD
+* Fenella Beynon
+* Hélène Langet
 
 ## Acknowledgements
 
