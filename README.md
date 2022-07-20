@@ -92,12 +92,14 @@ What is not covered
 
 ### From the Ifakara Health Institute (IHI)
 
-TBD
+* Samwel Godfrey
+* TBC
 
 ### From the Swiss Tropical & Public Health Institute (Swiss TPH)
 
 * Fenella Beynon
 * Hélène Langet
+* TBC
 
 ## Prerequisites
 
