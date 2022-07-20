@@ -33,10 +33,10 @@ Upon completing the workshop, participants will have gained:
 
 This workshop is relevant for individuals who answer yes to the following questions:
 
-- [ ] Are you a researcher who wants to develop data science projects in public health?
-- [ ] Are you a researcher who wants to rely on open and reproducible science approaches?
-- [ ] Are you a researcher (Stata user - strong quantitative background (data managers, data scientists, clinicians with basic coding skills)) who wants to expand your data analysis toolset with R?
-- [ ] Are you a reseracher who wants to bridge analyses between data analysis tools (Stata, R or Python) or to more easily collaborate with collaborators who use another tool? 
+- [ ] Do you who want to develop data science projects in public health?
+- [ ] Do you wants to learn more about how open and reproducible science approaches can be used in your daily practice?
+- [ ] Are you a Stata user (or any other data analysis language) who would like to expand your data analysis skillset with R?
+- [ ] Do you want to bridge analyses between data analysis tools (Stata, R or Python) and to more easily collaborate with other researchers who use another of these tools? 
 
 ## Schedule
 
@@ -98,6 +98,14 @@ TBD
 
 * Fenella Beynon
 * Hélène Langet
+
+## Prerequisites
+
+Soon - here guidance to install the (free) software to be used in the workshop will be given.
+
+## Data
+
+Soon - here a succinct description of the data to be used as part of the workshop will be given.
 
 ## Acknowledgements
 
