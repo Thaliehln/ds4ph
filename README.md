@@ -112,3 +112,18 @@ Soon - here a succinct description of the data to be used as part of the worksho
 ## Acknowledgements
 
 This GitHub R project relies on **bookdown** and was initiated from the [minimal example](https://github.com/rstudio/bookdown) provided by the developers.
+
+-----
+
+![](https://i.creativecommons.org/l/by/4.0/88x31.png) This work is licensed under a [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
+You are free to:
+
+    * Share — copy and redistribute the material in any medium or format
+    * Adapt — remix, transform, and build upon the material for any purpose, even commercially. 
+
+
+Under the following terms:
+
+    * Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+    * No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
