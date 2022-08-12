@@ -20,6 +20,11 @@ summary(cars) %>%
   knitr::kable()
 ```
 
+```{r iris, results='asis'}
+summary(iris) %>%
+  knitr::kable()
+```
+
 ## Add a new title
 
 ## Including Plots
