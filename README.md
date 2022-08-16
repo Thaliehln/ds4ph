@@ -117,10 +117,6 @@ Soon - here guidance to install the (free) software to be used in the workshop w
 
 Soon - here a succinct description of the data to be used as part of the workshop will be given.
 
-## Acknowledgements
-
-This GitHub R project relies on **bookdown** and was initiated from the [minimal example](https://github.com/rstudio/bookdown) provided by the development team.
-
 -----
 
 ![](https://i.creativecommons.org/l/by/4.0/88x31.png) This work is licensed under a [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
