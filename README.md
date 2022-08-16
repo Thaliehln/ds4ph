@@ -92,8 +92,8 @@ What is not covered
 
 ### From the Ifakara Health Institute (IHI)
 
-* Samwel Godfrey
-* TBC
+* Samwel Lwambura
+* Hajirani Msuya
 
 ### From the Swiss Tropical & Public Health Institute (Swiss TPH)
 
@@ -104,6 +104,14 @@ What is not covered
 ## Prerequisites
 
 Soon - here guidance to install the (free) software to be used in the workshop will be given.
+
+### R installation
+
+### RStudio installation
+
+### GitHub account
+
+### GitHub desktop
 
 ## Data
 
