@@ -92,8 +92,8 @@ What is not covered
 
 ### From the Ifakara Health Institute (IHI)
 
-* Samwel Godfrey
-* TBC
+* Samwel Lwambura
+* Hajirani Msuya
 
 ### From the Swiss Tropical & Public Health Institute (Swiss TPH)
 
@@ -105,13 +105,17 @@ What is not covered
 
 Soon - here guidance to install the (free) software to be used in the workshop will be given.
 
+### R installation
+
+### RStudio installation
+
+### GitHub account
+
+### GitHub desktop
+
 ## Data
 
 Soon - here a succinct description of the data to be used as part of the workshop will be given.
-
-## Acknowledgements
-
-This GitHub R project relies on **bookdown** and was initiated from the [minimal example](https://github.com/rstudio/bookdown) provided by the development team.
 
 -----
 
