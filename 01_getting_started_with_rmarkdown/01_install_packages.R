@@ -1,11 +1,11 @@
 # Install the rmarkdown package
-install.packages("rmarkdown")
+if (!require("rmarkdown")) install.packages("rmarkdown")
 
 # Install the RStata package
-install.packages("RStata")
+if (!require("RStata")) install.packages("RStata")
 
 # Install usethis
-install.packages("usethis")
+if (!require("usethis")) install.packages("usethis")
 
 # Install tidverse
-install.packages("tidyverse")
+if (!require("tidyverse")) install.packages("tidyverse")
