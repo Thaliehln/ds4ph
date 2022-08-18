@@ -1,0 +1,108 @@
+---
+title: "Data Science for Public Health - Use Stata with R Markdown"
+author: "H. Langet, S. Lwambura and C.Festo"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Load libraries
+
+Load all the R libraries that are needed to run this document.
+
+## Load RStata
+
+The `RStata` package is a simple R / Stata interface which enable the user to:
+
+* execute Stata commands (both inline and from a .do file) from R;
+* pass a data.frame to Stata;
+* return a data.frame to R;
+* include Stata chunks in knitr documents (however each chunk is independent from the others; feature tested with LaTeX/Linux).
+
+```{r}
+library(RStata)
+```
+
+## Load Haven
+
+The `Haven` package enables R to read and write various data formats used by other statistical packages by wrapping the `ReadStat` C library. `Haven` currently supports SAS, SPSS and Stata.
+
+```{r}
+library(haven)
+```
+
+# Execute Stata commands from R
+
+## Execture a command line
+
+The `stata` function from the `RStata` library allows you to execute Stata commands from your R session.
+
+```{r}
+RStata::stata('di "This sentence is displayed using Stata"')
+```
+
+## Execute an entire .do file
+
+You can execute an entire .do file.
+
+```{r}
+RStata::stata("demo_do_file.do")
+```
+
+# Use Stata datasets
+
+## Return R data frame objects from Stata commands
+
+You need to set the `data.out` parameter to `TRUE` when using the `stata` function to return an R data frame object that can be used within the R session.
+In the example below, the automobile dataset shipped with Stata is loaded and the returned data frame is stored in a variable named `df1`.
+
+```{r}
+df1 <- RStata::stata("sysuse auto",
+                     data.out = TRUE)
+```
+
+You can use the returned data frame in R. For instance, you can generate a simple formatted table to display the content of the returned data frame by using the `kable` function from the `knitr` package.
+
+```{r}
+knitr::kable(df1)
+```
+
+## Read Stata DTA files
+
+You can load Stata .dta data by using the `read_dta` function from the `haven` package.
+
+```{r}
+df2 <- haven::read_dta("iris.dta")
+```
+
+```{r}
+knitr::kable(df2)
+```
+
+# Combine Stata and R
+
+AS example, imagine the following situation: you want to clean some data in Stata to nextly plot it in R (obviously using ggplot2). The workflow that I followed for months to tackle this task was to write the data as a .dta file an then read it with R. This procedure filled my Google Drive with a lot of folders and files, making it difficult to track them appropriately.
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r}
+data <- iris
+```
+
+```{r}
+RStata::stata("summarize", data.in = iris)
+RStata::stata("ta Species", data.in = iris)
+RStata::stata("codebook", data.in = iris)
+```
+
+# Acknowledgment
+
+This RMarkdown document is inspired by the [post from Ignacio Riveros](https://ignacioriveros1.github.io/r/2020/03/22/r_and_stata.html)

@@ -1,4 +1,4 @@
-*Created for demostration purpose one
+*Created for demonstration purpose one
 // Do files can also be tracked via git
 
 

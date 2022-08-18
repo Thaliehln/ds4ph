@@ -11,9 +11,9 @@
 
 <meta name="author" content="H. Langet, S. Lwambura and C.Festo" />
 
-<meta name="date" content="2022-08-18" />
+<meta name="date" content="2022-08-19" />
 
-<title>Data Science for Public Health - Configure RStudio to execute Stata commands</title>
+<title>Data Science for Public Health - Use Stata with R Markdown</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -363,32 +363,47 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Data Science for Public Health - Configure
-RStudio to execute Stata commands</h1>
+<h1 class="title toc-ignore">Data Science for Public Health - Use Stata
+with R Markdown</h1>
 <h4 class="author">H. Langet, S. Lwambura and C.Festo</h4>
-<h4 class="date">2022-08-18</h4>
+<h4 class="date">2022-08-19</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#load-the-rstata-library" id="toc-load-the-rstata-library"><span class="toc-section-number">1</span> Load the RStata library</a></li>
-<li><a href="#find-your-stata-binary-path" id="toc-find-your-stata-binary-path"><span class="toc-section-number">2</span> Find your Stata binary path</a></li>
-<li><a href="#add-your-stata-binary-path-to-your-.rprofile" id="toc-add-your-stata-binary-path-to-your-.rprofile"><span class="toc-section-number">3</span> Add your Stata binary path to your
-.Rprofile</a>
+<li><a href="#load-libraries" id="toc-load-libraries"><span class="toc-section-number">1</span> Load libraries</a>
 <ul>
-<li><a href="#load-the-usethis-library" id="toc-load-the-usethis-library"><span class="toc-section-number">3.1</span> Load the usethis library</a></li>
-<li><a href="#open-your-user-specific-r-configuration-file" id="toc-open-your-user-specific-r-configuration-file"><span class="toc-section-number">3.2</span> Open your user-specific R
-configuration file</a></li>
+<li><a href="#load-rstata" id="toc-load-rstata"><span class="toc-section-number">1.1</span> Load RStata</a></li>
+<li><a href="#load-haven" id="toc-load-haven"><span class="toc-section-number">1.2</span> Load Haven</a></li>
 </ul></li>
+<li><a href="#execute-stata-commands-from-r" id="toc-execute-stata-commands-from-r"><span class="toc-section-number">2</span> Execute Stata commands from R</a>
+<ul>
+<li><a href="#execture-a-command-line" id="toc-execture-a-command-line"><span class="toc-section-number">2.1</span> Execture a command line</a></li>
+<li><a href="#execute-an-entire-.do-file" id="toc-execute-an-entire-.do-file"><span class="toc-section-number">2.2</span> Execute an entire .do
+file</a></li>
+</ul></li>
+<li><a href="#use-stata-datasets" id="toc-use-stata-datasets"><span class="toc-section-number">3</span> Use Stata datasets</a>
+<ul>
+<li><a href="#return-r-data-frame-objects-from-stata-commands" id="toc-return-r-data-frame-objects-from-stata-commands"><span class="toc-section-number">3.1</span> Return R data frame objects from
+Stata commands</a></li>
+<li><a href="#read-stata-dta-files" id="toc-read-stata-dta-files"><span class="toc-section-number">3.2</span> Read Stata DTA files</a></li>
+</ul></li>
+<li><a href="#combine-stata-and-r" id="toc-combine-stata-and-r"><span class="toc-section-number">4</span> Combine Stata and R</a>
+<ul>
+<li><a href="#including-plots" id="toc-including-plots"><span class="toc-section-number">4.1</span> Including Plots</a></li>
+</ul></li>
+<li><a href="#acknowledgment" id="toc-acknowledgment"><span class="toc-section-number">5</span> Acknowledgment</a></li>
 </ul>
 </div>
 
-<div id="load-the-rstata-library" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Load the RStata
-library</h1>
-<p><code>RStata</code> is a simple R / Stata interface which enable the
-user to:</p>
+<div id="load-libraries" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Load libraries</h1>
+<p>Load all the R libraries that are needed to run this document.</p>
+<div id="load-rstata" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Load RStata</h2>
+<p>The <code>RStata</code> package is a simple R / Stata interface which
+enable the user to:</p>
 <ul>
 <li>execute Stata commands (both inline and from a .do file) from
 R;</li>
@@ -399,55 +414,2364 @@ independent from the others; feature tested with LaTeX/Linux).</li>
 </ul>
 <pre class="r"><code>library(RStata)</code></pre>
 </div>
-<div id="find-your-stata-binary-path" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Find your Stata binary
-path</h1>
-<p>The function <code>chooseStataBin</code> from the <code>RStata</code>
-library allows you to browse and set the path to your Stata binary
-executable.</p>
-<pre class="r"><code>stata_bin_path &lt;- RStata::chooseStataBin()
-print(stata_bin_path)</code></pre>
-<pre><code>## [1] &quot;\&quot;C:\\Program Files\\Stata16\\StataIC-64\&quot;&quot;</code></pre>
-<p>You should normally get a path which is of the format:
-<code>&quot;\&quot;C:\\Program Files\\Stata16\\StataIC-64\&quot;&quot;</code> where the .exe
-extension has been removed from the path.</p>
+<div id="load-haven" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Load Haven</h2>
+<p>The <code>Haven</code> package enables R to read and write various
+data formats used by other statistical packages by wrapping the
+<code>ReadStat</code> C library. <code>Haven</code> currently supports
+SAS, SPSS and Stata.</p>
+<pre class="r"><code>library(haven)</code></pre>
 </div>
-<div id="add-your-stata-binary-path-to-your-.rprofile" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Add your Stata binary
-path to your .Rprofile</h1>
-<p>The Stata binary path setting we just created will be lost if your
-RStudio is closed. To keep this setting each time you are using RStudio,
-let us add the Stata binary path as an option to <code>.Rprofile</code>,
-which is your user-specific R configuration file.</p>
-<div id="load-the-usethis-library" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Load the usethis
-library</h2>
-<pre class="r"><code>library(usethis)</code></pre>
-<p><code>Usethis</code> is a workflow package: it automates repetitive
-tasks that arise during project setup and development, both for R
-packages and non-package projects.</p>
 </div>
-<div id="open-your-user-specific-r-configuration-file" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Open your
-user-specific R configuration file</h2>
-<p>The function <code>edit_r_profile</code> from the
-<code>usethis</code> library allows to open your configuration file
-<code>.Rprofile</code>.</p>
-<pre class="r"><code>usethis::edit_r_profile(&quot;user&quot;)</code></pre>
-<pre><code>## * Edit &#39;C:/Users/langhe/Documents/.Rprofile&#39;
-## * Restart R for changes to take effect</code></pre>
-<p>Add the following two lines in the Rprofile file that you have just
-opened:</p>
-<ul>
-<li>options(“RStata.StataPath” = …)</li>
-<li>options(“RStata.StataVersion” = …)</li>
-</ul>
-<p>You need to indicate the path to your Stata binary executable in the
-<code>RStata.StataPath</code> option (e.g., “&quot;C:\Program
-Files\Stata16\StataIC-64&quot;”) and the version of your Stata (e.g., 16) in
-the <code>RStata.StataVersion</code> option.</p>
-<p>Once you are done, save and close your <code>.Rprofile</code>.</p>
+<div id="execute-stata-commands-from-r" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Execute Stata commands
+from R</h1>
+<div id="execture-a-command-line" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Execture a command
+line</h2>
+<p>The <code>stata</code> function from the <code>RStata</code> library
+allows you to execute Stata commands from your R session.</p>
+<pre class="r"><code>RStata::stata(&#39;di &quot;This sentence is displayed using Stata&quot;&#39;)</code></pre>
+<pre><code>## . di &quot;This sentence is displayed using Stata&quot;
+## This sentence is displayed using Stata</code></pre>
 </div>
+<div id="execute-an-entire-.do-file" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Execute an entire .do
+file</h2>
+<p>You can execute an entire .do file.</p>
+<pre class="r"><code>RStata::stata(&quot;demo_do_file.do&quot;)</code></pre>
+<pre><code>## Warning in readLines(SRC[1L]): unvollständige letzte Zeile in &#39;demo_do_file.do&#39;
+## gefunden</code></pre>
+<pre><code>## . *Created for demonstration purpose one
+## . // Do files can also be tracked via git
+## . 
+## . sysuse auto,
+## (1978 Automobile Data)
+## . 
+## . desc
+## 
+## Contains data from C:\Program Files\Stata16\ado\base/a/auto.dta
+##   obs:            74                          1978 Automobile Data
+##  vars:            12                          13 Apr 2018 17:45
+##                                               (_dta has notes)
+## -------------------------------------------------------------------------------
+##               storage   display    value
+## variable name   type    format     label      variable label
+## -------------------------------------------------------------------------------
+## make            str18   %-18s                 Make and Model
+## price           int     %8.0gc                Price
+## mpg             int     %8.0g                 Mileage (mpg)
+## rep78           int     %8.0g                 Repair Record 1978
+## headroom        float   %6.1f                 Headroom (in.)
+## trunk           int     %8.0g                 Trunk space (cu. ft.)
+## weight          int     %8.0gc                Weight (lbs.)
+## length          int     %8.0g                 Length (in.)
+## turn            int     %8.0g                 Turn Circle (ft.)
+## displacement    int     %8.0g                 Displacement (cu. in.)
+## gear_ratio      float   %6.2f                 Gear Ratio
+## foreign         byte    %8.0g      origin     Car type
+## -------------------------------------------------------------------------------
+## Sorted by: foreign
+## . 
+## . summ
+## 
+##     Variable |        Obs        Mean    Std. Dev.       Min        Max
+## -------------+---------------------------------------------------------
+##         make |          0
+##        price |         74    6165.257    2949.496       3291      15906
+##          mpg |         74     21.2973    5.785503         12         41
+##        rep78 |         69    3.405797    .9899323          1          5
+##     headroom |         74    2.993243    .8459948        1.5          5
+## -------------+---------------------------------------------------------
+##        trunk |         74    13.75676    4.277404          5         23
+##       weight |         74    3019.459    777.1936       1760       4840
+##       length |         74    187.9324    22.26634        142        233
+##         turn |         74    39.64865    4.399354         31         51
+## displacement |         74    197.2973    91.83722         79        425
+## -------------+---------------------------------------------------------
+##   gear_ratio |         74    3.014865    .4562871       2.19       3.89
+##      foreign |         74    .2972973    .4601885          0          1</code></pre>
+</div>
+</div>
+<div id="use-stata-datasets" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Use Stata datasets</h1>
+<div id="return-r-data-frame-objects-from-stata-commands" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Return R data frame
+objects from Stata commands</h2>
+<p>You need to set the <code>data.out</code> parameter to
+<code>TRUE</code> when using the <code>stata</code> function to return
+an R data frame object that can be used within the R session. In the
+example below, the automobile dataset shipped with Stata is loaded and
+the returned data frame is stored in a variable named
+<code>df1</code>.</p>
+<pre class="r"><code>df1 &lt;- RStata::stata(&quot;sysuse auto&quot;,
+                     data.out = TRUE)</code></pre>
+<pre><code>## . sysuse auto
+## (1978 Automobile Data)</code></pre>
+<p>You can use the returned data frame in R. For instance, you can
+generate a simple formatted table to display the content of the returned
+data frame by using the <code>kable</code> function from the
+<code>knitr</code> package.</p>
+<pre class="r"><code>knitr::kable(df1)</code></pre>
+<table style="width:100%;">
+<colgroup>
+<col width="17%" />
+<col width="5%" />
+<col width="3%" />
+<col width="5%" />
+<col width="8%" />
+<col width="5%" />
+<col width="6%" />
+<col width="6%" />
+<col width="4%" />
+<col width="12%" />
+<col width="10%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">make</th>
+<th align="right">price</th>
+<th align="right">mpg</th>
+<th align="right">rep78</th>
+<th align="right">headroom</th>
+<th align="right">trunk</th>
+<th align="right">weight</th>
+<th align="right">length</th>
+<th align="right">turn</th>
+<th align="right">displacement</th>
+<th align="right">gear_ratio</th>
+<th align="left">foreign</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">AMC Concord</td>
+<td align="right">4099</td>
+<td align="right">22</td>
+<td align="right">3</td>
+<td align="right">2.5</td>
+<td align="right">11</td>
+<td align="right">2930</td>
+<td align="right">186</td>
+<td align="right">40</td>
+<td align="right">121</td>
+<td align="right">3.58</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">AMC Pacer</td>
+<td align="right">4749</td>
+<td align="right">17</td>
+<td align="right">3</td>
+<td align="right">3.0</td>
+<td align="right">11</td>
+<td align="right">3350</td>
+<td align="right">173</td>
+<td align="right">40</td>
+<td align="right">258</td>
+<td align="right">2.53</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">AMC Spirit</td>
+<td align="right">3799</td>
+<td align="right">22</td>
+<td align="right">NA</td>
+<td align="right">3.0</td>
+<td align="right">12</td>
+<td align="right">2640</td>
+<td align="right">168</td>
+<td align="right">35</td>
+<td align="right">121</td>
+<td align="right">3.08</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Buick Century</td>
+<td align="right">4816</td>
+<td align="right">20</td>
+<td align="right">3</td>
+<td align="right">4.5</td>
+<td align="right">16</td>
+<td align="right">3250</td>
+<td align="right">196</td>
+<td align="right">40</td>
+<td align="right">196</td>
+<td align="right">2.93</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Buick Electra</td>
+<td align="right">7827</td>
+<td align="right">15</td>
+<td align="right">4</td>
+<td align="right">4.0</td>
+<td align="right">20</td>
+<td align="right">4080</td>
+<td align="right">222</td>
+<td align="right">43</td>
+<td align="right">350</td>
+<td align="right">2.41</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Buick LeSabre</td>
+<td align="right">5788</td>
+<td align="right">18</td>
+<td align="right">3</td>
+<td align="right">4.0</td>
+<td align="right">21</td>
+<td align="right">3670</td>
+<td align="right">218</td>
+<td align="right">43</td>
+<td align="right">231</td>
+<td align="right">2.73</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Buick Opel</td>
+<td align="right">4453</td>
+<td align="right">26</td>
+<td align="right">NA</td>
+<td align="right">3.0</td>
+<td align="right">10</td>
+<td align="right">2230</td>
+<td align="right">170</td>
+<td align="right">34</td>
+<td align="right">304</td>
+<td align="right">2.87</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Buick Regal</td>
+<td align="right">5189</td>
+<td align="right">20</td>
+<td align="right">3</td>
+<td align="right">2.0</td>
+<td align="right">16</td>
+<td align="right">3280</td>
+<td align="right">200</td>
+<td align="right">42</td>
+<td align="right">196</td>
+<td align="right">2.93</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Buick Riviera</td>
+<td align="right">10372</td>
+<td align="right">16</td>
+<td align="right">3</td>
+<td align="right">3.5</td>
+<td align="right">17</td>
+<td align="right">3880</td>
+<td align="right">207</td>
+<td align="right">43</td>
+<td align="right">231</td>
+<td align="right">2.93</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Buick Skylark</td>
+<td align="right">4082</td>
+<td align="right">19</td>
+<td align="right">3</td>
+<td align="right">3.5</td>
+<td align="right">13</td>
+<td align="right">3400</td>
+<td align="right">200</td>
+<td align="right">42</td>
+<td align="right">231</td>
+<td align="right">3.08</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Cad. Deville</td>
+<td align="right">11385</td>
+<td align="right">14</td>
+<td align="right">3</td>
+<td align="right">4.0</td>
+<td align="right">20</td>
+<td align="right">4330</td>
+<td align="right">221</td>
+<td align="right">44</td>
+<td align="right">425</td>
+<td align="right">2.28</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Cad. Eldorado</td>
+<td align="right">14500</td>
+<td align="right">14</td>
+<td align="right">2</td>
+<td align="right">3.5</td>
+<td align="right">16</td>
+<td align="right">3900</td>
+<td align="right">204</td>
+<td align="right">43</td>
+<td align="right">350</td>
+<td align="right">2.19</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Cad. Seville</td>
+<td align="right">15906</td>
+<td align="right">21</td>
+<td align="right">3</td>
+<td align="right">3.0</td>
+<td align="right">13</td>
+<td align="right">4290</td>
+<td align="right">204</td>
+<td align="right">45</td>
+<td align="right">350</td>
+<td align="right">2.24</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Chev. Chevette</td>
+<td align="right">3299</td>
+<td align="right">29</td>
+<td align="right">3</td>
+<td align="right">2.5</td>
+<td align="right">9</td>
+<td align="right">2110</td>
+<td align="right">163</td>
+<td align="right">34</td>
+<td align="right">231</td>
+<td align="right">2.93</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Chev. Impala</td>
+<td align="right">5705</td>
+<td align="right">16</td>
+<td align="right">4</td>
+<td align="right">4.0</td>
+<td align="right">20</td>
+<td align="right">3690</td>
+<td align="right">212</td>
+<td align="right">43</td>
+<td align="right">250</td>
+<td align="right">2.56</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Chev. Malibu</td>
+<td align="right">4504</td>
+<td align="right">22</td>
+<td align="right">3</td>
+<td align="right">3.5</td>
+<td align="right">17</td>
+<td align="right">3180</td>
+<td align="right">193</td>
+<td align="right">31</td>
+<td align="right">200</td>
+<td align="right">2.73</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Chev. Monte Carlo</td>
+<td align="right">5104</td>
+<td align="right">22</td>
+<td align="right">2</td>
+<td align="right">2.0</td>
+<td align="right">16</td>
+<td align="right">3220</td>
+<td align="right">200</td>
+<td align="right">41</td>
+<td align="right">200</td>
+<td align="right">2.73</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Chev. Monza</td>
+<td align="right">3667</td>
+<td align="right">24</td>
+<td align="right">2</td>
+<td align="right">2.0</td>
+<td align="right">7</td>
+<td align="right">2750</td>
+<td align="right">179</td>
+<td align="right">40</td>
+<td align="right">151</td>
+<td align="right">2.73</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Chev. Nova</td>
+<td align="right">3955</td>
+<td align="right">19</td>
+<td align="right">3</td>
+<td align="right">3.5</td>
+<td align="right">13</td>
+<td align="right">3430</td>
+<td align="right">197</td>
+<td align="right">43</td>
+<td align="right">250</td>
+<td align="right">2.56</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Dodge Colt</td>
+<td align="right">3984</td>
+<td align="right">30</td>
+<td align="right">5</td>
+<td align="right">2.0</td>
+<td align="right">8</td>
+<td align="right">2120</td>
+<td align="right">163</td>
+<td align="right">35</td>
+<td align="right">98</td>
+<td align="right">3.54</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Dodge Diplomat</td>
+<td align="right">4010</td>
+<td align="right">18</td>
+<td align="right">2</td>
+<td align="right">4.0</td>
+<td align="right">17</td>
+<td align="right">3600</td>
+<td align="right">206</td>
+<td align="right">46</td>
+<td align="right">318</td>
+<td align="right">2.47</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Dodge Magnum</td>
+<td align="right">5886</td>
+<td align="right">16</td>
+<td align="right">2</td>
+<td align="right">4.0</td>
+<td align="right">17</td>
+<td align="right">3600</td>
+<td align="right">206</td>
+<td align="right">46</td>
+<td align="right">318</td>
+<td align="right">2.47</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Dodge St. Regis</td>
+<td align="right">6342</td>
+<td align="right">17</td>
+<td align="right">2</td>
+<td align="right">4.5</td>
+<td align="right">21</td>
+<td align="right">3740</td>
+<td align="right">220</td>
+<td align="right">46</td>
+<td align="right">225</td>
+<td align="right">2.94</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Ford Fiesta</td>
+<td align="right">4389</td>
+<td align="right">28</td>
+<td align="right">4</td>
+<td align="right">1.5</td>
+<td align="right">9</td>
+<td align="right">1800</td>
+<td align="right">147</td>
+<td align="right">33</td>
+<td align="right">98</td>
+<td align="right">3.15</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Ford Mustang</td>
+<td align="right">4187</td>
+<td align="right">21</td>
+<td align="right">3</td>
+<td align="right">2.0</td>
+<td align="right">10</td>
+<td align="right">2650</td>
+<td align="right">179</td>
+<td align="right">43</td>
+<td align="right">140</td>
+<td align="right">3.08</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Linc. Continental</td>
+<td align="right">11497</td>
+<td align="right">12</td>
+<td align="right">3</td>
+<td align="right">3.5</td>
+<td align="right">22</td>
+<td align="right">4840</td>
+<td align="right">233</td>
+<td align="right">51</td>
+<td align="right">400</td>
+<td align="right">2.47</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Linc. Mark V</td>
+<td align="right">13594</td>
+<td align="right">12</td>
+<td align="right">3</td>
+<td align="right">2.5</td>
+<td align="right">18</td>
+<td align="right">4720</td>
+<td align="right">230</td>
+<td align="right">48</td>
+<td align="right">400</td>
+<td align="right">2.47</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Linc. Versailles</td>
+<td align="right">13466</td>
+<td align="right">14</td>
+<td align="right">3</td>
+<td align="right">3.5</td>
+<td align="right">15</td>
+<td align="right">3830</td>
+<td align="right">201</td>
+<td align="right">41</td>
+<td align="right">302</td>
+<td align="right">2.47</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Merc. Bobcat</td>
+<td align="right">3829</td>
+<td align="right">22</td>
+<td align="right">4</td>
+<td align="right">3.0</td>
+<td align="right">9</td>
+<td align="right">2580</td>
+<td align="right">169</td>
+<td align="right">39</td>
+<td align="right">140</td>
+<td align="right">2.73</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Merc. Cougar</td>
+<td align="right">5379</td>
+<td align="right">14</td>
+<td align="right">4</td>
+<td align="right">3.5</td>
+<td align="right">16</td>
+<td align="right">4060</td>
+<td align="right">221</td>
+<td align="right">48</td>
+<td align="right">302</td>
+<td align="right">2.75</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Merc. Marquis</td>
+<td align="right">6165</td>
+<td align="right">15</td>
+<td align="right">3</td>
+<td align="right">3.5</td>
+<td align="right">23</td>
+<td align="right">3720</td>
+<td align="right">212</td>
+<td align="right">44</td>
+<td align="right">302</td>
+<td align="right">2.26</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Merc. Monarch</td>
+<td align="right">4516</td>
+<td align="right">18</td>
+<td align="right">3</td>
+<td align="right">3.0</td>
+<td align="right">15</td>
+<td align="right">3370</td>
+<td align="right">198</td>
+<td align="right">41</td>
+<td align="right">250</td>
+<td align="right">2.43</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Merc. XR-7</td>
+<td align="right">6303</td>
+<td align="right">14</td>
+<td align="right">4</td>
+<td align="right">3.0</td>
+<td align="right">16</td>
+<td align="right">4130</td>
+<td align="right">217</td>
+<td align="right">45</td>
+<td align="right">302</td>
+<td align="right">2.75</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Merc. Zephyr</td>
+<td align="right">3291</td>
+<td align="right">20</td>
+<td align="right">3</td>
+<td align="right">3.5</td>
+<td align="right">17</td>
+<td align="right">2830</td>
+<td align="right">195</td>
+<td align="right">43</td>
+<td align="right">140</td>
+<td align="right">3.08</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Olds 98</td>
+<td align="right">8814</td>
+<td align="right">21</td>
+<td align="right">4</td>
+<td align="right">4.0</td>
+<td align="right">20</td>
+<td align="right">4060</td>
+<td align="right">220</td>
+<td align="right">43</td>
+<td align="right">350</td>
+<td align="right">2.41</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Olds Cutl Supr</td>
+<td align="right">5172</td>
+<td align="right">19</td>
+<td align="right">3</td>
+<td align="right">2.0</td>
+<td align="right">16</td>
+<td align="right">3310</td>
+<td align="right">198</td>
+<td align="right">42</td>
+<td align="right">231</td>
+<td align="right">2.93</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Olds Cutlass</td>
+<td align="right">4733</td>
+<td align="right">19</td>
+<td align="right">3</td>
+<td align="right">4.5</td>
+<td align="right">16</td>
+<td align="right">3300</td>
+<td align="right">198</td>
+<td align="right">42</td>
+<td align="right">231</td>
+<td align="right">2.93</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Olds Delta 88</td>
+<td align="right">4890</td>
+<td align="right">18</td>
+<td align="right">4</td>
+<td align="right">4.0</td>
+<td align="right">20</td>
+<td align="right">3690</td>
+<td align="right">218</td>
+<td align="right">42</td>
+<td align="right">231</td>
+<td align="right">2.73</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Olds Omega</td>
+<td align="right">4181</td>
+<td align="right">19</td>
+<td align="right">3</td>
+<td align="right">4.5</td>
+<td align="right">14</td>
+<td align="right">3370</td>
+<td align="right">200</td>
+<td align="right">43</td>
+<td align="right">231</td>
+<td align="right">3.08</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Olds Starfire</td>
+<td align="right">4195</td>
+<td align="right">24</td>
+<td align="right">1</td>
+<td align="right">2.0</td>
+<td align="right">10</td>
+<td align="right">2730</td>
+<td align="right">180</td>
+<td align="right">40</td>
+<td align="right">151</td>
+<td align="right">2.73</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Olds Toronado</td>
+<td align="right">10371</td>
+<td align="right">16</td>
+<td align="right">3</td>
+<td align="right">3.5</td>
+<td align="right">17</td>
+<td align="right">4030</td>
+<td align="right">206</td>
+<td align="right">43</td>
+<td align="right">350</td>
+<td align="right">2.41</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Plym. Arrow</td>
+<td align="right">4647</td>
+<td align="right">28</td>
+<td align="right">3</td>
+<td align="right">2.0</td>
+<td align="right">11</td>
+<td align="right">3260</td>
+<td align="right">170</td>
+<td align="right">37</td>
+<td align="right">156</td>
+<td align="right">3.05</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Plym. Champ</td>
+<td align="right">4425</td>
+<td align="right">34</td>
+<td align="right">5</td>
+<td align="right">2.5</td>
+<td align="right">11</td>
+<td align="right">1800</td>
+<td align="right">157</td>
+<td align="right">37</td>
+<td align="right">86</td>
+<td align="right">2.97</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Plym. Horizon</td>
+<td align="right">4482</td>
+<td align="right">25</td>
+<td align="right">3</td>
+<td align="right">4.0</td>
+<td align="right">17</td>
+<td align="right">2200</td>
+<td align="right">165</td>
+<td align="right">36</td>
+<td align="right">105</td>
+<td align="right">3.37</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Plym. Sapporo</td>
+<td align="right">6486</td>
+<td align="right">26</td>
+<td align="right">NA</td>
+<td align="right">1.5</td>
+<td align="right">8</td>
+<td align="right">2520</td>
+<td align="right">182</td>
+<td align="right">38</td>
+<td align="right">119</td>
+<td align="right">3.54</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Plym. Volare</td>
+<td align="right">4060</td>
+<td align="right">18</td>
+<td align="right">2</td>
+<td align="right">5.0</td>
+<td align="right">16</td>
+<td align="right">3330</td>
+<td align="right">201</td>
+<td align="right">44</td>
+<td align="right">225</td>
+<td align="right">3.23</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Pont. Catalina</td>
+<td align="right">5798</td>
+<td align="right">18</td>
+<td align="right">4</td>
+<td align="right">4.0</td>
+<td align="right">20</td>
+<td align="right">3700</td>
+<td align="right">214</td>
+<td align="right">42</td>
+<td align="right">231</td>
+<td align="right">2.73</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Pont. Firebird</td>
+<td align="right">4934</td>
+<td align="right">18</td>
+<td align="right">1</td>
+<td align="right">1.5</td>
+<td align="right">7</td>
+<td align="right">3470</td>
+<td align="right">198</td>
+<td align="right">42</td>
+<td align="right">231</td>
+<td align="right">3.08</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Pont. Grand Prix</td>
+<td align="right">5222</td>
+<td align="right">19</td>
+<td align="right">3</td>
+<td align="right">2.0</td>
+<td align="right">16</td>
+<td align="right">3210</td>
+<td align="right">201</td>
+<td align="right">45</td>
+<td align="right">231</td>
+<td align="right">2.93</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Pont. Le Mans</td>
+<td align="right">4723</td>
+<td align="right">19</td>
+<td align="right">3</td>
+<td align="right">3.5</td>
+<td align="right">17</td>
+<td align="right">3200</td>
+<td align="right">199</td>
+<td align="right">40</td>
+<td align="right">231</td>
+<td align="right">2.93</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Pont. Phoenix</td>
+<td align="right">4424</td>
+<td align="right">19</td>
+<td align="right">NA</td>
+<td align="right">3.5</td>
+<td align="right">13</td>
+<td align="right">3420</td>
+<td align="right">203</td>
+<td align="right">43</td>
+<td align="right">231</td>
+<td align="right">3.08</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="even">
+<td align="left">Pont. Sunbird</td>
+<td align="right">4172</td>
+<td align="right">24</td>
+<td align="right">2</td>
+<td align="right">2.0</td>
+<td align="right">7</td>
+<td align="right">2690</td>
+<td align="right">179</td>
+<td align="right">41</td>
+<td align="right">151</td>
+<td align="right">2.73</td>
+<td align="left">Domestic</td>
+</tr>
+<tr class="odd">
+<td align="left">Audi 5000</td>
+<td align="right">9690</td>
+<td align="right">17</td>
+<td align="right">5</td>
+<td align="right">3.0</td>
+<td align="right">15</td>
+<td align="right">2830</td>
+<td align="right">189</td>
+<td align="right">37</td>
+<td align="right">131</td>
+<td align="right">3.20</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="even">
+<td align="left">Audi Fox</td>
+<td align="right">6295</td>
+<td align="right">23</td>
+<td align="right">3</td>
+<td align="right">2.5</td>
+<td align="right">11</td>
+<td align="right">2070</td>
+<td align="right">174</td>
+<td align="right">36</td>
+<td align="right">97</td>
+<td align="right">3.70</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="odd">
+<td align="left">BMW 320i</td>
+<td align="right">9735</td>
+<td align="right">25</td>
+<td align="right">4</td>
+<td align="right">2.5</td>
+<td align="right">12</td>
+<td align="right">2650</td>
+<td align="right">177</td>
+<td align="right">34</td>
+<td align="right">121</td>
+<td align="right">3.64</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="even">
+<td align="left">Datsun 200</td>
+<td align="right">6229</td>
+<td align="right">23</td>
+<td align="right">4</td>
+<td align="right">1.5</td>
+<td align="right">6</td>
+<td align="right">2370</td>
+<td align="right">170</td>
+<td align="right">35</td>
+<td align="right">119</td>
+<td align="right">3.89</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="odd">
+<td align="left">Datsun 210</td>
+<td align="right">4589</td>
+<td align="right">35</td>
+<td align="right">5</td>
+<td align="right">2.0</td>
+<td align="right">8</td>
+<td align="right">2020</td>
+<td align="right">165</td>
+<td align="right">32</td>
+<td align="right">85</td>
+<td align="right">3.70</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="even">
+<td align="left">Datsun 510</td>
+<td align="right">5079</td>
+<td align="right">24</td>
+<td align="right">4</td>
+<td align="right">2.5</td>
+<td align="right">8</td>
+<td align="right">2280</td>
+<td align="right">170</td>
+<td align="right">34</td>
+<td align="right">119</td>
+<td align="right">3.54</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="odd">
+<td align="left">Datsun 810</td>
+<td align="right">8129</td>
+<td align="right">21</td>
+<td align="right">4</td>
+<td align="right">2.5</td>
+<td align="right">8</td>
+<td align="right">2750</td>
+<td align="right">184</td>
+<td align="right">38</td>
+<td align="right">146</td>
+<td align="right">3.55</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="even">
+<td align="left">Fiat Strada</td>
+<td align="right">4296</td>
+<td align="right">21</td>
+<td align="right">3</td>
+<td align="right">2.5</td>
+<td align="right">16</td>
+<td align="right">2130</td>
+<td align="right">161</td>
+<td align="right">36</td>
+<td align="right">105</td>
+<td align="right">3.37</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="odd">
+<td align="left">Honda Accord</td>
+<td align="right">5799</td>
+<td align="right">25</td>
+<td align="right">5</td>
+<td align="right">3.0</td>
+<td align="right">10</td>
+<td align="right">2240</td>
+<td align="right">172</td>
+<td align="right">36</td>
+<td align="right">107</td>
+<td align="right">3.05</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="even">
+<td align="left">Honda Civic</td>
+<td align="right">4499</td>
+<td align="right">28</td>
+<td align="right">4</td>
+<td align="right">2.5</td>
+<td align="right">5</td>
+<td align="right">1760</td>
+<td align="right">149</td>
+<td align="right">34</td>
+<td align="right">91</td>
+<td align="right">3.30</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="odd">
+<td align="left">Mazda GLC</td>
+<td align="right">3995</td>
+<td align="right">30</td>
+<td align="right">4</td>
+<td align="right">3.5</td>
+<td align="right">11</td>
+<td align="right">1980</td>
+<td align="right">154</td>
+<td align="right">33</td>
+<td align="right">86</td>
+<td align="right">3.73</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="even">
+<td align="left">Peugeot 604</td>
+<td align="right">12990</td>
+<td align="right">14</td>
+<td align="right">NA</td>
+<td align="right">3.5</td>
+<td align="right">14</td>
+<td align="right">3420</td>
+<td align="right">192</td>
+<td align="right">38</td>
+<td align="right">163</td>
+<td align="right">3.58</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="odd">
+<td align="left">Renault Le Car</td>
+<td align="right">3895</td>
+<td align="right">26</td>
+<td align="right">3</td>
+<td align="right">3.0</td>
+<td align="right">10</td>
+<td align="right">1830</td>
+<td align="right">142</td>
+<td align="right">34</td>
+<td align="right">79</td>
+<td align="right">3.72</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="even">
+<td align="left">Subaru</td>
+<td align="right">3798</td>
+<td align="right">35</td>
+<td align="right">5</td>
+<td align="right">2.5</td>
+<td align="right">11</td>
+<td align="right">2050</td>
+<td align="right">164</td>
+<td align="right">36</td>
+<td align="right">97</td>
+<td align="right">3.81</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="odd">
+<td align="left">Toyota Celica</td>
+<td align="right">5899</td>
+<td align="right">18</td>
+<td align="right">5</td>
+<td align="right">2.5</td>
+<td align="right">14</td>
+<td align="right">2410</td>
+<td align="right">174</td>
+<td align="right">36</td>
+<td align="right">134</td>
+<td align="right">3.06</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="even">
+<td align="left">Toyota Corolla</td>
+<td align="right">3748</td>
+<td align="right">31</td>
+<td align="right">5</td>
+<td align="right">3.0</td>
+<td align="right">9</td>
+<td align="right">2200</td>
+<td align="right">165</td>
+<td align="right">35</td>
+<td align="right">97</td>
+<td align="right">3.21</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="odd">
+<td align="left">Toyota Corona</td>
+<td align="right">5719</td>
+<td align="right">18</td>
+<td align="right">5</td>
+<td align="right">2.0</td>
+<td align="right">11</td>
+<td align="right">2670</td>
+<td align="right">175</td>
+<td align="right">36</td>
+<td align="right">134</td>
+<td align="right">3.05</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="even">
+<td align="left">VW Dasher</td>
+<td align="right">7140</td>
+<td align="right">23</td>
+<td align="right">4</td>
+<td align="right">2.5</td>
+<td align="right">12</td>
+<td align="right">2160</td>
+<td align="right">172</td>
+<td align="right">36</td>
+<td align="right">97</td>
+<td align="right">3.74</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="odd">
+<td align="left">VW Diesel</td>
+<td align="right">5397</td>
+<td align="right">41</td>
+<td align="right">5</td>
+<td align="right">3.0</td>
+<td align="right">15</td>
+<td align="right">2040</td>
+<td align="right">155</td>
+<td align="right">35</td>
+<td align="right">90</td>
+<td align="right">3.78</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="even">
+<td align="left">VW Rabbit</td>
+<td align="right">4697</td>
+<td align="right">25</td>
+<td align="right">4</td>
+<td align="right">3.0</td>
+<td align="right">15</td>
+<td align="right">1930</td>
+<td align="right">155</td>
+<td align="right">35</td>
+<td align="right">89</td>
+<td align="right">3.78</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="odd">
+<td align="left">VW Scirocco</td>
+<td align="right">6850</td>
+<td align="right">25</td>
+<td align="right">4</td>
+<td align="right">2.0</td>
+<td align="right">16</td>
+<td align="right">1990</td>
+<td align="right">156</td>
+<td align="right">36</td>
+<td align="right">97</td>
+<td align="right">3.78</td>
+<td align="left">Foreign</td>
+</tr>
+<tr class="even">
+<td align="left">Volvo 260</td>
+<td align="right">11995</td>
+<td align="right">17</td>
+<td align="right">5</td>
+<td align="right">2.5</td>
+<td align="right">14</td>
+<td align="right">3170</td>
+<td align="right">193</td>
+<td align="right">37</td>
+<td align="right">163</td>
+<td align="right">2.98</td>
+<td align="left">Foreign</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="read-stata-dta-files" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Read Stata DTA
+files</h2>
+<p>You can load Stata .dta data by using the <code>read_dta</code>
+function from the <code>haven</code> package.</p>
+<pre class="r"><code>df2 &lt;- haven::read_dta(&quot;iris.dta&quot;)</code></pre>
+<pre class="r"><code>knitr::kable(df2)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">sepallength</th>
+<th align="right">sepalwidth</th>
+<th align="right">petallength</th>
+<th align="right">petalwidth</th>
+<th align="left">species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">5.1</td>
+<td align="right">3.5</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.9</td>
+<td align="right">3.0</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.7</td>
+<td align="right">3.2</td>
+<td align="right">1.3</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.6</td>
+<td align="right">3.1</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.0</td>
+<td align="right">3.6</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.4</td>
+<td align="right">3.9</td>
+<td align="right">1.7</td>
+<td align="right">0.4</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.6</td>
+<td align="right">3.4</td>
+<td align="right">1.4</td>
+<td align="right">0.3</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.0</td>
+<td align="right">3.4</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.4</td>
+<td align="right">2.9</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.9</td>
+<td align="right">3.1</td>
+<td align="right">1.5</td>
+<td align="right">0.1</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.4</td>
+<td align="right">3.7</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.8</td>
+<td align="right">3.4</td>
+<td align="right">1.6</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.8</td>
+<td align="right">3.0</td>
+<td align="right">1.4</td>
+<td align="right">0.1</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.3</td>
+<td align="right">3.0</td>
+<td align="right">1.1</td>
+<td align="right">0.1</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.8</td>
+<td align="right">4.0</td>
+<td align="right">1.2</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.7</td>
+<td align="right">4.4</td>
+<td align="right">1.5</td>
+<td align="right">0.4</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.4</td>
+<td align="right">3.9</td>
+<td align="right">1.3</td>
+<td align="right">0.4</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.1</td>
+<td align="right">3.5</td>
+<td align="right">1.4</td>
+<td align="right">0.3</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.7</td>
+<td align="right">3.8</td>
+<td align="right">1.7</td>
+<td align="right">0.3</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.1</td>
+<td align="right">3.8</td>
+<td align="right">1.5</td>
+<td align="right">0.3</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.4</td>
+<td align="right">3.4</td>
+<td align="right">1.7</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.1</td>
+<td align="right">3.7</td>
+<td align="right">1.5</td>
+<td align="right">0.4</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.6</td>
+<td align="right">3.6</td>
+<td align="right">1.0</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.1</td>
+<td align="right">3.3</td>
+<td align="right">1.7</td>
+<td align="right">0.5</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.8</td>
+<td align="right">3.4</td>
+<td align="right">1.9</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.0</td>
+<td align="right">3.0</td>
+<td align="right">1.6</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.0</td>
+<td align="right">3.4</td>
+<td align="right">1.6</td>
+<td align="right">0.4</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.2</td>
+<td align="right">3.5</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.2</td>
+<td align="right">3.4</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.7</td>
+<td align="right">3.2</td>
+<td align="right">1.6</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.8</td>
+<td align="right">3.1</td>
+<td align="right">1.6</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.4</td>
+<td align="right">3.4</td>
+<td align="right">1.5</td>
+<td align="right">0.4</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.2</td>
+<td align="right">4.1</td>
+<td align="right">1.5</td>
+<td align="right">0.1</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.5</td>
+<td align="right">4.2</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.9</td>
+<td align="right">3.1</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.0</td>
+<td align="right">3.2</td>
+<td align="right">1.2</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.5</td>
+<td align="right">3.5</td>
+<td align="right">1.3</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.9</td>
+<td align="right">3.6</td>
+<td align="right">1.4</td>
+<td align="right">0.1</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.4</td>
+<td align="right">3.0</td>
+<td align="right">1.3</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.1</td>
+<td align="right">3.4</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.0</td>
+<td align="right">3.5</td>
+<td align="right">1.3</td>
+<td align="right">0.3</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.5</td>
+<td align="right">2.3</td>
+<td align="right">1.3</td>
+<td align="right">0.3</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.4</td>
+<td align="right">3.2</td>
+<td align="right">1.3</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.0</td>
+<td align="right">3.5</td>
+<td align="right">1.6</td>
+<td align="right">0.6</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.1</td>
+<td align="right">3.8</td>
+<td align="right">1.9</td>
+<td align="right">0.4</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.8</td>
+<td align="right">3.0</td>
+<td align="right">1.4</td>
+<td align="right">0.3</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.1</td>
+<td align="right">3.8</td>
+<td align="right">1.6</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.6</td>
+<td align="right">3.2</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.3</td>
+<td align="right">3.7</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.0</td>
+<td align="right">3.3</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">7.0</td>
+<td align="right">3.2</td>
+<td align="right">4.7</td>
+<td align="right">1.4</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">6.4</td>
+<td align="right">3.2</td>
+<td align="right">4.5</td>
+<td align="right">1.5</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">6.9</td>
+<td align="right">3.1</td>
+<td align="right">4.9</td>
+<td align="right">1.5</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">5.5</td>
+<td align="right">2.3</td>
+<td align="right">4.0</td>
+<td align="right">1.3</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">6.5</td>
+<td align="right">2.8</td>
+<td align="right">4.6</td>
+<td align="right">1.5</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">5.7</td>
+<td align="right">2.8</td>
+<td align="right">4.5</td>
+<td align="right">1.3</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">6.3</td>
+<td align="right">3.3</td>
+<td align="right">4.7</td>
+<td align="right">1.6</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">4.9</td>
+<td align="right">2.4</td>
+<td align="right">3.3</td>
+<td align="right">1.0</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">6.6</td>
+<td align="right">2.9</td>
+<td align="right">4.6</td>
+<td align="right">1.3</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">5.2</td>
+<td align="right">2.7</td>
+<td align="right">3.9</td>
+<td align="right">1.4</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">5.0</td>
+<td align="right">2.0</td>
+<td align="right">3.5</td>
+<td align="right">1.0</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">5.9</td>
+<td align="right">3.0</td>
+<td align="right">4.2</td>
+<td align="right">1.5</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">6.0</td>
+<td align="right">2.2</td>
+<td align="right">4.0</td>
+<td align="right">1.0</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">6.1</td>
+<td align="right">2.9</td>
+<td align="right">4.7</td>
+<td align="right">1.4</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">5.6</td>
+<td align="right">2.9</td>
+<td align="right">3.6</td>
+<td align="right">1.3</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">6.7</td>
+<td align="right">3.1</td>
+<td align="right">4.4</td>
+<td align="right">1.4</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">5.6</td>
+<td align="right">3.0</td>
+<td align="right">4.5</td>
+<td align="right">1.5</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">5.8</td>
+<td align="right">2.7</td>
+<td align="right">4.1</td>
+<td align="right">1.0</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">6.2</td>
+<td align="right">2.2</td>
+<td align="right">4.5</td>
+<td align="right">1.5</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">5.6</td>
+<td align="right">2.5</td>
+<td align="right">3.9</td>
+<td align="right">1.1</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">5.9</td>
+<td align="right">3.2</td>
+<td align="right">4.8</td>
+<td align="right">1.8</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">6.1</td>
+<td align="right">2.8</td>
+<td align="right">4.0</td>
+<td align="right">1.3</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">6.3</td>
+<td align="right">2.5</td>
+<td align="right">4.9</td>
+<td align="right">1.5</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">6.1</td>
+<td align="right">2.8</td>
+<td align="right">4.7</td>
+<td align="right">1.2</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">6.4</td>
+<td align="right">2.9</td>
+<td align="right">4.3</td>
+<td align="right">1.3</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">6.6</td>
+<td align="right">3.0</td>
+<td align="right">4.4</td>
+<td align="right">1.4</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">6.8</td>
+<td align="right">2.8</td>
+<td align="right">4.8</td>
+<td align="right">1.4</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">6.7</td>
+<td align="right">3.0</td>
+<td align="right">5.0</td>
+<td align="right">1.7</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">6.0</td>
+<td align="right">2.9</td>
+<td align="right">4.5</td>
+<td align="right">1.5</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">5.7</td>
+<td align="right">2.6</td>
+<td align="right">3.5</td>
+<td align="right">1.0</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">5.5</td>
+<td align="right">2.4</td>
+<td align="right">3.8</td>
+<td align="right">1.1</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">5.5</td>
+<td align="right">2.4</td>
+<td align="right">3.7</td>
+<td align="right">1.0</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">5.8</td>
+<td align="right">2.7</td>
+<td align="right">3.9</td>
+<td align="right">1.2</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">6.0</td>
+<td align="right">2.7</td>
+<td align="right">5.1</td>
+<td align="right">1.6</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">5.4</td>
+<td align="right">3.0</td>
+<td align="right">4.5</td>
+<td align="right">1.5</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">6.0</td>
+<td align="right">3.4</td>
+<td align="right">4.5</td>
+<td align="right">1.6</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">6.7</td>
+<td align="right">3.1</td>
+<td align="right">4.7</td>
+<td align="right">1.5</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">6.3</td>
+<td align="right">2.3</td>
+<td align="right">4.4</td>
+<td align="right">1.3</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">5.6</td>
+<td align="right">3.0</td>
+<td align="right">4.1</td>
+<td align="right">1.3</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">5.5</td>
+<td align="right">2.5</td>
+<td align="right">4.0</td>
+<td align="right">1.3</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">5.5</td>
+<td align="right">2.6</td>
+<td align="right">4.4</td>
+<td align="right">1.2</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">6.1</td>
+<td align="right">3.0</td>
+<td align="right">4.6</td>
+<td align="right">1.4</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">5.8</td>
+<td align="right">2.6</td>
+<td align="right">4.0</td>
+<td align="right">1.2</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">5.0</td>
+<td align="right">2.3</td>
+<td align="right">3.3</td>
+<td align="right">1.0</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">5.6</td>
+<td align="right">2.7</td>
+<td align="right">4.2</td>
+<td align="right">1.3</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">5.7</td>
+<td align="right">3.0</td>
+<td align="right">4.2</td>
+<td align="right">1.2</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">5.7</td>
+<td align="right">2.9</td>
+<td align="right">4.2</td>
+<td align="right">1.3</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">6.2</td>
+<td align="right">2.9</td>
+<td align="right">4.3</td>
+<td align="right">1.3</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">5.1</td>
+<td align="right">2.5</td>
+<td align="right">3.0</td>
+<td align="right">1.1</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">5.7</td>
+<td align="right">2.8</td>
+<td align="right">4.1</td>
+<td align="right">1.3</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">6.3</td>
+<td align="right">3.3</td>
+<td align="right">6.0</td>
+<td align="right">2.5</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">5.8</td>
+<td align="right">2.7</td>
+<td align="right">5.1</td>
+<td align="right">1.9</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">7.1</td>
+<td align="right">3.0</td>
+<td align="right">5.9</td>
+<td align="right">2.1</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">6.3</td>
+<td align="right">2.9</td>
+<td align="right">5.6</td>
+<td align="right">1.8</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.5</td>
+<td align="right">3.0</td>
+<td align="right">5.8</td>
+<td align="right">2.2</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">7.6</td>
+<td align="right">3.0</td>
+<td align="right">6.6</td>
+<td align="right">2.1</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">4.9</td>
+<td align="right">2.5</td>
+<td align="right">4.5</td>
+<td align="right">1.7</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">7.3</td>
+<td align="right">2.9</td>
+<td align="right">6.3</td>
+<td align="right">1.8</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.7</td>
+<td align="right">2.5</td>
+<td align="right">5.8</td>
+<td align="right">1.8</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">7.2</td>
+<td align="right">3.6</td>
+<td align="right">6.1</td>
+<td align="right">2.5</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.5</td>
+<td align="right">3.2</td>
+<td align="right">5.1</td>
+<td align="right">2.0</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">6.4</td>
+<td align="right">2.7</td>
+<td align="right">5.3</td>
+<td align="right">1.9</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.8</td>
+<td align="right">3.0</td>
+<td align="right">5.5</td>
+<td align="right">2.1</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">5.7</td>
+<td align="right">2.5</td>
+<td align="right">5.0</td>
+<td align="right">2.0</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">5.8</td>
+<td align="right">2.8</td>
+<td align="right">5.1</td>
+<td align="right">2.4</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">6.4</td>
+<td align="right">3.2</td>
+<td align="right">5.3</td>
+<td align="right">2.3</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.5</td>
+<td align="right">3.0</td>
+<td align="right">5.5</td>
+<td align="right">1.8</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">7.7</td>
+<td align="right">3.8</td>
+<td align="right">6.7</td>
+<td align="right">2.2</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">7.7</td>
+<td align="right">2.6</td>
+<td align="right">6.9</td>
+<td align="right">2.3</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">6.0</td>
+<td align="right">2.2</td>
+<td align="right">5.0</td>
+<td align="right">1.5</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.9</td>
+<td align="right">3.2</td>
+<td align="right">5.7</td>
+<td align="right">2.3</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">5.6</td>
+<td align="right">2.8</td>
+<td align="right">4.9</td>
+<td align="right">2.0</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">7.7</td>
+<td align="right">2.8</td>
+<td align="right">6.7</td>
+<td align="right">2.0</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">6.3</td>
+<td align="right">2.7</td>
+<td align="right">4.9</td>
+<td align="right">1.8</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.7</td>
+<td align="right">3.3</td>
+<td align="right">5.7</td>
+<td align="right">2.1</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">7.2</td>
+<td align="right">3.2</td>
+<td align="right">6.0</td>
+<td align="right">1.8</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.2</td>
+<td align="right">2.8</td>
+<td align="right">4.8</td>
+<td align="right">1.8</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">6.1</td>
+<td align="right">3.0</td>
+<td align="right">4.9</td>
+<td align="right">1.8</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.4</td>
+<td align="right">2.8</td>
+<td align="right">5.6</td>
+<td align="right">2.1</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">7.2</td>
+<td align="right">3.0</td>
+<td align="right">5.8</td>
+<td align="right">1.6</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">7.4</td>
+<td align="right">2.8</td>
+<td align="right">6.1</td>
+<td align="right">1.9</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">7.9</td>
+<td align="right">3.8</td>
+<td align="right">6.4</td>
+<td align="right">2.0</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.4</td>
+<td align="right">2.8</td>
+<td align="right">5.6</td>
+<td align="right">2.2</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">6.3</td>
+<td align="right">2.8</td>
+<td align="right">5.1</td>
+<td align="right">1.5</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.1</td>
+<td align="right">2.6</td>
+<td align="right">5.6</td>
+<td align="right">1.4</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">7.7</td>
+<td align="right">3.0</td>
+<td align="right">6.1</td>
+<td align="right">2.3</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.3</td>
+<td align="right">3.4</td>
+<td align="right">5.6</td>
+<td align="right">2.4</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">6.4</td>
+<td align="right">3.1</td>
+<td align="right">5.5</td>
+<td align="right">1.8</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.0</td>
+<td align="right">3.0</td>
+<td align="right">4.8</td>
+<td align="right">1.8</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">6.9</td>
+<td align="right">3.1</td>
+<td align="right">5.4</td>
+<td align="right">2.1</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.7</td>
+<td align="right">3.1</td>
+<td align="right">5.6</td>
+<td align="right">2.4</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">6.9</td>
+<td align="right">3.1</td>
+<td align="right">5.1</td>
+<td align="right">2.3</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">5.8</td>
+<td align="right">2.7</td>
+<td align="right">5.1</td>
+<td align="right">1.9</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">6.8</td>
+<td align="right">3.2</td>
+<td align="right">5.9</td>
+<td align="right">2.3</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.7</td>
+<td align="right">3.3</td>
+<td align="right">5.7</td>
+<td align="right">2.5</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">6.7</td>
+<td align="right">3.0</td>
+<td align="right">5.2</td>
+<td align="right">2.3</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.3</td>
+<td align="right">2.5</td>
+<td align="right">5.0</td>
+<td align="right">1.9</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">6.5</td>
+<td align="right">3.0</td>
+<td align="right">5.2</td>
+<td align="right">2.0</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">6.2</td>
+<td align="right">3.4</td>
+<td align="right">5.4</td>
+<td align="right">2.3</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="even">
+<td align="right">5.9</td>
+<td align="right">3.0</td>
+<td align="right">5.1</td>
+<td align="right">1.8</td>
+<td align="left">virginica</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="combine-stata-and-r" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Combine Stata and
+R</h1>
+<p>AS example, imagine the following situation: you want to clean some
+data in Stata to nextly plot it in R (obviously using ggplot2). The
+workflow that I followed for months to tackle this task was to write the
+data as a .dta file an then read it with R. This procedure filled my
+Google Drive with a lot of folders and files, making it difficult to
+track them appropriately.</p>
+<div id="including-plots" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<pre class="r"><code>data &lt;- iris</code></pre>
+<pre class="r"><code>RStata::stata(&quot;summarize&quot;, data.in = iris)</code></pre>
+<pre><code>## . summarize
+## 
+##     Variable |        Obs        Mean    Std. Dev.       Min        Max
+## -------------+---------------------------------------------------------
+## Sepal_Length |        150    5.843333    .8280661        4.3        7.9
+##  Sepal_Width |        150    3.057333    .4358663          2        4.4
+## Petal_Length |        150       3.758    1.765298          1        6.9
+##  Petal_Width |        150    1.199333    .7622377         .1        2.5
+##      Species |        150           2    .8192319          1          3</code></pre>
+<pre class="r"><code>RStata::stata(&quot;ta Species&quot;, data.in = iris)</code></pre>
+<pre><code>## . ta Species
+## 
+##     Species |      Freq.     Percent        Cum.
+## ------------+-----------------------------------
+##      setosa |         50       33.33       33.33
+##  versicolor |         50       33.33       66.67
+##   virginica |         50       33.33      100.00
+## ------------+-----------------------------------
+##       Total |        150      100.00</code></pre>
+<pre class="r"><code>RStata::stata(&quot;codebook&quot;, data.in = iris)</code></pre>
+<pre><code>## . codebook
+## 
+## -------------------------------------------------------------------------------
+## Sepal_Length                                                       Sepal.Length
+## -------------------------------------------------------------------------------
+## 
+##                   type:  numeric (double)
+## 
+##                  range:  [4.3,7.9]                    units:  .1
+##          unique values:  35                       missing .:  0/150
+## 
+##                   mean:   5.84333
+##               std. dev:   .828066
+## 
+##            percentiles:        10%       25%       50%       75%       90%
+##                                4.8       5.1       5.8       6.4       6.9
+## 
+## -------------------------------------------------------------------------------
+## Sepal_Width                                                         Sepal.Width
+## -------------------------------------------------------------------------------
+## 
+##                   type:  numeric (double)
+## 
+##                  range:  [2,4.4]                      units:  .1
+##          unique values:  23                       missing .:  0/150
+## 
+##                   mean:   3.05733
+##               std. dev:   .435866
+## 
+##            percentiles:        10%       25%       50%       75%       90%
+##                                2.5       2.8         3       3.3      3.65
+## 
+## -------------------------------------------------------------------------------
+## Petal_Length                                                       Petal.Length
+## -------------------------------------------------------------------------------
+## 
+##                   type:  numeric (double)
+## 
+##                  range:  [1,6.9]                      units:  .1
+##          unique values:  43                       missing .:  0/150
+## 
+##                   mean:     3.758
+##               std. dev:    1.7653
+## 
+##            percentiles:        10%       25%       50%       75%       90%
+##                                1.4       1.6      4.35       5.1       5.8
+## 
+## -------------------------------------------------------------------------------
+## Petal_Width                                                         Petal.Width
+## -------------------------------------------------------------------------------
+## 
+##                   type:  numeric (double)
+## 
+##                  range:  [.1,2.5]                     units:  .1
+##          unique values:  22                       missing .:  0/150
+## 
+##                   mean:   1.19933
+##               std. dev:   .762238
+## 
+##            percentiles:        10%       25%       50%       75%       90%
+##                                 .2        .3       1.3       1.8       2.2
+## 
+## -------------------------------------------------------------------------------
+## Species                                                                 Species
+## -------------------------------------------------------------------------------
+## 
+##                   type:  numeric (long)
+##                  label:  Species
+## 
+##                  range:  [1,3]                        units:  1
+##          unique values:  3                        missing .:  0/150
+## 
+##             tabulation:  Freq.   Numeric  Label
+##                             50         1  setosa
+##                             50         2  versicolor
+##                             50         3  virginica</code></pre>
+</div>
+</div>
+<div id="acknowledgment" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Acknowledgment</h1>
+<p>This RMarkdown document is inspired by the <a href="https://ignacioriveros1.github.io/r/2020/03/22/r_and_stata.html">post
+from Ignacio Riveros</a></p>
 </div>
 
 

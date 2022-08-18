@@ -3,7 +3,9 @@ title: "Data Science for Public Health - Configure RStudio to execute Stata comm
 author: "H. Langet, S. Lwambura and C.Festo"
 date: "`r Sys.Date()`"
 output:
-  html_document: default
+  html_document:
+    toc: true
+    number_sections: true
 ---
 
 ```{r setup, include=FALSE}
@@ -33,7 +35,7 @@ stata_bin_path <- RStata::chooseStataBin()
 print(stata_bin_path)
 ```
 
-You should normally get a path which is of the format: `"\"C:\\Program Files\\Stata16\\StataIC-64\""`
+You should normally get a path which is of the format: `"\"C:\\Program Files\\Stata16\\StataIC-64\""` where the .exe extension has been removed from the path.
 
 # Add your Stata binary path to your .Rprofile
 
