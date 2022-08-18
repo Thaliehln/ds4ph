@@ -89,18 +89,10 @@ knitr::kable(df2)
 
 AS example, imagine the following situation: you want to clean some data in Stata to nextly plot it in R (obviously using ggplot2). The workflow that I followed for months to tackle this task was to write the data as a .dta file an then read it with R. This procedure filled my Google Drive with a lot of folders and files, making it difficult to track them appropriately.
 
-## Including Plots
-
-You can also embed plots, for example:
-
 ```{r}
-data <- iris
-```
-
-```{r}
-RStata::stata("summarize", data.in = iris)
-RStata::stata("ta Species", data.in = iris)
-RStata::stata("codebook", data.in = iris)
+RStata::stata("summarize", data.in = df2)
+RStata::stata("ta Species", data.in = df2)
+RStata::stata("codebook", data.in = df2)
 ```
 
 # Acknowledgment
