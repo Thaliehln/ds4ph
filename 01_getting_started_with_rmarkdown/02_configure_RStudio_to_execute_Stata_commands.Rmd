@@ -1,5 +1,5 @@
 ---
-title: "Getting started with R markdown to generate reports using R and Stata"
+title: "Data Science for Public Health - Configure RStudio to execute Stata commands"
 author: "H. Langet, S. Lwambura and C.Festo"
 date: "`r Sys.Date()`"
 output:
@@ -7,7 +7,8 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE)
 ```
 
 # Load the RStata library
@@ -28,7 +29,6 @@ library(RStata)
 The function `chooseStataBin` from the `RStata` library allows you to browse and set the path to your Stata binary executable.
 
 ```{r}
-library(RStata)
 stata_bin_path <- RStata::chooseStataBin()
 print(stata_bin_path)
 ```
