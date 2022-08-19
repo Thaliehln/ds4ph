@@ -37,6 +37,12 @@ The `Haven` package enables R to read and write various data formats used by oth
 library(haven)
 ```
 
+## Load Psych
+
+```{r}
+library(psych)
+```
+
 # Execute Stata commands from R
 
 ## Execture a command line
@@ -84,17 +90,36 @@ df2 <- haven::read_dta("iris.dta")
 ```{r}
 knitr::kable(df2)
 ```
-
 # Combine Stata and R
 
-AS example, imagine the following situation: you want to clean some data in Stata to nextly plot it in R (obviously using ggplot2). The workflow that I followed for months to tackle this task was to write the data as a .dta file an then read it with R. This procedure filled my Google Drive with a lot of folders and files, making it difficult to track them appropriately.
+It can be very handy to combine Stata and R, for instance if you want to clean your data in Stata and then plot it in R using ggplot2, or vice-versa.
+
+## Use Stata after R
 
 ```{r}
-RStata::stata("summarize", data.in = df2)
-RStata::stata("ta Species", data.in = df2)
-RStata::stata("codebook", data.in = df2)
+RStata::stata("codebook",
+              data.in = df2)
+```
+
+## Use R after Stata
+
+```{r}
+df3 <- mtcars
+psych::describe(df3)
+plot(df3$hp, df3$disp, xlim=c(0,500), ylim=c(0,500))
+```
+Use the `drop` command to remove observations where the the variable `disp` is below 200.
+
+```{r}
+df4 <- RStata::stata("drop if disp <= 200",
+                     data.in = df3,
+                     data.out = TRUE)
+```
+```{r}
+psych::describe(df4)
+plot(df4$hp, df4$disp, xlim=c(0,500), ylim=c(0,500))
 ```
 
 # Acknowledgment
 
-This RMarkdown document is inspired by the [post from Ignacio Riveros](https://ignacioriveros1.github.io/r/2020/03/22/r_and_stata.html)
+This RMarkdown document is inspired by the [post from Ignacio Riveros](https://ignacioriveros1.github.io/r/2020/03/22/r_and_stata.html).
