@@ -33,6 +33,13 @@ if (!require("tidyverse")) install.packages("tidyverse")
 # ggplot2: data visualization
 # More information available at https://www.tidyverse.org/
 
+##############
+# Statistics #
+##############
+
+# Install psych
+if (!require("psych")) install.packages("psych")
+
 ######################
 # Automate workflows #
 ######################
