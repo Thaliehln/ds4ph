@@ -45,7 +45,7 @@ library(psych)
 
 # Execute Stata commands from R
 
-## Execture a command line
+## Execute a command line
 
 The `stata` function from the `RStata` library allows you to execute Stata commands from your R session.
 
@@ -66,7 +66,10 @@ RStata::stata("demo_do_file.do")
 ## Return R data frame objects from Stata commands
 
 You need to set the `data.out` parameter to `TRUE` when using the `stata` function to return an R data frame object that can be used within the R session.
-In the example below, the automobile dataset shipped with Stata is loaded and the returned data frame is stored in a variable named `df1`.
+
+For those who have never used R before, In R we need to store the dataset (also referred to as dataframe) into a variable in order to be able to use the dataset. the `<-` is an assignment operation, `=` can also be used.
+
+In the example below, the automobile dataset shipped with Stata is loaded and the returned data frame is stored in a variable named `df1`. 
 
 ```{r}
 df1 <- RStata::stata("sysuse auto",
@@ -118,6 +121,16 @@ df4 <- RStata::stata("drop if disp <= 200",
 ```{r}
 psych::describe(df4)
 plot(df4$hp, df4$disp, xlim=c(0,500), ylim=c(0,500))
+```
+
+an additional example for using stata from within R is adding new variable in a dataset. Using the df2 data we imported we can add a new variable called **sepalarea** using the stata command. 
+Note we have to specify the `data.out` to be able to return the resulting dataset
+
+```{r}
+df2 <- RStata::stata("gen sepalarea=sepallength*sepalwidth",
+                     data.in=df2,
+                     data.out=TRUE)
+knitr::kable(df2)
 ```
 
 # Acknowledgment
