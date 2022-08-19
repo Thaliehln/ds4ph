@@ -64,4 +64,12 @@ Add the following two lines in the Rprofile file that you have just opened:
 
 You need to indicate the path to your Stata binary executable in the `RStata.StataPath` option (e.g., "\"C:\\Program Files\\Stata16\\StataIC-64\"") and the version of your Stata (e.g., 16) in the `RStata.StataVersion` option.
 
+after indicating the path and version your code should look as specified below
+
+```{r}
+options("RStata.StataPath" = "\"C:\\Program Files (x86)\\Stata15\\Stata-64\"")
+options("RStata.StataVersion" = 15)
+```
+
+
 Once you are done, save and close your `.Rprofile`.

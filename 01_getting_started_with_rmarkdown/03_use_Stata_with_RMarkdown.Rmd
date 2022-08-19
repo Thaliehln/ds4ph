@@ -60,7 +60,10 @@ RStata::stata("demo_do_file.do")
 ## Return R data frame objects from Stata commands
 
 You need to set the `data.out` parameter to `TRUE` when using the `stata` function to return an R data frame object that can be used within the R session.
-In the example below, the automobile dataset shipped with Stata is loaded and the returned data frame is stored in a variable named `df1`.
+
+For those who have never used R before, In R we need to store the dataset (also reffered to as dataframe) into a variable in order to be able to use the dataset. the `<-` is an assignment operation, `=` can also be used.
+
+In the example below, the automobile dataset shipped with Stata is loaded and the returned data frame is stored in a variable named `df1`. 
 
 ```{r}
 df1 <- RStata::stata("sysuse auto",
@@ -91,8 +94,16 @@ AS example, imagine the following situation: you want to clean some data in Stat
 
 ```{r}
 RStata::stata("summarize", data.in = df2)
-RStata::stata("ta Species", data.in = df2)
+RStata::stata("ta species", data.in = df2)
 RStata::stata("codebook", data.in = df2)
+```
+
+an additional example for using stata from within R is adding new variable in a dataset. Using the df2 data we imported we can add a new variable called **sepalarea** using the stata command. 
+Note we have to specify the `data.out` to be able to return the resulting dataset
+
+```{r}
+df2 <- RStata::stata("gen sepalarea=sepallength*sepalwidth", data.in=df2, data.out=TRUE)
+knitr::kable(df2)
 ```
 
 # Acknowledgment
