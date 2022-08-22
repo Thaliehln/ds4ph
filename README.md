@@ -8,7 +8,7 @@ This workshop is being developed by the [Ifakara Health Institute (IHI)](https:/
 
 -----
 
-:spiral_calendar: September 26 and 27, 2022  
+:spiral_calendar: September 26-28, 2022  
 :clock9: 09:00 - 17:00  
 :city_sunrise: Dar-es-Salaam, Tanzania
 -----
