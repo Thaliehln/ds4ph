@@ -11,7 +11,7 @@
 
 <meta name="author" content="H. Langet, S. Lwambura and C.Festo" />
 
-<meta name="date" content="2022-08-18" />
+<meta name="date" content="2022-08-19" />
 
 <title>Data Science for Public Health - Configure RStudio to execute Stata commands</title>
 
@@ -366,7 +366,7 @@ pre code {
 <h1 class="title toc-ignore">Data Science for Public Health - Configure
 RStudio to execute Stata commands</h1>
 <h4 class="author">H. Langet, S. Lwambura and C.Festo</h4>
-<h4 class="date">2022-08-18</h4>
+<h4 class="date">2022-08-19</h4>
 
 </div>
 
@@ -407,7 +407,7 @@ library allows you to browse and set the path to your Stata binary
 executable.</p>
 <pre class="r"><code>stata_bin_path &lt;- RStata::chooseStataBin()
 print(stata_bin_path)</code></pre>
-<pre><code>## [1] &quot;\&quot;C:\\Program Files\\Stata16\\StataIC-64\&quot;&quot;</code></pre>
+<pre><code>## [1] &quot;\&quot;C:\\Users\\Samwel Godfrey\\Documents\\GitHub\\ds4ph\\01_getting_started_with_rmarkdown\\02_configure_RStudio_to_execute_Stata_commands\&quot;&quot;</code></pre>
 <p>You should normally get a path which is of the format:
 <code>&quot;\&quot;C:\\Program Files\\Stata16\\StataIC-64\&quot;&quot;</code> where the .exe
 extension has been removed from the path.</p>
@@ -434,8 +434,8 @@ user-specific R configuration file</h2>
 <code>usethis</code> library allows to open your configuration file
 <code>.Rprofile</code>.</p>
 <pre class="r"><code>usethis::edit_r_profile(&quot;user&quot;)</code></pre>
-<pre><code>## * Edit &#39;C:/Users/langhe/Documents/.Rprofile&#39;
-## * Restart R for changes to take effect</code></pre>
+<pre><code>## • Edit &#39;C:/Users/Samwel Godfrey/Documents/.Rprofile&#39;
+## • Restart R for changes to take effect</code></pre>
 <p>Add the following two lines in the Rprofile file that you have just
 opened:</p>
 <ul>
@@ -446,6 +446,10 @@ opened:</p>
 <code>RStata.StataPath</code> option (e.g., “&quot;C:\Program
 Files\Stata16\StataIC-64&quot;”) and the version of your Stata (e.g., 16) in
 the <code>RStata.StataVersion</code> option.</p>
+<p>after indicating the path and version your code should look as
+specified below</p>
+<pre class="r"><code>options(&quot;RStata.StataPath&quot; = &quot;\&quot;C:\\Program Files (x86)\\Stata15\\Stata-64\&quot;&quot;)
+options(&quot;RStata.StataVersion&quot; = 15)</code></pre>
 <p>Once you are done, save and close your <code>.Rprofile</code>.</p>
 </div>
 </div>

@@ -90,6 +90,8 @@ You can load Stata .dta data by using the `read_dta` function from the `haven` p
 df2 <- haven::read_dta("iris.dta")
 ```
 
+Display the dataframe in a simple table
+
 ```{r}
 knitr::kable(df2)
 ```
@@ -108,8 +110,13 @@ RStata::stata("codebook",
 
 ```{r}
 df3 <- mtcars
+# descriptive statistics summary
 psych::describe(df3)
+# Plot
 plot(df3$hp, df3$disp, xlim=c(0,500), ylim=c(0,500))
+# Codebook / data structure
+RStata::stata("codebook",
+              data.in = df2)
 ```
 Use the `drop` command to remove observations where the the variable `disp` is below 200.
 
@@ -118,6 +125,7 @@ df4 <- RStata::stata("drop if disp <= 200",
                      data.in = df3,
                      data.out = TRUE)
 ```
+
 ```{r}
 psych::describe(df4)
 plot(df4$hp, df4$disp, xlim=c(0,500), ylim=c(0,500))
@@ -130,7 +138,19 @@ Note we have to specify the `data.out` to be able to return the resulting datase
 df2 <- RStata::stata("gen sepalarea=sepallength*sepalwidth",
                      data.in=df2,
                      data.out=TRUE)
+df2 <- RStata::stata("gen new=0",
+                     data.in=df2,
+                     data.out=TRUE)
 knitr::kable(df2)
+```
+# Variables
+
+```{r}
+a = 10
+print(a)
+
+b = df2[[5]][[1]]
+print(b)
 ```
 
 # Acknowledgment
