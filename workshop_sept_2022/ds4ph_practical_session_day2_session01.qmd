@@ -74,7 +74,7 @@ Text
 
 ::: callout-tip
 * Stata: use the **codebook** function
-* R: you need to load the `dplyr` library to use piping
+* R: use the **skim** function from the `skimr` package
 :::
 
 ```{r}
@@ -89,11 +89,8 @@ RStata::stata("codebook", data.in = df)
 
 ```{r}
 #| df-print: kable
-library(magrittr)
-data.frame(variable = names(df),
-           classe = sapply(df, typeof),
-           first_values = sapply(df, function(x) paste0(head(x),  collapse = ", ")),
-           row.names = NULL)
+library(skimr)
+skimr::skim(df)
 ```
 
 # Data analysis plan
