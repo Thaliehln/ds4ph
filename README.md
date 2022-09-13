@@ -94,12 +94,16 @@ What is not covered
 
 * Samwel Lwambura
 * Hajirani Msuya
+* Ibrahim Mtebene
+* Charles Festo
 
 ### From the Swiss Tropical & Public Health Institute (Swiss TPH)
 
 * Fenella Beynon
 * Hélène Langet
-* TBC
+* Silvia Cicconi
+* Gillian Levine
+* Fabian Schär
 
 ## Prerequisites
 
