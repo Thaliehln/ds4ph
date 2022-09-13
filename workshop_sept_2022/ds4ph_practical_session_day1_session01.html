@@ -79,6 +79,25 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -143,22 +162,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>Most of the time you will want to create <em>Quarto</em> documents using your own data.</p>
-<p>The first thing you will usually do when starting a new <em>Quarto</em> document is to import your data.</p>
-<p>If you want to further process / analyse your data, you will have to store your data set in a two-dimensional array-like structure (<strong>data frame</strong>), in which each column contains values of one variable and each row contains one set of values from each column. You can store multiple data sets in memory and work on all of them in parallel.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<p>Most of the time you will want to generate <em>Quarto</em> documents using your own data.</p>
+<p>One of the first thing you will usually do when starting a new <em>Quarto</em> document is to import your data.</p>
+<p>If you want to further process / analyse your data, you will have to store your data in a two-dimensional array-like structure (<strong>data frame</strong>) that contains rows and columns. You can store multiple data sets in memory (which will be stored in different data frames) and work on all of them in parallel.</p>
+<div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Note
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>For (advanced) Python users only: you need to import the R package <code>reticulate</code> if you want to use the Knitr engine and manipulate Python objects within R code chunks.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
 </div>
 <div class="cell">
 
@@ -174,10 +196,22 @@ Note
 <section id="import-excel-data" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="import-excel-data"><span class="header-section-number">2.1</span> Import Excel data</h2>
 <p>Read the Excel data set <strong>dataset1.xlsx</strong> and store it into a data frame called <strong>df1</strong>.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>R hint: use the <a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a> function from the <code>readxl</code> package.</li>
-<li>Python hint: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html">read_xls</a> function from the <code>pandas</code> package.</li>
+<li>R: use the <a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a> function from the <code>readxl</code> package.</li>
+<li>Python: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html">read_xls</a> function from the <code>pandas</code> package.</li>
 </ul>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -185,21 +219,30 @@ Note
 
 </div>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>C:\PROGRA~3\ANACON~1\lib\site-packages\openpyxl\styles\stylesheet.py:226: UserWarning: Workbook contains no default style, apply openpyxl's default
-  warn("Workbook contains no default style, apply openpyxl's default")</code></pre>
-</div>
+
 </div>
 </section>
 <section id="import-csv-data" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="import-csv-data"><span class="header-section-number">2.2</span> Import CSV data</h2>
 <p>Read the CSV data set <strong>dataset1.csv</strong> and store it into a data frame called <strong>df2</strong>.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>R hint: use the <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table">read.csv</a> function from the <code>haven</code> package.</li>
-<li>Python hint: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">read_csv</a> function from the <code>pandas</code> package.</li>
+<li>R: use the <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table">read.csv</a> function from the <code>haven</code> package.</li>
+<li>Python: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">read_csv</a> function from the <code>pandas</code> package.</li>
 </ul>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 
@@ -211,12 +254,24 @@ Note
 <section id="import-stata-data" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="import-stata-data"><span class="header-section-number">2.3</span> Import Stata data</h2>
 <p>Read the Stata data set <strong>dataset1.dta</strong> and store it into a data frame called <strong>df3</strong>.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>R hint: use the <a href="https://haven.tidyverse.org/reference/read_dta.html">read_dta</a> function from the <code>haven</code> package. This package supports SAS, STATA and SPSS software.</li>
-<li>Python hint: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_stata.html">read_stata</a> function from the <code>pandas</code> package.</li>
+<li>R: use the <a href="https://haven.tidyverse.org/reference/read_dta.html">read_dta</a> function from the <code>haven</code> package. This package supports SAS, STATA and SPSS software.</li>
+<li>Python: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_stata.html">read_stata</a> function from the <code>pandas</code> package.</li>
 </ul>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 
@@ -228,8 +283,21 @@ Note
 <section id="additional-question" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="additional-question"><span class="header-section-number">2.4</span> Additional question</h2>
 <p>Can you indicate what variable has been modified in <strong>dataset1</strong> between df1 and df2?</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use the R function <strong>comparedf</strong></p>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -247,7 +315,7 @@ Differences found in 0/0 variables compared.
 </div>
 <p>Can you indicate what variable has been modified in <strong>dataset1</strong> between df1 and df3?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -267,21 +335,57 @@ Differences found in 0/0 variables compared.
 </section>
 <section id="import-data-from-odk-central" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Import data from ODK Central</h1>
-<p>To be completed</p>
-<p>Give access to a dummy ODK Central project for demo purpose</p>
+<p>While data digitally captured using ODK Collect or Enketo and stored in ODK Central can be retrieved in bulk through the web interface, ODK Central’s API provides direct access to its data (and functionality). It is a more efficient way to ensure that data are always up-to-date.</p>
+<p>We will see how to retrieve data through the OData API.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For advanced users: encrypted data can only be retrieved through the RESTful API.</p>
+</div>
+</div>
+<p><strong>Instructions:</strong></p>
+<ol type="1">
+<li>Connect to the ODK Central server data set (give access to a dummy ODK Central project for demo purpose).</li>
+<li>Retrieve data from form.</li>
+<li>Store the data set into a data frame called df4</li>
+</ol>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>R hint: use the <a href="https://docs.ropensci.org/ruODK/reference/ru_setup.html">ru_setup</a> and the <a href="https://docs.ropensci.org/ruODK/reference/odata_submission_get.html">odata_submission_get</a> functions from the <code>ruODK</code> package.</li>
-<li>Python hint: use functions from the <code>pyODK</code> package.</li>
+<li>R: use the <a href="https://docs.ropensci.org/ruODK/reference/ru_setup.html">ru_setup</a> and the <a href="https://docs.ropensci.org/ruODK/reference/odata_submission_get.html">odata_submission_get</a> functions from the <code>ruODK</code> package <span class="citation" data-cites="mayer20">(<a href="#ref-mayer20" role="doc-biblioref">Mayer 2020</a>)</span>.</li>
+<li>Python: use functions from the <code>pyODK</code> package.</li>
 </ul>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="references" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> References</h1>
+<section id="references" class="level1 unnumbered" data-number="4">
+
+
 </section>
 
-</main>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">4 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-mayer20" class="csl-entry" role="doc-biblioentry">
+Mayer, Florian W. 2020. <span>“ruODK: Client for the ODK Central API.”</span> <a href="https://github.com/ropensci/ruODK">https://github.com/ropensci/ruODK</a>.
+</div>
+</div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

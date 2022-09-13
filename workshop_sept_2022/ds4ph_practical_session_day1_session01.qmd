@@ -10,17 +10,18 @@ execute:
   echo: false
   warning: false
 engine: knitr
+bibliography: references.bib
 ---
 
 # Introduction
 
-Most of the time you will want to create *Quarto* documents using your own data.
+Most of the time you will want to generate *Quarto* documents using your own data.
 
-The first thing you will usually do when starting a new *Quarto* document is to import your data.
+One of the first thing you will usually do when starting a new *Quarto* document is to import your data.
 
-If you want to further process / analyse your data, you will have to store your data set in a two-dimensional array-like structure (**data frame**), in which each column contains values of one variable and each row contains one set of values from each column. You can store multiple data sets in memory and work on all of them in parallel.
+If you want to further process / analyse your data, you will have to store your data in a two-dimensional array-like structure (**data frame**) that contains rows and columns. You can store multiple data sets in memory (which will be stored in different data frames) and work on all of them in parallel.
 
-::: callout-note
+::: callout-warning
 For (advanced) Python users only: you need to import the R package `reticulate` if you want to use the Knitr engine and manipulate Python objects within R code chunks.
 
 ```{r}
@@ -30,6 +31,11 @@ For (advanced) Python users only: you need to import the R package `reticulate` 
 
 ```{r}
 library(reticulate)
+```
+
+```{python}
+import warnings
+warnings.filterwarnings('ignore')
 ```
 :::
 
@@ -45,8 +51,10 @@ Indicate functions that accepts URL as well (it is the case for Python functions
 
 Read the Excel data set **dataset1.xlsx** and store it into a data frame called **df1**.
 
--   R hint: use the [read_excel](https://readxl.tidyverse.org/reference/read_excel.html) function from the `readxl` package.
--   Python hint: use the [read_xls](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) function from the `pandas` package.
+::: callout-tip
+-   R: use the [read_excel](https://readxl.tidyverse.org/reference/read_excel.html) function from the `readxl` package.
+-   Python: use the [read_xls](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) function from the `pandas` package.
+:::
 
 ```{r}
 #| echo: true
@@ -67,8 +75,10 @@ df1 = pd.read_excel('dataset1.xlsx')
 
 Read the CSV data set **dataset1.csv** and store it into a data frame called **df2**.
 
--   R hint: use the [read.csv](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table) function from the `haven` package.
--   Python hint: use the [read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html) function from the `pandas` package.
+::: callout-tip
+-   R: use the [read.csv](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table) function from the `haven` package.
+-   Python: use the [read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html) function from the `pandas` package.
+:::
 
 ```{r}
 #| echo: true
@@ -89,8 +99,10 @@ df2 = pd.read_csv('dataset1.csv')
 
 Read the Stata data set **dataset1.dta** and store it into a data frame called **df3**.
 
--   R hint: use the [read_dta](https://haven.tidyverse.org/reference/read_dta.html) function from the `haven` package. This package supports SAS, STATA and SPSS software.
--   Python hint: use the [read_stata](https://pandas.pydata.org/docs/reference/api/pandas.read_stata.html) function from the `pandas` package.
+::: callout-tip
+-   R: use the [read_dta](https://haven.tidyverse.org/reference/read_dta.html) function from the `haven` package. This package supports SAS, STATA and SPSS software.
+-   Python: use the [read_stata](https://pandas.pydata.org/docs/reference/api/pandas.read_stata.html) function from the `pandas` package.
+:::
 
 ```{r}
 #| echo: true
@@ -110,6 +122,10 @@ df3 = pd.read_stata('dataset1.dta')
 ## Additional question
 
 Can you indicate what variable has been modified in **dataset1** between df1 and df2?
+
+::: callout-tip
+Use the R function **comparedf**
+:::
 
 ```{r}
 #| echo: true
@@ -133,12 +149,24 @@ arsenal::comparedf(df1, py$df3)
 
 # Import data from ODK Central
 
-To be completed
+While data digitally captured using ODK Collect or Enketo and stored in ODK Central can be retrieved in bulk through the web interface, ODK Central's API provides direct access to its data (and functionality). It is a more efficient way to ensure that data are always up-to-date.
 
-Give access to a dummy ODK Central project for demo purpose
+We will see how to retrieve data through the OData API.
 
--   R hint: use the [ru_setup](https://docs.ropensci.org/ruODK/reference/ru_setup.html) and the [odata_submission_get](https://docs.ropensci.org/ruODK/reference/odata_submission_get.html) functions from the `ruODK` package.
--   Python hint: use functions from the `pyODK` package.
+::: callout-important
+For advanced users: encrypted data can only be retrieved through the RESTful API.
+:::
+
+**Instructions:**
+
+1.  Connect to the ODK Central server data set (give access to a dummy ODK Central project for demo purpose).
+2.  Retrieve data from form.
+3.  Store the data set into a data frame called df4
+
+::: callout-tip
+-   R: use the [ru_setup](https://docs.ropensci.org/ruODK/reference/ru_setup.html) and the [odata_submission_get](https://docs.ropensci.org/ruODK/reference/odata_submission_get.html) functions from the `ruODK` package [@mayer20].
+-   Python: use functions from the `pyODK` package.
+:::
 
 ```{r}
 #| echo: true
