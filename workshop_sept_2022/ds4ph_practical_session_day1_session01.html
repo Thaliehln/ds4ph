@@ -113,6 +113,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#additional-question" id="toc-additional-question" class="nav-link" data-scroll-target="#additional-question"> <span class="header-section-number">2.4</span> Additional question</a></li>
   </ul></li>
   <li><a href="#import-data-from-odk-central" id="toc-import-data-from-odk-central" class="nav-link" data-scroll-target="#import-data-from-odk-central"> <span class="header-section-number">3</span> Import data from ODK Central</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">4</span> References</a></li>
   </ul>
 </nav>
 </div>
@@ -142,7 +143,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>Most of the time you will want to create <em>Quarto</em> documents using your own data. The first thing you will usually do when starting an new <em>Quarto</em> document is to import your data. You can import several datasets. If you want to further process / analyse your data, you will have to store each dataset in a specific variable.</p>
+<p>Most of the time you will want to create <em>Quarto</em> documents using your own data.</p>
+<p>The first thing you will usually do when starting a new <em>Quarto</em> document is to import your data.</p>
+<p>If you want to further process / analyse your data, you will have to store your data set in a two-dimensional array-like structure (<strong>data frame</strong>), in which each column contains values of one variable and each row contains one set of values from each column. You can store multiple data sets in memory and work on all of them in parallel.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -170,7 +173,7 @@ Note
 <p>Indicate functions that accepts URL as well (it is the case for Python functions).</p>
 <section id="import-excel-data" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="import-excel-data"><span class="header-section-number">2.1</span> Import Excel data</h2>
-<p>Read the Excel dataset <strong>dataset1.xlsx</strong> and store it into a dataframe called <strong>df1</strong>.</p>
+<p>Read the Excel data set <strong>dataset1.xlsx</strong> and store it into a data frame called <strong>df1</strong>.</p>
 <ul>
 <li>R hint: use the <a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a> function from the <code>readxl</code> package.</li>
 <li>Python hint: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html">read_xls</a> function from the <code>pandas</code> package.</li>
@@ -190,7 +193,7 @@ Note
 </section>
 <section id="import-csv-data" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="import-csv-data"><span class="header-section-number">2.2</span> Import CSV data</h2>
-<p>Read the CSV dataset <strong>dataset1.csv</strong> and store it into a dataframe called <strong>df2</strong>.</p>
+<p>Read the CSV data set <strong>dataset1.csv</strong> and store it into a data frame called <strong>df2</strong>.</p>
 <ul>
 <li>R hint: use the <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table">read.csv</a> function from the <code>haven</code> package.</li>
 <li>Python hint: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">read_csv</a> function from the <code>pandas</code> package.</li>
@@ -207,7 +210,7 @@ Note
 </section>
 <section id="import-stata-data" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="import-stata-data"><span class="header-section-number">2.3</span> Import Stata data</h2>
-<p>Read the Stata dataset <strong>dataset1.dta</strong> and store it into a dataframe called <strong>df3</strong>.</p>
+<p>Read the Stata data set <strong>dataset1.dta</strong> and store it into a data frame called <strong>df3</strong>.</p>
 <ul>
 <li>R hint: use the <a href="https://haven.tidyverse.org/reference/read_dta.html">read_dta</a> function from the <code>haven</code> package. This package supports SAS, STATA and SPSS software.</li>
 <li>Python hint: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_stata.html">read_stata</a> function from the <code>pandas</code> package.</li>
@@ -273,6 +276,9 @@ Differences found in 0/0 variables compared.
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="references" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> References</h1>
 </section>
 
 </main>

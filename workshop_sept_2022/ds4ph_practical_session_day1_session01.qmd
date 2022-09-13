@@ -14,7 +14,11 @@ engine: knitr
 
 # Introduction
 
-Most of the time you will want to create *Quarto* documents using your own data. The first thing you will usually do when starting an new *Quarto* document is to import your data. You can import several datasets. If you want to further process / analyse your data, you will have to store each dataset in a specific variable.
+Most of the time you will want to create *Quarto* documents using your own data.
+
+The first thing you will usually do when starting a new *Quarto* document is to import your data.
+
+If you want to further process / analyse your data, you will have to store your data set in a two-dimensional array-like structure (**data frame**), in which each column contains values of one variable and each row contains one set of values from each column. You can store multiple data sets in memory and work on all of them in parallel.
 
 ::: callout-note
 For (advanced) Python users only: you need to import the R package `reticulate` if you want to use the Knitr engine and manipulate Python objects within R code chunks.
@@ -39,7 +43,7 @@ Indicate functions that accepts URL as well (it is the case for Python functions
 
 ## Import Excel data
 
-Read the Excel dataset **dataset1.xlsx** and store it into a dataframe called **df1**.
+Read the Excel data set **dataset1.xlsx** and store it into a data frame called **df1**.
 
 -   R hint: use the [read_excel](https://readxl.tidyverse.org/reference/read_excel.html) function from the `readxl` package.
 -   Python hint: use the [read_xls](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) function from the `pandas` package.
@@ -61,7 +65,7 @@ df1 = pd.read_excel('dataset1.xlsx')
 
 ## Import CSV data
 
-Read the CSV dataset **dataset1.csv** and store it into a dataframe called **df2**.
+Read the CSV data set **dataset1.csv** and store it into a data frame called **df2**.
 
 -   R hint: use the [read.csv](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table) function from the `haven` package.
 -   Python hint: use the [read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html) function from the `pandas` package.
@@ -83,7 +87,7 @@ df2 = pd.read_csv('dataset1.csv')
 
 ## Import Stata data
 
-Read the Stata dataset **dataset1.dta** and store it into a dataframe called **df3**.
+Read the Stata data set **dataset1.dta** and store it into a data frame called **df3**.
 
 -   R hint: use the [read_dta](https://haven.tidyverse.org/reference/read_dta.html) function from the `haven` package. This package supports SAS, STATA and SPSS software.
 -   Python hint: use the [read_stata](https://pandas.pydata.org/docs/reference/api/pandas.read_stata.html) function from the `pandas` package.
@@ -140,3 +144,5 @@ Give access to a dummy ODK Central project for demo purpose
 #| echo: true
 # Write your code here
 ```
+
+# References
