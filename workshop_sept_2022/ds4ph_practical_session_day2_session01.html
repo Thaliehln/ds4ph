@@ -157,8 +157,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="dataset-description" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Dataset description</h1>
-<p>Consultation information for XX children [1 day - 59 months] from Kaliua, Sengerema and Tanga, Tanzania. Data were collected using <em>ODK</em> (ODK Collect, ODK Central) between <strong>start date</strong> and <strong>end date</strong>. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project.</p>
-<p>The dataset is stored in <strong>dataset1.dta</strong>.</p>
+<p>Information about the consultations of 10,308 children [1 day - 59 months] from 18 facilities (dispensaries and health centres) in Kaliua District, Sengerema District and Tanga District, Tanzania. Data were collected using <em>ODK</em> (ODK Collect, ODK Central) between <strong>start date</strong> and <strong>end date</strong>. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project. Data are stored in <strong>dataset1.dta</strong>.</p>
 <section id="data-collection" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="data-collection"><span class="header-section-number">3.1</span> Data collection</h2>
 <p>Research assistants recorded the following information from different sources:</p>
@@ -192,15 +191,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 data-number="4"><span class="header-section-number">4</span> Familiarise with the dataset</h1>
 <section id="import-the-data" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="import-the-data"><span class="header-section-number">4.1</span> Import the data</h2>
-<p>Most of the time you will want to use R on your own data so the first thing you’ll usually do when starting an analysis is to load your data into R.</p>
-<p>This dataset comes in some non-R format. For almost every data format there is a dedicated importing function in R. We’ll start by showing you how to read in non-R formats and then show you how to save and load your R workspace. For demonstration purposes, we have provided the NINDS data set (Marler et al.&nbsp;1995) you have encountered in the lecture in two formats: NINDS.csv and NINDS.xlsx.</p>
-<p>If you want to work with the data, it makes sense to store it in a variable.</p>
 <p>Read the dataset and store it into a dataframe called <strong>df</strong>.</p>
-<ul>
-<li>Stata hint:</li>
-<li>R hint: use the <code>read_dta</code> function from the <code>haven</code> package.</li>
-<li>Python hint:</li>
-</ul>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Refer to previous session</p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -211,10 +215,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="structure-of-the-data" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">4.2</span> Structure of the data</h2>
 <p>Text</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>Stata hint:</li>
-<li>R hint: you need to load the <code>dplyr</code> library to use piping</li>
+<li>Stata: use the <strong>codebook</strong> function</li>
+<li>R: you need to load the <code>dplyr</code> library to use piping</li>
 </ul>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1278,7 +1294,7 @@ MGMT_referral_src_registry                           MGMT_referral_src_registry
 </section>
 <section id="data-analysis-plan" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Data analysis plan</h1>
-<p>A brief plan of your data analysis. For now, all you need to include in this section is which variables from the dataset you plan to use, and what associations between them you will investigate to help answer your research question.</p>
+<p>For now, all you need to include in this section is which variables from the dataset you plan to use, and what associations between them you will investigate to help answer your research question.</p>
 <div class="cell" data-df-print="kable">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 x 1
@@ -1299,9 +1315,7 @@ MGMT_referral_src_registry                           MGMT_referral_src_registry
 </section>
 <section id="references" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> References</h1>
-<ul>
-<li>scikit-learn MOOC</li>
-</ul>
+<p>To be completed</p>
 </section>
 
 </main>

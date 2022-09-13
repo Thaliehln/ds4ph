@@ -21,9 +21,7 @@ Research questions in an enumerated list
 
 # Dataset description
 
-Information about the consultations of 10,308 children [1 day - 59 months] from 18 facilities (dispensaries and health centres) in Kaliua District, Sengerema District and Tanga District, Tanzania. Data were collected using *ODK* (ODK Collect, ODK Central) between **start date** and **end date**. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project.
-
-The dataset is stored in **dataset1.dta**.
+Information about the consultations of **10,308 children [1 day - 59 months]** from **18 facilities** (dispensaries and health centres) in **Kaliua** District, **Sengerema** District and **Tanga** District, Tanzania. Data were collected using *ODK* (ODK Collect, ODK Central) between **start date** and **end date**. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project. Data are stored in **dataset1.dta**.
 
 ## Data collection
 
@@ -54,17 +52,11 @@ Load the data and show the structure of your dataset
 
 ## Import the data
 
-Most of the time you will want to use R on your own data so the first thing you’ll usually do when starting an analysis is to load your data into R. 
-
-This dataset comes in some non-R format. For almost every data format there is a dedicated importing function in R. We’ll start by showing you how to read in non-R formats and then show you how to save and load your R workspace. For demonstration purposes, we have provided the NINDS data set (Marler et al. 1995) you have encountered in the lecture in two formats: NINDS.csv and NINDS.xlsx.
-
-If you want to work with the data, it makes sense to store it in a variable.
-
 Read the dataset and store it into a dataframe called **df**.
 
--   Stata hint:
--   R hint: use the `read_dta` function from the `haven` package.
--   Python hint:
+::: callout-tip
+Refer to previous session
+:::
 
 ```{r}
 #| echo: true
@@ -73,15 +65,17 @@ Read the dataset and store it into a dataframe called **df**.
 
 ```{r}
 library(haven)
-df <- haven::read_dta("dataset1.dta")
+df <- haven::read_dta("dataset10.dta")
 ```
 
 ## Structure of the data
 
 Text
 
-* Stata hint:
-* R hint: you need to load the `dplyr` library to use piping
+::: callout-tip
+* Stata: use the **codebook** function
+* R: you need to load the `dplyr` library to use piping
+:::
 
 ```{r}
 #| echo: true
@@ -104,7 +98,7 @@ data.frame(variable = names(df),
 
 # Data analysis plan
 
-A brief plan of your data analysis. For now, all you need to include in this section is which variables from the dataset you plan to use, and what associations between them you will investigate to help answer your research question.
+For now, all you need to include in this section is which variables from the dataset you plan to use, and what associations between them you will investigate to help answer your research question.
 
 ```{r}
 #| df-print: kable
@@ -115,4 +109,4 @@ df %>%
 ```
 # References
 
--   scikit-learn MOOC
+To be completed
