@@ -1,0 +1,79 @@
+---
+title: "Test"
+author: "Ifakara Health Institute, Dar-es-Salaam office"
+date: "`r Sys.Date()`"
+output:
+  word_document:
+    toc: true
+    number_sections: true
+  html_document:
+    toc: true
+    number_sections: true
+params:
+  val: 20
+  data: !r mtcars
+---
+
+# Introduction
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+```{r}
+library(RStata)
+```
+
+```{r}
+library(haven)
+```
+
+## Datasets
+
+this is a variable `r params$val`
+
+```{r, results='asis'}
+knitr::kable(params$data, align = 'r', caption = "My first table")
+```
+
+```{r, results='asis'}
+df = iris
+knitr::kable(df, align = 'r', caption = "My second table")
+```
+
+## Stata processing
+
+```{r, echo = TRUE, results='asis'}
+RStata::stata("codebook", data.in = df)
+```
+```{r, results='asis'}
+df1 = RStata::stata("drop if Sepal_Length < 5", data.in = df, data.out = TRUE)
+knitr::kable(df1)
+```
+
+The new mean of the sepal length column is `r mean(df1$Sepal_Width, na.rm = TRUE)`.
+
+```{r}
+typeof(RStata::stata("tab Species", data.in = df1))
+RStata::stata("tab Species", data.in = df1)
+```
+
+# Incrementing variables
+
+```{r}
+x <- data.frame(a = rnorm(3), b = letters[1:3])
+t <- stata("sum a", data.in = x)
+```
+
+
+```{r, results='hide'}
+variable <- 10
+print(variable)
+```
+
+```{r, results='hide'}
+variable <- variable * 2
+print(variable)
+```
+
+The content of my variable is `r variable`.

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2022-09-26">
+
+<title>Data Science for Public Health - Day 1 - Import data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="ds4ph_practical_session_day1_session01_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ds4ph_practical_session_day1_session01_files/libs/quarto-html/quarto.js"></script>
+<script src="ds4ph_practical_session_day1_session01_files/libs/quarto-html/popper.min.js"></script>
+<script src="ds4ph_practical_session_day1_session01_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="ds4ph_practical_session_day1_session01_files/libs/quarto-html/anchor.min.js"></script>
+<link href="ds4ph_practical_session_day1_session01_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ds4ph_practical_session_day1_session01_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="ds4ph_practical_session_day1_session01_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="ds4ph_practical_session_day1_session01_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="ds4ph_practical_session_day1_session01_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"> <span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#import-data-from-files" id="toc-import-data-from-files" class="nav-link" data-scroll-target="#import-data-from-files"> <span class="header-section-number">2</span> Import data from files</a>
+  <ul class="collapse">
+  <li><a href="#import-excel-data" id="toc-import-excel-data" class="nav-link" data-scroll-target="#import-excel-data"> <span class="header-section-number">2.1</span> Import Excel data</a></li>
+  <li><a href="#import-csv-data" id="toc-import-csv-data" class="nav-link" data-scroll-target="#import-csv-data"> <span class="header-section-number">2.2</span> Import CSV data</a></li>
+  <li><a href="#import-stata-data" id="toc-import-stata-data" class="nav-link" data-scroll-target="#import-stata-data"> <span class="header-section-number">2.3</span> Import Stata data</a></li>
+  <li><a href="#additional-question" id="toc-additional-question" class="nav-link" data-scroll-target="#additional-question"> <span class="header-section-number">2.4</span> Additional question</a></li>
+  </ul></li>
+  <li><a href="#import-data-from-odk-central" id="toc-import-data-from-odk-central" class="nav-link" data-scroll-target="#import-data-from-odk-central"> <span class="header-section-number">3</span> Import data from ODK Central</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Science for Public Health - Day 1 - Import data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 26, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>Most of the time you will want to create <em>Quarto</em> documents using your own data. The first thing you will usually do when starting an new <em>Quarto</em> document is to import your data. You can import several datasets. If you want to further process / analyse your data, you will have to store each dataset in a specific variable.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For (advanced) Python users only: you need to import the R package <code>reticulate</code> if you want to use the Knitr engine and manipulate Python objects within R code chunks.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+</div>
+</div>
+</section>
+<section id="import-data-from-files" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Import data from files</h1>
+<p>There is a dedicated importing function in R and Python for almost every data format. In this session we show you how to read Stata (<code>.dta</code>), Excel (<code>.xlsx</code>) and comma-separated values (CSV, <code>.csv</code>) formats.</p>
+<p>Only one argument is required within these function. We need to know the PATH where the file is stored.</p>
+<p>Indicate functions that accepts URL as well (it is the case for Python functions).</p>
+<section id="import-excel-data" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="import-excel-data"><span class="header-section-number">2.1</span> Import Excel data</h2>
+<p>Read the Excel dataset <strong>dataset1.xlsx</strong> and store it into a dataframe called <strong>df1</strong>.</p>
+<ul>
+<li>R hint: use the <a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a> function from the <code>readxl</code> package.</li>
+<li>Python hint: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html">read_xls</a> function from the <code>pandas</code> package.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>C:\PROGRA~3\ANACON~1\lib\site-packages\openpyxl\styles\stylesheet.py:226: UserWarning: Workbook contains no default style, apply openpyxl's default
+  warn("Workbook contains no default style, apply openpyxl's default")</code></pre>
+</div>
+</div>
+</section>
+<section id="import-csv-data" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="import-csv-data"><span class="header-section-number">2.2</span> Import CSV data</h2>
+<p>Read the CSV dataset <strong>dataset1.csv</strong> and store it into a dataframe called <strong>df2</strong>.</p>
+<ul>
+<li>R hint: use the <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table">read.csv</a> function from the <code>haven</code> package.</li>
+<li>Python hint: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">read_csv</a> function from the <code>pandas</code> package.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+<section id="import-stata-data" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="import-stata-data"><span class="header-section-number">2.3</span> Import Stata data</h2>
+<p>Read the Stata dataset <strong>dataset1.dta</strong> and store it into a dataframe called <strong>df3</strong>.</p>
+<ul>
+<li>R hint: use the <a href="https://haven.tidyverse.org/reference/read_dta.html">read_dta</a> function from the <code>haven</code> package. This package supports SAS, STATA and SPSS software.</li>
+<li>Python hint: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_stata.html">read_stata</a> function from the <code>pandas</code> package.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+<section id="additional-question" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="additional-question"><span class="header-section-number">2.4</span> Additional question</h2>
+<p>Can you indicate what variable has been modified in <strong>dataset1</strong> between df1 and df2?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Compare Object
+
+Function Call: 
+arsenal::comparedf(x = df1, y = df2)
+
+Shared: 0 non-by variables and 32 observations.
+Not shared: 16 variables and 118 observations.
+
+Differences found in 0/0 variables compared.
+0 variables compared have non-identical attributes.</code></pre>
+</div>
+</div>
+<p>Can you indicate what variable has been modified in <strong>dataset1</strong> between df1 and df3?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Compare Object
+
+Function Call: 
+arsenal::comparedf(x = df1, y = py$df3)
+
+Shared: 0 non-by variables and 32 observations.
+Not shared: 16 variables and 118 observations.
+
+Differences found in 0/0 variables compared.
+0 variables compared have non-identical attributes.</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="import-data-from-odk-central" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Import data from ODK Central</h1>
+<p>To be completed</p>
+<p>Give access to a dummy ODK Central project for demo purpose</p>
+<ul>
+<li>R hint: use the <a href="https://docs.ropensci.org/ruODK/reference/ru_setup.html">ru_setup</a> and the <a href="https://docs.ropensci.org/ruODK/reference/odata_submission_get.html">odata_submission_get</a> functions from the <code>ruODK</code> package.</li>
+<li>Python hint: use functions from the <code>pyODK</code> package.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

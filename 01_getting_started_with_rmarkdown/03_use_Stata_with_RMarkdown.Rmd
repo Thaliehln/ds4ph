@@ -9,7 +9,8 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE)
 ```
 
 # Load libraries
@@ -39,6 +40,8 @@ library(haven)
 
 ## Load Psych
 
+The `psych`package is a general purpose toolbox that is used for personality, psychometric theory and experimental psychology. It contains There are many summary statistics available in R; this function provides the ones most useful for scale construction and item analysis in classic psychometrics. Range is most useful for the first pass in a data set, to check for coding errors. 
+
 ```{r}
 library(psych)
 ```
@@ -49,7 +52,7 @@ library(psych)
 
 The `stata` function from the `RStata` library allows you to execute Stata commands from your R session.
 
-```{r}
+```{r, results='asis'}
 RStata::stata('di "This sentence is displayed using Stata"')
 ```
 
@@ -57,7 +60,7 @@ RStata::stata('di "This sentence is displayed using Stata"')
 
 You can execute an entire .do file.
 
-```{r}
+```{r, results='asis'}
 RStata::stata("demo_do_file.do")
 ```
 
@@ -71,7 +74,7 @@ For those who have never used R before, In R we need to store the dataset (also 
 
 In the example below, the automobile dataset shipped with Stata is loaded and the returned data frame is stored in a variable named `df1`. 
 
-```{r}
+```{r, results='asis'}
 df1 <- RStata::stata("sysuse auto",
                      data.out = TRUE)
 ```
@@ -101,7 +104,7 @@ It can be very handy to combine Stata and R, for instance if you want to clean y
 
 ## Use Stata after R
 
-```{r}
+```{r, results='asis'}
 RStata::stata("codebook",
               data.in = df2)
 ```
@@ -111,30 +114,35 @@ RStata::stata("codebook",
 ```{r}
 df3 <- mtcars
 # descriptive statistics summary
-psych::describe(df3)
+summary1 <- psych::describe(df3)
+knitr::kable(summary1)
+```
+```{r, results='asis'}
 # Plot
 plot(df3$hp, df3$disp, xlim=c(0,500), ylim=c(0,500))
 # Codebook / data structure
 RStata::stata("codebook",
               data.in = df2)
 ```
+
 Use the `drop` command to remove observations where the the variable `disp` is below 200.
 
-```{r}
+```{r, results='asis'}
 df4 <- RStata::stata("drop if disp <= 200",
                      data.in = df3,
                      data.out = TRUE)
 ```
 
 ```{r}
-psych::describe(df4)
+summary2 <- psych::describe(df4)
+knitr::kable(summary2)
 plot(df4$hp, df4$disp, xlim=c(0,500), ylim=c(0,500))
 ```
 
 an additional example for using stata from within R is adding new variable in a dataset. Using the df2 data we imported we can add a new variable called **sepalarea** using the stata command. 
 Note we have to specify the `data.out` to be able to return the resulting dataset
 
-```{r}
+```{r, results='asis'}
 df2 <- RStata::stata("gen sepalarea=sepallength*sepalwidth",
                      data.in=df2,
                      data.out=TRUE)

@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2022-09-27">
+
+<title>Data Science for Public Health - Day 2 - Session 1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="ds4ph_practical_session_day2_session01_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ds4ph_practical_session_day2_session01_files/libs/quarto-html/quarto.js"></script>
+<script src="ds4ph_practical_session_day2_session01_files/libs/quarto-html/popper.min.js"></script>
+<script src="ds4ph_practical_session_day2_session01_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="ds4ph_practical_session_day2_session01_files/libs/quarto-html/anchor.min.js"></script>
+<link href="ds4ph_practical_session_day2_session01_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ds4ph_practical_session_day2_session01_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="ds4ph_practical_session_day2_session01_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="ds4ph_practical_session_day2_session01_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="ds4ph_practical_session_day2_session01_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"> <span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#malaria-research-questions" id="toc-malaria-research-questions" class="nav-link" data-scroll-target="#malaria-research-questions"> <span class="header-section-number">2</span> Malaria research questions</a></li>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description"> <span class="header-section-number">3</span> Dataset description</a>
+  <ul class="collapse">
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection"> <span class="header-section-number">3.1</span> Data collection</a></li>
+  <li><a href="#data-cleaning-and-data-de-identification" id="toc-data-cleaning-and-data-de-identification" class="nav-link" data-scroll-target="#data-cleaning-and-data-de-identification"> <span class="header-section-number">3.2</span> Data cleaning and data de-identification</a></li>
+  <li><a href="#dataset-structure" id="toc-dataset-structure" class="nav-link" data-scroll-target="#dataset-structure"> <span class="header-section-number">3.3</span> Dataset structure</a></li>
+  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook"> <span class="header-section-number">3.4</span> Codebook</a></li>
+  </ul></li>
+  <li><a href="#familiarise-with-the-dataset" id="toc-familiarise-with-the-dataset" class="nav-link" data-scroll-target="#familiarise-with-the-dataset"> <span class="header-section-number">4</span> Familiarise with the dataset</a>
+  <ul class="collapse">
+  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"> <span class="header-section-number">4.1</span> Import the data</a></li>
+  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"> <span class="header-section-number">4.2</span> Structure of the data</a></li>
+  </ul></li>
+  <li><a href="#data-analysis-plan" id="toc-data-analysis-plan" class="nav-link" data-scroll-target="#data-analysis-plan"> <span class="header-section-number">5</span> Data analysis plan</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">6</span> References</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Science for Public Health - Day 2 - Session 1</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 27, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>TBD</p>
+</section>
+<section id="malaria-research-questions" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Malaria research questions</h1>
+<p>Research questions in an enumerated list</p>
+</section>
+<section id="dataset-description" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Dataset description</h1>
+<p>Consultation information for XX children [1 day - 59 months] from Kaliua, Sengerema and Tanga, Tanzania. Data were collected using <em>ODK</em> (ODK Collect, ODK Central) between <strong>start date</strong> and <strong>end date</strong>. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project.</p>
+<p>The dataset is stored in <strong>dataset1.dta</strong>.</p>
+<section id="data-collection" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="data-collection"><span class="header-section-number">3.1</span> Data collection</h2>
+<p>Research assistants recorded the following information from different sources:</p>
+<ul>
+<li>from the caregiver:
+<ul>
+<li>sociodemographic information</li>
+<li>information on treatment received before consultation</li>
+<li><strong>clinical presentation</strong> (variables starting with the suffix <strong>CLIN</strong>)</li>
+<li>laboratory investigations (variables starting with the suffix <strong>TEST</strong>)</li>
+<li>diagnosis (variables starting with the suffix <strong>DX</strong>)</li>
+<li>prescribed medication (variables starting with the suffix <strong>RX</strong>)</li>
+<li>referral advice will be extracted from clinical notes and / or facility registers (variables starting with the suffix <strong>MGMT</strong>).</li>
+</ul></li>
+</ul>
+<p>Research assistants sought clarification from healthcare providers only in cases where these variables were not clear from the records.</p>
+</section>
+<section id="data-cleaning-and-data-de-identification" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="data-cleaning-and-data-de-identification"><span class="header-section-number">3.2</span> Data cleaning and data de-identification</h2>
+<p>Personally identifiable information (PII) were removed.</p>
+</section>
+<section id="dataset-structure" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="dataset-structure"><span class="header-section-number">3.3</span> Dataset structure</h2>
+<p>Load the data and show the structure of your dataset</p>
+</section>
+<section id="codebook" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="codebook"><span class="header-section-number">3.4</span> Codebook</h2>
+</section>
+</section>
+<section id="familiarise-with-the-dataset" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Familiarise with the dataset</h1>
+<section id="import-the-data" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="import-the-data"><span class="header-section-number">4.1</span> Import the data</h2>
+<p>Most of the time you will want to use R on your own data so the first thing you’ll usually do when starting an analysis is to load your data into R.</p>
+<p>This dataset comes in some non-R format. For almost every data format there is a dedicated importing function in R. We’ll start by showing you how to read in non-R formats and then show you how to save and load your R workspace. For demonstration purposes, we have provided the NINDS data set (Marler et al.&nbsp;1995) you have encountered in the lecture in two formats: NINDS.csv and NINDS.xlsx.</p>
+<p>If you want to work with the data, it makes sense to store it in a variable.</p>
+<p>Read the dataset and store it into a dataframe called <strong>df</strong>.</p>
+<ul>
+<li>Stata hint:</li>
+<li>R hint: use the <code>read_dta</code> function from the <code>haven</code> package.</li>
+<li>Python hint:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+</section>
+<section id="structure-of-the-data" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">4.2</span> Structure of the data</h2>
+<p>Text</p>
+<ul>
+<li>Stata hint:</li>
+<li>R hint: you need to load the <code>dplyr</code> library to use piping</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>. codebook
+
+-------------------------------------------------------------------------------
+child_ID                                                               child_ID
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,10308]                    units:  1
+         unique values:  10,308                   missing .:  0/10,308
+
+                  mean:    5154.5
+              std. dev:   2975.81
+
+           percentiles:        10%       25%       50%       75%       90%
+                              1031    2577.5    5154.5    7731.5      9278
+
+-------------------------------------------------------------------------------
+CONSULT_year                                                       CONSULT_year
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [2021,2021]                  units:  1
+         unique values:  1                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,308  2021
+
+-------------------------------------------------------------------------------
+CONSULT_month                                                     CONSULT_month
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [7,12]                       units:  1
+         unique values:  6                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                           133  7
+                         1,774  8
+                         2,561  9
+                         2,306  10
+                         2,536  11
+                           998  12
+
+-------------------------------------------------------------------------------
+CONSULT_day_of_week                                         CONSULT_day_of_week
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,6]                        units:  1
+         unique values:  6                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         2,621  0
+                         1,925  1
+                         1,978  2
+                         1,696  3
+                         2,082  4
+                             6  6
+
+-------------------------------------------------------------------------------
+CONSULT_district                                               CONSULT_district
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,3]                        units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         2,429  1
+                         2,703  2
+                         5,176  3
+
+-------------------------------------------------------------------------------
+CONSULT_facility_ID                                         CONSULT_facility_ID
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,18]                       units:  1
+         unique values:  18                       missing .:  0/10,308
+
+                  mean:   8.92666
+              std. dev:   5.07343
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 2         5         9        14        16
+
+-------------------------------------------------------------------------------
+CONSULT_area                                                       CONSULT_area
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,2]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         4,088  1
+                         6,220  2
+
+-------------------------------------------------------------------------------
+CONSULT_facility_type                                     CONSULT_facility_type
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,2]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         5,599  1
+                         4,709  2
+
+-------------------------------------------------------------------------------
+SDC_sex                                                                 SDC_sex
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,98]                       units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         5,229  1
+                         5,075  2
+                             4  98
+
+-------------------------------------------------------------------------------
+SDC_age_in_month                                               SDC_age_in_month
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,59]                       units:  1
+         unique values:  60                       missing .:  0/10,308
+
+                  mean:   18.7498
+              std. dev:   14.8998
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 3         7        15        27        43
+
+-------------------------------------------------------------------------------
+SDC_young_infant_age_ctg                               SDC_young_infant_age_ctg
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,711  1
+                            35  2
+                           332  3
+                           230  4
+
+-------------------------------------------------------------------------------
+SDC_main_caregiver                                           SDC_main_caregiver
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,99]                       units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,464  1
+                           350  2
+                           494  99
+
+-------------------------------------------------------------------------------
+SDC_living_with_caregiver                             SDC_living_with_caregiver
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                            60  0
+                        10,248  1
+
+-------------------------------------------------------------------------------
+SDC_mother_education                                       SDC_mother_education
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,99]                       units:  1
+         unique values:  9                        missing .:  766/10,308
+
+            tabulation:  Freq.  Value
+                         5,516  1
+                            38  2
+                         2,282  3
+                           116  4
+                            94  5
+                            10  6
+                         1,412  96
+                            19  97
+                            55  99
+                           766  .
+
+-------------------------------------------------------------------------------
+CLIN_sickness_duration                                   CLIN_sickness_duration
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,14]                       units:  1
+         unique values:  15                       missing .:  0/10,308
+
+                  mean:   3.33799
+              std. dev:   3.01087
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 1         2         3         3         7
+
+-------------------------------------------------------------------------------
+CLIN_convulsions                                               CLIN_convulsions
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,98]                       units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,178  0
+                            95  1
+                            35  98
+
+-------------------------------------------------------------------------------
+CLIN_vomiting                                                     CLIN_vomiting
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,98]                       units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         8,402  0
+                         1,878  1
+                            28  98
+
+-------------------------------------------------------------------------------
+CLIN_fever                                                           CLIN_fever
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,98]                       units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         3,068  0
+                         7,225  1
+                            15  98
+
+-------------------------------------------------------------------------------
+CLIN_fever_onset                                               CLIN_fever_onset
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,14]                       units:  1
+         unique values:  15                       missing .:  3,083/10,308
+
+                  mean:   2.50145
+              std. dev:   1.93099
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 1         1         2         3         4
+
+-------------------------------------------------------------------------------
+CLIN_cough                                                           CLIN_cough
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,98]                       units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         4,658  0
+                         5,635  1
+                            15  98
+
+-------------------------------------------------------------------------------
+CLIN_diarrhoea                                                   CLIN_diarrhoea
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,98]                       units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         7,982  0
+                         2,306  1
+                            20  98
+
+-------------------------------------------------------------------------------
+CLIN_breastfeeding                                           CLIN_breastfeeding
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,180  0
+                           128  1
+
+-------------------------------------------------------------------------------
+CLIN_runny_nose                                                 CLIN_runny_nose
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         5,427  0
+                         4,881  1
+
+-------------------------------------------------------------------------------
+CLIN_ear                                                               CLIN_ear
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,126  0
+                           182  1
+
+-------------------------------------------------------------------------------
+CLIN_eye                                                               CLIN_eye
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,846  0
+                           462  1
+
+-------------------------------------------------------------------------------
+CLIN_skin                                                             CLIN_skin
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         8,435  0
+                         1,873  1
+
+-------------------------------------------------------------------------------
+CLIN_mouth                                                           CLIN_mouth
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,033  0
+                           275  1
+
+-------------------------------------------------------------------------------
+CLIN_irritable                                                   CLIN_irritable
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,095  0
+                           213  1
+
+-------------------------------------------------------------------------------
+CLIN_jaundice                                                     CLIN_jaundice
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,307  0
+                             1  1
+
+-------------------------------------------------------------------------------
+CLIN_umbilicus                                                   CLIN_umbilicus
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,291  0
+                            17  1
+
+-------------------------------------------------------------------------------
+CLIN_abdominal                                                   CLIN_abdominal
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,309  0
+                           999  1
+
+-------------------------------------------------------------------------------
+CLIN_worms                                                           CLIN_worms
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,275  0
+                            33  1
+
+-------------------------------------------------------------------------------
+CLIN_urogenital                                                 CLIN_urogenital
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,222  0
+                            86  1
+
+-------------------------------------------------------------------------------
+MEAS_temperature                                               MEAS_temperature
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [34.5,42.5]                  units:  .1
+         unique values:  16                       missing .:  9,271/10,308
+
+                  mean:   37.0781
+              std. dev:   .977139
+
+           percentiles:        10%       25%       50%       75%       90%
+                                36      36.5        37      37.5      38.5
+
+-------------------------------------------------------------------------------
+MEAS_MUAC_in_mm                                                 MEAS_MUAC_in_mm
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [100,180]                    units:  1
+         unique values:  17                       missing .:  10,220/10,308
+
+                  mean:   144.602
+              std. dev:   14.1686
+
+           percentiles:        10%       25%       50%       75%       90%
+                               122       140       145       155       160
+
+-------------------------------------------------------------------------------
+MEAS_weight_in_kg                                             MEAS_weight_in_kg
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [2,38.2]                     units:  .1
+         unique values:  161                      missing .:  8,305/10,308
+
+                  mean:   10.2479
+              std. dev:   3.40385
+
+           percentiles:        10%       25%       50%       75%       90%
+                               6.2         8        10        12      14.9
+
+-------------------------------------------------------------------------------
+MEAS_height_in_cm                                             MEAS_height_in_cm
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [10,134]                     units:  1
+         unique values:  79                       missing .:  9,946/10,308
+
+                  mean:   75.3481
+              std. dev:   17.8652
+
+           percentiles:        10%       25%       50%       75%       90%
+                                54        65        76        88        96
+
+-------------------------------------------------------------------------------
+MEAS_weight_for_age                                         MEAS_weight_for_age
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,3]                        units:  1
+         unique values:  3                        missing .:  10,300/10,308
+
+            tabulation:  Freq.  Value
+                             5  1
+                             2  2
+                             1  3
+                        10,300  .
+
+-------------------------------------------------------------------------------
+TEST_malaria_done                                             TEST_malaria_done
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         4,545  0
+                         5,763  1
+
+-------------------------------------------------------------------------------
+TEST_malaria_type                                             TEST_malaria_type
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,98]                       units:  1
+         unique values:  4                        missing .:  4,550/10,308
+
+            tabulation:  Freq.  Value
+                         5,371  1
+                           340  2
+                             2  95
+                            45  98
+                         4,550  .
+
+-------------------------------------------------------------------------------
+TEST_malaria_result                                         TEST_malaria_result
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,98]                       units:  1
+         unique values:  5                        missing .:  4,550/10,308
+
+            tabulation:  Freq.  Value
+                         4,665  0
+                         1,032  1
+                             1  2
+                             3  95
+                            57  98
+                         4,550  .
+
+-------------------------------------------------------------------------------
+DX_malaria                                                           DX_malaria
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         8,508  0
+                         1,800  1
+
+-------------------------------------------------------------------------------
+DX_malaria_severe                                             DX_malaria_severe
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,184  0
+                           124  1
+
+-------------------------------------------------------------------------------
+DX_malaria_severe_suspected                         DX_malaria_severe_suspected
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,264  0
+                            44  1
+
+-------------------------------------------------------------------------------
+DX_malaria_uncomplicated                               DX_malaria_uncomplicated
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,362  0
+                           946  1
+
+-------------------------------------------------------------------------------
+DX_malaria_suspected                                       DX_malaria_suspected
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,248  0
+                            60  1
+
+-------------------------------------------------------------------------------
+DX_count_non_malaria                                       DX_count_non_malaria
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,5]                        units:  1
+         unique values:  6                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         3,166  0
+                         5,960  1
+                           877  2
+                           266  3
+                            31  4
+                             8  5
+
+-------------------------------------------------------------------------------
+DX_other_severe                                                 DX_other_severe
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,196  0
+                           112  1
+
+-------------------------------------------------------------------------------
+DX_anaemia                                                           DX_anaemia
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,259  0
+                            49  1
+
+-------------------------------------------------------------------------------
+DX_free_text                                                       DX_free_text
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,960]                      units:  1
+         unique values:  960                      missing .:  0/10,308
+
+                  mean:   204.729
+              std. dev:   312.778
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 1         1         1       380       785
+
+-------------------------------------------------------------------------------
+RX_preconsult_antibiotics                             RX_preconsult_antibiotics
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         8,573  0
+                         1,735  1
+
+-------------------------------------------------------------------------------
+RX_preconsult_antimalarials                         RX_preconsult_antimalarials
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,866  0
+                           442  1
+
+-------------------------------------------------------------------------------
+RX_preconsult_fever_pain                               RX_preconsult_fever_pain
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         7,892  0
+                         2,416  1
+
+-------------------------------------------------------------------------------
+RX_preconsult_herbs                                         RX_preconsult_herbs
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,211  0
+                            97  1
+
+-------------------------------------------------------------------------------
+RX_preconsult_unspecified                             RX_preconsult_unspecified
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,053  0
+                           255  1
+
+-------------------------------------------------------------------------------
+RX_preconsult_free_text                                 RX_preconsult_free_text
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,199]                      units:  1
+         unique values:  199                      missing .:  0/10,308
+
+                  mean:    4.0031
+              std. dev:   19.6324
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 1         1         1         1         1
+
+-------------------------------------------------------------------------------
+RX_antimalarials                                               RX_antimalarials
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,018  0
+                         1,290  1
+
+-------------------------------------------------------------------------------
+RX_ACT                                                                   RX_ACT
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,247  0
+                            61  1
+
+-------------------------------------------------------------------------------
+RX_AL                                                                     RX_AL
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,111  0
+                         1,197  1
+
+-------------------------------------------------------------------------------
+RX_artemether                                                     RX_artemether
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,248  0
+                            60  1
+
+-------------------------------------------------------------------------------
+RX_artesunate                                                     RX_artesunate
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,084  0
+                           224  1
+
+-------------------------------------------------------------------------------
+RX_primaquine                                                     RX_primaquine
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,279  0
+                            29  1
+
+-------------------------------------------------------------------------------
+RX_quinine                                                           RX_quinine
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,235  0
+                            73  1
+
+-------------------------------------------------------------------------------
+RX_antibiotics                                                   RX_antibiotics
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         4,878  0
+                         5,430  1
+
+-------------------------------------------------------------------------------
+RX_antibiotics_src_text                                 RX_antibiotics_src_text
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,205  0
+                           103  1
+
+-------------------------------------------------------------------------------
+RX_parenteral                                                     RX_parenteral
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,125  0
+                           183  1
+
+-------------------------------------------------------------------------------
+RX_count_other                                                   RX_count_other
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,16]                       units:  1
+         unique values:  17                       missing .:  0/10,308
+
+                  mean:   1.49156
+              std. dev:   1.29602
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 0         1         1         2         3
+
+-------------------------------------------------------------------------------
+RX_free_text                                                       RX_free_text
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,730]                      units:  1
+         unique values:  730                      missing .:  0/10,308
+
+                  mean:   37.0477
+              std. dev:    126.18
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 1         1         1         1         1
+
+-------------------------------------------------------------------------------
+MGMT_referral_src_caregiver                         MGMT_referral_src_caregiver
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,98]                       units:  1
+         unique values:  4                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,122  0
+                           164  1
+                             9  97
+                            13  98
+
+-------------------------------------------------------------------------------
+MGMT_referral_src_registry                           MGMT_referral_src_registry
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,194  0
+                           114  1</code></pre>
+</div>
+</div>
+<div class="cell" data-df-print="kable">
+<div class="cell-output cell-output-stdout">
+<pre><code>                      variable classe                       first_values
+1                     child_ID double                   1, 2, 3, 4, 5, 6
+2                 CONSULT_year double 2021, 2021, 2021, 2021, 2021, 2021
+3                CONSULT_month double                   7, 7, 7, 7, 8, 8
+4          CONSULT_day_of_week double                   4, 4, 4, 4, 0, 0
+5             CONSULT_district double                   1, 1, 1, 1, 1, 1
+6          CONSULT_facility_ID double                   3, 3, 3, 3, 3, 3
+7                 CONSULT_area double                   1, 1, 1, 1, 1, 1
+8        CONSULT_facility_type double                   1, 1, 1, 1, 1, 1
+9                      SDC_sex double                   2, 2, 1, 1, 2, 1
+10            SDC_age_in_month double               10, 6, 6, 11, 21, 20
+11    SDC_young_infant_age_ctg double                   1, 1, 1, 1, 1, 1
+12          SDC_main_caregiver double                   1, 1, 1, 1, 1, 1
+13   SDC_living_with_caregiver double                   1, 1, 1, 1, 1, 1
+14        SDC_mother_education double                 1, 96, 1, 96, 1, 1
+15      CLIN_sickness_duration double                  3, 2, 14, 1, 2, 1
+16            CLIN_convulsions double                   0, 0, 0, 0, 0, 0
+17               CLIN_vomiting double                   1, 0, 1, 1, 1, 0
+18                  CLIN_fever double                   0, 0, 0, 1, 1, 0
+19            CLIN_fever_onset double               NA, NA, NA, 3, 2, NA
+20                  CLIN_cough double                   1, 0, 0, 1, 0, 0
+21              CLIN_diarrhoea double                   1, 1, 0, 1, 0, 1
+22          CLIN_breastfeeding double                   0, 0, 0, 0, 0, 0
+23             CLIN_runny_nose double                   0, 0, 0, 0, 0, 0
+24                    CLIN_ear double                   0, 0, 0, 0, 0, 0
+25                    CLIN_eye double                   0, 0, 0, 0, 0, 0
+26                   CLIN_skin double                   0, 0, 1, 0, 0, 0
+27                  CLIN_mouth double                   0, 0, 0, 0, 0, 0
+28              CLIN_irritable double                   0, 0, 0, 0, 0, 0
+29               CLIN_jaundice double                   0, 0, 0, 0, 0, 0
+30              CLIN_umbilicus double                   0, 0, 0, 0, 0, 0
+31              CLIN_abdominal double                   0, 0, 0, 0, 0, 0
+32                  CLIN_worms double                   0, 0, 0, 0, 0, 0
+33             CLIN_urogenital double                   0, 0, 0, 0, 0, 0
+34            MEAS_temperature double             NA, NA, NA, NA, NA, NA
+35             MEAS_MUAC_in_mm double             NA, NA, NA, NA, NA, NA
+36           MEAS_weight_in_kg double             NA, NA, NA, NA, NA, NA
+37           MEAS_height_in_cm double             NA, NA, NA, NA, NA, NA
+38         MEAS_weight_for_age double             NA, NA, NA, NA, NA, NA
+39           TEST_malaria_done double                   0, 1, 1, 1, 1, 0
+40           TEST_malaria_type double                 NA, 1, 1, 1, 1, NA
+41         TEST_malaria_result double                 NA, 0, 0, 1, 1, NA
+42                  DX_malaria double                   0, 0, 0, 1, 1, 0
+43           DX_malaria_severe double                   0, 0, 0, 1, 0, 0
+44 DX_malaria_severe_suspected double                   0, 0, 0, 0, 0, 0
+45    DX_malaria_uncomplicated double                   0, 0, 0, 0, 1, 0
+46        DX_malaria_suspected double                   0, 0, 0, 0, 0, 0
+47        DX_count_non_malaria double                   2, 1, 2, 1, 0, 2
+48             DX_other_severe double                   0, 0, 0, 0, 0, 0
+49                  DX_anaemia double                   0, 0, 0, 0, 0, 0
+50                DX_free_text double               301, 1, 281, 1, 1, 1
+51   RX_preconsult_antibiotics double                   0, 0, 0, 0, 0, 0
+52 RX_preconsult_antimalarials double                   0, 0, 0, 0, 0, 0
+53    RX_preconsult_fever_pain double                   0, 0, 0, 0, 0, 0
+54         RX_preconsult_herbs double                   0, 0, 0, 0, 0, 0
+55   RX_preconsult_unspecified double                   0, 0, 0, 0, 0, 0
+56     RX_preconsult_free_text double                  1, 1, 92, 1, 1, 1
+57            RX_antimalarials double                   1, 1, 0, 1, 1, 0
+58                      RX_ACT double                   1, 1, 0, 1, 1, 0
+59                       RX_AL double                   0, 0, 0, 0, 0, 0
+60               RX_artemether double                   1, 1, 0, 1, 0, 0
+61               RX_artesunate double                   0, 0, 0, 0, 0, 0
+62               RX_primaquine double                   0, 0, 0, 0, 0, 0
+63                  RX_quinine double                   0, 0, 0, 0, 0, 0
+64              RX_antibiotics double                   0, 0, 1, 0, 0, 0
+65     RX_antibiotics_src_text double                   0, 0, 0, 0, 0, 0
+66               RX_parenteral double                   0, 0, 0, 0, 0, 0
+67              RX_count_other double                   2, 1, 2, 2, 1, 2
+68                RX_free_text double             177, 1, 710, 1, 1, 219
+69 MGMT_referral_src_caregiver double                   0, 0, 0, 0, 0, 0
+70  MGMT_referral_src_registry double                   0, 0, 0, 0, 0, 0</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="data-analysis-plan" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Data analysis plan</h1>
+<p>A brief plan of your data analysis. For now, all you need to include in this section is which variables from the dataset you plan to use, and what associations between them you will investigate to help answer your research question.</p>
+<div class="cell" data-df-print="kable">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 x 1
+   child_ID
+      &lt;dbl&gt;
+ 1        1
+ 2        2
+ 3        3
+ 4        4
+ 5        5
+ 6        6
+ 7        7
+ 8        8
+ 9        9
+10       10</code></pre>
+</div>
+</div>
+</section>
+<section id="references" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> References</h1>
+<ul>
+<li>scikit-learn MOOC</li>
+</ul>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

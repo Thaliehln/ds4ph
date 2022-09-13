@@ -1,0 +1,142 @@
+---
+title: "Data Science for Public Health - Day 1 - Import data"
+date: "2022-09-26"
+format:
+  html:
+    toc: true
+    number-sections: true
+editor: visual
+execute:
+  echo: false
+  warning: false
+engine: knitr
+---
+
+# Introduction
+
+Most of the time you will want to create *Quarto* documents using your own data. The first thing you will usually do when starting an new *Quarto* document is to import your data. You can import several datasets. If you want to further process / analyse your data, you will have to store each dataset in a specific variable.
+
+::: callout-note
+For (advanced) Python users only: you need to import the R package `reticulate` if you want to use the Knitr engine and manipulate Python objects within R code chunks.
+
+```{r}
+#| echo: true
+# Write your code here
+```
+
+```{r}
+library(reticulate)
+```
+:::
+
+# Import data from files
+
+There is a dedicated importing function in R and Python for almost every data format. In this session we show you how to read Stata (`.dta`), Excel (`.xlsx`) and comma-separated values (CSV, `.csv`) formats.
+
+Only one argument is required within these function. We need to know the PATH where the file is stored.
+
+Indicate functions that accepts URL as well (it is the case for Python functions).
+
+## Import Excel data
+
+Read the Excel dataset **dataset1.xlsx** and store it into a dataframe called **df1**.
+
+-   R hint: use the [read_excel](https://readxl.tidyverse.org/reference/read_excel.html) function from the `readxl` package.
+-   Python hint: use the [read_xls](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) function from the `pandas` package.
+
+```{r}
+#| echo: true
+# Write your code here
+```
+
+```{r}
+library(readxl)
+df1 <- readxl::read_excel("dataset1.xlsx")
+```
+
+```{python}
+import pandas as pd
+df1 = pd.read_excel('dataset1.xlsx')
+```
+
+## Import CSV data
+
+Read the CSV dataset **dataset1.csv** and store it into a dataframe called **df2**.
+
+-   R hint: use the [read.csv](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table) function from the `haven` package.
+-   Python hint: use the [read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html) function from the `pandas` package.
+
+```{r}
+#| echo: true
+# Write your code here
+```
+
+```{r}
+library(haven)
+df2 <- read.csv("dataset1.csv")
+```
+
+```{python}
+import pandas as pd
+df2 = pd.read_csv('dataset1.csv')
+```
+
+## Import Stata data
+
+Read the Stata dataset **dataset1.dta** and store it into a dataframe called **df3**.
+
+-   R hint: use the [read_dta](https://haven.tidyverse.org/reference/read_dta.html) function from the `haven` package. This package supports SAS, STATA and SPSS software.
+-   Python hint: use the [read_stata](https://pandas.pydata.org/docs/reference/api/pandas.read_stata.html) function from the `pandas` package.
+
+```{r}
+#| echo: true
+# Write your code here
+```
+
+```{r}
+library(haven)
+df3 <- haven::read_dta("dataset1.dta")
+```
+
+```{python}
+import pandas as pd
+df3 = pd.read_stata('dataset1.dta')
+```
+
+## Additional question
+
+Can you indicate what variable has been modified in **dataset1** between df1 and df2?
+
+```{r}
+#| echo: true
+# Write your code here
+```
+
+```{r}
+arsenal::comparedf(df1, df2)
+```
+
+Can you indicate what variable has been modified in **dataset1** between df1 and df3?
+
+```{r}
+#| echo: true
+# Write your code here
+```
+
+```{r}
+arsenal::comparedf(df1, py$df3)
+```
+
+# Import data from ODK Central
+
+To be completed
+
+Give access to a dummy ODK Central project for demo purpose
+
+-   R hint: use the [ru_setup](https://docs.ropensci.org/ruODK/reference/ru_setup.html) and the [odata_submission_get](https://docs.ropensci.org/ruODK/reference/odata_submission_get.html) functions from the `ruODK` package.
+-   Python hint: use functions from the `pyODK` package.
+
+```{r}
+#| echo: true
+# Write your code here
+```

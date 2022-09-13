@@ -1,0 +1,38 @@
+---
+title: "Untitled"
+author: "Ifakara Health Institute"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Import libraries
+
+```{r cars}
+library(sf)     # classes and functions for vector data
+library(raster) # classes and functions for raster data
+library(spData)        # load geographic data
+library(ggplot2)
+library(dplyr)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+tanzania_wards <- st_read("C:/Users/langhe/switchdrive/Private/Visualization/Maps/Tanzania/2012_ward_shapefiles/2012 Wards Shapefiles/TZwards.shp", stringsAsFactors=FALSE)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+tanga_wards <- tanzania_wards %>%
+  dplyr::filter(District_N == "Tanga")
+kaliua_wards <- tanzania_wards %>%
+  dplyr::filter(District_N == "Kaliua")
+```
+

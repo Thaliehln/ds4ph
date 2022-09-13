@@ -11,7 +11,7 @@
 
 <meta name="author" content="H. Langet, S. Lwambura and C.Festo" />
 
-<meta name="date" content="2022-08-26" />
+<meta name="date" content="2022-09-09" />
 
 <title>Data Science for Public Health - Use Stata with R Markdown</title>
 
@@ -366,7 +366,7 @@ pre code {
 <h1 class="title toc-ignore">Data Science for Public Health - Use Stata
 with R Markdown</h1>
 <h4 class="author">H. Langet, S. Lwambura and C.Festo</h4>
-<h4 class="date">2022-08-26</h4>
+<h4 class="date">2022-09-09</h4>
 
 </div>
 
@@ -395,7 +395,8 @@ Stata commands</a></li>
 <li><a href="#use-stata-after-r" id="toc-use-stata-after-r"><span class="toc-section-number">4.1</span> Use Stata after R</a></li>
 <li><a href="#use-r-after-stata" id="toc-use-r-after-stata"><span class="toc-section-number">4.2</span> Use R after Stata</a></li>
 </ul></li>
-<li><a href="#acknowledgment" id="toc-acknowledgment"><span class="toc-section-number">5</span> Acknowledgment</a></li>
+<li><a href="#variables" id="toc-variables"><span class="toc-section-number">5</span> Variables</a></li>
+<li><a href="#acknowledgment" id="toc-acknowledgment"><span class="toc-section-number">6</span> Acknowledgment</a></li>
 </ul>
 </div>
 
@@ -427,7 +428,6 @@ SAS, SPSS and Stata.</p>
 <div id="load-psych" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Load Psych</h2>
 <pre class="r"><code>library(psych)</code></pre>
-<pre><code>## Warning: package &#39;psych&#39; was built under R version 4.1.3</code></pre>
 </div>
 </div>
 <div id="execute-stata-commands-from-r" class="section level1" number="2">
@@ -439,64 +439,35 @@ line</h2>
 <p>The <code>stata</code> function from the <code>RStata</code> library
 allows you to execute Stata commands from your R session.</p>
 <pre class="r"><code>RStata::stata(&#39;di &quot;This sentence is displayed using Stata&quot;&#39;)</code></pre>
-<pre><code>## . di &quot;This sentence is displayed using Stata&quot;
-## This sentence is displayed using Stata</code></pre>
+<p>. di “This sentence is displayed using Stata” This sentence is
+displayed using Stata</p>
 </div>
 <div id="execute-an-entire-.do-file" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Execute an entire .do
 file</h2>
 <p>You can execute an entire .do file.</p>
 <pre class="r"><code>RStata::stata(&quot;demo_do_file.do&quot;)</code></pre>
-<pre><code>## Warning in readLines(SRC[1L]): incomplete final line found on &#39;demo_do_file.do&#39;</code></pre>
-<pre><code>## . *Created for demonstration purpose one
-## . // Do files can also be tracked via git
-## . 
-## . sysuse auto,
-## (1978 Automobile Data)
-## . 
-## . desc
-## 
-## Contains data from C:\Program Files\Stata16\ado\base/a/auto.dta
-##   obs:            74                          1978 Automobile Data
-##  vars:            12                          13 Apr 2018 17:45
-##                                               (_dta has notes)
-## -------------------------------------------------------------------------------
-##               storage   display    value
-## variable name   type    format     label      variable label
-## -------------------------------------------------------------------------------
-## make            str18   %-18s                 Make and Model
-## price           int     %8.0gc                Price
-## mpg             int     %8.0g                 Mileage (mpg)
-## rep78           int     %8.0g                 Repair Record 1978
-## headroom        float   %6.1f                 Headroom (in.)
-## trunk           int     %8.0g                 Trunk space (cu. ft.)
-## weight          int     %8.0gc                Weight (lbs.)
-## length          int     %8.0g                 Length (in.)
-## turn            int     %8.0g                 Turn Circle (ft.)
-## displacement    int     %8.0g                 Displacement (cu. in.)
-## gear_ratio      float   %6.2f                 Gear Ratio
-## foreign         byte    %8.0g      origin     Car type
-## -------------------------------------------------------------------------------
-## Sorted by: foreign
-## . 
-## . summ
-## 
-##     Variable |        Obs        Mean    Std. Dev.       Min        Max
-## -------------+---------------------------------------------------------
-##         make |          0
-##        price |         74    6165.257    2949.496       3291      15906
-##          mpg |         74     21.2973    5.785503         12         41
-##        rep78 |         69    3.405797    .9899323          1          5
-##     headroom |         74    2.993243    .8459948        1.5          5
-## -------------+---------------------------------------------------------
-##        trunk |         74    13.75676    4.277404          5         23
-##       weight |         74    3019.459    777.1936       1760       4840
-##       length |         74    187.9324    22.26634        142        233
-##         turn |         74    39.64865    4.399354         31         51
-## displacement |         74    197.2973    91.83722         79        425
-## -------------+---------------------------------------------------------
-##   gear_ratio |         74    3.014865    .4562871       2.19       3.89
-##      foreign |         74    .2972973    .4601885          0          1</code></pre>
+<p>. *Created for demonstration purpose one . // Do files can also be
+tracked via git . . sysuse auto, (1978 Automobile Data) . . desc</p>
+<p>Contains data from C:Files/a/auto.dta obs: 74 1978 Automobile Data
+vars: 12 13 Apr 2018 17:45 (_dta has notes) ——————————————————————————-
+storage display value variable name type format label variable label
+——————————————————————————- make str18 %-18s Make and Model price int
+%8.0gc Price mpg int %8.0g Mileage (mpg) rep78 int %8.0g Repair Record
+1978 headroom float %6.1f Headroom (in.) trunk int %8.0g Trunk space
+(cu. ft.) weight int %8.0gc Weight (lbs.) length int %8.0g Length (in.)
+turn int %8.0g Turn Circle (ft.) displacement int %8.0g Displacement
+(cu. in.) gear_ratio float %6.2f Gear Ratio foreign byte %8.0g origin
+Car type ——————————————————————————- Sorted by: foreign . . summ</p>
+<pre><code>Variable |        Obs        Mean    Std. Dev.       Min        Max</code></pre>
+<p>————-+——————————————————— make | 0 price | 74 6165.257 2949.496 3291
+15906 mpg | 74 21.2973 5.785503 12 41 rep78 | 69 3.405797 .9899323 1 5
+headroom | 74 2.993243 .8459948 1.5 5 ————-+——————————————————— trunk |
+74 13.75676 4.277404 5 23 weight | 74 3019.459 777.1936 1760 4840 length
+| 74 187.9324 22.26634 142 233 turn | 74 39.64865 4.399354 31 51
+displacement | 74 197.2973 91.83722 79 425 ————-+———————————————————
+gear_ratio | 74 3.014865 .4562871 2.19 3.89 foreign | 74 .2972973
+.4601885 0 1</p>
 </div>
 </div>
 <div id="use-stata-datasets" class="section level1" number="3">
@@ -516,8 +487,7 @@ loaded and the returned data frame is stored in a variable named
 <code>df1</code>.</p>
 <pre class="r"><code>df1 &lt;- RStata::stata(&quot;sysuse auto&quot;,
                      data.out = TRUE)</code></pre>
-<pre><code>## . sysuse auto
-## (1978 Automobile Data)</code></pre>
+<p>. sysuse auto (1978 Automobile Data)</p>
 <p>You can use the returned data frame in R. For instance, you can
 generate a simple formatted table to display the content of the returned
 data frame by using the <code>kable</code> function from the
@@ -2678,144 +2648,624 @@ vice-versa.</p>
 R</h2>
 <pre class="r"><code>RStata::stata(&quot;codebook&quot;,
               data.in = df2)</code></pre>
-<pre><code>## . codebook
-## 
-## -------------------------------------------------------------------------------
-## sepallength                                                         sepallength
-## -------------------------------------------------------------------------------
-## 
-##                   type:  numeric (double)
-## 
-##                  range:  [4.3,7.9]                    units:  .1
-##          unique values:  35                       missing .:  0/150
-## 
-##                   mean:   5.84333
-##               std. dev:   .828066
-## 
-##            percentiles:        10%       25%       50%       75%       90%
-##                                4.8       5.1       5.8       6.4       6.9
-## 
-## -------------------------------------------------------------------------------
-## sepalwidth                                                           sepalwidth
-## -------------------------------------------------------------------------------
-## 
-##                   type:  numeric (double)
-## 
-##                  range:  [2,4.4]                      units:  .1
-##          unique values:  23                       missing .:  0/150
-## 
-##                   mean:   3.05733
-##               std. dev:   .435866
-## 
-##            percentiles:        10%       25%       50%       75%       90%
-##                                2.5       2.8         3       3.3      3.65
-## 
-## -------------------------------------------------------------------------------
-## petallength                                                         petallength
-## -------------------------------------------------------------------------------
-## 
-##                   type:  numeric (double)
-## 
-##                  range:  [1,6.9]                      units:  .1
-##          unique values:  43                       missing .:  0/150
-## 
-##                   mean:     3.758
-##               std. dev:    1.7653
-## 
-##            percentiles:        10%       25%       50%       75%       90%
-##                                1.4       1.6      4.35       5.1       5.8
-## 
-## -------------------------------------------------------------------------------
-## petalwidth                                                           petalwidth
-## -------------------------------------------------------------------------------
-## 
-##                   type:  numeric (double)
-## 
-##                  range:  [.1,2.5]                     units:  .1
-##          unique values:  22                       missing .:  0/150
-## 
-##                   mean:   1.19933
-##               std. dev:   .762238
-## 
-##            percentiles:        10%       25%       50%       75%       90%
-##                                 .2        .3       1.3       1.8       2.2
-## 
-## -------------------------------------------------------------------------------
-## species                                                                 species
-## -------------------------------------------------------------------------------
-## 
-##                   type:  string (str10)
-## 
-##          unique values:  3                        missing &quot;&quot;:  0/150
-## 
-##             tabulation:  Freq.  Value
-##                             50  &quot;setosa&quot;
-##                             50  &quot;versicolor&quot;
-##                             50  &quot;virginica&quot;</code></pre>
+<p>. codebook</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>sepallength sepallength</td>
+</tr>
+</tbody>
+</table>
+<pre><code>              type:  numeric (double)
+
+             range:  [4.3,7.9]                    units:  .1
+     unique values:  35                       missing .:  0/150
+
+              mean:   5.84333
+          std. dev:   .828066
+
+       percentiles:        10%       25%       50%       75%       90%
+                           4.8       5.1       5.8       6.4       6.9</code></pre>
+<table>
+<tbody>
+<tr class="odd">
+<td>sepalwidth sepalwidth</td>
+</tr>
+</tbody>
+</table>
+<pre><code>              type:  numeric (double)
+
+             range:  [2,4.4]                      units:  .1
+     unique values:  23                       missing .:  0/150
+
+              mean:   3.05733
+          std. dev:   .435866
+
+       percentiles:        10%       25%       50%       75%       90%
+                           2.5       2.8         3       3.3      3.65</code></pre>
+<table>
+<tbody>
+<tr class="odd">
+<td>petallength petallength</td>
+</tr>
+</tbody>
+</table>
+<pre><code>              type:  numeric (double)
+
+             range:  [1,6.9]                      units:  .1
+     unique values:  43                       missing .:  0/150
+
+              mean:     3.758
+          std. dev:    1.7653
+
+       percentiles:        10%       25%       50%       75%       90%
+                           1.4       1.6      4.35       5.1       5.8</code></pre>
+<table>
+<tbody>
+<tr class="odd">
+<td>petalwidth petalwidth</td>
+</tr>
+</tbody>
+</table>
+<pre><code>              type:  numeric (double)
+
+             range:  [.1,2.5]                     units:  .1
+     unique values:  22                       missing .:  0/150
+
+              mean:   1.19933
+          std. dev:   .762238
+
+       percentiles:        10%       25%       50%       75%       90%
+                            .2        .3       1.3       1.8       2.2</code></pre>
+<table>
+<tbody>
+<tr class="odd">
+<td>species species</td>
+</tr>
+</tbody>
+</table>
+<pre><code>              type:  string (str10)
+
+     unique values:  3                        missing &quot;&quot;:  0/150
+
+        tabulation:  Freq.  Value
+                        50  &quot;setosa&quot;
+                        50  &quot;versicolor&quot;
+                        50  &quot;virginica&quot;</code></pre>
 </div>
 <div id="use-r-after-stata" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Use R after
 Stata</h2>
 <pre class="r"><code>df3 &lt;- mtcars
-psych::describe(df3)</code></pre>
-<pre><code>##      vars  n   mean     sd median trimmed    mad   min    max  range  skew
-## mpg     1 32  20.09   6.03  19.20   19.70   5.41 10.40  33.90  23.50  0.61
-## cyl     2 32   6.19   1.79   6.00    6.23   2.97  4.00   8.00   4.00 -0.17
-## disp    3 32 230.72 123.94 196.30  222.52 140.48 71.10 472.00 400.90  0.38
-## hp      4 32 146.69  68.56 123.00  141.19  77.10 52.00 335.00 283.00  0.73
-## drat    5 32   3.60   0.53   3.70    3.58   0.70  2.76   4.93   2.17  0.27
-## wt      6 32   3.22   0.98   3.33    3.15   0.77  1.51   5.42   3.91  0.42
-## qsec    7 32  17.85   1.79  17.71   17.83   1.42 14.50  22.90   8.40  0.37
-## vs      8 32   0.44   0.50   0.00    0.42   0.00  0.00   1.00   1.00  0.24
-## am      9 32   0.41   0.50   0.00    0.38   0.00  0.00   1.00   1.00  0.36
-## gear   10 32   3.69   0.74   4.00    3.62   1.48  3.00   5.00   2.00  0.53
-## carb   11 32   2.81   1.62   2.00    2.65   1.48  1.00   8.00   7.00  1.05
-##      kurtosis    se
-## mpg     -0.37  1.07
-## cyl     -1.76  0.32
-## disp    -1.21 21.91
-## hp      -0.14 12.12
-## drat    -0.71  0.09
-## wt      -0.02  0.17
-## qsec     0.34  0.32
-## vs      -2.00  0.09
-## am      -1.92  0.09
-## gear    -1.07  0.13
-## carb     1.26  0.29</code></pre>
-<pre class="r"><code>plot(df3$hp, df3$disp, xlim=c(0,500), ylim=c(0,500))</code></pre>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUAAAAPACAMAAADDuCPrAAAA8FBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZmYAZpAAZrY6AAA6AGY6OgA6Ojo6OmY6OpA6Zjo6ZmY6ZpA6ZrY6kJA6kLY6kNtmAABmADpmOgBmOjpmZjpmZmZmZpBmkJBmkLZmkNtmtttmtv+QOgCQOjqQZgCQZjqQZmaQkDqQkGaQkLaQtraQttuQtv+Q29uQ2/+2ZgC2Zjq2kDq2kGa2kJC2kLa2tpC2tra2ttu227a229u22/+2/9u2///bkDrbkGbbtmbbtpDbtrbb25Db27bb29vb2//b/7bb/9vb////tmb/25D/27b/29v//7b//9v////jlHzAAAAACXBIWXMAAB2HAAAdhwGP5fFlAAAgAElEQVR4nO3df2MTV77Y4TE4LW7IdqE3KVlvucBetndDb5ylG1FovJAL6cV4kd7/u6lGP8eWbTxfHc2cM3qeP3aNAmKOLX2Y0Zw5U00ACKn63gCAUgkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAko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" width="672" />
-Use the <code>drop</code> command to remove observations where the the
-variable <code>disp</code> is below 200.</p>
+# descriptive statistics summary
+summary1 &lt;- psych::describe(df3)
+knitr::kable(summary1)</code></pre>
+<table style="width:100%;">
+<colgroup>
+<col width="4%" />
+<col width="4%" />
+<col width="2%" />
+<col width="8%" />
+<col width="9%" />
+<col width="6%" />
+<col width="9%" />
+<col width="9%" />
+<col width="5%" />
+<col width="6%" />
+<col width="6%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">vars</th>
+<th align="right">n</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">median</th>
+<th align="right">trimmed</th>
+<th align="right">mad</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">range</th>
+<th align="right">skew</th>
+<th align="right">kurtosis</th>
+<th align="right">se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">mpg</td>
+<td align="right">1</td>
+<td align="right">32</td>
+<td align="right">20.090625</td>
+<td align="right">6.0269481</td>
+<td align="right">19.200</td>
+<td align="right">19.6961538</td>
+<td align="right">5.4114900</td>
+<td align="right">10.400</td>
+<td align="right">33.900</td>
+<td align="right">23.500</td>
+<td align="right">0.6106550</td>
+<td align="right">-0.3727660</td>
+<td align="right">1.0654240</td>
+</tr>
+<tr class="even">
+<td align="left">cyl</td>
+<td align="right">2</td>
+<td align="right">32</td>
+<td align="right">6.187500</td>
+<td align="right">1.7859216</td>
+<td align="right">6.000</td>
+<td align="right">6.2307692</td>
+<td align="right">2.9652000</td>
+<td align="right">4.000</td>
+<td align="right">8.000</td>
+<td align="right">4.000</td>
+<td align="right">-0.1746119</td>
+<td align="right">-1.7621198</td>
+<td align="right">0.3157093</td>
+</tr>
+<tr class="odd">
+<td align="left">disp</td>
+<td align="right">3</td>
+<td align="right">32</td>
+<td align="right">230.721875</td>
+<td align="right">123.9386938</td>
+<td align="right">196.300</td>
+<td align="right">222.5230769</td>
+<td align="right">140.4763500</td>
+<td align="right">71.100</td>
+<td align="right">472.000</td>
+<td align="right">400.900</td>
+<td align="right">0.3816570</td>
+<td align="right">-1.2072119</td>
+<td align="right">21.9094727</td>
+</tr>
+<tr class="even">
+<td align="left">hp</td>
+<td align="right">4</td>
+<td align="right">32</td>
+<td align="right">146.687500</td>
+<td align="right">68.5628685</td>
+<td align="right">123.000</td>
+<td align="right">141.1923077</td>
+<td align="right">77.0952000</td>
+<td align="right">52.000</td>
+<td align="right">335.000</td>
+<td align="right">283.000</td>
+<td align="right">0.7260237</td>
+<td align="right">-0.1355511</td>
+<td align="right">12.1203173</td>
+</tr>
+<tr class="odd">
+<td align="left">drat</td>
+<td align="right">5</td>
+<td align="right">32</td>
+<td align="right">3.596563</td>
+<td align="right">0.5346787</td>
+<td align="right">3.695</td>
+<td align="right">3.5792308</td>
+<td align="right">0.7042350</td>
+<td align="right">2.760</td>
+<td align="right">4.930</td>
+<td align="right">2.170</td>
+<td align="right">0.2659039</td>
+<td align="right">-0.7147006</td>
+<td align="right">0.0945187</td>
+</tr>
+<tr class="even">
+<td align="left">wt</td>
+<td align="right">6</td>
+<td align="right">32</td>
+<td align="right">3.217250</td>
+<td align="right">0.9784574</td>
+<td align="right">3.325</td>
+<td align="right">3.1526923</td>
+<td align="right">0.7672455</td>
+<td align="right">1.513</td>
+<td align="right">5.424</td>
+<td align="right">3.911</td>
+<td align="right">0.4231465</td>
+<td align="right">-0.0227108</td>
+<td align="right">0.1729685</td>
+</tr>
+<tr class="odd">
+<td align="left">qsec</td>
+<td align="right">7</td>
+<td align="right">32</td>
+<td align="right">17.848750</td>
+<td align="right">1.7869432</td>
+<td align="right">17.710</td>
+<td align="right">17.8276923</td>
+<td align="right">1.4158830</td>
+<td align="right">14.500</td>
+<td align="right">22.900</td>
+<td align="right">8.400</td>
+<td align="right">0.3690453</td>
+<td align="right">0.3351142</td>
+<td align="right">0.3158899</td>
+</tr>
+<tr class="even">
+<td align="left">vs</td>
+<td align="right">8</td>
+<td align="right">32</td>
+<td align="right">0.437500</td>
+<td align="right">0.5040161</td>
+<td align="right">0.000</td>
+<td align="right">0.4230769</td>
+<td align="right">0.0000000</td>
+<td align="right">0.000</td>
+<td align="right">1.000</td>
+<td align="right">1.000</td>
+<td align="right">0.2402577</td>
+<td align="right">-2.0019376</td>
+<td align="right">0.0890983</td>
+</tr>
+<tr class="odd">
+<td align="left">am</td>
+<td align="right">9</td>
+<td align="right">32</td>
+<td align="right">0.406250</td>
+<td align="right">0.4989909</td>
+<td align="right">0.000</td>
+<td align="right">0.3846154</td>
+<td align="right">0.0000000</td>
+<td align="right">0.000</td>
+<td align="right">1.000</td>
+<td align="right">1.000</td>
+<td align="right">0.3640159</td>
+<td align="right">-1.9247414</td>
+<td align="right">0.0882100</td>
+</tr>
+<tr class="even">
+<td align="left">gear</td>
+<td align="right">10</td>
+<td align="right">32</td>
+<td align="right">3.687500</td>
+<td align="right">0.7378041</td>
+<td align="right">4.000</td>
+<td align="right">3.6153846</td>
+<td align="right">1.4826000</td>
+<td align="right">3.000</td>
+<td align="right">5.000</td>
+<td align="right">2.000</td>
+<td align="right">0.5288545</td>
+<td align="right">-1.0697507</td>
+<td align="right">0.1304266</td>
+</tr>
+<tr class="odd">
+<td align="left">carb</td>
+<td align="right">11</td>
+<td align="right">32</td>
+<td align="right">2.812500</td>
+<td align="right">1.6152000</td>
+<td align="right">2.000</td>
+<td align="right">2.6538462</td>
+<td align="right">1.4826000</td>
+<td align="right">1.000</td>
+<td align="right">8.000</td>
+<td align="right">7.000</td>
+<td align="right">1.0508738</td>
+<td align="right">1.2570431</td>
+<td align="right">0.2855297</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># Plot
+plot(df3$hp, df3$disp, xlim=c(0,500), ylim=c(0,500))</code></pre>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUAAAAPACAMAAADDuCPrAAAA8FBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZmYAZpAAZrY6AAA6AGY6OgA6Ojo6OmY6OpA6Zjo6ZmY6ZpA6ZrY6kJA6kLY6kNtmAABmADpmOgBmOjpmZjpmZmZmZpBmkJBmkLZmkNtmtttmtv+QOgCQOjqQZgCQZjqQZmaQkDqQkGaQkLaQtraQttuQtv+Q29uQ2/+2ZgC2Zjq2kDq2kGa2kJC2kLa2tpC2tra2ttu227a229u22/+2/9u2///bkDrbkGbbtmbbtpDbtrbb25Db27bb29vb2//b/7bb/9vb////tmb/25D/27b/29v//7b//9v////jlHzAAAAACXBIWXMAAB2HAAAdhwGP5fFlAAAgAElEQVR4nO3df2MTV77Y4TE4LW7IdqE3KVlvucBetndDb5ylG1FovJAL6cV4kd7/u6lGP8eWbTxfHc2cM3qeP3aNAmKOLX2Y0Zw5U00ACKn63gCAUgkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAkoQJCAAgQJKECQgAIECShAkIACBAko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" width="672" /></p>
+<pre class="r"><code># Codebook / data structure
+RStata::stata(&quot;codebook&quot;,
+              data.in = df2)</code></pre>
+<p>. codebook</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>sepallength sepallength</td>
+</tr>
+</tbody>
+</table>
+<pre><code>              type:  numeric (double)
+
+             range:  [4.3,7.9]                    units:  .1
+     unique values:  35                       missing .:  0/150
+
+              mean:   5.84333
+          std. dev:   .828066
+
+       percentiles:        10%       25%       50%       75%       90%
+                           4.8       5.1       5.8       6.4       6.9</code></pre>
+<table>
+<tbody>
+<tr class="odd">
+<td>sepalwidth sepalwidth</td>
+</tr>
+</tbody>
+</table>
+<pre><code>              type:  numeric (double)
+
+             range:  [2,4.4]                      units:  .1
+     unique values:  23                       missing .:  0/150
+
+              mean:   3.05733
+          std. dev:   .435866
+
+       percentiles:        10%       25%       50%       75%       90%
+                           2.5       2.8         3       3.3      3.65</code></pre>
+<table>
+<tbody>
+<tr class="odd">
+<td>petallength petallength</td>
+</tr>
+</tbody>
+</table>
+<pre><code>              type:  numeric (double)
+
+             range:  [1,6.9]                      units:  .1
+     unique values:  43                       missing .:  0/150
+
+              mean:     3.758
+          std. dev:    1.7653
+
+       percentiles:        10%       25%       50%       75%       90%
+                           1.4       1.6      4.35       5.1       5.8</code></pre>
+<table>
+<tbody>
+<tr class="odd">
+<td>petalwidth petalwidth</td>
+</tr>
+</tbody>
+</table>
+<pre><code>              type:  numeric (double)
+
+             range:  [.1,2.5]                     units:  .1
+     unique values:  22                       missing .:  0/150
+
+              mean:   1.19933
+          std. dev:   .762238
+
+       percentiles:        10%       25%       50%       75%       90%
+                            .2        .3       1.3       1.8       2.2</code></pre>
+<table>
+<tbody>
+<tr class="odd">
+<td>species species</td>
+</tr>
+</tbody>
+</table>
+<pre><code>              type:  string (str10)
+
+     unique values:  3                        missing &quot;&quot;:  0/150
+
+        tabulation:  Freq.  Value
+                        50  &quot;setosa&quot;
+                        50  &quot;versicolor&quot;
+                        50  &quot;virginica&quot;</code></pre>
+<p>Use the <code>drop</code> command to remove observations where the
+the variable <code>disp</code> is below 200.</p>
 <pre class="r"><code>df4 &lt;- RStata::stata(&quot;drop if disp &lt;= 200&quot;,
                      data.in = df3,
                      data.out = TRUE)</code></pre>
-<pre><code>## . drop if disp &lt;= 200
-## (16 observations deleted)</code></pre>
-<pre class="r"><code>psych::describe(df4)</code></pre>
-<pre><code>##      vars  n   mean    sd median trimmed   mad    min    max  range  skew
-## mpg     1 16  15.68  2.93  15.35   15.65  2.22  10.40  21.40  11.00 -0.09
-## cyl     2 16   7.75  0.68   8.00    7.86  0.00   6.00   8.00   2.00 -2.06
-## disp    3 16 339.15 73.96 334.00  337.81 86.29 225.00 472.00 247.00  0.38
-## hp      4 16 196.50 58.82 180.00  193.14 48.18 105.00 335.00 230.00  0.49
-## drat    5 16   3.19  0.37   3.08    3.15  0.16   2.76   4.22   1.46  1.39
-## wt      6 16   3.92  0.74   3.65    3.86  0.30   3.17   5.42   2.25  1.14
-## qsec    7 16  17.15  1.53  17.35   17.12  0.82  14.50  20.22   5.72 -0.01
-## vs      8 16   0.12  0.34   0.00    0.07  0.00   0.00   1.00   1.00  2.06
-## am      9 16   0.12  0.34   0.00    0.07  0.00   0.00   1.00   1.00  2.06
-## gear   10 16   3.25  0.68   3.00    3.14  0.00   3.00   5.00   2.00  2.06
-## carb   11 16   3.19  1.68   3.00    3.00  1.48   1.00   8.00   7.00  1.14
-##      kurtosis    se
-## mpg     -0.50  0.73
-## cyl      2.40  0.17
-## disp    -1.10 18.49
-## hp      -0.20 14.71
-## drat     1.47  0.09
-## wt      -0.29  0.19
-## qsec    -0.50  0.38
-## vs       2.40  0.09
-## am       2.40  0.09
-## gear     2.40  0.17
-## carb     1.63  0.42</code></pre>
+<p>. drop if disp &lt;= 200 (16 observations deleted)</p>
+<pre class="r"><code>summary2 &lt;- psych::describe(df4)
+knitr::kable(summary2)</code></pre>
+<table>
+<colgroup>
+<col width="4%" />
+<col width="4%" />
+<col width="2%" />
+<col width="9%" />
+<col width="9%" />
+<col width="5%" />
+<col width="9%" />
+<col width="9%" />
+<col width="5%" />
+<col width="6%" />
+<col width="6%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">vars</th>
+<th align="right">n</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">median</th>
+<th align="right">trimmed</th>
+<th align="right">mad</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">range</th>
+<th align="right">skew</th>
+<th align="right">kurtosis</th>
+<th align="right">se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">mpg</td>
+<td align="right">1</td>
+<td align="right">16</td>
+<td align="right">15.681250</td>
+<td align="right">2.9267089</td>
+<td align="right">15.35</td>
+<td align="right">15.6500000</td>
+<td align="right">2.2239000</td>
+<td align="right">10.40</td>
+<td align="right">21.400</td>
+<td align="right">11.000</td>
+<td align="right">-0.0881655</td>
+<td align="right">-0.4954038</td>
+<td align="right">0.7316772</td>
+</tr>
+<tr class="even">
+<td align="left">cyl</td>
+<td align="right">2</td>
+<td align="right">16</td>
+<td align="right">7.750000</td>
+<td align="right">0.6831301</td>
+<td align="right">8.00</td>
+<td align="right">7.8571429</td>
+<td align="right">0.0000000</td>
+<td align="right">6.00</td>
+<td align="right">8.000</td>
+<td align="right">2.000</td>
+<td align="right">-2.0585392</td>
+<td align="right">2.3989955</td>
+<td align="right">0.1707825</td>
+</tr>
+<tr class="odd">
+<td align="left">disp</td>
+<td align="right">3</td>
+<td align="right">16</td>
+<td align="right">339.150000</td>
+<td align="right">73.9587092</td>
+<td align="right">334.00</td>
+<td align="right">337.8142857</td>
+<td align="right">86.2873200</td>
+<td align="right">225.00</td>
+<td align="right">472.000</td>
+<td align="right">247.000</td>
+<td align="right">0.3845110</td>
+<td align="right">-1.1039446</td>
+<td align="right">18.4896773</td>
+</tr>
+<tr class="even">
+<td align="left">hp</td>
+<td align="right">4</td>
+<td align="right">16</td>
+<td align="right">196.500000</td>
+<td align="right">58.8217647</td>
+<td align="right">180.00</td>
+<td align="right">193.1428571</td>
+<td align="right">48.1845000</td>
+<td align="right">105.00</td>
+<td align="right">335.000</td>
+<td align="right">230.000</td>
+<td align="right">0.4880522</td>
+<td align="right">-0.1952105</td>
+<td align="right">14.7054412</td>
+</tr>
+<tr class="odd">
+<td align="left">drat</td>
+<td align="right">5</td>
+<td align="right">16</td>
+<td align="right">3.190625</td>
+<td align="right">0.3670689</td>
+<td align="right">3.08</td>
+<td align="right">3.1478571</td>
+<td align="right">0.1556730</td>
+<td align="right">2.76</td>
+<td align="right">4.220</td>
+<td align="right">1.460</td>
+<td align="right">1.3874268</td>
+<td align="right">1.4684154</td>
+<td align="right">0.0917672</td>
+</tr>
+<tr class="even">
+<td align="left">wt</td>
+<td align="right">6</td>
+<td align="right">16</td>
+<td align="right">3.916500</td>
+<td align="right">0.7435644</td>
+<td align="right">3.65</td>
+<td align="right">3.8621429</td>
+<td align="right">0.3002265</td>
+<td align="right">3.17</td>
+<td align="right">5.424</td>
+<td align="right">2.254</td>
+<td align="right">1.1378141</td>
+<td align="right">-0.2913634</td>
+<td align="right">0.1858911</td>
+</tr>
+<tr class="odd">
+<td align="left">qsec</td>
+<td align="right">7</td>
+<td align="right">16</td>
+<td align="right">17.154375</td>
+<td align="right">1.5332622</td>
+<td align="right">17.35</td>
+<td align="right">17.1250000</td>
+<td align="right">0.8228430</td>
+<td align="right">14.50</td>
+<td align="right">20.220</td>
+<td align="right">5.720</td>
+<td align="right">-0.0110136</td>
+<td align="right">-0.4973625</td>
+<td align="right">0.3833155</td>
+</tr>
+<tr class="even">
+<td align="left">vs</td>
+<td align="right">8</td>
+<td align="right">16</td>
+<td align="right">0.125000</td>
+<td align="right">0.3415650</td>
+<td align="right">0.00</td>
+<td align="right">0.0714286</td>
+<td align="right">0.0000000</td>
+<td align="right">0.00</td>
+<td align="right">1.000</td>
+<td align="right">1.000</td>
+<td align="right">2.0585392</td>
+<td align="right">2.3989955</td>
+<td align="right">0.0853913</td>
+</tr>
+<tr class="odd">
+<td align="left">am</td>
+<td align="right">9</td>
+<td align="right">16</td>
+<td align="right">0.125000</td>
+<td align="right">0.3415650</td>
+<td align="right">0.00</td>
+<td align="right">0.0714286</td>
+<td align="right">0.0000000</td>
+<td align="right">0.00</td>
+<td align="right">1.000</td>
+<td align="right">1.000</td>
+<td align="right">2.0585392</td>
+<td align="right">2.3989955</td>
+<td align="right">0.0853913</td>
+</tr>
+<tr class="even">
+<td align="left">gear</td>
+<td align="right">10</td>
+<td align="right">16</td>
+<td align="right">3.250000</td>
+<td align="right">0.6831301</td>
+<td align="right">3.00</td>
+<td align="right">3.1428571</td>
+<td align="right">0.0000000</td>
+<td align="right">3.00</td>
+<td align="right">5.000</td>
+<td align="right">2.000</td>
+<td align="right">2.0585392</td>
+<td align="right">2.3989955</td>
+<td align="right">0.1707825</td>
+</tr>
+<tr class="odd">
+<td align="left">carb</td>
+<td align="right">11</td>
+<td align="right">16</td>
+<td align="right">3.187500</td>
+<td align="right">1.6820127</td>
+<td align="right">3.00</td>
+<td align="right">3.0000000</td>
+<td align="right">1.4826000</td>
+<td align="right">1.00</td>
+<td align="right">8.000</td>
+<td align="right">7.000</td>
+<td align="right">1.1429532</td>
+<td align="right">1.6285245</td>
+<td align="right">0.4205032</td>
+</tr>
+</tbody>
+</table>
 <pre class="r"><code>plot(df4$hp, df4$disp, xlim=c(0,500), ylim=c(0,500))</code></pre>
 <p><img src="data:image/png;base64,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" width="672" /></p>
 <p>an additional example for using stata from within R is adding new
@@ -2826,16 +3276,21 @@ resulting dataset</p>
 <pre class="r"><code>df2 &lt;- RStata::stata(&quot;gen sepalarea=sepallength*sepalwidth&quot;,
                      data.in=df2,
                      data.out=TRUE)</code></pre>
-<pre><code>## . gen sepalarea=sepallength*sepalwidth</code></pre>
+<p>. gen sepalarea=sepallength*sepalwidth</p>
+<pre class="r"><code>df2 &lt;- RStata::stata(&quot;gen new=0&quot;,
+                     data.in=df2,
+                     data.out=TRUE)</code></pre>
+<p>. gen new=0</p>
 <pre class="r"><code>knitr::kable(df2)</code></pre>
 <table>
 <colgroup>
-<col width="17%" />
 <col width="16%" />
-<col width="17%" />
+<col width="15%" />
 <col width="16%" />
-<col width="16%" />
+<col width="15%" />
+<col width="15%" />
 <col width="14%" />
+<col width="5%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -2845,6 +3300,7 @@ resulting dataset</p>
 <th align="right">petalwidth</th>
 <th align="left">species</th>
 <th align="right">sepalarea</th>
+<th align="right">new</th>
 </tr>
 </thead>
 <tbody>
@@ -2855,6 +3311,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">17.85</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">4.9</td>
@@ -2863,6 +3320,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">14.70</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">4.7</td>
@@ -2871,6 +3329,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">15.04</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">4.6</td>
@@ -2879,6 +3338,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">14.26</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.0</td>
@@ -2887,6 +3347,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">18.00</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.4</td>
@@ -2895,6 +3356,7 @@ resulting dataset</p>
 <td align="right">0.4</td>
 <td align="left">setosa</td>
 <td align="right">21.06</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">4.6</td>
@@ -2903,6 +3365,7 @@ resulting dataset</p>
 <td align="right">0.3</td>
 <td align="left">setosa</td>
 <td align="right">15.64</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.0</td>
@@ -2911,6 +3374,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">17.00</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">4.4</td>
@@ -2919,6 +3383,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">12.76</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">4.9</td>
@@ -2927,6 +3392,7 @@ resulting dataset</p>
 <td align="right">0.1</td>
 <td align="left">setosa</td>
 <td align="right">15.19</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.4</td>
@@ -2935,6 +3401,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">19.98</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">4.8</td>
@@ -2943,6 +3410,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">16.32</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">4.8</td>
@@ -2951,6 +3419,7 @@ resulting dataset</p>
 <td align="right">0.1</td>
 <td align="left">setosa</td>
 <td align="right">14.40</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">4.3</td>
@@ -2959,6 +3428,7 @@ resulting dataset</p>
 <td align="right">0.1</td>
 <td align="left">setosa</td>
 <td align="right">12.90</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.8</td>
@@ -2967,6 +3437,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">23.20</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.7</td>
@@ -2975,6 +3446,7 @@ resulting dataset</p>
 <td align="right">0.4</td>
 <td align="left">setosa</td>
 <td align="right">25.08</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.4</td>
@@ -2983,6 +3455,7 @@ resulting dataset</p>
 <td align="right">0.4</td>
 <td align="left">setosa</td>
 <td align="right">21.06</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.1</td>
@@ -2991,6 +3464,7 @@ resulting dataset</p>
 <td align="right">0.3</td>
 <td align="left">setosa</td>
 <td align="right">17.85</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.7</td>
@@ -2999,6 +3473,7 @@ resulting dataset</p>
 <td align="right">0.3</td>
 <td align="left">setosa</td>
 <td align="right">21.66</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.1</td>
@@ -3007,6 +3482,7 @@ resulting dataset</p>
 <td align="right">0.3</td>
 <td align="left">setosa</td>
 <td align="right">19.38</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.4</td>
@@ -3015,6 +3491,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">18.36</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.1</td>
@@ -3023,6 +3500,7 @@ resulting dataset</p>
 <td align="right">0.4</td>
 <td align="left">setosa</td>
 <td align="right">18.87</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">4.6</td>
@@ -3031,6 +3509,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">16.56</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.1</td>
@@ -3039,6 +3518,7 @@ resulting dataset</p>
 <td align="right">0.5</td>
 <td align="left">setosa</td>
 <td align="right">16.83</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">4.8</td>
@@ -3047,6 +3527,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">16.32</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.0</td>
@@ -3055,6 +3536,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">15.00</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.0</td>
@@ -3063,6 +3545,7 @@ resulting dataset</p>
 <td align="right">0.4</td>
 <td align="left">setosa</td>
 <td align="right">17.00</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.2</td>
@@ -3071,6 +3554,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">18.20</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.2</td>
@@ -3079,6 +3563,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">17.68</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">4.7</td>
@@ -3087,6 +3572,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">15.04</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">4.8</td>
@@ -3095,6 +3581,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">14.88</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.4</td>
@@ -3103,6 +3590,7 @@ resulting dataset</p>
 <td align="right">0.4</td>
 <td align="left">setosa</td>
 <td align="right">18.36</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.2</td>
@@ -3111,6 +3599,7 @@ resulting dataset</p>
 <td align="right">0.1</td>
 <td align="left">setosa</td>
 <td align="right">21.32</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.5</td>
@@ -3119,6 +3608,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">23.10</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">4.9</td>
@@ -3127,6 +3617,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">15.19</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.0</td>
@@ -3135,6 +3626,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">16.00</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.5</td>
@@ -3143,6 +3635,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">19.25</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">4.9</td>
@@ -3151,6 +3644,7 @@ resulting dataset</p>
 <td align="right">0.1</td>
 <td align="left">setosa</td>
 <td align="right">17.64</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">4.4</td>
@@ -3159,6 +3653,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">13.20</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.1</td>
@@ -3167,6 +3662,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">17.34</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.0</td>
@@ -3175,6 +3671,7 @@ resulting dataset</p>
 <td align="right">0.3</td>
 <td align="left">setosa</td>
 <td align="right">17.50</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">4.5</td>
@@ -3183,6 +3680,7 @@ resulting dataset</p>
 <td align="right">0.3</td>
 <td align="left">setosa</td>
 <td align="right">10.35</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">4.4</td>
@@ -3191,6 +3689,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">14.08</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.0</td>
@@ -3199,6 +3698,7 @@ resulting dataset</p>
 <td align="right">0.6</td>
 <td align="left">setosa</td>
 <td align="right">17.50</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.1</td>
@@ -3207,6 +3707,7 @@ resulting dataset</p>
 <td align="right">0.4</td>
 <td align="left">setosa</td>
 <td align="right">19.38</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">4.8</td>
@@ -3215,6 +3716,7 @@ resulting dataset</p>
 <td align="right">0.3</td>
 <td align="left">setosa</td>
 <td align="right">14.40</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.1</td>
@@ -3223,6 +3725,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">19.38</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">4.6</td>
@@ -3231,6 +3734,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">14.72</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.3</td>
@@ -3239,6 +3743,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">19.61</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.0</td>
@@ -3247,6 +3752,7 @@ resulting dataset</p>
 <td align="right">0.2</td>
 <td align="left">setosa</td>
 <td align="right">16.50</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">7.0</td>
@@ -3255,6 +3761,7 @@ resulting dataset</p>
 <td align="right">1.4</td>
 <td align="left">versicolor</td>
 <td align="right">22.40</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.4</td>
@@ -3263,6 +3770,7 @@ resulting dataset</p>
 <td align="right">1.5</td>
 <td align="left">versicolor</td>
 <td align="right">20.48</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.9</td>
@@ -3271,6 +3779,7 @@ resulting dataset</p>
 <td align="right">1.5</td>
 <td align="left">versicolor</td>
 <td align="right">21.39</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.5</td>
@@ -3279,6 +3788,7 @@ resulting dataset</p>
 <td align="right">1.3</td>
 <td align="left">versicolor</td>
 <td align="right">12.65</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.5</td>
@@ -3287,6 +3797,7 @@ resulting dataset</p>
 <td align="right">1.5</td>
 <td align="left">versicolor</td>
 <td align="right">18.20</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.7</td>
@@ -3295,6 +3806,7 @@ resulting dataset</p>
 <td align="right">1.3</td>
 <td align="left">versicolor</td>
 <td align="right">15.96</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.3</td>
@@ -3303,6 +3815,7 @@ resulting dataset</p>
 <td align="right">1.6</td>
 <td align="left">versicolor</td>
 <td align="right">20.79</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">4.9</td>
@@ -3311,6 +3824,7 @@ resulting dataset</p>
 <td align="right">1.0</td>
 <td align="left">versicolor</td>
 <td align="right">11.76</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.6</td>
@@ -3319,6 +3833,7 @@ resulting dataset</p>
 <td align="right">1.3</td>
 <td align="left">versicolor</td>
 <td align="right">19.14</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.2</td>
@@ -3327,6 +3842,7 @@ resulting dataset</p>
 <td align="right">1.4</td>
 <td align="left">versicolor</td>
 <td align="right">14.04</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.0</td>
@@ -3335,6 +3851,7 @@ resulting dataset</p>
 <td align="right">1.0</td>
 <td align="left">versicolor</td>
 <td align="right">10.00</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.9</td>
@@ -3343,6 +3860,7 @@ resulting dataset</p>
 <td align="right">1.5</td>
 <td align="left">versicolor</td>
 <td align="right">17.70</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.0</td>
@@ -3351,6 +3869,7 @@ resulting dataset</p>
 <td align="right">1.0</td>
 <td align="left">versicolor</td>
 <td align="right">13.20</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.1</td>
@@ -3359,6 +3878,7 @@ resulting dataset</p>
 <td align="right">1.4</td>
 <td align="left">versicolor</td>
 <td align="right">17.69</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.6</td>
@@ -3367,6 +3887,7 @@ resulting dataset</p>
 <td align="right">1.3</td>
 <td align="left">versicolor</td>
 <td align="right">16.24</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.7</td>
@@ -3375,6 +3896,7 @@ resulting dataset</p>
 <td align="right">1.4</td>
 <td align="left">versicolor</td>
 <td align="right">20.77</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.6</td>
@@ -3383,6 +3905,7 @@ resulting dataset</p>
 <td align="right">1.5</td>
 <td align="left">versicolor</td>
 <td align="right">16.80</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.8</td>
@@ -3391,6 +3914,7 @@ resulting dataset</p>
 <td align="right">1.0</td>
 <td align="left">versicolor</td>
 <td align="right">15.66</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.2</td>
@@ -3399,6 +3923,7 @@ resulting dataset</p>
 <td align="right">1.5</td>
 <td align="left">versicolor</td>
 <td align="right">13.64</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.6</td>
@@ -3407,6 +3932,7 @@ resulting dataset</p>
 <td align="right">1.1</td>
 <td align="left">versicolor</td>
 <td align="right">14.00</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.9</td>
@@ -3415,6 +3941,7 @@ resulting dataset</p>
 <td align="right">1.8</td>
 <td align="left">versicolor</td>
 <td align="right">18.88</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.1</td>
@@ -3423,6 +3950,7 @@ resulting dataset</p>
 <td align="right">1.3</td>
 <td align="left">versicolor</td>
 <td align="right">17.08</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.3</td>
@@ -3431,6 +3959,7 @@ resulting dataset</p>
 <td align="right">1.5</td>
 <td align="left">versicolor</td>
 <td align="right">15.75</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.1</td>
@@ -3439,6 +3968,7 @@ resulting dataset</p>
 <td align="right">1.2</td>
 <td align="left">versicolor</td>
 <td align="right">17.08</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.4</td>
@@ -3447,6 +3977,7 @@ resulting dataset</p>
 <td align="right">1.3</td>
 <td align="left">versicolor</td>
 <td align="right">18.56</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.6</td>
@@ -3455,6 +3986,7 @@ resulting dataset</p>
 <td align="right">1.4</td>
 <td align="left">versicolor</td>
 <td align="right">19.80</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.8</td>
@@ -3463,6 +3995,7 @@ resulting dataset</p>
 <td align="right">1.4</td>
 <td align="left">versicolor</td>
 <td align="right">19.04</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.7</td>
@@ -3471,6 +4004,7 @@ resulting dataset</p>
 <td align="right">1.7</td>
 <td align="left">versicolor</td>
 <td align="right">20.10</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.0</td>
@@ -3479,6 +4013,7 @@ resulting dataset</p>
 <td align="right">1.5</td>
 <td align="left">versicolor</td>
 <td align="right">17.40</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.7</td>
@@ -3487,6 +4022,7 @@ resulting dataset</p>
 <td align="right">1.0</td>
 <td align="left">versicolor</td>
 <td align="right">14.82</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.5</td>
@@ -3495,6 +4031,7 @@ resulting dataset</p>
 <td align="right">1.1</td>
 <td align="left">versicolor</td>
 <td align="right">13.20</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.5</td>
@@ -3503,6 +4040,7 @@ resulting dataset</p>
 <td align="right">1.0</td>
 <td align="left">versicolor</td>
 <td align="right">13.20</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.8</td>
@@ -3511,6 +4049,7 @@ resulting dataset</p>
 <td align="right">1.2</td>
 <td align="left">versicolor</td>
 <td align="right">15.66</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.0</td>
@@ -3519,6 +4058,7 @@ resulting dataset</p>
 <td align="right">1.6</td>
 <td align="left">versicolor</td>
 <td align="right">16.20</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.4</td>
@@ -3527,6 +4067,7 @@ resulting dataset</p>
 <td align="right">1.5</td>
 <td align="left">versicolor</td>
 <td align="right">16.20</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.0</td>
@@ -3535,6 +4076,7 @@ resulting dataset</p>
 <td align="right">1.6</td>
 <td align="left">versicolor</td>
 <td align="right">20.40</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.7</td>
@@ -3543,6 +4085,7 @@ resulting dataset</p>
 <td align="right">1.5</td>
 <td align="left">versicolor</td>
 <td align="right">20.77</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.3</td>
@@ -3551,6 +4094,7 @@ resulting dataset</p>
 <td align="right">1.3</td>
 <td align="left">versicolor</td>
 <td align="right">14.49</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.6</td>
@@ -3559,6 +4103,7 @@ resulting dataset</p>
 <td align="right">1.3</td>
 <td align="left">versicolor</td>
 <td align="right">16.80</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.5</td>
@@ -3567,6 +4112,7 @@ resulting dataset</p>
 <td align="right">1.3</td>
 <td align="left">versicolor</td>
 <td align="right">13.75</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.5</td>
@@ -3575,6 +4121,7 @@ resulting dataset</p>
 <td align="right">1.2</td>
 <td align="left">versicolor</td>
 <td align="right">14.30</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.1</td>
@@ -3583,6 +4130,7 @@ resulting dataset</p>
 <td align="right">1.4</td>
 <td align="left">versicolor</td>
 <td align="right">18.30</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.8</td>
@@ -3591,6 +4139,7 @@ resulting dataset</p>
 <td align="right">1.2</td>
 <td align="left">versicolor</td>
 <td align="right">15.08</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.0</td>
@@ -3599,6 +4148,7 @@ resulting dataset</p>
 <td align="right">1.0</td>
 <td align="left">versicolor</td>
 <td align="right">11.50</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.6</td>
@@ -3607,6 +4157,7 @@ resulting dataset</p>
 <td align="right">1.3</td>
 <td align="left">versicolor</td>
 <td align="right">15.12</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.7</td>
@@ -3615,6 +4166,7 @@ resulting dataset</p>
 <td align="right">1.2</td>
 <td align="left">versicolor</td>
 <td align="right">17.10</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.7</td>
@@ -3623,6 +4175,7 @@ resulting dataset</p>
 <td align="right">1.3</td>
 <td align="left">versicolor</td>
 <td align="right">16.53</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.2</td>
@@ -3631,6 +4184,7 @@ resulting dataset</p>
 <td align="right">1.3</td>
 <td align="left">versicolor</td>
 <td align="right">17.98</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.1</td>
@@ -3639,6 +4193,7 @@ resulting dataset</p>
 <td align="right">1.1</td>
 <td align="left">versicolor</td>
 <td align="right">12.75</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.7</td>
@@ -3647,6 +4202,7 @@ resulting dataset</p>
 <td align="right">1.3</td>
 <td align="left">versicolor</td>
 <td align="right">15.96</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.3</td>
@@ -3655,6 +4211,7 @@ resulting dataset</p>
 <td align="right">2.5</td>
 <td align="left">virginica</td>
 <td align="right">20.79</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.8</td>
@@ -3663,6 +4220,7 @@ resulting dataset</p>
 <td align="right">1.9</td>
 <td align="left">virginica</td>
 <td align="right">15.66</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">7.1</td>
@@ -3671,6 +4229,7 @@ resulting dataset</p>
 <td align="right">2.1</td>
 <td align="left">virginica</td>
 <td align="right">21.30</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.3</td>
@@ -3679,6 +4238,7 @@ resulting dataset</p>
 <td align="right">1.8</td>
 <td align="left">virginica</td>
 <td align="right">18.27</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.5</td>
@@ -3687,6 +4247,7 @@ resulting dataset</p>
 <td align="right">2.2</td>
 <td align="left">virginica</td>
 <td align="right">19.50</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">7.6</td>
@@ -3695,6 +4256,7 @@ resulting dataset</p>
 <td align="right">2.1</td>
 <td align="left">virginica</td>
 <td align="right">22.80</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">4.9</td>
@@ -3703,6 +4265,7 @@ resulting dataset</p>
 <td align="right">1.7</td>
 <td align="left">virginica</td>
 <td align="right">12.25</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">7.3</td>
@@ -3711,6 +4274,7 @@ resulting dataset</p>
 <td align="right">1.8</td>
 <td align="left">virginica</td>
 <td align="right">21.17</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.7</td>
@@ -3719,6 +4283,7 @@ resulting dataset</p>
 <td align="right">1.8</td>
 <td align="left">virginica</td>
 <td align="right">16.75</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">7.2</td>
@@ -3727,6 +4292,7 @@ resulting dataset</p>
 <td align="right">2.5</td>
 <td align="left">virginica</td>
 <td align="right">25.92</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.5</td>
@@ -3735,6 +4301,7 @@ resulting dataset</p>
 <td align="right">2.0</td>
 <td align="left">virginica</td>
 <td align="right">20.80</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.4</td>
@@ -3743,6 +4310,7 @@ resulting dataset</p>
 <td align="right">1.9</td>
 <td align="left">virginica</td>
 <td align="right">17.28</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.8</td>
@@ -3751,6 +4319,7 @@ resulting dataset</p>
 <td align="right">2.1</td>
 <td align="left">virginica</td>
 <td align="right">20.40</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.7</td>
@@ -3759,6 +4328,7 @@ resulting dataset</p>
 <td align="right">2.0</td>
 <td align="left">virginica</td>
 <td align="right">14.25</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.8</td>
@@ -3767,6 +4337,7 @@ resulting dataset</p>
 <td align="right">2.4</td>
 <td align="left">virginica</td>
 <td align="right">16.24</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.4</td>
@@ -3775,6 +4346,7 @@ resulting dataset</p>
 <td align="right">2.3</td>
 <td align="left">virginica</td>
 <td align="right">20.48</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.5</td>
@@ -3783,6 +4355,7 @@ resulting dataset</p>
 <td align="right">1.8</td>
 <td align="left">virginica</td>
 <td align="right">19.50</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">7.7</td>
@@ -3791,6 +4364,7 @@ resulting dataset</p>
 <td align="right">2.2</td>
 <td align="left">virginica</td>
 <td align="right">29.26</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">7.7</td>
@@ -3799,6 +4373,7 @@ resulting dataset</p>
 <td align="right">2.3</td>
 <td align="left">virginica</td>
 <td align="right">20.02</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.0</td>
@@ -3807,6 +4382,7 @@ resulting dataset</p>
 <td align="right">1.5</td>
 <td align="left">virginica</td>
 <td align="right">13.20</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.9</td>
@@ -3815,6 +4391,7 @@ resulting dataset</p>
 <td align="right">2.3</td>
 <td align="left">virginica</td>
 <td align="right">22.08</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.6</td>
@@ -3823,6 +4400,7 @@ resulting dataset</p>
 <td align="right">2.0</td>
 <td align="left">virginica</td>
 <td align="right">15.68</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">7.7</td>
@@ -3831,6 +4409,7 @@ resulting dataset</p>
 <td align="right">2.0</td>
 <td align="left">virginica</td>
 <td align="right">21.56</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.3</td>
@@ -3839,6 +4418,7 @@ resulting dataset</p>
 <td align="right">1.8</td>
 <td align="left">virginica</td>
 <td align="right">17.01</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.7</td>
@@ -3847,6 +4427,7 @@ resulting dataset</p>
 <td align="right">2.1</td>
 <td align="left">virginica</td>
 <td align="right">22.11</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">7.2</td>
@@ -3855,6 +4436,7 @@ resulting dataset</p>
 <td align="right">1.8</td>
 <td align="left">virginica</td>
 <td align="right">23.04</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.2</td>
@@ -3863,6 +4445,7 @@ resulting dataset</p>
 <td align="right">1.8</td>
 <td align="left">virginica</td>
 <td align="right">17.36</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.1</td>
@@ -3871,6 +4454,7 @@ resulting dataset</p>
 <td align="right">1.8</td>
 <td align="left">virginica</td>
 <td align="right">18.30</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.4</td>
@@ -3879,6 +4463,7 @@ resulting dataset</p>
 <td align="right">2.1</td>
 <td align="left">virginica</td>
 <td align="right">17.92</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">7.2</td>
@@ -3887,6 +4472,7 @@ resulting dataset</p>
 <td align="right">1.6</td>
 <td align="left">virginica</td>
 <td align="right">21.60</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">7.4</td>
@@ -3895,6 +4481,7 @@ resulting dataset</p>
 <td align="right">1.9</td>
 <td align="left">virginica</td>
 <td align="right">20.72</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">7.9</td>
@@ -3903,6 +4490,7 @@ resulting dataset</p>
 <td align="right">2.0</td>
 <td align="left">virginica</td>
 <td align="right">30.02</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.4</td>
@@ -3911,6 +4499,7 @@ resulting dataset</p>
 <td align="right">2.2</td>
 <td align="left">virginica</td>
 <td align="right">17.92</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.3</td>
@@ -3919,6 +4508,7 @@ resulting dataset</p>
 <td align="right">1.5</td>
 <td align="left">virginica</td>
 <td align="right">17.64</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.1</td>
@@ -3927,6 +4517,7 @@ resulting dataset</p>
 <td align="right">1.4</td>
 <td align="left">virginica</td>
 <td align="right">15.86</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">7.7</td>
@@ -3935,6 +4526,7 @@ resulting dataset</p>
 <td align="right">2.3</td>
 <td align="left">virginica</td>
 <td align="right">23.10</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.3</td>
@@ -3943,6 +4535,7 @@ resulting dataset</p>
 <td align="right">2.4</td>
 <td align="left">virginica</td>
 <td align="right">21.42</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.4</td>
@@ -3951,6 +4544,7 @@ resulting dataset</p>
 <td align="right">1.8</td>
 <td align="left">virginica</td>
 <td align="right">19.84</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.0</td>
@@ -3959,6 +4553,7 @@ resulting dataset</p>
 <td align="right">1.8</td>
 <td align="left">virginica</td>
 <td align="right">18.00</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.9</td>
@@ -3967,6 +4562,7 @@ resulting dataset</p>
 <td align="right">2.1</td>
 <td align="left">virginica</td>
 <td align="right">21.39</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.7</td>
@@ -3975,6 +4571,7 @@ resulting dataset</p>
 <td align="right">2.4</td>
 <td align="left">virginica</td>
 <td align="right">20.77</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.9</td>
@@ -3983,6 +4580,7 @@ resulting dataset</p>
 <td align="right">2.3</td>
 <td align="left">virginica</td>
 <td align="right">21.39</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">5.8</td>
@@ -3991,6 +4589,7 @@ resulting dataset</p>
 <td align="right">1.9</td>
 <td align="left">virginica</td>
 <td align="right">15.66</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.8</td>
@@ -3999,6 +4598,7 @@ resulting dataset</p>
 <td align="right">2.3</td>
 <td align="left">virginica</td>
 <td align="right">21.76</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.7</td>
@@ -4007,6 +4607,7 @@ resulting dataset</p>
 <td align="right">2.5</td>
 <td align="left">virginica</td>
 <td align="right">22.11</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.7</td>
@@ -4015,6 +4616,7 @@ resulting dataset</p>
 <td align="right">2.3</td>
 <td align="left">virginica</td>
 <td align="right">20.10</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.3</td>
@@ -4023,6 +4625,7 @@ resulting dataset</p>
 <td align="right">1.9</td>
 <td align="left">virginica</td>
 <td align="right">15.75</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">6.5</td>
@@ -4031,6 +4634,7 @@ resulting dataset</p>
 <td align="right">2.0</td>
 <td align="left">virginica</td>
 <td align="right">19.50</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="right">6.2</td>
@@ -4039,6 +4643,7 @@ resulting dataset</p>
 <td align="right">2.3</td>
 <td align="left">virginica</td>
 <td align="right">21.08</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="right">5.9</td>
@@ -4047,13 +4652,23 @@ resulting dataset</p>
 <td align="right">1.8</td>
 <td align="left">virginica</td>
 <td align="right">17.70</td>
+<td align="right">0</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="acknowledgment" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Acknowledgment</h1>
+<div id="variables" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Variables</h1>
+<pre class="r"><code>a = 10
+print(a)</code></pre>
+<pre><code>## [1] 10</code></pre>
+<pre class="r"><code>b = df2[[5]][[1]]
+print(b)</code></pre>
+<pre><code>## [1] &quot;setosa&quot;</code></pre>
+</div>
+<div id="acknowledgment" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Acknowledgment</h1>
 <p>This RMarkdown document is inspired by the <a href="https://ignacioriveros1.github.io/r/2020/03/22/r_and_stata.html">post
 from Ignacio Riveros</a>.</p>
 </div>
