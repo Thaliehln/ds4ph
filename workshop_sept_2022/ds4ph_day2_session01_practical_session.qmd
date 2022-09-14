@@ -1,5 +1,5 @@
 ---
-title: "Data Science for Public Health - Day 2 - Session 1"
+title: "Data Science for Public Health - Day 2 - Session 01"
 date: "2022-09-27"
 format:
   html:

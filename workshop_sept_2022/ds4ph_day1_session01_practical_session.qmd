@@ -1,5 +1,5 @@
 ---
-title: "Data Science for Public Health - Day 1 - Import data"
+title: "Data Science for Public Health - Day 01 - Session 01"
 date: "2022-09-26"
 format:
   html:
@@ -22,7 +22,7 @@ One of the first thing you will usually do when starting a new *Quarto* document
 If you want to further process / analyse your data, you will have to store your data in a two-dimensional array-like structure (**data frame**) that contains rows and columns. You can store multiple data sets in memory (which will be stored in different data frames) and work on all of them in parallel.
 
 ::: callout-warning
-For (advanced) Python users only: you need to import the R package `reticulate` if you want to use the Knitr engine and manipulate Python objects within R code chunks.
+**For (advanced) Python/R Markdown users only:** you still need to import the R package `reticulate` if you want to use the Knitr engine and manipulate Python objects within R code chunks.
 
 ```{r}
 #| echo: true
@@ -48,8 +48,8 @@ Indicate functions that accepts URL as well (it is the case for Python functions
 Read the Excel data set **dataset1.xlsx** and store it into a data frame called **df1**.
 
 ::: callout-tip
--   R: use the [read_excel](https://readxl.tidyverse.org/reference/read_excel.html) function from the `readxl` package.
--   Python: use the [read_xls](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) function from the `pandas` package.
+-   R: use the [read.xlsx](https://www.rdocumentation.org/packages/openxlsx/versions/4.2.5/topics/read.xlsx) function from the `openxlsx` package.
+-   Python: use the [read_excel](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) function from the `pandas` package.
 :::
 
 ```{r}
@@ -58,8 +58,8 @@ Read the Excel data set **dataset1.xlsx** and store it into a data frame called 
 ```
 
 ```{r}
-library(readxl)
-df1 <- readxl::read_excel("dataset1.xlsx")
+library(openxlsx)
+df1 <- openxlsx::read.xlsx("dataset1.xlsx")
 ```
 
 ```{python}
@@ -82,7 +82,6 @@ Read the CSV data set **dataset1.csv** and store it into a data frame called **d
 ```
 
 ```{r}
-library(haven)
 df2 <- read.csv("dataset1.csv")
 ```
 
@@ -96,6 +95,7 @@ df2 = pd.read_csv('dataset1.csv')
 Read the Stata data set **dataset1.dta** and store it into a data frame called **df3**.
 
 ::: callout-tip
+-   Stata: use the `use` command
 -   R: use the [read_dta](https://haven.tidyverse.org/reference/read_dta.html) function from the `haven` package. This package supports SAS, STATA and SPSS software.
 -   Python: use the [read_stata](https://pandas.pydata.org/docs/reference/api/pandas.read_stata.html) function from the `pandas` package.
 :::
@@ -103,6 +103,11 @@ Read the Stata data set **dataset1.dta** and store it into a data frame called *
 ```{r}
 #| echo: true
 # Write your code here
+```
+
+```{r}
+library(RStata)
+df3 <- RStata::stata("use dataset1.dta", data.out = TRUE)
 ```
 
 ```{r}
@@ -149,18 +154,10 @@ While data digitally captured using ODK Collect or Enketo and stored in ODK Cent
 
 We will see how to retrieve data through the OData API.
 
-::: callout-important
-For advanced users: encrypted data can only be retrieved through the RESTful API.
-:::
-
-**Instructions:**
-
 1.  Connect to the ODK Central server data set (give access to a dummy ODK Central project for demo purpose).
-2.  Retrieve data from form.
-3.  Store the data set into a data frame called df4
 
 ::: callout-tip
--   R: use the [ru_setup](https://docs.ropensci.org/ruODK/reference/ru_setup.html) and the [odata_submission_get](https://docs.ropensci.org/ruODK/reference/odata_submission_get.html) functions from the `ruODK` package [@mayer20].
+-   R: use the [ru_setup](https://docs.ropensci.org/ruODK/reference/ru_setup.html) function from the `ruODK` package [@mayer20].
 -   Python: use functions from the `pyODK` package.
 :::
 
@@ -168,5 +165,31 @@ For advanced users: encrypted data can only be retrieved through the RESTful API
 #| echo: true
 # Write your code here
 ```
+
+```{r}
+# ruODK::ru_setup(
+#   svc = Sys.getenv("ODKC_SVC"),
+#   un = Sys.getenv("ODKC_UN"),
+#   pw = Sys.getenv("ODKC_PW"),
+#   tz = Sys.getenv("TZ"),
+#   verbose = FALSE 
+# )
+```
+
+2.  Retrieve data from form and store the data set into a data frame called df4
+
+::: callout-tip
+-   R: use the [odata_submission_get](https://docs.ropensci.org/ruODK/reference/odata_submission_get.html) function from the `ruODK` package [@mayer20].
+-   Python: use functions from the `pyODK` package.
+:::
+
+```{r}
+#| echo: true
+# Write your code here
+```
+
+::: callout-important
+For advanced users: encrypted data can only be retrieved through the RESTful API.
+:::
 
 # References
