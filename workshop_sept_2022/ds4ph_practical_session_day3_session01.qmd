@@ -24,9 +24,9 @@ The dataset is stored in **dataset1.dta**.
 
 Read the dataset and store it into a dataframe called **df**.
 
--   Stata hint:
+-   Stata hint: use the `use` command
 -   R hint: use the `read_dta` function from the `haven` package.
--   Python hint:
+-   Python hint: use `read_stata` function from `pandas`
 
 ```{r}
 #| echo: true
@@ -50,7 +50,7 @@ We want to do some data exploration to get an initial understanding of the data.
 
 Display the variables/features **child_id**, **test** and **test** for the **10 first observations/samples** in the data.
 
--   Stata hint:
+-   Stata hint: use the the combination of `describe` and `list` command to inspect the data
 -   R hint: you need to load the `dplyr` library to use piping
 
 ```{r}
