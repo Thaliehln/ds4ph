@@ -21,7 +21,7 @@ Research questions in an enumerated list
 
 # Dataset description
 
-Information about the consultations of **10,308 children \[1 day - 59 months\]** from **18 facilities** (dispensaries and health centres) in **Kaliua** District, **Sengerema** District and **Tanga** District, Tanzania. Data were collected using *ODK* (ODK Collect, ODK Central) between **start date** and **end date**. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project. Data are stored in **dataset1.dta**.
+Information about the consultations of **10,308 children [1 day - 59 months]** from **18 facilities** (dispensaries and health centres) in **Kaliua** District, **Sengerema** District and **Tanga** District, Tanzania. Data were collected using *ODK* (ODK Collect, ODK Central) between **start date** and **end date**. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project. Data are stored in **dataset1.dta**.
 
 ## Data collection
 
@@ -67,7 +67,6 @@ Refer to previous session
 library(haven)
 df <- haven::read_dta("dataset10.dta")
 ```
-
 ```{r}
 #| knitr: kable
 library(dplyr)
@@ -81,8 +80,8 @@ df %>%
 Examine the structure of the data, including variable names, labels.
 
 ::: callout-tip
--   Stata: use the **codebook** function
--   R: use the [skim](https://docs.ropensci.org/skimr/reference/skim.html) function from the `skimr` package
+* Stata: use the **codebook** function
+* R: use the [skim](https://docs.ropensci.org/skimr/reference/skim.html) function from the `skimr` package
 :::
 
 ```{r}
@@ -101,7 +100,7 @@ skimr::skim(df)
 ```
 
 ::: callout-tip
--   R: use the [tbl_summary](https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html) function from the `gtsummary` package
+* R: use the [tbl_summary](https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html) function from the `gtsummary` package
 :::
 
 ```{r}
@@ -109,7 +108,6 @@ skimr::skim(df)
 library(gtsummary)
 gtsummary::tbl_summary(df)
 ```
-
 # Identify missing values
 
 Identify missing values in each variable: missing_plot
@@ -122,6 +120,7 @@ dependent = "DX_malaria"
 df %>% 
   finalfit::missing_pattern(dependent, explanatory)
 ```
+
 
 # Data analysis plan
 

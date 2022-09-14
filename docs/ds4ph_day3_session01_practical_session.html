@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ifakara Health Institute / Swiss Tropical and Public Health Institute">
-<meta name="dcterms.date" content="2022-09-14">
+<meta name="dcterms.date" content="2022-09-27">
 
-<title>Data Science for Public Health</title>
+<title>Data Science for Public Health - 6&nbsp; Data Science for Public Health - Day 03 - Session 01</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,7 +89,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./references.html" rel="next">
+<link href="./ds4ph_day2_session01_practical_session.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -129,7 +129,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Data Science for Public Health</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 03 - Session 01</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -154,7 +154,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -184,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 03 - Session 01</span></a>
+  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 03 - Session 01</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -201,7 +201,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"> <span class="header-section-number">7</span> Introduction</a></li>
+  <li><a href="#load-the-data" id="toc-load-the-data" class="nav-link" data-scroll-target="#load-the-data"> <span class="header-section-number">8</span> Load the data</a></li>
+  <li><a href="#visual-inspection-of-the-data" id="toc-visual-inspection-of-the-data" class="nav-link" data-scroll-target="#visual-inspection-of-the-data"> <span class="header-section-number">9</span> Visual inspection of the data</a>
+  <ul class="collapse">
+  <li><a href="#observationssamples" id="toc-observationssamples" class="nav-link" data-scroll-target="#observationssamples"> <span class="header-section-number">9.1</span> Observations/Samples</a></li>
+  <li><a href="#variablesfeatures" id="toc-variablesfeatures" class="nav-link" data-scroll-target="#variablesfeatures"> <span class="header-section-number">9.2</span> Variables/Features</a></li>
+  <li><a href="#target-classes" id="toc-target-classes" class="nav-link" data-scroll-target="#target-classes"> <span class="header-section-number">9.3</span> Target classes</a></li>
+  <li><a href="#variablefeature-distribution" id="toc-variablefeature-distribution" class="nav-link" data-scroll-target="#variablefeature-distribution"> <span class="header-section-number">9.4</span> Variable/feature distribution</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">10</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -210,24 +219,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Data Science for Public Health</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 03 - Session 01</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ifakara Health Institute / Swiss Tropical and Public Health Institute </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 14, 2022</p>
+      <p class="date">September 27, 2022</p>
     </div>
   </div>
     
@@ -236,16 +239,163 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This is a Quarto book.</p>
-<p>To learn more about Quarto books visit <a href="https://quarto.org/docs/books" class="uri">https://quarto.org/docs/books</a>.</p>
+<section id="introduction" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Introduction</h1>
+<p>We are interested in predicting <strong>referral in children under 5</strong> based on two of the clinical measurements at the consultation:</p>
+<ul>
+<li><strong>culmen length</strong> and</li>
+<li><strong>culmen depth</strong>.</li>
+</ul>
+</section>
+<section id="load-the-data" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Load the data</h1>
+<p>The dataset is stored in <strong>dataset1.dta</strong>.</p>
+<p>Read the dataset and store it into a dataframe called <strong>df</strong>.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Stata hint: use the <code>use</code> command</li>
+<li>R hint: use the <code>read_dta</code> function from the <code>haven</code> package.</li>
+<li>Python hint: use <code>read_stata</code> function from <code>pandas</code></li>
+</ul>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+</section>
+<section id="visual-inspection-of-the-data" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Visual inspection of the data</h1>
+<p>We want to do some data exploration to get an initial understanding of the data. Before building a predictive model, it is a good idea to look at the data:</p>
+<ul>
+<li>maybe the task you are trying to achieve can be solved without machine learning;</li>
+<li>you need to check that the information you need for your task is actually present in the dataset;</li>
+<li>inspecting the data is a good way to find peculiarities. These can arise during data collection (for example, malfunctioning sensor or missing values), or from the way the data is processed afterwards (for example capped values).</li>
+</ul>
+<section id="observationssamples" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="observationssamples"><span class="header-section-number">9.1</span> Observations/Samples</h2>
+<p>Display the variables/features <strong>child_id</strong>, <strong>test</strong> and <strong>test</strong> for the <strong>10 first observations/samples</strong> in the data.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Stata hint: use the the combination of <code>describe</code> and <code>list</code> command to inspect the data</li>
+<li>R hint: you need to load the <code>dplyr</code> library to use piping</li>
+</ul>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: right;">child_ID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="variablesfeatures" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="variablesfeatures"><span class="header-section-number">9.2</span> Variables/Features</h2>
+<p>How many variables/features are numerical in the dataset?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>How many variables/features are categorical in the dataset?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="target-classes" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="target-classes"><span class="header-section-number">9.3</span> Target classes</h2>
+<p>What are the different penguins species available in the dataset and how many observations/samples of each species are there?</p>
+<ul>
+<li>Stata hint:</li>
+<li>R hint:</li>
+<li>Python hint: select the right column and use the <code>value_counts</code> method.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="variablefeature-distribution" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="variablefeature-distribution"><span class="header-section-number">9.4</span> Variable/feature distribution</h2>
+<p>Let’s look at the distribution of individual features, to get some insights about the data. We can start by plotting histograms, note that this only works for features containing numerical values.</p>
+<p>Plot histograms for the numerical variables/features</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Show variable/feature distribution for each class.</p>
+<ul>
+<li>Stata hint:</li>
+<li>R hint:</li>
+<li>Python hint: use <code>seaborn.pairplot</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Looking at these distributions, how difficult do you think it will be to classify the sick children using the <code>culmen depth</code> and <code>culmen length</code> variables/features?</p>
+</section>
+</section>
+<section id="references" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> References</h1>
+<ul>
+<li>scikit-learn MOOC</li>
+</ul>
 
 
 </section>
@@ -350,10 +500,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./ds4ph_day2_session01_practical_session.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 2 - Session 01</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

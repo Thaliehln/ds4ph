@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2022-09-27">
 
-<title>Data Science for Public Health - 3&nbsp; Data Science for Public Health - Day 2 - Session 01</title>
+<title>Data Science for Public Health - 5&nbsp; Data Science for Public Health - Day 2 - Session 01</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -89,7 +89,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./ds4ph_day3_session01_practical_session.html" rel="next">
 <link href="./import_data.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -129,7 +129,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 2 - Session 01</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 2 - Session 01</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -164,17 +164,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Import your data</span></a>
+  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 2 - Session 01</span></a>
+  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Import your data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 2 - Session 01</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 03 - Session 01</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -191,23 +201,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"> <span class="header-section-number">4</span> Introduction</a></li>
-  <li><a href="#malaria-research-questions" id="toc-malaria-research-questions" class="nav-link" data-scroll-target="#malaria-research-questions"> <span class="header-section-number">5</span> Malaria research questions</a></li>
-  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description"> <span class="header-section-number">6</span> Dataset description</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"> <span class="header-section-number">6</span> Introduction</a></li>
+  <li><a href="#malaria-research-questions" id="toc-malaria-research-questions" class="nav-link" data-scroll-target="#malaria-research-questions"> <span class="header-section-number">7</span> Malaria research questions</a></li>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description"> <span class="header-section-number">8</span> Dataset description</a>
   <ul class="collapse">
-  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection"> <span class="header-section-number">6.1</span> Data collection</a></li>
-  <li><a href="#data-cleaning-and-data-de-identification" id="toc-data-cleaning-and-data-de-identification" class="nav-link" data-scroll-target="#data-cleaning-and-data-de-identification"> <span class="header-section-number">6.2</span> Data cleaning and data de-identification</a></li>
-  <li><a href="#dataset-structure" id="toc-dataset-structure" class="nav-link" data-scroll-target="#dataset-structure"> <span class="header-section-number">6.3</span> Dataset structure</a></li>
-  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook"> <span class="header-section-number">6.4</span> Codebook</a></li>
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection"> <span class="header-section-number">8.1</span> Data collection</a></li>
+  <li><a href="#data-cleaning-and-data-de-identification" id="toc-data-cleaning-and-data-de-identification" class="nav-link" data-scroll-target="#data-cleaning-and-data-de-identification"> <span class="header-section-number">8.2</span> Data cleaning and data de-identification</a></li>
+  <li><a href="#dataset-structure" id="toc-dataset-structure" class="nav-link" data-scroll-target="#dataset-structure"> <span class="header-section-number">8.3</span> Dataset structure</a></li>
+  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook"> <span class="header-section-number">8.4</span> Codebook</a></li>
   </ul></li>
-  <li><a href="#familiarise-with-the-dataset" id="toc-familiarise-with-the-dataset" class="nav-link" data-scroll-target="#familiarise-with-the-dataset"> <span class="header-section-number">7</span> Familiarise with the dataset</a>
+  <li><a href="#familiarise-with-the-dataset" id="toc-familiarise-with-the-dataset" class="nav-link" data-scroll-target="#familiarise-with-the-dataset"> <span class="header-section-number">9</span> Familiarise with the dataset</a>
   <ul class="collapse">
-  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"> <span class="header-section-number">7.1</span> Import the data</a></li>
-  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"> <span class="header-section-number">7.2</span> Structure of the data</a></li>
+  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"> <span class="header-section-number">9.1</span> Import the data</a></li>
+  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"> <span class="header-section-number">9.2</span> Structure of the data</a></li>
   </ul></li>
-  <li><a href="#identify-missing-values" id="toc-identify-missing-values" class="nav-link" data-scroll-target="#identify-missing-values"> <span class="header-section-number">8</span> Identify missing values</a></li>
-  <li><a href="#data-analysis-plan" id="toc-data-analysis-plan" class="nav-link" data-scroll-target="#data-analysis-plan"> <span class="header-section-number">9</span> Data analysis plan</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">10</span> References</a></li>
+  <li><a href="#identify-missing-values" id="toc-identify-missing-values" class="nav-link" data-scroll-target="#identify-missing-values"> <span class="header-section-number">10</span> Identify missing values</a></li>
+  <li><a href="#data-analysis-plan" id="toc-data-analysis-plan" class="nav-link" data-scroll-target="#data-analysis-plan"> <span class="header-section-number">11</span> Data analysis plan</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">12</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -216,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 2 - Session 01</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 2 - Session 01</span></h1>
 </div>
 
 
@@ -236,19 +246,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="introduction" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Introduction</h1>
+<section id="introduction" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Introduction</h1>
 <p>TBD</p>
 </section>
-<section id="malaria-research-questions" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Malaria research questions</h1>
+<section id="malaria-research-questions" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Malaria research questions</h1>
 <p>Research questions in an enumerated list</p>
 </section>
-<section id="dataset-description" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Dataset description</h1>
+<section id="dataset-description" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Dataset description</h1>
 <p>Information about the consultations of <strong>10,308 children [1 day - 59 months]</strong> from <strong>18 facilities</strong> (dispensaries and health centres) in <strong>Kaliua</strong> District, <strong>Sengerema</strong> District and <strong>Tanga</strong> District, Tanzania. Data were collected using <em>ODK</em> (ODK Collect, ODK Central) between <strong>start date</strong> and <strong>end date</strong>. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project. Data are stored in <strong>dataset1.dta</strong>.</p>
-<section id="data-collection" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="data-collection"><span class="header-section-number">6.1</span> Data collection</h2>
+<section id="data-collection" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="data-collection"><span class="header-section-number">8.1</span> Data collection</h2>
 <p>Research assistants recorded the following information from different sources:</p>
 <ul>
 <li>from the caregiver:
@@ -264,22 +274,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Research assistants sought clarification from healthcare providers only in cases where these variables were not clear from the records.</p>
 </section>
-<section id="data-cleaning-and-data-de-identification" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="data-cleaning-and-data-de-identification"><span class="header-section-number">6.2</span> Data cleaning and data de-identification</h2>
+<section id="data-cleaning-and-data-de-identification" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="data-cleaning-and-data-de-identification"><span class="header-section-number">8.2</span> Data cleaning and data de-identification</h2>
 <p>Personally identifiable information (PII) were removed.</p>
 </section>
-<section id="dataset-structure" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="dataset-structure"><span class="header-section-number">6.3</span> Dataset structure</h2>
+<section id="dataset-structure" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="dataset-structure"><span class="header-section-number">8.3</span> Dataset structure</h2>
 <p>Load the data and show the structure of your dataset</p>
 </section>
-<section id="codebook" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="codebook"><span class="header-section-number">6.4</span> Codebook</h2>
+<section id="codebook" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="codebook"><span class="header-section-number">8.4</span> Codebook</h2>
 </section>
 </section>
-<section id="familiarise-with-the-dataset" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Familiarise with the dataset</h1>
-<section id="import-the-data" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="import-the-data"><span class="header-section-number">7.1</span> Import the data</h2>
+<section id="familiarise-with-the-dataset" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Familiarise with the dataset</h1>
+<section id="import-the-data" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="import-the-data"><span class="header-section-number">9.1</span> Import the data</h2>
 <p>Read the dataset and store it into a dataframe called <strong>df</strong>.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -313,8 +323,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="structure-of-the-data" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">7.2</span> Structure of the data</h2>
+<section id="structure-of-the-data" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">9.2</span> Structure of the data</h2>
 <p>Examine the structure of the data, including variable names, labels.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -2325,12 +2335,12 @@ Tip
 <div class="cell" data-df-print="kable">
 <div class="cell-output-display">
 
-<div id="dotcgzrnkm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="qzvbbyrkjx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#dotcgzrnkm .gt_table {
+#qzvbbyrkjx .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2355,7 +2365,7 @@ Tip
   border-left-color: #D3D3D3;
 }
 
-#dotcgzrnkm .gt_heading {
+#qzvbbyrkjx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2367,7 +2377,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#dotcgzrnkm .gt_title {
+#qzvbbyrkjx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2379,7 +2389,7 @@ Tip
   border-bottom-width: 0;
 }
 
-#dotcgzrnkm .gt_subtitle {
+#qzvbbyrkjx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2391,13 +2401,13 @@ Tip
   border-top-width: 0;
 }
 
-#dotcgzrnkm .gt_bottom_border {
+#qzvbbyrkjx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dotcgzrnkm .gt_col_headings {
+#qzvbbyrkjx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2412,7 +2422,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#dotcgzrnkm .gt_col_heading {
+#qzvbbyrkjx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2432,7 +2442,7 @@ Tip
   overflow-x: hidden;
 }
 
-#dotcgzrnkm .gt_column_spanner_outer {
+#qzvbbyrkjx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2444,15 +2454,15 @@ Tip
   padding-right: 4px;
 }
 
-#dotcgzrnkm .gt_column_spanner_outer:first-child {
+#qzvbbyrkjx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dotcgzrnkm .gt_column_spanner_outer:last-child {
+#qzvbbyrkjx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dotcgzrnkm .gt_column_spanner {
+#qzvbbyrkjx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2464,7 +2474,7 @@ Tip
   width: 100%;
 }
 
-#dotcgzrnkm .gt_group_heading {
+#qzvbbyrkjx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2489,7 +2499,7 @@ Tip
   vertical-align: middle;
 }
 
-#dotcgzrnkm .gt_empty_group_heading {
+#qzvbbyrkjx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2504,15 +2514,15 @@ Tip
   vertical-align: middle;
 }
 
-#dotcgzrnkm .gt_from_md > :first-child {
+#qzvbbyrkjx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dotcgzrnkm .gt_from_md > :last-child {
+#qzvbbyrkjx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dotcgzrnkm .gt_row {
+#qzvbbyrkjx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2531,7 +2541,7 @@ Tip
   overflow-x: hidden;
 }
 
-#dotcgzrnkm .gt_stub {
+#qzvbbyrkjx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2544,7 +2554,7 @@ Tip
   padding-right: 5px;
 }
 
-#dotcgzrnkm .gt_stub_row_group {
+#qzvbbyrkjx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2558,11 +2568,11 @@ Tip
   vertical-align: top;
 }
 
-#dotcgzrnkm .gt_row_group_first td {
+#qzvbbyrkjx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dotcgzrnkm .gt_summary_row {
+#qzvbbyrkjx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2572,16 +2582,16 @@ Tip
   padding-right: 5px;
 }
 
-#dotcgzrnkm .gt_first_summary_row {
+#qzvbbyrkjx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dotcgzrnkm .gt_first_summary_row.thick {
+#qzvbbyrkjx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dotcgzrnkm .gt_last_summary_row {
+#qzvbbyrkjx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2591,7 +2601,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-#dotcgzrnkm .gt_grand_summary_row {
+#qzvbbyrkjx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2601,7 +2611,7 @@ Tip
   padding-right: 5px;
 }
 
-#dotcgzrnkm .gt_first_grand_summary_row {
+#qzvbbyrkjx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2611,11 +2621,11 @@ Tip
   border-top-color: #D3D3D3;
 }
 
-#dotcgzrnkm .gt_striped {
+#qzvbbyrkjx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dotcgzrnkm .gt_table_body {
+#qzvbbyrkjx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2624,7 +2634,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-#dotcgzrnkm .gt_footnotes {
+#qzvbbyrkjx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2638,7 +2648,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#dotcgzrnkm .gt_footnote {
+#qzvbbyrkjx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2647,7 +2657,7 @@ Tip
   padding-right: 5px;
 }
 
-#dotcgzrnkm .gt_sourcenotes {
+#qzvbbyrkjx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2661,7 +2671,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#dotcgzrnkm .gt_sourcenote {
+#qzvbbyrkjx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2669,36 +2679,36 @@ Tip
   padding-right: 5px;
 }
 
-#dotcgzrnkm .gt_left {
+#qzvbbyrkjx .gt_left {
   text-align: left;
 }
 
-#dotcgzrnkm .gt_center {
+#qzvbbyrkjx .gt_center {
   text-align: center;
 }
 
-#dotcgzrnkm .gt_right {
+#qzvbbyrkjx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dotcgzrnkm .gt_font_normal {
+#qzvbbyrkjx .gt_font_normal {
   font-weight: normal;
 }
 
-#dotcgzrnkm .gt_font_bold {
+#qzvbbyrkjx .gt_font_bold {
   font-weight: bold;
 }
 
-#dotcgzrnkm .gt_font_italic {
+#qzvbbyrkjx .gt_font_italic {
   font-style: italic;
 }
 
-#dotcgzrnkm .gt_super {
+#qzvbbyrkjx .gt_super {
   font-size: 65%;
 }
 
-#dotcgzrnkm .gt_two_val_uncert {
+#qzvbbyrkjx .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -2707,31 +2717,31 @@ Tip
   margin-left: 0.1em;
 }
 
-#dotcgzrnkm .gt_footnote_marks {
+#qzvbbyrkjx .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#dotcgzrnkm .gt_asterisk {
+#qzvbbyrkjx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dotcgzrnkm .gt_slash_mark {
+#qzvbbyrkjx .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#dotcgzrnkm .gt_fraction_numerator {
+#qzvbbyrkjx .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#dotcgzrnkm .gt_fraction_denominator {
+#qzvbbyrkjx .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -3069,8 +3079,8 @@ Tip
 </div>
 </section>
 </section>
-<section id="identify-missing-values" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Identify missing values</h1>
+<section id="identify-missing-values" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Identify missing values</h1>
 <p>Identify missing values in each variable: missing_plot</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -3091,12 +3101,12 @@ Tip
 </div>
 </div>
 </section>
-<section id="data-analysis-plan" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Data analysis plan</h1>
+<section id="data-analysis-plan" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Data analysis plan</h1>
 <p>For now, all you need to include in this section is which variables from the dataset you plan to use, and what associations between them you will investigate to help answer your research question.</p>
 </section>
-<section id="references" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> References</h1>
+<section id="references" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> References</h1>
 <p>Skimr package</p>
 
 
@@ -3203,12 +3213,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./import_data.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Import your data</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Import your data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ds4ph_day3_session01_practical_session.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 03 - Session 01</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
