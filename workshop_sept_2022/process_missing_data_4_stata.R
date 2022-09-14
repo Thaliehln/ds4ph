@@ -8,6 +8,8 @@ for (colname in names(df)) {
   }
 }
 
+df$CONSULT_district <- as.factor(df$CONSULT_district)
+
 haven::write_dta(df, "dataset10.dta")
 
 df <- mtcars

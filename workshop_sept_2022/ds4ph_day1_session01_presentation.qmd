@@ -1,6 +1,6 @@
 ---
 title: "Data Science for Public Health Workshop"
-subtitle: "Day 01 - Session 01 - Import data"
+subtitle: "Day 01 - Session 03 - Import data"
 institute: "Ifakara Health Institute / Swiss Tropical and Public Health Institute"
 date: "2022-09-27"
 format:
@@ -23,32 +23,21 @@ Most of the time you will want to generate *Quarto* documents using your own dat
 
 One of the first thing you will usually do when starting a new *Quarto* document is to import your data.
 
+## Data frame
+
 If you want to further process / analyse your data, you will have to store your data in a two-dimensional array-like structure (**data frame**) that contains rows and columns. You can store multiple data sets in memory (which will be stored in different data frames) and work on all of them in parallel.
-
-::: callout-warning
-For (advanced) Python users only: you need to import the R package `reticulate` if you want to use the Knitr engine and manipulate Python objects within R code chunks.
-
-```{r}
-library(reticulate)
-```
-
-```{python}
-import warnings
-warnings.filterwarnings('ignore')
-```
-:::
 
 ## Import data from files
 
 There is a dedicated importing function in R and Python for almost every data format. In this session we show you how to read Stata (`.dta`), Excel (`.xlsx`) and comma-separated values (CSV, `.csv`) formats.
 
+## How to import Excel data?
+
+Read the Excel data set **dataset1.xlsx** and store it into a data frame called **df1**.
+
 Only one argument is required within these function. We need to know the PATH where the file is stored.
 
 Indicate functions that accepts URL as well (it is the case for Python functions).
-
-### Import Excel data
-
-Read the Excel data set **dataset1.xlsx** and store it into a data frame called **df1**.
 
 ::: callout-tip
 -   R: use the [read_excel](https://readxl.tidyverse.org/reference/read_excel.html) function from the `readxl` package.
@@ -59,7 +48,7 @@ library(readxl)
 df1 <- readxl::read_excel("dataset1.xlsx")
 ```
 
-## Import CSV data
+## How to import CSV data?
 
 Read the CSV data set **dataset1.csv** and store it into a data frame called **df2**.
 
@@ -73,31 +62,20 @@ library(haven)
 df2 <- read.csv("dataset1.csv")
 ```
 
-## Import Stata data
+## How to import Stata data?
 
 Read the Stata data set **dataset1.dta** and store it into a data frame called **df3**.
 
 ::: callout-tip
--   R: use the [read_dta](https://haven.tidyverse.org/reference/read_dta.html) function from the `haven` package. This package supports SAS, STATA and SPSS software.
--   Python: use the [read_stata](https://pandas.pydata.org/docs/reference/api/pandas.read_stata.html) function from the `pandas` package.
+R: use the [read_dta](https://haven.tidyverse.org/reference/read_dta.html) function from the `haven` package. This package supports SAS, STATA and SPSS software.
 :::
-
-```{r}
-#| echo: true
-# Write your code here
-```
 
 ```{r}
 library(haven)
 df3 <- haven::read_dta("dataset1.dta")
 ```
 
-```{python}
-import pandas as pd
-df3 = pd.read_stata('dataset1.dta')
-```
-
-## Additional question
+## How to compare data frames?
 
 Can you indicate what variable has been modified in **dataset1** between df1 and df2?
 
@@ -106,49 +84,38 @@ Use the R function **comparedf**
 :::
 
 ```{r}
-#| echo: true
-# Write your code here
-```
-
-```{r}
 arsenal::comparedf(df1, df2)
 ```
 
-Can you indicate what variable has been modified in **dataset1** between df1 and df3?
-
-```{r}
-#| echo: true
-# Write your code here
-```
-
-```{r}
-arsenal::comparedf(df1, py$df3)
-```
-
-# Import data from ODK Central
+## How to import data from ODK Central?
 
 While data digitally captured using ODK Collect or Enketo and stored in ODK Central can be retrieved in bulk through the web interface, ODK Central's API provides direct access to its data (and functionality). It is a more efficient way to ensure that data are always up-to-date.
 
-We will see how to retrieve data through the OData API.
+Data can be retrieved through external third-party applications by relying on the ODK API.
 
-::: callout-important
-For advanced users: encrypted data can only be retrieved through the RESTful API.
-:::
+## What is an API?
 
-**Instructions:**
+![](images/paste-96A3CD65.png)
 
-1.  Connect to the ODK Central server data set (give access to a dummy ODK Central project for demo purpose).
-2.  Retrieve data from form.
-3.  Store the data set into a data frame called df4
+## What is an API?
+
+![](images/paste-CA8DA740.png)
+
+## How to connect to the ODK Central server?
+
+(give access to a dummy ODK Central project for demo purpose).
 
 ::: callout-tip
 -   R: use the [ru_setup](https://docs.ropensci.org/ruODK/reference/ru_setup.html) and the [odata_submission_get](https://docs.ropensci.org/ruODK/reference/odata_submission_get.html) functions from the `ruODK` package [@mayer20].
--   Python: use functions from the `pyODK` package.
 :::
 
-```{r}
-#| echo: true
-# Write your code here
-```
+## How to retrieve data from ODK form through the OData API?
 
-# References
+2.  Retrieve data from form.
+3.  Store the data set into a data frame called df4
+
+::: callout-important
+Encrypted data can only be retrieved through the RESTful API.
+:::
+
+## References

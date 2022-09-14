@@ -405,7 +405,7 @@
 
 <section id="title-slide" class="center">
   <h1 class="title">Data Science for Public Health Workshop</h1>
-  <p class="subtitle">Import data</p>
+  <p class="subtitle">Day 01 - Session 03 - Import data</p>
   <p class="institute">Ifakara Health Institute / Swiss Tropical and Public Health Institute</p>
   <p class="date">2022-09-27</p>
 </section>
@@ -414,35 +414,20 @@
 <h2>Introduction</h2>
 <p>Most of the time you will want to generate <em>Quarto</em> documents using your own data.</p>
 <p>One of the first thing you will usually do when starting a new <em>Quarto</em> document is to import your data.</p>
+</section>
+<section id="data-frame" class="slide level2">
+<h2>Data frame</h2>
 <p>If you want to further process / analyse your data, you will have to store your data in a two-dimensional array-like structure (<strong>data frame</strong>) that contains rows and columns. You can store multiple data sets in memory (which will be stored in different data frames) and work on all of them in parallel.</p>
-<div class="callout callout-warning callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Warning</strong></p>
-</div>
-<div class="callout-content">
-<p>For (advanced) Python users only: you need to import the R package <code>reticulate</code> if you want to use the Knitr engine and manipulate Python objects within R code chunks.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(reticulate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> warnings</span>
-<span id="cb2-2"><a href="#cb2-2"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
 </section>
 <section id="import-data-from-files" class="slide level2">
 <h2>Import data from files</h2>
 <p>There is a dedicated importing function in R and Python for almost every data format. In this session we show you how to read Stata (<code>.dta</code>), Excel (<code>.xlsx</code>) and comma-separated values (CSV, <code>.csv</code>) formats.</p>
+</section>
+<section id="how-to-import-excel-data" class="slide level2">
+<h2>How to import Excel data?</h2>
+<p>Read the Excel data set <strong>dataset1.xlsx</strong> and store it into a data frame called <strong>df1</strong>.</p>
 <p>Only one argument is required within these function. We need to know the PATH where the file is stored.</p>
 <p>Indicate functions that accepts URL as well (it is the case for Python functions).</p>
-<h3 id="import-excel-data">Import Excel data</h3>
-<p>Read the Excel data set <strong>dataset1.xlsx</strong> and store it into a data frame called <strong>df1</strong>.</p>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -459,12 +444,12 @@
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb3-2"><a href="#cb3-2"></a>df1 <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"dataset1.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>df1 <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"dataset1.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="import-csv-data" class="slide level2">
-<h2>Import CSV data</h2>
+<section id="how-to-import-csv-data" class="slide level2">
+<h2>How to import CSV data?</h2>
 <p>Read the CSV data set <strong>dataset1.csv</strong> and store it into a data frame called <strong>df2</strong>.</p>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
@@ -483,12 +468,12 @@
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb4-2"><a href="#cb4-2"></a>df2 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"dataset1.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb2-2"><a href="#cb2-2"></a>df2 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"dataset1.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="import-stata-data" class="slide level2">
-<h2>Import Stata data</h2>
+<section id="how-to-import-stata-data" class="slide level2">
+<h2>How to import Stata data?</h2>
 <p>Read the Stata data set <strong>dataset1.dta</strong> and store it into a data frame called <strong>df3</strong>.</p>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
@@ -499,27 +484,17 @@
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<ul>
-<li>R: use the <a href="https://haven.tidyverse.org/reference/read_dta.html">read_dta</a> function from the <code>haven</code> package. This package supports SAS, STATA and SPSS software.</li>
-<li>Python: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_stata.html">read_stata</a> function from the <code>pandas</code> package.</li>
-</ul>
+<p>R: use the <a href="https://haven.tidyverse.org/reference/read_dta.html">read_dta</a> function from the <code>haven</code> package. This package supports SAS, STATA and SPSS software.</p>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb6-2"><a href="#cb6-2"></a>df3 <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_dta</span>(<span class="st">"dataset1.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb7-2"><a href="#cb7-2"></a>df3 <span class="op">=</span> pd.read_stata(<span class="st">'dataset1.dta'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>df3 <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_dta</span>(<span class="st">"dataset1.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="additional-question" class="slide level2">
-<h2>Additional question</h2>
+<section id="how-to-compare-datasets" class="slide level2">
+<h2>How to compare datasets?</h2>
 <p>Can you indicate what variable has been modified in <strong>dataset1</strong> between df1 and df2?</p>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
@@ -535,10 +510,7 @@
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>arsenal<span class="sc">::</span><span class="fu">comparedf</span>(df1, df2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>arsenal<span class="sc">::</span><span class="fu">comparedf</span>(df1, df2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Compare Object
 
@@ -552,49 +524,14 @@ Differences found in 0/0 variables compared.
 0 variables compared have non-identical attributes.</code></pre>
 </div>
 </div>
-<p>Can you indicate what variable has been modified in <strong>dataset1</strong> between df1 and df3?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>arsenal<span class="sc">::</span><span class="fu">comparedf</span>(df1, py<span class="sc">$</span>df3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Compare Object
-
-Function Call: 
-arsenal::comparedf(x = df1, y = py$df3)
-
-Shared: 0 non-by variables and 32 observations.
-Not shared: 16 variables and 118 observations.
-
-Differences found in 0/0 variables compared.
-0 variables compared have non-identical attributes.</code></pre>
-</div>
-</div>
 </section>
-<section id="import-data-from-odk-central" class="title-slide slide level1 center">
-<h1>Import data from ODK Central</h1>
+<section id="how-to-import-data-from-odk-central" class="slide level2">
+<h2>How to import data from ODK Central?</h2>
 <p>While data digitally captured using ODK Collect or Enketo and stored in ODK Central can be retrieved in bulk through the web interface, ODK Central’s API provides direct access to its data (and functionality). It is a more efficient way to ensure that data are always up-to-date.</p>
-<p>We will see how to retrieve data through the OData API.</p>
-<div class="callout callout-important callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p>For advanced users: encrypted data can only be retrieved through the RESTful API.</p>
-</div>
-</div>
-</div>
-<p><strong>Instructions:</strong></p>
-<ol type="1">
-<li>Connect to the ODK Central server data set (give access to a dummy ODK Central project for demo purpose).</li>
-<li>Retrieve data from form.</li>
-<li>Store the data set into a data frame called df4</li>
-</ol>
+</section>
+<section id="how-to-connect-to-the-odk-central-server" class="slide level2">
+<h2>How to connect to the ODK Central server?</h2>
+<p>(give access to a dummy ODK Central project for demo purpose).</p>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -606,18 +543,33 @@ Differences found in 0/0 variables compared.
 <div class="callout-content">
 <ul>
 <li>R: use the <a href="https://docs.ropensci.org/ruODK/reference/ru_setup.html">ru_setup</a> and the <a href="https://docs.ropensci.org/ruODK/reference/odata_submission_get.html">odata_submission_get</a> functions from the <code>ruODK</code> package <span class="citation" data-cites="mayer20">(<a href="#/ref-mayer20" role="doc-biblioref" onclick="return false;">Mayer 2020</a>)</span>.</li>
-<li>Python: use functions from the <code>pyODK</code> package.</li>
 </ul>
 </div>
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="how-to-retrieve-data-from-odk-form-through-the-odata-api" class="slide level2">
+<h2>How to retrieve data from ODK form through the OData API?</h2>
+<ol start="2" type="1">
+<li>Retrieve data from form.</li>
+<li>Store the data set into a data frame called df4</li>
+</ol>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>Encrypted data can only be retrieved through the RESTful API.</p>
+</div>
+</div>
 </div>
 </section>
-
-<section id="references" class="title-slide slide level1 smaller scrollable">
-<h1>References</h1>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
 <div class="footer footer-default">
 
 </div>

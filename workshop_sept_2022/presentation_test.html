@@ -24,6 +24,25 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     q { quotes: "“" "”" "‘" "’"; }
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
   </style>
   <link rel="stylesheet" href="presentation_test_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="presentation_test_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -323,7 +342,7 @@
 
 <section id="title-slide" class="center">
   <h1 class="title">Data Science for Public Health Workshop</h1>
-  <p class="subtitle">Introduction to Data Science</p>
+  <p class="subtitle">Day 02 - Session 01 - Introduction to Data Science</p>
   <p class="institute">Ifakara Health Institute / Swiss Tropical and Public Health Institute</p>
   <p class="date">2022-09-27</p>
 </section>
@@ -365,13 +384,13 @@
 </ul>
 </div>
 </section>
-<section id="what-do-experts-say-about-data-science-1" class="slide level2">
-<h2>What do Experts say about Data Science? (1)</h2>
-<p><q>The statistics profession faces a choice in its future research between continuing concentration on traditional topics – based largely on data analysis supported by mathematical statistics – and a broader viewpoint – based on an inclusive concept of learning from data. The latter course present severe challenges as well as exciting opportunities. The former risks seeing statistics become increasingly marginal…</q> John Chambers<sup>1</sup>, 1993. <em>Greater or Lesser Statistics, A Choice for Future Research</em></p>
+<section id="what-do-statisticians-say-about-data-science-1" class="slide level2">
+<h2>What do statisticians say about Data Science? (1)</h2>
+<p><q>The statistics profession faces a choice in its future research between continuing concentration on traditional topics – based largely on data analysis supported by mathematical statistics – and a broader viewpoint – based on an inclusive concept of learning from data. The latter course present severe challenges as well as exciting opportunities. The former risks seeing statistics become increasingly marginal…</q> John Chambers<sup>1</sup> <span class="citation" data-cites="chambers93">(<a href="#/ref-chambers93" role="doc-biblioref" onclick="return false;">Chambers 1993</a>)</span></p>
 <aside><ol class="aside-footnotes"><li id="fn1" role="doc-endnote"><p>John Chambers is a PhD in Statistics, the creator of the S programming language, and a core member of the R programming language project.</p></li></ol></aside></section>
-<section id="what-do-experts-say-about-data-science-2" class="slide level2">
-<h2>What do Experts say about Data Science? (2)</h2>
-<p><q>“Data science is the science of learning from data; it studies the methods involved in the analysis and processing of data and proposes technology to improve methods in an evidence-based manner. The scope and impact of this science will expand enormously in coming decades as scientific data and data about science itself become ubiquitously available.</q> David Donoho<sup>1</sup>, 2017. <em>50 Years of Data Science.</em> Journal of Computational and Graphical Statistics 26 (4): 745–66.</p>
+<section id="what-do-statisticians-say-about-data-science-2" class="slide level2">
+<h2>What do statisticians say about Data Science? (2)</h2>
+<p><q>“Data science is the science of learning from data; it studies the methods involved in the analysis and processing of data and proposes technology to improve methods in an evidence-based manner. The scope and impact of this science will expand enormously in coming decades as scientific data and data about science itself become ubiquitously available.</q> David Donoho<sup>1</sup> <span class="citation" data-cites="donoho17">(<a href="#/ref-donoho17" role="doc-biblioref" onclick="return false;">Donoho 2017</a>)</span>.</p>
 <aside><ol class="aside-footnotes"><li id="fn2" role="doc-endnote"><p>David Donoho is a Professor of Statistics at Stanford University.</p></li></ol></aside></section>
 <section id="a-tentative-definition" class="slide level2">
 <h2>A tentative definition</h2>
@@ -385,16 +404,18 @@
 <li>Effective communication to decision-makers</li>
 </ul>
 </section>
-<section id="code" class="slide level2">
-<h2>Code</h2>
-<p>When you click the <strong>Render</strong> button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
 <div class="footer footer-default">
 
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-chambers93" class="csl-entry" role="doc-biblioentry">
+Chambers, John. 1993. <span>“Greater or Lesser Statistics, a Choice for Future Research.”</span>
+</div>
+<div id="ref-donoho17" class="csl-entry" role="doc-biblioentry">
+Donoho, David. 2017. <span>“50 Years of Data Science.”</span> <em>Journal of Computational and Graphical Statistics</em> 26 (4): 745–46.
+</div>
 </div>
 </section>
 
@@ -611,48 +632,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          // dispatch for htmlwidgets
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for reveal
-        if (window.Reveal) {
-          window.Reveal.addEventListener("slidechanged", function(event) {
-            fireSlideChanged(event.previousSlide, event.currentSlide);
-          });
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

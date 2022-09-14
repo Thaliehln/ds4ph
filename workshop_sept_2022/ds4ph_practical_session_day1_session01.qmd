@@ -2,7 +2,7 @@
 title: "Data Science for Public Health - Day 1 - Import data"
 date: "2022-09-26"
 format:
-  word:
+  html:
     toc: true
     number-sections: true
 editor: visual
@@ -26,18 +26,14 @@ For (advanced) Python users only: you need to import the R package `reticulate` 
 
 ```{r}
 #| echo: true
-# Write your code here
-```
-
-```{r}
 library(reticulate)
 ```
+:::
 
 ```{python}
 import warnings
 warnings.filterwarnings('ignore')
 ```
-:::
 
 # Import data from files
 
