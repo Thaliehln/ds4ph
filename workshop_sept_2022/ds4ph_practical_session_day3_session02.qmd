@@ -12,8 +12,8 @@ execute:
 ---
 
 # Introduction
-*
-Most of the time you will want to create *Quarto* documents using your own data. The first thing you will usually do when starting an new *Quarto* document is to import your data. You can import several datasets. If you want to further process / analyse your data, you will have to store each dataset in a specific variable.
+
+-   Most of the time you will want to create *Quarto* documents using your own data. The first thing you will usually do when starting an new *Quarto* document is to import your data. You can import several datasets. If you want to further process / analyse your data, you will have to store each dataset in a specific variable.
 
 # Import data from files
 
@@ -27,8 +27,8 @@ Indicate functions that accepts URL as well (it is the case for Python functions
 
 Read the Excel dataset **dataset1.xlsx** and store it into a dataframe called **df1**.
 
--   R hint: use the [read_dta](https://haven.tidyverse.org/reference/read_dta.html) function from the `haven` package.
--   Python hint: use the [read_xls](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) function from the `pandas` package.
+-   R hint: use the [read.xlsx](https://www.rdocumentation.org/packages/openxlsx/versions/4.2.5/topics/read.xlsx) function from the `openxlsx` package.
+-   Python hint: use the [read_excel](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) function from the `pandas` package.
 
 ```{r}
 #| echo: true
@@ -36,20 +36,20 @@ Read the Excel dataset **dataset1.xlsx** and store it into a dataframe called **
 ```
 
 ```{r}
-library(haven)
-df1 <- haven::read_dta("dataset1.xlsx")
+library(openxlsx)
+df1 <- openxlsx::read.xlsx("dataset1.xlsx")
 ```
 
 ```{python}
 import pandas as pd
-df1 = pd.read_xls('dataset1.xlsx')
+df1 = pd.read_excel('dataset1.xlsx')
 ```
 
 ## Import CSV data
 
 Read the CSV dataset **dataset1.csv** and store it into a dataframe called **df2**.
 
--   R hint: use the [read_dta](https://haven.tidyverse.org/reference/read_dta.html) function from the `haven` package.
+-   R hint: use the `read.csv` function from the base R.
 -   Python hint: use the [read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html) function from the `pandas` package.
 
 ```{r}
@@ -58,8 +58,7 @@ Read the CSV dataset **dataset1.csv** and store it into a dataframe called **df2
 ```
 
 ```{r}
-library(haven)
-df2 <- haven::read_dta("dataset1.csv")
+df2 <- read.csv("dataset1.csv")
 ```
 
 ```{python}
@@ -95,10 +94,23 @@ Can you indicate what variable has been modified in dataset1 between these 3 for
 
 # Import data from ODK or other odata using APIs
 
--   R hint: use the [read_dta](https://haven.tidyverse.org/reference/read_dta.html) function from the \`ruODK\`\` package. This package supports SAS, STATA and SPSS software.
+-   R hint: use the [ru_setup](https://docs.ropensci.org/ruODK/reference/ru_setup.html) and the [odata_submission_get](https://docs.ropensci.org/ruODK/reference/odata_submission_get.html) functions from the `ruODK` package [@mayer20].
 -   Python hint: use the [read_stata](https://pandas.pydata.org/docs/reference/api/pandas.read_stata.html) function from the `pyODK` package.
 
 ```{r}
 #| echo: true
 # Write your code here
 ```
+
+```{r}
+ruODK::ru_setup(
+  svc = Sys.getenv("ODKC_SVC"),
+  un = Sys.getenv("ODKC_UN"),
+  pw = Sys.getenv("ODKC_PW"),
+  tz = Sys.getenv("TZ"),
+  verbose = FALSE 
+)
+
+
+```
+
