@@ -1,0 +1,26 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Data Science for Public Health"
+  author: "Ifakara Health Institute / Swiss Tropical and Public Health Institute"
+  date: "14.9.2022"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - import_data.qmd
+    - ds4ph_day2_session01_practical_session.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

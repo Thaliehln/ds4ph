@@ -1,0 +1,3219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2022-09-27">
+
+<title>Data Science for Public Health - 3&nbsp; Data Science for Public Health - Day 2 - Session 01</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./import_data.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 2 - Session 01</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Data Science for Public Health</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Import your data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 2 - Session 01</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"> <span class="header-section-number">4</span> Introduction</a></li>
+  <li><a href="#malaria-research-questions" id="toc-malaria-research-questions" class="nav-link" data-scroll-target="#malaria-research-questions"> <span class="header-section-number">5</span> Malaria research questions</a></li>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description"> <span class="header-section-number">6</span> Dataset description</a>
+  <ul class="collapse">
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection"> <span class="header-section-number">6.1</span> Data collection</a></li>
+  <li><a href="#data-cleaning-and-data-de-identification" id="toc-data-cleaning-and-data-de-identification" class="nav-link" data-scroll-target="#data-cleaning-and-data-de-identification"> <span class="header-section-number">6.2</span> Data cleaning and data de-identification</a></li>
+  <li><a href="#dataset-structure" id="toc-dataset-structure" class="nav-link" data-scroll-target="#dataset-structure"> <span class="header-section-number">6.3</span> Dataset structure</a></li>
+  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook"> <span class="header-section-number">6.4</span> Codebook</a></li>
+  </ul></li>
+  <li><a href="#familiarise-with-the-dataset" id="toc-familiarise-with-the-dataset" class="nav-link" data-scroll-target="#familiarise-with-the-dataset"> <span class="header-section-number">7</span> Familiarise with the dataset</a>
+  <ul class="collapse">
+  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"> <span class="header-section-number">7.1</span> Import the data</a></li>
+  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"> <span class="header-section-number">7.2</span> Structure of the data</a></li>
+  </ul></li>
+  <li><a href="#identify-missing-values" id="toc-identify-missing-values" class="nav-link" data-scroll-target="#identify-missing-values"> <span class="header-section-number">8</span> Identify missing values</a></li>
+  <li><a href="#data-analysis-plan" id="toc-data-analysis-plan" class="nav-link" data-scroll-target="#data-analysis-plan"> <span class="header-section-number">9</span> Data analysis plan</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">10</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 2 - Session 01</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 27, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Introduction</h1>
+<p>TBD</p>
+</section>
+<section id="malaria-research-questions" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Malaria research questions</h1>
+<p>Research questions in an enumerated list</p>
+</section>
+<section id="dataset-description" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Dataset description</h1>
+<p>Information about the consultations of <strong>10,308 children [1 day - 59 months]</strong> from <strong>18 facilities</strong> (dispensaries and health centres) in <strong>Kaliua</strong> District, <strong>Sengerema</strong> District and <strong>Tanga</strong> District, Tanzania. Data were collected using <em>ODK</em> (ODK Collect, ODK Central) between <strong>start date</strong> and <strong>end date</strong>. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project. Data are stored in <strong>dataset1.dta</strong>.</p>
+<section id="data-collection" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="data-collection"><span class="header-section-number">6.1</span> Data collection</h2>
+<p>Research assistants recorded the following information from different sources:</p>
+<ul>
+<li>from the caregiver:
+<ul>
+<li>sociodemographic information</li>
+<li>information on treatment received before consultation</li>
+<li><strong>clinical presentation</strong> (variables starting with the suffix <strong>CLIN</strong>)</li>
+<li>laboratory investigations (variables starting with the suffix <strong>TEST</strong>)</li>
+<li>diagnosis (variables starting with the suffix <strong>DX</strong>)</li>
+<li>prescribed medication (variables starting with the suffix <strong>RX</strong>)</li>
+<li>referral advice will be extracted from clinical notes and / or facility registers (variables starting with the suffix <strong>MGMT</strong>).</li>
+</ul></li>
+</ul>
+<p>Research assistants sought clarification from healthcare providers only in cases where these variables were not clear from the records.</p>
+</section>
+<section id="data-cleaning-and-data-de-identification" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="data-cleaning-and-data-de-identification"><span class="header-section-number">6.2</span> Data cleaning and data de-identification</h2>
+<p>Personally identifiable information (PII) were removed.</p>
+</section>
+<section id="dataset-structure" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="dataset-structure"><span class="header-section-number">6.3</span> Dataset structure</h2>
+<p>Load the data and show the structure of your dataset</p>
+</section>
+<section id="codebook" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="codebook"><span class="header-section-number">6.4</span> Codebook</h2>
+</section>
+</section>
+<section id="familiarise-with-the-dataset" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Familiarise with the dataset</h1>
+<section id="import-the-data" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="import-the-data"><span class="header-section-number">7.1</span> Import the data</h2>
+<p>Read the dataset and store it into a dataframe called <strong>df</strong>.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Refer to previous session</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell" data-knitr="kable">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 x 2
+  child_ID CONSULT_district
+     &lt;dbl&gt;        &lt;dbl+lbl&gt;
+1        1            1 [1]
+2        2            1 [1]
+3        3            1 [1]
+4        4            1 [1]
+5        5            1 [1]</code></pre>
+</div>
+</div>
+</section>
+<section id="structure-of-the-data" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">7.2</span> Structure of the data</h2>
+<p>Examine the structure of the data, including variable names, labels.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Stata: use the <strong>codebook</strong> function</li>
+<li>R: use the <a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a> function from the <code>skimr</code> package</li>
+</ul>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>. codebook
+
+-------------------------------------------------------------------------------
+child_ID                                                               child_ID
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,10308]                    units:  1
+         unique values:  10,308                   missing .:  0/10,308
+
+                  mean:    5154.5
+              std. dev:   2975.81
+
+           percentiles:        10%       25%       50%       75%       90%
+                              1031    2577.5    5154.5    7731.5      9278
+
+-------------------------------------------------------------------------------
+CONSULT_year                                                       CONSULT_year
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [2021,2021]                  units:  1
+         unique values:  1                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,308  2021
+
+-------------------------------------------------------------------------------
+CONSULT_month                                                     CONSULT_month
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [7,12]                       units:  1
+         unique values:  6                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                           133  7
+                         1,774  8
+                         2,561  9
+                         2,306  10
+                         2,536  11
+                           998  12
+
+-------------------------------------------------------------------------------
+CONSULT_day_of_week                                         CONSULT_day_of_week
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,6]                        units:  1
+         unique values:  6                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         2,621  0
+                         1,925  1
+                         1,978  2
+                         1,696  3
+                         2,082  4
+                             6  6
+
+-------------------------------------------------------------------------------
+CONSULT_district                                               CONSULT_district
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,3]                        units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         2,429  1
+                         2,703  2
+                         5,176  3
+
+-------------------------------------------------------------------------------
+CONSULT_facility_ID                                         CONSULT_facility_ID
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,18]                       units:  1
+         unique values:  18                       missing .:  0/10,308
+
+                  mean:   8.92666
+              std. dev:   5.07343
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 2         5         9        14        16
+
+-------------------------------------------------------------------------------
+CONSULT_area                                                       CONSULT_area
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,2]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         4,088  1
+                         6,220  2
+
+-------------------------------------------------------------------------------
+CONSULT_facility_type                                     CONSULT_facility_type
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,2]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         5,599  1
+                         4,709  2
+
+-------------------------------------------------------------------------------
+SDC_sex                                                                 SDC_sex
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,98]                       units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         5,229  1
+                         5,075  2
+                             4  98
+
+-------------------------------------------------------------------------------
+SDC_age_in_month                                               SDC_age_in_month
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,59]                       units:  1
+         unique values:  60                       missing .:  0/10,308
+
+                  mean:   18.7498
+              std. dev:   14.8998
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 3         7        15        27        43
+
+-------------------------------------------------------------------------------
+SDC_young_infant_age_ctg                               SDC_young_infant_age_ctg
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,711  1
+                            35  2
+                           332  3
+                           230  4
+
+-------------------------------------------------------------------------------
+SDC_main_caregiver                                           SDC_main_caregiver
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,99]                       units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,464  1
+                           350  2
+                           494  99
+
+-------------------------------------------------------------------------------
+SDC_living_with_caregiver                             SDC_living_with_caregiver
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                            60  0
+                        10,248  1
+
+-------------------------------------------------------------------------------
+SDC_mother_education                                       SDC_mother_education
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,99]                       units:  1
+         unique values:  9                        missing .:  766/10,308
+
+            tabulation:  Freq.  Value
+                         5,516  1
+                            38  2
+                         2,282  3
+                           116  4
+                            94  5
+                            10  6
+                         1,412  96
+                            19  97
+                            55  99
+                           766  .
+
+-------------------------------------------------------------------------------
+CLIN_sickness_duration                                   CLIN_sickness_duration
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,14]                       units:  1
+         unique values:  15                       missing .:  0/10,308
+
+                  mean:   3.33799
+              std. dev:   3.01087
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 1         2         3         3         7
+
+-------------------------------------------------------------------------------
+CLIN_convulsions                                               CLIN_convulsions
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,98]                       units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,178  0
+                            95  1
+                            35  98
+
+-------------------------------------------------------------------------------
+CLIN_vomiting                                                     CLIN_vomiting
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,98]                       units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         8,402  0
+                         1,878  1
+                            28  98
+
+-------------------------------------------------------------------------------
+CLIN_fever                                                           CLIN_fever
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,98]                       units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         3,068  0
+                         7,225  1
+                            15  98
+
+-------------------------------------------------------------------------------
+CLIN_fever_onset                                               CLIN_fever_onset
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,14]                       units:  1
+         unique values:  15                       missing .:  3,083/10,308
+
+                  mean:   2.50145
+              std. dev:   1.93099
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 1         1         2         3         4
+
+-------------------------------------------------------------------------------
+CLIN_cough                                                           CLIN_cough
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,98]                       units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         4,658  0
+                         5,635  1
+                            15  98
+
+-------------------------------------------------------------------------------
+CLIN_diarrhoea                                                   CLIN_diarrhoea
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,98]                       units:  1
+         unique values:  3                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         7,982  0
+                         2,306  1
+                            20  98
+
+-------------------------------------------------------------------------------
+CLIN_breastfeeding                                           CLIN_breastfeeding
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,180  0
+                           128  1
+
+-------------------------------------------------------------------------------
+CLIN_runny_nose                                                 CLIN_runny_nose
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         5,427  0
+                         4,881  1
+
+-------------------------------------------------------------------------------
+CLIN_ear                                                               CLIN_ear
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,126  0
+                           182  1
+
+-------------------------------------------------------------------------------
+CLIN_eye                                                               CLIN_eye
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,846  0
+                           462  1
+
+-------------------------------------------------------------------------------
+CLIN_skin                                                             CLIN_skin
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         8,435  0
+                         1,873  1
+
+-------------------------------------------------------------------------------
+CLIN_mouth                                                           CLIN_mouth
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,033  0
+                           275  1
+
+-------------------------------------------------------------------------------
+CLIN_irritable                                                   CLIN_irritable
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,095  0
+                           213  1
+
+-------------------------------------------------------------------------------
+CLIN_jaundice                                                     CLIN_jaundice
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,307  0
+                             1  1
+
+-------------------------------------------------------------------------------
+CLIN_umbilicus                                                   CLIN_umbilicus
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,291  0
+                            17  1
+
+-------------------------------------------------------------------------------
+CLIN_abdominal                                                   CLIN_abdominal
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,309  0
+                           999  1
+
+-------------------------------------------------------------------------------
+CLIN_worms                                                           CLIN_worms
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,275  0
+                            33  1
+
+-------------------------------------------------------------------------------
+CLIN_urogenital                                                 CLIN_urogenital
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,222  0
+                            86  1
+
+-------------------------------------------------------------------------------
+MEAS_temperature                                               MEAS_temperature
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [34.5,42.5]                  units:  .1
+         unique values:  16                       missing .:  9,271/10,308
+
+                  mean:   37.0781
+              std. dev:   .977139
+
+           percentiles:        10%       25%       50%       75%       90%
+                                36      36.5        37      37.5      38.5
+
+-------------------------------------------------------------------------------
+MEAS_MUAC_in_mm                                                 MEAS_MUAC_in_mm
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [100,180]                    units:  1
+         unique values:  17                       missing .:  10,220/10,308
+
+                  mean:   144.602
+              std. dev:   14.1686
+
+           percentiles:        10%       25%       50%       75%       90%
+                               122       140       145       155       160
+
+-------------------------------------------------------------------------------
+MEAS_weight_in_kg                                             MEAS_weight_in_kg
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [2,38.2]                     units:  .1
+         unique values:  161                      missing .:  8,305/10,308
+
+                  mean:   10.2479
+              std. dev:   3.40385
+
+           percentiles:        10%       25%       50%       75%       90%
+                               6.2         8        10        12      14.9
+
+-------------------------------------------------------------------------------
+MEAS_height_in_cm                                             MEAS_height_in_cm
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [10,134]                     units:  1
+         unique values:  79                       missing .:  9,946/10,308
+
+                  mean:   75.3481
+              std. dev:   17.8652
+
+           percentiles:        10%       25%       50%       75%       90%
+                                54        65        76        88        96
+
+-------------------------------------------------------------------------------
+MEAS_weight_for_age                                         MEAS_weight_for_age
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,3]                        units:  1
+         unique values:  3                        missing .:  10,300/10,308
+
+            tabulation:  Freq.  Value
+                             5  1
+                             2  2
+                             1  3
+                        10,300  .
+
+-------------------------------------------------------------------------------
+TEST_malaria_done                                             TEST_malaria_done
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         4,545  0
+                         5,763  1
+
+-------------------------------------------------------------------------------
+TEST_malaria_type                                             TEST_malaria_type
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,98]                       units:  1
+         unique values:  4                        missing .:  4,550/10,308
+
+            tabulation:  Freq.  Value
+                         5,371  1
+                           340  2
+                             2  95
+                            45  98
+                         4,550  .
+
+-------------------------------------------------------------------------------
+TEST_malaria_result                                         TEST_malaria_result
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,98]                       units:  1
+         unique values:  5                        missing .:  4,550/10,308
+
+            tabulation:  Freq.  Value
+                         4,665  0
+                         1,032  1
+                             1  2
+                             3  95
+                            57  98
+                         4,550  .
+
+-------------------------------------------------------------------------------
+DX_malaria                                                           DX_malaria
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         8,508  0
+                         1,800  1
+
+-------------------------------------------------------------------------------
+DX_malaria_severe                                             DX_malaria_severe
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,184  0
+                           124  1
+
+-------------------------------------------------------------------------------
+DX_malaria_severe_suspected                         DX_malaria_severe_suspected
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,264  0
+                            44  1
+
+-------------------------------------------------------------------------------
+DX_malaria_uncomplicated                               DX_malaria_uncomplicated
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,362  0
+                           946  1
+
+-------------------------------------------------------------------------------
+DX_malaria_suspected                                       DX_malaria_suspected
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,248  0
+                            60  1
+
+-------------------------------------------------------------------------------
+DX_count_non_malaria                                       DX_count_non_malaria
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,5]                        units:  1
+         unique values:  6                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         3,166  0
+                         5,960  1
+                           877  2
+                           266  3
+                            31  4
+                             8  5
+
+-------------------------------------------------------------------------------
+DX_other_severe                                                 DX_other_severe
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,196  0
+                           112  1
+
+-------------------------------------------------------------------------------
+DX_anaemia                                                           DX_anaemia
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,259  0
+                            49  1
+
+-------------------------------------------------------------------------------
+DX_free_text                                                       DX_free_text
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,960]                      units:  1
+         unique values:  960                      missing .:  0/10,308
+
+                  mean:   204.729
+              std. dev:   312.778
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 1         1         1       380       785
+
+-------------------------------------------------------------------------------
+RX_preconsult_antibiotics                             RX_preconsult_antibiotics
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         8,573  0
+                         1,735  1
+
+-------------------------------------------------------------------------------
+RX_preconsult_antimalarials                         RX_preconsult_antimalarials
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,866  0
+                           442  1
+
+-------------------------------------------------------------------------------
+RX_preconsult_fever_pain                               RX_preconsult_fever_pain
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         7,892  0
+                         2,416  1
+
+-------------------------------------------------------------------------------
+RX_preconsult_herbs                                         RX_preconsult_herbs
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,211  0
+                            97  1
+
+-------------------------------------------------------------------------------
+RX_preconsult_unspecified                             RX_preconsult_unspecified
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,053  0
+                           255  1
+
+-------------------------------------------------------------------------------
+RX_preconsult_free_text                                 RX_preconsult_free_text
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,199]                      units:  1
+         unique values:  199                      missing .:  0/10,308
+
+                  mean:    4.0031
+              std. dev:   19.6324
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 1         1         1         1         1
+
+-------------------------------------------------------------------------------
+RX_antimalarials                                               RX_antimalarials
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,018  0
+                         1,290  1
+
+-------------------------------------------------------------------------------
+RX_ACT                                                                   RX_ACT
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,247  0
+                            61  1
+
+-------------------------------------------------------------------------------
+RX_AL                                                                     RX_AL
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         9,111  0
+                         1,197  1
+
+-------------------------------------------------------------------------------
+RX_artemether                                                     RX_artemether
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,248  0
+                            60  1
+
+-------------------------------------------------------------------------------
+RX_artesunate                                                     RX_artesunate
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,084  0
+                           224  1
+
+-------------------------------------------------------------------------------
+RX_primaquine                                                     RX_primaquine
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,279  0
+                            29  1
+
+-------------------------------------------------------------------------------
+RX_quinine                                                           RX_quinine
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,235  0
+                            73  1
+
+-------------------------------------------------------------------------------
+RX_antibiotics                                                   RX_antibiotics
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                         4,878  0
+                         5,430  1
+
+-------------------------------------------------------------------------------
+RX_antibiotics_src_text                                 RX_antibiotics_src_text
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,205  0
+                           103  1
+
+-------------------------------------------------------------------------------
+RX_parenteral                                                     RX_parenteral
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,125  0
+                           183  1
+
+-------------------------------------------------------------------------------
+RX_count_other                                                   RX_count_other
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,16]                       units:  1
+         unique values:  17                       missing .:  0/10,308
+
+                  mean:   1.49156
+              std. dev:   1.29602
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 0         1         1         2         3
+
+-------------------------------------------------------------------------------
+RX_free_text                                                       RX_free_text
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [1,730]                      units:  1
+         unique values:  730                      missing .:  0/10,308
+
+                  mean:   37.0477
+              std. dev:    126.18
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 1         1         1         1         1
+
+-------------------------------------------------------------------------------
+MGMT_referral_src_caregiver                         MGMT_referral_src_caregiver
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,98]                       units:  1
+         unique values:  4                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,122  0
+                           164  1
+                             9  97
+                            13  98
+
+-------------------------------------------------------------------------------
+MGMT_referral_src_registry                           MGMT_referral_src_registry
+-------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/10,308
+
+            tabulation:  Freq.  Value
+                        10,194  0
+                           114  1</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">df</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">10308</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">70</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">character</td>
+<td style="text-align: left;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">62</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 12%">
+<col style="width: 16%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 7%">
+<col style="width: 10%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">min</th>
+<th style="text-align: right;">max</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CONSULT_district</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CONSULT_facility_ID</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CONSULT_area</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CONSULT_facility_type</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SDC_young_infant_age_ctg</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DX_free_text</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">960</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RX_preconsult_free_text</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">199</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RX_free_text</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">730</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 6%">
+<col style="width: 9%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 4%">
+<col style="width: 5%">
+<col style="width: 4%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">child_ID</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">5154.50</td>
+<td style="text-align: right;">2975.81</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2577.75</td>
+<td style="text-align: right;">5154.5</td>
+<td style="text-align: right;">7731.25</td>
+<td style="text-align: right;">10308.0</td>
+<td style="text-align: left;">▇▇▇▇▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CONSULT_year</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2021.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2021.0</td>
+<td style="text-align: right;">2021.00</td>
+<td style="text-align: right;">2021.0</td>
+<td style="text-align: right;">2021.00</td>
+<td style="text-align: right;">2021.0</td>
+<td style="text-align: left;">▁▁▇▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CONSULT_month</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">9.81</td>
+<td style="text-align: right;">1.28</td>
+<td style="text-align: right;">7.0</td>
+<td style="text-align: right;">9.00</td>
+<td style="text-align: right;">10.0</td>
+<td style="text-align: right;">11.00</td>
+<td style="text-align: right;">12.0</td>
+<td style="text-align: left;">▆▇▇▇▃</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CONSULT_day_of_week</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.88</td>
+<td style="text-align: right;">1.47</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">6.0</td>
+<td style="text-align: left;">▇▃▃▃▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SDC_sex</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.53</td>
+<td style="text-align: right;">1.97</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">98.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SDC_age_in_month</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">18.75</td>
+<td style="text-align: right;">14.90</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">7.00</td>
+<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">27.00</td>
+<td style="text-align: right;">59.0</td>
+<td style="text-align: left;">▇▆▃▂▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SDC_main_caregiver</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">5.73</td>
+<td style="text-align: right;">20.93</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">99.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SDC_living_with_caregiver</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▁▁▁▁▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SDC_mother_education</td>
+<td style="text-align: right;">766</td>
+<td style="text-align: right;">0.93</td>
+<td style="text-align: right;">16.38</td>
+<td style="text-align: right;">34.27</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">99.0</td>
+<td style="text-align: left;">▇▁▁▁▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CLIN_sickness_duration</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">3.34</td>
+<td style="text-align: right;">3.01</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">14.0</td>
+<td style="text-align: left;">▇▆▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CLIN_convulsions</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.34</td>
+<td style="text-align: right;">5.70</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">98.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CLIN_vomiting</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.45</td>
+<td style="text-align: right;">5.11</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">98.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CLIN_fever</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.84</td>
+<td style="text-align: right;">3.74</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">98.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CLIN_fever_onset</td>
+<td style="text-align: right;">3083</td>
+<td style="text-align: right;">0.70</td>
+<td style="text-align: right;">2.50</td>
+<td style="text-align: right;">1.93</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">14.0</td>
+<td style="text-align: left;">▇▅▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CLIN_cough</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.69</td>
+<td style="text-align: right;">3.75</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">98.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CLIN_diarrhoea</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.41</td>
+<td style="text-align: right;">4.32</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">98.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CLIN_breastfeeding</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CLIN_runny_nose</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.47</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CLIN_ear</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CLIN_eye</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.21</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CLIN_skin</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">0.39</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CLIN_mouth</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: right;">0.16</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CLIN_irritable</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.14</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CLIN_jaundice</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CLIN_umbilicus</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CLIN_abdominal</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CLIN_worms</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CLIN_urogenital</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.09</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MEAS_temperature</td>
+<td style="text-align: right;">9271</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">37.08</td>
+<td style="text-align: right;">0.98</td>
+<td style="text-align: right;">34.5</td>
+<td style="text-align: right;">36.50</td>
+<td style="text-align: right;">37.0</td>
+<td style="text-align: right;">37.50</td>
+<td style="text-align: right;">42.5</td>
+<td style="text-align: left;">▃▇▃▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MEAS_MUAC_in_mm</td>
+<td style="text-align: right;">10220</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">144.60</td>
+<td style="text-align: right;">14.17</td>
+<td style="text-align: right;">100.0</td>
+<td style="text-align: right;">140.00</td>
+<td style="text-align: right;">145.0</td>
+<td style="text-align: right;">155.00</td>
+<td style="text-align: right;">180.0</td>
+<td style="text-align: left;">▁▃▇▇▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MEAS_weight_in_kg</td>
+<td style="text-align: right;">8305</td>
+<td style="text-align: right;">0.19</td>
+<td style="text-align: right;">10.25</td>
+<td style="text-align: right;">3.40</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">8.00</td>
+<td style="text-align: right;">10.0</td>
+<td style="text-align: right;">12.00</td>
+<td style="text-align: right;">38.2</td>
+<td style="text-align: left;">▆▇▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MEAS_height_in_cm</td>
+<td style="text-align: right;">9946</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">75.35</td>
+<td style="text-align: right;">17.87</td>
+<td style="text-align: right;">10.0</td>
+<td style="text-align: right;">65.00</td>
+<td style="text-align: right;">76.0</td>
+<td style="text-align: right;">88.00</td>
+<td style="text-align: right;">134.0</td>
+<td style="text-align: left;">▁▂▇▅▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MEAS_weight_for_age</td>
+<td style="text-align: right;">10300</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.50</td>
+<td style="text-align: right;">0.76</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: left;">▇▁▃▁▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TEST_malaria_done</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.56</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▆▁▁▁▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TEST_malaria_type</td>
+<td style="text-align: right;">4550</td>
+<td style="text-align: right;">0.56</td>
+<td style="text-align: right;">1.85</td>
+<td style="text-align: right;">8.72</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">98.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TEST_malaria_result</td>
+<td style="text-align: right;">4550</td>
+<td style="text-align: right;">0.56</td>
+<td style="text-align: right;">1.20</td>
+<td style="text-align: right;">9.93</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">98.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DX_malaria</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">0.38</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DX_malaria_severe</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DX_malaria_severe_suspected</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DX_malaria_uncomplicated</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.09</td>
+<td style="text-align: right;">0.29</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DX_malaria_suspected</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DX_count_non_malaria</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.84</td>
+<td style="text-align: right;">0.71</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DX_other_severe</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DX_anaemia</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RX_preconsult_antibiotics</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">0.37</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RX_preconsult_antimalarials</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RX_preconsult_fever_pain</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.23</td>
+<td style="text-align: right;">0.42</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RX_preconsult_herbs</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RX_preconsult_unspecified</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.16</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RX_antimalarials</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: right;">0.33</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RX_ACT</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RX_AL</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">0.32</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RX_artemether</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RX_artesunate</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.15</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RX_primaquine</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RX_quinine</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RX_antibiotics</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.53</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RX_antibiotics_src_text</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RX_parenteral</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RX_count_other</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.49</td>
+<td style="text-align: right;">1.30</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">16.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MGMT_referral_src_caregiver</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.22</td>
+<td style="text-align: right;">4.50</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">98.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MGMT_referral_src_registry</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>R: use the <a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html">tbl_summary</a> function from the <code>gtsummary</code> package</li>
+</ul>
+</div>
+</div>
+<div class="cell" data-df-print="kable">
+<div class="cell-output-display">
+
+<div id="dotcgzrnkm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#dotcgzrnkm .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#dotcgzrnkm .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dotcgzrnkm .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#dotcgzrnkm .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#dotcgzrnkm .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dotcgzrnkm .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dotcgzrnkm .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#dotcgzrnkm .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#dotcgzrnkm .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#dotcgzrnkm .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#dotcgzrnkm .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#dotcgzrnkm .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#dotcgzrnkm .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#dotcgzrnkm .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#dotcgzrnkm .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#dotcgzrnkm .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#dotcgzrnkm .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dotcgzrnkm .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#dotcgzrnkm .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#dotcgzrnkm .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dotcgzrnkm .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#dotcgzrnkm .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#dotcgzrnkm .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dotcgzrnkm .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dotcgzrnkm .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#dotcgzrnkm .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#dotcgzrnkm .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dotcgzrnkm .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dotcgzrnkm .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dotcgzrnkm .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dotcgzrnkm .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dotcgzrnkm .gt_left {
+  text-align: left;
+}
+
+#dotcgzrnkm .gt_center {
+  text-align: center;
+}
+
+#dotcgzrnkm .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#dotcgzrnkm .gt_font_normal {
+  font-weight: normal;
+}
+
+#dotcgzrnkm .gt_font_bold {
+  font-weight: bold;
+}
+
+#dotcgzrnkm .gt_font_italic {
+  font-style: italic;
+}
+
+#dotcgzrnkm .gt_super {
+  font-size: 65%;
+}
+
+#dotcgzrnkm .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#dotcgzrnkm .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#dotcgzrnkm .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#dotcgzrnkm .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#dotcgzrnkm .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#dotcgzrnkm .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"><strong>Characteristic</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>N = 10,308</strong><sup class="gt_footnote_marks">1</sup></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">child_ID</td>
+<td class="gt_row gt_center">5,154 (2,578, 7,731)</td></tr>
+    <tr><td class="gt_row gt_left">CONSULT_year</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2021</td>
+<td class="gt_row gt_center">10,308 (100%)</td></tr>
+    <tr><td class="gt_row gt_left">CONSULT_month</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">7</td>
+<td class="gt_row gt_center">133 (1.3%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">8</td>
+<td class="gt_row gt_center">1,774 (17%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">9</td>
+<td class="gt_row gt_center">2,561 (25%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">10</td>
+<td class="gt_row gt_center">2,306 (22%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">11</td>
+<td class="gt_row gt_center">2,536 (25%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">12</td>
+<td class="gt_row gt_center">998 (9.7%)</td></tr>
+    <tr><td class="gt_row gt_left">CONSULT_day_of_week</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">2,621 (25%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">1,925 (19%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">1,978 (19%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center">1,696 (16%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4</td>
+<td class="gt_row gt_center">2,082 (20%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">6</td>
+<td class="gt_row gt_center">6 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left">CONSULT_district</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">2,429 (24%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">2,703 (26%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center">5,176 (50%)</td></tr>
+    <tr><td class="gt_row gt_left">CONSULT_facility_ID</td>
+<td class="gt_row gt_center">9.0 (5.0, 14.0)</td></tr>
+    <tr><td class="gt_row gt_left">CONSULT_area</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">4,088 (40%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">6,220 (60%)</td></tr>
+    <tr><td class="gt_row gt_left">CONSULT_facility_type</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5,599 (54%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">4,709 (46%)</td></tr>
+    <tr><td class="gt_row gt_left">SDC_sex</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5,229 (51%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">5,075 (49%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">4 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left">SDC_age_in_month</td>
+<td class="gt_row gt_center">15 (7, 27)</td></tr>
+    <tr><td class="gt_row gt_left">SDC_young_infant_age_ctg</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">9,711 (94%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">35 (0.3%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center">332 (3.2%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4</td>
+<td class="gt_row gt_center">230 (2.2%)</td></tr>
+    <tr><td class="gt_row gt_left">SDC_main_caregiver</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">9,464 (92%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">350 (3.4%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">99</td>
+<td class="gt_row gt_center">494 (4.8%)</td></tr>
+    <tr><td class="gt_row gt_left">SDC_living_with_caregiver</td>
+<td class="gt_row gt_center">10,248 (99%)</td></tr>
+    <tr><td class="gt_row gt_left">SDC_mother_education</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5,516 (58%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">38 (0.4%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center">2,282 (24%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4</td>
+<td class="gt_row gt_center">116 (1.2%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">5</td>
+<td class="gt_row gt_center">94 (1.0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">6</td>
+<td class="gt_row gt_center">10 (0.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">96</td>
+<td class="gt_row gt_center">1,412 (15%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">97</td>
+<td class="gt_row gt_center">19 (0.2%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">99</td>
+<td class="gt_row gt_center">55 (0.6%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">766</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_sickness_duration</td>
+<td class="gt_row gt_center">3.0 (2.0, 3.0)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_convulsions</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">10,178 (99%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">95 (0.9%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">35 (0.3%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_vomiting</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">8,402 (82%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">1,878 (18%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">28 (0.3%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_fever</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">3,068 (30%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">7,225 (70%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">15 (0.1%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_fever_onset</td>
+<td class="gt_row gt_center">2.00 (1.00, 3.00)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">3,083</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_cough</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">4,658 (45%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5,635 (55%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">15 (0.1%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_diarrhoea</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">7,982 (77%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">2,306 (22%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">20 (0.2%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_breastfeeding</td>
+<td class="gt_row gt_center">128 (1.2%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_runny_nose</td>
+<td class="gt_row gt_center">4,881 (47%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_ear</td>
+<td class="gt_row gt_center">182 (1.8%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_eye</td>
+<td class="gt_row gt_center">462 (4.5%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_skin</td>
+<td class="gt_row gt_center">1,873 (18%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_mouth</td>
+<td class="gt_row gt_center">275 (2.7%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_irritable</td>
+<td class="gt_row gt_center">213 (2.1%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_jaundice</td>
+<td class="gt_row gt_center">1 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_umbilicus</td>
+<td class="gt_row gt_center">17 (0.2%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_abdominal</td>
+<td class="gt_row gt_center">999 (9.7%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_worms</td>
+<td class="gt_row gt_center">33 (0.3%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_urogenital</td>
+<td class="gt_row gt_center">86 (0.8%)</td></tr>
+    <tr><td class="gt_row gt_left">MEAS_temperature</td>
+<td class="gt_row gt_center">37.00 (36.50, 37.50)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">9,271</td></tr>
+    <tr><td class="gt_row gt_left">MEAS_MUAC_in_mm</td>
+<td class="gt_row gt_center">145 (140, 155)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">10,220</td></tr>
+    <tr><td class="gt_row gt_left">MEAS_weight_in_kg</td>
+<td class="gt_row gt_center">10.0 (8.0, 12.0)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">8,305</td></tr>
+    <tr><td class="gt_row gt_left">MEAS_height_in_cm</td>
+<td class="gt_row gt_center">76 (65, 88)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">9,946</td></tr>
+    <tr><td class="gt_row gt_left">MEAS_weight_for_age</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5 (62%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">2 (25%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center">1 (12%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">10,300</td></tr>
+    <tr><td class="gt_row gt_left">TEST_malaria_done</td>
+<td class="gt_row gt_center">5,763 (56%)</td></tr>
+    <tr><td class="gt_row gt_left">TEST_malaria_type</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5,371 (93%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">340 (5.9%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">95</td>
+<td class="gt_row gt_center">2 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">45 (0.8%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">4,550</td></tr>
+    <tr><td class="gt_row gt_left">TEST_malaria_result</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">4,665 (81%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">1,032 (18%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">1 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">95</td>
+<td class="gt_row gt_center">3 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">57 (1.0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">4,550</td></tr>
+    <tr><td class="gt_row gt_left">DX_malaria</td>
+<td class="gt_row gt_center">1,800 (17%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_malaria_severe</td>
+<td class="gt_row gt_center">124 (1.2%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_malaria_severe_suspected</td>
+<td class="gt_row gt_center">44 (0.4%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_malaria_uncomplicated</td>
+<td class="gt_row gt_center">946 (9.2%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_malaria_suspected</td>
+<td class="gt_row gt_center">60 (0.6%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_count_non_malaria</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">3,166 (31%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5,960 (58%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">877 (8.5%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center">266 (2.6%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4</td>
+<td class="gt_row gt_center">31 (0.3%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">5</td>
+<td class="gt_row gt_center">8 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_other_severe</td>
+<td class="gt_row gt_center">112 (1.1%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_anaemia</td>
+<td class="gt_row gt_center">49 (0.5%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_free_text</td>
+<td class="gt_row gt_center">1 (1, 380)</td></tr>
+    <tr><td class="gt_row gt_left">RX_preconsult_antibiotics</td>
+<td class="gt_row gt_center">1,735 (17%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_preconsult_antimalarials</td>
+<td class="gt_row gt_center">442 (4.3%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_preconsult_fever_pain</td>
+<td class="gt_row gt_center">2,416 (23%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_preconsult_herbs</td>
+<td class="gt_row gt_center">97 (0.9%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_preconsult_unspecified</td>
+<td class="gt_row gt_center">255 (2.5%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_preconsult_free_text</td>
+<td class="gt_row gt_center">1.0000 (1.0000, 1.0000)</td></tr>
+    <tr><td class="gt_row gt_left">RX_antimalarials</td>
+<td class="gt_row gt_center">1,290 (13%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_ACT</td>
+<td class="gt_row gt_center">61 (0.6%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_AL</td>
+<td class="gt_row gt_center">1,197 (12%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_artemether</td>
+<td class="gt_row gt_center">60 (0.6%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_artesunate</td>
+<td class="gt_row gt_center">224 (2.2%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_primaquine</td>
+<td class="gt_row gt_center">29 (0.3%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_quinine</td>
+<td class="gt_row gt_center">73 (0.7%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_antibiotics</td>
+<td class="gt_row gt_center">5,430 (53%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_antibiotics_src_text</td>
+<td class="gt_row gt_center">103 (1.0%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_parenteral</td>
+<td class="gt_row gt_center">183 (1.8%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_count_other</td>
+<td class="gt_row gt_center">1.00 (1.00, 2.00)</td></tr>
+    <tr><td class="gt_row gt_left">RX_free_text</td>
+<td class="gt_row gt_center">1 (1, 1)</td></tr>
+    <tr><td class="gt_row gt_left">MGMT_referral_src_caregiver</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">10,122 (98%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">164 (1.6%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">97</td>
+<td class="gt_row gt_center">9 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">13 (0.1%)</td></tr>
+    <tr><td class="gt_row gt_left">MGMT_referral_src_registry</td>
+<td class="gt_row gt_center">114 (1.1%)</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="2"><sup class="gt_footnote_marks">1</sup> Median (IQR); n (%)</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="identify-missing-values" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Identify missing values</h1>
+<p>Identify missing values in each variable: missing_plot</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> /\     /\
+{  `---'  }
+{  O   O  }
+==&gt;  V &lt;==  No need for mice. This data set is completely observed.
+ \  \|/  /
+  `-----'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="ds4ph_day2_session01_practical_session_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      CONSULT_district CONSULT_facility_ID CLIN_fever DX_malaria  
+10308                1                   1          1          1 0
+                     0                   0          0          0 0</code></pre>
+</div>
+</div>
+</section>
+<section id="data-analysis-plan" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Data analysis plan</h1>
+<p>For now, all you need to include in this section is which variables from the dataset you plan to use, and what associations between them you will investigate to help answer your research question.</p>
+</section>
+<section id="references" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> References</h1>
+<p>Skimr package</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./import_data.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Import your data</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

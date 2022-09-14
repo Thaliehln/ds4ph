@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2022-09-26">
 
-<title>Data Science for Public Health - Day 01 - Session 01</title>
+<title>Import your data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -131,8 +131,9 @@ div.csl-indent {
   <li><a href="#import-stata-data" id="toc-import-stata-data" class="nav-link" data-scroll-target="#import-stata-data"> <span class="header-section-number">2.3</span> Import Stata data</a></li>
   <li><a href="#additional-question" id="toc-additional-question" class="nav-link" data-scroll-target="#additional-question"> <span class="header-section-number">2.4</span> Additional question</a></li>
   </ul></li>
-  <li><a href="#import-data-from-odk-central" id="toc-import-data-from-odk-central" class="nav-link" data-scroll-target="#import-data-from-odk-central"> <span class="header-section-number">3</span> Import data from ODK Central</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">4</span> References</a></li>
+  <li><a href="#import-data-from-urls" id="toc-import-data-from-urls" class="nav-link" data-scroll-target="#import-data-from-urls"> <span class="header-section-number">3</span> Import data from URLs</a></li>
+  <li><a href="#import-data-from-odk-central" id="toc-import-data-from-odk-central" class="nav-link" data-scroll-target="#import-data-from-odk-central"> <span class="header-section-number">4</span> Import data from ODK Central</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">5</span> References</a></li>
   </ul>
 </nav>
 </div>
@@ -140,7 +141,8 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Science for Public Health - Day 01 - Session 01</h1>
+<h1 class="title">Import your data</h1>
+<p class="subtitle lead">Day 01 - Session 02</p>
 </div>
 
 
@@ -162,24 +164,24 @@ div.csl-indent {
 
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>Most of the time you will want to generate <em>Quarto</em> documents using your own data.</p>
-<p>One of the first thing you will usually do when starting a new <em>Quarto</em> document is to import your data.</p>
-<p>If you want to further process / analyse your data, you will have to store your data in a two-dimensional array-like structure (<strong>data frame</strong>) that contains rows and columns. You can store multiple data sets in memory (which will be stored in different data frames) and work on all of them in parallel.</p>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<p>Most of the time you will want to generate <em>Quarto</em> documents using your own data. To this aim, you will have to import data from external sources: files, URLs, or directly from a server such as ODK Central.</p>
+<p>If you want to further process / analyse your data, you will have to store the imported data in a <strong>data frame</strong>.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Warning
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>For (advanced) Python/R Markdown users only:</strong> you still need to import the R package <code>reticulate</code> if you want to use the Knitr engine and manipulate Python objects within R code chunks.</p>
+<p>A data frame is a two-dimensional array-like structure that contains rows and columns.</p>
+</div>
+</div>
+<p>You can store multiple data sets in memory (which will be stored in different data frames) and work on all of them in parallel.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+
 </div>
 <div class="cell">
 
@@ -189,7 +191,6 @@ Warning
 <h1 data-number="2"><span class="header-section-number">2</span> Import data from files</h1>
 <p>There is a dedicated importing function in R and Python for almost every data format. In this session we show you how to read Stata (<code>.dta</code>), Excel (<code>.xlsx</code>) and comma-separated values (CSV, <code>.csv</code>) formats.</p>
 <p>Only one argument is required within these function. We need to know the PATH where the file is stored.</p>
-<p>Indicate functions that accepts URL as well (it is the case for Python functions).</p>
 <section id="import-excel-data" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="import-excel-data"><span class="header-section-number">2.1</span> Import Excel data</h2>
 <p>Read the Excel data set <strong>dataset1.xlsx</strong> and store it into a data frame called <strong>df1</strong>.</p>
@@ -204,13 +205,20 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <ul>
+<li>Stata: use the import excel Stata command with the <code>stata</code> function from the <code>RStata</code> package.</li>
 <li>R: use the <a href="https://www.rdocumentation.org/packages/openxlsx/versions/4.2.5/topics/read.xlsx">read.xlsx</a> function from the <code>openxlsx</code> package.</li>
 <li>Python: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html">read_excel</a> function from the <code>pandas</code> package.</li>
 </ul>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>. import excel dataset1.xlsx
+(5 vars, 151 obs)</code></pre>
+</div>
 </div>
 <div class="cell">
 
@@ -233,6 +241,7 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <ul>
+<li>Stata: use the import delimited Stata command with the <code>stata</code> function from the <code>RStata</code> package.</li>
 <li>R: use the <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table">read.csv</a> function from the <code>haven</code> package.</li>
 <li>Python: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">read_csv</a> function from the <code>pandas</code> package.</li>
 </ul>
@@ -240,6 +249,12 @@ Tip
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>. import delimited dataset1.csv
+(11 vars, 32 obs)</code></pre>
+</div>
 </div>
 <div class="cell">
 
@@ -262,14 +277,14 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Stata: use the <code>use</code> command</li>
+<li>Stata: use the <code>use</code> Stata command with the <code>stata</code> function from the <code>RStata</code> package.</li>
 <li>R: use the <a href="https://haven.tidyverse.org/reference/read_dta.html">read_dta</a> function from the <code>haven</code> package. This package supports SAS, STATA and SPSS software.</li>
 <li>Python: use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_stata.html">read_stata</a> function from the <code>pandas</code> package.</li>
 </ul>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -300,7 +315,7 @@ Tip
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -318,7 +333,7 @@ Differences found in 0/0 variables compared.
 </div>
 <p>Can you indicate what variable has been modified in <strong>dataset1</strong> between df1 and df3?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -336,8 +351,12 @@ Differences found in 0/0 variables compared.
 </div>
 </section>
 </section>
-<section id="import-data-from-odk-central" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Import data from ODK Central</h1>
+<section id="import-data-from-urls" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Import data from URLs</h1>
+<p>Indicate functions that accepts URL as well (it is the case for Python functions).</p>
+</section>
+<section id="import-data-from-odk-central" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Import data from ODK Central</h1>
 <p>While data digitally captured using ODK Collect or Enketo and stored in ODK Central can be retrieved in bulk through the web interface, ODK Central’s API provides direct access to its data (and functionality). It is a more efficient way to ensure that data are always up-to-date.</p>
 <p>We will see how to retrieve data through the OData API.</p>
 <ol type="1">
@@ -360,7 +379,7 @@ Tip
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 
@@ -385,7 +404,7 @@ Tip
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -401,12 +420,12 @@ Important
 </div>
 </div>
 </section>
-<section id="references" class="level1 unnumbered" data-number="4">
+<section id="references" class="level1 unnumbered" data-number="5">
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">4 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">5 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-mayer20" class="csl-entry" role="doc-biblioentry">
 Mayer, Florian W. 2020. <span>“ruODK: Client for the ODK Central API.”</span> <a href="https://github.com/ropensci/ruODK">https://github.com/ropensci/ruODK</a>.
 </div>
