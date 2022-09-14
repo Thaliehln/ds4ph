@@ -1,0 +1,75 @@
+---
+title: "Data Science for Public Health Workshop"
+subtitle: "Introduction to Data Science"
+institute: "Ifakara Health Institute / Swiss Tropical and Public Health Institute"
+date: "2022-09-27"
+format:
+  revealjs:
+    slide-number: true
+    chalkboard: true
+    html-q-tags: true
+editor: visual
+from: markdown+emoji
+---
+
+![](images/paste-AC41DECB.png)
+
+------------------------------------------------------------------------
+
+## Had you thought of any of those words?
+
+![](images/paste-FFA998D0.png)
+
+## Test
+
+![](images/paste-494B1CA8.png)
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+## Bullets
+
+::: callout-tip
+## Tip With Caption
+
+This is an example of a callout with a caption.
+:::
+
+### Third-level
+
+When you click the **Render** button a document will be generated that includes: :blush:
+
+::: incremental
+-   Content authored with markdown
+-   Output from executable code
+:::
+
+## What do Experts say about Data Science? (1)
+
+<q>The statistics profession faces a choice in its future research between continuing concentration on traditional topics -- based largely on data analysis supported by mathematical statistics -- and a broader viewpoint -- based on an inclusive concept of learning from data. The latter course present severe challenges as well as exciting opportunities. The former risks seeing statistics become increasingly marginal...</q> John Chambers[^1], 1993. *Greater or Lesser Statistics, A Choice for Future Research*
+
+[^1]: John Chambers is a PhD in Statistics, the creator of the S programming language, and a core member of the R programming language project.
+
+## What do Experts say about Data Science? (2)
+
+<q>"Data science is the science of learning from data; it studies the methods involved in the analysis and processing of data and proposes technology to improve methods in an evidence-based manner. The scope and impact of this science will expand enormously in coming decades as scientific data and data about science itself become ubiquitously available.</q> David Donoho[^2], 2017. *50 Years of Data Science.* Journal of Computational and Graphical Statistics 26 (4): 745--66.
+
+[^2]: David Donoho is a Professor of Statistics at Stanford University.
+
+## A tentative definition
+
+We define data science as "the interdisciplinary field of inquiry in which quantitative and analytical approaches, processes, and systems are developed and used to extract knowledge and insights from increasingly large and/or complex sets of data"
+
+-   Interdisciplinary collaborative field
+-   Rigorous public health question formulation
+-   Set of collective evidence-based processes, theories, concepts, tools and technologies
+-   Extraction of valuable knowledge and information from data
+-   Generation of actionable insights
+-   Effective communication to decision-makers
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```

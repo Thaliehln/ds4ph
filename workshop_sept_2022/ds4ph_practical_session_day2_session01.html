@@ -118,8 +118,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"> <span class="header-section-number">4.1</span> Import the data</a></li>
   <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"> <span class="header-section-number">4.2</span> Structure of the data</a></li>
   </ul></li>
-  <li><a href="#data-analysis-plan" id="toc-data-analysis-plan" class="nav-link" data-scroll-target="#data-analysis-plan"> <span class="header-section-number">5</span> Data analysis plan</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">6</span> References</a></li>
+  <li><a href="#identify-missing-values" id="toc-identify-missing-values" class="nav-link" data-scroll-target="#identify-missing-values"> <span class="header-section-number">5</span> Identify missing values</a></li>
+  <li><a href="#data-analysis-plan" id="toc-data-analysis-plan" class="nav-link" data-scroll-target="#data-analysis-plan"> <span class="header-section-number">6</span> Data analysis plan</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">7</span> References</a></li>
   </ul>
 </nav>
 </div>
@@ -211,10 +212,22 @@ Tip
 <div class="cell">
 
 </div>
+<div class="cell" data-knitr="kable">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 x 2
+  child_ID CONSULT_district
+     &lt;dbl&gt;        &lt;dbl+lbl&gt;
+1        1            1 [1]
+2        2            1 [1]
+3        3            1 [1]
+4        4            1 [1]
+5        5            1 [1]</code></pre>
+</div>
+</div>
 </section>
 <section id="structure-of-the-data" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">4.2</span> Structure of the data</h2>
-<p>Text</p>
+<p>Examine the structure of the data, including variable names, labels.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -227,12 +240,12 @@ Tip
 <div class="callout-body-container callout-body">
 <ul>
 <li>Stata: use the <strong>codebook</strong> function</li>
-<li>R: use the <strong>skim</strong> function from the <code>skimr</code> package</li>
+<li>R: use the <a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a> function from the <code>skimr</code> package</li>
 </ul>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -1215,7 +1228,7 @@ MGMT_referral_src_registry                           MGMT_referral_src_registry
                            114  1</code></pre>
 </div>
 </div>
-<div class="cell" data-df-print="kable">
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <caption>Data summary</caption>
@@ -2206,32 +2219,797 @@ MGMT_referral_src_registry                           MGMT_referral_src_registry
 </table>
 </div>
 </div>
-</section>
-</section>
-<section id="data-analysis-plan" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Data analysis plan</h1>
-<p>For now, all you need to include in this section is which variables from the dataset you plan to use, and what associations between them you will investigate to help answer your research question.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>R: use the <a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html">tbl_summary</a> function from the <code>gtsummary</code> package</li>
+</ul>
+</div>
+</div>
 <div class="cell" data-df-print="kable">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 x 1
-   child_ID
-      &lt;dbl&gt;
- 1        1
- 2        2
- 3        3
- 4        4
- 5        5
- 6        6
- 7        7
- 8        8
- 9        9
-10       10</code></pre>
+<div class="cell-output-display">
+
+<div id="lfgmtmwsgh" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#lfgmtmwsgh .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lfgmtmwsgh .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lfgmtmwsgh .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lfgmtmwsgh .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lfgmtmwsgh .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lfgmtmwsgh .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lfgmtmwsgh .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lfgmtmwsgh .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lfgmtmwsgh .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lfgmtmwsgh .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lfgmtmwsgh .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lfgmtmwsgh .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lfgmtmwsgh .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lfgmtmwsgh .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lfgmtmwsgh .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lfgmtmwsgh .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lfgmtmwsgh .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lfgmtmwsgh .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lfgmtmwsgh .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lfgmtmwsgh .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lfgmtmwsgh .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lfgmtmwsgh .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lfgmtmwsgh .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lfgmtmwsgh .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lfgmtmwsgh .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lfgmtmwsgh .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lfgmtmwsgh .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lfgmtmwsgh .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lfgmtmwsgh .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lfgmtmwsgh .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lfgmtmwsgh .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lfgmtmwsgh .gt_left {
+  text-align: left;
+}
+
+#lfgmtmwsgh .gt_center {
+  text-align: center;
+}
+
+#lfgmtmwsgh .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lfgmtmwsgh .gt_font_normal {
+  font-weight: normal;
+}
+
+#lfgmtmwsgh .gt_font_bold {
+  font-weight: bold;
+}
+
+#lfgmtmwsgh .gt_font_italic {
+  font-style: italic;
+}
+
+#lfgmtmwsgh .gt_super {
+  font-size: 65%;
+}
+
+#lfgmtmwsgh .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#lfgmtmwsgh .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#lfgmtmwsgh .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lfgmtmwsgh .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#lfgmtmwsgh .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#lfgmtmwsgh .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"><strong>Characteristic</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>N = 10,308</strong><sup class="gt_footnote_marks">1</sup></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">child_ID</td>
+<td class="gt_row gt_center">5,154 (2,578, 7,731)</td></tr>
+    <tr><td class="gt_row gt_left">CONSULT_year</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2021</td>
+<td class="gt_row gt_center">10,308 (100%)</td></tr>
+    <tr><td class="gt_row gt_left">CONSULT_month</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">7</td>
+<td class="gt_row gt_center">133 (1.3%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">8</td>
+<td class="gt_row gt_center">1,774 (17%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">9</td>
+<td class="gt_row gt_center">2,561 (25%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">10</td>
+<td class="gt_row gt_center">2,306 (22%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">11</td>
+<td class="gt_row gt_center">2,536 (25%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">12</td>
+<td class="gt_row gt_center">998 (9.7%)</td></tr>
+    <tr><td class="gt_row gt_left">CONSULT_day_of_week</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">2,621 (25%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">1,925 (19%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">1,978 (19%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center">1,696 (16%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4</td>
+<td class="gt_row gt_center">2,082 (20%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">6</td>
+<td class="gt_row gt_center">6 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left">CONSULT_district</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">2,429 (24%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">2,703 (26%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center">5,176 (50%)</td></tr>
+    <tr><td class="gt_row gt_left">CONSULT_facility_ID</td>
+<td class="gt_row gt_center">9.0 (5.0, 14.0)</td></tr>
+    <tr><td class="gt_row gt_left">CONSULT_area</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">4,088 (40%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">6,220 (60%)</td></tr>
+    <tr><td class="gt_row gt_left">CONSULT_facility_type</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5,599 (54%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">4,709 (46%)</td></tr>
+    <tr><td class="gt_row gt_left">SDC_sex</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5,229 (51%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">5,075 (49%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">4 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left">SDC_age_in_month</td>
+<td class="gt_row gt_center">15 (7, 27)</td></tr>
+    <tr><td class="gt_row gt_left">SDC_young_infant_age_ctg</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">9,711 (94%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">35 (0.3%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center">332 (3.2%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4</td>
+<td class="gt_row gt_center">230 (2.2%)</td></tr>
+    <tr><td class="gt_row gt_left">SDC_main_caregiver</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">9,464 (92%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">350 (3.4%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">99</td>
+<td class="gt_row gt_center">494 (4.8%)</td></tr>
+    <tr><td class="gt_row gt_left">SDC_living_with_caregiver</td>
+<td class="gt_row gt_center">10,248 (99%)</td></tr>
+    <tr><td class="gt_row gt_left">SDC_mother_education</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5,516 (58%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">38 (0.4%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center">2,282 (24%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4</td>
+<td class="gt_row gt_center">116 (1.2%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">5</td>
+<td class="gt_row gt_center">94 (1.0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">6</td>
+<td class="gt_row gt_center">10 (0.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">96</td>
+<td class="gt_row gt_center">1,412 (15%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">97</td>
+<td class="gt_row gt_center">19 (0.2%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">99</td>
+<td class="gt_row gt_center">55 (0.6%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">766</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_sickness_duration</td>
+<td class="gt_row gt_center">3.0 (2.0, 3.0)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_convulsions</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">10,178 (99%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">95 (0.9%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">35 (0.3%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_vomiting</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">8,402 (82%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">1,878 (18%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">28 (0.3%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_fever</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">3,068 (30%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">7,225 (70%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">15 (0.1%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_fever_onset</td>
+<td class="gt_row gt_center">2.00 (1.00, 3.00)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">3,083</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_cough</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">4,658 (45%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5,635 (55%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">15 (0.1%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_diarrhoea</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">7,982 (77%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">2,306 (22%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">20 (0.2%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_breastfeeding</td>
+<td class="gt_row gt_center">128 (1.2%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_runny_nose</td>
+<td class="gt_row gt_center">4,881 (47%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_ear</td>
+<td class="gt_row gt_center">182 (1.8%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_eye</td>
+<td class="gt_row gt_center">462 (4.5%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_skin</td>
+<td class="gt_row gt_center">1,873 (18%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_mouth</td>
+<td class="gt_row gt_center">275 (2.7%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_irritable</td>
+<td class="gt_row gt_center">213 (2.1%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_jaundice</td>
+<td class="gt_row gt_center">1 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_umbilicus</td>
+<td class="gt_row gt_center">17 (0.2%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_abdominal</td>
+<td class="gt_row gt_center">999 (9.7%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_worms</td>
+<td class="gt_row gt_center">33 (0.3%)</td></tr>
+    <tr><td class="gt_row gt_left">CLIN_urogenital</td>
+<td class="gt_row gt_center">86 (0.8%)</td></tr>
+    <tr><td class="gt_row gt_left">MEAS_temperature</td>
+<td class="gt_row gt_center">37.00 (36.50, 37.50)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">9,271</td></tr>
+    <tr><td class="gt_row gt_left">MEAS_MUAC_in_mm</td>
+<td class="gt_row gt_center">145 (140, 155)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">10,220</td></tr>
+    <tr><td class="gt_row gt_left">MEAS_weight_in_kg</td>
+<td class="gt_row gt_center">10.0 (8.0, 12.0)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">8,305</td></tr>
+    <tr><td class="gt_row gt_left">MEAS_height_in_cm</td>
+<td class="gt_row gt_center">76 (65, 88)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">9,946</td></tr>
+    <tr><td class="gt_row gt_left">MEAS_weight_for_age</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5 (62%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">2 (25%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center">1 (12%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">10,300</td></tr>
+    <tr><td class="gt_row gt_left">TEST_malaria_done</td>
+<td class="gt_row gt_center">5,763 (56%)</td></tr>
+    <tr><td class="gt_row gt_left">TEST_malaria_type</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5,371 (93%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">340 (5.9%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">95</td>
+<td class="gt_row gt_center">2 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">45 (0.8%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">4,550</td></tr>
+    <tr><td class="gt_row gt_left">TEST_malaria_result</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">4,665 (81%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">1,032 (18%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">1 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">95</td>
+<td class="gt_row gt_center">3 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">57 (1.0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
+<td class="gt_row gt_center">4,550</td></tr>
+    <tr><td class="gt_row gt_left">DX_malaria</td>
+<td class="gt_row gt_center">1,800 (17%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_malaria_severe</td>
+<td class="gt_row gt_center">124 (1.2%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_malaria_severe_suspected</td>
+<td class="gt_row gt_center">44 (0.4%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_malaria_uncomplicated</td>
+<td class="gt_row gt_center">946 (9.2%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_malaria_suspected</td>
+<td class="gt_row gt_center">60 (0.6%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_count_non_malaria</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">3,166 (31%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5,960 (58%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">877 (8.5%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">3</td>
+<td class="gt_row gt_center">266 (2.6%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">4</td>
+<td class="gt_row gt_center">31 (0.3%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">5</td>
+<td class="gt_row gt_center">8 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_other_severe</td>
+<td class="gt_row gt_center">112 (1.1%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_anaemia</td>
+<td class="gt_row gt_center">49 (0.5%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_free_text</td>
+<td class="gt_row gt_center">1 (1, 380)</td></tr>
+    <tr><td class="gt_row gt_left">RX_preconsult_antibiotics</td>
+<td class="gt_row gt_center">1,735 (17%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_preconsult_antimalarials</td>
+<td class="gt_row gt_center">442 (4.3%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_preconsult_fever_pain</td>
+<td class="gt_row gt_center">2,416 (23%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_preconsult_herbs</td>
+<td class="gt_row gt_center">97 (0.9%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_preconsult_unspecified</td>
+<td class="gt_row gt_center">255 (2.5%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_preconsult_free_text</td>
+<td class="gt_row gt_center">1.0000 (1.0000, 1.0000)</td></tr>
+    <tr><td class="gt_row gt_left">RX_antimalarials</td>
+<td class="gt_row gt_center">1,290 (13%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_ACT</td>
+<td class="gt_row gt_center">61 (0.6%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_AL</td>
+<td class="gt_row gt_center">1,197 (12%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_artemether</td>
+<td class="gt_row gt_center">60 (0.6%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_artesunate</td>
+<td class="gt_row gt_center">224 (2.2%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_primaquine</td>
+<td class="gt_row gt_center">29 (0.3%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_quinine</td>
+<td class="gt_row gt_center">73 (0.7%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_antibiotics</td>
+<td class="gt_row gt_center">5,430 (53%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_antibiotics_src_text</td>
+<td class="gt_row gt_center">103 (1.0%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_parenteral</td>
+<td class="gt_row gt_center">183 (1.8%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_count_other</td>
+<td class="gt_row gt_center">1.00 (1.00, 2.00)</td></tr>
+    <tr><td class="gt_row gt_left">RX_free_text</td>
+<td class="gt_row gt_center">1 (1, 1)</td></tr>
+    <tr><td class="gt_row gt_left">MGMT_referral_src_caregiver</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">10,122 (98%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">164 (1.6%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">97</td>
+<td class="gt_row gt_center">9 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">13 (0.1%)</td></tr>
+    <tr><td class="gt_row gt_left">MGMT_referral_src_registry</td>
+<td class="gt_row gt_center">114 (1.1%)</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="2"><sup class="gt_footnote_marks">1</sup> Median (IQR); n (%)</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
 </div>
 </div>
 </section>
-<section id="references" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> References</h1>
-<p>To be completed</p>
+</section>
+<section id="identify-missing-values" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Identify missing values</h1>
+<p>Identify missing values in each variable: missing_plot</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> /\     /\
+{  `---'  }
+{  O   O  }
+==&gt;  V &lt;==  No need for mice. This data set is completely observed.
+ \  \|/  /
+  `-----'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="ds4ph_practical_session_day2_session01_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      CONSULT_district CONSULT_facility_ID CLIN_fever DX_malaria  
+10308                1                   1          1          1 0
+                     0                   0          0          0 0</code></pre>
+</div>
+</div>
+</section>
+<section id="data-analysis-plan" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Data analysis plan</h1>
+<p>For now, all you need to include in this section is which variables from the dataset you plan to use, and what associations between them you will investigate to help answer your research question.</p>
+</section>
+<section id="references" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> References</h1>
+<p>Skimr package</p>
 </section>
 
 </main>

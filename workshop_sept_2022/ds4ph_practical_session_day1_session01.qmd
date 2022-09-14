@@ -2,7 +2,7 @@
 title: "Data Science for Public Health - Day 1 - Import data"
 date: "2022-09-26"
 format:
-  html:
+  word:
     toc: true
     number-sections: true
 editor: visual

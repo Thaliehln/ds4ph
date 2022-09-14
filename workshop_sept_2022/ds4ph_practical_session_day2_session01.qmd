@@ -67,14 +67,21 @@ Refer to previous session
 library(haven)
 df <- haven::read_dta("dataset10.dta")
 ```
+```{r}
+#| knitr: kable
+library(dplyr)
+df %>%
+  head(5) %>%
+  dplyr::select(c("child_ID", "CONSULT_district"))
+```
 
 ## Structure of the data
 
-Text
+Examine the structure of the data, including variable names, labels.
 
 ::: callout-tip
 * Stata: use the **codebook** function
-* R: use the **skim** function from the `skimr` package
+* R: use the [skim](https://docs.ropensci.org/skimr/reference/skim.html) function from the `skimr` package
 :::
 
 ```{r}
@@ -88,22 +95,37 @@ RStata::stata("codebook", data.in = df)
 ```
 
 ```{r}
-#| df-print: kable
 library(skimr)
 skimr::skim(df)
 ```
+
+::: callout-tip
+* R: use the [tbl_summary](https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html) function from the `gtsummary` package
+:::
+
+```{r}
+#| df-print: kable
+library(gtsummary)
+gtsummary::tbl_summary(df)
+```
+# Identify missing values
+
+Identify missing values in each variable: missing_plot
+
+```{r}
+library(finalfit)
+explanatory = c("CONSULT_facility_ID", "CONSULT_district", "CLIN_fever")
+dependent = "DX_malaria"
+
+df %>% 
+  finalfit::missing_pattern(dependent, explanatory)
+```
+
 
 # Data analysis plan
 
 For now, all you need to include in this section is which variables from the dataset you plan to use, and what associations between them you will investigate to help answer your research question.
 
-```{r}
-#| df-print: kable
-library(dplyr)
-df %>%
-  head(10) %>% 
-  dplyr::select("child_ID")
-```
 # References
 
-To be completed
+Skimr package
