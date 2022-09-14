@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-09-26">
 
-<title>Data Science for Public Health - 3&nbsp; Use Stata and Python in your Quarto document</title>
+<title>Data Science for Public Health - 4&nbsp; Use Stata and Python in your Quarto document</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -129,7 +128,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -164,27 +163,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></a>
+  <a href="./prerequisites.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prerequisites</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></a>
+  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Import your data</span></a>
+  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 2 - Session 01</span></a>
+  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Import your data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 03 - Session 01</span></a>
+  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Day 2 - Session 01</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Day 3 - Session 02</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -201,14 +205,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"> <span class="header-section-number">4</span> Introduction</a></li>
-  <li><a href="#use-stata" id="toc-use-stata" class="nav-link" data-scroll-target="#use-stata"> <span class="header-section-number">5</span> Use Stata</a></li>
-  <li><a href="#for-advanced-pythonr-markdown-users-only" id="toc-for-advanced-pythonr-markdown-users-only" class="nav-link" data-scroll-target="#for-advanced-pythonr-markdown-users-only"> <span class="header-section-number">6</span> For (advanced) Python/R Markdown users only</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"> <span class="header-section-number">4.1</span> Introduction</a></li>
+  <li><a href="#use-stata" id="toc-use-stata" class="nav-link" data-scroll-target="#use-stata"> <span class="header-section-number">4.2</span> Use Stata</a>
   <ul class="collapse">
-  <li><a href="#manipulation-of-r-objects-in-python-code-chunks" id="toc-manipulation-of-r-objects-in-python-code-chunks" class="nav-link" data-scroll-target="#manipulation-of-r-objects-in-python-code-chunks"> <span class="header-section-number">6.1</span> Manipulation of R objects in Python code chunks</a></li>
-  <li><a href="#manipulation-of-python-objects-in-r-code-chunks" id="toc-manipulation-of-python-objects-in-r-code-chunks" class="nav-link" data-scroll-target="#manipulation-of-python-objects-in-r-code-chunks"> <span class="header-section-number">6.2</span> Manipulation of Python objects in R code chunks</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">6.3</span> References</a></li>
+  <li><a href="#configure-rstudio-to-execute-stata" id="toc-configure-rstudio-to-execute-stata" class="nav-link" data-scroll-target="#configure-rstudio-to-execute-stata"> <span class="header-section-number">4.2.1</span> Configure RStudio to execute Stata</a></li>
+  <li><a href="#add-your-stata-binary-path-to-your-.rprofile" id="toc-add-your-stata-binary-path-to-your-.rprofile" class="nav-link" data-scroll-target="#add-your-stata-binary-path-to-your-.rprofile"> <span class="header-section-number">4.2.2</span> Add your Stata binary path to your .Rprofile</a></li>
   </ul></li>
+  <li><a href="#for-advanced-pythonr-markdown-users-only" id="toc-for-advanced-pythonr-markdown-users-only" class="nav-link" data-scroll-target="#for-advanced-pythonr-markdown-users-only"> <span class="header-section-number">4.3</span> For (advanced) Python/R Markdown users only</a></li>
+  <li><a href="#manipulation-of-r-objects-in-python-code-chunks" id="toc-manipulation-of-r-objects-in-python-code-chunks" class="nav-link" data-scroll-target="#manipulation-of-r-objects-in-python-code-chunks"> <span class="header-section-number">4.4</span> Manipulation of R objects in Python code chunks</a></li>
+  <li><a href="#manipulation-of-python-objects-in-r-code-chunks" id="toc-manipulation-of-python-objects-in-r-code-chunks" class="nav-link" data-scroll-target="#manipulation-of-python-objects-in-r-code-chunks"> <span class="header-section-number">4.5</span> Manipulation of Python objects in R code chunks</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">4.6</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -217,8 +223,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></h1>
-<p class="subtitle lead">Data Science for Public Health - Day 01 - Session 02</p>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></h1>
 </div>
 
 
@@ -226,28 +231,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 26, 2022</p>
-    </div>
-  </div>
     
   </div>
   
 
 </header>
 
-<section id="introduction" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Introduction</h1>
+<section id="introduction" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">4.1</span> Introduction</h2>
 <p>The number of languages and runtimes used for scientific discourse is very broad (and the RStudio and Jupyter ecosystems in particular are extraordinarily popular).</p>
 <p>Quarto was developed to be multilingual, beginning with R, Python, Javascript, and Julia, with the idea that it will work even for languages that don’t yet exist.</p>
 </section>
-<section id="use-stata" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Use Stata</h1>
+<section id="use-stata" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="use-stata"><span class="header-section-number">4.2</span> Use Stata</h2>
+<p><code>RStata</code> is a simple R / Stata interface which enable the user to:</p>
+<ul>
+<li>execute Stata commands (both inline and from a .do file) from R;</li>
+<li>pass a data.frame to Stata;</li>
+<li>return a data.frame to R;</li>
+<li>include Stata chunks in knitr documents (however each chunk is independent from the others; feature tested with LaTeX/Linux).</li>
+</ul>
+<section id="configure-rstudio-to-execute-stata" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="configure-rstudio-to-execute-stata"><span class="header-section-number">4.2.1</span> Configure RStudio to execute Stata</h3>
+<section id="find-your-stata-binary-path" class="level4" data-number="4.2.1.1">
+<h4 data-number="4.2.1.1" class="anchored" data-anchor-id="find-your-stata-binary-path"><span class="header-section-number">4.2.1.1</span> Find your Stata binary path</h4>
+<p>The function <code>chooseStataBin</code> from the <code>RStata</code> library allows you to browse and set the path to your Stata binary executable.</p>
 </section>
-<section id="for-advanced-pythonr-markdown-users-only" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> For (advanced) Python/R Markdown users only</h1>
+</section>
+<section id="add-your-stata-binary-path-to-your-.rprofile" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="add-your-stata-binary-path-to-your-.rprofile"><span class="header-section-number">4.2.2</span> Add your Stata binary path to your .Rprofile</h3>
+<p>The Stata binary path setting we just created will be lost if your RStudio is closed. To keep this setting each time you are using RStudio, let us add the Stata binary path as an option to <code>.Rprofile</code>, which is your user-specific R configuration file.</p>
+</section>
+</section>
+<section id="for-advanced-pythonr-markdown-users-only" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="for-advanced-pythonr-markdown-users-only"><span class="header-section-number">4.3</span> For (advanced) Python/R Markdown users only</h2>
 <p>You still need to import the R package <code>reticulate</code> if you want to use the Knitr engine and manipulate Python objects within R code chunks.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -255,8 +272,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>Warning: Paket 'reticulate' wurde unter R Version 4.1.3 erstellt</code></pre>
 </div>
 </div>
-<section id="manipulation-of-r-objects-in-python-code-chunks" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="manipulation-of-r-objects-in-python-code-chunks"><span class="header-section-number">6.1</span> Manipulation of R objects in Python code chunks</h2>
+</section>
+<section id="manipulation-of-r-objects-in-python-code-chunks" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="manipulation-of-r-objects-in-python-code-chunks"><span class="header-section-number">4.4</span> Manipulation of R objects in Python code chunks</h2>
 <p>R objects can be manipulated in Python code chunks by referring to them as <code>r.</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>val <span class="ot">&lt;-</span> <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -269,8 +287,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="manipulation-of-python-objects-in-r-code-chunks" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="manipulation-of-python-objects-in-r-code-chunks"><span class="header-section-number">6.2</span> Manipulation of Python objects in R code chunks</h2>
+<section id="manipulation-of-python-objects-in-r-code-chunks" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="manipulation-of-python-objects-in-r-code-chunks"><span class="header-section-number">4.5</span> Manipulation of Python objects in R code chunks</h2>
 <p>Python objects can be manipulated in R code chunks by referring to them as <code>py$</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(val)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -283,11 +301,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="references" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="references"><span class="header-section-number">6.3</span> References</h2>
+<section id="references" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="references"><span class="header-section-number">4.6</span> References</h2>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -391,12 +408,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./create_first_quarto_doc.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./import_data.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Import your data</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Import your data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

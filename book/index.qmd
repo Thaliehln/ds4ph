@@ -1,9 +1,3 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
-
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
-```{r}
-1 + 1
-```
+This is a book created for the Data Science for Public Health Workshop by the [Ifakara Health Institute (IHI)](https://ihi.or.tz/) and the [Swiss Tropical & Public Health Institute (Swiss TPH)](https://www.swisstph.ch), with the support of the [Leading House Africa (LHA)](https://www.swisstph.ch/en/research/leading-house-africa/) which promotes and fosters bilateral collaboration with partner institutions in Africa.

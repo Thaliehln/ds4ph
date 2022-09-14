@@ -1,25 +1,32 @@
----
-title: "Use Stata and Python in your Quarto document"
-subtitle: "Data Science for Public Health - Day 01 - Session 02"
-date: "2022-09-26"
-format:
-  html:
-    toc: true
-    number-sections: true
-editor: visual
-engine: knitr
-bibliography: references.bib
----
+# Use Stata and Python in your Quarto document
 
-# Introduction
+## Introduction
 
 The number of languages and runtimes used for scientific discourse is very broad (and the RStudio and Jupyter ecosystems in particular are extraordinarily popular).
 
 Quarto was developed to be multilingual, beginning with R, Python, Javascript, and Julia, with the idea that it will work even for languages that don't yet exist.
 
-# Use Stata
+## Use Stata
 
-# For (advanced) Python/R Markdown users only
+`RStata` is a simple R / Stata interface which enable the user to:
+
+* execute Stata commands (both inline and from a .do file) from R;
+* pass a data.frame to Stata;
+* return a data.frame to R;
+* include Stata chunks in knitr documents (however each chunk is independent from the others; feature tested with LaTeX/Linux).
+
+### Configure RStudio to execute Stata
+
+#### Find your Stata binary path
+
+The function `chooseStataBin` from the `RStata` library allows you to browse and set the path to your Stata binary executable.
+
+### Add your Stata binary path to your .Rprofile
+
+The Stata binary path setting we just created will be lost if your RStudio is closed.
+To keep this setting each time you are using RStudio, let us add the Stata binary path as an option to `.Rprofile`, which is your user-specific R configuration file.
+
+## For (advanced) Python/R Markdown users only
 
 You still need to import the R package `reticulate` if you want to use the Knitr engine and manipulate Python objects within R code chunks.
 

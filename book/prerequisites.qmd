@@ -1,0 +1,11 @@
+# Prerequisites
+
+Soon - here guidance to install the (free) software to be used in the workshop will be given.
+
+## R installation
+
+## RStudio installation
+
+## GitHub account
+
+## GitHub desktop

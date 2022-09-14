@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science for Public Health - 4&nbsp; Import your data</title>
+<title>Data Science for Public Health - 5&nbsp; Import your data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -147,7 +147,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Import your data</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Import your data</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -182,27 +182,32 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></a>
+  <a href="./prerequisites.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prerequisites</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></a>
+  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./import_data.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Import your data</span></a>
+  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 2 - Session 01</span></a>
+  <a href="./import_data.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Import your data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 03 - Session 01</span></a>
+  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Day 2 - Session 01</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Day 3 - Session 02</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -219,17 +224,17 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"> <span class="header-section-number">4.1</span> Introduction</a></li>
-  <li><a href="#import-data-from-files" id="toc-import-data-from-files" class="nav-link" data-scroll-target="#import-data-from-files"> <span class="header-section-number">4.2</span> Import data from files</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"> <span class="header-section-number">5.1</span> Introduction</a></li>
+  <li><a href="#import-data-from-files" id="toc-import-data-from-files" class="nav-link" data-scroll-target="#import-data-from-files"> <span class="header-section-number">5.2</span> Import data from files</a>
   <ul class="collapse">
-  <li><a href="#import-excel-data" id="toc-import-excel-data" class="nav-link" data-scroll-target="#import-excel-data"> <span class="header-section-number">4.2.1</span> Import Excel data</a></li>
-  <li><a href="#import-csv-data" id="toc-import-csv-data" class="nav-link" data-scroll-target="#import-csv-data"> <span class="header-section-number">4.2.2</span> Import CSV data</a></li>
-  <li><a href="#import-stata-data" id="toc-import-stata-data" class="nav-link" data-scroll-target="#import-stata-data"> <span class="header-section-number">4.2.3</span> Import Stata data</a></li>
-  <li><a href="#additional-question" id="toc-additional-question" class="nav-link" data-scroll-target="#additional-question"> <span class="header-section-number">4.2.4</span> Additional question</a></li>
+  <li><a href="#import-excel-data" id="toc-import-excel-data" class="nav-link" data-scroll-target="#import-excel-data"> <span class="header-section-number">5.2.1</span> Import Excel data</a></li>
+  <li><a href="#import-csv-data" id="toc-import-csv-data" class="nav-link" data-scroll-target="#import-csv-data"> <span class="header-section-number">5.2.2</span> Import CSV data</a></li>
+  <li><a href="#import-stata-data" id="toc-import-stata-data" class="nav-link" data-scroll-target="#import-stata-data"> <span class="header-section-number">5.2.3</span> Import Stata data</a></li>
+  <li><a href="#additional-question" id="toc-additional-question" class="nav-link" data-scroll-target="#additional-question"> <span class="header-section-number">5.2.4</span> Additional question</a></li>
   </ul></li>
-  <li><a href="#import-data-from-urls" id="toc-import-data-from-urls" class="nav-link" data-scroll-target="#import-data-from-urls"> <span class="header-section-number">4.3</span> Import data from URLs</a></li>
-  <li><a href="#import-data-from-odk-central" id="toc-import-data-from-odk-central" class="nav-link" data-scroll-target="#import-data-from-odk-central"> <span class="header-section-number">4.4</span> Import data from ODK Central</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">4.5</span> References</a></li>
+  <li><a href="#import-data-from-urls" id="toc-import-data-from-urls" class="nav-link" data-scroll-target="#import-data-from-urls"> <span class="header-section-number">5.3</span> Import data from URLs</a></li>
+  <li><a href="#import-data-from-odk-central" id="toc-import-data-from-odk-central" class="nav-link" data-scroll-target="#import-data-from-odk-central"> <span class="header-section-number">5.4</span> Import data from ODK Central</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">5.5</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -238,7 +243,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Import your data</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Import your data</span></h1>
 </div>
 
 
@@ -252,8 +257,8 @@ div.csl-indent {
 
 </header>
 
-<section id="introduction" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">4.1</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> Introduction</h2>
 <p>Most of the time you will want to generate <em>Quarto</em> documents using your own data. To this aim, you will have to import data from external sources: files, URLs, or directly from a server such as ODK Central.</p>
 <p>If you want to further process / analyse your data, you will have to store the imported data in a <strong>data frame</strong>.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -281,12 +286,12 @@ Note
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="import-data-from-files" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="import-data-from-files"><span class="header-section-number">4.2</span> Import data from files</h2>
+<section id="import-data-from-files" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="import-data-from-files"><span class="header-section-number">5.2</span> Import data from files</h2>
 <p>There is a dedicated importing function in R and Python for almost every data format. In this session we show you how to read Stata (<code>.dta</code>), Excel (<code>.xlsx</code>) and comma-separated values (CSV, <code>.csv</code>) formats.</p>
 <p>Only one argument is required within these function. We need to know the PATH where the file is stored.</p>
-<section id="import-excel-data" class="level3" data-number="4.2.1">
-<h3 data-number="4.2.1" class="anchored" data-anchor-id="import-excel-data"><span class="header-section-number">4.2.1</span> Import Excel data</h3>
+<section id="import-excel-data" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="import-excel-data"><span class="header-section-number">5.2.1</span> Import Excel data</h3>
 <p>Read the Excel data set <strong>dataset1.xlsx</strong> and store it into a data frame called <strong>df1</strong>.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -325,8 +330,8 @@ Tip
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.read_excel(<span class="st">'dataset1.xlsx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="import-csv-data" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="import-csv-data"><span class="header-section-number">4.2.2</span> Import CSV data</h3>
+<section id="import-csv-data" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="import-csv-data"><span class="header-section-number">5.2.2</span> Import CSV data</h3>
 <p>Read the CSV data set <strong>dataset1.csv</strong> and store it into a data frame called <strong>df2</strong>.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -364,8 +369,8 @@ Tip
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.read_csv(<span class="st">'dataset1.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="import-stata-data" class="level3" data-number="4.2.3">
-<h3 data-number="4.2.3" class="anchored" data-anchor-id="import-stata-data"><span class="header-section-number">4.2.3</span> Import Stata data</h3>
+<section id="import-stata-data" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="import-stata-data"><span class="header-section-number">5.2.3</span> Import Stata data</h3>
 <p>Read the Stata data set <strong>dataset1.dta</strong> and store it into a data frame called <strong>df3</strong>.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -403,8 +408,8 @@ Tip
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> pd.read_stata(<span class="st">'dataset1.dta'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="additional-question" class="level3" data-number="4.2.4">
-<h3 data-number="4.2.4" class="anchored" data-anchor-id="additional-question"><span class="header-section-number">4.2.4</span> Additional question</h3>
+<section id="additional-question" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="additional-question"><span class="header-section-number">5.2.4</span> Additional question</h3>
 <p>Can you indicate what variable has been modified in <strong>dataset1</strong> between df1 and df2?</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -458,12 +463,12 @@ Differences found in 0/0 variables compared.
 </div>
 </section>
 </section>
-<section id="import-data-from-urls" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="import-data-from-urls"><span class="header-section-number">4.3</span> Import data from URLs</h2>
+<section id="import-data-from-urls" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="import-data-from-urls"><span class="header-section-number">5.3</span> Import data from URLs</h2>
 <p>Indicate functions that accepts URL as well (it is the case for Python functions).</p>
 </section>
-<section id="import-data-from-odk-central" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="import-data-from-odk-central"><span class="header-section-number">4.4</span> Import data from ODK Central</h2>
+<section id="import-data-from-odk-central" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="import-data-from-odk-central"><span class="header-section-number">5.4</span> Import data from ODK Central</h2>
 <p>While data digitally captured using ODK Collect or Enketo and stored in ODK Central can be retrieved in bulk through the web interface, ODK Central’s API provides direct access to its data (and functionality). It is a more efficient way to ensure that data are always up-to-date.</p>
 <p>We will see how to retrieve data through the OData API.</p>
 <ol type="1">
@@ -533,8 +538,8 @@ Important
 </div>
 </div>
 </section>
-<section id="references" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="references"><span class="header-section-number">4.5</span> References</h2>
+<section id="references" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="references"><span class="header-section-number">5.5</span> References</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
@@ -645,12 +650,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./use_stata_python_with_quarto.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./ds4ph_day2_session01_practical_session.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 2 - Session 01</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Day 2 - Session 01</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

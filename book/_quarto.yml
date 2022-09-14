@@ -9,6 +9,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - prerequisites.qmd
     - create_first_quarto_doc.qmd
     - use_stata_python_with_quarto.qmd
     - import_data.qmd

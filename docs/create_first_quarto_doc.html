@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science for Public Health - 2&nbsp; Create your first Quarto document</title>
+<title>Data Science for Public Health - 3&nbsp; Create your first Quarto document</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -89,7 +89,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./use_stata_python_with_quarto.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./prerequisites.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -128,7 +128,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -163,27 +163,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></a>
+  <a href="./prerequisites.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prerequisites</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></a>
+  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Import your data</span></a>
+  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 2 - Session 01</span></a>
+  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Import your data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 03 - Session 01</span></a>
+  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Day 2 - Session 01</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Day 3 - Session 02</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -200,11 +205,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#create-a-new-quarto-document" id="toc-create-a-new-quarto-document" class="nav-link active" data-scroll-target="#create-a-new-quarto-document"> <span class="header-section-number">2.1</span> Create a new Quarto document</a></li>
-  <li><a href="#quarto-document-structure" id="toc-quarto-document-structure" class="nav-link" data-scroll-target="#quarto-document-structure"> <span class="header-section-number">2.2</span> Quarto document structure</a></li>
-  <li><a href="#running-code" id="toc-running-code" class="nav-link" data-scroll-target="#running-code"> <span class="header-section-number">2.3</span> Running Code</a></li>
-  <li><a href="#code-options" id="toc-code-options" class="nav-link" data-scroll-target="#code-options"> <span class="header-section-number">2.4</span> Code options</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">2.5</span> References</a></li>
+  <li><a href="#create-a-new-quarto-document" id="toc-create-a-new-quarto-document" class="nav-link active" data-scroll-target="#create-a-new-quarto-document"> <span class="header-section-number">3.1</span> Create a new Quarto document</a></li>
+  <li><a href="#quarto-document-structure" id="toc-quarto-document-structure" class="nav-link" data-scroll-target="#quarto-document-structure"> <span class="header-section-number">3.2</span> Quarto document structure</a></li>
+  <li><a href="#running-code" id="toc-running-code" class="nav-link" data-scroll-target="#running-code"> <span class="header-section-number">3.3</span> Running Code</a></li>
+  <li><a href="#code-options" id="toc-code-options" class="nav-link" data-scroll-target="#code-options"> <span class="header-section-number">3.4</span> Code options</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">3.5</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -213,7 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></h1>
 </div>
 
 
@@ -227,21 +232,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="create-a-new-quarto-document" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="create-a-new-quarto-document"><span class="header-section-number">2.1</span> Create a new Quarto document</h2>
+<section id="create-a-new-quarto-document" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="create-a-new-quarto-document"><span class="header-section-number">3.1</span> Create a new Quarto document</h2>
 <p><img src="images/paste-F44DAC8E.png" class="img-fluid"></p>
 </section>
-<section id="quarto-document-structure" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="quarto-document-structure"><span class="header-section-number">2.2</span> Quarto document structure</h2>
+<section id="quarto-document-structure" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="quarto-document-structure"><span class="header-section-number">3.2</span> Quarto document structure</h2>
 <p><img src="images/paste-30C30ECC.png" class="img-fluid"></p>
 </section>
-<section id="running-code" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="running-code"><span class="header-section-number">2.3</span> Running Code</h2>
+<section id="running-code" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="running-code"><span class="header-section-number">3.3</span> Running Code</h2>
 <p>When you click the <strong>Render</strong> button a document will be generated that includes both content and the output of embedded code.</p>
 <p><img src="images/paste-A8386DC4.png" class="img-fluid"></p>
 </section>
-<section id="code-options" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="code-options"><span class="header-section-number">2.4</span> Code options</h2>
+<section id="code-options" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="code-options"><span class="header-section-number">3.4</span> Code options</h2>
 <p>You can embed code like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -257,8 +262,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
 </section>
-<section id="references" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="references"><span class="header-section-number">2.5</span> References</h2>
+<section id="references" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="references"><span class="header-section-number">3.5</span> References</h2>
 
 
 </section>
@@ -363,13 +368,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./prerequisites.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prerequisites</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./use_stata_python_with_quarto.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

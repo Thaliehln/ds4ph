@@ -1,34 +1,15 @@
----
-title: "Data Science for Public Health - Day 03 - Session 01"
-date: "2022-09-27"
-format:
-  html:
-    toc: true
-    number-sections: true
-editor: visual
-execute:
-  echo: false
-  warning: false
----
-
-# Introduction
+# Day 3 - Session 02
 
 We are interested in predicting **referral in children under 5** based on two of the clinical measurements at the consultation:
 
--   **culmen length** and
--   **culmen depth**.
+-   **param1** and
+-   **param2**.
 
-# Load the data
+## Load the data
 
 The dataset is stored in **dataset1.dta**.
 
 Read the dataset and store it into a dataframe called **df**.
-
-::: callout-tip
--   Stata hint: use the `use` command
--   R hint: use the `read_dta` function from the `haven` package.
--   Python hint: use `read_stata` function from `pandas`
-:::
 
 ```{r}
 #| echo: true
@@ -40,7 +21,7 @@ library(haven)
 df <- haven::read_dta("dataset10.dta")
 ```
 
-# Visual inspection of the data
+## Visual inspection of the data
 
 We want to do some data exploration to get an initial understanding of the data. Before building a predictive model, it is a good idea to look at the data:
 
@@ -48,7 +29,7 @@ We want to do some data exploration to get an initial understanding of the data.
 -   you need to check that the information you need for your task is actually present in the dataset;
 -   inspecting the data is a good way to find peculiarities. These can arise during data collection (for example, malfunctioning sensor or missing values), or from the way the data is processed afterwards (for example capped values).
 
-## Observations/Samples
+### Observations/Samples
 
 Display the variables/features **child_id**, **test** and **test** for the **10 first observations/samples** in the data.
 
@@ -70,7 +51,7 @@ df %>%
   knitr::kable()
 ```
 
-## Variables/Features
+### Variables/Features
 
 How many variables/features are numerical in the dataset?
 
@@ -86,13 +67,13 @@ How many variables/features are categorical in the dataset?
 # Write your code here
 ```
 
-## Target classes
+### Target classes
 
-What are the different penguins species available in the dataset and how many observations/samples of each species are there?
+What are the different classes available in the dataset and how many observations/samples of each types are there?
 
--   Stata hint:
--   R hint:
--   Python hint: select the right column and use the `value_counts` method.
+::: callout-tip
+-   Python: select the right column and use the `value_counts` method.
+:::
 
 ```{r}
 #| echo: true
@@ -112,17 +93,17 @@ Plot histograms for the numerical variables/features
 
 Show variable/feature distribution for each class.
 
--   Stata hint:
--   R hint:
--   Python hint: use `seaborn.pairplot`
+::: callout-tip
+-   Python: use `seaborn.pairplot`
+:::
 
 ```{r}
 #| echo: true
 # Write your code here
 ```
 
-Looking at these distributions, how difficult do you think it will be to classify the sick children using the `culmen depth` and `culmen length` variables/features?
+Looking at these distributions, how difficult do you think it will be to classify the sick children using the `param1` and `param2` variables/features?
 
-# References
+## References
 
--   scikit-learn MOOC
+-   inspired from scikit-learn MOOC
