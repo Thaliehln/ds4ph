@@ -1,0 +1,144 @@
+---
+title: "How to use the ODK API in R with the httr package"
+author: Lucas Silbernagel
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+    number_section: TRUE
+params:
+  url_post: NULL
+  url_get: NULL
+  url_odata_get: NULL
+  svc: NULL
+  timezone: NULL
+  filter_date: NULL
+  username: NULL
+  password: NULL
+---
+```{r, include = FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(
+    echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE
+  )
+```
+
+# Parameters and Libraries
+Loading the required **httr** package.\
+[httr package documentation](https://www.rdocumentation.org/packages/httr/versions/1.4.2)
+```{r}
+require(httr)
+require(ruODK)
+require(knitr)
+```
+
+Below you can find all **parameters** that were used in this rmarkdown document. The syntax for referencing parameters in rmarkdown is 'params$[parameter name]'.
+
+* url_post = ``r params$url_post``\
+* url_get = ``r params$url_get``\
+* url_odata_get = ``r params$url_odata_get``\
+* svc = ``r params$svc``\
+* timezone = ``r params$timezone``\
+* filter_date = ``r params$filter_date``\
+* username = ``r params$username``  \  
+\
+
+# Using the RESTful API of ODK
+
+To authenticate ourselves, we need __username__ and __password__ of the ODK server we want to communicate with. 
+```{r}
+un <- params$username
+pw <- params$password
+```
+\
+Since we're sending data (in this case our log in credentials) to the ODK server, we need to put them in the __body__ of our request.
+We imitate a JSON format in R by using a list with named elements.
+```{r}
+body <- list('email' = un, 
+            'password' = pw)
+```
+\
+The ODK API uses a __Session Bearer Tokens authentication system__ which means that you use your log in credentials to get a token which you can then use to authenticate your request.\
+To get this token we have to do a http request of method _POST_ (= insert data). We now have to make sure that we are using the URL that takes care of the __'Session Bearer Token'__. In order to find the right __URL__ for the purpose of your request, you can visit the [ODK API documentation](https://odkcentral.docs.apiary.io/#reference/authentication/data-document?console=1).\
+Please note that the generated token is __valid for 24 hours__. If you try to execute the code a second time, the request will fail since the already generated token is still active and valid.
+```{r}
+url_post <- params$url_post
+
+token_response <- httr::POST(url_post, body = body, encode = 'json')
+token_response
+```
+Right now, the response doesn't really look like it contains a token that we could use.\
+\
+To get the token we have to unwrap the content of the response using httr's __content()__ function.\
+Then the token can be found using the key 'token'.
+```{r}
+token <- httr::content(token_response)$token
+token
+```
+\
+Now we are able to send an http __GET request__. The one below, for example, lists all submissions of a form. Again, the [ODK API documentation](https://odkcentral.docs.apiary.io/#reference/authentication/data-document?console=1) is the place where the correct URL for this resource can be found. 
+```{r}
+# URL to tell the API where to look for the resource (in this case data from an ODK server) 
+url_get <- params$url_get
+
+test_response <- httr::GET(url_get,
+                    add_headers("Authorization"= paste0("Bearer ", token)))
+test_response
+```
+\
+To get the content of the response, we have to use the content function again.
+```{r}
+content_test_response <- httr::content(test_response)
+content_test_response[1:5]
+```
+\
+The response is a (JSON like) nested list and therefore not really convenient to work with.
+To convert it to a data frame you can use the following code:
+```{r}
+data_frame <- as.data.frame(do.call(rbind, content_test_response))
+knitr::kable(data_frame)
+```
+
+# Using the ODATA API of ODK
+
+When using __ODATA__ the entire process is exactly the same apart from the __URL__ you have to use. By now you probably know where to look for the right one.
+```{r}
+# URL to tell the API where to look for the resource (in this case data from an ODK server) 
+url_odata_get <- params$url_odata_get
+
+test_response_odata <- GET(url_odata_get,
+                    add_headers("Authorization"= paste0("Bearer ", token)))
+
+content_test_response_odata <- httr::content(test_response_odata)$value
+
+data_frame_odata <- as.data.frame(do.call(rbind, content_test_response_odata))
+knitr::kable(data_frame_odata)
+```
+
+# ruODK - Let a Package Do It For You  
+
+How can a package help here? After going through the process of using the API 'manually', we can see that it requires quite some lines of code and we always have to concern ourselves with things like finding the right endpoint and the corresponding URL, unwarpping the content from the API response etc. Since these steps are always the same for every API request, [Florian Meyer](https://github.com/florianm) developed the __ruODK package__. This library abstracts many of the steps of a 'manual' request away and therefore facilitates and speeds up data access. 
+Before you can choose almost any function of ruODK, you need to run the __ru_setup()__ function. It provides ruODK with all info it needs about the form you want to work with and it also takes care about the authentication. For more info on the function and th package in general, you can visit [ruDOK's documentation](https://docs.ropensci.org/ruODK/reference/index.html)
+```{r}
+ruODK::ru_setup(
+  svc = params$svc,
+    un = params$username,
+    pw = params$password,
+    tz = params$timezone,
+    verbose = TRUE
+)
+```
+\
+ruODK covers almost the entire spectrum of the ODK API. For now, we will only reproduce the examples from above but in the [documentation](https://docs.ropensci.org/ruODK/reference/index.html) all functions are listed and explained.\
+We start with listing all submissions of a form.
+```{r}
+ruODK_submission_list <- ruODK::submission_list()
+knitr::kable(ruODK_submission_list)
+```
+\
+Now we retrieve data through ODATA. Note, how we don't have to construct the new URL with the filter condition ourselves but how ruODK does it for us. We just have to pass the condition as an argument. Also cool: we don't have to pass any URL to the function because ruODK is constructing it automatically for us in the background.   
+```{r}
+ruODK_submissions_odata <- ruODK::odata_submission_get(filter = paste0('__system/submissionDate gt ', params$filter_date),
+                                                       download = FALSE)
+knitr::kable(ruODK_submissions_odata)
+```
