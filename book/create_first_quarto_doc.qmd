@@ -1,29 +1,18 @@
----
-title: "Create your first Quarto document"
-subtitle: "Data Science for Public Health - Day 01 - Session 01"
-date: "2022-09-26"
-format:
-  html:
-    toc: true
-    number-sections: true
-editor: visual
-engine: knitr
-bibliography: references.bib
----
+# Create your first Quarto document
 
-# Create a new Quarto document
+## Create a new Quarto document
 
-![](images/paste-B7A5D281.png)
+![](images/paste-F44DAC8E.png)
 
 ## Quarto document structure
 
-![](images/paste-64C26A24.png)
+![](images/paste-30C30ECC.png)
 
 ## Running Code
 
 When you click the **Render** button a document will be generated that includes both content and the output of embedded code.
 
-![](images/paste-81CB00A2.png)
+![](images/paste-A8386DC4.png)
 
 ## Code options
 

@@ -11,7 +11,7 @@
     "href": "intro.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "This is a book created for the Data Science for Public Health Workshop by the Ifakara Health Institute (IHI) and the Swiss Tropical & Public Health Institute (Swiss TPH), with the support of the Leading House Africa (LHA) which promotes and fosters bilateral collaboration with partner institutions in Africa.\nWelcome!\n:spiral_calendar: September 26-28, 2022\n:clock9: 09:00 - 17:00\n:city_sunrise: Dar-es-Salaam, Tanzania (Protea Hotel by Marriott Dar es Salaam Courtyard) —–"
+    "text": "This is a book created for the Data Science for Public Health Workshop by the Ifakara Health Institute (IHI) and the Swiss Tropical & Public Health Institute (Swiss TPH), with the support of the Leading House Africa (LHA) which promotes and fosters bilateral collaboration with partner institutions in Africa.\nWelcome!\n🗓️ September 26-28, 2022\n🕘 09:00 - 17:00\n🌇 Dar-es-Salaam, Tanzania (Protea Hotel by Marriott Dar es Salaam Courtyard) —–"
   },
   {
     "objectID": "intro.html#overview",
@@ -63,11 +63,32 @@
     "text": "1.7 Data\nSoon - here a succinct description of the data to be used as part of the workshop will be given.\n\n This work is licensed under a Attribution 4.0 International (CC BY 4.0).\nYou are free to:\n\nShare — copy and redistribute the material in any medium or format\nAdapt — remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nNo additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits."
   },
   {
-    "objectID": "create_first_quarto_doc.html",
-    "href": "create_first_quarto_doc.html",
+    "objectID": "create_first_quarto_doc.html#quarto-document-structure",
+    "href": "create_first_quarto_doc.html#quarto-document-structure",
     "title": "2  Create your first Quarto document",
-    "section": "",
-    "text": "When you click the Render button a document will be generated that includes both content and the output of embedded code.\n\n\n\n\nYou can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "section": "2.2 Quarto document structure",
+    "text": "2.2 Quarto document structure"
+  },
+  {
+    "objectID": "create_first_quarto_doc.html#running-code",
+    "href": "create_first_quarto_doc.html#running-code",
+    "title": "2  Create your first Quarto document",
+    "section": "2.3 Running Code",
+    "text": "2.3 Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code."
+  },
+  {
+    "objectID": "create_first_quarto_doc.html#code-options",
+    "href": "create_first_quarto_doc.html#code-options",
+    "title": "2  Create your first Quarto document",
+    "section": "2.4 Code options",
+    "text": "2.4 Code options\nYou can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "create_first_quarto_doc.html#references",
+    "href": "create_first_quarto_doc.html#references",
+    "title": "2  Create your first Quarto document",
+    "section": "2.5 References",
+    "text": "2.5 References"
   },
   {
     "objectID": "use_stata_python_with_quarto.html",
@@ -102,35 +123,35 @@
     "href": "import_data.html",
     "title": "4  Import your data",
     "section": "",
-    "text": "Most of the time you will want to generate Quarto documents using your own data. To this aim, you will have to import data from external sources: files, URLs, or directly from a server such as ODK Central.\nIf you want to further process / analyse your data, you will have to store the imported data in a data frame.\n\n\n\n\n\n\nNote\n\n\n\nA data frame is a two-dimensional array-like structure that contains rows and columns.\n\n\nYou can store multiple data sets in memory (which will be stored in different data frames) and work on all of them in parallel."
+    "text": "Most of the time you will want to generate Quarto documents using your own data. To this aim, you will have to import data from external sources: files, URLs, or directly from a server such as ODK Central.\nIf you want to further process / analyse your data, you will have to store the imported data in a data frame.\n\n\n\n\n\n\nNote\n\n\n\nA data frame is a two-dimensional array-like structure that contains rows and columns.\n\n\nYou can store multiple data sets in memory (which will be stored in different data frames) and work on all of them in parallel.\n\nlibrary(reticulate)\n\nWarning: Paket 'reticulate' wurde unter R Version 4.1.3 erstellt\n\n\n\nimport warnings\nwarnings.filterwarnings('ignore')"
   },
   {
-    "objectID": "import_data.html#import-excel-data",
-    "href": "import_data.html#import-excel-data",
+    "objectID": "import_data.html#import-data-from-files",
+    "href": "import_data.html#import-data-from-files",
     "title": "4  Import your data",
-    "section": "6.1 Import Excel data",
-    "text": "6.1 Import Excel data\nRead the Excel data set dataset1.xlsx and store it into a data frame called df1.\n\n\n\n\n\n\nTip\n\n\n\n\nStata: use the import excel Stata command with the stata function from the RStata package.\nR: use the read.xlsx function from the openxlsx package.\nPython: use the read_excel function from the pandas package.\n\n\n\n\n# Write your code here\n\n\n\n. import excel dataset1.xlsx\n(5 vars, 151 obs)"
+    "section": "4.2 Import data from files",
+    "text": "4.2 Import data from files\nThere is a dedicated importing function in R and Python for almost every data format. In this session we show you how to read Stata (.dta), Excel (.xlsx) and comma-separated values (CSV, .csv) formats.\nOnly one argument is required within these function. We need to know the PATH where the file is stored.\n\n4.2.1 Import Excel data\nRead the Excel data set dataset1.xlsx and store it into a data frame called df1.\n\n\n\n\n\n\nTip\n\n\n\n\nStata: use the import excel Stata command with the stata function from the RStata package.\nR: use the read.xlsx function from the openxlsx package.\nPython: use the read_excel function from the pandas package.\n\n\n\n\n# Write your code here\n\n\nlibrary(RStata)\ndf2 <- RStata::stata(\"import excel dataset1.xlsx\", data.out = TRUE)\n\n. import excel dataset1.xlsx\n(5 vars, 151 obs)\n\n\n\nlibrary(openxlsx)\ndf1 <- openxlsx::read.xlsx(\"dataset1.xlsx\")\n\n\nimport pandas as pd\ndf1 = pd.read_excel('dataset1.xlsx')\n\n\n\n4.2.2 Import CSV data\nRead the CSV data set dataset1.csv and store it into a data frame called df2.\n\n\n\n\n\n\nTip\n\n\n\n\nStata: use the import delimited Stata command with the stata function from the RStata package.\nR: use the read.csv function from the haven package.\nPython: use the read_csv function from the pandas package.\n\n\n\n\n# Write your code here\n\n\nlibrary(RStata)\ndf2 <- RStata::stata(\"import delimited dataset1.csv\", data.out = TRUE)\n\n. import delimited dataset1.csv\n(11 vars, 32 obs)\n\n\n\ndf2 <- read.csv(\"dataset1.csv\")\n\n\nimport pandas as pd\ndf2 = pd.read_csv('dataset1.csv')\n\n\n\n4.2.3 Import Stata data\nRead the Stata data set dataset1.dta and store it into a data frame called df3.\n\n\n\n\n\n\nTip\n\n\n\n\nStata: use the use Stata command with the stata function from the RStata package.\nR: use the read_dta function from the haven package. This package supports SAS, STATA and SPSS software.\nPython: use the read_stata function from the pandas package.\n\n\n\n\n# Write your code here\n\n\nlibrary(RStata)\ndf3 <- RStata::stata(\"use dataset1.dta\", data.out = TRUE)\n\n. use dataset1.dta\n\n\n\nlibrary(haven)\ndf3 <- haven::read_dta(\"dataset1.dta\")\n\n\nimport pandas as pd\ndf3 = pd.read_stata('dataset1.dta')\n\n\n\n4.2.4 Additional question\nCan you indicate what variable has been modified in dataset1 between df1 and df2?\n\n\n\n\n\n\nTip\n\n\n\nUse the R function comparedf\n\n\n\n# Write your code here\n\n\narsenal::comparedf(df1, df2)\n\nCompare Object\n\nFunction Call: \narsenal::comparedf(x = df1, y = df2)\n\nShared: 0 non-by variables and 32 observations.\nNot shared: 16 variables and 118 observations.\n\nDifferences found in 0/0 variables compared.\n0 variables compared have non-identical attributes.\n\n\nCan you indicate what variable has been modified in dataset1 between df1 and df3?\n\n# Write your code here\n\n\narsenal::comparedf(df1, py$df3)\n\nCompare Object\n\nFunction Call: \narsenal::comparedf(x = df1, y = py$df3)\n\nShared: 0 non-by variables and 32 observations.\nNot shared: 16 variables and 118 observations.\n\nDifferences found in 0/0 variables compared.\n0 variables compared have non-identical attributes."
   },
   {
-    "objectID": "import_data.html#import-csv-data",
-    "href": "import_data.html#import-csv-data",
+    "objectID": "import_data.html#import-data-from-urls",
+    "href": "import_data.html#import-data-from-urls",
     "title": "4  Import your data",
-    "section": "6.2 Import CSV data",
-    "text": "6.2 Import CSV data\nRead the CSV data set dataset1.csv and store it into a data frame called df2.\n\n\n\n\n\n\nTip\n\n\n\n\nStata: use the import delimited Stata command with the stata function from the RStata package.\nR: use the read.csv function from the haven package.\nPython: use the read_csv function from the pandas package.\n\n\n\n\n# Write your code here\n\n\n\n. import delimited dataset1.csv\n(11 vars, 32 obs)"
+    "section": "4.3 Import data from URLs",
+    "text": "4.3 Import data from URLs\nIndicate functions that accepts URL as well (it is the case for Python functions)."
   },
   {
-    "objectID": "import_data.html#import-stata-data",
-    "href": "import_data.html#import-stata-data",
+    "objectID": "import_data.html#import-data-from-odk-central",
+    "href": "import_data.html#import-data-from-odk-central",
     "title": "4  Import your data",
-    "section": "6.3 Import Stata data",
-    "text": "6.3 Import Stata data\nRead the Stata data set dataset1.dta and store it into a data frame called df3.\n\n\n\n\n\n\nTip\n\n\n\n\nStata: use the use Stata command with the stata function from the RStata package.\nR: use the read_dta function from the haven package. This package supports SAS, STATA and SPSS software.\nPython: use the read_stata function from the pandas package.\n\n\n\n\n# Write your code here\n\n\n\n. use dataset1.dta"
+    "section": "4.4 Import data from ODK Central",
+    "text": "4.4 Import data from ODK Central\nWhile data digitally captured using ODK Collect or Enketo and stored in ODK Central can be retrieved in bulk through the web interface, ODK Central’s API provides direct access to its data (and functionality). It is a more efficient way to ensure that data are always up-to-date.\nWe will see how to retrieve data through the OData API.\n\nConnect to the ODK Central server data set (give access to a dummy ODK Central project for demo purpose).\n\n\n\n\n\n\n\nTip\n\n\n\n\nR: use the ru_setup function from the ruODK package (Mayer 2020).\nPython: use functions from the pyODK package.\n\n\n\n\n# Write your code here\n\n\n# ruODK::ru_setup(\n#   svc = Sys.getenv(\"ODKC_SVC\"),\n#   un = Sys.getenv(\"ODKC_UN\"),\n#   pw = Sys.getenv(\"ODKC_PW\"),\n#   tz = Sys.getenv(\"TZ\"),\n#   verbose = FALSE \n# )\n\n\nRetrieve data from form and store the data set into a data frame called df4\n\n\n\n\n\n\n\nTip\n\n\n\n\nR: use the odata_submission_get function from the ruODK package (Mayer 2020).\nPython: use functions from the pyODK package.\n\n\n\n\n# Write your code here\n\n\n\n\n\n\n\nImportant\n\n\n\nFor advanced users: encrypted data can only be retrieved through the RESTful API."
   },
   {
-    "objectID": "import_data.html#additional-question",
-    "href": "import_data.html#additional-question",
+    "objectID": "import_data.html#references",
+    "href": "import_data.html#references",
     "title": "4  Import your data",
-    "section": "6.4 Additional question",
-    "text": "6.4 Additional question\nCan you indicate what variable has been modified in dataset1 between df1 and df2?\n\n\n\n\n\n\nTip\n\n\n\nUse the R function comparedf\n\n\n\n# Write your code here\n\n\n\nCompare Object\n\nFunction Call: \narsenal::comparedf(x = df1, y = df2)\n\nShared: 0 non-by variables and 32 observations.\nNot shared: 16 variables and 118 observations.\n\nDifferences found in 0/0 variables compared.\n0 variables compared have non-identical attributes.\n\n\nCan you indicate what variable has been modified in dataset1 between df1 and df3?\n\n# Write your code here\n\n\n\nCompare Object\n\nFunction Call: \narsenal::comparedf(x = df1, y = py$df3)\n\nShared: 0 non-by variables and 32 observations.\nNot shared: 16 variables and 118 observations.\n\nDifferences found in 0/0 variables compared.\n0 variables compared have non-identical attributes."
+    "section": "4.5 References",
+    "text": "4.5 References\n\n\n\n\nMayer, Florian W. 2020. “ruODK: Client for the ODK Central API.” https://github.com/ropensci/ruODK."
   },
   {
     "objectID": "ds4ph_day2_session01_practical_session.html",
