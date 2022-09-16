@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science for Public Health - 6&nbsp; Day 2 - Session 01</title>
+<title>Data Science for Public Health - 9&nbsp; Day 2 - Session 01</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -89,7 +89,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./ds4ph_day3_session01_practical_session.html" rel="next">
-<link href="./import_data.html" rel="prev">
+<link href="./manipulate_data.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -128,7 +128,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Day 2 - Session 01</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Day 2 - Session 01</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -139,7 +139,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./" class="sidebar-logo-link">
+      <img src="./images/csm_Logo_SwissTPH_print_cce56f2a0f.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Data Science for Public Health</a> 
     </div>
@@ -166,29 +169,79 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <a href="./prerequisites.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prerequisites</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Day 1: Tools for reproducible data analyses</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></a>
+  <a href="./github.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">GitHub</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Use Stata and Python in your Quarto document</span></a>
+  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic documents</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Import your data</span></a>
+  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Day 2 - Session 01</span></a>
+  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Code chunks</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Import external data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./manipulate_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipulate data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Day 2: Data Science for Public Health</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Day 2 - Session 01</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Day 3: Big data and machine learning</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Day 3 - Session 02</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Day 3 - Session 02</span></a>
+  <a href="./useful_resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Useful resources</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -205,22 +258,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#malaria-research-questions" id="toc-malaria-research-questions" class="nav-link active" data-scroll-target="#malaria-research-questions"> <span class="header-section-number">6.1</span> Malaria research questions</a></li>
-  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description"> <span class="header-section-number">6.2</span> Dataset description</a>
+  <li><a href="#malaria-research-questions" id="toc-malaria-research-questions" class="nav-link active" data-scroll-target="#malaria-research-questions"> <span class="header-section-number">9.1</span> Malaria research questions</a></li>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description"> <span class="header-section-number">9.2</span> Dataset description</a>
   <ul class="collapse">
-  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection"> <span class="header-section-number">6.2.1</span> Data collection</a></li>
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection"> <span class="header-section-number">9.2.1</span> Data collection</a></li>
   </ul></li>
-  <li><a href="#data-cleaning-and-data-de-identification" id="toc-data-cleaning-and-data-de-identification" class="nav-link" data-scroll-target="#data-cleaning-and-data-de-identification"> <span class="header-section-number">6.3</span> Data cleaning and data de-identification</a>
+  <li><a href="#data-cleaning-and-data-de-identification" id="toc-data-cleaning-and-data-de-identification" class="nav-link" data-scroll-target="#data-cleaning-and-data-de-identification"> <span class="header-section-number">9.3</span> Data cleaning and data de-identification</a>
   <ul class="collapse">
-  <li><a href="#dataset-structure" id="toc-dataset-structure" class="nav-link" data-scroll-target="#dataset-structure"> <span class="header-section-number">6.3.1</span> Dataset structure</a></li>
-  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook"> <span class="header-section-number">6.3.2</span> Codebook</a></li>
+  <li><a href="#dataset-structure" id="toc-dataset-structure" class="nav-link" data-scroll-target="#dataset-structure"> <span class="header-section-number">9.3.1</span> Dataset structure</a></li>
+  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook"> <span class="header-section-number">9.3.2</span> Codebook</a></li>
   </ul></li>
-  <li><a href="#familiarise-with-the-dataset" id="toc-familiarise-with-the-dataset" class="nav-link" data-scroll-target="#familiarise-with-the-dataset"> <span class="header-section-number">6.4</span> Familiarise with the dataset</a></li>
-  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"> <span class="header-section-number">6.5</span> Import the data</a></li>
-  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"> <span class="header-section-number">6.6</span> Structure of the data</a></li>
-  <li><a href="#identify-missing-values" id="toc-identify-missing-values" class="nav-link" data-scroll-target="#identify-missing-values"> <span class="header-section-number">6.7</span> Identify missing values</a></li>
-  <li><a href="#data-analysis-plan" id="toc-data-analysis-plan" class="nav-link" data-scroll-target="#data-analysis-plan"> <span class="header-section-number">6.8</span> Data analysis plan</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">6.9</span> References</a></li>
+  <li><a href="#familiarise-with-the-dataset" id="toc-familiarise-with-the-dataset" class="nav-link" data-scroll-target="#familiarise-with-the-dataset"> <span class="header-section-number">9.4</span> Familiarise with the dataset</a></li>
+  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"> <span class="header-section-number">9.5</span> Import the data</a></li>
+  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"> <span class="header-section-number">9.6</span> Structure of the data</a></li>
+  <li><a href="#identify-missing-values" id="toc-identify-missing-values" class="nav-link" data-scroll-target="#identify-missing-values"> <span class="header-section-number">9.7</span> Identify missing values</a></li>
+  <li><a href="#data-analysis-plan" id="toc-data-analysis-plan" class="nav-link" data-scroll-target="#data-analysis-plan"> <span class="header-section-number">9.8</span> Data analysis plan</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">9.9</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -229,7 +282,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Day 2 - Session 01</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Day 2 - Session 01</span></h1>
 </div>
 
 
@@ -244,15 +297,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p>TBD</p>
-<section id="malaria-research-questions" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="malaria-research-questions"><span class="header-section-number">6.1</span> Malaria research questions</h2>
+<section id="malaria-research-questions" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="malaria-research-questions"><span class="header-section-number">9.1</span> Malaria research questions</h2>
 <p>Research questions in an enumerated list</p>
 </section>
-<section id="dataset-description" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="dataset-description"><span class="header-section-number">6.2</span> Dataset description</h2>
+<section id="dataset-description" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="dataset-description"><span class="header-section-number">9.2</span> Dataset description</h2>
 <p>Information about the consultations of <strong>10,308 children [1 day - 59 months]</strong> from <strong>18 facilities</strong> (dispensaries and health centres) in <strong>Kaliua</strong> District, <strong>Sengerema</strong> District and <strong>Tanga</strong> District, Tanzania. Data were collected using <em>ODK</em> (ODK Collect, ODK Central) between <strong>start date</strong> and <strong>end date</strong>. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project. Data are stored in <strong>dataset1.dta</strong>.</p>
-<section id="data-collection" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="data-collection"><span class="header-section-number">6.2.1</span> Data collection</h3>
+<section id="data-collection" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="data-collection"><span class="header-section-number">9.2.1</span> Data collection</h3>
 <p>Research assistants recorded the following information from different sources:</p>
 <ul>
 <li>from the caregiver:
@@ -269,22 +322,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Research assistants sought clarification from healthcare providers only in cases where these variables were not clear from the records.</p>
 </section>
 </section>
-<section id="data-cleaning-and-data-de-identification" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="data-cleaning-and-data-de-identification"><span class="header-section-number">6.3</span> Data cleaning and data de-identification</h2>
+<section id="data-cleaning-and-data-de-identification" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="data-cleaning-and-data-de-identification"><span class="header-section-number">9.3</span> Data cleaning and data de-identification</h2>
 <p>Personally identifiable information (PII) were removed.</p>
-<section id="dataset-structure" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="dataset-structure"><span class="header-section-number">6.3.1</span> Dataset structure</h3>
+<section id="dataset-structure" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="dataset-structure"><span class="header-section-number">9.3.1</span> Dataset structure</h3>
 <p>Load the data and show the structure of your dataset</p>
 </section>
-<section id="codebook" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="codebook"><span class="header-section-number">6.3.2</span> Codebook</h3>
+<section id="codebook" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="codebook"><span class="header-section-number">9.3.2</span> Codebook</h3>
 </section>
 </section>
-<section id="familiarise-with-the-dataset" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="familiarise-with-the-dataset"><span class="header-section-number">6.4</span> Familiarise with the dataset</h2>
+<section id="familiarise-with-the-dataset" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="familiarise-with-the-dataset"><span class="header-section-number">9.4</span> Familiarise with the dataset</h2>
 </section>
-<section id="import-the-data" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="import-the-data"><span class="header-section-number">6.5</span> Import the data</h2>
+<section id="import-the-data" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="import-the-data"><span class="header-section-number">9.5</span> Import the data</h2>
 <p>Read the dataset and store it into a dataframe called <strong>df</strong>.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -340,8 +393,8 @@ Attache Paket: 'dplyr'</code></pre>
 </div>
 </div>
 </section>
-<section id="structure-of-the-data" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">6.6</span> Structure of the data</h2>
+<section id="structure-of-the-data" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">9.6</span> Structure of the data</h2>
 <p>Examine the structure of the data, including variable names, labels.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -2383,10 +2436,7 @@ Tip
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Paket 'gtsummary' wurde unter R Version 4.1.3 erstellt</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>#Uighur</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>gtsummary<span class="sc">::</span><span class="fu">tbl_summary</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>gtsummary<span class="sc">::</span><span class="fu">tbl_summary</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>i Column(s) CONSULT_district, CONSULT_facility_ID, CONSULT_area, CONSULT_facility_type, SDC_young_infant_age_ctg, DX_free_text, RX_preconsult_free_text, and RX_free_text are class "haven_labelled". This is an intermediate datastructure not meant for analysis. Convert columns with `haven::as_factor()`, `labelled::to_factor()`, `labelled::unlabelled()`, and `unclass()`. "haven_labelled" value labels are ignored when columns are not converted. Failure to convert may have unintended consequences or result in error.</code></pre>
 </div>
@@ -2398,12 +2448,12 @@ Tip
 </div>
 <div class="cell-output-display">
 
-<div id="smmxczrdxu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="tekrxsbzjx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#smmxczrdxu .gt_table {
+#tekrxsbzjx .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2428,7 +2478,7 @@ Tip
   border-left-color: #D3D3D3;
 }
 
-#smmxczrdxu .gt_heading {
+#tekrxsbzjx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2440,7 +2490,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#smmxczrdxu .gt_title {
+#tekrxsbzjx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2452,7 +2502,7 @@ Tip
   border-bottom-width: 0;
 }
 
-#smmxczrdxu .gt_subtitle {
+#tekrxsbzjx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2464,13 +2514,13 @@ Tip
   border-top-width: 0;
 }
 
-#smmxczrdxu .gt_bottom_border {
+#tekrxsbzjx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#smmxczrdxu .gt_col_headings {
+#tekrxsbzjx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2485,7 +2535,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#smmxczrdxu .gt_col_heading {
+#tekrxsbzjx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2505,7 +2555,7 @@ Tip
   overflow-x: hidden;
 }
 
-#smmxczrdxu .gt_column_spanner_outer {
+#tekrxsbzjx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2517,15 +2567,15 @@ Tip
   padding-right: 4px;
 }
 
-#smmxczrdxu .gt_column_spanner_outer:first-child {
+#tekrxsbzjx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#smmxczrdxu .gt_column_spanner_outer:last-child {
+#tekrxsbzjx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#smmxczrdxu .gt_column_spanner {
+#tekrxsbzjx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2537,7 +2587,7 @@ Tip
   width: 100%;
 }
 
-#smmxczrdxu .gt_group_heading {
+#tekrxsbzjx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2562,7 +2612,7 @@ Tip
   vertical-align: middle;
 }
 
-#smmxczrdxu .gt_empty_group_heading {
+#tekrxsbzjx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2577,15 +2627,15 @@ Tip
   vertical-align: middle;
 }
 
-#smmxczrdxu .gt_from_md > :first-child {
+#tekrxsbzjx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#smmxczrdxu .gt_from_md > :last-child {
+#tekrxsbzjx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#smmxczrdxu .gt_row {
+#tekrxsbzjx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2604,7 +2654,7 @@ Tip
   overflow-x: hidden;
 }
 
-#smmxczrdxu .gt_stub {
+#tekrxsbzjx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2617,7 +2667,7 @@ Tip
   padding-right: 5px;
 }
 
-#smmxczrdxu .gt_stub_row_group {
+#tekrxsbzjx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2631,11 +2681,11 @@ Tip
   vertical-align: top;
 }
 
-#smmxczrdxu .gt_row_group_first td {
+#tekrxsbzjx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#smmxczrdxu .gt_summary_row {
+#tekrxsbzjx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2645,16 +2695,16 @@ Tip
   padding-right: 5px;
 }
 
-#smmxczrdxu .gt_first_summary_row {
+#tekrxsbzjx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#smmxczrdxu .gt_first_summary_row.thick {
+#tekrxsbzjx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#smmxczrdxu .gt_last_summary_row {
+#tekrxsbzjx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2664,7 +2714,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-#smmxczrdxu .gt_grand_summary_row {
+#tekrxsbzjx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2674,7 +2724,7 @@ Tip
   padding-right: 5px;
 }
 
-#smmxczrdxu .gt_first_grand_summary_row {
+#tekrxsbzjx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2684,11 +2734,11 @@ Tip
   border-top-color: #D3D3D3;
 }
 
-#smmxczrdxu .gt_striped {
+#tekrxsbzjx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#smmxczrdxu .gt_table_body {
+#tekrxsbzjx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2697,7 +2747,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-#smmxczrdxu .gt_footnotes {
+#tekrxsbzjx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2711,7 +2761,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#smmxczrdxu .gt_footnote {
+#tekrxsbzjx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2720,7 +2770,7 @@ Tip
   padding-right: 5px;
 }
 
-#smmxczrdxu .gt_sourcenotes {
+#tekrxsbzjx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2734,7 +2784,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#smmxczrdxu .gt_sourcenote {
+#tekrxsbzjx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2742,36 +2792,36 @@ Tip
   padding-right: 5px;
 }
 
-#smmxczrdxu .gt_left {
+#tekrxsbzjx .gt_left {
   text-align: left;
 }
 
-#smmxczrdxu .gt_center {
+#tekrxsbzjx .gt_center {
   text-align: center;
 }
 
-#smmxczrdxu .gt_right {
+#tekrxsbzjx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#smmxczrdxu .gt_font_normal {
+#tekrxsbzjx .gt_font_normal {
   font-weight: normal;
 }
 
-#smmxczrdxu .gt_font_bold {
+#tekrxsbzjx .gt_font_bold {
   font-weight: bold;
 }
 
-#smmxczrdxu .gt_font_italic {
+#tekrxsbzjx .gt_font_italic {
   font-style: italic;
 }
 
-#smmxczrdxu .gt_super {
+#tekrxsbzjx .gt_super {
   font-size: 65%;
 }
 
-#smmxczrdxu .gt_two_val_uncert {
+#tekrxsbzjx .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -2780,31 +2830,31 @@ Tip
   margin-left: 0.1em;
 }
 
-#smmxczrdxu .gt_footnote_marks {
+#tekrxsbzjx .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#smmxczrdxu .gt_asterisk {
+#tekrxsbzjx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#smmxczrdxu .gt_slash_mark {
+#tekrxsbzjx .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#smmxczrdxu .gt_fraction_numerator {
+#tekrxsbzjx .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#smmxczrdxu .gt_fraction_denominator {
+#tekrxsbzjx .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -3141,19 +3191,19 @@ Tip
 </div>
 </div>
 </section>
-<section id="identify-missing-values" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="identify-missing-values"><span class="header-section-number">6.7</span> Identify missing values</h2>
+<section id="identify-missing-values" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="identify-missing-values"><span class="header-section-number">9.7</span> Identify missing values</h2>
 <p>Identify missing values in each variable: missing_plot</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(finalfit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(finalfit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Paket 'finalfit' wurde unter R Version 4.1.3 erstellt</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>explanatory <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"CONSULT_facility_ID"</span>, <span class="st">"CONSULT_district"</span>, <span class="st">"CLIN_fever"</span>)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>dependent <span class="ot">=</span> <span class="st">"DX_malaria"</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  finalfit<span class="sc">::</span><span class="fu">missing_pattern</span>(dependent, explanatory)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>explanatory <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"CONSULT_facility_ID"</span>, <span class="st">"CONSULT_district"</span>, <span class="st">"CLIN_fever"</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>dependent <span class="ot">=</span> <span class="st">"DX_malaria"</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  finalfit<span class="sc">::</span><span class="fu">missing_pattern</span>(dependent, explanatory)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> /\     /\
 {  `---'  }
@@ -3172,12 +3222,12 @@ Tip
 </div>
 </div>
 </section>
-<section id="data-analysis-plan" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="data-analysis-plan"><span class="header-section-number">6.8</span> Data analysis plan</h2>
+<section id="data-analysis-plan" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="data-analysis-plan"><span class="header-section-number">9.8</span> Data analysis plan</h2>
 <p>For now, all you need to include in this section is which variables from the dataset you plan to use, and what associations between them you will investigate to help answer your research question.</p>
 </section>
-<section id="references" class="level2" data-number="6.9">
-<h2 data-number="6.9" class="anchored" data-anchor-id="references"><span class="header-section-number">6.9</span> References</h2>
+<section id="references" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="references"><span class="header-section-number">9.9</span> References</h2>
 <ul>
 <li>Skimr package</li>
 </ul>
@@ -3285,13 +3335,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./import_data.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Import your data</span></span>
+      <a href="./manipulate_data.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipulate data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./ds4ph_day3_session01_practical_session.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Day 3 - Session 02</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Day 3 - Session 02</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
