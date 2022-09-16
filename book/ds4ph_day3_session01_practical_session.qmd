@@ -18,7 +18,7 @@ Read the dataset and store it into a dataframe called **df**.
 
 ```{r}
 library(haven)
-df <- haven::read_dta("dataset10.dta")
+df <- haven::read_dta("./data/dataset10.dta")
 ```
 
 ## Visual inspection of the data

@@ -1,37 +1,25 @@
 ---
-title: "GitHub"
+title: "Git and GitHub"
 ---
 
-R Markdown is a widely-used tool for creating automated, reproducible, and share-worthy outputs, such as reports. It can generate static or interactive outputs, in Word, pdf, html, powerpoint, and other formats. The next generation Quarto
+## Introduction
 
-As a R Markdown document, a Quarto document intersperces code and text such that the script actually becomes your output document. You can create an entire formatted document, including narrative text (can be dynamic to change based on your data), tables, figures, bullets/numbers, bibliographies, etc.
+In this chapter, we introduce basic elements of Git and GitHub. To learn more about this powerful tool, we refer the reader to the resources listed in section \@sec-resources-git.
 
-Such documents can be produced to update on a routine basis (e.g. daily surveillance reports) and/or run on subsets of data (e.g. reports for each jurisdiction).
+![](images/paste-B5DF25CC.png) \## Version control
 
-Background to R Markdown
+The version control capabilities of Git permit us to keep track of changes we make to our code. We can also revert back to previous versions of files. Git also permits us to create branches in which we can test out ideas, then decide if we merge the new branch with the original.
 
-To explain some of the concepts and packages involved:
+## Sharing your code with Git
 
-::: callout-note
-Markdown is a “language” that allows you to write a document using plain text, that can be converted to html and other formats. It is not specific to R. Files written in Markdown have a ‘.md’ extension.
-:::
+Even if we do not take advantage of the advanced and powerful version control functionality, we can still use Git and GitHub to share our code.
 
-::: callout-note
-R Markdown: is a variation on markdown that is specific to R - it allows you to write a document using markdown to produce text and to embed R code and display their outputs. R Markdown files have ‘.Rmd’ extension.
-:::
+## Collaborating with Git
 
-rmarkdown - the package: This is used by R to render the .Rmd file into the desired output. It’s focus is converting the markdown (text) syntax, so we also need…
+Once you set up a central repository, you can have multiple people make changes to code and keep versions synced. GitHub provides a free service for centralized repositories. GitHub also has a special utility, called a pull request, that can be used by anybody to suggest changes to your code. You can easily either accept or deny the request.
 
-knitr: This R package will read the code chunks, execute it, and ‘knit’ it back into the document. This is how tables and graphs are included alongside the text.
+![](images/paste-ADC9719C.png)
 
-Pandoc: Finally, pandoc actually convert the output into word/pdf/powerpoint etc. It is a software separate from R but is installed automatically with RStudio.
+## Push and Pull
 
-In sum, the process that happens in the background involves feeding the .Rmd file to knitr, which executes the R code chunks and creates a new .md (markdown) file which includes the R code and its rendered output. The .md file is then processed by pandoc to create the finished product: a Microsoft Word document, HTML file, powerpoint document, pdf, etc.
-
-Quarto integrates code and natural language in a way that is called “literate programming” (Knuth 1984). It is the successor to R Markdown, which was a variant of Markdown specifically designed to allow R code chunks to be included. Quatro uses a mark-up language similar to HyperText Markup Language (HTML) or LaTeX, in comparison to a “What You See Is What You Get” (WYSIWYG) language, such as Microsoft Word. This means that all the aspects are consistent, for instance, all top-level heading will look the same. But it means that we use symbols to designate how we would like certain aspects to appear. And it is only when we build the mark-up that we get to see what it looks like. A visual editor option can also be used which hides the need for the user to do this mark-up themselves.
-
-While it makes sense to use Quarto going forward, there are still a lot of resources written for and in R Markdown. For this reason we provide the R Markdown equivalents for this section in Appendix B.
-
-## References
-
-* The Epidemiologist R Handbook (https://epirhandbook.com)
+![](images/paste-A340C143.png)

@@ -141,7 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./" class="sidebar-logo-link">
-      <img src="./images/csm_Logo_SwissTPH_print_cce56f2a0f.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/logo_compact.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Data Science for Public Health</a> 
@@ -171,7 +171,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Day 1: Tools for reproducible data analyses</a>
+            <a href="./tools_for_reproducible_data_science.html" class="sidebar-item-text sidebar-link">Day 1: Tools for reproducible data science</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -179,12 +179,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./github.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">GitHub</span></a>
+  <a href="./github.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Git and GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic documents</span></a>
+  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic analysis documents</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -259,13 +259,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"> <span class="header-section-number">6.1</span> Introduction</a></li>
-  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r"> <span class="header-section-number">6.2</span> R</a></li>
-  <li><a href="#use-stata" id="toc-use-stata" class="nav-link" data-scroll-target="#use-stata"> <span class="header-section-number">6.3</span> Use Stata</a>
+  <li><a href="#run-r-code-chunks" id="toc-run-r-code-chunks" class="nav-link" data-scroll-target="#run-r-code-chunks"> <span class="header-section-number">6.2</span> Run R code chunks</a></li>
+  <li><a href="#call-stata-commands-within-r-code-chunks" id="toc-call-stata-commands-within-r-code-chunks" class="nav-link" data-scroll-target="#call-stata-commands-within-r-code-chunks"> <span class="header-section-number">6.3</span> Call Stata commands within R code chunks</a>
   <ul class="collapse">
   <li><a href="#configure-rstudio-to-execute-stata" id="toc-configure-rstudio-to-execute-stata" class="nav-link" data-scroll-target="#configure-rstudio-to-execute-stata"> <span class="header-section-number">6.3.1</span> Configure RStudio to execute Stata</a></li>
   <li><a href="#add-your-stata-binary-path-to-your-.rprofile" id="toc-add-your-stata-binary-path-to-your-.rprofile" class="nav-link" data-scroll-target="#add-your-stata-binary-path-to-your-.rprofile"> <span class="header-section-number">6.3.2</span> Add your Stata binary path to your .Rprofile</a></li>
   </ul></li>
-  <li><a href="#for-advanced-pythonr-markdown-users-only" id="toc-for-advanced-pythonr-markdown-users-only" class="nav-link" data-scroll-target="#for-advanced-pythonr-markdown-users-only"> <span class="header-section-number">6.4</span> For (advanced) Python/R Markdown users only</a></li>
+  <li><a href="#run-python-code-chunks" id="toc-run-python-code-chunks" class="nav-link" data-scroll-target="#run-python-code-chunks"> <span class="header-section-number">6.4</span> Run Python code chunks</a></li>
   <li><a href="#manipulation-of-r-objects-in-python-code-chunks" id="toc-manipulation-of-r-objects-in-python-code-chunks" class="nav-link" data-scroll-target="#manipulation-of-r-objects-in-python-code-chunks"> <span class="header-section-number">6.5</span> Manipulation of R objects in Python code chunks</a></li>
   <li><a href="#manipulation-of-python-objects-in-r-code-chunks" id="toc-manipulation-of-python-objects-in-r-code-chunks" class="nav-link" data-scroll-target="#manipulation-of-python-objects-in-r-code-chunks"> <span class="header-section-number">6.6</span> Manipulation of Python objects in R code chunks</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">6.7</span> References</a></li>
@@ -296,8 +296,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The number of languages and runtimes used for scientific discourse is very broad (and the RStudio and Jupyter ecosystems in particular are extraordinarily popular).</p>
 <p>Quarto was developed to be multilingual, beginning with R, Python, Javascript, and Julia, with the idea that it will work even for languages that don’t yet exist.</p>
 </section>
-<section id="r" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="r"><span class="header-section-number">6.2</span> R</h2>
+<section id="run-r-code-chunks" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="run-r-code-chunks"><span class="header-section-number">6.2</span> Run R code chunks</h2>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -645,8 +645,8 @@ Note
 </div>
 </div>
 </section>
-<section id="use-stata" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="use-stata"><span class="header-section-number">6.3</span> Use Stata</h2>
+<section id="call-stata-commands-within-r-code-chunks" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="call-stata-commands-within-r-code-chunks"><span class="header-section-number">6.3</span> Call Stata commands within R code chunks</h2>
 <p><code>RStata</code> is a simple R / Stata interface which enable the user to:</p>
 <ul>
 <li>execute Stata commands (both inline and from a .do file) from R;</li>
@@ -666,8 +666,9 @@ Note
 <p>The Stata binary path setting we just created will be lost if your RStudio is closed. To keep this setting each time you are using RStudio, let us add the Stata binary path as an option to <code>.Rprofile</code>, which is your user-specific R configuration file.</p>
 </section>
 </section>
-<section id="for-advanced-pythonr-markdown-users-only" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="for-advanced-pythonr-markdown-users-only"><span class="header-section-number">6.4</span> For (advanced) Python/R Markdown users only</h2>
+<section id="run-python-code-chunks" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="run-python-code-chunks"><span class="header-section-number">6.4</span> Run Python code chunks</h2>
+<p>For (advanced) Python/R Markdown users only</p>
 <p>You still need to import the R package <code>reticulate</code> if you want to use the Knitr engine and manipulate Python objects within R code chunks.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

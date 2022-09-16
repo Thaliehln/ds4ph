@@ -15,14 +15,14 @@ book:
     - name: Silvia Cicconi
       affiliations:
         - name: Swiss Tropical and Public Health Institute
-  logo: images/csm_Logo_SwissTPH_print_cce56f2a0f.png
+  logo: images/logo_compact.png
   date: "2022-09-14"
   page-navigation: true
   chapters:
     - index.qmd
     - intro.qmd
     - prerequisites.qmd
-    - part: "Day 1: Tools for reproducible data analyses"
+    - part: tools_for_reproducible_data_science.qmd
       chapters:
         - github.qmd
         - dynamic_documents.qmd

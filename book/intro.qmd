@@ -86,8 +86,7 @@ What is not covered
 
 * Samwel Lwambura
 * Hajirani Msuya
-* Ibrahim Mtebene
-* Charles Festo
+* Ibrahim Mtebene?
 
 ### From the Swiss Tropical & Public Health Institute (Swiss TPH)
 
@@ -96,18 +95,6 @@ What is not covered
 * Silvia Cicconi
 * Gillian Levine
 * Fabian Schär
-
-## Prerequisites
-
-Soon - here guidance to install the (free) software to be used in the workshop will be given.
-
-### R installation
-
-### RStudio installation
-
-### GitHub account
-
-### GitHub desktop
 
 ## Data
 

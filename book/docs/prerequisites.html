@@ -25,7 +25,7 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./github.html" rel="next">
+<link href="./tools_for_reproducible_data_science.html" rel="next">
 <link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -78,7 +78,7 @@ ul.task-list{list-style: none;}
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./" class="sidebar-logo-link">
-      <img src="./images/csm_Logo_SwissTPH_print_cce56f2a0f.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/logo_compact.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Data Science for Public Health</a> 
@@ -108,7 +108,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Day 1: Tools for reproducible data analyses</a>
+            <a href="./tools_for_reproducible_data_science.html" class="sidebar-item-text sidebar-link">Day 1: Tools for reproducible data science</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -116,12 +116,12 @@ ul.task-list{list-style: none;}
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./github.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">GitHub</span></a>
+  <a href="./github.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Git and GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic documents</span></a>
+  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic analysis documents</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -199,7 +199,10 @@ ul.task-list{list-style: none;}
   <li><a href="#rstudio-installation" id="toc-rstudio-installation" class="nav-link" data-scroll-target="#rstudio-installation"> <span class="header-section-number">2.2</span> RStudio installation</a></li>
   <li><a href="#install-quarto" id="toc-install-quarto" class="nav-link" data-scroll-target="#install-quarto"> <span class="header-section-number">2.3</span> Install Quarto</a></li>
   <li><a href="#github-account" id="toc-github-account" class="nav-link" data-scroll-target="#github-account"> <span class="header-section-number">2.4</span> GitHub account</a></li>
-  <li><a href="#github-desktop" id="toc-github-desktop" class="nav-link" data-scroll-target="#github-desktop"> <span class="header-section-number">2.5</span> GitHub desktop</a></li>
+  <li><a href="#github-desktop" id="toc-github-desktop" class="nav-link" data-scroll-target="#github-desktop"> <span class="header-section-number">2.5</span> GitHub desktop</a>
+  <ul class="collapse">
+  <li><a href="#how-to-connect-your-github-account-to-github-desktop" id="toc-how-to-connect-your-github-account-to-github-desktop" class="nav-link" data-scroll-target="#how-to-connect-your-github-account-to-github-desktop"> <span class="header-section-number">2.5.1</span> How to connect your GitHub account to GitHub Desktop?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -225,9 +228,14 @@ ul.task-list{list-style: none;}
 <p>Soon - here guidance to install the (free) software to be used in the workshop will be given.</p>
 <section id="r-installation" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="r-installation"><span class="header-section-number">2.1</span> R installation</h2>
+<p>RStudio is an interactive desktop environment, but it is not R, nor does it include R when you download and install it. Therefore, to use RStudio, we first need to install R.</p>
+<p>You can download R from the Comprehensive R Archive Network (CRAN)116. Search for CRAN on your browser:</p>
+<p>Once on the CRAN page, select the version for your operating system: Linux, Mac OS X, or Windows.</p>
 </section>
 <section id="rstudio-installation" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="rstudio-installation"><span class="header-section-number">2.2</span> RStudio installation</h2>
+<p>This will give you several options. For what we do in this book, it is more than enough to use the free Desktop version.</p>
+<p>After downloading, follow the installation wizard on your computer.</p>
 </section>
 <section id="install-quarto" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="install-quarto"><span class="header-section-number">2.3</span> Install Quarto</h2>
@@ -238,8 +246,24 @@ ul.task-list{list-style: none;}
 </section>
 <section id="github-desktop" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="github-desktop"><span class="header-section-number">2.5</span> GitHub desktop</h2>
+<p>To install GitHub Desktop: link. After downloading, follow the installation wizard on your computer.</p>
+<section id="how-to-connect-your-github-account-to-github-desktop" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="how-to-connect-your-github-account-to-github-desktop"><span class="header-section-number">2.5.1</span> How to connect your GitHub account to GitHub Desktop?</h3>
+<section id="authenticating-to-github" class="level4" data-number="2.5.1.1">
+<h4 data-number="2.5.1.1" class="anchored" data-anchor-id="authenticating-to-github"><span class="header-section-number">2.5.1.1</span> Authenticating to GitHub</h4>
+<p>To connect to GitHub Desktop with GitHub, you will need to authenticate your GitHub account.</p>
+<ol type="1">
+<li>Use the File menu, then click Options.</li>
+<li>In the Options window, select Accounts.</li>
+<li>To the right of “GitHub.com,” click Sign in.</li>
+<li>In the “Sign in Using Your Browser” pane, click Continue With Browser. GitHub Desktop will open your default browser.</li>
+<li>To authenticate to GitHub, type your GitHub.com credentials and click Sign in. Alternatively, if you were already signed in to GitHub, follow the prompts to return to GitHub Desktop to finish authenticating.</li>
+<li>After GitHub authenticates your account, follow the prompts to return to GitHub Desktop.</li>
+</ol>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -347,8 +371,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./github.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">GitHub</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./tools_for_reproducible_data_science.html" class="pagination-link">
+        <span class="nav-page-text">Day 1: Tools for reproducible data science</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

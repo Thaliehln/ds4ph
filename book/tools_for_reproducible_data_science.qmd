@@ -1,0 +1,7 @@
+---
+title: "Day 1: Tools for reproducible data science"
+---
+
+## Test
+
+![Four dimensions of reproducible research. This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence.](images/paste-2A9C2B9E.png)

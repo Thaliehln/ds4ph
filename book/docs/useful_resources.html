@@ -78,7 +78,7 @@ ul.task-list{list-style: none;}
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./" class="sidebar-logo-link">
-      <img src="./images/csm_Logo_SwissTPH_print_cce56f2a0f.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/logo_compact.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Data Science for Public Health</a> 
@@ -108,7 +108,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Day 1: Tools for reproducible data analyses</a>
+            <a href="./tools_for_reproducible_data_science.html" class="sidebar-item-text sidebar-link">Day 1: Tools for reproducible data science</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -116,12 +116,12 @@ ul.task-list{list-style: none;}
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./github.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">GitHub</span></a>
+  <a href="./github.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Git and GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic documents</span></a>
+  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic analysis documents</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -195,13 +195,14 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#r-programming" id="toc-r-programming" class="nav-link active" data-scroll-target="#r-programming"> <span class="header-section-number">11.1</span> R programming</a>
+  <li><a href="#sec-resources-git" id="toc-sec-resources-git" class="nav-link active" data-scroll-target="#sec-resources-git"> <span class="header-section-number">11.1</span> Git and GitHub</a></li>
+  <li><a href="#r-programming" id="toc-r-programming" class="nav-link" data-scroll-target="#r-programming"> <span class="header-section-number">11.2</span> R programming</a>
   <ul class="collapse">
-  <li><a href="#courses" id="toc-courses" class="nav-link" data-scroll-target="#courses"> <span class="header-section-number">11.1.1</span> Courses</a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"> <span class="header-section-number">11.1.2</span> Packages</a></li>
+  <li><a href="#courses" id="toc-courses" class="nav-link" data-scroll-target="#courses"> <span class="header-section-number">11.2.1</span> Courses</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"> <span class="header-section-number">11.2.2</span> Packages</a></li>
   </ul></li>
-  <li><a href="#machine-learning" id="toc-machine-learning" class="nav-link" data-scroll-target="#machine-learning"> <span class="header-section-number">11.2</span> Machine learning</a></li>
-  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets"> <span class="header-section-number">11.3</span> Datasets</a></li>
+  <li><a href="#machine-learning" id="toc-machine-learning" class="nav-link" data-scroll-target="#machine-learning"> <span class="header-section-number">11.3</span> Machine learning</a></li>
+  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets"> <span class="header-section-number">11.4</span> Datasets</a></li>
   </ul>
 </nav>
     </div>
@@ -224,31 +225,41 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="r-programming" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="r-programming"><span class="header-section-number">11.1</span> R programming</h2>
-<section id="courses" class="level3" data-number="11.1.1">
-<h3 data-number="11.1.1" class="anchored" data-anchor-id="courses"><span class="header-section-number">11.1.1</span> Courses</h3>
+<section id="sec-resources-git" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="sec-resources-git"><span class="header-section-number">11.1</span> Git and GitHub</h2>
+<p>To learn more about this topic, we highly recommend the following resources:</p>
+<ul>
+<li>Codeacademy: https://www.codecademy.com/learn/learn-git</li>
+<li>GitHub Guides: https://guides.github.com/activities/hello-world/</li>
+<li>Try Git tutorial: https://try.github.io/levels/1/challenges/1</li>
+<li>Happy Git and GitHub for the useR: http://happygitwithr.com/</li>
+</ul>
+</section>
+<section id="r-programming" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="r-programming"><span class="header-section-number">11.2</span> R programming</h2>
+<section id="courses" class="level3" data-number="11.2.1">
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="courses"><span class="header-section-number">11.2.1</span> Courses</h3>
 <ul>
 <li>GRAPH network</li>
 <li><a href="https://jhudatascience.org/courses.html">Johns Hopkins University Data Science Lab’s courses</a></li>
 </ul>
 </section>
-<section id="packages" class="level3" data-number="11.1.2">
-<h3 data-number="11.1.2" class="anchored" data-anchor-id="packages"><span class="header-section-number">11.1.2</span> Packages</h3>
+<section id="packages" class="level3" data-number="11.2.2">
+<h3 data-number="11.2.2" class="anchored" data-anchor-id="packages"><span class="header-section-number">11.2.2</span> Packages</h3>
 <ul>
 <li>the Tidyverse ecosystem of R packages is an excellent way to learn the different aspects of the data science pipeline, from importing the data, tidying the data into a format that is easy to work with, exploring and visualizing the data, and fitting machine learning models. If you are already experienced in data science, the Tidyverse provides a power system for streamlining your workflow in a coherent manner that can easily connect with other data science tools.</li>
 <li>ruODK</li>
 </ul>
 </section>
 </section>
-<section id="machine-learning" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="machine-learning"><span class="header-section-number">11.2</span> Machine learning</h2>
+<section id="machine-learning" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="machine-learning"><span class="header-section-number">11.3</span> Machine learning</h2>
 <ul>
 <li>Scikit-learn MOOC</li>
 </ul>
 </section>
-<section id="datasets" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="datasets"><span class="header-section-number">11.3</span> Datasets</h2>
+<section id="datasets" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="datasets"><span class="header-section-number">11.4</span> Datasets</h2>
 <ul>
 <li>facebook global good datasets</li>
 <li>facility datasets</li>

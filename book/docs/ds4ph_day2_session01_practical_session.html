@@ -141,7 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./" class="sidebar-logo-link">
-      <img src="./images/csm_Logo_SwissTPH_print_cce56f2a0f.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/logo_compact.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Data Science for Public Health</a> 
@@ -171,7 +171,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Day 1: Tools for reproducible data analyses</a>
+            <a href="./tools_for_reproducible_data_science.html" class="sidebar-item-text sidebar-link">Day 1: Tools for reproducible data science</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -179,12 +179,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./github.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">GitHub</span></a>
+  <a href="./github.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Git and GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic documents</span></a>
+  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic analysis documents</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -357,7 +357,7 @@ Tip
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_dta</span>(<span class="st">"dataset10.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_dta</span>(<span class="st">"./data/dataset10.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-knitr="kable">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -417,7 +417,8 @@ Tip
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RStata)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>RStata<span class="sc">::</span><span class="fu">stata</span>(<span class="st">"codebook"</span>, <span class="at">data.in =</span> df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>RStata<span class="sc">::</span><span class="fu">stata</span>(<span class="st">"codebook"</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">data.in =</span> df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>. codebook
 
@@ -2448,12 +2449,12 @@ Tip
 </div>
 <div class="cell-output-display">
 
-<div id="tekrxsbzjx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ttvrrmvnvu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#tekrxsbzjx .gt_table {
+#ttvrrmvnvu .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2478,7 +2479,7 @@ Tip
   border-left-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_heading {
+#ttvrrmvnvu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2490,7 +2491,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_title {
+#ttvrrmvnvu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2502,7 +2503,7 @@ Tip
   border-bottom-width: 0;
 }
 
-#tekrxsbzjx .gt_subtitle {
+#ttvrrmvnvu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2514,13 +2515,13 @@ Tip
   border-top-width: 0;
 }
 
-#tekrxsbzjx .gt_bottom_border {
+#ttvrrmvnvu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_col_headings {
+#ttvrrmvnvu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2535,7 +2536,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_col_heading {
+#ttvrrmvnvu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2555,7 +2556,7 @@ Tip
   overflow-x: hidden;
 }
 
-#tekrxsbzjx .gt_column_spanner_outer {
+#ttvrrmvnvu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2567,15 +2568,15 @@ Tip
   padding-right: 4px;
 }
 
-#tekrxsbzjx .gt_column_spanner_outer:first-child {
+#ttvrrmvnvu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tekrxsbzjx .gt_column_spanner_outer:last-child {
+#ttvrrmvnvu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tekrxsbzjx .gt_column_spanner {
+#ttvrrmvnvu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2587,7 +2588,7 @@ Tip
   width: 100%;
 }
 
-#tekrxsbzjx .gt_group_heading {
+#ttvrrmvnvu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2612,7 +2613,7 @@ Tip
   vertical-align: middle;
 }
 
-#tekrxsbzjx .gt_empty_group_heading {
+#ttvrrmvnvu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2627,15 +2628,15 @@ Tip
   vertical-align: middle;
 }
 
-#tekrxsbzjx .gt_from_md > :first-child {
+#ttvrrmvnvu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tekrxsbzjx .gt_from_md > :last-child {
+#ttvrrmvnvu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tekrxsbzjx .gt_row {
+#ttvrrmvnvu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2654,7 +2655,7 @@ Tip
   overflow-x: hidden;
 }
 
-#tekrxsbzjx .gt_stub {
+#ttvrrmvnvu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2667,7 +2668,7 @@ Tip
   padding-right: 5px;
 }
 
-#tekrxsbzjx .gt_stub_row_group {
+#ttvrrmvnvu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2681,11 +2682,11 @@ Tip
   vertical-align: top;
 }
 
-#tekrxsbzjx .gt_row_group_first td {
+#ttvrrmvnvu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tekrxsbzjx .gt_summary_row {
+#ttvrrmvnvu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2695,16 +2696,16 @@ Tip
   padding-right: 5px;
 }
 
-#tekrxsbzjx .gt_first_summary_row {
+#ttvrrmvnvu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_first_summary_row.thick {
+#ttvrrmvnvu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tekrxsbzjx .gt_last_summary_row {
+#ttvrrmvnvu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2714,7 +2715,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_grand_summary_row {
+#ttvrrmvnvu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2724,7 +2725,7 @@ Tip
   padding-right: 5px;
 }
 
-#tekrxsbzjx .gt_first_grand_summary_row {
+#ttvrrmvnvu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2734,11 +2735,11 @@ Tip
   border-top-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_striped {
+#ttvrrmvnvu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tekrxsbzjx .gt_table_body {
+#ttvrrmvnvu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2747,7 +2748,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_footnotes {
+#ttvrrmvnvu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2761,7 +2762,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_footnote {
+#ttvrrmvnvu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2770,7 +2771,7 @@ Tip
   padding-right: 5px;
 }
 
-#tekrxsbzjx .gt_sourcenotes {
+#ttvrrmvnvu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2784,7 +2785,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_sourcenote {
+#ttvrrmvnvu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2792,36 +2793,36 @@ Tip
   padding-right: 5px;
 }
 
-#tekrxsbzjx .gt_left {
+#ttvrrmvnvu .gt_left {
   text-align: left;
 }
 
-#tekrxsbzjx .gt_center {
+#ttvrrmvnvu .gt_center {
   text-align: center;
 }
 
-#tekrxsbzjx .gt_right {
+#ttvrrmvnvu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tekrxsbzjx .gt_font_normal {
+#ttvrrmvnvu .gt_font_normal {
   font-weight: normal;
 }
 
-#tekrxsbzjx .gt_font_bold {
+#ttvrrmvnvu .gt_font_bold {
   font-weight: bold;
 }
 
-#tekrxsbzjx .gt_font_italic {
+#ttvrrmvnvu .gt_font_italic {
   font-style: italic;
 }
 
-#tekrxsbzjx .gt_super {
+#ttvrrmvnvu .gt_super {
   font-size: 65%;
 }
 
-#tekrxsbzjx .gt_two_val_uncert {
+#ttvrrmvnvu .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -2830,31 +2831,31 @@ Tip
   margin-left: 0.1em;
 }
 
-#tekrxsbzjx .gt_footnote_marks {
+#ttvrrmvnvu .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#tekrxsbzjx .gt_asterisk {
+#ttvrrmvnvu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tekrxsbzjx .gt_slash_mark {
+#ttvrrmvnvu .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#tekrxsbzjx .gt_fraction_numerator {
+#ttvrrmvnvu .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#tekrxsbzjx .gt_fraction_denominator {
+#ttvrrmvnvu .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
