@@ -1,0 +1,38 @@
+# Import data - Python
+
+```{r}
+library(reticulate)
+```
+
+```{python}
+import warnings
+warnings.filterwarnings('ignore')
+```
+
+## Import Excel data
+
+Read the Excel data set **dataset1.xlsx** and store it into a data frame called **df1**.
+
+Use the [read_excel](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) function from the `pandas` package.
+
+```{python}
+import pandas as pd
+df1 = pd.read_excel('dataset1.xlsx')
+```
+
+## Import CSV data
+
+Read the CSV data set **dataset1.csv** and store it into a data frame called **df2**.
+
+
+
+## Import Stata data
+
+Read the Stata data set **dataset1.dta** and store it into a data frame called **df3**.
+
+
+
+### Additional question
+
+Can you indicate what variable has been modified in **dataset1** between df1 and df2?
+

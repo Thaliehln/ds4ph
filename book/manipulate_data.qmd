@@ -1,0 +1,105 @@
+---
+title: "Manipulate data"
+---
+
+## Introduction
+
+```{r}
+library(reticulate)
+```
+
+```{python}
+import warnings
+warnings.filterwarnings('ignore')
+```
+
+## Import data from files
+
+```{r}
+library(RStata)
+df1 <- RStata::stata("import excel dataset1.xlsx",
+                     data.out = TRUE)
+```
+
+```{python}
+import pandas as pd
+df2 = pd.read_csv('dataset1.csv')
+```
+
+```{r}
+library(haven)
+df3 <- haven::read_dta("dataset1.dta")
+```
+
+::: {.panel-tabset}
+
+#### Exercise 4
+
+Can you indicate what variable has been modified in **dataset1** between df1 and df2?
+
+::: callout-tip
+Use the R function **comparedf**
+:::
+
+```{r}
+#| echo: true
+# Write your code here
+```
+
+#### Solution
+
+```{r}
+arsenal::comparedf(df1, py$df2)
+```
+
+:::
+
+## Import data from URLs
+
+Indicate functions that accepts URL as well (it is the case for Python functions).
+
+# Import data from ODK Central
+
+While data digitally captured using ODK Collect or Enketo and stored in ODK Central can be retrieved in bulk through the web interface, ODK Central's API provides direct access to its data (and functionality). It is a more efficient way to ensure that data are always up-to-date.
+
+We will see how to retrieve data through the OData API.
+
+1.  Connect to the ODK Central server data set (give access to a dummy ODK Central project for demo purpose).
+
+::: callout-tip
+-   R: use the [ru_setup](https://docs.ropensci.org/ruODK/reference/ru_setup.html) function from the `ruODK` package [@mayer20].
+-   Python: use functions from the `pyODK` package.
+:::
+
+```{r}
+#| echo: true
+# Write your code here
+```
+
+```{r}
+# ruODK::ru_setup(
+#   svc = Sys.getenv("ODKC_SVC"),
+#   un = Sys.getenv("ODKC_UN"),
+#   pw = Sys.getenv("ODKC_PW"),
+#   tz = Sys.getenv("TZ"),
+#   verbose = FALSE 
+# )
+```
+
+2.  Retrieve data from form and store the data set into a data frame called df4
+
+::: callout-tip
+-   R: use the [odata_submission_get](https://docs.ropensci.org/ruODK/reference/odata_submission_get.html) function from the `ruODK` package [@mayer20].
+-   Python: use functions from the `pyODK` package.
+:::
+
+```{r}
+#| echo: true
+# Write your code here
+```
+
+::: callout-important
+For advanced users: encrypted data can only be retrieved through the RESTful API.
+:::
+
+## References

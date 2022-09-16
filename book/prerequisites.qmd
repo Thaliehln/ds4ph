@@ -6,6 +6,10 @@ Soon - here guidance to install the (free) software to be used in the workshop w
 
 ## RStudio installation
 
+## Install Quarto
+
+To install Quarto: https://quarto.org/docs/get-started/. After downloading, follow the installation wizard on your computer. When it is complete, you will not see an application or any new software, but it is now available to RStudio (as well as all other applications on your computer, including the command line).
+
 ## GitHub account
 
 ## GitHub desktop

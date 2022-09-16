@@ -1,0 +1,14 @@
+{
+  "hash": "bf41d61be140b918357edaebe92d6798",
+  "result": {
+    "markdown": "## Import data - R\n\n### Import Excel data\n\nRead the Excel data set **dataset1.xlsx** and store it into a data frame called **df1**.\n\nUse the [read.xlsx](https://www.rdocumentation.org/packages/openxlsx/versions/4.2.5/topics/read.xlsx) function from the `openxlsx` package.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(openxlsx)\ndf1 <- openxlsx::read.xlsx(\"dataset1.xlsx\")\n```\n:::\n\n\n### Import CSV data\n\nRead the CSV data set **dataset1.csv** and store it into a data frame called **df2**.\n\nUse the [read.csv](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table) function from the `haven` package.\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndf2 <- read.csv(\"dataset1.csv\")\n```\n:::\n\n\n### Import Stata data\n\nRead the Stata data set **dataset1.dta** and store it into a data frame called **df3**.\n\nUse the [read_dta](https://haven.tidyverse.org/reference/read_dta.html) function from the `haven` package. This package supports SAS, STATA and SPSS software.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(haven)\ndf3 <- haven::read_dta(\"dataset1.dta\")\n```\n:::\n\n\n### Additional question\n\nCan you indicate what variable has been modified in **dataset1** between df1 and df2?\n\n::: callout-tip\nUse the R function **comparedf**\n:::\n\n\n::: {.cell}\n\n```{.r .cell-code}\narsenal::comparedf(df1, df2)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nCompare Object\n\nFunction Call: \narsenal::comparedf(x = df1, y = df2)\n\nShared: 0 non-by variables and 32 observations.\nNot shared: 16 variables and 118 observations.\n\nDifferences found in 0/0 variables compared.\n0 variables compared have non-identical attributes.\n```\n:::\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

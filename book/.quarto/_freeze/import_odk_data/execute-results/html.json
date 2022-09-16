@@ -1,0 +1,14 @@
+{
+  "hash": "4052110a436c934a84920c7c4565c134",
+  "result": {
+    "markdown": "# Import data from ODK Central\n\nWhile data digitally captured using ODK Collect or Enketo and stored in ODK Central can be retrieved in bulk through the web interface, ODK Central's API provides direct access to its data (and functionality). It is a more efficient way to ensure that data are always up-to-date.\n\nWe will see how to retrieve data through the OData API.\n\n1.  Connect to the ODK Central server data set (give access to a dummy ODK Central project for demo purpose).\n\n::: callout-tip\n-   R: use the [ru_setup](https://docs.ropensci.org/ruODK/reference/ru_setup.html) function from the `ruODK` package [@mayer20].\n-   Python: use functions from the `pyODK` package.\n:::\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Write your code here\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n# ruODK::ru_setup(\n#   svc = Sys.getenv(\"ODKC_SVC\"),\n#   un = Sys.getenv(\"ODKC_UN\"),\n#   pw = Sys.getenv(\"ODKC_PW\"),\n#   tz = Sys.getenv(\"TZ\"),\n#   verbose = FALSE \n# )\n```\n:::\n\n\n2.  Retrieve data from form and store the data set into a data frame called df4\n\n::: callout-tip\n-   R: use the [odata_submission_get](https://docs.ropensci.org/ruODK/reference/odata_submission_get.html) function from the `ruODK` package [@mayer20].\n-   Python: use functions from the `pyODK` package.\n:::\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Write your code here\n```\n:::\n\n\n::: callout-important\nFor advanced users: encrypted data can only be retrieved through the RESTful API.\n:::\n\n## References",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,14 +1,50 @@
 # Create your first Quarto document
 
+## Installation
+
+To use Quarto with R, you should install the rmarkdown R package:
+
+install.packages("rmarkdown")
+
+Installation of the rmarkdown package will also install the knitr package so you will have everything required to render documents containing R code.
+
+Quarto will select a version of R by looking on the system PATH. In addition, on Windows when R is not found on the PATH, the registry will be scanned for the current R version. You can override the version of R used by Quarto by setting the QUARTO_R environment variable.
+
 ## Create a new Quarto document
 
-![](images/paste-F44DAC8E.png)
+In RStudio, you can open a new Quarto document by selecting **File** \> **New File** \> **Quarto Document...**
+
+![](images/paste-A7DE8B60.png)
+
+When you create a new Quarto document, RStudio tries to be helpful by allowing you to select a template which explains the different section of an R Markdown script. R Studio will enable you select options to pick from to generate a template Quarto document to start from.
+
+The title and the author names are not important. If the output document type you want is not one of these, do not worry - you can just pick any one and change it later.
+
+Let us select *HTML* to create an html document.
+
+Click on create to open up a new Quarto (.Qmd) document.
+
+![](images/paste-67B97E04.png)
+
+## Visual Editor
+
+The RStudio Visual Editor is quite new and has features that improve your writing experience. Working in the Visual Editor feels a bit like working in a Google Doc.
+
+Here’s an example showing the same file in the original Source Editor with content in markdown format and in the Visual Editor with content that looks more like it will appear in a live site. You can switch freely between these modes.
 
 ## Quarto document structure
 
-![](images/paste-30C30ECC.png)
+An R Markdown document can be edited in RStudio.
 
-## Running Code
+There are three basic components to an Quarto document, similar to the components of a R Markdown document:
+
+-   a YAML header
+-   Markdown text
+-   R code chunks
+
+![](images/paste-30C30ECC.png) The header contain the information intended to produce an html output.
+
+## Quarto render
 
 When you click the **Render** button a document will be generated that includes both content and the output of embedded code.
 
@@ -32,3 +68,5 @@ You can add options to executable code like this
 The `echo: false` option disables the printing of code (only output is displayed).
 
 ## References
+
+-   The Epidemiologist R Handbook (https://epirhandbook.com)

@@ -1,4 +1,6 @@
-# Use Stata and Python in your Quarto document
+---
+title: "Code chunks"
+---
 
 ## Introduction
 
@@ -6,7 +8,37 @@ The number of languages and runtimes used for scientific discourse is very broad
 
 Quarto was developed to be multilingual, beginning with R, Python, Javascript, and Julia, with the idea that it will work even for languages that don't yet exist.
 
-## Use Stata
+## Run R code chunks
+
+::: callout-note
+A data frame is a two-dimensional array-like structure that contains rows and columns.
+:::
+
+To store the content of the *iris* data set in variable `df`, you can use `=` (*equal*) but good practice recommend using `<-` (*back arrow*) to indicate the direction of your allocation.
+
+```{r}
+df <- iris
+```
+
+How to display data
+
+```{r}
+#| echo: fenced
+#| df-print: kable
+print(df)
+```
+
+You can cross-reference your table.
+
+```{r}
+#| label: tbl-iris
+#| tbl-cap: Iris data set
+#| echo: fenced
+#| df-print: kable
+print(df)
+```
+
+## Call Stata commands within R code chunks
 
 `RStata` is a simple R / Stata interface which enable the user to:
 
@@ -26,7 +58,9 @@ The function `chooseStataBin` from the `RStata` library allows you to browse and
 The Stata binary path setting we just created will be lost if your RStudio is closed.
 To keep this setting each time you are using RStudio, let us add the Stata binary path as an option to `.Rprofile`, which is your user-specific R configuration file.
 
-## For (advanced) Python/R Markdown users only
+## Run Python code chunks
+
+For (advanced) Python/R Markdown users only
 
 You still need to import the R package `reticulate` if you want to use the Knitr engine and manipulate Python objects within R code chunks.
 

@@ -1,0 +1,22 @@
+# Useful resources
+
+## R programming
+
+### Courses
+
+-   GRAPH network
+-   [Johns Hopkins University Data Science Lab's courses](https://jhudatascience.org/courses.html)
+
+### Packages
+
+* the Tidyverse ecosystem of R packages is an excellent way to learn the different aspects of the data science pipeline, from importing the data, tidying the data into a format that is easy to work with, exploring and visualizing the data, and fitting machine learning models. If you are already experienced in data science, the Tidyverse provides a power system for streamlining your workflow in a coherent manner that can easily connect with other data science tools.
+* ruODK
+
+## Machine learning
+
+-   Scikit-learn MOOC
+
+## Datasets
+
+-   facebook global good datasets
+-   facility datasets
