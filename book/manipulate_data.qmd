@@ -4,43 +4,34 @@ title: "Manipulate data"
 
 ## Introduction
 
-```{r}
-#| echo: fenced
-library(reticulate)
-```
+::: callout-important
+Remember that with Quarto you can:
 
-```{python}
-#| include: false
-import warnings
-warnings.filterwarnings('ignore')
-```
+* store multiple data sets in memory (stored in different data frames `df1`, `df2`, `df3`, etc),
+* work in parallel on all these data sets.
+:::
 
-## Import data from files
-
-```{r}
-#| echo: fenced
-library(RStata)
-df1 <- RStata::stata("import excel ./data/dataset1.xlsx",
-                     data.out = TRUE)
-```
-
-```{python}
-#| echo: fenced
-import pandas as pd
-df2 = pd.read_csv('./data/dataset1.csv')
-```
-
-```{r}
-#| echo: fenced
-library(haven)
-df3 <- haven::read_dta("./data/dataset1.dta")
-```
+## Manipulate Python and R data
 
 ::: {.panel-tabset}
 
-#### Exercise 1
+#### :pencil2: Exercise 1
 
-Can you indicate what variable has been modified in **dataset1** between df1 and df2?
+1. Import **dataset1.xlsx** using Stata and store it in `df1`
+
+```{r}
+#| echo: fenced
+# Write your code here
+```
+
+2. Import **dataset1.csv** using Python and store it in `df2`
+
+```{python}
+#| echo: fenced
+# Write your code here
+```
+
+3. Compare `df1`and `df2`. Can you indicate what variable has been modified in **dataset1** between df1 and df2?
 
 ::: callout-tip
 Use the R function **comparedf**
@@ -51,10 +42,36 @@ Use the R function **comparedf**
 # Write your code here
 ```
 
-#### Solution
+#### :eyes: Solution
+
+1. Import **dataset1.xlsx** using Stata and store it in `df1`
 
 ```{r}
 #| echo: fenced
+library(RStata)
+df1 <- RStata::stata("import excel ./data/dataset1.xlsx",
+                     data.out = TRUE)
+```
+
+2. Import **dataset1.csv** using Python and store it in `df2`
+
+```{python}
+#| include: false
+import warnings
+warnings.filterwarnings('ignore')
+```
+
+```{python}
+#| echo: fenced
+import pandas as pd
+df2 = pd.read_csv('./data/dataset1.csv')
+```
+
+3. Compare `df1`and `df2`.
+
+```{r}
+#| echo: fenced
+library(reticulate)
 arsenal::comparedf(df1, py$df2)
 ```
 

@@ -2,6 +2,12 @@
 title: "Day 1: Tools for reproducible data science"
 ---
 
-## Test
+## Reproducibility
 
-![Four dimensions of reproducible research. This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence.](images/paste-2A9C2B9E.png)
+![Four dimensions of reproducible research. This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence.DOI: [10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.3332807)](images/paste-2A9C2B9E.png)
+
+[@the_turing_way_community_2022_6909298]
+
+## Computational tools across the Research Data Lifecycle
+
+![](images/paste-AF117E41.png)

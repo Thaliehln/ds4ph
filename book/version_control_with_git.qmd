@@ -1,0 +1,23 @@
+---
+title: "Version control with Git"
+---
+
+## Introduction
+
+Does the following situation
+
+![Credit: PhD comics](images/paste-2840AEE3.png)
+
+In this chapter, we introduce basic elements of Git and GitHub. To learn more about this powerful tool, we refer the reader to the resources listed in Section \@sec-resources-git.
+
+![](images/paste-B5DF25CC.png)
+
+## Version control
+
+The version control capabilities of Git permit us to keep track of changes we make to our code. We can also revert back to previous versions of files. Git also permits us to create branches in which we can test out ideas, then decide if we merge the new branch with the original.
+
+![](images/paste-48384992.png)
+
+## Push and Pull
+
+![](images/paste-A340C143.png)

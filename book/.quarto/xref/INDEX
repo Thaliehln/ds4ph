@@ -1,0 +1,56 @@
+{
+  "index.qmd": {
+    "index.html": "a7b34cf9"
+  },
+  "intro.qmd": {
+    "intro.html": "83761950"
+  },
+  "tools_for_reproducible_data_science.qmd": {
+    "tools_for_reproducible_data_science.html": "3f87edec"
+  },
+  "version_control_with_git.qmd": {
+    "version_control_with_git.html": "d955a9ef"
+  },
+  "dynamic_documents.qmd": {
+    "dynamic_documents.html": "53ec09d7"
+  },
+  "create_first_quarto_doc.qmd": {
+    "create_first_quarto_doc.html": "8026f0c6"
+  },
+  "use_stata_python_with_quarto.qmd": {
+    "use_stata_python_with_quarto.html": "ab368830"
+  },
+  "import_data.qmd": {
+    "import_data.html": "ac6230e7"
+  },
+  "manipulate_data.qmd": {
+    "manipulate_data.html": "39b6cfc8"
+  },
+  "share_and_collaborate_with_git.qmd": {
+    "share_and_collaborate_with_git.html": "4b0a2bc8"
+  },
+  "data_science_for_public_health.qmd": {
+    "data_science_for_public_health.html": "74e5ce12"
+  },
+  "ds4ph_day2_session01_practical_session.qmd": {
+    "ds4ph_day2_session01_practical_session.html": "cda48dbb"
+  },
+  "big_data_and_artificial_intelligence.qmd": {
+    "big_data_and_artificial_intelligence.html": "7a55a27e"
+  },
+  "ds4ph_day3_session01_practical_session.qmd": {
+    "ds4ph_day3_session01_practical_session.html": "f570813b"
+  },
+  "references.qmd": {
+    "references.html": "2df7abf4"
+  },
+  "installations.qmd": {
+    "installations.html": "6b0b7948"
+  },
+  "datasets.qmd": {
+    "datasets.html": "8c3ad065"
+  },
+  "useful_resources.qmd": {
+    "useful_resources.html": "9320b890"
+  }
+}

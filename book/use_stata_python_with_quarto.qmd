@@ -4,19 +4,28 @@ title: "Code chunks"
 
 ## Introduction
 
-The number of languages and runtimes used for scientific discourse is very broad (and the RStudio and Jupyter ecosystems in particular are extraordinarily popular).
+As the number of programming languages used for scientific discourse is very broad, Quarto was developed to be multilingual, beginning with R, Python, Javascript, and Julia. building on the RStudio (R) and Jupyter (Python, Julia) ecosystems which are very popular.
 
-Quarto was developed to be multilingual, beginning with R, Python, Javascript, and Julia, with the idea that it will work even for languages that don't yet exist.
+In this section, we will see how to use and mix R, Stata and Python within Quarto so that you can make the most out of it.
 
-## Run R code chunks
+## Create code chunks
+
+Use backticks
+
+Click on icon
+
+Ctrl + Alt + I
+
+## R code chunks
 
 ::: callout-note
-A data frame is a two-dimensional array-like structure that contains rows and columns.
+A **data frame** is a two-dimensional array-like structure that contains rows and columns.
 :::
 
-To store the content of the *iris* data set in variable `df`, you can use `=` (*equal*) but good practice recommend using `<-` (*back arrow*) to indicate the direction of your allocation.
+To store the content of the *iris* data set in data frame `df`, you can use `=` (*equal*) but good practice recommend using `<-` (*back arrow*) to indicate the direction of your allocation.
 
 ```{r}
+#| echo: fenced
 df <- iris
 ```
 
@@ -38,14 +47,19 @@ You can cross-reference your table.
 print(df)
 ```
 
-## Call Stata commands within R code chunks
+## Execute Stata commands within R code chunks
 
-`RStata` is a simple R / Stata interface which enable the user to:
+Stata is not a language supported by Quarto. To use Stata within Quarto, you have to use the `RStata` package, which is a simple R / Stata interface that enables you to:
 
-* execute Stata commands (both inline and from a .do file) from R;
+* execute Stata commands (inline or from a `.do` file) from R;
 * pass a data.frame to Stata;
 * return a data.frame to R;
 * include Stata chunks in knitr documents (however each chunk is independent from the others; feature tested with LaTeX/Linux).
+
+```{r}
+#| echo: fenced
+library(RStata)
+```
 
 ### Configure RStudio to execute Stata
 
@@ -53,45 +67,78 @@ print(df)
 
 The function `chooseStataBin` from the `RStata` library allows you to browse and set the path to your Stata binary executable.
 
-### Add your Stata binary path to your .Rprofile
+```{{r}}
+stata_bin_path <- RStata::chooseStataBin()
+print(stata_bin_path)
+```
 
-The Stata binary path setting we just created will be lost if your RStudio is closed.
-To keep this setting each time you are using RStudio, let us add the Stata binary path as an option to `.Rprofile`, which is your user-specific R configuration file.
+When you run this code, you should normally get a path which is of the format: **"\"C:\\Program Files\\Stata16\\StataIC-64\""**. Note that the `.exe` extension has been removed from this path. It is important that you keep the format as is, as otherwise your Stata engine will not be recognised.
 
-## Run Python code chunks
+#### Add your Stata binary path to your .Rprofile
 
-For (advanced) Python/R Markdown users only
+The Stata binary path setting we just created is just for your current RStudio session and it will be lost once your RStudio is closed.
+To keep this setting each time you are using RStudio and avoid havin to reconfigure RStata each time you are restarting RStudio, let us add the Stata binary path as an option to `.Rprofile`, which is your user-specific R configuration file.
+
+```{r}
+library(usethis)
+```
+
+`Usethis` is a workflow package: it automates repetitive tasks that arise during project setup and development, both for R packages and non-package projects.
+
+The function `edit_r_profile` from the `usethis` library allows to open your configuration file `.Rprofile`.
+
+```{{r}}
+usethis::edit_r_profile("user")
+```
+
+Add the following two lines in the Rprofile file that you have just opened:
+
+* options("RStata.StataPath" = ...)
+* options("RStata.StataVersion" = ...)
+
+You need to indicate the path to your Stata binary executable in the `RStata.StataPath` option (e.g., "\"C:\\Program Files\\Stata16\\StataIC-64\"") and the version of your Stata (e.g., 16) in the `RStata.StataVersion` option.
+
+after indicating the path and version your code should look as specified below
+
+* options("RStata.StataPath" = "\"C:\\Program Files (x86)\\Stata15\\Stata-64\"")
+* options("RStata.StataVersion" = 15)
+
+Once you are done, save and close your `.Rprofile`.
+
+## Python code chunks
+
+::: callout-warning
+This section is for (advanced) Python/R Markdown users only
+:::
 
 You still need to import the R package `reticulate` if you want to use the Knitr engine and manipulate Python objects within R code chunks.
 
 ```{r}
-#| echo: true
+#| echo: fenced
 library(reticulate)
 ```
 
-## Manipulation of R objects in Python code chunks
+### Call R objects in Python code chunks
 
 R objects can be manipulated in Python code chunks by referring to them as `r.`
 
 ```{r}
-#| echo: true
+#| echo: fenced
 val <- 10
 ```
 
 ```{python}
-#| echo: true
+#| echo: fenced
 val = 5
 print(r.val)
 ```
 
-## Manipulation of Python objects in R code chunks
+### Call Python objects in R code chunks
 
 Python objects can be manipulated in R code chunks by referring to them as `py$`
 
 ```{r}
-#| echo: true
+#| echo: fenced
 print(val)
 print(py$val)
 ```
-
-## References

@@ -12,32 +12,38 @@ book:
     - name: Samwel Lwambura
       affiliations:
         - name: Ifakara Health Institute
-    - name: Silvia Cicconi
-      affiliations:
-        - name: Swiss Tropical and Public Health Institute
   logo: images/logo_compact.png
-  date: "2022-09-14"
-  page-navigation: true
+  date: today
+  echo: true
+  warning: false
   chapters:
     - index.qmd
     - intro.qmd
-    - prerequisites.qmd
     - part: tools_for_reproducible_data_science.qmd
       chapters:
-        - github.qmd
+        - version_control_with_git.qmd
         - dynamic_documents.qmd
         - create_first_quarto_doc.qmd
         - use_stata_python_with_quarto.qmd
         - import_data.qmd
         - manipulate_data.qmd
-    - part: "Day 2: Data Science for Public Health"
+        - share_and_collaborate_with_git.qmd
+    - part: data_science_for_public_health.qmd
       chapters:
         - ds4ph_day2_session01_practical_session.qmd
-    - part: "Day 3: Big data and machine learning"
+    - part: big_data_and_artificial_intelligence.qmd
       chapters: 
         - ds4ph_day3_session01_practical_session.qmd
-    - useful_resources.qmd
     - references.qmd
+  appendices:
+    - installations.qmd
+    - datasets.qmd
+    - useful_resources.qmd
+  page-footer: 
+    left: "Copyright 2022, IHI / Swiss TPH" 
+    right: 
+      - icon: github
+        href: https://github.com/Thaliehln/ds4ph/
 
 bibliography: references.bib
 

@@ -1,10 +1,28 @@
-# Create your first Quarto document
+---
+title: "Getting started with Quarto"
+---
+
+## Introduction
+
+While it makes sense to use Quarto going forward, there are still a lot of resources written for and in R Markdown. For this reason we provide the R Markdown equivalents for this section in Appendix.
 
 ## Installation
 
-To use Quarto with R, you should install the rmarkdown R package:
+To use Quarto with R, you should install the **rmarkdown** R package.
 
+::: callout-important
+A R package is a collections of R functions, data, and compiled code in a well-defined format, created to add specific functionality to R.
+
+There are 10,000+ user contributed packages and growing.
+
+There is a set of standard (or base) packages which is considered part of the R source code and automatically available as part of your R installation. Base packages contain the basic functions that allow R to work, and enable standard statistical and graphical functions on data sets.
+:::
+
+To install packages
+
+```{{r}}
 install.packages("rmarkdown")
+```
 
 Installation of the rmarkdown package will also install the knitr package so you will have everything required to render documents containing R code.
 

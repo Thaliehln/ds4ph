@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.37">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -25,7 +30,7 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./prerequisites.html" rel="next">
+<link href="./tools_for_reproducible_data_science.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -101,11 +106,6 @@ ul.task-list{list-style: none;}
   <a href="./intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./prerequisites.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prerequisites</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./tools_for_reproducible_data_science.html" class="sidebar-item-text sidebar-link">Day 1: Tools for reproducible data science</a>
@@ -116,39 +116,44 @@ ul.task-list{list-style: none;}
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./github.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Git and GitHub</span></a>
+  <a href="./version_control_with_git.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Version control with Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic analysis documents</span></a>
+  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Dynamic analysis documents</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></a>
+  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started with Quarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Code chunks</span></a>
+  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Code chunks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Import external data</span></a>
+  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Import external data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./manipulate_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipulate data</span></a>
+  <a href="./manipulate_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Manipulate data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./share_and_collaborate_with_git.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Share code and collaborate with Git</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Day 2: Data Science for Public Health</a>
+            <a href="./data_science_for_public_health.html" class="sidebar-item-text sidebar-link">Day 2: Data Science for Public Health</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -163,7 +168,7 @@ ul.task-list{list-style: none;}
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Day 3: Big data and machine learning</a>
+            <a href="./big_data_and_artificial_intelligence.html" class="sidebar-item-text sidebar-link">Day 3: Big data and machine learning</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -178,36 +183,60 @@ ul.task-list{list-style: none;}
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./useful_resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Useful resources</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Install software</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datasets.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./useful_resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Useful resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"> <span class="header-section-number">1.1</span> Overview</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"> <span class="header-section-number">1.2</span> Learning objectives</a></li>
-  <li><a href="#is-this-workshop-for-me" id="toc-is-this-workshop-for-me" class="nav-link" data-scroll-target="#is-this-workshop-for-me"> <span class="header-section-number">1.3</span> Is this workshop for me?</a></li>
-  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule"> <span class="header-section-number">1.4</span> Schedule</a>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="toc-section-number">1.1</span>  Learning objectives</a></li>
+  <li><a href="#is-this-workshop-for-me" id="toc-is-this-workshop-for-me" class="nav-link" data-scroll-target="#is-this-workshop-for-me"><span class="toc-section-number">1.2</span>  Is this workshop for me?</a></li>
+  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule"><span class="toc-section-number">1.3</span>  Schedule</a>
   <ul class="collapse">
-  <li><a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up"> <span class="header-section-number">1.4.1</span> Wrap-up</a></li>
+  <li><a href="#before-the-workshop" id="toc-before-the-workshop" class="nav-link" data-scroll-target="#before-the-workshop"><span class="toc-section-number">1.3.1</span>  Before the workshop</a></li>
+  <li><a href="#day-1" id="toc-day-1" class="nav-link" data-scroll-target="#day-1"><span class="toc-section-number">1.3.2</span>  Day 1</a></li>
+  <li><a href="#day-2" id="toc-day-2" class="nav-link" data-scroll-target="#day-2"><span class="toc-section-number">1.3.3</span>  Day 2</a></li>
+  <li><a href="#day-3" id="toc-day-3" class="nav-link" data-scroll-target="#day-3"><span class="toc-section-number">1.3.4</span>  Day 3</a></li>
+  <li><a href="#after-the-workshop" id="toc-after-the-workshop" class="nav-link" data-scroll-target="#after-the-workshop"><span class="toc-section-number">1.3.5</span>  After the workshop</a></li>
   </ul></li>
-  <li><a href="#instructors" id="toc-instructors" class="nav-link" data-scroll-target="#instructors"> <span class="header-section-number">1.5</span> Instructors</a>
+  <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope"><span class="toc-section-number">1.4</span>  Scope</a>
   <ul class="collapse">
-  <li><a href="#from-the-ifakara-health-institute-ihi" id="toc-from-the-ifakara-health-institute-ihi" class="nav-link" data-scroll-target="#from-the-ifakara-health-institute-ihi"> <span class="header-section-number">1.5.1</span> From the Ifakara Health Institute (IHI)</a></li>
-  <li><a href="#from-the-swiss-tropical-public-health-institute-swiss-tph" id="toc-from-the-swiss-tropical-public-health-institute-swiss-tph" class="nav-link" data-scroll-target="#from-the-swiss-tropical-public-health-institute-swiss-tph"> <span class="header-section-number">1.5.2</span> From the Swiss Tropical &amp; Public Health Institute (Swiss TPH)</a></li>
+  <li><a href="#data-science-mindset" id="toc-data-science-mindset" class="nav-link" data-scroll-target="#data-science-mindset"><span class="toc-section-number">1.4.1</span>  Data science mindset</a></li>
+  <li><a href="#data-science-skillset" id="toc-data-science-skillset" class="nav-link" data-scroll-target="#data-science-skillset"><span class="toc-section-number">1.4.2</span>  Data science skillset</a></li>
+  <li><a href="#what-is-not-covered" id="toc-what-is-not-covered" class="nav-link" data-scroll-target="#what-is-not-covered"><span class="toc-section-number">1.4.3</span>  What is not covered</a></li>
   </ul></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"> <span class="header-section-number">1.6</span> Data</a></li>
+  <li><a href="#conventions" id="toc-conventions" class="nav-link" data-scroll-target="#conventions"><span class="toc-section-number">1.5</span>  Conventions</a></li>
   </ul>
 </nav>
     </div>
@@ -230,15 +259,8 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p><span class="emoji" data-emoji="spiral_calendar">🗓️</span> September 26-28, 2022<br>
-<span class="emoji" data-emoji="clock9">🕘</span> 09:00 - 17:00<br>
-<span class="emoji" data-emoji="city_sunrise">🌇</span> Dar-es-Salaam, Tanzania (Protea Hotel by Marriott Dar es Salaam Courtyard) —–</p>
-<section id="overview" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1.1</span> Overview</h2>
-<p>Data science and artificial intelligence have the potential to generate fundamentally new insights on global health policies in Africa, but the full realization of this potential depends on the availability of a critical mass of highly trained health data scientists on the continent. The goal of this project is to jointly develop and implement a public health data science curriculum to enable researchers from the Ifakara Health Institute (IHI) in Tanzania to strengthen their expertise in the area.</p>
-</section>
-<section id="learning-objectives" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1.2</span> Learning objectives</h2>
+<section id="learning-objectives" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1.1</span> Learning objectives</h2>
 <p>Two complementary aspects of moving into data science are:</p>
 <ol type="1">
 <li>the mindset about how scientists think and collaborate about data, and</li>
@@ -250,110 +272,229 @@ ul.task-list{list-style: none;}
 <li>hands-on experience on how to interface between Stata and R, learned the basics of working with data in R/RStudio, and how to incrementally incorporate R into your existing data analysis workflows in Stata. The idea is not to replace everything you do in Stata into R but that you can continue your learning after this workshop at your own pace.</li>
 </ul>
 </section>
-<section id="is-this-workshop-for-me" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="is-this-workshop-for-me"><span class="header-section-number">1.3</span> Is this workshop for me?</h2>
+<section id="is-this-workshop-for-me" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="is-this-workshop-for-me"><span class="header-section-number">1.2</span> Is this workshop for me?</h2>
 <p>This workshop is relevant for individuals who answer yes to the following questions:</p>
 <ul class="task-list">
-<li><input type="checkbox" disabled="">
-Do you who want to develop data science projects in public health?</li>
-<li><input type="checkbox" disabled="">
-Do you wants to learn more about how open and reproducible science approaches can be used in your daily practice?</li>
-<li><input type="checkbox" disabled="">
-Are you a Stata user (or any other data analysis language) who would like to expand your data analysis skillset with R?</li>
-<li><input type="checkbox" disabled="">
-Do you want to bridge analyses between data analysis tools (Stata, R or Python) and to more easily collaborate with other researchers who use another of these tools?</li>
+<li><input type="checkbox" disabled="">Do you who want to develop data science projects in public health?</li>
+<li><input type="checkbox" disabled="">Do you wants to learn more about how open and reproducible science approaches can be used in your daily practice?</li>
+<li><input type="checkbox" disabled="">Are you a Stata user (or any other data analysis language) who would like to expand your data analysis skillset with R?</li>
+<li><input type="checkbox" disabled="">Do you want to bridge analyses between data analysis tools (Stata, R or Python) and to more easily collaborate with other researchers who use another of these tools?</li>
 </ul>
 </section>
-<section id="schedule" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="schedule"><span class="header-section-number">1.4</span> Schedule</h2>
+<section id="schedule" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="schedule"><span class="header-section-number">1.3</span> Schedule</h2>
+<p><span class="emoji" data-emoji="spiral_calendar">🗓️</span> September 26-28, 2022<br>
+<span class="emoji" data-emoji="clock9">🕘</span> 09:00 - 17:00<br>
+<span class="emoji" data-emoji="city_sunrise">🌇</span> Dar-es-Salaam, Tanzania (Protea Hotel by Marriott Dar es Salaam Courtyard)</p>
+<section id="before-the-workshop" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="before-the-workshop"><span class="header-section-number">1.3.1</span> Before the workshop</h3>
+<ol type="1">
+<li>Fill out the online pre-workshop questionnaire</li>
+<li>Install on your laptop the (free) data science software that will be used during the workshop. If you have any difficulties with the installation, support can be provided on the first day of the workshop before the first session or during breaks.</li>
+</ol>
+</section>
+<section id="day-1" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="day-1"><span class="header-section-number">1.3.2</span> Day 1</h3>
+<div id="tbl-day1-schedule" class="anchored">
 <table class="table">
+<caption>Table&nbsp;1.1: Schedule Day 1</caption>
 <colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 22%">
+<col style="width: 65%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Time (group)</th>
-<th style="text-align: right;">Day 1 (stream 1)</th>
-<th style="text-align: right;">Day 1 (stream 2)</th>
-<th style="text-align: right;">Day 2 (stream 1)</th>
-<th style="text-align: right;">Day 2 (stream 2)</th>
+<th style="text-align: center;">Time</th>
+<th style="text-align: left;">Session</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">8:30-9:00</td>
-<td style="text-align: right;">Welcome</td>
-<td style="text-align: right;">Welcome</td>
-<td style="text-align: right;">Welcome</td>
-<td style="text-align: right;">Welcome</td>
+<td style="text-align: center;">08.30 - 09.00</td>
+<td style="text-align: left;">Welcome<br>
+Support for software installation</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">9:00-10:30</td>
-<td style="text-align: right;">Data science introduction</td>
-<td style="text-align: right;">Data science introduction</td>
-<td style="text-align: right;">Sharing</td>
-<td style="text-align: right;">Sharing</td>
+<td style="text-align: center;">09.00 - 09.15</td>
+<td style="text-align: left;">Introduction to data science tools<br>
+Overview of objectives for Day 1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Break</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
+<td style="text-align: center;">09.15 - 10.30</td>
+<td style="text-align: left;">Version control with Git</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">11:00-11:30</td>
-<td style="text-align: right;">Introduction to Git</td>
-<td style="text-align: right;">Introduction to Git</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
+<td style="text-align: center;">10.30 - 11.00</td>
+<td style="text-align: left;">Break <span class="emoji" data-emoji="tea">🍵</span> <span class="emoji" data-emoji="coffee">☕</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">11.30-13:00</td>
-<td style="text-align: right;">Public Health question (need)</td>
-<td style="text-align: right;">Public Health question (data strategy)</td>
-<td style="text-align: right;">TBD</td>
-<td style="text-align: right;">Machine learning analysis</td>
+<td style="text-align: center;">11.00 -12.00</td>
+<td style="text-align: left;">Introduction to dynamic documents and Quarto</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Lunch break</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
+<td style="text-align: center;">12.00 - 13.00</td>
+<td style="text-align: left;">Use Quarto with Stata</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">14:00-15:30</td>
-<td style="text-align: right;">Analysis Plan</td>
-<td style="text-align: right;">R, RStudio and RMarkdown</td>
-<td style="text-align: right;">Sharing</td>
-<td style="text-align: right;">Sharing</td>
+<td style="text-align: center;">13.00 - 14.00</td>
+<td style="text-align: left;">Lunch break <span class="emoji" data-emoji="fork_and_knife">🍴</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Break</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
+<td style="text-align: center;">14.00 - 15.00</td>
+<td style="text-align: left;">Import and manipulate external data (1)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">16:00-17:30</td>
-<td style="text-align: right;">N/A</td>
-<td style="text-align: right;">ODK Central API, ruODK</td>
-<td style="text-align: right;">Wrap-up</td>
-<td style="text-align: right;">Wrap-up</td>
+<td style="text-align: center;">15.00 - 15.30</td>
+<td style="text-align: left;">Import and manipulate external data (2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">15.30 - 16.00</td>
+<td style="text-align: left;">Break <span class="emoji" data-emoji="tea">🍵</span> <span class="emoji" data-emoji="coffee">☕</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">16.00 - 17.00</td>
+<td style="text-align: left;">Share code and Collaborate with Git</td>
 </tr>
 </tbody>
 </table>
-<p>This project aims to accompany researchers to progress on the following development axes:</p>
+</div>
+</section>
+<section id="day-2" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="day-2"><span class="header-section-number">1.3.3</span> Day 2</h3>
+<div id="tbl-day2-schedule" class="anchored">
+<table class="table">
+<caption>Table&nbsp;1.2: Schedule Day 2</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 81%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Time</th>
+<th style="text-align: left;">Session (all)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">08.30 - 09.00</td>
+<td style="text-align: left;">Welcome</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">09.00 - 09.15</td>
+<td style="text-align: left;">Introduction to Data Science for Public Health<br>
+Overview of objectives for Day 2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">09.15 - 10.30</td>
+<td style="text-align: left;">Discussion on concepts related to to health data for decision-making</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10.30 - 11.00</td>
+<td style="text-align: left;">Break <span class="emoji" data-emoji="tea">🍵</span> <span class="emoji" data-emoji="coffee">☕</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">11:00-11:15</td>
+<td style="text-align: left;">Presentation of the data</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">11.15 - 11.45</td>
+<td style="text-align: left;">Interdisciplinary discussion</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">11.45 - 12.30</td>
+<td style="text-align: left;">Data practicals by interdisciplinary groups</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12.30 - 13.00</td>
+<td style="text-align: left;">Feedback on findings from practicals</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">13.00 - 14.00</td>
+<td style="text-align: left;">Lunch break <span class="emoji" data-emoji="fork_and_knife">🍴</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">14.00 - 14.30</td>
+<td style="text-align: left;">Interdisciplinary discussion</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">14.00 - 15.30</td>
+<td style="text-align: left;">Analysis: data practicals<br>
+Interpretation: discussion on data sources and interpretation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">15.30 - 16.00</td>
+<td style="text-align: left;">Break <span class="emoji" data-emoji="tea">🍵</span> <span class="emoji" data-emoji="coffee">☕</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">15.30 - 16.00</td>
+<td style="text-align: left;">Feedback on praticals</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="day-3" class="level3" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="day-3"><span class="header-section-number">1.3.4</span> Day 3</h3>
+<div id="tbl-day3-schedule" class="anchored">
+<table class="table">
+<caption>Table&nbsp;1.3: Schedule Day 3</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 81%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Time</th>
+<th style="text-align: left;">Session (all)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">08.30 - 09.00</td>
+<td style="text-align: left;">Welcome</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">09.00 - 09.15</td>
+<td style="text-align: left;"><p>Interdisciplinary introduction to big data and machine Learning</p>
+<p>Overview of objectives for Day 3</p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">09.15 - 10.00</td>
+<td style="text-align: left;"><p>Discussion on secondary data sources</p>
+<p>(Public Datasets, e.g.&nbsp;DHS, Facebook, facilities, etc)</p>
+<p>Benefits and drawbacks between primary and secondary data sources</p></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10.00 - 10.30</td>
+<td style="text-align: left;">Break <span class="emoji" data-emoji="tea">🍵</span> <span class="emoji" data-emoji="coffee">☕</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">11.00 - 13.00</td>
+<td style="text-align: left;">Introduction to machine learning Discussion on data sources, research</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">13:00-14:00</td>
+<td style="text-align: left;">Lunch break <span class="emoji" data-emoji="fork_and_knife">🍴</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="after-the-workshop" class="level3" data-number="1.3.5">
+<h3 data-number="1.3.5" class="anchored" data-anchor-id="after-the-workshop"><span class="header-section-number">1.3.5</span> After the workshop</h3>
+<ol type="1">
+<li>Fill out the online post-workshop questionnaire</li>
+</ol>
+</section>
+</section>
+<section id="scope" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="scope"><span class="header-section-number">1.4</span> Scope</h2>
+<p>This workshop aims to accompany researchers to progress on the following development axes:</p>
+<section id="data-science-mindset" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="data-science-mindset"><span class="header-section-number">1.4.1</span> Data science mindset</h3>
 <ul>
-<li>Data science mindset
-<ul>
-<li><a href="https://github.com/Thaliehln/ds4ph/wiki/1.-Use-of-reproducible-research-practices-in-public-health">Use of reproducible research practices in public health</a></li>
+<li>Use of reproducible research practices in public health</li>
 <li>Data provenance
 <ul>
 <li>Use of distinct data sources for the development of public health indicators</li>
@@ -361,12 +502,14 @@ Do you want to bridge analyses between data analysis tools (Stata, R or Python) 
 </ul></li>
 <li>Ethical data science</li>
 <li>Data papers</li>
-</ul></li>
-<li>Data science skillset
+</ul>
+</section>
+<section id="data-science-skillset" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="data-science-skillset"><span class="header-section-number">1.4.2</span> Data science skillset</h3>
 <ul>
 <li>Programming tools
 <ul>
-<li><a href="https://github.com/Thaliehln/ds4ph/wiki/Moving-from-Stata-to-R">Move from Stata to R</a> (prerequisite: Stata)</li>
+<li>Move from Stata to R (prerequisite: Stata)</li>
 <li>R programming
 <ul>
 <li>dplyr</li>
@@ -382,65 +525,28 @@ Do you want to bridge analyses between data analysis tools (Stata, R or Python) 
 <li>Versioning using GitHub (all)</li>
 <li>Using targets (prerequisite: independent R user)</li>
 </ul></li>
-<li>Reporting and publishing: Dynamic report generation
-<ul>
-<li>Using Stata (prerequisite: Stata)</li>
-<li>Using R/Rmarkdown (prerequisite: R basics)</li>
-<li>Notebooks (Python Jupyter Notebook, Rmarkdown as a notebook - prerequisite: Python/R basics)</li>
-</ul></li>
+<li>Reporting and publishing: Dynamic report generation</li>
 <li>Reproducible data
 <ul>
 <li>Use APIs (prerequisite: IT programming basics)</li>
 <li>Open access data (all)</li>
 </ul></li>
 <li>Statistical methods for reproducible research (advanced)</li>
-</ul></li>
 </ul>
-<section id="wrap-up" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="wrap-up"><span class="header-section-number">1.4.1</span> Wrap-up</h3>
-<p>What is not covered</p>
+</section>
+<section id="what-is-not-covered" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="what-is-not-covered"><span class="header-section-number">1.4.3</span> What is not covered</h3>
 <ul>
 <li>Reproducible workflows (targets)</li>
 <li>Reproducible environments (Binder, Docker, renv, etc)</li>
 </ul>
 </section>
 </section>
-<section id="instructors" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="instructors"><span class="header-section-number">1.5</span> Instructors</h2>
-<section id="from-the-ifakara-health-institute-ihi" class="level3" data-number="1.5.1">
-<h3 data-number="1.5.1" class="anchored" data-anchor-id="from-the-ifakara-health-institute-ihi"><span class="header-section-number">1.5.1</span> From the Ifakara Health Institute (IHI)</h3>
-<ul>
-<li>Samwel Lwambura</li>
-<li>Hajirani Msuya</li>
-<li>Ibrahim Mtebene?</li>
-</ul>
-</section>
-<section id="from-the-swiss-tropical-public-health-institute-swiss-tph" class="level3" data-number="1.5.2">
-<h3 data-number="1.5.2" class="anchored" data-anchor-id="from-the-swiss-tropical-public-health-institute-swiss-tph"><span class="header-section-number">1.5.2</span> From the Swiss Tropical &amp; Public Health Institute (Swiss TPH)</h3>
-<ul>
-<li>Fenella Beynon</li>
-<li>Hélène Langet</li>
-<li>Silvia Cicconi</li>
-<li>Gillian Levine</li>
-<li>Fabian Schär</li>
-</ul>
-</section>
-</section>
-<section id="data" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="data"><span class="header-section-number">1.6</span> Data</h2>
-<p>Soon - here a succinct description of the data to be used as part of the workshop will be given.</p>
-<hr>
-<p><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" class="img-fluid"> This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0 International (CC BY 4.0)</a>.</p>
-<p>You are free to:</p>
-<ul>
-<li>Share — copy and redistribute the material in any medium or format</li>
-<li>Adapt — remix, transform, and build upon the material for any purpose, even commercially.</li>
-</ul>
-<p>Under the following terms:</p>
-<ul>
-<li>Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>
-<li>No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.</li>
-</ul>
+<section id="conventions" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="conventions"><span class="header-section-number">1.5</span> Conventions</h2>
+<p>Discussion activity <span class="emoji" data-emoji="speech_balloon">💬</span></p>
+<p>Reflection activity <span class="emoji" data-emoji="thought_balloon">💭</span></p>
+<p>Coding activity <span class="emoji" data-emoji="computer">💻</span></p>
 
 
 </section>
@@ -515,7 +621,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
@@ -550,12 +657,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./prerequisites.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prerequisites</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./tools_for_reproducible_data_science.html" class="pagination-link">
+        <span class="nav-page-text">Day 1: Tools for reproducible data science</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, IHI / Swiss TPH</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Thaliehln/ds4ph/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

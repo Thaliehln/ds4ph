@@ -4,28 +4,72 @@
 
 To learn more about this topic, we highly recommend the following resources:
 
-* Codeacademy: https://www.codecademy.com/learn/learn-git
-* GitHub Guides: https://guides.github.com/activities/hello-world/
-* Try Git tutorial: https://try.github.io/levels/1/challenges/1
-* Happy Git and GitHub for the useR: http://happygitwithr.com/
+-   [Codeacademy](https://www.codecademy.com/learn/learn-git)
+-   [GitHub Guides](https://guides.github.com/activities/hello-world/)
+-   [Try Git tutorial](https://try.github.io/levels/1/challenges/1)
+-   [Happy Git and GitHub for the useR](http://happygitwithr.com/)
 
 ## R programming
 
-### Courses
+### Online trainings
 
--   GRAPH network
+-   [The GRAPH network](https://thegraphcourses.org)
 -   [Johns Hopkins University Data Science Lab's courses](https://jhudatascience.org/courses.html)
+-   [afrimapr](https://afrimapr.github.io/afrimapr.website/training/) - mapping data in Africa
 
 ### Packages
 
-* the Tidyverse ecosystem of R packages is an excellent way to learn the different aspects of the data science pipeline, from importing the data, tidying the data into a format that is easy to work with, exploring and visualizing the data, and fitting machine learning models. If you are already experienced in data science, the Tidyverse provides a power system for streamlining your workflow in a coherent manner that can easily connect with other data science tools.
-* ruODK
+| Icon | Name                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|---------------|---------------|------------------------------------------|
+|      | Tidyverse ecosystem of R packages | An excellent way to learn the different aspects of the data science pipeline, from importing the data, tidying the data into a format that is easy to work with, exploring and visualizing the data, and fitting machine learning models. If you are already experienced in data science, the Tidyverse provides a power system for streamlining your workflow in a coherent manner that can easily connect with other data science tools. |
+|      | ruODK                             |                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|      |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|      |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|      |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+
+### Books
+
+| Book                                                                                                                     | Recommendation                     |
+|--------------------------------------------------------------------------------------------------------------------------|------------------------------------|
+|[R for applied epidemiology and public health](https://epirhandbook.com/en/) [@batra_epidemiologist_2021]                                             | :star: :star: :star: :star: :star: |
+|                                                                                                                          |                                    |
+|                                                                                                                          |                                    |
+
+
+### Communities
+
+* [R for data science online learning community](https://www.rfordatasci.com/)
 
 ## Machine learning
 
--   Scikit-learn MOOC
+| MOOC                                                                                                                     | Recommendation                     |
+|--------------------------------------------------------------------------------------------------------------------------|------------------------------------|
+| [Machine learning in Python with scikit-learn](https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn/) | :star: :star: :star: :star: :star: |
+|                                                                                                                          |                                    |
+|                                                                                                                          |                                    |
 
-## Datasets
+## Open data
 
--   facebook global good datasets
--   facility datasets
+### Platforms
+
+-   [openAfrica](https://open.africa/)
+
+-   [Code for Africa (CfA)](https://github.com/CodeForAfrica/)
+
+### Data sets
+
+| Dataset                                                                                                   | Associated publication(s) |
+|----------------------------------------|-----------------|
+| [Data for Good](https://dataforgood.facebook.com/dfg/tools)                                                                             |                           |
+| [Public health hacilities in sub-Saharan Africa](https://open.africa/dataset/health-facilities-in-africa) | [@maina_spatial_2019]     |
+|                                                                                                           |                           |
+
+## Reproducible research
+
+* https://the-turing-way.netlify.app/welcome.html [@the_turing_way_community_2022_6909298] :star: :star: :star: :star: :star:
+
+## Conferences
+
+* http://www.datascienceafrica.org/
+
+* https://nef.org/

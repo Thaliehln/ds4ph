@@ -1,3 +1,34 @@
 # Preface {.unnumbered}
 
-This is a book created for the **Data Science for Public Health** workshop by the [Ifakara Health Institute (IHI)](https://ihi.or.tz/) and the [Swiss Tropical & Public Health Institute (Swiss TPH)](https://www.swisstph.ch), with the support of the [Leading House Africa (LHA)](https://www.swisstph.ch/en/research/leading-house-africa/) which promotes and fosters bilateral collaboration with partner institutions in Africa.
+## Introduction
+
+Data science and artificial intelligence have the potential to generate fundamentally new insights on global health policies in Africa, but the full realization of this potential depends on the availability of a critical mass of highly trained health data scientists on the continent.
+
+This book was created at the [Ifakara Health Institute (IHI)](https://ihi.or.tz/) and the [Swiss Tropical & Public Health Institute (Swiss TPH)](https://www.swisstph.ch) by Hélène Langet, Fenella Beynon, Fabian Schär, Silvia Cicconi and Gillian Levine (Swiss TPH) and Samwel Lwambura (IHI) for the **Data Science for Public Health** workshop which will be held in Dar-es-Salaam from Monday,September 26th to Wednesday, September 28th 2022. 
+
+The goal of this workshop is to enable researchers from the Ifakara Health Institute (IHI) to strengthen their expertise in the area and to lay the foundations for the development of a data science curriculum that is adapted to IHI's needs.
+
+This work is the product of interdisciplinary discussions with Abdallah Mkopi, Grace Mhalu, Robert Moshiro from IHI and feedback from Hajirani Msuya and Martine Masonga, the first group to use these notebooks.
+
+## License
+
+![](https://i.creativecommons.org/l/by/4.0/88x31.png) This book is licensed under a [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
+You are free to:
+
+-   Share --- copy and redistribute the material in any medium or format
+-   Adapt --- remix, transform, and build upon the material for any purpose, even commercially.
+
+Under the following terms:
+
+-   Attribution --- You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+-   No additional restrictions --- You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+## Update History
+
+* September 25, 2022: First edition.
+
+## Acknowledgement
+
+This work was funded by the [Leading House Africa (LHA)](https://www.swisstph.ch/en/research/leading-house-africa/) which promotes and fosters bilateral collaboration with partner institutions in Africa.

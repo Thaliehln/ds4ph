@@ -4,40 +4,39 @@ title: "Import external data"
 
 ## Introduction
 
-Most of the time you will want to generate *Quarto* documents using your own data. To this aim, you will have to import data from external sources: files, URLs, or server data (e.g., ODK Central data). If you want to further process / analyse your data, you will have to store the imported data in a data frame.
+Most of the time you will want to generate *Quarto* documents using your own data. To this aim, you will have to import data from external sources such as files, URLs, or server data (e.g., ODK Central data). There is a dedicated importing function in R and Python for almost every data format. In this section we show you how to import Stata (`.dta`), Excel (`.xlsx`) and comma-separated values (CSV, `.csv`) data formats from files and from URLs, as well as how to import ODK data directly from an ODK Central server.
 
 ::: callout-important
-Remember that you can:
-
-* store multiple data sets in memory (stored in different data frames `df1`, `df2`, `df3`, etc),
-* work on all of these data sets in parallel.
-:::
+As you import data to further process / analyse them, you have to store the imported data in a data frame.
+::: 
 
 ## Import data from files
 
-There is a dedicated importing function in R and Python for almost every data format. In this section we show you how to import Stata (`.dta`), Excel (`.xlsx`) and comma-separated values (CSV, `.csv`) formats.
+All Python and R functions only require as input the path where the file you want to import is stored. This path has to be passed as a  sequence of characters (*character*) within double ("") or single ('') quotes. 
 
-All these functions only require as input the path where the file you want to import is stored. This path has to be passed as a  sequence of characters (*character*) within double or single quotes. 
+The path can be either:
 
-The path can be relative to your Quarto document ("./data/mydata.csv") or absolute (C:. 
+* relative to your Quarto document
 
 ```{r}
 #| echo: fenced
 relative_path <- "./data/mydata.csv"
 ```
 
+* absolute
+
 ```{r}
 #| echo: fenced
 absolute_path <- "C:/Users/myuser/Documents/mydata.csv"
 ```
 
-Functions in general have additional optional arguments
+Functions in general have additional optional arguments.
 
 ### Import Excel data
 
 ::: panel-tabset
 
-#### Exercise 1
+#### :pencil2: Exercise 1
 
 Import the Excel data set **dataset1.xlsx** and store it into a data frame called **df1**.
 
@@ -91,7 +90,7 @@ df1 = pandas.read_excel('./data/dataset1.xlsx')
 
 ::: panel-tabset
 
-#### Exercise 2
+#### :pencil2: Exercise 2
 
 Read the CSV data set **dataset1.csv** and store it into a data frame called **df2**.
 
@@ -138,7 +137,7 @@ df2 = pandas.read_csv('./data/dataset1.csv')
 ### Import Stata data
 
 ::: panel-tabset
-#### Exercise 3
+#### :pencil2: Exercise 3
 
 Read the Stata data set **dataset1.dta** and store it into a data frame called **df3**.
 
@@ -186,12 +185,12 @@ df3 = pandas.read_stata('./data/dataset1.dta')
 
 ## Import data from URLs
 
-Indicate functions that accepts URL as well (it is the case for all Python functions).
+All functions can accept URLs as well instead of the path to a specific file.
 
 ::: panel-tabset
-#### Exercise 4
+#### :pencil2: Exercise 4
 
-Import the CSV data set that contains a comprehensive spatial inventory of 98,745 public health facilities in Sub Saharan Africa from the following  [url](http://hfrportal.moh.go.tz/index.php?r=facilities/exportToExcel&url=https%3A%2F%2Fresourcemap.instedd.org%2Fapi%2Fcollections%2F409.json%3Fpage%3Dall%26box%3D-180%2C-90%2C179.99%2C90%26Admin_div%5Bunder%5D%3DTZ%26human%3Dtrue&report_title=List_of_Facilities_with_Geo) and store it into a data frame called **df4**.
+Import the CSV data set that contains a comprehensive spatial inventory of 98,745 public health facilities in Sub Saharan Africa directly from the following  [url](https://open.africa/dataset/d7335980-29d5-476c-bf7a-feb4e22cf631/resource/e2432e8a-cf15-4a8b-b8c3-567f443c1459/download/cfa-data-hospitals-in-africa-00-ssa-mfl-130219.xlsx-ssa-mfl.csv) and store it into a data frame called **df4**.
 
 To learn more about how this data set was assembled, please refer to [@maina_spatial_2019]
 
@@ -207,6 +206,8 @@ To learn more about how this data set was assembled, please refer to [@maina_spa
 ```
 
 #### Stata
+
+Here, because quotes are already used for the Stata command, you need to use the other type of quotes for indicating the URL.
 
 ```{r}
 #| echo: fenced
@@ -247,7 +248,7 @@ We will see how to retrieve data through the OData API.
 
 ::: panel-tabset
 
-### Exercise 5
+### :pencil2: Exercise 5
 
 Connect to the ODK Central server data set.
 "https://private-anon-24fcfe2426-odkcentral.apiary-mock.com/v1/projects/7/forms/simple.svc"
@@ -264,7 +265,7 @@ Your email is "my.email.address@getodk.org" and your password is "my.super.secur
 # Write your code here
 ```
 
-### Solution
+### R
 
 ```{r}
 #| echo: fenced
@@ -280,7 +281,7 @@ ruODK::ru_setup(
 
 ::: panel-tabset
 
-### Exercise 6
+### :pencil2: Exercise 6
 
 Retrieve data from form and store the data set into a data frame called df4
 
@@ -294,7 +295,7 @@ Retrieve data from form and store the data set into a data frame called df4
 # Write your code here
 ```
 
-### Solution
+### R
 
 ```{r}
 #| echo: fenced
@@ -321,5 +322,3 @@ df
 ```
 
 :::
-
-## References

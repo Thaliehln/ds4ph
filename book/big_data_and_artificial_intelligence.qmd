@@ -1,0 +1,9 @@
+---
+title: "Day 3: Big data and machine learning"
+---
+
+## Introduction
+
+![](images/paste-FA238456.png)
+
+## Machine Learning vs. Statistics

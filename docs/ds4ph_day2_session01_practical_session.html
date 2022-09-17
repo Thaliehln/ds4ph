@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.37">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -53,7 +58,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -66,7 +71,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -88,8 +93,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./ds4ph_day3_session01_practical_session.html" rel="next">
-<link href="./manipulate_data.html" rel="prev">
+<link href="./big_data_and_artificial_intelligence.html" rel="next">
+<link href="./data_science_for_public_health.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -141,7 +146,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./" class="sidebar-logo-link">
-      <img src="./images/csm_Logo_SwissTPH_print_cce56f2a0f.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/logo_compact.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Data Science for Public Health</a> 
@@ -164,14 +169,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./prerequisites.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prerequisites</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Day 1: Tools for reproducible data analyses</a>
+            <a href="./tools_for_reproducible_data_science.html" class="sidebar-item-text sidebar-link">Day 1: Tools for reproducible data science</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -179,39 +179,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./github.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">GitHub</span></a>
+  <a href="./version_control_with_git.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Version control with Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic documents</span></a>
+  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Dynamic analysis documents</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Create your first Quarto document</span></a>
+  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started with Quarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Code chunks</span></a>
+  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Code chunks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Import external data</span></a>
+  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Import external data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./manipulate_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipulate data</span></a>
+  <a href="./manipulate_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Manipulate data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./share_and_collaborate_with_git.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Share code and collaborate with Git</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Day 2: Data Science for Public Health</a>
+            <a href="./data_science_for_public_health.html" class="sidebar-item-text sidebar-link">Day 2: Data Science for Public Health</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -226,7 +231,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Day 3: Big data and machine learning</a>
+            <a href="./big_data_and_artificial_intelligence.html" class="sidebar-item-text sidebar-link">Day 3: Big data and machine learning</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -241,39 +246,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./useful_resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Useful resources</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Install software</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datasets.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./useful_resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Useful resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#malaria-research-questions" id="toc-malaria-research-questions" class="nav-link active" data-scroll-target="#malaria-research-questions"> <span class="header-section-number">9.1</span> Malaria research questions</a></li>
-  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description"> <span class="header-section-number">9.2</span> Dataset description</a>
+  <li><a href="#malaria-research-questions" id="toc-malaria-research-questions" class="nav-link active" data-scroll-target="#malaria-research-questions"><span class="toc-section-number">9.1</span>  Malaria research questions</a></li>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description"><span class="toc-section-number">9.2</span>  Dataset description</a>
   <ul class="collapse">
-  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection"> <span class="header-section-number">9.2.1</span> Data collection</a></li>
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection"><span class="toc-section-number">9.2.1</span>  Data collection</a></li>
   </ul></li>
-  <li><a href="#data-cleaning-and-data-de-identification" id="toc-data-cleaning-and-data-de-identification" class="nav-link" data-scroll-target="#data-cleaning-and-data-de-identification"> <span class="header-section-number">9.3</span> Data cleaning and data de-identification</a>
+  <li><a href="#data-cleaning-and-data-de-identification" id="toc-data-cleaning-and-data-de-identification" class="nav-link" data-scroll-target="#data-cleaning-and-data-de-identification"><span class="toc-section-number">9.3</span>  Data cleaning and data de-identification</a>
   <ul class="collapse">
-  <li><a href="#dataset-structure" id="toc-dataset-structure" class="nav-link" data-scroll-target="#dataset-structure"> <span class="header-section-number">9.3.1</span> Dataset structure</a></li>
-  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook"> <span class="header-section-number">9.3.2</span> Codebook</a></li>
+  <li><a href="#dataset-structure" id="toc-dataset-structure" class="nav-link" data-scroll-target="#dataset-structure"><span class="toc-section-number">9.3.1</span>  Dataset structure</a></li>
+  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook"><span class="toc-section-number">9.3.2</span>  Codebook</a></li>
   </ul></li>
-  <li><a href="#familiarise-with-the-dataset" id="toc-familiarise-with-the-dataset" class="nav-link" data-scroll-target="#familiarise-with-the-dataset"> <span class="header-section-number">9.4</span> Familiarise with the dataset</a></li>
-  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"> <span class="header-section-number">9.5</span> Import the data</a></li>
-  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"> <span class="header-section-number">9.6</span> Structure of the data</a></li>
-  <li><a href="#identify-missing-values" id="toc-identify-missing-values" class="nav-link" data-scroll-target="#identify-missing-values"> <span class="header-section-number">9.7</span> Identify missing values</a></li>
-  <li><a href="#data-analysis-plan" id="toc-data-analysis-plan" class="nav-link" data-scroll-target="#data-analysis-plan"> <span class="header-section-number">9.8</span> Data analysis plan</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">9.9</span> References</a></li>
+  <li><a href="#familiarise-with-the-dataset" id="toc-familiarise-with-the-dataset" class="nav-link" data-scroll-target="#familiarise-with-the-dataset"><span class="toc-section-number">9.4</span>  Familiarise with the dataset</a></li>
+  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"><span class="toc-section-number">9.5</span>  Import the data</a></li>
+  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"><span class="toc-section-number">9.6</span>  Structure of the data</a></li>
+  <li><a href="#identify-missing-values" id="toc-identify-missing-values" class="nav-link" data-scroll-target="#identify-missing-values"><span class="toc-section-number">9.7</span>  Identify missing values</a></li>
+  <li><a href="#data-analysis-plan" id="toc-data-analysis-plan" class="nav-link" data-scroll-target="#data-analysis-plan"><span class="toc-section-number">9.8</span>  Data analysis plan</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">9.9</span>  References</a></li>
   </ul>
 </nav>
     </div>
@@ -357,7 +382,7 @@ Tip
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_dta</span>(<span class="st">"dataset10.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_dta</span>(<span class="st">"./data/dataset10.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-knitr="kable">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -417,7 +442,8 @@ Tip
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RStata)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>RStata<span class="sc">::</span><span class="fu">stata</span>(<span class="st">"codebook"</span>, <span class="at">data.in =</span> df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>RStata<span class="sc">::</span><span class="fu">stata</span>(<span class="st">"codebook"</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">data.in =</span> df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>. codebook
 
@@ -2448,12 +2474,12 @@ Tip
 </div>
 <div class="cell-output-display">
 
-<div id="tekrxsbzjx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="rqdgehuxcu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#tekrxsbzjx .gt_table {
+:where(#rqdgehuxcu) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2478,7 +2504,7 @@ Tip
   border-left-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_heading {
+:where(#rqdgehuxcu) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2490,7 +2516,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_title {
+:where(#rqdgehuxcu) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2502,7 +2528,7 @@ Tip
   border-bottom-width: 0;
 }
 
-#tekrxsbzjx .gt_subtitle {
+:where(#rqdgehuxcu) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2514,13 +2540,13 @@ Tip
   border-top-width: 0;
 }
 
-#tekrxsbzjx .gt_bottom_border {
+:where(#rqdgehuxcu) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_col_headings {
+:where(#rqdgehuxcu) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2535,7 +2561,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_col_heading {
+:where(#rqdgehuxcu) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2555,7 +2581,7 @@ Tip
   overflow-x: hidden;
 }
 
-#tekrxsbzjx .gt_column_spanner_outer {
+:where(#rqdgehuxcu) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2567,15 +2593,15 @@ Tip
   padding-right: 4px;
 }
 
-#tekrxsbzjx .gt_column_spanner_outer:first-child {
+:where(#rqdgehuxcu) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tekrxsbzjx .gt_column_spanner_outer:last-child {
+:where(#rqdgehuxcu) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tekrxsbzjx .gt_column_spanner {
+:where(#rqdgehuxcu) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2587,7 +2613,7 @@ Tip
   width: 100%;
 }
 
-#tekrxsbzjx .gt_group_heading {
+:where(#rqdgehuxcu) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2612,7 +2638,7 @@ Tip
   vertical-align: middle;
 }
 
-#tekrxsbzjx .gt_empty_group_heading {
+:where(#rqdgehuxcu) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2627,15 +2653,15 @@ Tip
   vertical-align: middle;
 }
 
-#tekrxsbzjx .gt_from_md > :first-child {
+:where(#rqdgehuxcu) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tekrxsbzjx .gt_from_md > :last-child {
+:where(#rqdgehuxcu) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tekrxsbzjx .gt_row {
+:where(#rqdgehuxcu) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2654,7 +2680,7 @@ Tip
   overflow-x: hidden;
 }
 
-#tekrxsbzjx .gt_stub {
+:where(#rqdgehuxcu) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2667,7 +2693,7 @@ Tip
   padding-right: 5px;
 }
 
-#tekrxsbzjx .gt_stub_row_group {
+:where(#rqdgehuxcu) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2681,11 +2707,11 @@ Tip
   vertical-align: top;
 }
 
-#tekrxsbzjx .gt_row_group_first td {
+:where(#rqdgehuxcu) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tekrxsbzjx .gt_summary_row {
+:where(#rqdgehuxcu) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2695,16 +2721,16 @@ Tip
   padding-right: 5px;
 }
 
-#tekrxsbzjx .gt_first_summary_row {
+:where(#rqdgehuxcu) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_first_summary_row.thick {
+:where(#rqdgehuxcu) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tekrxsbzjx .gt_last_summary_row {
+:where(#rqdgehuxcu) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2714,7 +2740,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_grand_summary_row {
+:where(#rqdgehuxcu) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2724,7 +2750,7 @@ Tip
   padding-right: 5px;
 }
 
-#tekrxsbzjx .gt_first_grand_summary_row {
+:where(#rqdgehuxcu) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2734,11 +2760,11 @@ Tip
   border-top-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_striped {
+:where(#rqdgehuxcu) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tekrxsbzjx .gt_table_body {
+:where(#rqdgehuxcu) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2747,7 +2773,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_footnotes {
+:where(#rqdgehuxcu) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2761,7 +2787,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_footnote {
+:where(#rqdgehuxcu) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2770,7 +2796,7 @@ Tip
   padding-right: 5px;
 }
 
-#tekrxsbzjx .gt_sourcenotes {
+:where(#rqdgehuxcu) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2784,7 +2810,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#tekrxsbzjx .gt_sourcenote {
+:where(#rqdgehuxcu) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2792,36 +2818,36 @@ Tip
   padding-right: 5px;
 }
 
-#tekrxsbzjx .gt_left {
+:where(#rqdgehuxcu) .gt_left {
   text-align: left;
 }
 
-#tekrxsbzjx .gt_center {
+:where(#rqdgehuxcu) .gt_center {
   text-align: center;
 }
 
-#tekrxsbzjx .gt_right {
+:where(#rqdgehuxcu) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tekrxsbzjx .gt_font_normal {
+:where(#rqdgehuxcu) .gt_font_normal {
   font-weight: normal;
 }
 
-#tekrxsbzjx .gt_font_bold {
+:where(#rqdgehuxcu) .gt_font_bold {
   font-weight: bold;
 }
 
-#tekrxsbzjx .gt_font_italic {
+:where(#rqdgehuxcu) .gt_font_italic {
   font-style: italic;
 }
 
-#tekrxsbzjx .gt_super {
+:where(#rqdgehuxcu) .gt_super {
   font-size: 65%;
 }
 
-#tekrxsbzjx .gt_two_val_uncert {
+:where(#rqdgehuxcu) .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -2830,31 +2856,31 @@ Tip
   margin-left: 0.1em;
 }
 
-#tekrxsbzjx .gt_footnote_marks {
+:where(#rqdgehuxcu) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#tekrxsbzjx .gt_asterisk {
+:where(#rqdgehuxcu) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tekrxsbzjx .gt_slash_mark {
+:where(#rqdgehuxcu) .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#tekrxsbzjx .gt_fraction_numerator {
+:where(#rqdgehuxcu) .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#tekrxsbzjx .gt_fraction_denominator {
+:where(#rqdgehuxcu) .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -3305,7 +3331,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
@@ -3335,17 +3362,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./manipulate_data.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Manipulate data</span></span>
+      <a href="./data_science_for_public_health.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Day 2: Data Science for Public Health</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./ds4ph_day3_session01_practical_session.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Day 3 - Session 02</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./big_data_and_artificial_intelligence.html" class="pagination-link">
+        <span class="nav-page-text">Day 3: Big data and machine learning</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, IHI / Swiss TPH</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Thaliehln/ds4ph/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
