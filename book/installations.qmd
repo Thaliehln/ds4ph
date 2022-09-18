@@ -7,7 +7,6 @@ title: "Install software"
 R is a programming language for statistical computing and graphics.
 
 ::: panel-tabset
-
 ### Step 1
 
 You can download R from the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/mirrors.html) which is a network of servers around the world that store identical up-to-date versions of code and documentation for R.
@@ -45,31 +44,28 @@ Download the installer
 ### Step 5
 
 After downloading the installer, follow the installation wizard on your computer.
-
 :::
 
 ## Install RStudio
 
-Rstudio is an integrated development environment (IDE) for R. 
+Rstudio is an integrated development environment (IDE) for R.
 
 ::: callout-important
 RStudio does include R when you download and install it, so you need to have installed R to be able to use RStudio with R (see Section @sec-R-installation).
 :::
 
 ::: panel-tabset
-
 ### Step 1
 
 There are different products, but the free Desktop version is just perfect for our needs.
 
 ### Step 2
 
-Download the [installer](https://download1.rstudio.org/desktop/windows/RStudio-2022.07.1-554.exe): 
+Download the [installer](https://download1.rstudio.org/desktop/windows/RStudio-2022.07.1-554.exe):
 
-### Step 5
+### Step 3
 
 After downloading the installer, follow the installation wizard on your computer.
-
 :::
 
 ::: callout-note
@@ -88,9 +84,23 @@ When the installation is complete, you will not see any new software on your lap
 
 ## GitHub account
 
+GitHub is a code hosting platform for version control and collaboration. To Create a github account: [sign up](https://github.com/signup "Github account creation")
+
 ## GitHub desktop
 
-To install GitHub Desktop: link. After downloading, follow the installation wizard on your computer.
+::: callout-important
+**You must have Git installed before using GitHub Desktop**.
+:::
+
+::: panel-tabset
+## Step 1
+
+Download and install the latest version of Git from [link](https://git-scm.com/downloads)
+
+## Step 2
+
+Download github desktop installer from [link](https://desktop.github.com/), After downloading, follow the installation wizard on your computer
+:::
 
 ### How to connect your GitHub account to GitHub Desktop?
 
