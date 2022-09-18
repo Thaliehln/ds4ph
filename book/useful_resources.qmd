@@ -19,31 +19,34 @@ To learn more about this topic, we highly recommend the following resources:
 
 ### Packages
 
-| Icon | Name                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|---------------|---------------|------------------------------------------|
-|      | Tidyverse ecosystem of R packages | An excellent way to learn the different aspects of the data science pipeline, from importing the data, tidying the data into a format that is easy to work with, exploring and visualizing the data, and fitting machine learning models. If you are already experienced in data science, the Tidyverse provides a power system for streamlining your workflow in a coherent manner that can easily connect with other data science tools. |
-|      | ruODK                             |                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|      |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|      |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|      |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Icon                                        | Name                                                                        | Description                                        |
+|------------------|------------------|------------------------------------|
+| ![](images/tidyverse-logo.png){width="125"} | [tidyverse](https://www.tidyverse.org/)                                     | Collection of R packages designed for data science |
+| ![RuODK logo](images/logo.png){width="125"} | [ruODK](https://docs.ropensci.org/ruODK/index.html)                         |                                                    |
+|                                             | [sitrep](https://github.com/R4EPI/sitrep)                                   |                                                    |
+| ![](images/paste-A6E65357.png){width="125"} | [skimr](https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html) |                                                    |
+|                                             |                                                                             |                                                    |
 
-### Books
+### Books and websites
 
-| Book                                                                                                                     | Recommendation                     |
-|--------------------------------------------------------------------------------------------------------------------------|------------------------------------|
-|[R for applied epidemiology and public health](https://epirhandbook.com/en/) [@batra_epidemiologist_2021]                                             | :star: :star: :star: :star: :star: |
-|                                                                                                                          |                                    |
-|                                                                                                                          |                                    |
+|                                                                                                           |                                    |
+|--------------------------------------------------|----------------------|
+| [R for applied epidemiology and public health](https://epirhandbook.com/en/) [@batra_epidemiologist_2021] | :star: :star: :star: :star: :star: |
+| [R for Epidemiology](https://www.r4epi.com/)                                                              |                                    |
+| [R4epis](https://r4epis.netlify.app/)                                                                     |                                    |
+| [R for Data Science](https://r4ds.had.co.nz/)                                                             | :star: :star: :star: :star: :star: |
+| [Quarto for scientists](https://qmd4sci.njtierney.com/)                                                   |                                    |
 
+: Books and websites
 
 ### Communities
 
-* [R for data science online learning community](https://www.rfordatasci.com/)
+-   [R for data science online learning community](https://www.rfordatasci.com/)
 
 ## Machine learning
 
 | MOOC                                                                                                                     | Recommendation                     |
-|--------------------------------------------------------------------------------------------------------------------------|------------------------------------|
+|--------------------------------------------------|----------------------|
 | [Machine learning in Python with scikit-learn](https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn/) | :star: :star: :star: :star: :star: |
 |                                                                                                                          |                                    |
 |                                                                                                                          |                                    |
@@ -59,17 +62,17 @@ To learn more about this topic, we highly recommend the following resources:
 ### Data sets
 
 | Dataset                                                                                                   | Associated publication(s) |
-|----------------------------------------|-----------------|
-| [Data for Good](https://dataforgood.facebook.com/dfg/tools)                                                                             |                           |
+|------------------------------------------------|-------------------------|
+| [Data for Good](https://dataforgood.facebook.com/dfg/tools)                                               |                           |
 | [Public health hacilities in sub-Saharan Africa](https://open.africa/dataset/health-facilities-in-africa) | [@maina_spatial_2019]     |
 |                                                                                                           |                           |
 
 ## Reproducible research
 
-* https://the-turing-way.netlify.app/welcome.html [@the_turing_way_community_2022_6909298] :star: :star: :star: :star: :star:
+-   [The Turing way](https://the-turing-way.netlify.app/welcome.html) [@the_turing_way_community_2022_6909298] :star: :star: :star: :star: :star:
 
 ## Conferences
 
-* http://www.datascienceafrica.org/
+-   [Data Science Africa](http://www.datascienceafrica.org/)
 
-* https://nef.org/
+-   https://nef.org/

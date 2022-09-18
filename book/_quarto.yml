@@ -19,8 +19,9 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - part: tools_for_reproducible_data_science.qmd
+    - part: "------------ DAY 1 ------------"
       chapters:
+        - tools_for_reproducible_data_science.qmd
         - version_control_with_git.qmd
         - dynamic_documents.qmd
         - create_first_quarto_doc.qmd
@@ -28,24 +29,28 @@ book:
         - import_data.qmd
         - manipulate_data.qmd
         - share_and_collaborate_with_git.qmd
-    - part: data_science_for_public_health.qmd
+    - part: "------------ DAY 2 ------------"
       chapters:
+        - data_science_for_public_health.qmd
         - ds4ph_day2_session01_practical_session.qmd
-    - part: big_data_and_artificial_intelligence.qmd
+    - part: "------------ DAY 3 ------------"
       chapters: 
+        - big_data_and_artificial_intelligence.qmd
         - ds4ph_day3_session01_practical_session.qmd
     - references.qmd
   appendices:
     - installations.qmd
+    - quarto_vs_rmarkdown.qmd
     - datasets.qmd
     - useful_resources.qmd
   page-footer: 
-    left: "Copyright 2022, IHI / Swiss TPH" 
-    right: 
+    left: "This book was built by [Quarto](https://quarto.org/). Copyright 2022, IHI / Swiss TPH"
+    right:
       - icon: github
         href: https://github.com/Thaliehln/ds4ph/
 
 bibliography: references.bib
+csl: vancouver.csl
 
 format:
   html:

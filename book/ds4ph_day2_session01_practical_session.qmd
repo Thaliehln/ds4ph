@@ -1,14 +1,44 @@
-# Day 2 - Session 01
+---
+title: ":orange_book: Malaria case study"
+---
 
 TBD
+
+## Introduction
+
+These pages will demonstrate use of the Acute Jaundice Syndrome (AJS) outbreak template with data from an outbreak in Am Timan, Chad. This case study uses data that is not standardized with the MSF data dictionary, and so reflects a more challenging use case.
 
 ## Malaria research questions
 
 Research questions in an enumerated list
 
-## Dataset description
+## Getting started
+
+#### Access the datasets for this walk-through
+
+* Download the Am Timan linelist (Excel) here
+* Download the Am Timan population data (Excel) here
+* Download the Am Timan Quartiers (shapefile) here
+* Download the Am Timan Blocks (shapefile) here
+
+#### Access the version of the Quarto script used in this walk-through
+Download the final RMarkdown template used in this walk-through, to follow-along step-by-step uisng GitHub
+
+#### Quarto resources
+Review the R Basics page “Reading a RMarkdown Script”, or reference these resources: Rmarkdown introduction and Rmarkdown authoring basics.
+AJS/HEV outbreak in Am Timan, Chad (2016-2017)
+
+### Dataset description
+
+We will be using data and examples from a real consultation data which occurred in Tanzania between **start date** and **end date**.
+
+DISCLAIMER: The real data from the outbreak has been used for the training materials linked to the outbreak templates of the R4epis project. The Ifakara Health Institute has approved the use of this data for training purposes. Please note, that some data has been adapted in order to best achieve training objectives. No personally indentifiable information have been kept in this dataset.
 
 Information about the consultations of **10,308 children \[1 day - 59 months\]** from **18 facilities** (dispensaries and health centres) in **Kaliua** District, **Sengerema** District and **Tanga** District, Tanzania. Data were collected using *ODK* (ODK Collect, ODK Central) between **start date** and **end date**. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project. Data are stored in **dataset1.dta**.
+
+The outbreak linelist data was combined data from the active CBS data and the clinical data from the hospital. The CBS functioned with community health workers visiting all households in the town every two weeks and actively searching for people with Acute Jaundice Syndrome (AJS). For this group of persons (suspected cases), only those that were visibly ill or that were pregnant were referred to the hospital for clinical assessment and admission if required. Persons that self-reported to the hospital or that arrived after referral would undergo a clinical assessment and a rapid test for HEV for diagnosis. Thus only for people assessed at the hospital were we able to capture a confirmed case status.
+
+For the duration of the outbreak we detected 1193 suspected cases, 100 confirmed cases and discarded 150 cases with AJS who were not positive for HEV infection.
 
 ### Data collection
 
@@ -113,8 +143,4 @@ df %>%
 
 ## Data analysis plan
 
-For now, all you need to include in this section is which variables from the dataset you plan to use, and what associations between them you will investigate to help answer your research question.
-
-## References
-
-* Skimr package
+Which variables from the dataset you plan to use, and what associations between them you will investigate to help answer your research question.

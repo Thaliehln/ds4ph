@@ -1,4 +1,6 @@
-# Day 3 - Session 02
+---
+title: ":blue_book: Practical"
+---
 
 We are interested in predicting **referral in children under 5** based on two of the clinical measurements at the consultation:
 

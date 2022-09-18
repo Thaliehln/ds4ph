@@ -1,5 +1,5 @@
 ---
-title: "Day 3: Big data and machine learning"
+title: ":books: Big data and machine learning"
 ---
 
 ## Introduction

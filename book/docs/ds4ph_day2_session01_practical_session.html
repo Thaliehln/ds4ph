@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science for Public Health - 9&nbsp; Day 2 - Session 01</title>
+<title>Data Science for Public Health - 9&nbsp; Malaria case study</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,7 +133,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Day 2 - Session 01</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Malaria case study</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -224,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Day 2 - Session 01</span></a>
+  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Malaria case study</span></a>
   </div>
 </li>
       </ul>
@@ -264,12 +264,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./datasets.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Datasets</span></a>
+  <a href="./quarto_vs_rmarkdown.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Quarto vs.&nbsp;R Markdown</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./useful_resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Useful resources</span></a>
+  <a href="./datasets.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./useful_resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Useful resources</span></a>
   </div>
 </li>
       </ul>
@@ -283,22 +288,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#malaria-research-questions" id="toc-malaria-research-questions" class="nav-link active" data-scroll-target="#malaria-research-questions"><span class="toc-section-number">9.1</span>  Malaria research questions</a></li>
-  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description"><span class="toc-section-number">9.2</span>  Dataset description</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">9.1</span>  Introduction</a></li>
+  <li><a href="#malaria-research-questions" id="toc-malaria-research-questions" class="nav-link" data-scroll-target="#malaria-research-questions"><span class="toc-section-number">9.2</span>  Malaria research questions</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><span class="toc-section-number">9.3</span>  Getting started</a>
   <ul class="collapse">
-  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection"><span class="toc-section-number">9.2.1</span>  Data collection</a></li>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description"><span class="toc-section-number">9.3.1</span>  Dataset description</a></li>
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection"><span class="toc-section-number">9.3.2</span>  Data collection</a></li>
   </ul></li>
-  <li><a href="#data-cleaning-and-data-de-identification" id="toc-data-cleaning-and-data-de-identification" class="nav-link" data-scroll-target="#data-cleaning-and-data-de-identification"><span class="toc-section-number">9.3</span>  Data cleaning and data de-identification</a>
+  <li><a href="#data-cleaning-and-data-de-identification" id="toc-data-cleaning-and-data-de-identification" class="nav-link" data-scroll-target="#data-cleaning-and-data-de-identification"><span class="toc-section-number">9.4</span>  Data cleaning and data de-identification</a>
   <ul class="collapse">
-  <li><a href="#dataset-structure" id="toc-dataset-structure" class="nav-link" data-scroll-target="#dataset-structure"><span class="toc-section-number">9.3.1</span>  Dataset structure</a></li>
-  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook"><span class="toc-section-number">9.3.2</span>  Codebook</a></li>
+  <li><a href="#dataset-structure" id="toc-dataset-structure" class="nav-link" data-scroll-target="#dataset-structure"><span class="toc-section-number">9.4.1</span>  Dataset structure</a></li>
+  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook"><span class="toc-section-number">9.4.2</span>  Codebook</a></li>
   </ul></li>
-  <li><a href="#familiarise-with-the-dataset" id="toc-familiarise-with-the-dataset" class="nav-link" data-scroll-target="#familiarise-with-the-dataset"><span class="toc-section-number">9.4</span>  Familiarise with the dataset</a></li>
-  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"><span class="toc-section-number">9.5</span>  Import the data</a></li>
-  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"><span class="toc-section-number">9.6</span>  Structure of the data</a></li>
-  <li><a href="#identify-missing-values" id="toc-identify-missing-values" class="nav-link" data-scroll-target="#identify-missing-values"><span class="toc-section-number">9.7</span>  Identify missing values</a></li>
-  <li><a href="#data-analysis-plan" id="toc-data-analysis-plan" class="nav-link" data-scroll-target="#data-analysis-plan"><span class="toc-section-number">9.8</span>  Data analysis plan</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">9.9</span>  References</a></li>
+  <li><a href="#familiarise-with-the-dataset" id="toc-familiarise-with-the-dataset" class="nav-link" data-scroll-target="#familiarise-with-the-dataset"><span class="toc-section-number">9.5</span>  Familiarise with the dataset</a></li>
+  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"><span class="toc-section-number">9.6</span>  Import the data</a></li>
+  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"><span class="toc-section-number">9.7</span>  Structure of the data</a></li>
+  <li><a href="#identify-missing-values" id="toc-identify-missing-values" class="nav-link" data-scroll-target="#identify-missing-values"><span class="toc-section-number">9.8</span>  Identify missing values</a></li>
+  <li><a href="#data-analysis-plan" id="toc-data-analysis-plan" class="nav-link" data-scroll-target="#data-analysis-plan"><span class="toc-section-number">9.9</span>  Data analysis plan</a></li>
   </ul>
 </nav>
     </div>
@@ -307,7 +313,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Day 2 - Session 01</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Malaria case study</span></h1>
 </div>
 
 
@@ -322,15 +328,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p>TBD</p>
-<section id="malaria-research-questions" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="malaria-research-questions"><span class="header-section-number">9.1</span> Malaria research questions</h2>
+<section id="introduction" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">9.1</span> Introduction</h2>
+<p>These pages will demonstrate use of the Acute Jaundice Syndrome (AJS) outbreak template with data from an outbreak in Am Timan, Chad. This case study uses data that is not standardized with the MSF data dictionary, and so reflects a more challenging use case.</p>
+</section>
+<section id="malaria-research-questions" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="malaria-research-questions"><span class="header-section-number">9.2</span> Malaria research questions</h2>
 <p>Research questions in an enumerated list</p>
 </section>
-<section id="dataset-description" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="dataset-description"><span class="header-section-number">9.2</span> Dataset description</h2>
+<section id="getting-started" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">9.3</span> Getting started</h2>
+<section id="access-the-datasets-for-this-walk-through" class="level4" data-number="9.3.0.1">
+<h4 data-number="9.3.0.1" class="anchored" data-anchor-id="access-the-datasets-for-this-walk-through"><span class="header-section-number">9.3.0.1</span> Access the datasets for this walk-through</h4>
+<ul>
+<li>Download the Am Timan linelist (Excel) here</li>
+<li>Download the Am Timan population data (Excel) here</li>
+<li>Download the Am Timan Quartiers (shapefile) here</li>
+<li>Download the Am Timan Blocks (shapefile) here</li>
+</ul>
+</section>
+<section id="access-the-version-of-the-quarto-script-used-in-this-walk-through" class="level4" data-number="9.3.0.2">
+<h4 data-number="9.3.0.2" class="anchored" data-anchor-id="access-the-version-of-the-quarto-script-used-in-this-walk-through"><span class="header-section-number">9.3.0.2</span> Access the version of the Quarto script used in this walk-through</h4>
+<p>Download the final RMarkdown template used in this walk-through, to follow-along step-by-step uisng GitHub</p>
+</section>
+<section id="quarto-resources" class="level4" data-number="9.3.0.3">
+<h4 data-number="9.3.0.3" class="anchored" data-anchor-id="quarto-resources"><span class="header-section-number">9.3.0.3</span> Quarto resources</h4>
+<p>Review the R Basics page “Reading a RMarkdown Script”, or reference these resources: Rmarkdown introduction and Rmarkdown authoring basics. AJS/HEV outbreak in Am Timan, Chad (2016-2017)</p>
+</section>
+<section id="dataset-description" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="dataset-description"><span class="header-section-number">9.3.1</span> Dataset description</h3>
+<p>We will be using data and examples from a real consultation data which occurred in Tanzania between <strong>start date</strong> and <strong>end date</strong>.</p>
+<p>DISCLAIMER: The real data from the outbreak has been used for the training materials linked to the outbreak templates of the R4epis project. The Ifakara Health Institute has approved the use of this data for training purposes. Please note, that some data has been adapted in order to best achieve training objectives. No personally indentifiable information have been kept in this dataset.</p>
 <p>Information about the consultations of <strong>10,308 children [1 day - 59 months]</strong> from <strong>18 facilities</strong> (dispensaries and health centres) in <strong>Kaliua</strong> District, <strong>Sengerema</strong> District and <strong>Tanga</strong> District, Tanzania. Data were collected using <em>ODK</em> (ODK Collect, ODK Central) between <strong>start date</strong> and <strong>end date</strong>. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project. Data are stored in <strong>dataset1.dta</strong>.</p>
-<section id="data-collection" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="data-collection"><span class="header-section-number">9.2.1</span> Data collection</h3>
+<p>The outbreak linelist data was combined data from the active CBS data and the clinical data from the hospital. The CBS functioned with community health workers visiting all households in the town every two weeks and actively searching for people with Acute Jaundice Syndrome (AJS). For this group of persons (suspected cases), only those that were visibly ill or that were pregnant were referred to the hospital for clinical assessment and admission if required. Persons that self-reported to the hospital or that arrived after referral would undergo a clinical assessment and a rapid test for HEV for diagnosis. Thus only for people assessed at the hospital were we able to capture a confirmed case status.</p>
+<p>For the duration of the outbreak we detected 1193 suspected cases, 100 confirmed cases and discarded 150 cases with AJS who were not positive for HEV infection.</p>
+</section>
+<section id="data-collection" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="data-collection"><span class="header-section-number">9.3.2</span> Data collection</h3>
 <p>Research assistants recorded the following information from different sources:</p>
 <ul>
 <li>from the caregiver:
@@ -347,22 +381,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Research assistants sought clarification from healthcare providers only in cases where these variables were not clear from the records.</p>
 </section>
 </section>
-<section id="data-cleaning-and-data-de-identification" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="data-cleaning-and-data-de-identification"><span class="header-section-number">9.3</span> Data cleaning and data de-identification</h2>
+<section id="data-cleaning-and-data-de-identification" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="data-cleaning-and-data-de-identification"><span class="header-section-number">9.4</span> Data cleaning and data de-identification</h2>
 <p>Personally identifiable information (PII) were removed.</p>
-<section id="dataset-structure" class="level3" data-number="9.3.1">
-<h3 data-number="9.3.1" class="anchored" data-anchor-id="dataset-structure"><span class="header-section-number">9.3.1</span> Dataset structure</h3>
+<section id="dataset-structure" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="dataset-structure"><span class="header-section-number">9.4.1</span> Dataset structure</h3>
 <p>Load the data and show the structure of your dataset</p>
 </section>
-<section id="codebook" class="level3" data-number="9.3.2">
-<h3 data-number="9.3.2" class="anchored" data-anchor-id="codebook"><span class="header-section-number">9.3.2</span> Codebook</h3>
+<section id="codebook" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="codebook"><span class="header-section-number">9.4.2</span> Codebook</h3>
 </section>
 </section>
-<section id="familiarise-with-the-dataset" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="familiarise-with-the-dataset"><span class="header-section-number">9.4</span> Familiarise with the dataset</h2>
+<section id="familiarise-with-the-dataset" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="familiarise-with-the-dataset"><span class="header-section-number">9.5</span> Familiarise with the dataset</h2>
 </section>
-<section id="import-the-data" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="import-the-data"><span class="header-section-number">9.5</span> Import the data</h2>
+<section id="import-the-data" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="import-the-data"><span class="header-section-number">9.6</span> Import the data</h2>
 <p>Read the dataset and store it into a dataframe called <strong>df</strong>.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -418,8 +452,8 @@ Attache Paket: 'dplyr'</code></pre>
 </div>
 </div>
 </section>
-<section id="structure-of-the-data" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">9.6</span> Structure of the data</h2>
+<section id="structure-of-the-data" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">9.7</span> Structure of the data</h2>
 <p>Examine the structure of the data, including variable names, labels.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -2474,12 +2508,12 @@ Tip
 </div>
 <div class="cell-output-display">
 
-<div id="rqdgehuxcu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="kblzaxcpzf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#rqdgehuxcu) .gt_table {
+:where(#kblzaxcpzf) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2504,7 +2538,7 @@ Tip
   border-left-color: #D3D3D3;
 }
 
-:where(#rqdgehuxcu) .gt_heading {
+:where(#kblzaxcpzf) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2516,7 +2550,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#rqdgehuxcu) .gt_title {
+:where(#kblzaxcpzf) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2528,7 +2562,7 @@ Tip
   border-bottom-width: 0;
 }
 
-:where(#rqdgehuxcu) .gt_subtitle {
+:where(#kblzaxcpzf) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2540,13 +2574,13 @@ Tip
   border-top-width: 0;
 }
 
-:where(#rqdgehuxcu) .gt_bottom_border {
+:where(#kblzaxcpzf) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#rqdgehuxcu) .gt_col_headings {
+:where(#kblzaxcpzf) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2561,7 +2595,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#rqdgehuxcu) .gt_col_heading {
+:where(#kblzaxcpzf) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2581,7 +2615,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#rqdgehuxcu) .gt_column_spanner_outer {
+:where(#kblzaxcpzf) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2593,15 +2627,15 @@ Tip
   padding-right: 4px;
 }
 
-:where(#rqdgehuxcu) .gt_column_spanner_outer:first-child {
+:where(#kblzaxcpzf) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#rqdgehuxcu) .gt_column_spanner_outer:last-child {
+:where(#kblzaxcpzf) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#rqdgehuxcu) .gt_column_spanner {
+:where(#kblzaxcpzf) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2613,7 +2647,7 @@ Tip
   width: 100%;
 }
 
-:where(#rqdgehuxcu) .gt_group_heading {
+:where(#kblzaxcpzf) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2638,7 +2672,7 @@ Tip
   vertical-align: middle;
 }
 
-:where(#rqdgehuxcu) .gt_empty_group_heading {
+:where(#kblzaxcpzf) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2653,15 +2687,15 @@ Tip
   vertical-align: middle;
 }
 
-:where(#rqdgehuxcu) .gt_from_md > :first-child {
+:where(#kblzaxcpzf) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#rqdgehuxcu) .gt_from_md > :last-child {
+:where(#kblzaxcpzf) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#rqdgehuxcu) .gt_row {
+:where(#kblzaxcpzf) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2680,7 +2714,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#rqdgehuxcu) .gt_stub {
+:where(#kblzaxcpzf) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2693,7 +2727,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#rqdgehuxcu) .gt_stub_row_group {
+:where(#kblzaxcpzf) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2707,11 +2741,11 @@ Tip
   vertical-align: top;
 }
 
-:where(#rqdgehuxcu) .gt_row_group_first td {
+:where(#kblzaxcpzf) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#rqdgehuxcu) .gt_summary_row {
+:where(#kblzaxcpzf) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2721,16 +2755,16 @@ Tip
   padding-right: 5px;
 }
 
-:where(#rqdgehuxcu) .gt_first_summary_row {
+:where(#kblzaxcpzf) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#rqdgehuxcu) .gt_first_summary_row.thick {
+:where(#kblzaxcpzf) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#rqdgehuxcu) .gt_last_summary_row {
+:where(#kblzaxcpzf) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2740,7 +2774,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#rqdgehuxcu) .gt_grand_summary_row {
+:where(#kblzaxcpzf) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2750,7 +2784,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#rqdgehuxcu) .gt_first_grand_summary_row {
+:where(#kblzaxcpzf) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2760,11 +2794,11 @@ Tip
   border-top-color: #D3D3D3;
 }
 
-:where(#rqdgehuxcu) .gt_striped {
+:where(#kblzaxcpzf) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#rqdgehuxcu) .gt_table_body {
+:where(#kblzaxcpzf) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2773,7 +2807,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#rqdgehuxcu) .gt_footnotes {
+:where(#kblzaxcpzf) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2787,7 +2821,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#rqdgehuxcu) .gt_footnote {
+:where(#kblzaxcpzf) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2796,7 +2830,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#rqdgehuxcu) .gt_sourcenotes {
+:where(#kblzaxcpzf) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2810,7 +2844,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#rqdgehuxcu) .gt_sourcenote {
+:where(#kblzaxcpzf) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2818,36 +2852,36 @@ Tip
   padding-right: 5px;
 }
 
-:where(#rqdgehuxcu) .gt_left {
+:where(#kblzaxcpzf) .gt_left {
   text-align: left;
 }
 
-:where(#rqdgehuxcu) .gt_center {
+:where(#kblzaxcpzf) .gt_center {
   text-align: center;
 }
 
-:where(#rqdgehuxcu) .gt_right {
+:where(#kblzaxcpzf) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#rqdgehuxcu) .gt_font_normal {
+:where(#kblzaxcpzf) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#rqdgehuxcu) .gt_font_bold {
+:where(#kblzaxcpzf) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#rqdgehuxcu) .gt_font_italic {
+:where(#kblzaxcpzf) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#rqdgehuxcu) .gt_super {
+:where(#kblzaxcpzf) .gt_super {
   font-size: 65%;
 }
 
-:where(#rqdgehuxcu) .gt_two_val_uncert {
+:where(#kblzaxcpzf) .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -2856,31 +2890,31 @@ Tip
   margin-left: 0.1em;
 }
 
-:where(#rqdgehuxcu) .gt_footnote_marks {
+:where(#kblzaxcpzf) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#rqdgehuxcu) .gt_asterisk {
+:where(#kblzaxcpzf) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#rqdgehuxcu) .gt_slash_mark {
+:where(#kblzaxcpzf) .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-:where(#rqdgehuxcu) .gt_fraction_numerator {
+:where(#kblzaxcpzf) .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-:where(#rqdgehuxcu) .gt_fraction_denominator {
+:where(#kblzaxcpzf) .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -3217,8 +3251,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="identify-missing-values" class="level2" data-number="9.7">
-<h2 data-number="9.7" class="anchored" data-anchor-id="identify-missing-values"><span class="header-section-number">9.7</span> Identify missing values</h2>
+<section id="identify-missing-values" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="identify-missing-values"><span class="header-section-number">9.8</span> Identify missing values</h2>
 <p>Identify missing values in each variable: missing_plot</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(finalfit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3248,15 +3282,9 @@ Tip
 </div>
 </div>
 </section>
-<section id="data-analysis-plan" class="level2" data-number="9.8">
-<h2 data-number="9.8" class="anchored" data-anchor-id="data-analysis-plan"><span class="header-section-number">9.8</span> Data analysis plan</h2>
-<p>For now, all you need to include in this section is which variables from the dataset you plan to use, and what associations between them you will investigate to help answer your research question.</p>
-</section>
-<section id="references" class="level2" data-number="9.9">
-<h2 data-number="9.9" class="anchored" data-anchor-id="references"><span class="header-section-number">9.9</span> References</h2>
-<ul>
-<li>Skimr package</li>
-</ul>
+<section id="data-analysis-plan" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="data-analysis-plan"><span class="header-section-number">9.9</span> Data analysis plan</h2>
+<p>Which variables from the dataset you plan to use, and what associations between them you will investigate to help answer your research question.</p>
 
 
 </section>

@@ -1,44 +1,79 @@
 ---
-title: "Dynamic analysis documents"
+title: ":books: Dynamic documents"
 ---
 
 ## Introduction
 
-The final product of a data analysis project is often a report. Many scientific publications can be thought of as a final report of a data analysis. The same is true for news articles based on data, an analysis report for your company, or lecture notes for a class on how to analyze data. The reports are often on paper or in a PDF that includes a textual description of the findings along with some figures and tables resulting from the analysis.
+### Overview
+
+The final product of a data analysis project is often a report (e.g., scientific publications, news articles based on data, an analysis report for your company, or lecture notes for a class on how to analyze data). Reports are often on paper or in a PDF that includes a textual description of the findings along with some figures and tables resulting from the analysis. Dynamic documents. The goal of this section is to briefly discuss why we want to learn quarto, the benefits, and the barriers to using it.
+
+### Learning bjectives
+
+* What is the value in a reproducible report?
+* What is Quarto?
+* Can I combine my software and my writing?
+*
+* Think about why you want to use Quarto
 
 Imagine that after you finish the analysis and the report, you are told that you were given the wrong data set, you are sent a new one and you are asked to run the same analysis with this new data set. Or what if you realize that a mistake was made and need to re-examine the code, fix the error, and re-run the analysis? Or imagine that someone you are training wants to see the code and be able to reproduce the results to learn about your approach?
 
-Situations like the ones just described are actually quite common for a data scientist. Here, we describe how you can keep your data science projects organized with RStudio so that re-running an analysis is straight-forward. We then demonstrate how to generate reproducible reports with R markdown and the knitR package in a way that will greatly help with recreating reports with minimal work. This is possible due to the fact that R markdown documents permit code and textual descriptions to be combined into the same document, and the figures and tables produced by the code are automatically added to the document.
-
-R Markdown is a widely-used tool for creating automated, reproducible, and share-worthy outputs, such as reports. It can generate static or interactive outputs, in Word, pdf, html, powerpoint, and other formats. The next generation Quarto
-
-As a R Markdown document, a Quarto document intersperces code and text such that the script actually becomes your output document. You can create an entire formatted document, including narrative text (can be dynamic to change based on your data), tables, figures, bullets/numbers, bibliographies, etc.
+Situations like the ones just described are actually quite common for a data scientist. Here, we describe how you can keep your data science projects organized with RStudio so that re-running an analysis is straight-forward. We then demonstrate how to generate reproducible reports with Quarto in a way that will greatly help with recreating reports with minimal work. This is possible due to the fact that Quarto documents enable code and textual descriptions to be combined into the same document, and the figures and tables produced by the code are automatically added to the document.
 
 Such documents can be produced to update on a routine basis (e.g. daily surveillance reports) and/or run on subsets of data (e.g. reports for each jurisdiction).
 
+### Question
+
+Why are we here?
+Form small groups of 2-4 with your neighbours and discuss how you expect learning Quarto might benefit you.
+
 ## Background to R Markdown
+
+Quarto is a tool that allows you integrate your code, text and figures in a single file in order to make high quality, reproducible reports. A paper published with an included quarto file and data sets can be reproduced by anyone with a computer. R Markdown integrates code and natural language in a way that is called "literate programming" [@knuth_literate_1984].
 
 To explain some of the concepts and packages involved:
 
-::: callout-note
-Markdown is a "language" that allows you to write a document using plain text, that can be converted to html and other formats. It is not specific to R. Files written in Markdown have a '.md' extension.
-:::
+::: panel-tabset
+### Markdown
 
-::: callout-note
-R Markdown: is a variation on markdown that is specific to R - it allows you to write a document using markdown to produce text and to embed R code and display their outputs. R Markdown files have '.Rmd' extension.
-:::
+Markdown is a "language" that allows you to write a document using plain text, that can be converted to html and other formats. It is not specific to R.
 
-rmarkdown - the package: This is used by R to render the .Rmd file into the desired output. It's focus is converting the markdown (text) syntax, so we also need...
+Markdown files have a `md` extension.
 
-knitr: This R package will read the code chunks, execute it, and 'knit' it back into the document. This is how tables and graphs are included alongside the text.
+### R Markdown
 
-Pandoc: Finally, pandoc actually convert the output into word/pdf/powerpoint etc. It is a software separate from R but is installed automatically with RStudio.
+It is a variation on markdown that is specific to R - it allows you to write a document using markdown to produce text and to embed R code and display their outputs. which was a variant of Markdown specifically designed to allow R code chunks to be included.
 
-In sum, the process that happens in the background involves feeding the .Rmd file to knitr, which executes the R code chunks and creates a new .md (markdown) file which includes the R code and its rendered output. The .md file is then processed by pandoc to create the finished product: a Microsoft Word document, HTML file, powerpoint document, pdf, etc.
+R Markdown is a widely-used tool for creating automated, reproducible, and share-worthy outputs, such as reports. It can generate static or interactive outputs, in Word, pdf, html, powerpoint, and other formats.
 
-Quarto integrates code and natural language in a way that is called "literate programming" (Knuth 1984). It is the successor to R Markdown, which was a variant of Markdown specifically designed to allow R code chunks to be included. Quatro uses a mark-up language similar to HyperText Markup Language (HTML) or LaTeX, in comparison to a "What You See Is What You Get" (WYSIWYG) language, such as Microsoft Word. This means that all the aspects are consistent, for instance, all top-level heading will look the same. But it means that we use symbols to designate how we would like certain aspects to appear. And it is only when we build the mark-up that we get to see what it looks like. A visual editor option can also be used which hides the need for the user to do this mark-up themselves.
+R Markdown files have `.Rmd` extension.
+
+### rmarkdown
+
+It is the R package: This is used by R to render the .Rmd file into the desired output.
+
+### Quarto
+
+Quarto is the successor to R Markdown. As a R Markdown document, a Quarto document intersperces code and text such that the script actually becomes your output document. You can create an entire formatted document, including narrative text (can be dynamic to change based on your data), tables, figures, bullets/numbers, bibliographies, etc.
+
+Quatro uses a mark-up language similar to HyperText Markup Language (HTML) or LaTeX, in comparison to a "What You See Is What You Get" (WYSIWYG) language, such as Microsoft Word. This means that all the aspects are consistent, for instance, all top-level heading will look the same. But it means that we use symbols to designate how we would like certain aspects to appear. And it is only when we build the mark-up that we get to see what it looks like. A visual editor option can also be used which hides the need for the user to do this mark-up themselves.
 
 Quarto is not tied to the R language.
+
+Quarto files have a `.Qmd` extension.
+:::
+
+::: panel-tabset
+### knitr
+
+This R package will read the code chunks, execute it, and 'knit' it back into the document. This is how tables and graphs are included alongside the text.
+
+### Pandoc
+
+Pandoc actually convert the output into word/pdf/powerpoint etc. It is a software separate from R but is installed automatically with RStudio.
+:::
+
+The process that happens in the background involves feeding the .Rmd file to knitr, which executes the R code chunks and creates a new .md (markdown) file which includes the R code and its rendered output. The .md file is then processed by pandoc to create the finished product: a Microsoft Word document, HTML file, powerpoint document, pdf, etc.
 
 ## References
 

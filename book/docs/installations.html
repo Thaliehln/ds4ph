@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -30,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./datasets.html" rel="next">
+<link href="./quarto_vs_rmarkdown.html" rel="next">
 <link href="./references.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -108,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./tools_for_reproducible_data_science.html" class="sidebar-item-text sidebar-link">Day 1: Tools for reproducible data science</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">———— DAY 1 ————</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -116,44 +179,49 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./version_control_with_git.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Version control with Git</span></a>
+  <a href="./tools_for_reproducible_data_science.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Tools for reproducible data science</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Dynamic analysis documents</span></a>
+  <a href="./version_control_with_git.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Version control with Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started with Quarto</span></a>
+  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Dynamic documents</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Code chunks</span></a>
+  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with Quarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Import external data</span></a>
+  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Code chunks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./manipulate_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Manipulate data</span></a>
+  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Import external data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./share_and_collaborate_with_git.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Share code and collaborate with Git</span></a>
+  <a href="./manipulate_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Manipulate data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./share_and_collaborate_with_git.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Share code and collaborate with Git</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./data_science_for_public_health.html" class="sidebar-item-text sidebar-link">Day 2: Data Science for Public Health</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">———— DAY 2 ————</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -161,14 +229,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Day 2 - Session 01</span></a>
+  <a href="./data_science_for_public_health.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Data Science for Public Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Malaria case study</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./big_data_and_artificial_intelligence.html" class="sidebar-item-text sidebar-link">Day 3: Big data and machine learning</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">———— DAY 3 ————</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -176,7 +249,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Day 3 - Session 02</span></a>
+  <a href="./big_data_and_artificial_intelligence.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Big data and machine learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Practical</span></a>
   </div>
 </li>
       </ul>
@@ -201,12 +279,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./datasets.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Datasets</span></a>
+  <a href="./quarto_vs_rmarkdown.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Quarto vs.&nbsp;R Markdown</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./useful_resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Useful resources</span></a>
+  <a href="./datasets.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./useful_resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Useful resources</span></a>
   </div>
 </li>
       </ul>
@@ -221,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#sec-R-installation" id="toc-sec-R-installation" class="nav-link active" data-scroll-target="#sec-R-installation"><span class="toc-section-number">A.1</span>  Install R</a></li>
-  <li><a href="#install-rstudio" id="toc-install-rstudio" class="nav-link" data-scroll-target="#install-rstudio"><span class="toc-section-number">A.2</span>  Install RStudio</a></li>
+  <li><a href="#install-rstudio-desktop" id="toc-install-rstudio-desktop" class="nav-link" data-scroll-target="#install-rstudio-desktop"><span class="toc-section-number">A.2</span>  Install RStudio Desktop</a></li>
   <li><a href="#install-quarto" id="toc-install-quarto" class="nav-link" data-scroll-target="#install-quarto"><span class="toc-section-number">A.3</span>  Install Quarto</a></li>
   <li><a href="#github-account" id="toc-github-account" class="nav-link" data-scroll-target="#github-account"><span class="toc-section-number">A.4</span>  GitHub account</a></li>
   <li><a href="#github-desktop" id="toc-github-desktop" class="nav-link" data-scroll-target="#github-desktop"><span class="toc-section-number">A.5</span>  GitHub desktop</a>
@@ -294,9 +377,10 @@ Tip
 </div>
 </div>
 </section>
-<section id="install-rstudio" class="level2" data-number="A.2">
-<h2 data-number="A.2" class="anchored" data-anchor-id="install-rstudio"><span class="header-section-number">A.2</span> Install RStudio</h2>
-<p>Rstudio is an integrated development environment (IDE) for R.</p>
+<section id="install-rstudio-desktop" class="level2" data-number="A.2">
+<h2 data-number="A.2" class="anchored" data-anchor-id="install-rstudio-desktop"><span class="header-section-number">A.2</span> Install RStudio Desktop</h2>
+<p>Rstudio Desktop is an integrated development environment (IDE) that enables an easier use of R.</p>
+<p>R4epis gave an anology as R as being the engine of a vehicle and RStudio as the body of the vehicle (with seats, accessories, etc.) that helps you actually use the engine to move forward.</p>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -307,7 +391,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>RStudio does include R when you download and install it, so you need to have installed R to be able to use RStudio with R (see Section <a href="#sec-R-installation"><span>Section&nbsp;A.1</span></a>).</p>
+<p>In order for RStudio desktop to work with R you must have installed R on your computer, see Section <a href="#sec-R-installation"><span>Section&nbsp;A.1</span></a>. RStudio does not include R when you download and install it.</p>
 </div>
 </div>
 <div class="panel-tabset">
@@ -344,6 +428,28 @@ Note
 <p>After downloading, follow the installation wizard on your computer.</p>
 <p><img src="images/paste-FE57875E.png" class="img-fluid"></p>
 <p>When the installation is complete, you will not see any new software on your laptop, but Quarto is now available to be used in RStudio, as well as by all other applications on your computer (including the command line).</p>
+<p>To use Quarto with R, you should install the <strong>rmarkdown</strong> R package.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A R package is a collections of R functions, data, and compiled code in a well-defined format, created to add specific functionality to R.</p>
+<p>There are 10,000+ user contributed packages and growing.</p>
+<p>There is a set of standard (or base) packages which is considered part of the R source code and automatically available as part of your R installation. Base packages contain the basic functions that allow R to work, and enable standard statistical and graphical functions on data sets.</p>
+</div>
+</div>
+<p>To install packages</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rmarkdown"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Installation of the rmarkdown package will also install the knitr package so you will have everything required to render documents containing R code.</p>
+<p>Quarto will select a version of R by looking on the system PATH. In addition, on Windows when R is not found on the PATH, the registry will be scanned for the current R version. You can override the version of R used by Quarto by setting the QUARTO_R environment variable.</p>
 </section>
 <section id="github-account" class="level2" data-number="A.4">
 <h2 data-number="A.4" class="anchored" data-anchor-id="github-account"><span class="header-section-number">A.4</span> GitHub account</h2>
@@ -476,8 +582,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./datasets.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Datasets</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./quarto_vs_rmarkdown.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Quarto vs.&nbsp;R Markdown</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

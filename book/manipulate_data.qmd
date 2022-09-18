@@ -1,5 +1,5 @@
 ---
-title: "Manipulate data"
+title: ":blue_book: Manipulate data"
 ---
 
 ## Introduction

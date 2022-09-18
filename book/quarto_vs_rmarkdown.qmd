@@ -1,0 +1,7 @@
+---
+title: "Quarto vs. R Markdown"
+---
+
+# Introduction
+
+In R Markdown, the first code chunk, setup, is very important and must be kept. When the final report is knit, this chunk will run without producing any output, but it is required for the template to work correctly. In Quarto, all those parameters can be handled through the YAML header.
