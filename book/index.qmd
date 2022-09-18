@@ -4,7 +4,7 @@
 
 Data science and artificial intelligence have the potential to generate fundamentally new insights on global health policies in Africa, but the full realization of this potential depends on the availability of a critical mass of highly trained health data scientists on the continent.
 
-This book was created at the [Ifakara Health Institute (IHI)](https://ihi.or.tz/) and the [Swiss Tropical & Public Health Institute (Swiss TPH)](https://www.swisstph.ch) by Hélène Langet, Fenella Beynon, Fabian Schär, Silvia Cicconi and Gillian Levine (Swiss TPH) and Samwel Lwambura (IHI) for the **Data Science for Public Health** workshop which will be held in Dar-es-Salaam from Monday,September 26th to Wednesday, September 28th 2022. 
+This electronic book was created by Hélène Langet, Fenella Beynon, Fabian Schär, Silvia Cicconi and Gillian Levine from the [Swiss Tropical & Public Health Institute (Swiss TPH)](https://www.swisstph.ch) and Samwel Lwambura (IHI) from the [Ifakara Health Institute (IHI)](https://ihi.or.tz/) to accompany the **Data Science for Public Health** workshop which will be held in Dar-es-Salaam from Monday,September 26th to Wednesday, September 28th 2022. 
 
 The goal of this workshop is to enable researchers from the Ifakara Health Institute (IHI) to strengthen their expertise in the area and to lay the foundations for the development of a data science curriculum that is adapted to IHI's needs.
 

@@ -1,13 +1,96 @@
 ---
-title: "Day 1: Tools for reproducible data science"
+title: ":books: Tools for reproducible quantitative research"
 ---
 
-## Reproducibility
+## Introduction
 
-![Four dimensions of reproducible research. This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence.DOI: [10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.3332807)](images/paste-2A9C2B9E.png)
+### Overview
 
-[@the_turing_way_community_2022_6909298]
+When reporting scientific results, researchers must document the steps they followed so that independent researchers within the broader research community are able to trust and build upon their findings (*cumulative knowledge*).
 
-## Computational tools across the Research Data Lifecycle
+::: callout-important
+Reporting should include negative results as they contribute to the development of a cumulative knowledge as much as positive results do and avoid wasting resources.
+:::
 
-![](images/paste-AF117E41.png)
+There have been recurrent calls in the recent decades for the scientific community to embrace practices to support research reproducibility and many software tools are now available to facilitate this process.
+
+::: callout-note
+Although qualitative research contributes as significantly as quantitative research to knowledge generation, the validation of qualitative research findings is a much more complex and debated concept as qualitative analysis is by essence subjective and contextual. This explains the lower availability of software tools dedicated to qualitative research compared to what is available for quantitative research.
+:::
+
+### Learning objectives
+
+-   What is meant by *reproducible quantitative research* and why does it matters?
+-   what should be documented for ensuring the reproducibility of quantitative analyses?
+-   What software tools are available to support reproducible quantitative research?
+
+## Reproducible quantitative research
+
+### Definitions
+
+A quantitative analysis is said to be (*computationally*) **reproducible** when the **same analysis steps** performed on the **same dataset** consistently produce the **same quantitative results** [@the_turing_way_community_2022_6909298]. Given the deterministic nature of computer programmes, a quantitative analysis must be reproducible to be **credible**.
+
+![This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807](images/paste-97E0048A.png){#fig-reproducibility width="400"}
+
+In addition to (computational) reproducibility, **replicability**, **robustness** and **generalisability** are key to the generation of strong quantitative evidence.
+
+::: panel-tabset
+### Replicability
+
+The **same analysis** steps are performed on **different datasets** and produce **qualitatively similar answers** [@the_turing_way_community_2022_6909298].
+
+![This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807](images/paste-5D367441.png){#fig-replicability width="400"}
+
+### Robustness
+
+**Different analysis** steps are performed on the **same dataset** to answer the **same research question** and produce **qualitatively similar or identical answers** [@the_turing_way_community_2022_6909298].
+
+![This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807](images/paste-1E28AEDC.png){#fig-robustness width="400"}
+
+### Generalisability
+
+**Different analysis** steps are performed on the **different datasets** to know how well the work applies to all the different aspects of the research question and produce **generalisable answers** [@the_turing_way_community_2022_6909298].
+
+![This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807](images/paste-222EF473.png){#fig-generalisability width="400"}
+:::
+
+### Documentation
+
+To guarantee that any other researcher can reproduce your analysis, you would need to document and share the full **computational environment**, **tools**, **data** and **code** you used to generate your results.
+
+![This image was adapted from an original image created by Scriberia for The Turing Way community (CC-BY licence. DOI: 10.5281/zenodo.3332807).](images/paste-E04E255A.png){#fig-documentation-reproducible-analysis}
+
+### Opportunities and challenges of reproducible research
+
+::: panel-tabset
+#### :speech_balloon: Discussion
+
+1.  How do you think reproducible quantitative analyses can improve your research?
+2.  What barriers to reproducible research do you see in your daily practice?
+
+:clock3: 5 minutes
+
+#### :heavy_plus_sign: Opportunities
+
+![This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807](images/paste-9DF4B400.png)
+
+#### :heavy_minus_sign: Barriers and challenges
+
+Recent investigations have shown that a significant percentage of scientific studies cannot be reproduced, thus contributing to growing mistrust in scientific results [@baker_scientists_2016; @harris_use_2018].
+
+![Example of barriers to reproducibility](images/paste-80DE769E.png){#fig-barriers-reproducibility}
+
+In practice, reproducibility is challenging, even for trained data scientists equipped with an arsenal of software tools. Quantitative analyses can often not be fully reproduced because of complexities in how software tools are packaged, installed, and executed and because of limitations associated with how scientists document analysis steps.
+:::
+
+## Software tools across the research data lifecycle
+
+As illustrated in @fig-software-tools-across-research-lifecycle, there is now a whole set of free or open source software tools that are available to help you automate your processes and overcome reproducibility challenges across the research data lifecycle.
+
+In this workshop, you will be introduced to following software tools that will help make your quantitative data processing, study and analysis more reproducible:
+
+-   **Git/GitHub** allow you to keep track of various versions of your code, share your code and collaborate with others on code development;
+-   **Quarto** allow you to generate (reproducible) dynamic reports to document your data analyses. We will use Quarto within the **R/RStudio** environment;
+-   Application Programming Interfaces (APIs) allow you to import data directly from servers. We will explore this through the example of **ruODK** for importing data from ODK Central to R.
+
+![Example of free / open source software tools across the research data lifecycle. This image was adapted from an original image created by Scriberia for The Turing Way community (CC-BY licence. DOI: 10.5281/zenodo.3332807).](images/paste-AF117E41.png){#fig-software-tools-across-research-lifecycle}

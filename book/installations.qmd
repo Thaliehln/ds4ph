@@ -46,12 +46,12 @@ Download the installer
 After downloading the installer, follow the installation wizard on your computer.
 :::
 
-## Install RStudio
+## Install RStudio Desktop
 
-Rstudio is an integrated development environment (IDE) for R.
+Rstudio is an integrated development environment (IDE) for R that enables an easier use of R.
 
 ::: callout-important
-RStudio does include R when you download and install it, so you need to have installed R to be able to use RStudio with R (see Section @sec-R-installation).
+In order for RStudio desktop to work with R you must have installed R on your computer, see Section @sec-R-installation. RStudio does not include R when you download and install it.
 :::
 
 ::: panel-tabset
@@ -81,6 +81,26 @@ After downloading, follow the installation wizard on your computer.
 ![](images/paste-FE57875E.png)
 
 When the installation is complete, you will not see any new software on your laptop, but Quarto is now available to be used in RStudio, as well as by all other applications on your computer (including the command line).
+
+To use Quarto with R, you should install the **rmarkdown** R package.
+
+::: callout-important
+A R package is a collections of R functions, data, and compiled code in a well-defined format, created to add specific functionality to R.
+
+There are 10,000+ user contributed packages and growing.
+
+There is a set of standard (or base) packages which is considered part of the R source code and automatically available as part of your R installation. Base packages contain the basic functions that allow R to work, and enable standard statistical and graphical functions on data sets.
+:::
+
+To install packages
+
+```{{r}}
+install.packages("rmarkdown")
+```
+
+Installation of the rmarkdown package will also install the knitr package so you will have everything required to render documents containing R code.
+
+Quarto will select a version of R by looking on the system PATH. In addition, on Windows when R is not found on the PATH, the registry will be scanned for the current R version. You can override the version of R used by Quarto by setting the QUARTO_R environment variable.
 
 ## GitHub account
 

@@ -52,5 +52,8 @@
   },
   "useful_resources.qmd": {
     "useful_resources.html": "9320b890"
+  },
+  "quarto_vs_rmarkdown.qmd": {
+    "quarto_vs_rmarkdown.html": "b344604b"
   }
 }

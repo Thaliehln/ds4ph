@@ -1,8 +1,36 @@
 ---
-title: "Day 2: Data Science for Public Health"
+title: ":books: Data Science for Public Health"
 ---
 
 ## What is Data Science
+
+## Data Science
+
+::: panel-tabset
+### Activity 1 :question:
+
+:clock3: 3 minutes: You have probably already heard about data science as this is a main Data Science is today one of the main buzzwords, but what does **Data Science** mean for you?
+
+### Quote 1 :speech_balloon:
+
+<q>The statistics profession faces a choice in its future research between continuing concentration on traditional topics -- based largely on data analysis supported by mathematical statistics -- and a broader viewpoint -- based on an inclusive concept of **learning from data**. The latter course present severe challenges as well as exciting opportunities. The former risks seeing statistics become increasingly marginal...</q> [@chambers93]
+
+**John Chambers** (PhD in Statistics) is the creator of the S programming language, and a core member of the R programming language project.
+
+### Quote 2 :speech_balloon:
+
+<q>Data science is the science of **learning from data**; it studies the methods involved in the analysis and processing of data and proposes technology to **improve methods in an evidence-based manner**. The scope and impact of this science will expand enormously in coming decades as scientific data and data about science itself become ubiquitously available.</q> [@donoho17].
+
+**David Donoho** is a Professor of Statistics at Stanford University.
+
+### Quote 1
+
+-   Growing field with computational power and data generation
+-   Set of collective evidence-based processes, theories, concepts, tools and technologies
+-   Extraction of valuable knowledge and information from data (learning from data)
+:::
+
+Qualitative thinking currently does not receive nearly as much attention as quantitative thinking in data science.
 
 ::: panel-tabset
 ### Discussion :speech_balloon:

@@ -1,36 +1,115 @@
 ---
-title: "Getting started with Quarto"
+title: ":blue_book: Getting started with Quarto"
 ---
 
 ## Introduction
 
-While it makes sense to use Quarto going forward, there are still a lot of resources written for and in R Markdown. For this reason we provide the R Markdown equivalents for this section in Appendix.
+### Overview
 
-## Installation
+Please review the Appendix for instructions on the following start-up steps:
 
-To use Quarto with R, you should install the **rmarkdown** R package.
+-   Downloading and configuring R and RStudio
+-   Installing the rmarkdown package
 
-::: callout-important
-A R package is a collections of R functions, data, and compiled code in a well-defined format, created to add specific functionality to R.
+### Learning objectives
 
-There are 10,000+ user contributed packages and growing.
+1. Familairise with RStudio
+2. Get set up with not storing the RStudio workspace
+3. Learn how to use Quarto
 
-There is a set of standard (or base) packages which is considered part of the R source code and automatically available as part of your R installation. Base packages contain the basic functions that allow R to work, and enable standard statistical and graphical functions on data sets.
+## Orientation to the RStudio interface
+
+Open RStudio
+
+By default RStudio displays four rectangle panes.
+
+::: callout-tip
+If your RStudio displays only one left pane it is because you have no scripts open yet.
 :::
 
-To install packages
+::: panel-tabset
+### R Console Pane
 
-```{{r}}
-install.packages("rmarkdown")
-```
+The R Console, by default the left or lower-left pane in R Studio, is the home of the R "engine". This is where the commands are actually run and non-graphic outputs and error/warning messages appear. You can directly enter and run commands in the R Console, but realize that these commands are not saved as they are when running commands from a script.
 
-Installation of the rmarkdown package will also install the knitr package so you will have everything required to render documents containing R code.
+::: callout-note
+This pane is similar to the Stata Command and the Results windows.
+:::
 
-Quarto will select a version of R by looking on the system PATH. In addition, on Windows when R is not found on the PATH, the registry will be scanned for the current R version. You can override the version of R used by Quarto by setting the QUARTO_R environment variable.
+### Source Pane
+
+This pane, by default in the upper-left, is space to edit and run your scripts, including the RMarkdown outbreak and survey templates. This pane can also display datasets (data frames) for viewing.
+
+::: callout-note
+This pane is similar to the Stata Do-file and Data Editor windows.
+:::
+
+### Environment Pane
+
+This pane, by default the upper-right, is most often used to see brief summaries of objects in the R Environment in the current session. These objects could include imported, modified, or created datasets, parameters you have defined (e.g. a specific epi week for the analysis), or vectors or lists you have defined during analysis (e.g. names of regions). Click on the arrow next to a dataframe name to see its variables.
+
+::: callout-note
+This pane is similar to the Stata Variables Manager window.
+:::
+
+### Lower-right pane
+
+The lower-right pane includes several tabs:
+
+-   Files (library of files)
+-   Plots (display of graphics including maps)
+-   Packages (available R packages including installation/update options)
+-   Help
+-   Viewer
+-   Presentation.
+
+::: callout-note
+This pane contains the Stata equivalents of the Plots Manager and Project Manager windows.
+:::
+:::
+
+### RStudio setup
+
+To first get set up, I highly recommend changing the following setting
+
+Tools > Global Options (or Cmd + , on macOS)
+
+Under the General tab:
+
+    For workspace
+        Uncheck restore .RData into workspace at startup
+        Save workspace to .RData on exit : “Never”
+    For History
+        Uncheck “Always save history (even when not saving .RData)
+        Uncheck “Remove duplicate entries in history”
+
+## Open a new R project
+
+In RStudio, you can create a new project by selecting **File** \> **New Project...**
+
+![](images/paste-CCA1D5A5.png){width="350"}
+
+Select New Directory
+
+![](images/paste-DCC39BB5.png)
+
+Select New Project
+
+![](images/paste-30A4402B.png)
+
+Select a location to save the new R project (this creates a new folder).
+
+![](images/paste-C05F97BD.png){width="500"}
+
+Save all relevant data files into this new R project folder.
+
+We will use this project for the duration of the workshop.
 
 ## Create a new Quarto document
 
-In RStudio, you can open a new Quarto document by selecting **File** \> **New File** \> **Quarto Document...**
+While it makes sense to use Quarto going forward, there are still a lot of resources written for and in R Markdown. For this reason we provide the R Markdown equivalents for this section in Appendix.
+
+In RStudio, you can create a new Quarto document by selecting **File** \> **New File** \> **Quarto Document...**
 
 ![](images/paste-A7DE8B60.png)
 
@@ -48,27 +127,39 @@ Click on create to open up a new Quarto (.Qmd) document.
 
 The RStudio Visual Editor is quite new and has features that improve your writing experience. Working in the Visual Editor feels a bit like working in a Google Doc.
 
-Here’s an example showing the same file in the original Source Editor with content in markdown format and in the Visual Editor with content that looks more like it will appear in a live site. You can switch freely between these modes.
+Here's an example showing the same file in the original Source Editor with content in markdown format and in the Visual Editor with content that looks more like it will appear in a live site. You can switch freely between these modes.
 
 ## Quarto document structure
 
 An R Markdown document can be edited in RStudio.
 
-There are three basic components to an Quarto document, similar to the components of a R Markdown document:
+There are three basic components to a Quarto document, similar to the components of a R Markdown document:
 
--   a YAML header
--   Markdown text
--   R code chunks
+-   metadata (YAML header)
+-   text (markdown formatting)
+-   code (R code formatting)
 
-![](images/paste-30C30ECC.png) The header contain the information intended to produce an html output.
+![](images/paste-30C30ECC.png)
+
+::: panel-tabset
+### YAML header
+
+The very top of the document consists of a (YAML) header surrounded by --- lines. Here you may want to edit the title of your document. The other settings in the header define the default document type produced (Microsoft Word) when the RMarkdown is "knit". the information intended to produce an html output.
+
+### Text
+
+In WHITE background areas, any text will appear as regular text in the final report. Can have formatting such as headings, italics, bold, numbers, and bullets. See the second page of this RMarkdown cheatsheet for more detail. Can display parameters derived from your data via in-line code (such as epi week of the outbreak peak, as in the example above).
+
+### Code chunks
+
+In gray background "code chunks", RMarkdown is running R commands. These commands perform data processing and cleaning steps, or could produce visual outputs in the document.
+:::
 
 ## Quarto render
 
 When you click the **Render** button a document will be generated that includes both content and the output of embedded code.
 
-![](images/paste-A8386DC4.png)
-
-## Code options
+![](images/paste-A8386DC4.png) \## Code options
 
 You can embed code like this:
 

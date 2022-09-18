@@ -1,10 +1,10 @@
 ---
-title: "Version control with Git"
+title: ":blue_book: Version control with Git"
 ---
 
 ## Introduction
 
-Does the following situation
+Does the following situation rings a bell?
 
 ![Credit: PhD comics](images/paste-2840AEE3.png)
 
