@@ -23,9 +23,9 @@ To learn more about this topic, we highly recommend the following resources:
 |------------------|------------------|------------------------------------|
 | ![](images/tidyverse-logo.png){width="125"} | [tidyverse](https://www.tidyverse.org/)                                     | Collection of R packages designed for data science |
 | ![RuODK logo](images/logo.png){width="125"} | [ruODK](https://docs.ropensci.org/ruODK/index.html)                         |                                                    |
-|                                             | [sitrep](https://github.com/R4EPI/sitrep)                                   |                                                    |
+| ![](images/logo-01.png){width="125"}        | gtsummary                                                                   |                                                    |
 | ![](images/paste-A6E65357.png){width="125"} | [skimr](https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html) |                                                    |
-|                                             |                                                                             |                                                    |
+|                                             | [sitrep](https://github.com/R4EPI/sitrep)                                   |                                                    |
 
 ### Books and websites
 

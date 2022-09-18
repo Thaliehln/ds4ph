@@ -1,12 +1,15 @@
 ---
 title: ":orange_book: Malaria case study"
+warning: false
 ---
-
-TBD
 
 ## Introduction
 
-These pages will demonstrate use of the Acute Jaundice Syndrome (AJS) outbreak template with data from an outbreak in Am Timan, Chad. This case study uses data that is not standardized with the MSF data dictionary, and so reflects a more challenging use case.
+### Overview
+
+These pages will demonstrate use of Quarto with data from Tanzania. This case study uses data that is not standardized, and so reflects a more challenging use case.
+
+### Learning objectives
 
 ## Malaria research questions
 
@@ -16,29 +19,21 @@ Research questions in an enumerated list
 
 #### Access the datasets for this walk-through
 
-* Download the Am Timan linelist (Excel) here
-* Download the Am Timan population data (Excel) here
-* Download the Am Timan Quartiers (shapefile) here
-* Download the Am Timan Blocks (shapefile) here
+* Download the dataset (Excel) here
 
 #### Access the version of the Quarto script used in this walk-through
 Download the final RMarkdown template used in this walk-through, to follow-along step-by-step uisng GitHub
 
 #### Quarto resources
 Review the R Basics page “Reading a RMarkdown Script”, or reference these resources: Rmarkdown introduction and Rmarkdown authoring basics.
-AJS/HEV outbreak in Am Timan, Chad (2016-2017)
 
 ### Dataset description
 
 We will be using data and examples from a real consultation data which occurred in Tanzania between **start date** and **end date**.
 
-DISCLAIMER: The real data from the outbreak has been used for the training materials linked to the outbreak templates of the R4epis project. The Ifakara Health Institute has approved the use of this data for training purposes. Please note, that some data has been adapted in order to best achieve training objectives. No personally indentifiable information have been kept in this dataset.
+DISCLAIMER: The Ifakara Health Institute has approved the use of this data for training purposes. Please note, that some data has been adapted in order to best achieve training objectives. No personally indentifiable information have been kept in this dataset.
 
 Information about the consultations of **10,308 children \[1 day - 59 months\]** from **18 facilities** (dispensaries and health centres) in **Kaliua** District, **Sengerema** District and **Tanga** District, Tanzania. Data were collected using *ODK* (ODK Collect, ODK Central) between **start date** and **end date**. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project. Data are stored in **dataset1.dta**.
-
-The outbreak linelist data was combined data from the active CBS data and the clinical data from the hospital. The CBS functioned with community health workers visiting all households in the town every two weeks and actively searching for people with Acute Jaundice Syndrome (AJS). For this group of persons (suspected cases), only those that were visibly ill or that were pregnant were referred to the hospital for clinical assessment and admission if required. Persons that self-reported to the hospital or that arrived after referral would undergo a clinical assessment and a rapid test for HEV for diagnosis. Thus only for people assessed at the hospital were we able to capture a confirmed case status.
-
-For the duration of the outbreak we detected 1193 suspected cases, 100 confirmed cases and discarded 150 cases with AJS who were not positive for HEV infection.
 
 ### Data collection
 
@@ -55,19 +50,19 @@ Research assistants recorded the following information from different sources:
 
 Research assistants sought clarification from healthcare providers only in cases where these variables were not clear from the records.
 
-## Data cleaning and data de-identification
+### Data preparation
+
+Data cleaning and data de-identification
 
 Personally identifiable information (PII) were removed.
 
-### Dataset structure
-
-Load the data and show the structure of your dataset
-
-### Codebook
-
 ## Familiarise with the dataset
 
-## Import the data
+### Import the data
+
+::: panel-tabset
+
+### :pencil2: Exercise 1
 
 Read the dataset and store it into a dataframe called **df**.
 
@@ -76,9 +71,11 @@ Refer to previous session (link to add)
 :::
 
 ```{r}
-#| echo: true
+#| echo: fenced
 # Write your code here
 ```
+
+### R
 
 ```{r}
 library(haven)
@@ -93,7 +90,17 @@ df %>%
   dplyr::select(c("child_ID", "CONSULT_district"))
 ```
 
-## Structure of the data
+:::
+
+## Population characteristics
+
+### Codebook
+
+### Structure of the data
+
+::: panel-tabset
+
+#### :pencil2: Exercise 2
 
 Examine the structure of the data, including variable names, labels.
 
@@ -103,9 +110,11 @@ Examine the structure of the data, including variable names, labels.
 :::
 
 ```{r}
-#| echo: true
+#| echo: fenced
 # Write your code here
 ```
+
+#### Stata
 
 ```{r}
 library(RStata)
@@ -113,20 +122,97 @@ RStata::stata("codebook",
               data.in = df)
 ```
 
+#### R
+
 ```{r}
 library(skimr)
 skimr::skim(df)
 ```
+
+:::
+
+::: panel-tabset
+
+### :pencil2: Exercise 2
+
+Display descriptive statistics for the following population characteristics:
+
+* age
+* sex
+* symptoms (fever + duration, cough, diarrhoea)
+* pre-consultation abx,
+* district
+* urban / rural
+* type of facility
 
 ::: callout-tip
 -   R: use the [tbl_summary](https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html) function from the `gtsummary` package
 :::
 
 ```{r}
+#| echo: fenced
+# Write your code here
+```
+
+### Stata
+
+### R
+
+```{r}
+#| echo: fenced
 #| df-print: kable
 library(gtsummary)
-gtsummary::tbl_summary(df)
+
+df %>%
+  select(SDC_age_in_month, SDC_sex, CLIN_fever, CLIN_fever_onset, CLIN_diarrhoea, CLIN_cough) %>%
+  tbl_summary()
 ```
+
+::: 
+
+## Healthcare provider actions
+
+::: panel-tabset
+
+### :pencil2: Exercise 2
+
+Display descriptive statistics fpr the following healthcare provider actions:
+
+* Temperature measured
+  * Fever measured
+* Fever (temp or history)
+* Malaria test
+* Any severe diagnosis
+* Malaria diagnosis
+* Malaria treatment
+* Referral
+
+::: callout-tip
+-   R: use the [tbl_summary](https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html) function from the `gtsummary` package
+:::
+
+```{r}
+#| echo: fenced
+# Write your code here
+```
+
+### Stata
+
+### R
+
+```{r}
+#| echo: fenced
+#| df-print: kable
+library(gtsummary)
+
+df %>%
+  select(SDC_age_in_month, SDC_sex, CLIN_fever, CLIN_fever_onset, CLIN_diarrhoea, CLIN_cough) %>%
+  tbl_summary()
+```
+
+::: 
+
+## consultations by facility, by district
 
 ## Identify missing values
 
