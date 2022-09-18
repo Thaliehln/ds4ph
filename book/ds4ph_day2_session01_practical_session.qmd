@@ -297,13 +297,17 @@ df$CLIN_fever_onset_category = as.factor(df$CLIN_fever_onset_category)
 
 ```{r}
 #| echo: fenced
-RStata::stata("tabulate SDC_sex",
-              data.in = df)
-```
-
-```{r}
-#| echo: fenced
-RStata::stata("tabulate CLIN_fever",
+RStata::stata('tabulate SDC_age_category
+              tabulate SDC_sex
+              tabulate CLIN_fever
+              tabulate CLIN_fever_onset_category
+              tabulate CLIN_diarrhoea
+              tabulate CLIN_cough
+              tabulate RX_preconsult_antibiotics
+              tabulate RX_preconsult_antimalarials
+              tabulate CONSULT_district
+              tabulate CONSULT_area
+              tabulate CONSULT_facility_type',
               data.in = df)
 ```
 

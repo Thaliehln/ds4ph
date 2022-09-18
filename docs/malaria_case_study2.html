@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science for Public Health - 14&nbsp; 📙 Malaria case study (2)</title>
+<title>Data Science for Public Health - 12&nbsp; 📙 Malaria case study - Part 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,8 +93,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./ds4ph_day3_session01_practical_session.html" rel="prev">
+<link href="./big_data_and_artificial_intelligence.html" rel="next">
+<link href="./ds4ph_day2_session01_practical_session.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -133,7 +133,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study (2)</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 2</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -234,7 +234,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study (1)</span></a>
+  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study2.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 2</span></a>
   </div>
 </li>
       </ul>
@@ -249,17 +254,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./big_data_and_artificial_intelligence.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Big data and machine learning</span></a>
+  <a href="./big_data_and_artificial_intelligence.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Big data and machine learning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Practical</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study2.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study (2)</span></a>
+  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Practical</span></a>
   </div>
 </li>
       </ul>
@@ -308,17 +308,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">14.1</span>  Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">12.1</span>  Introduction</a>
   <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="toc-section-number">14.1.1</span>  Overview</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="toc-section-number">14.1.2</span>  Learning objectives</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="toc-section-number">12.1.1</span>  Overview</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="toc-section-number">12.1.2</span>  Learning objectives</a></li>
   </ul></li>
-  <li><a href="#malaria-research-questions" id="toc-malaria-research-questions" class="nav-link" data-scroll-target="#malaria-research-questions"><span class="toc-section-number">14.2</span>  Malaria research questions</a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><span class="toc-section-number">14.3</span>  Getting started</a>
+  <li><a href="#malaria-research-questions" id="toc-malaria-research-questions" class="nav-link" data-scroll-target="#malaria-research-questions"><span class="toc-section-number">12.2</span>  Malaria research questions</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><span class="toc-section-number">12.3</span>  Getting started</a>
   <ul class="collapse">
-  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description"><span class="toc-section-number">14.3.1</span>  Dataset description</a></li>
-  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection"><span class="toc-section-number">14.3.2</span>  Data collection</a></li>
-  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"><span class="toc-section-number">14.3.3</span>  Import the data</a></li>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description"><span class="toc-section-number">12.3.1</span>  Dataset description</a></li>
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection"><span class="toc-section-number">12.3.2</span>  Data collection</a></li>
+  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"><span class="toc-section-number">12.3.3</span>  Import the data</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -328,7 +328,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study (2)</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 2</span></h1>
 </div>
 
 
@@ -342,47 +342,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="introduction" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">14.1</span> Introduction</h2>
-<section id="overview" class="level3" data-number="14.1.1">
-<h3 data-number="14.1.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">14.1.1</span> Overview</h3>
+<section id="introduction" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">12.1</span> Introduction</h2>
+<section id="overview" class="level3" data-number="12.1.1">
+<h3 data-number="12.1.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">12.1.1</span> Overview</h3>
 <p>These pages will demonstrate use of Quarto with data from Tanzania.</p>
 </section>
-<section id="learning-objectives" class="level3" data-number="14.1.2">
-<h3 data-number="14.1.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">14.1.2</span> Learning objectives</h3>
+<section id="learning-objectives" class="level3" data-number="12.1.2">
+<h3 data-number="12.1.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">12.1.2</span> Learning objectives</h3>
 </section>
 </section>
-<section id="malaria-research-questions" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="malaria-research-questions"><span class="header-section-number">14.2</span> Malaria research questions</h2>
+<section id="malaria-research-questions" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="malaria-research-questions"><span class="header-section-number">12.2</span> Malaria research questions</h2>
 <p>Research questions in an enumerated list</p>
 </section>
-<section id="getting-started" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">14.3</span> Getting started</h2>
-<section id="access-the-datasets" class="level4" data-number="14.3.0.1">
-<h4 data-number="14.3.0.1" class="anchored" data-anchor-id="access-the-datasets"><span class="header-section-number">14.3.0.1</span> Access the datasets</h4>
+<section id="getting-started" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">12.3</span> Getting started</h2>
+<section id="access-the-datasets" class="level4" data-number="12.3.0.1">
+<h4 data-number="12.3.0.1" class="anchored" data-anchor-id="access-the-datasets"><span class="header-section-number">12.3.0.1</span> Access the datasets</h4>
 <p>Download the dataset (Excel) here</p>
 </section>
-<section id="access-the-version-of-the-quarto-template" class="level4" data-number="14.3.0.2">
-<h4 data-number="14.3.0.2" class="anchored" data-anchor-id="access-the-version-of-the-quarto-template"><span class="header-section-number">14.3.0.2</span> Access the version of the Quarto template</h4>
+<section id="access-the-version-of-the-quarto-template" class="level4" data-number="12.3.0.2">
+<h4 data-number="12.3.0.2" class="anchored" data-anchor-id="access-the-version-of-the-quarto-template"><span class="header-section-number">12.3.0.2</span> Access the version of the Quarto template</h4>
 <p>Download the final Quarto template used in this case study, to follow-along step-by-step uisng GitHub</p>
 </section>
-<section id="quarto-resources" class="level4" data-number="14.3.0.3">
-<h4 data-number="14.3.0.3" class="anchored" data-anchor-id="quarto-resources"><span class="header-section-number">14.3.0.3</span> Quarto resources</h4>
+<section id="quarto-resources" class="level4" data-number="12.3.0.3">
+<h4 data-number="12.3.0.3" class="anchored" data-anchor-id="quarto-resources"><span class="header-section-number">12.3.0.3</span> Quarto resources</h4>
 <p>Review the R Basics page “Reading a RMarkdown Script”, or reference these resources: Rmarkdown introduction and Rmarkdown authoring basics.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggthemes"</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="dataset-description" class="level3" data-number="14.3.1">
-<h3 data-number="14.3.1" class="anchored" data-anchor-id="dataset-description"><span class="header-section-number">14.3.1</span> Dataset description</h3>
+<section id="dataset-description" class="level3" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="dataset-description"><span class="header-section-number">12.3.1</span> Dataset description</h3>
 <p>Dataset 1 + SPA data</p>
 </section>
-<section id="data-collection" class="level3" data-number="14.3.2">
-<h3 data-number="14.3.2" class="anchored" data-anchor-id="data-collection"><span class="header-section-number">14.3.2</span> Data collection</h3>
+<section id="data-collection" class="level3" data-number="12.3.2">
+<h3 data-number="12.3.2" class="anchored" data-anchor-id="data-collection"><span class="header-section-number">12.3.2</span> Data collection</h3>
 </section>
-<section id="import-the-data" class="level3" data-number="14.3.3">
-<h3 data-number="14.3.3" class="anchored" data-anchor-id="import-the-data"><span class="header-section-number">14.3.3</span> Import the data</h3>
+<section id="import-the-data" class="level3" data-number="12.3.3">
+<h3 data-number="12.3.3" class="anchored" data-anchor-id="import-the-data"><span class="header-section-number">12.3.3</span> Import the data</h3>
 <div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page"><span class="emoji" data-emoji="pencil2">✏️</span> Exercise 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li></ul>
 <div class="tab-content">
@@ -523,13 +523,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ds4ph_day3_session01_practical_session.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Practical</span></span>
+      <a href="./ds4ph_day2_session01_practical_session.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 1</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./big_data_and_artificial_intelligence.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Big data and machine learning</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

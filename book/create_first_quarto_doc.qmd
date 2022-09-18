@@ -8,8 +8,8 @@ title: ":blue_book: Getting started with Quarto"
 
 Please review the following sections for instructions on installation steps:
 
--   Downloading R @sec-R-installation
--   Downloading and configuring RStudio @sec-RStudio-installation
+-   Downloading R (@sec-R-installation)
+-   Downloading and configuring RStudio (@sec-RStudio-installation)
 -   Installing the rmarkdown package
 
 ### Learning objectives

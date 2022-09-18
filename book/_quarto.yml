@@ -17,8 +17,6 @@ book:
         - name: Swiss Tropical and Public Health Institute
   logo: images/logo_compact.png
   date: today
-  echo: true
-  warning: false
   chapters:
     - index.qmd
     - intro.qmd

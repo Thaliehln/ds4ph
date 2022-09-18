@@ -1,5 +1,6 @@
 ---
 title: ":blue_book: Code chunks"
+warning: false
 ---
 
 ## Introduction
@@ -10,11 +11,13 @@ In this section, we will see how to use and mix R, Stata and Python within Quart
 
 ## Create code chunks
 
-Use backticks
+::: callout-tip
 
-Click on icon
+* Use backticks
+* Click on icon
+* Keyboard shortcut `Ctrl` + `Alt` + `I`
 
-Ctrl + Alt + I
+:::
 
 ## R code chunks
 
@@ -34,30 +37,33 @@ How to display data
 ```{r}
 #| echo: fenced
 #| df-print: kable
-print(df)
+library(dplyr)
+df %>% knitr::kable()
 ```
 
-You can cross-reference your table.
+You can cross-reference your table @tbl-iris
 
 ```{r}
 #| label: tbl-iris
 #| tbl-cap: Iris data set
 #| echo: fenced
 #| df-print: kable
-print(df)
+df %>% knitr::kable()
 ```
 
 ## Execute Stata commands within R code chunks
 
-Stata is not a language supported by Quarto. To use Stata within Quarto, you have to use the `RStata` package, which is a simple R / Stata interface that enables you to:
+Stata is not a language supported by Quarto. To use Stata within Quarto, you have to use the [RStata](https://cran.r-project.org/web/packages/RStata/README.html) R package, which is a simple R / Stata interface that enables you to:
 
 * execute Stata commands (inline or from a `.do` file) from R;
-* pass a data.frame to Stata;
-* return a data.frame to R;
-* include Stata chunks in knitr documents (however each chunk is independent from the others; feature tested with LaTeX/Linux).
+* pass a data frame to Stata;
+* return Stata outputs (including modified data frames) to R.
 
 ```{r}
 #| echo: fenced
+if ( !require(RStata) ) {
+  install.packages('RStata')
+}
 library(RStata)
 ```
 
