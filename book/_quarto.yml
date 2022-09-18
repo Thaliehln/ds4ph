@@ -12,6 +12,9 @@ book:
     - name: Samwel Lwambura
       affiliations:
         - name: Ifakara Health Institute
+    - name: Fenella Beynon
+      affiliations:
+        - name: Swiss Tropical and Public Health Institute
   logo: images/logo_compact.png
   date: today
   echo: true
@@ -33,6 +36,7 @@ book:
       chapters:
         - data_science_for_public_health.qmd
         - ds4ph_day2_session01_practical_session.qmd
+        - malaria_case_study2.qmd
     - part: "------------ DAY 3 ------------"
       chapters: 
         - big_data_and_artificial_intelligence.qmd

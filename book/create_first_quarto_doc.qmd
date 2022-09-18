@@ -6,14 +6,15 @@ title: ":blue_book: Getting started with Quarto"
 
 ### Overview
 
-Please review the Appendix for instructions on the following start-up steps:
+Please review the following sections for instructions on installation steps:
 
--   Downloading and configuring R and RStudio
+-   Downloading R @sec-R-installation
+-   Downloading and configuring RStudio @sec-RStudio-installation
 -   Installing the rmarkdown package
 
 ### Learning objectives
 
-1. Familairise with RStudio
+1. Familiarise with RStudio
 2. Get set up with not storing the RStudio workspace
 3. Learn how to use Quarto
 

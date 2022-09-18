@@ -1,0 +1,14 @@
+{
+  "hash": "4dac3f64b9d8571d20c957457c78297f",
+  "result": {
+    "markdown": "---\ntitle: \":orange_book: Malaria case study (2)\"\nwarning: false\n---\n\n\n## Introduction\n\n### Overview\n\nThese pages will demonstrate use of Quarto with data from Tanzania.\n\n### Learning objectives\n\n## Malaria research questions\n\nResearch questions in an enumerated list\n\n## Getting started\n\n#### Access the datasets\n\nDownload the dataset (Excel) here\n\n#### Access the version of the Quarto template\n\nDownload the final Quarto template used in this case study, to follow-along step-by-step uisng GitHub\n\n#### Quarto resources\n\nReview the R Basics page \"Reading a RMarkdown Script\", or reference these resources: Rmarkdown introduction and Rmarkdown authoring basics.\n\n```{{r}}\ninstall.packages(\"ggplot2\")\ninstall.packages(\"ggthemes\")\n```\n\n### Dataset description\n\nDataset 1 + SPA data\n\n### Data collection\n\n### Import the data\n\n::: panel-tabset\n\n#### :pencil2: Exercise 1\n\nRead the dataset and store it into a dataframe called **df**.\n\n::: callout-tip\nRefer to @sec-import-data-from-files\n:::\n\n\n::: {.cell}\n\n````{.cell-code}\n```{{r}}\n# Write your code here\n```\n````\n:::\n\n\n#### R\n\n\n::: {.cell}\n\n````{.cell-code}\n```{{r}}\nlibrary(haven)\ndf <- haven::read_dta(\"./data/dataset2.dta\")\n```\n````\n:::\n\n\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -8,7 +8,7 @@ Does the following situation rings a bell?
 
 ![Credit: PhD comics](images/paste-2840AEE3.png)
 
-In this chapter, we introduce basic elements of Git and GitHub. To learn more about this powerful tool, we refer the reader to the resources listed in Section \@sec-resources-git.
+In this chapter, we introduce basic elements of Git and GitHub. To learn more about this powerful tool, we refer the reader to the resources listed in \@sec-resources-git.
 
 ![](images/paste-B5DF25CC.png)
 

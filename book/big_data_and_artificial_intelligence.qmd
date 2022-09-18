@@ -4,6 +4,34 @@ title: ":books: Big data and machine learning"
 
 ## Introduction
 
+### Overview
+
+### Learning objectives
+
+-   key dates and vcabular from the Artificial Intelligence community
+
+-   machine learning vs. statistics
+
+-   trade-off between accuracy and generalisability
+
+## Development of Artificial Intelligence
+
 ![](images/paste-FA238456.png)
 
 ## Machine Learning vs. Statistics
+
+::: panel-tabset
+### Inference
+
+![](images/paste-C70B4C10.png)
+
+### Prediction
+
+![](images/paste-2C4E6936.png)
+:::
+
+## Learning From Data: Accuracy or Generalizability?
+
+![](images/paste-FC3A1160.png)
+
+![](images/paste-7D73149D.png)

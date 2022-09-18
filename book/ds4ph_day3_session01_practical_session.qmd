@@ -1,6 +1,17 @@
 ---
-title: ":blue_book: Practical"
+title: ":orange_book: Practical"
+warning: false
 ---
+
+## Introduction
+
+### Overview
+
+This tutorial is adapted from the excellent [Machine learning in Python with scikit-learn](https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn/)
+
+### Learning objectives
+
+## Question
 
 We are interested in predicting **referral in children under 5** based on two of the clinical measurements at the consultation:
 
@@ -14,11 +25,12 @@ The dataset is stored in **dataset1.dta**.
 Read the dataset and store it into a dataframe called **df**.
 
 ```{r}
-#| echo: true
+#| echo: fenced
 # Write your code here
 ```
 
 ```{r}
+#| echo: fenced
 library(haven)
 df <- haven::read_dta("./data/dataset10.dta")
 ```
@@ -41,11 +53,12 @@ Display the variables/features **child_id**, **test** and **test** for the **10 
 :::
 
 ```{r}
-#| echo: true
+#| echo: fenced
 # Write your code here
 ```
 
 ```{r}
+#| echo: fenced
 library(dplyr)
 df %>%
   head(10) %>% 
@@ -55,21 +68,35 @@ df %>%
 
 ### Variables/Features
 
+::: panel-tabset
+
+### :pencil2: Exercise 1
+
 How many variables/features are numerical in the dataset?
 
 ```{r}
-#| echo: true
+#| echo: fenced
 # Write your code here
 ```
 
 How many variables/features are categorical in the dataset?
 
 ```{r}
-#| echo: true
+#| echo: fenced
 # Write your code here
 ```
 
+### Python
+
+To be completed
+
+:::
+
 ### Target classes
+
+::: panel-tabset
+
+### :pencil2: Exercise 1
 
 What are the different classes available in the dataset and how many observations/samples of each types are there?
 
@@ -78,20 +105,40 @@ What are the different classes available in the dataset and how many observation
 :::
 
 ```{r}
-#| echo: true
+#| echo: fenced
 # Write your code here
 ```
+
+### Python
+
+To be completed
+
+:::
 
 ## Variable/feature distribution
 
 Let's look at the distribution of individual features, to get some insights about the data. We can start by plotting histograms, note that this only works for features containing numerical values.
 
+::: panel-tabset
+
+### :pencil2: Exercise 2
+
 Plot histograms for the numerical variables/features
 
 ```{r}
-#| echo: true
+#| echo: fenced
 # Write your code here
 ```
+
+### Python
+
+To be completed
+
+:::
+
+::: panel-tabset
+
+### :pencil2: Exercise 3
 
 Show variable/feature distribution for each class.
 
@@ -100,12 +147,14 @@ Show variable/feature distribution for each class.
 :::
 
 ```{r}
-#| echo: true
+#| echo: fenced
 # Write your code here
 ```
 
+### Python
+
+To be completed
+
+:::
+
 Looking at these distributions, how difficult do you think it will be to classify the sick children using the `param1` and `param2` variables/features?
-
-## References
-
--   inspired from scikit-learn MOOC

@@ -1,0 +1,68 @@
+---
+title: ":orange_book: Malaria case study - Part 2"
+warning: false
+---
+
+## Introduction
+
+### Overview
+
+These pages will demonstrate use of Quarto with data from Tanzania.
+
+### Learning objectives
+
+## Malaria research questions
+
+Research questions in an enumerated list
+
+## Getting started
+
+#### Access the datasets
+
+Download the dataset (Excel) here
+
+#### Access the version of the Quarto template
+
+Download the final Quarto template used in this case study, to follow-along step-by-step uisng GitHub
+
+#### Quarto resources
+
+Review the R Basics page "Reading a RMarkdown Script", or reference these resources: Rmarkdown introduction and Rmarkdown authoring basics.
+
+```{{r}}
+install.packages("ggplot2")
+install.packages("ggthemes")
+```
+
+### Dataset description
+
+Dataset 1 + SPA data
+
+### Data collection
+
+### Import the data
+
+::: panel-tabset
+
+#### :pencil2: Exercise 1
+
+Read the dataset and store it into a dataframe called **df**.
+
+::: callout-tip
+Refer to @sec-import-data-from-files
+:::
+
+```{r}
+#| echo: fenced
+# Write your code here
+```
+
+#### R
+
+```{r}
+#| echo: fenced
+library(haven)
+df <- haven::read_dta("./data/dataset2.dta")
+```
+
+:::

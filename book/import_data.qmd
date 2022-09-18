@@ -10,7 +10,7 @@ Most of the time you will want to generate *Quarto* documents using your own dat
 As you import data to further process / analyse them, you have to store the imported data in a data frame.
 ::: 
 
-## Import data from files
+## Import data from files {#sec-import-data-from-files}
 
 All Python and R functions only require as input the path where the file you want to import is stored. This path has to be passed as a  sequence of characters (*character*) within double ("") or single ('') quotes. 
 

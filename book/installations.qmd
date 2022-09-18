@@ -46,12 +46,12 @@ Download the installer
 After downloading the installer, follow the installation wizard on your computer.
 :::
 
-## Install RStudio Desktop
+## Install RStudio Desktop {#sec-RStudio-installation}
 
 Rstudio is an integrated development environment (IDE) for R that enables an easier use of R.
 
 ::: callout-important
-In order for RStudio desktop to work with R you must have installed R on your computer, see Section @sec-R-installation. RStudio does not include R when you download and install it.
+In order for RStudio desktop to work with R you must have installed R on your computer, see @sec-R-installation. RStudio does not include R when you download and install it.
 :::
 
 ::: panel-tabset
