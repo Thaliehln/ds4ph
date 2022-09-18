@@ -56,13 +56,11 @@ Data cleaning and data de-identification
 
 Personally identifiable information (PII) were removed.
 
-## Familiarise with the dataset
-
 ### Import the data
 
 ::: panel-tabset
 
-### :pencil2: Exercise 1
+#### :pencil2: Exercise 1
 
 Read the dataset and store it into a dataframe called **df**.
 
@@ -75,7 +73,7 @@ Refer to previous session (link to add)
 # Write your code here
 ```
 
-### R
+#### R
 
 ```{r}
 library(haven)
@@ -92,15 +90,25 @@ df %>%
 
 :::
 
-## Population characteristics
+## Familiarise with the dataset
 
-### Codebook
+### Population characteristics
 
-### Structure of the data
+#### Codebook
+
+* age
+* sex
+* symptoms (fever + duration, cough, diarrhoea)
+* pre-consultation abx,
+* district
+* urban / rural
+* type of facility
+
+#### Structure of the data
 
 ::: panel-tabset
 
-#### :pencil2: Exercise 2
+##### :pencil2: Exercise 2
 
 Examine the structure of the data, including variable names, labels.
 
@@ -114,7 +122,7 @@ Examine the structure of the data, including variable names, labels.
 # Write your code here
 ```
 
-#### Stata
+##### Stata
 
 ```{r}
 library(RStata)
@@ -122,7 +130,7 @@ RStata::stata("codebook",
               data.in = df)
 ```
 
-#### R
+##### R
 
 ```{r}
 library(skimr)
@@ -133,17 +141,9 @@ skimr::skim(df)
 
 ::: panel-tabset
 
-### :pencil2: Exercise 2
+##### :pencil2: Exercise 2
 
 Display descriptive statistics for the following population characteristics:
-
-* age
-* sex
-* symptoms (fever + duration, cough, diarrhoea)
-* pre-consultation abx,
-* district
-* urban / rural
-* type of facility
 
 ::: callout-tip
 -   R: use the [tbl_summary](https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html) function from the `gtsummary` package
@@ -154,9 +154,9 @@ Display descriptive statistics for the following population characteristics:
 # Write your code here
 ```
 
-### Stata
+##### Stata
 
-### R
+##### R
 
 ```{r}
 #| echo: fenced
@@ -168,13 +168,63 @@ df %>%
   tbl_summary()
 ```
 
-::: 
+:::
 
-## Healthcare provider actions
+#### Identify missing values
+
+Identify missing values in each variable: missing_plot
+
+```{r}
+library(finalfit)
+explanatory = c("CONSULT_facility_ID", "CONSULT_district", "CLIN_fever")
+dependent = "DX_malaria"
+
+df %>% 
+  finalfit::missing_pattern(dependent, explanatory)
+```
+
+### Healthcare provider actions
+
+#### Codebook
+
+#### Structure of the data
 
 ::: panel-tabset
 
-### :pencil2: Exercise 2
+##### :pencil2: Exercise 2
+
+Examine the structure of the data, including variable names, labels.
+
+::: callout-tip
+-   Stata: use the **codebook** function
+-   R: use the [skim](https://docs.ropensci.org/skimr/reference/skim.html) function from the `skimr` package
+:::
+
+```{r}
+#| echo: fenced
+# Write your code here
+```
+
+##### Stata
+
+```{r}
+library(RStata)
+RStata::stata("codebook",
+              data.in = df)
+```
+
+##### R
+
+```{r}
+library(skimr)
+skimr::skim(df)
+```
+
+:::
+
+::: panel-tabset
+
+##### :pencil2: Exercise 2
 
 Display descriptive statistics fpr the following healthcare provider actions:
 
@@ -196,9 +246,9 @@ Display descriptive statistics fpr the following healthcare provider actions:
 # Write your code here
 ```
 
-### Stata
+##### Stata
 
-### R
+##### R
 
 ```{r}
 #| echo: fenced
@@ -212,20 +262,7 @@ df %>%
 
 ::: 
 
-## consultations by facility, by district
-
-## Identify missing values
-
-Identify missing values in each variable: missing_plot
-
-```{r}
-library(finalfit)
-explanatory = c("CONSULT_facility_ID", "CONSULT_district", "CLIN_fever")
-dependent = "DX_malaria"
-
-df %>% 
-  finalfit::missing_pattern(dependent, explanatory)
-```
+### consultations by facility, by district
 
 ## Data analysis plan
 
