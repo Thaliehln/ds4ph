@@ -7,7 +7,6 @@ title: "Install software"
 R is a programming language for statistical computing and graphics.
 
 ::: panel-tabset
-
 ### Step 1
 
 You can download R from the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/mirrors.html) which is a network of servers around the world that store identical up-to-date versions of code and documentation for R.
@@ -45,33 +44,28 @@ Download the installer
 ### Step 5
 
 After downloading the installer, follow the installation wizard on your computer.
-
 :::
 
 ## Install RStudio Desktop
 
-Rstudio Desktop is an integrated development environment (IDE) that enables an easier use of R. 
-
-R4epis gave an anology as R as being the engine of a vehicle and RStudio as the body of the vehicle (with seats, accessories, etc.) that helps you actually use the engine to move forward. If R is the engine and bare bones of your car, then RStudio is like the rest of the car. The engine is super critical part of your car. But in order to make things properly functional, you need to have a steering wheel, comfy seats, a radio, rear and side view mirrors, storage, and seatbelts.
+Rstudio is an integrated development environment (IDE) for R that enables an easier use of R.
 
 ::: callout-important
 In order for RStudio desktop to work with R you must have installed R on your computer, see Section @sec-R-installation. RStudio does not include R when you download and install it.
 :::
 
 ::: panel-tabset
-
 ### Step 1
 
 There are different products, but the free Desktop version is just perfect for our needs.
 
 ### Step 2
 
-Download the [installer](https://download1.rstudio.org/desktop/windows/RStudio-2022.07.1-554.exe): 
+Download the [installer](https://download1.rstudio.org/desktop/windows/RStudio-2022.07.1-554.exe):
 
-### Step 5
+### Step 3
 
 After downloading the installer, follow the installation wizard on your computer.
-
 :::
 
 ::: callout-note
@@ -110,9 +104,23 @@ Quarto will select a version of R by looking on the system PATH. In addition, on
 
 ## GitHub account
 
+GitHub is a code hosting platform for version control and collaboration. To Create a github account: [sign up](https://github.com/signup "Github account creation")
+
 ## GitHub desktop
 
-To install GitHub Desktop: link. After downloading, follow the installation wizard on your computer.
+::: callout-important
+**You must have Git installed before using GitHub Desktop**.
+:::
+
+::: panel-tabset
+## Step 1
+
+Download and install the latest version of Git from [link](https://git-scm.com/downloads)
+
+## Step 2
+
+Download github desktop installer from [link](https://desktop.github.com/), After downloading, follow the installation wizard on your computer
+:::
 
 ### How to connect your GitHub account to GitHub Desktop?
 
