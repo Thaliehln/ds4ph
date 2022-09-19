@@ -1,0 +1,372 @@
+---
+title: ":blue_book: Import external data"
+---
+
+
+## Introduction
+
+Most of the time you will want to generate *Quarto* documents using your own data. To this aim, you will have to import data from external sources such as files, URLs, or server data (e.g., ODK Central data). There is a dedicated importing function in R and Python for almost every data format. In this section we show you how to import Stata (`.dta`), Excel (`.xlsx`) and comma-separated values (CSV, `.csv`) data formats from files and from URLs, as well as how to import ODK data directly from an ODK Central server.
+
+::: callout-important
+As you import data to further process / analyse them, you have to store the imported data in a data frame.
+::: 
+
+## Import data from files {#sec-import-data-from-files}
+
+All Python and R functions only require as input the path where the file you want to import is stored. This path has to be passed as a  sequence of characters (*character*) within double ("") or single ('') quotes. 
+
+The path can be either:
+
+* relative to your Quarto document
+
+
+```{r}
+#| echo: fenced
+relative_path <- "./data/mydata.csv"
+```
+
+
+* absolute
+
+
+```{r}
+#| echo: fenced
+absolute_path <- "C:/Users/myuser/Documents/mydata.csv"
+```
+
+
+Functions in general have additional optional arguments.
+
+### Import Excel data
+
+::: panel-tabset
+
+#### :pencil2: Exercise 1
+
+Import the Excel data set **dataset1.xlsx** and store it into a data frame called **df1**.
+
+::: callout-tip
+-   Stata: use the [import excel](https://www.stata.com/manuals/dimportexcel.pdf) Stata command with the [stata](https://rdrr.io/github/lbraglia/RStata/man/stata.html) function from the `RStata` package.
+-   R: use the [read.xlsx](https://www.rdocumentation.org/packages/openxlsx/versions/4.2.5/topics/read.xlsx) function from the `openxlsx` package.
+-   Python: use the [read_excel](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) function from the `pandas` package.
+:::
+
+
+```{r}
+#| echo: fenced
+# Write your code here
+```
+
+
+#### Stata
+
+Use the [import excel](https://www.stata.com/manuals/dimportexcel.pdf) Stata command with the [stata](https://rdrr.io/github/lbraglia/RStata/man/stata.html) function from the `RStata` package.
+
+
+```{r}
+#| echo: fenced
+library(RStata)
+
+df1 <- RStata::stata("import excel ./data/dataset1.xlsx",
+                     data.out = TRUE)
+```
+
+
+#### R
+
+Use the [read.xlsx](https://www.rdocumentation.org/packages/openxlsx/versions/4.2.5/topics/read.xlsx) function from the `openxlsx` package.
+
+
+```{r}
+#| echo: fenced
+library(openxlsx)
+
+df1 <- openxlsx::read.xlsx("./data/dataset1.xlsx")
+```
+
+
+#### Python
+
+Use the [read_excel](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) function from the `pandas` package.
+
+
+```{python}
+#| echo: fenced
+import pandas
+
+df1 = pandas.read_excel('./data/dataset1.xlsx')
+```
+
+:::
+
+### Import CSV data
+
+::: panel-tabset
+
+#### :pencil2: Exercise 2
+
+Read the CSV data set **dataset1.csv** and store it into a data frame called **df2**.
+
+::: callout-tip
+-   Stata: use the import delimited Stata command with the [stata](https://rdrr.io/github/lbraglia/RStata/man/stata.html) function from the `RStata` package.
+-   R: use the [read.csv](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table) function from the `haven` package.
+-   Python: use the [read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html) function from the `pandas` package.
+:::
+
+
+```{r}
+#| echo: fenced
+# Write your code here
+```
+
+
+#### Stata
+
+
+```{r}
+#| echo: fenced
+library(RStata)
+
+df2 <- RStata::stata("import delimited ./data/dataset1.csv",
+                     data.out = TRUE)
+```
+
+
+#### R
+
+
+```{r}
+#| echo: fenced
+df2 <- read.csv("./data/dataset1.csv")
+```
+
+
+#### Python
+
+Use the [read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html) function from the `pandas` package.
+
+
+```{python}
+#| echo: fenced
+import pandas
+
+df2 = pandas.read_csv('./data/dataset1.csv')
+```
+
+:::
+
+### Import Stata data
+
+::: panel-tabset
+#### :pencil2: Exercise 3
+
+Read the Stata data set **dataset1.dta** and store it into a data frame called **df3**.
+
+::: callout-tip
+-   Stata: use the `use` Stata command with the [stata](https://rdrr.io/github/lbraglia/RStata/man/stata.html) function from the `RStata` package.
+-   R: use the [read_dta](https://haven.tidyverse.org/reference/read_dta.html) function from the `haven` package. This package supports SAS, STATA and SPSS software.
+-   Python: use the [read_stata](https://pandas.pydata.org/docs/reference/api/pandas.read_stata.html) function from the `pandas` package.
+:::
+
+
+```{r}
+#| echo: fenced
+# Write your code here
+```
+
+
+#### Stata
+
+
+```{r}
+#| echo: fenced
+library(RStata)
+
+df3 <- RStata::stata("use ./data/dataset1.dta",
+                     data.out = TRUE)
+```
+
+
+#### R
+
+
+```{r}
+#| echo: fenced
+library(haven)
+
+df3 <- haven::read_dta("./data/dataset1.dta")
+```
+
+
+#### Python
+
+Use the [read_stata](https://pandas.pydata.org/docs/reference/api/pandas.read_stata.html) function from the `pandas` package.
+
+
+```{python}
+#| echo: fenced
+import pandas
+
+df3 = pandas.read_stata('./data/dataset1.dta')
+```
+
+:::
+
+## Import data from URLs
+
+All functions can accept URLs as well instead of the path to a specific file.
+
+::: panel-tabset
+#### :pencil2: Exercise 4
+
+Import the CSV data set that contains a comprehensive spatial inventory of 98,745 public health facilities in Sub Saharan Africa directly from the following  [url](https://open.africa/dataset/d7335980-29d5-476c-bf7a-feb4e22cf631/resource/e2432e8a-cf15-4a8b-b8c3-567f443c1459/download/cfa-data-hospitals-in-africa-00-ssa-mfl-130219.xlsx-ssa-mfl.csv) and store it into a data frame called **df4**.
+
+To learn more about how this data set was assembled, please refer to [@maina_spatial_2019]
+
+::: callout-tip
+-   Stata: use the import excel Stata command with the `stata` function from the `RStata` package.
+-   R: use the [read.xlsx](https://www.rdocumentation.org/packages/openxlsx/versions/4.2.5/topics/read.xlsx) function from the `openxlsx` package.
+-   Python: use the [read_excel](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) function from the `pandas` package. In the latest version of pandas (0.19.2) you can directly pass the url
+:::
+
+
+```{r}
+#| echo: fenced
+# Write your code here
+```
+
+
+#### Stata
+
+Here, because quotes are already used for the Stata command, you need to use the other type of quotes for indicating the URL.
+
+
+```{r}
+#| echo: fenced
+library(RStata)
+
+df2 <- RStata::stata('import delimited "https://open.africa/dataset/d7335980-29d5-476c-bf7a-feb4e22cf631/resource/e2432e8a-cf15-4a8b-b8c3-567f443c1459/download/cfa-data-hospitals-in-africa-00-ssa-mfl-130219.xlsx-ssa-mfl.csv"',
+                     data.out = TRUE)
+```
+
+
+#### R
+
+Use the [read.xlsx](https://www.rdocumentation.org/packages/openxlsx/versions/4.2.5/topics/read.xlsx) function from the `openxlsx` package.
+
+
+```{r}
+#| echo: fenced
+csv_url <- "https://open.africa/dataset/d7335980-29d5-476c-bf7a-feb4e22cf631/resource/e2432e8a-cf15-4a8b-b8c3-567f443c1459/download/cfa-data-hospitals-in-africa-00-ssa-mfl-130219.xlsx-ssa-mfl.csv"
+df4 <- read.csv(csv_url)
+```
+
+
+#### Python
+
+Use the [read_excel](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) function from the `pandas` package.
+
+
+```{python}
+#| echo: fenced
+import pandas
+
+csv_url = "https://open.africa/dataset/d7335980-29d5-476c-bf7a-feb4e22cf631/resource/e2432e8a-cf15-4a8b-b8c3-567f443c1459/download/cfa-data-hospitals-in-africa-00-ssa-mfl-130219.xlsx-ssa-mfl.csv"
+df1 = pandas.read_csv(csv_url)
+```
+
+:::
+
+## Import data from ODK Central
+
+While data digitally captured using ODK Collect or Enketo and stored in ODK Central can be retrieved in bulk through the web interface, ODK Central's API provides direct access to its data (and functionality). It is a more efficient way to ensure that data are always up-to-date.
+
+We will see how to retrieve data through the OData API.
+
+::: panel-tabset
+
+### :pencil2: Exercise 5
+
+Connect to the ODK Central server data set.
+"https://private-anon-24fcfe2426-odkcentral.apiary-mock.com/v1/projects/7/forms/simple.svc"
+
+Your email is "my.email.address@getodk.org" and your password is "my.super.secure.password".
+
+::: callout-tip
+-   R: use the [ru_setup](https://docs.ropensci.org/ruODK/reference/ru_setup.html) function from the `ruODK` package [@mayer20].
+-   Python: use functions from the `pyODK` package.
+:::
+
+
+```{r}
+#| echo: fenced
+# Write your code here
+```
+
+
+### R
+
+
+```{r}
+#| echo: fenced
+ruODK::ru_setup(
+  svc = "https://private-anon-24fcfe2426-odkcentral.apiary-mock.com/v1/projects/7/forms/simple.svc",
+  un = "my.email.address@getodk.org",
+  pw = "my.super.secure.password",
+  verbose = TRUE
+)
+```
+
+
+:::
+
+::: panel-tabset
+
+### :pencil2: Exercise 6
+
+Retrieve data from form and store the data set into a data frame called df4
+
+::: callout-tip
+-   R: use the [odata_submission_get](https://docs.ropensci.org/ruODK/reference/odata_submission_get.html) function from the `ruODK` package [@mayer20].
+-   Python: use functions from the `pyODK` package.
+:::
+
+
+```{r}
+#| echo: fenced
+# Write your code here
+```
+
+
+### R
+
+
+```{r}
+#| echo: fenced
+fq_form_schema <- ruODK::form_schema()
+fq_form_schema
+```
+
+```{r}
+#| echo: fenced
+df <- ruODK::odata_service_get()
+df
+```
+
+
+:::
+
+::: callout-important
+Encrypted data can only be retrieved using the RESTful API and cannot be retrieved using the oData API. ODK Central supports two modes of encryption - learn about them here. ruODK supports project managed encryption, however the support is limited to exactly one encryption key. The supplied passphrase will be used against the first returned encryption key. Remaining encryption keys are ignored by ruODK.
+
+If an incorrect passphrase is given, the request is terminated immediately. It has been reported that multiple requests with incorrect passphrases can crash ODK Central.
+
+
+```{r}
+#| echo: fenced
+df <- ruODK::submission_export()
+df
+```
+
+
+:::

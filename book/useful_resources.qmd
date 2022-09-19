@@ -15,15 +15,26 @@ To learn more about this topic, we highly recommend the following resources:
 -   [Try Git tutorial](https://try.github.io/levels/1/challenges/1)
 -   [Happy Git and GitHub for the useR](http://happygitwithr.com/)
 
-## R programming
+## Online trainings
 
-### Online trainings
+### Programming
 
--   [The GRAPH network](https://thegraphcourses.org)
--   [Johns Hopkins University Data Science Lab's courses](https://jhudatascience.org/courses.html)
--   [afrimapr](https://afrimapr.github.io/afrimapr.website/training/) - mapping data in Africa
+| Link                                                                                           | Language         |
+|------------------------------------------------------------------------------------------------|------------------|
+| [The GRAPH network](https://thegraphcourses.org)                                               | R                |
+| [Johns Hopkins University Data Science Lab's courses](https://jhudatascience.org/courses.html) | R                |
+| [afrimapr](https://afrimapr.github.io/afrimapr.website/training/) - mapping data in Africa     | R                |
+| https://iqss.github.io/dss-workshops/                                                          | R, Python, Stata |
+|                                                                                                |                  |
+|                                                                                                |                  |
+|                                                                                                |                  |
+|                                                                                                |                  |
+|                                                                                                |                  |
+|                                                                                                |                  |
 
-### Packages
+## Packages
+
+### R
 
 | Icon                                        | Name                                                                        | Description                                        |
 |------------------|------------------|------------------------------------|
@@ -33,10 +44,16 @@ To learn more about this topic, we highly recommend the following resources:
 | ![](images/paste-A6E65357.png){width="125"} | [skimr](https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html) |                                                    |
 |                                             | [sitrep](https://github.com/R4EPI/sitrep)                                   |                                                    |
 
-### Books and websites
+### Python
+
+-   **Pandas**\
+    [Comparison with Stata](https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_stata.html)\
+    [Comparison with R](https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_r.html)
+
+## Books and websites
 
 |                                                                                                           |                                    |
-|-------------------------------------------------|-----------------------|
+|------------------------------------------------|-----------------------|
 | [R for applied epidemiology and public health](https://epirhandbook.com/en/) [@batra_epidemiologist_2021] | :star: :star: :star: :star: :star: |
 | [R for Epidemiology](https://www.r4epi.com/)                                                              |                                    |
 | [R4epis](https://r4epis.netlify.app/)                                                                     |                                    |
@@ -45,22 +62,14 @@ To learn more about this topic, we highly recommend the following resources:
 
 : Books and websites
 
-### Communities
+## Communities
 
 -   [R for data science online learning community](https://www.rfordatasci.com/)
-
-## Python programming
-
-### Packages
-
--   **Pandas**\
-    [Comparison with Stata](https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_stata.html)\
-    [Comparison with R](https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_r.html)
 
 ## Machine learning
 
 | MOOC                                                                                                                     | Recommendation                     |
-|-------------------------------------------------|-----------------------|
+|------------------------------------------------|-----------------------|
 | [Machine learning in Python with scikit-learn](https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn/) | :star: :star: :star: :star: :star: |
 |                                                                                                                          |                                    |
 |                                                                                                                          |                                    |
@@ -76,7 +85,7 @@ To learn more about this topic, we highly recommend the following resources:
 ### Data sets
 
 | Dataset                                                                                                   | Associated publication(s) |
-|-----------------------------------------------|-------------------------|
+|----------------------------------------------|-------------------------|
 | [Data for Good](https://dataforgood.facebook.com/dfg/tools)                                               |                           |
 | [Public health hacilities in sub-Saharan Africa](https://open.africa/dataset/health-facilities-in-africa) | [@maina_spatial_2019]     |
 |                                                                                                           |                           |

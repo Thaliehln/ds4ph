@@ -40,7 +40,25 @@ We will be using data and examples from a real consultation data which occurred 
 
 DISCLAIMER: The Ifakara Health Institute has approved the use of this data for training purposes. Please note, that some data has been adapted in order to best achieve training objectives. No personally indentifiable information have been kept in this dataset.
 
-Information about the consultations of **10,308 children \[1 day - 59 months\]** from **18 facilities** (dispensaries and health centres) in **Kaliua** District, **Sengerema** District and **Tanga** District, Tanzania. Data were collected using *ODK* (ODK Collect, ODK Central) between **start date** and **end date**. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project. Data are stored in **dataset1.dta**.
+Information about the consultations of **10,308 children \[1 day - 59 months\]** from **18 facilities** (dispensaries and health centres) in **Kaliua** District, **Sengerema** District and **Tanga** District, Tanzania.
+
+::: {#fig-study-area layout="[[1,1], [1, 1]]"}
+
+![](images/tanzania_map-01.png){#fig-tanzania-study-regions}
+
+![](images/mwanza_map.png){#fig-mwanza-study-district}
+
+![](images/kaliua_map.png){#fig-kaliua-study-district}
+
+![](images/tanga_map.png){#fig-tanga-study-district}
+
+Study area
+
+:::
+
+Data were collected using *ODK* (ODK Collect, ODK Central) between **start date** and **end date**. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project.
+
+Data are stored in **dataset1.dta**.
 
 ### Data collection
 
@@ -92,7 +110,7 @@ Refer to @sec-import-data-from-files
 ```{r}
 #| echo: fenced
 library(haven)
-df <- haven::read_dta("./data/dataset10.dta")
+df <- haven::read_dta("./data/dataset1.dta")
 ```
 
 ```{r}
@@ -196,7 +214,7 @@ df %>%
 ::: panel-tabset
 #### :pencil2: Exercise 3
 
-Calculate the following two new variables:
+Add the following two new variables to data frame `df`
 
 +---------------------------+-----------------+
 | Variable                  | Coding          |
@@ -215,8 +233,8 @@ Calculate the following two new variables:
 +---------------------------+-----------------+
 
 ::: callout-tip
--   Stata:
--   R: use the [tbl_summary](https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html) function from the `gtsummary` package
+-   Stata: use the gen command
+-   R: use the mutate and case_when functions from the `dplyr` package
 :::
 
 ```{r}
@@ -358,39 +376,41 @@ df %>%
 -   Malaria treatment
 -   Referral
 
-+-----------------------+-----------------------+-----------------------+
-| Col1                  | Col2                  | Col3                  |
-+=======================+=======================+=======================+
-| MEAS_temperature      | temperature measured  |                       |
-+-----------------------+-----------------------+-----------------------+
-| TEST_malaria_result   | fever                 | 0: negative           |
-|                       |                       |                       |
-|                       |                       | 1: positive           |
-|                       |                       |                       |
-|                       |                       | 2: indeterminate      |
-|                       |                       |                       |
-|                       |                       | 95: unreadable result |
-|                       |                       |                       |
-|                       |                       | 98: not sure          |
-+-----------------------+-----------------------+-----------------------+
-| TEST_malaria_result   | fever                 | 0: negative           |
-|                       |                       |                       |
-|                       |                       | 1: positive           |
-|                       |                       |                       |
-|                       |                       | 2: indeterminate      |
-|                       |                       |                       |
-|                       |                       | 95: unreadable result |
-|                       |                       |                       |
-|                       |                       | 98: not sure          |
-+-----------------------+-----------------------+-----------------------+
-| DX_malaria            | diagnosis of malaria  | 0: no                 |
-|                       |                       |                       |
-|                       |                       | 1: yes                |
-+-----------------------+-----------------------+-----------------------+
-| RX_antimalarials      | malaria treatment     | 0: no                 |
-|                       |                       |                       |
-|                       |                       | 1: yes                |
-+-----------------------+-----------------------+-----------------------+
++-----------------------+-----------------------+
+| Variable              | Coding                |
++=======================+=======================+
+| MEAS_temperature      |                       |
++-----------------------+-----------------------+
+|                       |                       |
++-----------------------+-----------------------+
+| TEST_malaria_result   | 0: negative           |
+|                       |                       |
+|                       | 1: positive           |
+|                       |                       |
+|                       | 2: indeterminate      |
+|                       |                       |
+|                       | 95: unreadable result |
+|                       |                       |
+|                       | 98: not sure          |
++-----------------------+-----------------------+
+| TEST_malaria_result   | 0: negative           |
+|                       |                       |
+|                       | 1: positive           |
+|                       |                       |
+|                       | 2: indeterminate      |
+|                       |                       |
+|                       | 95: unreadable result |
+|                       |                       |
+|                       | 98: not sure          |
++-----------------------+-----------------------+
+| DX_malaria            | 0: no                 |
+|                       |                       |
+|                       | 1: yes                |
++-----------------------+-----------------------+
+| RX_antimalarials      | 0: no                 |
+|                       |                       |
+|                       | 1: yes                |
++-----------------------+-----------------------+
 
 ### Structure of the data
 
@@ -476,7 +496,16 @@ Plot the number of consultations by facility in bars, grouped by district.
 
 ### Stata
 
-To complete
+```{r}
+#| echo: fenced
+stata_cmd <- '
+graph bar (count) child_ID, over(CONSULT_facility_ID, axis(off)) over(CONSULT_district, relabel(1 "Kaliua" 2 "Sengerema" 3 "Tanga")) nofill ytitle(No. consultations) title(No. consultations by facility)
+graph export ./images/day02_stata_plot.png, replace
+'
+RStata::stata(stata_cmd,
+              data.in = df)
+```
+![](images/day02_stata_plot.png)
 
 ### R
 
@@ -494,6 +523,7 @@ df %>%
   ggplot2::geom_bar(position = position_dodge2(preserve = "single"),
                     stat="identity") +
   ggplot2::labs(x = "", y = "No. consultations") +
+  ggplot2::scale_x_discrete(labels = names(attr(df$CONSULT_district, "labels"))) +
   ggthemes::theme_hc()
 ```
 :::

@@ -1,23 +1,26 @@
 library(haven)
+library(openxlsx)
 
-df <- haven::read_dta("dataset10.dta")
+df1 <- openxlsx::read.xlsx("./data/dataset1.xlsx")
 
-for (colname in names(df)) {
-  if (is.character(df[[colname]])) {
-    df[[colname]] <- as.factor(df[[colname]])
+for (colname in names(df1)) {
+  if (is.character(df1[[colname]])) {
+    df1[[colname]] <- as.factor(df1[[colname]])
   }
 }
 
-df$CONSULT_district <- as.factor(df$CONSULT_district)
+haven::write_dta(df1, "./data/dataset1.dta")
 
-haven::write_dta(df, "dataset10.dta")
+df11 <- haven::read_dta("./data/dataset1.dta")
+write.csv(df11,"./data/dataset1.csv", row.names = FALSE)
 
-df <- mtcars
+df2 <- openxlsx::read.xlsx("./data/dataset2.xlsx")
+write.csv(df2,"./data/dataset2.csv", row.names = FALSE)
 
-haven::write_dta(df, "dataset1.dta")
-df <- haven::read_dta("dataset1.dta")
+for (colname in names(df2)) {
+  if (is.character(df2[[colname]])) {
+    df2[[colname]] <- as.factor(df2[[colname]])
+  }
+}
 
-write.csv(df,"dataset1.csv", row.names = FALSE)
-
-library(xlsx)
-write.xlsx(df,"dataset1.xlsx", row.names = FALSE)
+haven::write_dta(df2, "./data/dataset2.dta")

@@ -391,7 +391,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 data-number="11.3.1" class="anchored" data-anchor-id="dataset-description"><span class="header-section-number">11.3.1</span> Dataset description</h3>
 <p>We will be using data and examples from a real consultation data which occurred in Tanzania between <strong>start date</strong> and <strong>end date</strong>.</p>
 <p>DISCLAIMER: The Ifakara Health Institute has approved the use of this data for training purposes. Please note, that some data has been adapted in order to best achieve training objectives. No personally indentifiable information have been kept in this dataset.</p>
-<p>Information about the consultations of <strong>10,308 children [1 day - 59 months]</strong> from <strong>18 facilities</strong> (dispensaries and health centres) in <strong>Kaliua</strong> District, <strong>Sengerema</strong> District and <strong>Tanga</strong> District, Tanzania. Data were collected using <em>ODK</em> (ODK Collect, ODK Central) between <strong>start date</strong> and <strong>end date</strong>. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project. Data are stored in <strong>dataset1.dta</strong>.</p>
+<p>Information about the consultations of <strong>10,308 children [1 day - 59 months]</strong> from <strong>18 facilities</strong> (dispensaries and health centres) in <strong>Kaliua</strong> District, <strong>Sengerema</strong> District and <strong>Tanga</strong> District, Tanzania.</p>
+<div id="fig-study-area" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-tanzania-study-regions" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/tanzania_map-01.png" class="img-fluid figure-img" data-ref-parent="fig-study-area"></p>
+<p></p><figcaption class="figure-caption">(a)</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-mwanza-study-district" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/mwanza_map.png" class="img-fluid figure-img" data-ref-parent="fig-study-area"></p>
+<p></p><figcaption class="figure-caption">(b)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-kaliua-study-district" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/kaliua_map.png" class="img-fluid figure-img" data-ref-parent="fig-study-area"></p>
+<p></p><figcaption class="figure-caption">(c)</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-tanga-study-district" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/tanga_map.png" class="img-fluid figure-img" data-ref-parent="fig-study-area"></p>
+<p></p><figcaption class="figure-caption">(d)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;11.1: Study area</figcaption><p></p>
+</figure>
+</div>
+<p>Data were collected using <em>ODK</em> (ODK Collect, ODK Central) between <strong>start date</strong> and <strong>end date</strong>. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project.</p>
+<p>Data are stored in <strong>dataset1.dta</strong>.</p>
 </section>
 <section id="data-collection" class="level3" data-number="11.3.2">
 <h3 data-number="11.3.2" class="anchored" data-anchor-id="data-collection"><span class="header-section-number">11.3.2</span> Data collection</h3>
@@ -463,7 +506,7 @@ Tip
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_dta</span>(<span class="st">"./data/dataset10.dta"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_dta</span>(<span class="st">"./data/dataset1.dta"</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-df-print="kable">
@@ -478,11 +521,11 @@ Tip
 <pre><code># A tibble: 5 x 3
   child_ID CONSULT_district SDC_age_in_month
      &lt;dbl&gt;        &lt;dbl+lbl&gt;            &lt;dbl&gt;
-1        1            1 [1]               10
-2        2            1 [1]                6
-3        3            1 [1]                6
-4        4            1 [1]               11
-5        5            1 [1]               21</code></pre>
+1        1       1 [Kaliua]               10
+2        2       1 [Kaliua]                6
+3        3       1 [Kaliua]                6
+4        4       1 [Kaliua]               11
+5        5       1 [Kaliua]               21</code></pre>
 </div>
 </div>
 </div>
@@ -1022,7 +1065,7 @@ CONSULT_facility_type                                     CONSULT_facility_type
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><span class="emoji" data-emoji="pencil2">✏️</span> Exercise 3</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Stata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false">Python</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<p>Calculate the following two new variables:</p>
+<p>Add the following two new variables to data frame <code>df</code></p>
 <table class="table">
 <colgroup>
 <col style="width: 38%">
@@ -1064,8 +1107,8 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Stata:</li>
-<li>R: use the <a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html">tbl_summary</a> function from the <code>gtsummary</code> package</li>
+<li>Stata: use the gen command</li>
+<li>R: use the mutate and case_when functions from the <code>dplyr</code> package</li>
 </ul>
 </div>
 </div>
@@ -1307,12 +1350,12 @@ CONSULT_fac |
 <span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="dkclajspvs" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ebnelyeudr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#dkclajspvs) .gt_table {
+:where(#ebnelyeudr) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1337,7 +1380,7 @@ CONSULT_fac |
   border-left-color: #D3D3D3;
 }
 
-:where(#dkclajspvs) .gt_heading {
+:where(#ebnelyeudr) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1349,7 +1392,7 @@ CONSULT_fac |
   border-right-color: #D3D3D3;
 }
 
-:where(#dkclajspvs) .gt_title {
+:where(#ebnelyeudr) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1361,7 +1404,7 @@ CONSULT_fac |
   border-bottom-width: 0;
 }
 
-:where(#dkclajspvs) .gt_subtitle {
+:where(#ebnelyeudr) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1373,13 +1416,13 @@ CONSULT_fac |
   border-top-width: 0;
 }
 
-:where(#dkclajspvs) .gt_bottom_border {
+:where(#ebnelyeudr) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#dkclajspvs) .gt_col_headings {
+:where(#ebnelyeudr) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1394,7 +1437,7 @@ CONSULT_fac |
   border-right-color: #D3D3D3;
 }
 
-:where(#dkclajspvs) .gt_col_heading {
+:where(#ebnelyeudr) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1414,7 +1457,7 @@ CONSULT_fac |
   overflow-x: hidden;
 }
 
-:where(#dkclajspvs) .gt_column_spanner_outer {
+:where(#ebnelyeudr) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1426,15 +1469,15 @@ CONSULT_fac |
   padding-right: 4px;
 }
 
-:where(#dkclajspvs) .gt_column_spanner_outer:first-child {
+:where(#ebnelyeudr) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#dkclajspvs) .gt_column_spanner_outer:last-child {
+:where(#ebnelyeudr) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#dkclajspvs) .gt_column_spanner {
+:where(#ebnelyeudr) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1446,7 +1489,7 @@ CONSULT_fac |
   width: 100%;
 }
 
-:where(#dkclajspvs) .gt_group_heading {
+:where(#ebnelyeudr) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1471,7 +1514,7 @@ CONSULT_fac |
   vertical-align: middle;
 }
 
-:where(#dkclajspvs) .gt_empty_group_heading {
+:where(#ebnelyeudr) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1486,15 +1529,15 @@ CONSULT_fac |
   vertical-align: middle;
 }
 
-:where(#dkclajspvs) .gt_from_md > :first-child {
+:where(#ebnelyeudr) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#dkclajspvs) .gt_from_md > :last-child {
+:where(#ebnelyeudr) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#dkclajspvs) .gt_row {
+:where(#ebnelyeudr) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1513,7 +1556,7 @@ CONSULT_fac |
   overflow-x: hidden;
 }
 
-:where(#dkclajspvs) .gt_stub {
+:where(#ebnelyeudr) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1526,7 +1569,7 @@ CONSULT_fac |
   padding-right: 5px;
 }
 
-:where(#dkclajspvs) .gt_stub_row_group {
+:where(#ebnelyeudr) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1540,11 +1583,11 @@ CONSULT_fac |
   vertical-align: top;
 }
 
-:where(#dkclajspvs) .gt_row_group_first td {
+:where(#ebnelyeudr) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#dkclajspvs) .gt_summary_row {
+:where(#ebnelyeudr) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1554,16 +1597,16 @@ CONSULT_fac |
   padding-right: 5px;
 }
 
-:where(#dkclajspvs) .gt_first_summary_row {
+:where(#ebnelyeudr) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#dkclajspvs) .gt_first_summary_row.thick {
+:where(#ebnelyeudr) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#dkclajspvs) .gt_last_summary_row {
+:where(#ebnelyeudr) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1573,7 +1616,7 @@ CONSULT_fac |
   border-bottom-color: #D3D3D3;
 }
 
-:where(#dkclajspvs) .gt_grand_summary_row {
+:where(#ebnelyeudr) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1583,7 +1626,7 @@ CONSULT_fac |
   padding-right: 5px;
 }
 
-:where(#dkclajspvs) .gt_first_grand_summary_row {
+:where(#ebnelyeudr) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1593,11 +1636,11 @@ CONSULT_fac |
   border-top-color: #D3D3D3;
 }
 
-:where(#dkclajspvs) .gt_striped {
+:where(#ebnelyeudr) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#dkclajspvs) .gt_table_body {
+:where(#ebnelyeudr) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1606,7 +1649,7 @@ CONSULT_fac |
   border-bottom-color: #D3D3D3;
 }
 
-:where(#dkclajspvs) .gt_footnotes {
+:where(#ebnelyeudr) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1620,7 +1663,7 @@ CONSULT_fac |
   border-right-color: #D3D3D3;
 }
 
-:where(#dkclajspvs) .gt_footnote {
+:where(#ebnelyeudr) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1629,7 +1672,7 @@ CONSULT_fac |
   padding-right: 5px;
 }
 
-:where(#dkclajspvs) .gt_sourcenotes {
+:where(#ebnelyeudr) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1643,7 +1686,7 @@ CONSULT_fac |
   border-right-color: #D3D3D3;
 }
 
-:where(#dkclajspvs) .gt_sourcenote {
+:where(#ebnelyeudr) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1651,36 +1694,36 @@ CONSULT_fac |
   padding-right: 5px;
 }
 
-:where(#dkclajspvs) .gt_left {
+:where(#ebnelyeudr) .gt_left {
   text-align: left;
 }
 
-:where(#dkclajspvs) .gt_center {
+:where(#ebnelyeudr) .gt_center {
   text-align: center;
 }
 
-:where(#dkclajspvs) .gt_right {
+:where(#ebnelyeudr) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#dkclajspvs) .gt_font_normal {
+:where(#ebnelyeudr) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#dkclajspvs) .gt_font_bold {
+:where(#ebnelyeudr) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#dkclajspvs) .gt_font_italic {
+:where(#ebnelyeudr) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#dkclajspvs) .gt_super {
+:where(#ebnelyeudr) .gt_super {
   font-size: 65%;
 }
 
-:where(#dkclajspvs) .gt_two_val_uncert {
+:where(#ebnelyeudr) .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -1689,31 +1732,31 @@ CONSULT_fac |
   margin-left: 0.1em;
 }
 
-:where(#dkclajspvs) .gt_footnote_marks {
+:where(#ebnelyeudr) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#dkclajspvs) .gt_asterisk {
+:where(#ebnelyeudr) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#dkclajspvs) .gt_slash_mark {
+:where(#ebnelyeudr) .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-:where(#dkclajspvs) .gt_fraction_numerator {
+:where(#ebnelyeudr) .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-:where(#dkclajspvs) .gt_fraction_denominator {
+:where(#ebnelyeudr) .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -1872,35 +1915,26 @@ CONSULT_fac |
 </ul>
 <table class="table">
 <colgroup>
-<col style="width: 32%">
-<col style="width: 32%">
-<col style="width: 32%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Col1</th>
-<th>Col2</th>
-<th>Col3</th>
+<th>Variable</th>
+<th>Coding</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>MEAS_temperature</td>
-<td>temperature measured</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>TEST_malaria_result</td>
-<td>fever</td>
-<td><p>0: negative</p>
-<p>1: positive</p>
-<p>2: indeterminate</p>
-<p>95: unreadable result</p>
-<p>98: not sure</p></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td>TEST_malaria_result</td>
-<td>fever</td>
 <td><p>0: negative</p>
 <p>1: positive</p>
 <p>2: indeterminate</p>
@@ -1908,14 +1942,20 @@ CONSULT_fac |
 <p>98: not sure</p></td>
 </tr>
 <tr class="even">
+<td>TEST_malaria_result</td>
+<td><p>0: negative</p>
+<p>1: positive</p>
+<p>2: indeterminate</p>
+<p>95: unreadable result</p>
+<p>98: not sure</p></td>
+</tr>
+<tr class="odd">
 <td>DX_malaria</td>
-<td>diagnosis of malaria</td>
 <td><p>0: no</p>
 <p>1: yes</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>RX_antimalarials</td>
-<td>malaria treatment</td>
 <td><p>0: no</p>
 <p>1: yes</p></td>
 </tr>
@@ -2110,14 +2150,14 @@ SDC_young_infant_age_ctg                               SDC_young_infant_age_ctg
 
                   type:  numeric (double)
 
-                 range:  [1,4]                        units:  1
-         unique values:  4                        missing .:  0/10,308
+                 range:  [1,3]                        units:  1
+         unique values:  3                        missing .:  9,711/10,308
 
             tabulation:  Freq.  Value
-                         9,711  1
-                            35  2
-                           332  3
-                           230  4
+                            35  1
+                           332  2
+                           230  3
+                         9,711  .
 
 -------------------------------------------------------------------------------
 SDC_main_caregiver                                           SDC_main_caregiver
@@ -2658,14 +2698,14 @@ DX_free_text                                                       DX_free_text
 
                   type:  numeric (double)
 
-                 range:  [1,960]                      units:  1
-         unique values:  960                      missing .:  0/10,308
+                 range:  [1,959]                      units:  1
+         unique values:  959                      missing .:  6,330/10,308
 
-                  mean:   204.729
-              std. dev:   312.778
+                  mean:   527.914
+              std. dev:   286.978
 
            percentiles:        10%       25%       50%       75%       90%
-                                 1         1         1       380       785
+                               106       266       636       804       864
 
 -------------------------------------------------------------------------------
 RX_preconsult_antibiotics                             RX_preconsult_antibiotics
@@ -2738,14 +2778,14 @@ RX_preconsult_free_text                                 RX_preconsult_free_text
 
                   type:  numeric (double)
 
-                 range:  [1,199]                      units:  1
-         unique values:  199                      missing .:  0/10,308
+                 range:  [1,198]                      units:  1
+         unique values:  198                      missing .:  9,982/10,308
 
-                  mean:    4.0031
-              std. dev:   19.6324
+                  mean:   94.9571
+              std. dev:   58.8636
 
            percentiles:        10%       25%       50%       75%       90%
-                                 1         1         1         1         1
+                                20        32      97.5       149       170
 
 -------------------------------------------------------------------------------
 RX_antimalarials                                               RX_antimalarials
@@ -2898,14 +2938,14 @@ RX_free_text                                                       RX_free_text
 
                   type:  numeric (double)
 
-                 range:  [1,730]                      units:  1
-         unique values:  730                      missing .:  0/10,308
+                 range:  [1,729]                      units:  1
+         unique values:  729                      missing .:  9,279/10,308
 
-                  mean:   37.0477
-              std. dev:    126.18
+                  mean:   361.108
+              std. dev:    205.27
 
            percentiles:        10%       25%       50%       75%       90%
-                                 1         1         1         1         1
+                                81       188       359       534       652
 
 -------------------------------------------------------------------------------
 MGMT_referral_src_caregiver                         MGMT_referral_src_caregiver
@@ -3153,12 +3193,12 @@ Tip
 <span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="qpdnjfpsop" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="nuvuvctwnx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#qpdnjfpsop) .gt_table {
+:where(#nuvuvctwnx) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -3183,7 +3223,7 @@ Tip
   border-left-color: #D3D3D3;
 }
 
-:where(#qpdnjfpsop) .gt_heading {
+:where(#nuvuvctwnx) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3195,7 +3235,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#qpdnjfpsop) .gt_title {
+:where(#nuvuvctwnx) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3207,7 +3247,7 @@ Tip
   border-bottom-width: 0;
 }
 
-:where(#qpdnjfpsop) .gt_subtitle {
+:where(#nuvuvctwnx) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3219,13 +3259,13 @@ Tip
   border-top-width: 0;
 }
 
-:where(#qpdnjfpsop) .gt_bottom_border {
+:where(#nuvuvctwnx) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#qpdnjfpsop) .gt_col_headings {
+:where(#nuvuvctwnx) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3240,7 +3280,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#qpdnjfpsop) .gt_col_heading {
+:where(#nuvuvctwnx) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3260,7 +3300,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#qpdnjfpsop) .gt_column_spanner_outer {
+:where(#nuvuvctwnx) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3272,15 +3312,15 @@ Tip
   padding-right: 4px;
 }
 
-:where(#qpdnjfpsop) .gt_column_spanner_outer:first-child {
+:where(#nuvuvctwnx) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#qpdnjfpsop) .gt_column_spanner_outer:last-child {
+:where(#nuvuvctwnx) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#qpdnjfpsop) .gt_column_spanner {
+:where(#nuvuvctwnx) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3292,7 +3332,7 @@ Tip
   width: 100%;
 }
 
-:where(#qpdnjfpsop) .gt_group_heading {
+:where(#nuvuvctwnx) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3317,7 +3357,7 @@ Tip
   vertical-align: middle;
 }
 
-:where(#qpdnjfpsop) .gt_empty_group_heading {
+:where(#nuvuvctwnx) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3332,15 +3372,15 @@ Tip
   vertical-align: middle;
 }
 
-:where(#qpdnjfpsop) .gt_from_md > :first-child {
+:where(#nuvuvctwnx) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#qpdnjfpsop) .gt_from_md > :last-child {
+:where(#nuvuvctwnx) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#qpdnjfpsop) .gt_row {
+:where(#nuvuvctwnx) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3359,7 +3399,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#qpdnjfpsop) .gt_stub {
+:where(#nuvuvctwnx) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3372,7 +3412,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#qpdnjfpsop) .gt_stub_row_group {
+:where(#nuvuvctwnx) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3386,11 +3426,11 @@ Tip
   vertical-align: top;
 }
 
-:where(#qpdnjfpsop) .gt_row_group_first td {
+:where(#nuvuvctwnx) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#qpdnjfpsop) .gt_summary_row {
+:where(#nuvuvctwnx) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3400,16 +3440,16 @@ Tip
   padding-right: 5px;
 }
 
-:where(#qpdnjfpsop) .gt_first_summary_row {
+:where(#nuvuvctwnx) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#qpdnjfpsop) .gt_first_summary_row.thick {
+:where(#nuvuvctwnx) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#qpdnjfpsop) .gt_last_summary_row {
+:where(#nuvuvctwnx) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3419,7 +3459,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#qpdnjfpsop) .gt_grand_summary_row {
+:where(#nuvuvctwnx) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3429,7 +3469,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#qpdnjfpsop) .gt_first_grand_summary_row {
+:where(#nuvuvctwnx) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3439,11 +3479,11 @@ Tip
   border-top-color: #D3D3D3;
 }
 
-:where(#qpdnjfpsop) .gt_striped {
+:where(#nuvuvctwnx) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#qpdnjfpsop) .gt_table_body {
+:where(#nuvuvctwnx) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3452,7 +3492,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#qpdnjfpsop) .gt_footnotes {
+:where(#nuvuvctwnx) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3466,7 +3506,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#qpdnjfpsop) .gt_footnote {
+:where(#nuvuvctwnx) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -3475,7 +3515,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#qpdnjfpsop) .gt_sourcenotes {
+:where(#nuvuvctwnx) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3489,7 +3529,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#qpdnjfpsop) .gt_sourcenote {
+:where(#nuvuvctwnx) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3497,36 +3537,36 @@ Tip
   padding-right: 5px;
 }
 
-:where(#qpdnjfpsop) .gt_left {
+:where(#nuvuvctwnx) .gt_left {
   text-align: left;
 }
 
-:where(#qpdnjfpsop) .gt_center {
+:where(#nuvuvctwnx) .gt_center {
   text-align: center;
 }
 
-:where(#qpdnjfpsop) .gt_right {
+:where(#nuvuvctwnx) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#qpdnjfpsop) .gt_font_normal {
+:where(#nuvuvctwnx) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#qpdnjfpsop) .gt_font_bold {
+:where(#nuvuvctwnx) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#qpdnjfpsop) .gt_font_italic {
+:where(#nuvuvctwnx) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#qpdnjfpsop) .gt_super {
+:where(#nuvuvctwnx) .gt_super {
   font-size: 65%;
 }
 
-:where(#qpdnjfpsop) .gt_two_val_uncert {
+:where(#nuvuvctwnx) .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -3535,31 +3575,31 @@ Tip
   margin-left: 0.1em;
 }
 
-:where(#qpdnjfpsop) .gt_footnote_marks {
+:where(#nuvuvctwnx) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#qpdnjfpsop) .gt_asterisk {
+:where(#nuvuvctwnx) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#qpdnjfpsop) .gt_slash_mark {
+:where(#nuvuvctwnx) .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-:where(#qpdnjfpsop) .gt_fraction_numerator {
+:where(#nuvuvctwnx) .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-:where(#qpdnjfpsop) .gt_fraction_denominator {
+:where(#nuvuvctwnx) .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -3637,27 +3677,46 @@ Tip
 </div>
 </div>
 <div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
-<p>To complete</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>stata_cmd <span class="ot">&lt;-</span> <span class="st">'</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="st">graph bar (count) child_ID, over(CONSULT_facility_ID, axis(off)) over(CONSULT_district, relabel(1 "Kaliua" 2 "Sengerema" 3 "Tanga")) nofill ytitle(No. consultations) title(No. consultations by facility)</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="st">graph export ./images/day02_stata_plot.png, replace</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="st">'</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>RStata<span class="sc">::</span><span class="fu">stata</span>(stata_cmd,</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">data.in =</span> df)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>. 
+. graph bar (count) child_ID, over(CONSULT_facility_ID, axis(off)) over(CONSULT
+&gt; _district, relabel(1 "Kaliua" 2 "Sengerema" 3 "Tanga")) nofill ytitle(No. con
+&gt; sultations) title(No. consultations by facility)
+. graph export ./images/day02_stata_plot.png, replace
+(file ./images/day02_stata_plot.png written in PNG format)</code></pre>
+</div>
+</div>
+<p><img src="images/day02_stata_plot.png" class="img-fluid"></p>
 </div>
 <div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(CONSULT_district,</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>                  CONSULT_facility_ID) <span class="sc">%&gt;%</span></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(CONSULT_district),</span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y =</span> n)) <span class="sc">+</span> </span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">preserve =</span> <span class="st">"single"</span>),</span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>                    <span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"No. consultations"</span>) <span class="sc">+</span></span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_hc</span>()</span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(CONSULT_district,</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>                  CONSULT_facility_ID) <span class="sc">%&gt;%</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(CONSULT_district),</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y =</span> n)) <span class="sc">+</span> </span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">preserve =</span> <span class="st">"single"</span>),</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>                    <span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"No. consultations"</span>) <span class="sc">+</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">names</span>(<span class="fu">attr</span>(df<span class="sc">$</span>CONSULT_district, <span class="st">"labels"</span>))) <span class="sc">+</span></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_hc</span>()</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="ds4ph_day2_session01_practical_session_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+<p><img src="ds4ph_day2_session01_practical_session_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
