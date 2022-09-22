@@ -190,12 +190,12 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ds4ph_day2_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 1</span></a>
+  <a href="./malaria_case_study_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 2</span></a>
+  <a href="./malaria_case_study_02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 2</span></a>
   </div>
 </li>
       </ul>
@@ -272,7 +272,7 @@ div.csl-indent {
   <li><a href="#reproducible-quantitative-research" id="toc-reproducible-quantitative-research" class="nav-link" data-scroll-target="#reproducible-quantitative-research"><span class="toc-section-number">2.2</span>  Reproducible quantitative research</a>
   <ul class="collapse">
   <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions"><span class="toc-section-number">2.2.1</span>  Definitions</a></li>
-  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation"><span class="toc-section-number">2.2.2</span>  Documentation</a></li>
+  <li><a href="#documentation-for-reproducible-analyses" id="toc-documentation-for-reproducible-analyses" class="nav-link" data-scroll-target="#documentation-for-reproducible-analyses"><span class="toc-section-number">2.2.2</span>  Documentation for reproducible analyses</a></li>
   <li><a href="#opportunities-and-challenges-of-reproducible-research" id="toc-opportunities-and-challenges-of-reproducible-research" class="nav-link" data-scroll-target="#opportunities-and-challenges-of-reproducible-research"><span class="toc-section-number">2.2.3</span>  Opportunities and challenges of reproducible research</a></li>
   </ul></li>
   <li><a href="#software-tools-across-the-research-data-lifecycle" id="toc-software-tools-across-the-research-data-lifecycle" class="nav-link" data-scroll-target="#software-tools-across-the-research-data-lifecycle"><span class="toc-section-number">2.3</span>  Software tools across the research data lifecycle</a></li>
@@ -335,7 +335,7 @@ Note
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">2.1.2</span> Learning objectives</h3>
 <ul>
 <li>What is meant by <em>reproducible quantitative research</em> and why does it matters?</li>
-<li>what should be documented for ensuring the reproducibility of quantitative analyses?</li>
+<li>What should be documented for ensuring the reproducibility of quantitative analyses?</li>
 <li>What software tools are available to support reproducible quantitative research?</li>
 </ul>
 </section>
@@ -344,7 +344,7 @@ Note
 <h2 data-number="2.2" class="anchored" data-anchor-id="reproducible-quantitative-research"><span class="header-section-number">2.2</span> Reproducible quantitative research</h2>
 <section id="definitions" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="definitions"><span class="header-section-number">2.2.1</span> Definitions</h3>
-<p>A quantitative analysis is said to be (<em>computationally</em>) <strong>reproducible</strong> when the <strong>same analysis steps</strong> performed on the <strong>same dataset</strong> consistently produce the <strong>same quantitative results</strong> <span class="citation" data-cites="the_turing_way_community_2022_6909298">(<a href="#ref-the_turing_way_community_2022_6909298" role="doc-biblioref">1</a>)</span>. Given the deterministic nature of computer programmes, a quantitative analysis must be reproducible to be <strong>credible</strong>.</p>
+<p>A quantitative analysis is said to be (<em>computationally</em>) <strong>reproducible</strong> when the <strong>same analysis steps</strong> performed on the <strong>same dataset</strong> consistently produce the <strong>same quantitative results</strong> <span class="citation" data-cites="the_turing_way_community_2022_6909298">(<a href="references.html#ref-the_turing_way_community_2022_6909298" role="doc-biblioref">1</a>)</span>. Given the deterministic nature of computer programmes, a quantitative analysis must be reproducible to be <strong>credible</strong>.</p>
 <div id="fig-reproducibility" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-97E0048A.png" class="img-fluid figure-img" width="400"></p>
@@ -356,7 +356,7 @@ Note
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Replicability</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Robustness</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Generalisability</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>The <strong>same analysis</strong> steps are performed on <strong>different datasets</strong> and produce <strong>qualitatively similar answers</strong> <span class="citation" data-cites="the_turing_way_community_2022_6909298">(<a href="#ref-the_turing_way_community_2022_6909298" role="doc-biblioref">1</a>)</span>.</p>
+<p>The <strong>same analysis</strong> steps are performed on <strong>different datasets</strong> and produce <strong>qualitatively similar answers</strong> <span class="citation" data-cites="the_turing_way_community_2022_6909298">(<a href="references.html#ref-the_turing_way_community_2022_6909298" role="doc-biblioref">1</a>)</span>.</p>
 <div id="fig-replicability" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-5D367441.png" class="img-fluid figure-img" width="400"></p>
@@ -365,7 +365,7 @@ Note
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><strong>Different analysis</strong> steps are performed on the <strong>same dataset</strong> to answer the <strong>same research question</strong> and produce <strong>qualitatively similar or identical answers</strong> <span class="citation" data-cites="the_turing_way_community_2022_6909298">(<a href="#ref-the_turing_way_community_2022_6909298" role="doc-biblioref">1</a>)</span>.</p>
+<p><strong>Different analysis</strong> steps are performed on the <strong>same dataset</strong> to answer the <strong>same research question</strong> and produce <strong>qualitatively similar or identical answers</strong> <span class="citation" data-cites="the_turing_way_community_2022_6909298">(<a href="references.html#ref-the_turing_way_community_2022_6909298" role="doc-biblioref">1</a>)</span>.</p>
 <div id="fig-robustness" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-1E28AEDC.png" class="img-fluid figure-img" width="400"></p>
@@ -374,7 +374,7 @@ Note
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p><strong>Different analysis</strong> steps are performed on the <strong>different datasets</strong> to know how well the work applies to all the different aspects of the research question and produce <strong>generalisable answers</strong> <span class="citation" data-cites="the_turing_way_community_2022_6909298">(<a href="#ref-the_turing_way_community_2022_6909298" role="doc-biblioref">1</a>)</span>.</p>
+<p><strong>Different analysis</strong> steps are performed on the <strong>different datasets</strong> to know how well the work applies to all the different aspects of the research question and produce <strong>generalisable answers</strong> <span class="citation" data-cites="the_turing_way_community_2022_6909298">(<a href="references.html#ref-the_turing_way_community_2022_6909298" role="doc-biblioref">1</a>)</span>.</p>
 <div id="fig-generalisability" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-222EF473.png" class="img-fluid figure-img" width="400"></p>
@@ -385,9 +385,9 @@ Note
 </div>
 </div>
 </section>
-<section id="documentation" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="documentation"><span class="header-section-number">2.2.2</span> Documentation</h3>
-<p>To guarantee that any other researcher can reproduce your analysis, you would need to document and share the full <strong>computational environment</strong>, <strong>tools</strong>, <strong>data</strong> and <strong>code</strong> you used to generate your results.</p>
+<section id="documentation-for-reproducible-analyses" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="documentation-for-reproducible-analyses"><span class="header-section-number">2.2.2</span> Documentation for reproducible analyses</h3>
+<p>To guarantee that any other researcher can reproduce your analysis, you would need to document and share the full <strong>computational environment</strong>, <strong>tools</strong>, <strong>data</strong> and <strong>code</strong> that were used to generate your results.</p>
 <div id="fig-documentation-reproducible-analysis" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-E04E255A.png" class="img-fluid figure-img"></p>
@@ -398,12 +398,12 @@ Note
 <section id="opportunities-and-challenges-of-reproducible-research" class="level3" data-number="2.2.3">
 <h3 data-number="2.2.3" class="anchored" data-anchor-id="opportunities-and-challenges-of-reproducible-research"><span class="header-section-number">2.2.3</span> Opportunities and challenges of reproducible research</h3>
 <div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><span class="emoji" data-emoji="speech_balloon">💬</span> Discussion</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><span class="emoji" data-emoji="heavy_plus_sign">➕</span> Opportunities</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false"><span class="emoji" data-emoji="heavy_minus_sign">➖</span> Barriers and challenges</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><span class="emoji" data-emoji="speech_balloon">💬</span> Discussion</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><span class="emoji" data-emoji="heavy_plus_sign">➕</span> Opportunities</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false"><span class="emoji" data-emoji="heavy_minus_sign">➖</span> Barriers and challenges</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Challenges</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <ol type="1">
 <li>How do you think reproducible quantitative analyses can improve your research?</li>
-<li>What barriers to reproducible research do you see in your daily practice?</li>
+<li>Recent investigations have shown that a significant percentage of scientific studies cannot be reproduced, thus contributing to growing mistrust in scientific results <span class="citation" data-cites="baker_scientists_2016 harris_use_2018">(<a href="references.html#ref-baker_scientists_2016" role="doc-biblioref">2</a>,<a href="references.html#ref-harris_use_2018" role="doc-biblioref">3</a>)</span>. What barriers and challenges to reproducible research do you see in your daily practice?</li>
 </ol>
 <p><span class="emoji" data-emoji="clock3">🕒</span> 5 minutes</p>
 </div>
@@ -416,14 +416,16 @@ Note
 </div>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<p>Recent investigations have shown that a significant percentage of scientific studies cannot be reproduced, thus contributing to growing mistrust in scientific results <span class="citation" data-cites="baker_scientists_2016 harris_use_2018">(<a href="#ref-baker_scientists_2016" role="doc-biblioref">2</a>,<a href="#ref-harris_use_2018" role="doc-biblioref">3</a>)</span>.</p>
 <div id="fig-barriers-reproducibility" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-80DE769E.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;2.6: Example of barriers to reproducibility</figcaption><p></p>
 </figure>
 </div>
+</div>
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <p>In practice, reproducibility is challenging, even for trained data scientists equipped with an arsenal of software tools. Quantitative analyses can often not be fully reproduced because of complexities in how software tools are packaged, installed, and executed and because of limitations associated with how scientists document analysis steps.</p>
+<p><img src="images/phd_comics_code_documentation.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -431,7 +433,7 @@ Note
 </section>
 <section id="software-tools-across-the-research-data-lifecycle" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="software-tools-across-the-research-data-lifecycle"><span class="header-section-number">2.3</span> Software tools across the research data lifecycle</h2>
-<p>As illustrated in <a href="#fig-software-tools-across-research-lifecycle">Figure&nbsp;<span class="quarto-unresolved-ref">fig-software-tools-across-research-lifecycle</span></a>, there is now a whole set of free or open source software tools that are available to help you automate your processes and overcome reproducibility challenges across the research data lifecycle.</p>
+<p>As illustrated in <a href="#fig-software-tools-across-research-lifecycle">Figure&nbsp;<span>2.7</span></a>, there is now a whole set of free or open source software tools that are available to help you automate your processes and overcome reproducibility challenges across the research data lifecycle.</p>
 <p>In this workshop, you will be introduced to following software tools that will help make your quantitative data processing, study and analysis more reproducible:</p>
 <ul>
 <li><strong>Git/GitHub</strong> allow you to keep track of various versions of your code, share your code and collaborate with others on code development;</li>
@@ -446,7 +448,7 @@ Note
 </div>
 
 
-<div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="refs" class="references csl-bib-body" role="doc-bibliography" style="display: none">
 <div id="ref-the_turing_way_community_2022_6909298" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">The Turing Way Community. <span class="nocase">The Turing Way: A handbook for reproducible, ethical and collaborative research</span> [Internet]. Zenodo; 2022. Available from: <a href="https://doi.org/10.5281/zenodo.6909298">https://doi.org/10.5281/zenodo.6909298</a></div>
 </div>

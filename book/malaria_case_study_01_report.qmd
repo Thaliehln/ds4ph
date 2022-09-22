@@ -1,0 +1,842 @@
+---
+title: ":orange_book: Malaria case study - Part 1"
+execute:
+  echo: false
+  warning: false
+from: markdown+emoji
+toc: true
+number-sections: true
+---
+
+## Introduction
+
+### Overview
+
+These pages will demonstrate how to use Quarto to data from Tanzania.
+
+### Learning objectives
+
+-   Test
+
+## Malaria research questions
+
+Research questions in an enumerated list
+
+## Getting started
+
+### Access the Quarto template
+
+Download the Quarto template used for this case study (add link) using GitHub.
+
+#### Quarto resources
+
+Review the R Basics page "Reading a RMarkdown Script", or reference these resources: Rmarkdown introduction and Rmarkdown authoring basics.
+
+``` {{r}}
+install.packages("ggplot2")
+install.packages("ggthemes")
+install.packages("networkD3")
+install.packages("apyramid")
+```
+
+```{r}
+library(openxlsx)
+library(dplyr)
+library(skimr)
+library(gtsummary)
+library(finalfit)
+library(ggplot2)
+library(ggthemes)
+library(networkD3) # For alluvial/Sankey diagrams
+library(tidyverse)
+```
+
+### Dataset description
+
+We will be using data and examples from a real consultation data which occurred in Tanzania between **2021-07-29** and **2021-12-17** within the Integrated Management of Childhood Illness (TIMCI) project.
+
+::: callout-important
+Data are made available by the Ifakara Health Institute (IHI) for training purposes only. Please note, that some data has been adapted in order to best achieve training objectives. No personally indentifiable information have been kept in this dataset.
+:::
+
+Information about the consultations of **10,308 children \[1 day - 59 months\]** from **18 facilities** (dispensaries and health centres) in **Kaliua** District, **Sengerema** District and **Tanga** District, Tanzania. 
+
+::: {#fig-study-area layout="[[1,1], [1, 1]]"}
+![](images/tanzania_map-01.png){#fig-tanzania-study-regions}
+
+![](images/mwanza_map.png){#fig-mwanza-study-district}
+
+![](images/kaliua_map.png){#fig-kaliua-study-district}
+
+![](images/tanga_map.png){#fig-tanga-study-district}
+
+Study area
+:::
+
+### Data collection
+
+Data were collected using *ODK* (ODK Collect, ODK Central) between **2021-07-29** and **2021-12-17**. Research assistants recorded the following information from different sources.
+
++-------------------------------------+-------------+--------------------------------------+
+| Information                         | Prefix      | Source                               |
++:====================================+:===========:+:====================================:+
+| Context                             | CTX         | Metadata                             |
++-------------------------------------+-------------+--------------------------------------+
+| Sociodemographics                   | SDC         | Caregiver                            |
++-------------------------------------+-------------+--------------------------------------+
+| Clinical presentation               | CLIN        | Caregiver                            |
++-------------------------------------+-------------+--------------------------------------+
+| Laboratory investigations           | TEST        | Child booklet or facility MTUHA book |
++-------------------------------------+-------------+--------------------------------------+
+| Diagnoses                           | DX          | Child booklet or facility MTUHA book |
++-------------------------------------+-------------+--------------------------------------+
+| Treatments                          | RX          |                                      |
++-------------------------------------+-------------+--------------------------------------+
+| -   before consultation             |             | Caregiver                            |
++-------------------------------------+-------------+--------------------------------------+
+| -   as a result of the consultation |             | Child booklet or facility MTUHA book |
++-------------------------------------+-------------+--------------------------------------+
+| Referral advice                     | MGMT        |                                      |
++-------------------------------------+-------------+--------------------------------------+
+|                                     |             | Caregiver                            |
++-------------------------------------+-------------+--------------------------------------+
+|                                     |             | Child booklet or facility MTUHA book |
++-------------------------------------+-------------+--------------------------------------+
+
+: Types and sources of information
+
+### Data preparation
+
+Data cleaning and data de-identification
+
+Personally identifiable information (PII) were removed.
+
+### Import the data
+
+Data are stored in **dataset1.dta**.
+
+#### :pencil2: Exercise 1 {.unnumbered}
+
+1.  Import the dataset and store it into a dataframe called **df**.
+2.  Select columns **child_ID**, **CTX_month**, **CTX_district**, **SDC_age_in_months** for the first **5** rows in data frame `df`.
+3.  Display in a table with the following characteristics:
+    a.  Align the content of the first column to the left and the content of the other 3 columns to the centre.
+    b.  Add a caption.
+
+```{r}
+#| df-print: kable
+
+# 1. Import the dataset and store it into a dataframe called **df**. 
+df <- openxlsx::read.xlsx("./data/dataset1.xlsx")
+
+df %>%
+  # 2. Select columns **child_ID**, **CTX_month**, **CTX_district**, **SDC_age_in_months** for the first **5** rows in data frame `df`.
+  head(5) %>%
+  dplyr::select(child_ID,
+                CTX_month,
+                CTX_district,
+                SDC_age_in_months) %>%
+  # 3. Display in a table
+  knitr::kable(align = c('l', 'c', 'c', 'c'),
+               caption = "Extract of the database")
+```
+
+## Population characteristics
+
+### Codebook
+
++-----------------------------+---------------+
+| Variable                    | Coding        |
++=============================+===============+
+| SDC_age_in_months            |               |
++-----------------------------+---------------+
+| SDC_sex                     | 1: male\      |
+|                             | 2: female\    |
+|                             | 98: unknown   |
++-----------------------------+---------------+
+| CLIN_fever                  | 0: no\        |
+|                             | 1: yes\       |
+|                             | 98: not sure  |
++-----------------------------+---------------+
+| CLIN_fever_onset            |               |
++-----------------------------+---------------+
+| CLIN_cough                  | 0: no\        |
+|                             | 1: yes\       |
+|                             | 98: not sure  |
++-----------------------------+---------------+
+| CLIN_diarrhoea              | 0: no\        |
+|                             | 1: yes\       |
+|                             | 98: not sure  |
++-----------------------------+---------------+
+| RX_preconsult_antibiotics   |               |
++-----------------------------+---------------+
+| RX_preconsult_antimalarials |               |
++-----------------------------+---------------+
+| CTX_district            | Kaliua\       |
+|                             | Sengerema\    |
+|                             | Tanga         |
++-----------------------------+---------------+
+| CTX_area                | urban\        |
+|                             | rural         |
++-----------------------------+---------------+
+| CTX_facility_type       | dispensary\   |
+|                             | health centre |
++-----------------------------+---------------+
+
+```{r}
+df$SDC_sex = as.factor(df$SDC_sex)
+df$CLIN_fever = as.factor(df$CLIN_fever)
+df$CLIN_cough = as.factor(df$CLIN_cough)
+df$CLIN_diarrhoea = as.factor(df$CLIN_diarrhoea)
+df$RX_preconsult_antibiotics = as.factor(df$RX_preconsult_antibiotics)
+df$RX_preconsult_antimalarials = as.factor(df$RX_preconsult_antimalarials)
+df$CTX_district = as.factor(df$CTX_district)
+df$CTX_area = as.factor(df$CTX_area)
+df$CTX_facility_type = as.factor(df$CTX_facility_type)
+```
+
+### Structure of the data
+
+#### :pencil2: Exercise 2 {.unnumbered}
+
+Add the following two new variables to data frame `df`
+
++---------------------------+---------------+
+| Variable                  | Coding        |
++===========================+===============+
+| SDC_age_category          | \<2 months\   |
+|                           | 2-11 months\  |
+|                           | 12-23 months\ |
+|                           | 24-35 months\ |
+|                           | 36-47 months\ |
+|                           | 48-59 months  |
++---------------------------+---------------+
+| CLIN_fever_onset_category | \<2 days\     |
+|                           | 2-3 days\     |
+|                           | 4-6 days\     |
+|                           | ≥ 7 days      |
++---------------------------+---------------+
+
+::: callout-tip
+-   Stata: use the gen command
+-   R: use the [mutate](https://dplyr.tidyverse.org/reference/mutate.html) and [case_when](https://dplyr.tidyverse.org/reference/case_when.html) functions from the `dplyr` package
+:::
+
+```{r}
+df <- df %>%
+  dplyr::mutate(
+    SDC_age_category = dplyr::case_when(
+      SDC_age_in_months < 2 ~ "<2 months",
+      SDC_age_in_months >= 2 & SDC_age_in_months < 12 ~ "02-11 months",
+      SDC_age_in_months >= 12 & SDC_age_in_months < 24 ~ "12-23 months",
+      SDC_age_in_months >= 24 & SDC_age_in_months < 36 ~ "24-35 months",
+      SDC_age_in_months >= 36 & SDC_age_in_months < 48 ~ "36-47 months",
+      SDC_age_in_months >= 48 & SDC_age_in_months < 60 ~ "48-59 months",
+      TRUE ~ ""
+    )
+  ) %>% 
+  dplyr::mutate(
+    CLIN_fever_onset_category = dplyr::case_when(
+      CLIN_fever_onset < 2 ~ "<2 days",
+      CLIN_fever_onset >= 2 & CLIN_fever_onset < 4 ~ "2-3 days",
+      CLIN_fever_onset >= 4 & CLIN_fever_onset < 7 ~ "4-6 days",
+      CLIN_fever_onset >= 7 ~ ">= 7 days",
+      TRUE ~ ""
+    )
+  )
+```
+
+```{r}
+df$SDC_age_category = as.factor(df$SDC_age_category)
+df$CLIN_fever_onset = as.factor(df$CLIN_fever_onset)
+```
+
+
+#### :pencil2: Exercise 3 {.unnumbered}
+
+Examine the structure of the data, including variable names, labels.
+
+::: callout-tip
+-   Stata: use the [codebook](https://www.stata.com/manuals/dcodebook.pdf) command
+-   R: use the [skim](https://docs.ropensci.org/skimr/reference/skim.html) function from the `skimr` package
+:::
+
+```{r}
+df %>%
+  skim(SDC_age_in_months,
+       SDC_sex,
+       CLIN_fever,
+       CLIN_fever_onset,
+       CLIN_diarrhoea,
+       CLIN_cough,
+       RX_preconsult_antibiotics,
+       RX_preconsult_antimalarials,
+       CTX_district,
+       CTX_area,
+       CTX_facility_type)
+```
+
+#### :pencil2: Exercise 4 {.unnumbered}
+
+Display descriptive statistics for the population characteristics.
+
+::: callout-tip
+-   Stata
+-   R: use the [tbl_summary](https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html) function from the `gtsummary` package
+:::
+
+```{r}
+df %>%
+  dplyr::select(SDC_age_category,
+                SDC_sex,
+                CLIN_fever,
+                CLIN_fever_onset_category,
+                CLIN_diarrhoea,
+                CLIN_cough,
+                RX_preconsult_antibiotics,
+                RX_preconsult_antimalarials,
+                CTX_district,
+                CTX_area,
+                CTX_facility_type) %>%
+  gtsummary::tbl_summary(missing_text = "(Missing)")
+```
+
+### Missing values
+
+Identify missing values in each variable: missing_plot
+
+```{r}
+explanatory = c("CTX_facility_ID", "CTX_district", "CLIN_fever")
+dependent = "DX_malaria"
+
+df %>% 
+  finalfit::missing_pattern(dependent, explanatory)
+```
+
+## Healthcare provider actions
+
+### Codebook
+
+-   Temperature measured
+    -   Fever measured
+-   Fever (temp or history)
+-   Malaria test
+-   Any severe diagnosis
+-   Malaria diagnosis
+-   Malaria treatment
+-   Referral
+
++-----------------------------+------------------------+
+| Variable                    | Coding                 |
++=============================+========================+
+| MEAS_temperature            |                        |
++-----------------------------+------------------------+
+|                             |                        |
++-----------------------------+------------------------+
+| TEST_malaria_result         | 0: negative\           |
+|                             | 1: positive\           |
+|                             | 2: indeterminate\      |
+|                             | 95: unreadable result\ |
+|                             | 98: not sure           |
++-----------------------------+------------------------+
+| DX_malaria                  | 0: no\                 |
+|                             | 1: yes                 |
++-----------------------------+------------------------+
+| RX_antimalarials            | 0: no\                 |
+|                             | 1: yes                 |
++-----------------------------+------------------------+
+| MGMT_referral_src_caregiver |                        |
++-----------------------------+------------------------+
+| MGMT_referral_src_registry  |                        |
++-----------------------------+------------------------+
+
+### Structure of the data
+
+#### :pencil2: Exercise 5
+
+Examine the structure of the data, including variable names, labels.
+
+::: callout-tip
+-   Stata: use the [codebook](https://www.stata.com/manuals/dcodebook.pdf) command
+-   R: use the [skim](https://docs.ropensci.org/skimr/reference/skim.html) function from the `skimr` package
+:::
+
+#### R
+
+```{r}
+
+df$TEST_malaria_done = as.factor(df$TEST_malaria_done)
+
+df %>%
+  skimr::skim(MEAS_temperature,
+              TEST_malaria_done,
+              TEST_malaria_result,
+              DX_malaria,
+              RX_antimalarials,
+              MGMT_referral_src_caregiver,
+              MGMT_referral_src_registry)
+```
+
+#### :pencil2: Exercise 3
+
+Add the following two new variables to data frame `df`
+
+-   MEAS_fever
+-   Fever (temp or history)
+
+::: callout-tip
+-   Stata: use the gen command
+-   R: use the mutate function from the `dplyr` package
+:::
+
+```{r}
+df <- df %>%
+  dplyr::mutate(CALC_temperature_measured = 1 * (!is.na(MEAS_temperature))) %>%
+  dplyr::mutate(CALC_fever = 1 * (MEAS_temperature >= 37.5)) %>%
+  dplyr::mutate(CALC_fever_or_temp = (CLIN_fever == 1) | (CALC_fever == 1))
+```
+
+#### :pencil2: Exercise 6
+
+Display descriptive statistics for the following healthcare provider actions:
+
+::: callout-tip
+-   R: use the [tbl_summary](https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html) function from the `gtsummary` package
+:::
+
+```{r}
+df %>%
+  dplyr::select(CALC_temperature_measured,
+                CALC_fever,
+                CALC_fever_or_temp,
+                TEST_malaria_done,
+                TEST_malaria_result,
+                DX_malaria,
+                RX_antimalarials,
+                MGMT_referral_src_caregiver,
+                MGMT_referral_src_registry) %>%
+  gtsummary::tbl_summary(missing_text = "(Missing)")
+```
+
+## Number of consultations by facility
+
+### :pencil2: Exercise 6
+
+Plot the number of consultations by facility in bars, grouped by district.
+
+::: callout-tip
+-   Stata:
+-   R:
+:::
+
+```{r}
+df %>%
+  dplyr::group_by(CTX_district,
+                  CTX_facility_ID) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = haven::as_factor(CTX_district),
+                      y = n)) + 
+  ggplot2::geom_bar(position = position_dodge2(preserve = "single"),
+                    stat="identity") +
+  ggplot2::labs(x = "", y = "No. consultations") +
+  ggthemes::theme_hc()
+```
+
+### Age pyramid
+
+```{r}
+apyramid::age_pyramid(data = df,
+                      age_group = "SDC_age_category",
+                      split_by = "SDC_sex",
+                      na.rm = FALSE)
+```
+
+## Fever assessment
+
+Comparison of systems effectiveness decay for malaria assessment and treatment in facilities. Steps reflecting adherence to guidelines are shown in blue, non-adherence shown in red, and not applicable in grey.
+
+```{r}
+df <- df %>%
+  dplyr::mutate(CALC_temperature_measured_char = ifelse(!is.na(MEAS_temperature), "Temperature recorded", "Temperature not recorded")) %>%
+  dplyr::mutate(CALC_fever_char = ifelse(MEAS_temperature >= 37.5, "Temperature >= 37.5°C", "Temperature < 37.5°C")) %>%
+  dplyr::mutate(CLIN_fever_char = ifelse(CLIN_fever == 1, "History of fever", "No history of fever")) %>% 
+  dplyr::mutate(TEST_malaria_done_char = ifelse(TEST_malaria_done == 1, "Malaria test recorded", "Malaria test not recorded")) %>% 
+  dplyr::mutate(
+    TEST_malaria_result_char = dplyr::case_when(
+      TEST_malaria_result == 0 ~ "Malaria result negative",
+      TEST_malaria_result == 1 ~ "Malaria result positive",
+      TEST_malaria_result == 2 ~ "Malaria result indeterminate",
+      TEST_malaria_result == 95 ~ "Malaria result unreadable",
+      TEST_malaria_result == 98 ~ "Malaria result unknown",
+      TRUE ~ ""
+    )
+  ) %>%
+  dplyr::mutate(DX_malaria_char = ifelse(DX_malaria == 1, "Malaria diagnosis", "No malaria diagnosis")) %>% 
+  dplyr::mutate(RX_antimalarials_char = ifelse(RX_antimalarials == 1, "Malaria treatment", "No malaria treatment"))
+```
+
+:::{.column-page}
+
+```{r}
+link_CLIN_fever_and_MEAS_temperature <- df %>%
+  select(CLIN_fever_char, CALC_temperature_measured_char) %>%
+  count(CLIN_fever_char, CALC_temperature_measured_char) %>%
+  rename(source = CLIN_fever_char,
+         target = CALC_temperature_measured_char)
+
+fever_measured_links <- df %>%
+  dplyr::filter(CALC_temperature_measured == 1) %>% 
+  select(CALC_temperature_measured_char, CALC_fever_char) %>%
+  count(CALC_temperature_measured_char, CALC_fever_char) %>% 
+  rename(source = CALC_temperature_measured_char,
+         target = CALC_fever_char)
+
+malaria_test_links <- df %>%
+  dplyr::filter(CALC_temperature_measured == 1) %>%
+  select(CALC_fever_char, TEST_malaria_done_char) %>%
+  count(CALC_fever_char, TEST_malaria_done_char) %>%
+  rename(source = CALC_fever_char,
+         target = TEST_malaria_done_char)
+
+malaria_test_links2 <- df %>%
+  dplyr::filter(CALC_temperature_measured == 0) %>%
+  select(CALC_temperature_measured_char, TEST_malaria_done_char) %>%
+  count(CALC_temperature_measured_char, TEST_malaria_done_char) %>%
+  rename(source = CALC_temperature_measured_char,
+         target = TEST_malaria_done_char)
+
+malaria_results_links <- df %>%
+  dplyr::filter(TEST_malaria_done == 1) %>% 
+  select(TEST_malaria_done_char, TEST_malaria_result_char) %>%
+  count(TEST_malaria_done_char, TEST_malaria_result_char) %>%
+  rename(source = TEST_malaria_done_char,
+         target = TEST_malaria_result_char)
+
+malaria_diagnosis_links <- df %>%
+  dplyr::filter(TEST_malaria_done == 1) %>% 
+  select(TEST_malaria_result_char, DX_malaria_char) %>%
+  count(TEST_malaria_result_char, DX_malaria_char) %>%
+  rename(source = TEST_malaria_result_char,
+         target = DX_malaria_char)
+
+malaria_diagnosis_links2 <- df %>%
+  dplyr::filter(TEST_malaria_done == 0) %>% 
+  select(TEST_malaria_done_char, DX_malaria_char) %>%
+  count(TEST_malaria_done_char, DX_malaria_char) %>%
+  rename(source = TEST_malaria_done_char,
+         target = DX_malaria_char)
+
+antimalarials_links <- df %>%
+  select(DX_malaria_char, RX_antimalarials_char) %>%
+  count(DX_malaria_char, RX_antimalarials_char) %>%
+  rename(source = DX_malaria_char,
+         target = RX_antimalarials_char)
+
+# combine links
+links <- bind_rows(link_CLIN_fever_and_MEAS_temperature,
+                   fever_measured_links,
+                   malaria_test_links,
+                   malaria_test_links2,
+                   malaria_results_links,
+                   malaria_diagnosis_links,
+                   malaria_diagnosis_links2,
+                   antimalarials_links)
+
+# The unique node names
+nodes <- data.frame(
+  name=c(as.character(links$source), as.character(links$target)) %>% 
+    unique()
+  )
+
+# match to numbers, not names
+links$IDsource <- match(links$source, nodes$name)-1 
+links$IDtarget <- match(links$target, nodes$name)-1
+
+p <- sankeyNetwork(
+  Links = links,
+  Nodes = nodes,
+  Source = "IDsource",
+  Target = "IDtarget",
+  Value = "n",
+  NodeID = "name",
+  units = "children",
+  fontSize = 12,
+  nodeWidth = 30,
+  iterations = 0,
+  sinksRight = FALSE)        # ensure node order is as in data
+p
+
+#links$group <- as.factor(c("type_a","type_a","type_a","type_b","type_b","type_b"))
+ 
+# Add a 'group' column to each node. Here I decide to put all of them in the same group to make them grey
+#nodes$group <- as.factor(c("my_unique_group"))
+ 
+# Give a color for each group:
+#my_color <- 'd3.scaleOrdinal() .domain(["type_a", "type_b", "my_unique_group"]) .range(["#69b3a2", "steelblue", "grey"])'
+```
+
+:::
+
+### Facility F4153
+
+:::{.column-page}
+
+```{r}
+facility1_df <- df %>% dplyr::filter(CTX_facility_ID == "F4153")
+
+link_CLIN_fever_and_MEAS_temperature <- facility1_df %>%
+  select(CLIN_fever_char, CALC_temperature_measured_char) %>%
+  count(CLIN_fever_char, CALC_temperature_measured_char) %>%
+  rename(source = CLIN_fever_char,
+         target = CALC_temperature_measured_char)
+
+fever_measured_links <- facility1_df %>%
+  dplyr::filter(CALC_temperature_measured == 1) %>% 
+  select(CALC_temperature_measured_char, CALC_fever_char) %>%
+  count(CALC_temperature_measured_char, CALC_fever_char) %>% 
+  rename(source = CALC_temperature_measured_char,
+         target = CALC_fever_char)
+
+malaria_test_links <- facility1_df %>%
+  dplyr::filter(CALC_temperature_measured == 1) %>%
+  select(CALC_fever_char, TEST_malaria_done_char) %>%
+  count(CALC_fever_char, TEST_malaria_done_char) %>%
+  rename(source = CALC_fever_char,
+         target = TEST_malaria_done_char)
+
+malaria_test_links2 <- facility1_df %>%
+  dplyr::filter(CALC_temperature_measured == 0) %>%
+  select(CALC_temperature_measured_char, TEST_malaria_done_char) %>%
+  count(CALC_temperature_measured_char, TEST_malaria_done_char) %>%
+  rename(source = CALC_temperature_measured_char,
+         target = TEST_malaria_done_char)
+
+malaria_results_links <- facility1_df %>%
+  dplyr::filter(TEST_malaria_done == 1) %>% 
+  select(TEST_malaria_done_char, TEST_malaria_result_char) %>%
+  count(TEST_malaria_done_char, TEST_malaria_result_char) %>%
+  rename(source = TEST_malaria_done_char,
+         target = TEST_malaria_result_char)
+
+malaria_diagnosis_links <- facility1_df %>%
+  dplyr::filter(TEST_malaria_done == 1) %>% 
+  select(TEST_malaria_result_char, DX_malaria_char) %>%
+  count(TEST_malaria_result_char, DX_malaria_char) %>%
+  rename(source = TEST_malaria_result_char,
+         target = DX_malaria_char)
+
+malaria_diagnosis_links2 <- facility1_df %>%
+  dplyr::filter(TEST_malaria_done == 0) %>% 
+  select(TEST_malaria_done_char, DX_malaria_char) %>%
+  count(TEST_malaria_done_char, DX_malaria_char) %>%
+  rename(source = TEST_malaria_done_char,
+         target = DX_malaria_char)
+
+antimalarials_links <- facility1_df %>%
+  select(DX_malaria_char, RX_antimalarials_char) %>%
+  count(DX_malaria_char, RX_antimalarials_char) %>%
+  rename(source = DX_malaria_char,
+         target = RX_antimalarials_char)
+
+# combine links
+links <- bind_rows(link_CLIN_fever_and_MEAS_temperature,
+                   fever_measured_links,
+                   malaria_test_links,
+                   malaria_test_links2,
+                   malaria_results_links,
+                   malaria_diagnosis_links,
+                   malaria_diagnosis_links2,
+                   antimalarials_links)
+
+# The unique node names
+nodes <- data.frame(
+  name=c(as.character(links$source), as.character(links$target)) %>% 
+    unique()
+  )
+
+# match to numbers, not names
+links$IDsource <- match(links$source, nodes$name)-1 
+links$IDtarget <- match(links$target, nodes$name)-1
+
+p <- sankeyNetwork(
+  Links = links,
+  Nodes = nodes,
+  Source = "IDsource",
+  Target = "IDtarget",
+  Value = "n",
+  NodeID = "name",
+  units = "children",
+  fontSize = 12,
+  nodeWidth = 30,
+  iterations = 0,
+  sinksRight = FALSE)        # ensure node order is as in data
+p
+```
+:::
+
+### Facility F9222
+
+:::{.column-page}
+
+```{r}
+facility1_df <- df %>% dplyr::filter(CTX_facility_ID == "F9222")
+
+link_CLIN_fever_and_MEAS_temperature <- facility1_df %>%
+  select(CLIN_fever_char, CALC_temperature_measured_char) %>%
+  count(CLIN_fever_char, CALC_temperature_measured_char) %>%
+  rename(source = CLIN_fever_char,
+         target = CALC_temperature_measured_char)
+
+fever_measured_links <- facility1_df %>%
+  dplyr::filter(CALC_temperature_measured == 1) %>% 
+  select(CALC_temperature_measured_char, CALC_fever_char) %>%
+  count(CALC_temperature_measured_char, CALC_fever_char) %>% 
+  rename(source = CALC_temperature_measured_char,
+         target = CALC_fever_char)
+
+malaria_test_links <- facility1_df %>%
+  dplyr::filter(CALC_temperature_measured == 1) %>%
+  select(CALC_fever_char, TEST_malaria_done_char) %>%
+  count(CALC_fever_char, TEST_malaria_done_char) %>%
+  rename(source = CALC_fever_char,
+         target = TEST_malaria_done_char)
+
+malaria_test_links2 <- facility1_df %>%
+  dplyr::filter(CALC_temperature_measured == 0) %>%
+  select(CALC_temperature_measured_char, TEST_malaria_done_char) %>%
+  count(CALC_temperature_measured_char, TEST_malaria_done_char) %>%
+  rename(source = CALC_temperature_measured_char,
+         target = TEST_malaria_done_char)
+
+malaria_results_links <- facility1_df %>%
+  dplyr::filter(TEST_malaria_done == 1) %>% 
+  select(TEST_malaria_done_char, TEST_malaria_result_char) %>%
+  count(TEST_malaria_done_char, TEST_malaria_result_char) %>%
+  rename(source = TEST_malaria_done_char,
+         target = TEST_malaria_result_char)
+
+malaria_diagnosis_links <- facility1_df %>%
+  dplyr::filter(TEST_malaria_done == 1) %>% 
+  select(TEST_malaria_result_char, DX_malaria_char) %>%
+  count(TEST_malaria_result_char, DX_malaria_char) %>%
+  rename(source = TEST_malaria_result_char,
+         target = DX_malaria_char)
+
+malaria_diagnosis_links2 <- facility1_df %>%
+  dplyr::filter(TEST_malaria_done == 0) %>% 
+  select(TEST_malaria_done_char, DX_malaria_char) %>%
+  count(TEST_malaria_done_char, DX_malaria_char) %>%
+  rename(source = TEST_malaria_done_char,
+         target = DX_malaria_char)
+
+antimalarials_links <- facility1_df %>%
+  select(DX_malaria_char, RX_antimalarials_char) %>%
+  count(DX_malaria_char, RX_antimalarials_char) %>%
+  rename(source = DX_malaria_char,
+         target = RX_antimalarials_char)
+
+# combine links
+links <- bind_rows(link_CLIN_fever_and_MEAS_temperature,
+                   fever_measured_links,
+                   malaria_test_links,
+                   malaria_test_links2,
+                   malaria_results_links,
+                   malaria_diagnosis_links,
+                   malaria_diagnosis_links2,
+                   antimalarials_links)
+
+# The unique node names
+nodes <- data.frame(
+  name=c(as.character(links$source), as.character(links$target)) %>% 
+    unique()
+  )
+
+# match to numbers, not names
+links$IDsource <- match(links$source, nodes$name)-1 
+links$IDtarget <- match(links$target, nodes$name)-1
+
+p <- sankeyNetwork(
+  Links = links,
+  Nodes = nodes,
+  Source = "IDsource",
+  Target = "IDtarget",
+  Value = "n",
+  NodeID = "name",
+  units = "children",
+  fontSize = 12,
+  nodeWidth = 30,
+  iterations = 0,
+  sinksRight = FALSE)        # ensure node order is as in data
+p
+```
+
+:::
+
+Sequence
+
+-   temp measurement by reported fever; by facility
+
+```{r}
+chisq.test(df$CLIN_fever, df$TEST_malaria_result)
+```
+
+```{r}
+
+df$CTX_facility_ID <- haven::as_factor(df$CTX_facility_ID) 
+df %>%
+  dplyr::select(MEAS_temperature,
+                CTX_facility_ID) %>%
+  gtsummary::tbl_summary(by = CTX_facility_ID) %>%
+  add_p()
+```
+
+-   also showing 'prevalence' of fever when of whole clinic vs of those who measure to indicate bias
+
+## Malaria tests
+
+-   malaria tests of those with history or measured fever
+
+```{r}
+table(df$CALC_fever_or_temp, df$TEST_malaria_result)
+```
+
+```{r}
+chisq.test(df$CALC_fever_or_temp, df$TEST_malaria_result)
+```
+
+```{r}
+df$CTX_facility_ID <- haven::as_factor(df$CTX_facility_ID) 
+df %>%
+  dplyr::filter(CALC_fever_or_temp == 1) %>%
+  dplyr::select(TEST_malaria_result,
+                CTX_facility_ID) %>%
+  gtsummary::tbl_summary(by = CTX_facility_ID)
+```
+
+## Malaria treatments
+
+-   malaria diagnoses vs. positive tests vs. treatment.
+
+```{r}
+df <- df %>%
+  dplyr::mutate(TEST_malaria_positive = 1* (TEST_malaria_result == 1))
+table(df$TEST_malaria_result, df$DX_malaria, df$RX_antimalarials) %>% knitr::kable()
+```
+
+```{r}
+chisq.test(df$TEST_malaria_result, df$DX_malaria)
+```
+
+```{r}
+chisq.test(df$TEST_malaria_result, df$RX_antimalarials)
+```
+
+```{r}
+df$CTX_facility_ID <- haven::as_factor(df$CTX_facility_ID) 
+df %>%
+  dplyr::filter(TEST_malaria_positive == 1) %>%
+  dplyr::select(DX_malaria,
+                RX_antimalarials,
+                CTX_facility_ID) %>%
+  gtsummary::tbl_summary(by = CTX_facility_ID)
+```

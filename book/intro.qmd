@@ -31,8 +31,8 @@ This workshop is relevant for individuals who answer yes to the following questi
 
 ### Before the workshop
 
-1. Fill out the online pre-workshop questionnaire
-2. Install on your laptop the (free) data science software that will be used during the workshop. If you have any difficulties with the installation, support can be provided on the first day of the workshop before the first session or during breaks.
+1.  Fill out the online pre-workshop questionnaire
+2.  Install on your laptop the (free) data science software that will be used during the workshop. If you have any difficulties with the installation, support can be provided on the first day of the workshop before the first session or during breaks.
 
 ### Day 1
 
@@ -45,92 +45,107 @@ This workshop is relevant for individuals who answer yes to the following questi
 | 09.00 - 09.15 | Introduction to data science tools\          |
 |               | Overview of objectives for Day 1             |
 +---------------+----------------------------------------------+
-| 09.15 - 10.30 | Version control with Git                     |
+| 09.15 - 10.15 | Version control with Git                     |
 +---------------+----------------------------------------------+
-| 10.30 - 11.00 | Break :tea: :coffee:                         |
+| 10.15 - 10.45 | :tea: :coffee: Break                         |
 +---------------+----------------------------------------------+
-| 11.00 -12.00  | Introduction to dynamic documents and Quarto |
+| 10.45 -11.45  | Introduction to dynamic documents and Quarto |
 +---------------+----------------------------------------------+
-| 12.00 - 13.00 | Use Quarto with Stata                        |
+| 11.45 - 12.15 | Use Quarto with Stata                        |
 +---------------+----------------------------------------------+
-| 13.00 - 14.00 | Lunch break :fork_and_knife:                 |
+| 12.15 - 13.15 | :fork_and_knife: Lunch break                 |
 +---------------+----------------------------------------------+
-| 14.00 - 15.00 | Import and manipulate external data (1)      |
+| 13.15 - 14.00 | Import external data                         |
 +---------------+----------------------------------------------+
-| 15.00 - 15.30 | Import and manipulate external data (2)      |
+| 14.00 - 15.00 | Manipulate data                              |
 +---------------+----------------------------------------------+
-| 15.30 - 16.00 | Break :tea: :coffee:                         |
+| 15.00 - 15.30 | :tea: :coffee: Break                         |
 +---------------+----------------------------------------------+
-| 16.00 - 17.00 | Share code and Collaborate with Git          |
+| 15.30 - 16.15 | Visualise data                               |
++---------------+----------------------------------------------+
+| 16.15 - 17.00 | Share code and collaborate with Git          |
 +---------------+----------------------------------------------+
 
 : Schedule Day 1 {#tbl-day1-schedule}
 
 ### Day 2
 
-+---------------+----------------------------------------------------------------------+
-| Time          | Session (all)                                                        |
-+:=============:+:=====================================================================+
-| 08.30 - 09.00 | Welcome                                                              |
-+---------------+----------------------------------------------------------------------+
-| 09.00 - 09.15 | Introduction to Data Science for Public Health\                      |
-|               | Overview of objectives for Day 2                                     |
-+---------------+----------------------------------------------------------------------+
-| 09.15 - 10.30 | Discussion on concepts related to to health data for decision-making |
-+---------------+----------------------------------------------------------------------+
-| 10.30 - 11.00 | Break :tea: :coffee:                                                 |
-+---------------+----------------------------------------------------------------------+
-| 11:00-11:15   | Presentation of the data                                             |
-+---------------+----------------------------------------------------------------------+
-| 11.15 - 11.45 | Interdisciplinary discussion                                         |
-+---------------+----------------------------------------------------------------------+
-| 11.45 - 12.30 | Data practicals by interdisciplinary groups                          |
-+---------------+----------------------------------------------------------------------+
-| 12.30 - 13.00 | Feedback on findings from practicals                                 |
-+---------------+----------------------------------------------------------------------+
-| 13.00 - 14.00 | Lunch break :fork_and_knife:                                         |
-+---------------+----------------------------------------------------------------------+
-| 14.00 - 14.30 | Interdisciplinary discussion                                         |
-+---------------+----------------------------------------------------------------------+
-| 14.00 - 15.30 | Analysis: data practicals\                                           |
-|               | Interpretation: discussion on data sources and interpretation        |
-+---------------+----------------------------------------------------------------------+
-| 15.30 - 16.00 | Break :tea: :coffee:                                                 |
-+---------------+----------------------------------------------------------------------+
-| 15.30 - 16.00 | Feedback on praticals                                                |
-+---------------+----------------------------------------------------------------------+
++---------------+-----------------------------------------------------------------------------+
+| Time          | Session (all)                                                               |
++:=============:+:============================================================================+
+| 08.30 - 09.00 | Welcome                                                                     |
++---------------+-----------------------------------------------------------------------------+
+| 09.00 - 09.20 | Introduction to Data Science for Public Health\                             |
+|               | Overview of objectives for Day 2                                            |
++---------------+-----------------------------------------------------------------------------+
+| 09.20 - 10.15 | Discussion on concepts related to to public health data for decision-making |
++---------------+-----------------------------------------------------------------------------+
+| 10.15 - 10.45 | :tea: :coffee: Break                                                        |
++---------------+-----------------------------------------------------------------------------+
+| 10:45-12:15   | Malaria practical #1                                                        |
++---------------+-----------------------------------------------------------------------------+
+| 12.15- 13.15  | :fork_and_knife: Lunch break                                                |
++---------------+-----------------------------------------------------------------------------+
+| 13.15- 13.30  | Prepare presentation of data findings                                       |
++---------------+-----------------------------------------------------------------------------+
+| 13.30 - 14.00 | Present and discuss data findings                                           |
++---------------+-----------------------------------------------------------------------------+
+| 14.00 - 14.30 | Interdisciplinary discussion on malaria, dataset, uncertainties, challenges |
++---------------+-----------------------------------------------------------------------------+
+| 14.00 - 14.30 | Malaria practical #2                                                        |
++---------------+-----------------------------------------------------------------------------+
+| 15.00 - 15.30 | :tea: :coffee: Break                                                        |
++---------------+-----------------------------------------------------------------------------+
+| 15.30 - 16.15 | Malaria practical #2                                                        |
++---------------+-----------------------------------------------------------------------------+
+| 16.15 - 16.30 | Prepare presentation of data findings                                       |
++---------------+-----------------------------------------------------------------------------+
+| 16.30 - 17.00 | Present and discuss data findings                                           |
++---------------+-----------------------------------------------------------------------------+
 
 : Schedule Day 2 {#tbl-day2-schedule}
 
 ### Day 3
 
-+---------------+-----------------------------------------------------------------------+
-| Time          | Session (all)                                                         |
-+:=============:+:======================================================================+
-| 08.30 - 09.00 | Welcome                                                               |
-+---------------+-----------------------------------------------------------------------+
-| 09.00 - 09.15 | Interdisciplinary introduction to big data and machine Learning       |
-|               |                                                                       |
-|               | Overview of objectives for Day 3                                      |
-+---------------+-----------------------------------------------------------------------+
-| 09.15 - 10.00 | Discussion on secondary data sources                                  |
-|               |                                                                       |
-|               | (Public Datasets, e.g. DHS, Facebook, facilities, etc)                |
-|               |                                                                       |
-|               | Benefits and drawbacks between primary and secondary data sources     |
-+---------------+-----------------------------------------------------------------------+
-| 10.00 - 10.30 | Break :tea: :coffee:                                                  |
-+---------------+-----------------------------------------------------------------------+
-| 11.00 - 13.00 | Introduction to machine learning Discussion on data sources, research |
-+---------------+-----------------------------------------------------------------------+
-| 13:00-14:00   | Lunch break :fork_and_knife:                                          |
-+---------------+-----------------------------------------------------------------------+
++---------------+-------------------------------------------------------------------+
+| Time          | Session (all)                                                     |
++:=============:+:==================================================================+
+| 08.30 - 09.00 | Welcome                                                           |
++---------------+-------------------------------------------------------------------+
+| 09.00 - 09.20 | Interdisciplinary introduction to big data and machine Learning   |
+|               |                                                                   |
+|               | Overview of objectives for Day 3                                  |
++---------------+-------------------------------------------------------------------+
+| 09.20 - 10.15 | Discussion on secondary data sources                              |
+|               |                                                                   |
+|               | (Public Datasets, e.g. DHS, Facebook, facilities, etc)            |
+|               |                                                                   |
+|               | Benefits and drawbacks between primary and secondary data sources |
++---------------+-------------------------------------------------------------------+
+| 10.15 - 10.45 | :tea: :coffee: Break                                              |
++---------------+-------------------------------------------------------------------+
+| 10.45 - 12.15 | \[Analysis stream\] Introduction to machine learning\             |
+|               | \[Interpretation stream\] Critically discuss data surveys/reports |
++---------------+-------------------------------------------------------------------+
+| 12:15-13:15   | :fork_and_knife: Lunch break                                      |
++---------------+-------------------------------------------------------------------+
+| 13:15-13:45   | Speed talks - research presentations                              |
++---------------+-------------------------------------------------------------------+
+| 13:45-15.00   | \[Analysis stream\] Data practical\                               |
+|               | \[Interpretation stream\] Critically discuss data surveys/reports |
++---------------+-------------------------------------------------------------------+
+| 15.00 - 15.30 | :tea: :coffee: Break                                              |
++---------------+-------------------------------------------------------------------+
+| 15:30-16:00   | Feedback on findings from practicals                              |
++---------------+-------------------------------------------------------------------+
+| 16:00-16:30\  | Feedback on workshop - Wrap-up                                    |
++---------------+-------------------------------------------------------------------+
 
 : Schedule Day 3 {#tbl-day3-schedule}
 
 ### After the workshop
 
-1. Fill out the online post-workshop questionnaire
+1.  Fill out the online post-workshop questionnaire
 
 ## Scope
 

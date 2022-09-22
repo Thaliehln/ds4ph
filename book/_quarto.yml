@@ -33,8 +33,8 @@ book:
     - part: "------------ DAY 2 ------------"
       chapters:
         - data_science_for_public_health.qmd
-        - ds4ph_day2_session01_practical_session.qmd
-        - malaria_case_study2.qmd
+        - malaria_case_study_01.qmd
+        - malaria_case_study_02.qmd
     - part: "------------ DAY 3 ------------"
       chapters: 
         - big_data_and_artificial_intelligence.qmd
@@ -59,7 +59,5 @@ format:
     theme: cosmo
   pdf:
     documentclass: scrreprt
-
-editor: visual
 
 from: markdown+emoji

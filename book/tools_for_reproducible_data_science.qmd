@@ -21,7 +21,7 @@ Although qualitative research contributes as significantly as quantitative resea
 ### Learning objectives
 
 -   What is meant by *reproducible quantitative research* and why does it matters?
--   what should be documented for ensuring the reproducibility of quantitative analyses?
+-   What should be documented for ensuring the reproducibility of quantitative analyses?
 -   What software tools are available to support reproducible quantitative research?
 
 ## Reproducible quantitative research
@@ -54,9 +54,9 @@ The **same analysis** steps are performed on **different datasets** and produce 
 ![This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807](images/paste-222EF473.png){#fig-generalisability width="400"}
 :::
 
-### Documentation
+### Documentation for reproducible analyses
 
-To guarantee that any other researcher can reproduce your analysis, you would need to document and share the full **computational environment**, **tools**, **data** and **code** you used to generate your results.
+To guarantee that any other researcher can reproduce your analysis, you would need to document and share the full **computational environment**, **tools**, **data** and **code** that were used to generate your results.
 
 ![This image was adapted from an original image created by Scriberia for The Turing Way community (CC-BY licence. DOI: 10.5281/zenodo.3332807).](images/paste-E04E255A.png){#fig-documentation-reproducible-analysis}
 
@@ -66,7 +66,7 @@ To guarantee that any other researcher can reproduce your analysis, you would ne
 #### :speech_balloon: Discussion
 
 1.  How do you think reproducible quantitative analyses can improve your research?
-2.  What barriers to reproducible research do you see in your daily practice?
+2.  Recent investigations have shown that a significant percentage of scientific studies cannot be reproduced, thus contributing to growing mistrust in scientific results [@baker_scientists_2016; @harris_use_2018]. What barriers and challenges to reproducible research do you see in your daily practice?
 
 :clock3: 5 minutes
 
@@ -76,11 +76,13 @@ To guarantee that any other researcher can reproduce your analysis, you would ne
 
 #### :heavy_minus_sign: Barriers and challenges
 
-Recent investigations have shown that a significant percentage of scientific studies cannot be reproduced, thus contributing to growing mistrust in scientific results [@baker_scientists_2016; @harris_use_2018].
-
 ![Example of barriers to reproducibility](images/paste-80DE769E.png){#fig-barriers-reproducibility}
 
+#### Challenges
+
 In practice, reproducibility is challenging, even for trained data scientists equipped with an arsenal of software tools. Quantitative analyses can often not be fully reproduced because of complexities in how software tools are packaged, installed, and executed and because of limitations associated with how scientists document analysis steps.
+
+![](images/phd_comics_code_documentation.png)
 :::
 
 ## Software tools across the research data lifecycle
