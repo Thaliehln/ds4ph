@@ -1,0 +1,12 @@
+---
+title: "Untitled"
+editor: visual
+---
+
+\## Conventions
+
+Discussion activity :speech_balloon:
+
+Reflection activity :thought_balloon:
+
+Coding activity :computer:

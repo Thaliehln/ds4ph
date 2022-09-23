@@ -1,0 +1,172 @@
+---
+title: "R installations"
+---
+
+## Install R {#sec-R-installation}
+
+**R** is a programming language for statistical computing and graphics. It is one of main programming language used for data science (with other programming languages such as Python and Julia).
+
+::: panel-tabset
+### Step 1
+
+You can download R from the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/mirrors.html) which is a network of servers around the world that store identical up-to-date versions of code and documentation for R.
+
+![](images/paste-13103C13.png)
+
+Scroll down the page to locate the mirror that is the closest to your geographic location and click on its URL.
+
+::: callout-tip
+Selecting a mirror that is close to you may help speed up the download. You can still use another mirror since the closest geographic location does not always give the best mirror.
+:::
+
+For instance, when downloading R from Tanzania, you can select the [mirror from South Africa](https://cran.mirror.ac.za/).
+
+### Step 2
+
+Once on the CRAN page, select your operating system: Linux, macOS, or Windows.
+
+![](images/paste-23A4B16E.png)
+
+### Step 3
+
+Select binaries for base distribution
+
+![](images/paste-0739A4C1.png)
+
+### Step 4
+
+Download the R installer (\< 80 MB)
+
+![](images/paste-9624855F.png){width="350"}
+
+### Step 5
+
+In your computer's Downloads folder, double-click the R setup file.
+
+![](images/paste-FD7C97A4.png)
+
+### Step 6
+
+Follow the instruction in the installation wizard to complete the installation.
+
+![](images/paste-0F242DBF.png)
+:::
+
+## Install and setup RStudio Desktop {#sec-RStudio-installation}
+
+**Rstudio** is an integrated development environment (IDE) for R that enables an easier use of R.
+
+::: callout-note
+RStudio is moving away from its R-exclusive focus and becoming [Posit](https://posit.co/) in October 2022 to enable broader data science, scientific research, and technical communication functionalities and, in particular, to integrate Python users.
+:::
+
+::: callout-important
+In order for RStudio desktop to work with R you must have installed R on your computer, see @sec-R-installation. RStudio does not include R when you download and install it.
+:::
+
+::: panel-tabset
+### Step 1
+
+You can download R from the [RStudio website](https://www.rstudio.com/products/rstudio/download/). There are different RStudio products available, but the free Desktop version offers all necessary features for your analyses.
+
+![](images/paste-3C3D0718.png)
+
+### Step 2
+
+![](images/paste-027BCBD8.png)
+
+Download the RStudio Desktop installer that corresponds to your operating system.
+
+### Step 3
+
+In your computer's Downloads folder, double-click the RStudio Desktop setup file.
+
+![](images/paste-31A16011.png)
+
+### Step 4
+
+Follow the instruction in the installation wizard to complete the installation.
+
+![](images/paste-427EA827.png)
+
+### Step 5
+
+Open RStudio
+
+### Step 6
+
+In RStudio, you can set global options by selecting **Tools** \> **Global options**
+
+![](images/paste-D0B6CCF0.png)
+
+### Step 7
+
+Under the **General** options and the **Basic** tab:
+
+-   **Workspace**
+    -   Uncheck *Restore .RData into workspace at startup*
+
+    -   Ensure that *Never* is selected for *Save workspace to .RData on exit*.
+-   **History**
+    -   Uncheck *Always save history (even when not saving .RData)*
+
+    -   Uncheck *Remove duplicate entries in history*
+
+![](images/paste-A507B21D.png)
+:::
+
+## Install Quarto {#sec-Quarto-installation}
+
+**Quarto** is a software tool that allows to generate high quality reproducible data analysis documents (including but not limited to articles, reports, presentations) with programming language used in data science (such as R, Python or Julia). It is the successor to **R Markdown**.
+
+::: panel-tabset
+### Step 1
+
+You can download the Quarto installer that corresponds to your operating system from the [Quarto website](https://quarto.org/docs/get-started/).
+
+![](images/paste-DDD0332C.png)
+
+### Step 2
+
+1\. In your computer's Downloads folder, double-click the Quarto setup file.
+
+2\. Follow the instruction in the installation wizard to complete the installation.
+
+![](images/paste-FE57875E.png)
+
+::: callout-important
+When the installation of Quarto is complete, you will not see any new software on your computer, but Quarto is now available to be used in RStudio, as well as by all other applications on your computer.
+
+Quarto will select a version of R by looking on your system PATH. Note that it is possible to override the version of R used by Quarto by setting the `QUARTO_R` environment variable.
+:::
+:::
+
+## Install the rmarkdown R package {#sec-rmarkdown-installation}
+
+To use Quarto with R and RStudio, you need to install the **rmarkdown** R package.
+
+::: callout-note
+A **R package** is a collection of functions, data, and compiled code in a well-defined format, created to add specific functionality to R.
+
+There are 10,000+ user contributed packages and growing.
+
+There is a set of standard (or base) packages which is considered part of the R source code and automatically available as part of your R installation. Base packages contain the basic functions that allow R to work, and enable standard statistical and graphical functions on data sets.
+:::
+
+The **rmarkdown** package will add all necessary functionalities in your R installation to render Quarto documents that use R.
+
+::: panel-tabset
+### Step 1
+
+Open RStudio on your computer
+
+### Step 2
+
+In RStudio, you can install a new package by selecting **Tools** \> **Install packages...**
+
+![](images/paste-100922E2.png)
+
+### Step 3
+
+![](images/paste-BE660336.png)
+:::

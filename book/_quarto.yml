@@ -15,36 +15,18 @@ book:
     - name: Fenella Beynon
       affiliations:
         - name: Swiss Tropical and Public Health Institute
+    - name: Silvia Cicconi
+      affiliations:
+        - name: Swiss Tropical and Public Health Institute
   logo: images/logo_compact.png
   date: today
   chapters:
     - index.qmd
     - intro.qmd
-    - part: "------------ DAY 1 ------------"
-      chapters:
-        - tools_for_reproducible_data_science.qmd
-        - version_control_with_git.qmd
-        - dynamic_documents.qmd
-        - create_first_quarto_doc.qmd
-        - use_stata_python_with_quarto.qmd
-        - import_data.qmd
-        - manipulate_data.qmd
-        - share_and_collaborate_with_git.qmd
-    - part: "------------ DAY 2 ------------"
-      chapters:
-        - data_science_for_public_health.qmd
-        - malaria_case_study_01.qmd
-        - malaria_case_study_02.qmd
-    - part: "------------ DAY 3 ------------"
-      chapters: 
-        - big_data_and_artificial_intelligence.qmd
-        - ds4ph_day3_session01_practical_session.qmd
     - references.qmd
   appendices:
-    - installations.qmd
-    - quarto_vs_rmarkdown.qmd
-    - datasets.qmd
-    - useful_resources.qmd
+    - r_setup.qmd
+    - github_setup.qmd
   page-footer: 
     left: "This book was built by [Quarto](https://quarto.org/). Copyright 2022, IHI / Swiss TPH"
     right:

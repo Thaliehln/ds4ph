@@ -1,0 +1,36 @@
+---
+title: "GitHub setup"
+---
+
+![](images/paste-081F7F03.png)
+
+## Create a GitHub account {#sec-GitHub-account-creation}
+
+**GitHub** is a code hosting platform for version control and collaboration.
+
+To Create a GitHub account, follow the instructions that are given in slide 3 of the Powerpoint document available at the following [link](https://drive.switch.ch/index.php/s/1eFnksrX0UtjfZV)
+
+## Install GitHub desktop {#sec-GitHub-Desktop-installation}
+
+GitHub Desktop is an application that enables you to interact with GitHub using an graphical interface instead of the command line or a web browser.
+
+You can install GitHub Desktop on supported Windows or macOS operating systems.
+
+::: panel-tabset
+### Step 1
+
+1. Visit the [download page](https://desktop.github.com/) for GitHub Desktop.
+2. Click Download for Windows.
+
+![](images/paste-465BAC3C.png)
+
+### Step 2
+
+1. In your computer's Downloads folder, double-click the GitHub Desktop setup file.
+2. Follow the instruction in the installation wizard to complete the installation.
+
+### Step 3
+
+To connect your GitHub account to GitHub Desktop, follow the instructions that are given in slides 6 to 9 of the Powerpoint document available at the following [link](https://drive.switch.ch/index.php/s/1eFnksrX0UtjfZV)
+
+:::

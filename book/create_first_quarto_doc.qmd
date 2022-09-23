@@ -69,21 +69,6 @@ This pane contains the Stata equivalents of the Plots Manager and Project Manage
 :::
 :::
 
-### RStudio setup
-
-To first get set up, I highly recommend changing the following setting
-
-Tools > Global Options (or Cmd + , on macOS)
-
-Under the General tab:
-
-    For workspace
-        Uncheck restore .RData into workspace at startup
-        Save workspace to .RData on exit : “Never”
-    For History
-        Uncheck “Always save history (even when not saving .RData)
-        Uncheck “Remove duplicate entries in history”
-
 ## Open a new R project
 
 In RStudio, you can create a new project by selecting **File** \> **New Project...**

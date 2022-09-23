@@ -1,13 +1,25 @@
 ---
-title: "Introduction"
+title: "About the workshop"
 ---
+
+:spiral_calendar: September 26-28, 2022\
+:clock9: 09:00 - 17:00\
+:city_sunrise: Dar-es-Salaam, Tanzania
+
+This workshop targets public health researchers and aims to accompany them in their journey towards Data Science.
+
+# Venue
+
+Protea Hotel Dar es Salaam Courtyard on Seaview Ocean Road
+
+![](images/paste-67B4C38F.png)
 
 ## Learning objectives
 
-Two complementary aspects of moving into data science are:
+There are two complementary aspects of moving into data science:
 
-1.  the mindset about how scientists think and collaborate about data, and
-2.  the skillsets which is composed of an ecosystem of tools (mostly open-source) and practices.
+1.  a **mindset** about how scientists think and collaborate about data, and
+2.  a **skillset** which is composed of an ecosystem of tools (mostly open-source) and practices.
 
 Upon completing the workshop, participants will have gained:
 
@@ -25,14 +37,32 @@ This workshop is relevant for individuals who answer yes to the following questi
 
 ## Schedule
 
-:spiral_calendar: September 26-28, 2022\
-:clock9: 09:00 - 17:00\
-:city_sunrise: Dar-es-Salaam, Tanzania (Protea Hotel by Marriott Dar es Salaam Courtyard)
-
 ### Before the workshop
 
-1.  Fill out the online pre-workshop questionnaire
-2.  Install on your laptop the (free) data science software that will be used during the workshop. If you have any difficulties with the installation, support can be provided on the first day of the workshop before the first session or during breaks.
+1.  Fill out the online [pre-workshop questionnaire](https://timicodktest.smartforest.de/-/single/cac06e76b3e163e655e49626f8129de8f55a8035ced54f15bc4c6cf527dba8a7?st=DnBRz677PIYh33ML0rE1amWzyhCIYPGFQnmZ6AAou8nJFyikWN6nLM5i3G4I0YZN)
+
+2.  If you have not it yet, please go through the following five steps (about 30 minutes).
+
+    a.  Install R (@sec-R-installation)
+
+    b.  Install and setup RStudio Desktop (@sec-RStudio-installation)
+
+    c.  Install Quarto (@sec-Quarto-installation)
+
+    d.  Install the rmarkdown R package (@sec-rmarkdown-installation)
+
+    e.  Create a GitHub account (@sec-GitHub-account-creation)
+
+    f.  Install GitHub Desktop (@sec-GitHub-Desktop-installation)
+
+::: callout-note
+* All software used in this workshop are free.
+* If you have any difficulties with the installation, support can be provided on the first day of the workshop before the first session or during breaks.
+:::
+
+::: callout-important
+For those who have already been introduced to Git, R/RStudio and RMarkdown, note that you need to additionally install Quarto for this workshop.
+:::
 
 ### Day 1
 
@@ -146,47 +176,3 @@ This workshop is relevant for individuals who answer yes to the following questi
 ### After the workshop
 
 1.  Fill out the online post-workshop questionnaire
-
-## Scope
-
-This workshop aims to accompany researchers to progress on the following development axes:
-
-### Data science mindset
-
--   Use of reproducible research practices in public health
--   Data provenance
-    -   Use of distinct data sources for the development of public health indicators
-    -   Research data vs. real world evidence data
--   Ethical data science
--   Data papers
-
-### Data science skillset
-
--   Programming tools
-    -   Move from Stata to R (prerequisite: Stata)
-    -   R programming
-        -   dplyr
-    -   Python programming
-        -   pandas
-        -   scikit-learn (prerequisite: independent Python user)
--   Coding with best practices (R/RStudio/tidyverse)
-    -   Versioning using GitHub (all)
-    -   Using targets (prerequisite: independent R user)
--   Reporting and publishing: Dynamic report generation
--   Reproducible data
-    -   Use APIs (prerequisite: IT programming basics)
-    -   Open access data (all)
--   Statistical methods for reproducible research (advanced)
-
-### What is not covered
-
--   Reproducible workflows (targets)
--   Reproducible environments (Binder, Docker, renv, etc)
-
-## Conventions
-
-Discussion activity :speech_balloon:
-
-Reflection activity :thought_balloon:
-
-Coding activity :computer:

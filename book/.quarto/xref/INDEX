@@ -64,5 +64,11 @@
   },
   "malaria_case_study_02.qmd": {
     "malaria_case_study_02.html": "8ff47831"
+  },
+  "r_setup.qmd": {
+    "r_setup.html": "a7b670b6"
+  },
+  "github_setup.qmd": {
+    "github_setup.html": "7651bae5"
   }
 }
