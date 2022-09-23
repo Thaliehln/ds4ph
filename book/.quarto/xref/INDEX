@@ -28,5 +28,20 @@
   },
   "dynamic_documents.qmd": {
     "dynamic_documents.html": "7cb7ab5d"
+  },
+  "use_stata_python_with_quarto.qmd": {
+    "use_stata_python_with_quarto.html": "33f88e3d"
+  },
+  "import_data.qmd": {
+    "import_data.html": "b6ac5d5b"
+  },
+  "create_first_quarto_doc.qmd": {
+    "create_first_quarto_doc.html": "5caf922f"
+  },
+  "version_control_with_git2.qmd": {
+    "version_control_with_git2.html": "3ee27056"
+  },
+  "rstudio_orientation.qmd": {
+    "rstudio_orientation.html": "4077e68b"
   }
 }

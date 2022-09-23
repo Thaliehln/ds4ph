@@ -27,6 +27,12 @@ book:
       chapters:
         - tools_for_reproducible_data_science.qmd
         - version_control_with_git.qmd
+        - rstudio_orientation.qmd
+        - dynamic_documents.qmd
+        - create_first_quarto_doc.qmd
+        - version_control_with_git2.qmd
+        - use_stata_python_with_quarto.qmd
+        - import_data.qmd
     - part: "------------ DAY 2 ------------"
     - part: "------------ DAY 3 ------------"
     - references.qmd

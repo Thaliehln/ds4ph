@@ -1,0 +1,34 @@
+---
+title: ":blue_book: Commit your changes with Git"
+editor: visual
+---
+
+## Commit
+
+Version control uses a *working copy* where you do your work.
+
+::: callout-note
+You can `update` your working copy to incorporate any new edits or versions that have been added to the repository since the last time you updated.
+:::
+
+You make arbitrary edits to this copy, without affecting your teammates. When you are happy with your edits, you `commit` your changes to a *repository*.
+
+Snapshot of your entire repository at a specific time.
+
+Over time, commits should tell a story of the history of your repository and how it came to be the way that it currently is.
+
+Commits include lots of metadata in addition to the contents and message, like the author, timestamp, and more.
+
+It also requires that you write something human-readable that will be a breadcrumb for you in the future. be easy to compare versions, and you can easily revert to previous versions. 
+
+## Project history
+
+The version control capabilities of Git permit us to keep track of changes we make to our code. We can also revert back to previous versions of files. Git also permits us to create branches in which we can test out ideas, then decide if we merge the new branch with the original.
+
+In the simplest case, the database contains a linear history: each change is made after the previous one., but you can have a more complex history. We will see this later.
+
+![](images/paste-48384992.png)
+
+## Push and Pull
+
+![](images/paste-A340C143.png)

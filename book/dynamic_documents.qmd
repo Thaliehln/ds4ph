@@ -10,22 +10,20 @@ The final product of a quantitative research is a report (e.g., scientific publi
 
 Imagine the following situations
 
-1. After you have finalised your article for submission to a journal, you are informed that you were given the wrong data set, you are sent a new one and you are asked to run the same analysis with this new data set.
-2. you realize that a mistake was made and need to re-examine the code, fix the error, and re-run the analysis 3. someone you are training wants to see the code and be able to reproduce the results to learn about your approach?
+1.  you are informed that you were given the wrong data set just when you have finalised your article for submission to a journal. You are sent a new one and you are asked to run the same analysis with this new data set.
+2.  you realize that a mistake was made and need to re-examine the code, fix the error, and re-run the analysis 3. someone you are training wants to see the code and be able to reproduce the results to learn about your approach?
 
 Situations like the ones just described are actually quite common for a data scientist.
 
-In this section, we present how you can keep your data science projects organized with RStudio so that re-running an analysis is straightforward. We then demonstrate how to generate dynamic reports with Quarto in a way that will greatly help with recreating reports with minimal work.
+It is actually possible to keep your data science projects organized with RStudio so that re-running an analysis and recreating reports is straightforward and can be done with minimal effort.Dynamic documents can be produced to update on a routine basis (e.g. daily surveillance reports) and/or run on subsets of data (e.g. reports for each jurisdiction).
 
 ### Learning objectives
 
 The goal of this section is to briefly discuss why we want to learn quarto, the benefits, and the barriers to using it.
 
-* What is a dynamic report?
-* What is Quarto?
-* Think about why you want to use Quarto
-
-Such documents can be produced to update on a routine basis (e.g. daily surveillance reports) and/or run on subsets of data (e.g. reports for each jurisdiction).
+-   What is a dynamic report?
+-   What is Quarto?
+-   Think about why you want to use Quarto
 
 ## Background to R Markdown
 
@@ -75,7 +73,9 @@ This R package will read the code chunks, execute it, and 'knit' it back into th
 Pandoc actually convert the output into word/pdf/powerpoint etc. It is a software separate from R but is installed automatically with RStudio.
 :::
 
-The process that happens in the background involves feeding the .Rmd file to knitr, which executes the R code chunks and creates a new .md (markdown) file which includes the R code and its rendered output. The .md file is then processed by pandoc to create the finished product: a Microsoft Word document, HTML file, powerpoint document, pdf, etc.
+![](images/paste-ABFB521E.png)
+
+The process that happens in the background involves feeding the .Rmd file to knitr, which executes the R code chunks and creates a new .md (markdown) file which includes the R code and its rendered output. The .md file is then processed by Pandoc to create the final product: a Microsoft Word document, HTML file, PowerPoint document, PDF, etc.
 
 ::: panel-tabset
 ### :speech_balloon: Discussion
@@ -83,7 +83,6 @@ The process that happens in the background involves feeding the .Rmd file to kni
 Form small groups of 2-4 with your neighbours and discuss how you expect learning Quarto might benefit you.
 
 :clock3: 5 minutes
-
 :::
 
 ## References

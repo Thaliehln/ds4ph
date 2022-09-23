@@ -12,8 +12,7 @@ When reporting scientific results, researchers must document the steps they foll
 Reporting should include negative results as they contribute to the development of a cumulative knowledge as much as positive results do and avoid wasting resources.
 :::
 
-![
-Research Diagram vs. Research Reality. "Piled Higher and Deeper" by Jorge Cham www.phdcomics.com](images/paste-95377789.png){#fig-research-diagram-vs-research-reality}
+![Research Diagram vs. Research Reality. "Piled Higher and Deeper" by Jorge Cham www.phdcomics.com](images/paste-95377789.png){#fig-research-diagram-vs-research-reality}
 
 There have been recurrent calls in the recent decades for the scientific community to embrace practices to support research reproducibility and many software tools are now available to facilitate this process.
 
@@ -93,7 +92,7 @@ In this workshop, you will be introduced to following software tools that will h
 -   **Rstudio** is an integrated development environment (IDE) for R that enables an easier use of R.
 -   **Quarto** allow you to generate (reproducible) dynamic reports to document your data analyses. We will use Quarto within the **R/RStudio** environment.
 
-:::callout-important
+::: callout-important
 In practice, most data scientists use a mix of languages, often at least R and Python. You will be slightly exposed to R, but the goal of this workshop is
 :::
 

@@ -8,88 +8,12 @@ title: ":blue_book: Getting started with Quarto"
 
 Please review the following sections for instructions on installation steps:
 
--   Downloading R (@sec-R-installation)
--   Downloading and configuring RStudio (@sec-RStudio-installation)
+-   Downloading Quarto (@sec-Quarto-installation)
 -   Installing the rmarkdown package
 
 ### Learning objectives
 
-1. Familiarise with RStudio
-2. Get set up with not storing the RStudio workspace
-3. Learn how to use Quarto
-
-## Orientation to the RStudio interface
-
-Open RStudio
-
-By default RStudio displays four rectangle panes.
-
-::: callout-tip
-If your RStudio displays only one left pane it is because you have no scripts open yet.
-:::
-
-::: panel-tabset
-### R Console Pane
-
-The R Console, by default the left or lower-left pane in R Studio, is the home of the R "engine". This is where the commands are actually run and non-graphic outputs and error/warning messages appear. You can directly enter and run commands in the R Console, but realize that these commands are not saved as they are when running commands from a script.
-
-::: callout-note
-This pane is similar to the Stata Command and the Results windows.
-:::
-
-### Source Pane
-
-This pane, by default in the upper-left, is space to edit and run your scripts, including the RMarkdown outbreak and survey templates. This pane can also display datasets (data frames) for viewing.
-
-::: callout-note
-This pane is similar to the Stata Do-file and Data Editor windows.
-:::
-
-### Environment Pane
-
-This pane, by default the upper-right, is most often used to see brief summaries of objects in the R Environment in the current session. These objects could include imported, modified, or created datasets, parameters you have defined (e.g. a specific epi week for the analysis), or vectors or lists you have defined during analysis (e.g. names of regions). Click on the arrow next to a dataframe name to see its variables.
-
-::: callout-note
-This pane is similar to the Stata Variables Manager window.
-:::
-
-### Lower-right pane
-
-The lower-right pane includes several tabs:
-
--   Files (library of files)
--   Plots (display of graphics including maps)
--   Packages (available R packages including installation/update options)
--   Help
--   Viewer
--   Presentation.
-
-::: callout-note
-This pane contains the Stata equivalents of the Plots Manager and Project Manager windows.
-:::
-:::
-
-## Open a new R project
-
-In RStudio, you can create a new project by selecting **File** \> **New Project...**
-
-![](images/paste-CCA1D5A5.png){width="350"}
-
-Select New Directory
-
-![](images/paste-DCC39BB5.png)
-
-Select New Project
-
-![](images/paste-30A4402B.png)
-
-Select a location to save the new R project (this creates a new folder).
-
-![](images/paste-C05F97BD.png){width="500"}
-
-Save all relevant data files into this new R project folder.
-
-We will use this project for the duration of the workshop.
+1. Learn how to use Quarto
 
 ## Create a new Quarto document
 

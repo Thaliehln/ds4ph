@@ -12,7 +12,7 @@ To Create a GitHub account, follow the instructions that are given in slide 3 of
 
 ## Install GitHub desktop {#sec-GitHub-Desktop-installation}
 
-**GitHub Desktop** is an application that allows to interact with GitHub through a graphical interface instead of using the command line (for software developers) or GitHub’s web browser.
+**GitHub Desktop** is an application that allows to interact with GitHub through a visual interface instead of using the command line (for software developers) or GitHub’s web browser.
 
 ![](images/paste-9238B1AB.png){width="250"}
 
