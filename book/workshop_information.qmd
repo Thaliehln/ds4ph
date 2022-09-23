@@ -31,13 +31,13 @@ Protea Hotel Dar es Salaam Courtyard on Seaview Ocean Road
 
     b.  [Install and setup RStudio Desktop](http://localhost:4271/r_setup.html#sec-RStudio-installation)
 
-    c.  [Install Quarto](https://thaliehln.github.io/ds4ph/installations.html#install-quarto)
+    c.  [Install Quarto](https://thaliehln.github.io/ds4ph/r_setup.html#sec-Quarto-installation)
     
-    d.  [Install the rmarkdown R package](https://thaliehln.github.io/ds4ph/installations.html#install-quarto)
+    d.  [Install the rmarkdown R package](https://thaliehln.github.io/ds4ph/r_setup.html#sec-rmarkdown-installation)
 
-    e.  [Create a GitHub account](https://thaliehln.github.io/ds4ph/installations.html#github-account)
+    e.  [Create a GitHub account](https://thaliehln.github.io/ds4ph/github_setup.html#sec-GitHub-account-creation)
 
-    f.  [Install GitHub Desktop](https://thaliehln.github.io/ds4ph/installations.html#github-desktop)
+    f.  [Install GitHub Desktop](https://thaliehln.github.io/ds4ph/github_setup.html#sec-GitHub-Desktop-installation)
 
 ::: callout-note
 * All software used in this workshop are free.
