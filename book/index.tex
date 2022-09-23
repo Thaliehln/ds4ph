@@ -49,46 +49,6 @@
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{241,243,245}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
-\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
@@ -237,7 +197,7 @@ Beynon \and Silvia Cicconi}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, borderline west={3pt}{0pt}{shadecolor}, sharp corners, frame hidden, enhanced, boxrule=0pt, interior hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, enhanced, sharp corners, boxrule=0pt, breakable, frame hidden, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -344,7 +304,9 @@ with partner institutions in Africa.
 This workshop targets public health researchers and aims to accompany
 them in their journey towards Data Science.
 
-Protea Hotel Dar es Salaam Courtyard on Seaview Ocean Road
+The workshop takes place at \textbf{Protea Hotel Dar es Salaam
+Courtyard} on Seaview Ocean Road. The conference room is \textbf{Nelson
+Hall}.
 
 \includegraphics{./images/paste-67B4C38F.png}
 
@@ -400,11 +362,8 @@ following questions:
   use another of these tools?
 \end{itemize}
 
-\hypertarget{schedule}{%
-\section{Schedule}\label{schedule}}
-
-\hypertarget{before-the-workshop}{%
-\subsection{Before the workshop}\label{before-the-workshop}}
+\hypertarget{to-do-before-the-workshop}{%
+\section{To do before the workshop}\label{to-do-before-the-workshop}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -419,24 +378,24 @@ following questions:
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
   \item
-    \href{https://thaliehln.github.io/ds4ph/installations.html\#sec-R-installation}{Install
-    R}
+    Install R (\textbf{?@sec-R-installation})
   \item
-    \href{https://thaliehln.github.io/ds4ph/installations.html\#sec-RStudio-installation}{Install
-    RStudio Desktop}
+    Install and setup RStudio Desktop
+    (Section~\ref{sec-RStudio-installation})
   \item
-    \href{https://thaliehln.github.io/ds4ph/installations.html\#install-quarto}{Install
-    Quarto}
+    Install Quarto (Section~\ref{sec-Quarto-installation})
   \item
-    \href{https://thaliehln.github.io/ds4ph/installations.html\#github-account}{GitHub
-    account}
+    Install the rmarkdown R package
+    (Section~\ref{sec-rmarkdown-installation})
   \item
-    \href{https://thaliehln.github.io/ds4ph/installations.html\#github-desktop}{GitHub
-    Desktop}
+    Create a GitHub account (\textbf{?@sec-GitHub-account-creation})
+  \item
+    Install GitHub Desktop
+    (Section~\ref{sec-GitHub-Desktop-installation})
   \end{enumerate}
 \end{enumerate}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, breakable, coltitle=black, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, toptitle=1mm, left=2mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toprule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toptitle=1mm, toprule=.15mm, breakable, colframe=quarto-callout-note-color-frame, coltitle=black, rightrule=.15mm, arc=.35mm, left=2mm, opacitybacktitle=0.6, colback=white, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, opacityback=0, titlerule=0mm, leftrule=.75mm]
 
 \begin{itemize}
 \tightlist
@@ -450,11 +409,14 @@ following questions:
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, breakable, coltitle=black, opacitybacktitle=0.6, colframe=quarto-callout-important-color-frame, bottomrule=.15mm, toptitle=1mm, left=2mm, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, rightrule=.15mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, toprule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, toptitle=1mm, toprule=.15mm, breakable, colframe=quarto-callout-important-color-frame, coltitle=black, rightrule=.15mm, arc=.35mm, left=2mm, opacitybacktitle=0.6, colback=white, colbacktitle=quarto-callout-important-color!10!white, bottomrule=.15mm, opacityback=0, titlerule=0mm, leftrule=.75mm]
 For those who have already been introduced to Git, R/RStudio and
 RMarkdown, note that you need to additionally install Quarto for this
 workshop.
 \end{tcolorbox}
+
+\hypertarget{schedule}{%
+\section{Schedule}\label{schedule}}
 
 \hypertarget{day-1}{%
 \subsection{Day 1}\label{day-1}}
@@ -603,14 +565,17 @@ surveys/reports\strut
 \bottomrule()
 \end{longtable}
 
-\hypertarget{after-the-workshop}{%
-\subsection{After the workshop}\label{after-the-workshop}}
+\hypertarget{to-do-after-the-workshop}{%
+\section{To do after the workshop}\label{to-do-after-the-workshop}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Fill out the online post-workshop questionnaire
+  Fill out the online post-workshop questionnaire.
+\item
+  This material will stay online, do not hesitate to refer to it if
+  needed.
 \end{enumerate}
 
 \bookmarksetup{startatroot}
@@ -626,10 +591,12 @@ surveys/reports\strut
 \appendix
 \addcontentsline{toc}{part}{Appendices}
 
-\hypertarget{installations}{%
-\chapter{Installations}\label{installations}}
+\hypertarget{r-installations}{%
+\chapter{R installations}\label{r-installations}}
 
-R is a programming language for statistical computing and graphics.
+\textbf{R} is a programming language for statistical computing and
+graphics. It is one of main programming language used for data science
+(with other programming languages such as Python and Julia).
 
 \hypertarget{step-1}{%
 \subsubsection{Step 1}\label{step-1}}
@@ -644,7 +611,7 @@ store identical up-to-date versions of code and documentation for R.
 Scroll down the page to locate the mirror that is the closest to your
 geographic location and click on its URL.
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, breakable, coltitle=black, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, toptitle=1mm, left=2mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, toprule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, toptitle=1mm, toprule=.15mm, breakable, colframe=quarto-callout-tip-color-frame, coltitle=black, rightrule=.15mm, arc=.35mm, left=2mm, opacitybacktitle=0.6, colback=white, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, opacityback=0, titlerule=0mm, leftrule=.75mm]
 Selecting a mirror that is close to you may help speed up the download.
 You can still use another mirror since the closest geographic location
 does not always give the best mirror.
@@ -671,27 +638,40 @@ Select binaries for base distribution
 \hypertarget{step-4}{%
 \subsubsection{Step 4}\label{step-4}}
 
-Download the installer (\textless{} 80 MB)
+Download the R installer (\textless{} 80 MB)
 
 \includegraphics[width=3.64583in,height=\textheight]{./images/paste-9624855F.png}
-
-\includegraphics[width=3.64583in,height=\textheight]{./images/paste-C42ACB10.png}
 
 \hypertarget{step-5}{%
 \subsubsection{Step 5}\label{step-5}}
 
-After downloading the installer, follow the installation wizard on your
-computer.
+In your computer's Downloads folder, double-click the R setup file.
+
+\includegraphics{./images/paste-FD7C97A4.png}
+
+\hypertarget{step-6}{%
+\subsubsection{Step 6}\label{step-6}}
+
+Follow the instruction in the installation wizard to complete the
+installation.
 
 \includegraphics{./images/paste-0F242DBF.png}
 
 \hypertarget{sec-RStudio-installation}{%
-\section{Install RStudio Desktop}\label{sec-RStudio-installation}}
+\section{Install and setup RStudio
+Desktop}\label{sec-RStudio-installation}}
 
-Rstudio is an integrated development environment (IDE) for R that
-enables an easier use of R.
+\textbf{Rstudio} is an integrated development environment (IDE) for R
+that enables an easier use of R.
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, breakable, coltitle=black, opacitybacktitle=0.6, colframe=quarto-callout-important-color-frame, bottomrule=.15mm, toptitle=1mm, left=2mm, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, rightrule=.15mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, toprule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toptitle=1mm, toprule=.15mm, breakable, colframe=quarto-callout-note-color-frame, coltitle=black, rightrule=.15mm, arc=.35mm, left=2mm, opacitybacktitle=0.6, colback=white, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, opacityback=0, titlerule=0mm, leftrule=.75mm]
+RStudio is moving away from its R-exclusive focus and becoming
+\href{https://posit.co/}{Posit} in October 2022 to enable broader data
+science, scientific research, and technical communication
+functionalities and, in particular, to integrate Python users.
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, toptitle=1mm, toprule=.15mm, breakable, colframe=quarto-callout-important-color-frame, coltitle=black, rightrule=.15mm, arc=.35mm, left=2mm, opacitybacktitle=0.6, colback=white, colbacktitle=quarto-callout-important-color!10!white, bottomrule=.15mm, opacityback=0, titlerule=0mm, leftrule=.75mm]
 In order for RStudio desktop to work with R you must have installed R on
 your computer, see \textbf{?@sec-R-installation}. RStudio does not
 include R when you download and install it.
@@ -703,7 +683,7 @@ include R when you download and install it.
 You can download R from the
 \href{https://www.rstudio.com/products/rstudio/download/}{RStudio
 website}. There are different RStudio products available, but the free
-Desktop version offers all necessary features for you to tun.
+Desktop version offers all necessary features for your analyses.
 
 \includegraphics{./images/paste-3C3D0718.png}
 
@@ -712,58 +692,118 @@ Desktop version offers all necessary features for you to tun.
 
 \includegraphics{./images/paste-027BCBD8.png}
 
-If you are using Macintosh or Linux OS, installers are also available.
+Download the RStudio Desktop installer that corresponds to your
+operating system.
 
 \hypertarget{step-3-1}{%
 \subsubsection{Step 3}\label{step-3-1}}
 
-Download the installer.
+In your computer's Downloads folder, double-click the RStudio Desktop
+setup file.
 
-\includegraphics{./images/paste-8FBADC1E.png}
+\includegraphics{./images/paste-31A16011.png}
 
 \hypertarget{step-4-1}{%
 \subsubsection{Step 4}\label{step-4-1}}
 
-After downloading the installer, follow the installation wizard on your
-computer.
+Follow the instruction in the installation wizard to complete the
+installation.
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, breakable, coltitle=black, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, toptitle=1mm, left=2mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toprule=.15mm, colback=white]
-RStudio is moving away from its R-exclusive focus and becoming
-\href{https://posit.co/}{Posit} in October 2022 to enable broader data
-science, scientific research, and technical communication
-functionalities and, in particular, to integrate Python users.
-\end{tcolorbox}
+\includegraphics{./images/paste-427EA827.png}
 
-\hypertarget{install-quarto}{%
-\section{Install Quarto}\label{install-quarto}}
+\hypertarget{step-5-1}{%
+\subsubsection{Step 5}\label{step-5-1}}
+
+Open RStudio
+
+\hypertarget{step-6-1}{%
+\subsubsection{Step 6}\label{step-6-1}}
+
+In RStudio, you can set global options by selecting \textbf{Tools}
+\textgreater{} \textbf{Global options}
+
+\includegraphics{./images/paste-D0B6CCF0.png}
+
+\hypertarget{step-7}{%
+\subsubsection{Step 7}\label{step-7}}
+
+Under the \textbf{General} options and the \textbf{Basic} tab:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Workspace}
+
+  \begin{itemize}
+  \item
+    Uncheck \emph{Restore .RData into workspace at startup}
+  \item
+    Ensure that \emph{Never} is selected for \emph{Save workspace to
+    .RData on exit}.
+  \end{itemize}
+\item
+  \textbf{History}
+
+  \begin{itemize}
+  \item
+    Uncheck \emph{Always save history (even when not saving .RData)}
+  \item
+    Uncheck \emph{Remove duplicate entries in history}
+  \end{itemize}
+\end{itemize}
+
+\includegraphics{./images/paste-A507B21D.png}
+
+\hypertarget{sec-Quarto-installation}{%
+\section{Install Quarto}\label{sec-Quarto-installation}}
+
+\textbf{Quarto} is a software tool that allows to generate high quality
+reproducible data analysis documents (including but not limited to
+articles, reports, presentations) with programming language used in data
+science (such as R, Python or Julia). It is the successor to \textbf{R
+Markdown}.
 
 \hypertarget{step-1-2}{%
 \subsubsection{Step 1}\label{step-1-2}}
 
-You can download Quarto from the
-\href{https://quarto.org/docs/get-started/}{Quarto website}.
+You can download the Quarto installer that corresponds to your operating
+system from the \href{https://quarto.org/docs/get-started/}{Quarto
+website}.
+
+\includegraphics{./images/paste-DDD0332C.png}
 
 \hypertarget{step-2-2}{%
 \subsubsection{Step 2}\label{step-2-2}}
 
-After downloading, follow the installation wizard on your computer.
+1. In your computer's Downloads folder, double-click the Quarto setup
+file.
+
+2. Follow the instruction in the installation wizard to complete the
+installation.
 
 \includegraphics{./images/paste-FE57875E.png}
 
-When the installation is complete, you will not see any new software on
-your laptop, but Quarto is now available to be used in RStudio, as well
-as by all other applications on your computer (including the command
-line).
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, toptitle=1mm, toprule=.15mm, breakable, colframe=quarto-callout-important-color-frame, coltitle=black, rightrule=.15mm, arc=.35mm, left=2mm, opacitybacktitle=0.6, colback=white, colbacktitle=quarto-callout-important-color!10!white, bottomrule=.15mm, opacityback=0, titlerule=0mm, leftrule=.75mm]
+When the installation of Quarto is complete, you will not see any new
+software on your computer, but Quarto is now available to be used in
+RStudio, as well as by all other applications on your computer.
 
-\hypertarget{step-3-2}{%
-\subsubsection{Step 3}\label{step-3-2}}
+Quarto will select a version of R by looking on your system PATH. Note
+that it is possible to override the version of R used by Quarto by
+setting the \texttt{QUARTO\_R} environment variable.
+\end{tcolorbox}
 
-To use Quarto with R, you should install the \textbf{rmarkdown} R
-package.
+\hypertarget{sec-rmarkdown-installation}{%
+\section{Install the rmarkdown R
+package}\label{sec-rmarkdown-installation}}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, breakable, coltitle=black, opacitybacktitle=0.6, colframe=quarto-callout-important-color-frame, bottomrule=.15mm, toptitle=1mm, left=2mm, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, rightrule=.15mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, toprule=.15mm, colback=white]
-A R package is a collections of R functions, data, and compiled code in
-a well-defined format, created to add specific functionality to R.
+To use Quarto with R and RStudio, you need to install the
+\textbf{rmarkdown} R package.
+
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toptitle=1mm, toprule=.15mm, breakable, colframe=quarto-callout-note-color-frame, coltitle=black, rightrule=.15mm, arc=.35mm, left=2mm, opacitybacktitle=0.6, colback=white, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, opacityback=0, titlerule=0mm, leftrule=.75mm]
+A \textbf{R package} is a collection of functions, data, and compiled
+code in a well-defined format, created to add specific functionality to
+R.
 
 There are 10,000+ user contributed packages and growing.
 
@@ -774,83 +814,85 @@ work, and enable standard statistical and graphical functions on data
 sets.
 \end{tcolorbox}
 
-To install packages
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}}
-\FunctionTok{install.packages}\NormalTok{(}\StringTok{"rmarkdown"}\NormalTok{)}
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
-\end{Highlighting}
-\end{Shaded}
-
-Installation of the rmarkdown package will also install the knitr
-package so you will have everything required to render documents
-containing R code.
-
-Quarto will select a version of R by looking on the system PATH. In
-addition, on Windows when R is not found on the PATH, the registry will
-be scanned for the current R version. You can override the version of R
-used by Quarto by setting the QUARTO\_R environment variable.
-
-\hypertarget{github-account}{%
-\section{GitHub account}\label{github-account}}
-
-GitHub is a code hosting platform for version control and collaboration.
-To Create a github account: \href{https://github.com/signup}{sign up}
-
-\hypertarget{github-desktop}{%
-\section{GitHub desktop}\label{github-desktop}}
-
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, breakable, coltitle=black, opacitybacktitle=0.6, colframe=quarto-callout-important-color-frame, bottomrule=.15mm, toptitle=1mm, left=2mm, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, rightrule=.15mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, toprule=.15mm, colback=white]
-\textbf{You must have Git installed before using GitHub Desktop}.
-\end{tcolorbox}
+The \textbf{rmarkdown} package will add all necessary functionalities in
+your R installation to render Quarto documents that use R.
 
 \hypertarget{step-1-3}{%
 \subsubsection{Step 1}\label{step-1-3}}
 
-Download and install the latest version of Git from
-\href{https://git-scm.com/downloads}{link}
+Open RStudio on your computer
 
 \hypertarget{step-2-3}{%
 \subsubsection{Step 2}\label{step-2-3}}
 
-Download github desktop installer from
-\href{https://desktop.github.com/}{link}, After downloading, follow the
-installation wizard on your computer
+In RStudio, you can install a new package by selecting \textbf{Tools}
+\textgreater{} \textbf{Install packages\ldots{}}
 
-\hypertarget{how-to-connect-your-github-account-to-github-desktop}{%
-\subsection{How to connect your GitHub account to GitHub
-Desktop?}\label{how-to-connect-your-github-account-to-github-desktop}}
+\includegraphics{./images/paste-100922E2.png}
 
-\hypertarget{authenticating-to-github}{%
-\subsubsection{Authenticating to
-GitHub}\label{authenticating-to-github}}
+\hypertarget{step-3-2}{%
+\subsubsection{Step 3}\label{step-3-2}}
 
-To connect to GitHub Desktop with GitHub, you will need to authenticate
-your GitHub account.
+\includegraphics{./images/paste-BE660336.png}
+
+\hypertarget{github-setup}{%
+\chapter{GitHub setup}\label{github-setup}}
+
+\includegraphics{./images/paste-081F7F03.png}
+
+\textbf{GitHub} is a code hosting platform for version control and
+collaboration.
+
+To Create a GitHub account, follow the instructions that are given in
+slide 3 of the Powerpoint document available at the following
+\href{https://drive.switch.ch/index.php/s/1eFnksrX0UtjfZV}{link}
+
+\hypertarget{sec-GitHub-Desktop-installation}{%
+\section{Install GitHub desktop}\label{sec-GitHub-Desktop-installation}}
+
+GitHub Desktop is an application that enables you to interact with
+GitHub using an graphical interface instead of the command line or a web
+browser.
+
+You can install GitHub Desktop on supported Windows or macOS operating
+systems.
+
+\hypertarget{step-1-4}{%
+\subsubsection{Step 1}\label{step-1-4}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Use the File menu, then click Options.
+  Visit the \href{https://desktop.github.com/}{download page} for GitHub
+  Desktop.
 \item
-  In the Options window, select Accounts.
-\item
-  To the right of ``GitHub.com,'' click Sign in.
-\item
-  In the ``Sign in Using Your Browser'' pane, click Continue With
-  Browser. GitHub Desktop will open your default browser.
-\item
-  To authenticate to GitHub, type your GitHub.com credentials and click
-  Sign in. Alternatively, if you were already signed in to GitHub,
-  follow the prompts to return to GitHub Desktop to finish
-  authenticating.
-\item
-  After GitHub authenticates your account, follow the prompts to return
-  to GitHub Desktop.
+  Click Download for Windows.
 \end{enumerate}
+
+\includegraphics{./images/paste-465BAC3C.png}
+
+\hypertarget{step-2-4}{%
+\subsubsection{Step 2}\label{step-2-4}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  In your computer's Downloads folder, double-click the GitHub Desktop
+  setup file.
+\item
+  Follow the instruction in the installation wizard to complete the
+  installation.
+\end{enumerate}
+
+\hypertarget{step-3-3}{%
+\subsubsection{Step 3}\label{step-3-3}}
+
+To connect your GitHub account to GitHub Desktop, follow the
+instructions that are given in slides 6 to 9 of the Powerpoint document
+available at the following
+\href{https://drive.switch.ch/index.php/s/1eFnksrX0UtjfZV}{link}
 
 
 

@@ -11,42 +11,91 @@
     "href": "intro.html",
     "title": "1  About the workshop",
     "section": "",
-    "text": "🗓️ September 26-28, 2022\n🕘 09:00 - 17:00\n🌇 Dar-es-Salaam, Tanzania\nThis workshop targets public health researchers and aims to accompany them in their journey towards Data Science."
-  },
-  {
-    "objectID": "intro.html#learning-objectives",
-    "href": "intro.html#learning-objectives",
-    "title": "1  About the workshop",
-    "section": "2.1 Learning objectives",
-    "text": "2.1 Learning objectives\nThere are two complementary aspects of moving into data science:\n\na mindset about how scientists think and collaborate about data, and\na skillset which is composed of an ecosystem of tools (mostly open-source) and practices.\n\nUpon completing the workshop, participants will have gained:\n\nexposure to data science approach, tools and collaborative practices\nhands-on experience on how to interface between Stata and R, learned the basics of working with data in R/RStudio, and how to incrementally incorporate R into your existing data analysis workflows in Stata. The idea is not to replace everything you do in Stata into R but that you can continue your learning after this workshop at your own pace."
+    "text": "🗓️ September 26-28, 2022\\\n\n\n🕘 09:00 - 17:00\\\n\n\n🌇 Dar-es-Salaam, Tanzania\nThis workshop targets public health researchers and aims to accompany them in their journey towards Data Science."
   },
   {
     "objectID": "intro.html#is-this-workshop-for-me",
     "href": "intro.html#is-this-workshop-for-me",
     "title": "1  About the workshop",
-    "section": "2.2 Is this workshop for me?",
-    "text": "2.2 Is this workshop for me?\nThis workshop is relevant for individuals who answer yes to the following questions:\n\nDo you who want to develop data science projects in public health?\nDo you wants to learn more about how open and reproducible science approaches can be used in your daily practice?\nAre you a Stata user (or any other data analysis language) who would like to expand your data analysis skillset with R?\nDo you want to bridge analyses between data analysis tools (Stata, R or Python) and to more easily collaborate with other researchers who use another of these tools?"
+    "section": "1.1 Is this workshop for me?",
+    "text": "1.1 Is this workshop for me?\nThis workshop is relevant for researchers who answer yes at least to one of the following questions:\n\nDo you who want to develop data science projects in public health?\nDo you wants to learn more about how open and reproducible science approaches can be used in your daily practice?\nAre you a Stata user (or any other data analysis language) who would like to expand your data analysis skillset with R?\nDo you want to bridge analyses between data analysis tools (Stata, R or Python) and to more easily collaborate on data analysis with other researchers?"
+  },
+  {
+    "objectID": "intro.html#learning-objectives",
+    "href": "intro.html#learning-objectives",
+    "title": "1  About the workshop",
+    "section": "1.2 Learning objectives",
+    "text": "1.2 Learning objectives\nThere are two complementary aspects of moving into data science:\n\na mindset about how scientists think and collaborate about data, and\na skillset which is composed of an ecosystem of tools (mostly open-source) and practices.\n\nUpon completing the workshop, participants will have gained:\n\nexposure to data science approach, tools and collaborative practices\nlearned the basics of working with dynamic documents in RStudio, and how to incrementally incorporate R into your existing data analysis workflows\nhands-on experience on how to interface between Stata and R and combine them depending on your skills and needs. The idea is not to replace everything you are already doing in Stata into R but that you can continue your learning journey after this workshop at your own pace, also using some of the resources listed in Appendix D."
   },
   {
     "objectID": "intro.html#to-do-before-the-workshop",
     "href": "intro.html#to-do-before-the-workshop",
     "title": "1  About the workshop",
-    "section": "2.3 To do before the workshop",
-    "text": "2.3 To do before the workshop\n\nFill out the online pre-workshop questionnaire\nIf you have not it yet, please go through the following five steps (about 30 minutes).\n\nInstall R (Section A.1)\nInstall and setup RStudio Desktop (Section A.2)\nInstall Quarto (Section A.3)\nInstall the rmarkdown R package (Section A.4)\nCreate a GitHub account (Section B.1)\nInstall GitHub Desktop (Section B.2)\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nAll software used in this workshop are free.\nIf you have any difficulties with the installation, support can be provided on the first day of the workshop before the first session or during breaks.\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nFor those who have already been introduced to Git, R/RStudio and RMarkdown, note that you need to additionally install Quarto for this workshop."
+    "section": "1.3 To do before the workshop",
+    "text": "1.3 To do before the workshop\n\nFill out the online pre-workshop questionnaire\nIf you have not it yet, please go through the following five steps (about 30 minutes).\n\nInstall R (Section A.1)\nInstall and setup RStudio Desktop (Section A.2)\nInstall Quarto (Section A.3)\nInstall the rmarkdown R package (Section A.4)\nCreate a GitHub account (Section B.1)\nInstall GitHub Desktop (Section B.2)\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nAll software used in this workshop are free.\nIf you have any difficulties with the installation, support can be provided on the first day of the workshop before the first session or during breaks.\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nFor those who have already been introduced to Git, R/RStudio and RMarkdown, note that you need to additionally install Quarto for this workshop."
+  },
+  {
+    "objectID": "intro.html#venue",
+    "href": "intro.html#venue",
+    "title": "1  About the workshop",
+    "section": "1.4 Venue",
+    "text": "1.4 Venue\nThe workshop takes place at Protea Hotel Dar es Salaam Courtyard on Seaview Ocean Road. The conference room is Nelson Hall."
   },
   {
     "objectID": "intro.html#schedule",
     "href": "intro.html#schedule",
     "title": "1  About the workshop",
-    "section": "2.4 Schedule",
-    "text": "2.4 Schedule\n\n2.4.1 Day 1\n\n\nTable 2.1: Schedule Day 1\n\n\n\n\n\n\nTime\nSession\n\n\n\n\n08.30 - 09.00\nWelcome\nSupport for software installation\n\n\n09.00 - 09.15\nIntroduction to data science tools\nOverview of objectives for Day 1\n\n\n09.15 - 10.15\nVersion control with Git\n\n\n10.15 - 10.45\n🍵 ☕ Break\n\n\n10.45 -11.45\nIntroduction to dynamic documents and Quarto\n\n\n11.45 - 12.15\nUse Quarto with Stata\n\n\n12.15 - 13.15\n🍴 Lunch break\n\n\n13.15 - 14.00\nImport external data\n\n\n14.00 - 15.00\nManipulate data\n\n\n15.00 - 15.30\n🍵 ☕ Break\n\n\n15.30 - 16.15\nVisualise data\n\n\n16.15 - 17.00\nShare code and collaborate with Git\n\n\n\n\n\n\n2.4.2 Day 2\n\n\nTable 2.2: Schedule Day 2\n\n\n\n\n\n\nTime\nSession (all)\n\n\n\n\n08.30 - 09.00\nWelcome\n\n\n09.00 - 09.20\nIntroduction to Data Science for Public Health\nOverview of objectives for Day 2\n\n\n09.20 - 10.15\nDiscussion on concepts related to to public health data for decision-making\n\n\n10.15 - 10.45\n🍵 ☕ Break\n\n\n10:45-12:15\nMalaria practical #1\n\n\n12.15- 13.15\n🍴 Lunch break\n\n\n13.15- 13.30\nPrepare presentation of data findings\n\n\n13.30 - 14.00\nPresent and discuss data findings\n\n\n14.00 - 14.30\nInterdisciplinary discussion on malaria, dataset, uncertainties, challenges\n\n\n14.00 - 14.30\nMalaria practical #2\n\n\n15.00 - 15.30\n🍵 ☕ Break\n\n\n15.30 - 16.15\nMalaria practical #2\n\n\n16.15 - 16.30\nPrepare presentation of data findings\n\n\n16.30 - 17.00\nPresent and discuss data findings\n\n\n\n\n\n\n2.4.3 Day 3\n\n\nTable 2.3: Schedule Day 3\n\n\n\n\n\n\nTime\nSession (all)\n\n\n\n\n08.30 - 09.00\nWelcome\n\n\n09.00 - 09.20\nInterdisciplinary introduction to big data and machine Learning\nOverview of objectives for Day 3\n\n\n09.20 - 10.15\nDiscussion on secondary data sources\n(Public Datasets, e.g. DHS, Facebook, facilities, etc)\nBenefits and drawbacks between primary and secondary data sources\n\n\n10.15 - 10.45\n🍵 ☕ Break\n\n\n10.45 - 12.15\n[Analysis stream] Introduction to machine learning\n[Interpretation stream] Critically discuss data surveys/reports\n\n\n12:15-13:15\n🍴 Lunch break\n\n\n13:15-13:45\nSpeed talks - research presentations\n\n\n13:45-15.00\n[Analysis stream] Data practical\n[Interpretation stream] Critically discuss data surveys/reports\n\n\n15.00 - 15.30\n🍵 ☕ Break\n\n\n15:30-16:00\nFeedback on findings from practicals\n\n\n16:00-16:30\n\nFeedback on workshop - Wrap-up"
+    "section": "1.5 Schedule",
+    "text": "1.5 Schedule\n\n1.5.1 Day 1\n\n\nTable 1.1: Schedule Day 1\n\n\n\n\n\n\nTime\nSession\n\n\n\n\n08.30 - 09.00\nWelcome\nSupport for software installation\n\n\n09.00 - 09.15\nIntroduction to data science tools\nOverview of objectives for Day 1\n\n\n09.15 - 10.15\nVersion control with Git\n\n\n10.15 - 10.45\n🍵 ☕ Break\n\n\n10.45 -11.45\nIntroduction to dynamic documents and Quarto\n\n\n11.45 - 12.15\nUse Quarto with Stata\n\n\n12.15 - 13.15\n🍴 Lunch break\n\n\n13.15 - 14.00\nImport external data\n\n\n14.00 - 15.00\nManipulate data\n\n\n15.00 - 15.30\n🍵 ☕ Break\n\n\n15.30 - 16.15\nVisualise data\n\n\n16.15 - 17.00\nShare code and collaborate with Git\n\n\n\n\n\n\n1.5.2 Day 2\n\n\nTable 1.2: Schedule Day 2\n\n\n\n\n\n\nTime\nSession (all)\n\n\n\n\n08.30 - 09.00\nWelcome\n\n\n09.00 - 09.20\nIntroduction to Data Science for Public Health\nOverview of objectives for Day 2\n\n\n09.20 - 10.15\nDiscussion on concepts related to to public health data for decision-making\n\n\n10.15 - 10.45\n🍵 ☕ Break\n\n\n10:45-12:15\nMalaria practical #1\n\n\n12.15- 13.15\n🍴 Lunch break\n\n\n13.15- 13.30\nPrepare presentation of data findings\n\n\n13.30 - 14.00\nPresent and discuss data findings\n\n\n14.00 - 14.30\nInterdisciplinary discussion on malaria, dataset, uncertainties, challenges\n\n\n14.00 - 14.30\nMalaria practical #2\n\n\n15.00 - 15.30\n🍵 ☕ Break\n\n\n15.30 - 16.15\nMalaria practical #2\n\n\n16.15 - 16.30\nPrepare presentation of data findings\n\n\n16.30 - 17.00\nPresent and discuss data findings\n\n\n\n\n\n\n1.5.3 Day 3\n\n\nTable 1.3: Schedule Day 3\n\n\n\n\n\n\nTime\nSession (all)\n\n\n\n\n08.30 - 09.00\nWelcome\n\n\n09.00 - 09.20\nInterdisciplinary introduction to big data and machine Learning\nOverview of objectives for Day 3\n\n\n09.20 - 10.15\nDiscussion on secondary data sources\n(Public Datasets, e.g. DHS, Facebook, facilities, etc)\nBenefits and drawbacks between primary and secondary data sources\n\n\n10.15 - 10.45\n🍵 ☕ Break\n\n\n10.45 - 12.15\n[Analysis stream] Introduction to machine learning\n[Interpretation stream] Critically discuss data surveys/reports\n\n\n12:15-13:15\n🍴 Lunch break\n\n\n13:15-13:45\nSpeed talks - research presentations\n\n\n13:45-15.00\n[Analysis stream] Data practical\n[Interpretation stream] Critically discuss data surveys/reports\n\n\n15.00 - 15.30\n🍵 ☕ Break\n\n\n15:30-16:00\nFeedback on findings from practicals\n\n\n16:00-16:30\n\nFeedback on workshop - Wrap-up"
   },
   {
     "objectID": "intro.html#to-do-after-the-workshop",
     "href": "intro.html#to-do-after-the-workshop",
     "title": "1  About the workshop",
-    "section": "2.5 To do after the workshop",
-    "text": "2.5 To do after the workshop\n\nFill out the online post-workshop questionnaire.\nThis material will stay online, do not hesitate to refer to it if needed."
+    "section": "1.6 To do after the workshop",
+    "text": "1.6 To do after the workshop\n\nFill out the online post-workshop questionnaire.\nThis material will stay online, do not hesitate to refer to it if needed."
+  },
+  {
+    "objectID": "tools_for_reproducible_data_science.html",
+    "href": "tools_for_reproducible_data_science.html",
+    "title": "2  📚 Tools for reproducible quantitative research",
+    "section": "",
+    "text": "When reporting scientific results, researchers must document the steps they followed so that independent researchers within the broader research community are able to trust and build upon their findings (cumulative knowledge).\n\n\n\n\n\n\nImportant\n\n\n\nReporting should include negative results as they contribute to the development of a cumulative knowledge as much as positive results do and avoid wasting resources.\n\n\n\n\n\nResearch Diagram vs. Research Reality. “Piled Higher and Deeper” by Jorge Cham www.phdcomics.com\n\n\nThere have been recurrent calls in the recent decades for the scientific community to embrace practices to support research reproducibility and many software tools are now available to facilitate this process.\n\n\n\n\nWhat is meant by reproducible quantitative research and why does it matters?\nWhat should be documented for ensuring the reproducibility of quantitative analyses?\nWhat software tools are available to support reproducible quantitative research?"
+  },
+  {
+    "objectID": "tools_for_reproducible_data_science.html#reproducible-quantitative-research",
+    "href": "tools_for_reproducible_data_science.html#reproducible-quantitative-research",
+    "title": "2  📚 Tools for reproducible quantitative research",
+    "section": "2.2 Reproducible quantitative research",
+    "text": "2.2 Reproducible quantitative research\nA quantitative analysis is said to be (computationally) reproducible when the same analysis steps performed on the same dataset consistently produce the same quantitative results (1). Given the deterministic nature of computer programmes, a quantitative analysis must be reproducible to be credible.\n\n\n\nFigure 2.1: This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807\n\n\nIn addition to (computational) reproducibility, replicability, robustness and generalisability are key to the generation of strong quantitative evidence.\n\nReplicabilityRobustnessGeneralisability\n\n\nThe same analysis steps are performed on different datasets and produce qualitatively similar answers (1).\n\n\n\nFigure 2.2: This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807\n\n\n\n\nDifferent analysis steps are performed on the same dataset to answer the same research question and produce qualitatively similar or identical answers (1).\n\n\n\nFigure 2.3: This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807\n\n\n\n\nDifferent analysis steps are performed on the different datasets to know how well the work applies to all the different aspects of the research question and produce generalisable answers (1).\n\n\n\nFigure 2.4: This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807"
+  },
+  {
+    "objectID": "tools_for_reproducible_data_science.html#good-documentation-for-reproducible-analyses",
+    "href": "tools_for_reproducible_data_science.html#good-documentation-for-reproducible-analyses",
+    "title": "2  📚 Tools for reproducible quantitative research",
+    "section": "2.3 Good documentation for reproducible analyses",
+    "text": "2.3 Good documentation for reproducible analyses\nTo guarantee that any other researcher can reproduce your analysis, you would need to document and share the full computational environment, tools, data and code that were used to generate your results.\n\n\n\nFigure 2.5: This image was adapted from an original image created by Scriberia for The Turing Way community (CC-BY licence. DOI: 10.5281/zenodo.3332807)."
+  },
+  {
+    "objectID": "tools_for_reproducible_data_science.html#opportunities-and-challenges-of-reproducible-research",
+    "href": "tools_for_reproducible_data_science.html#opportunities-and-challenges-of-reproducible-research",
+    "title": "2  📚 Tools for reproducible quantitative research",
+    "section": "2.4 Opportunities and challenges of reproducible research",
+    "text": "2.4 Opportunities and challenges of reproducible research\n\n💬 Discussion➕ Opportunities➖ Barriers and challengesChallenges\n\n\n\nHow do you think reproducible quantitative analyses can improve your research?\nRecent investigations have shown that a significant percentage of scientific studies cannot be reproduced, thus contributing to growing mistrust in scientific results (2,3). What barriers and challenges to reproducible research do you see in your daily practice?\n\n🕒 5 minutes\n\n\n\n\n\nThis image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807\n\n\n\n\n\n\n\nFigure 2.6: Example of barriers to reproducibility\n\n\n\n\nIn practice, reproducibility is challenging, even for trained data scientists equipped with an arsenal of software tools. Quantitative analyses can often not be fully reproduced because of complexities in how software tools are packaged, installed, and executed and because of limitations associated with how scientists document analysis steps."
+  },
+  {
+    "objectID": "tools_for_reproducible_data_science.html#software-tools-across-the-research-data-lifecycle",
+    "href": "tools_for_reproducible_data_science.html#software-tools-across-the-research-data-lifecycle",
+    "title": "2  📚 Tools for reproducible quantitative research",
+    "section": "2.5 Software tools across the research data lifecycle",
+    "text": "2.5 Software tools across the research data lifecycle\nAs illustrated in Figure 2.7, there is now a whole set of free or open source software tools that are available to help you automate your processes and overcome reproducibility challenges across the research data lifecycle.\nIn this workshop, you will be introduced to following software tools that will help make your quantitative data processing, study and analysis more reproducible:\n\nGit/GitHub allow you to keep track of various versions of your code, share your code and collaborate with others on code development;\nR is a programming language for statistical computing and graphics and one of main programming language used for data science (with other programming languages such as Python and Julia). The ecosystem around R provides an interactive environment for data science science workflows, thus making R is a great start for your data science journey.\nRstudio is an integrated development environment (IDE) for R that enables an easier use of R.\nQuarto allow you to generate (reproducible) dynamic reports to document your data analyses. We will use Quarto within the R/RStudio environment.\n\n\n\n\n\n\n\nImportant\n\n\n\nIn practice, most data scientists use a mix of languages, often at least R and Python. You will be slightly exposed to R, but the goal of this workshop is\n\n\n\n\n\nFigure 2.7: Example of free / open source software tools across the research data lifecycle. This image was adapted from an original image created by Scriberia for The Turing Way community (CC-BY licence. DOI: 10.5281/zenodo.3332807).\n\n\n\n\n\n\n\n\nNote\n\n\n\nAlthough qualitative research contributes as significantly as quantitative research to knowledge generation, the validation of qualitative research findings is a much more complex and debated concept as qualitative analysis is by essence subjective and contextual. This explains the lower availability of software tools dedicated to qualitative research compared to what is available for quantitative research.\n\n\n\n\n\n\n1. The Turing Way Community. The Turing Way: A handbook for reproducible, ethical and collaborative research [Internet]. Zenodo; 2022. Available from: https://doi.org/10.5281/zenodo.6909298\n\n\n2. Baker M. 1,500 scientists lift the lid on reproducibility. Nature. 2016;533:452–4. \n\n\n3. Harris JK, Johnson KJ, Carothers BJ, Combs TB, Luke DA, Wang X. Use of reproducible research practices in public health: A survey of public health analysts. PLOS ONE [Internet]. 2018 Sep;13(9):1–12. Available from: https://doi.org/10.1371/journal.pone.0202447"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "1. Mayer FW. ruODK: Client for the ODK central API\n[Internet]. 2020. Available from: https://github.com/ropensci/ruODK\n\n\n2. Maina J, Ouma PO, Macharia PM, Alegana VA,\nMitto B, Fall IS, et al. A spatial database of health facilities managed\nby the public health sector in sub Saharan\nAfrica. Scientific Data [Internet]. 2019 Jul;6(1):134.\nAvailable from: https://doi.org/10.1038/s41597-019-0142-2\n\n\n3. The\nTuring Way Community. The Turing Way: A handbook\nfor reproducible, ethical and collaborative research [Internet].\nZenodo; 2022. Available from: https://doi.org/10.5281/zenodo.6909298\n\n\n4. Batra N. The Epidemiologist R\nHandbook. 2021. \n\n\n5. Harris JK, Johnson KJ, Carothers BJ, Combs TB,\nLuke DA, Wang X. Use of reproducible research practices in public\nhealth: A survey of public health analysts. PLOS ONE\n[Internet]. 2018 Sep;13(9):1–12. Available from: https://doi.org/10.1371/journal.pone.0202447\n\n\n6. Baker M. 1,500 scientists lift the lid on\nreproducibility. Nature. 2016;533:452–4."
   },
   {
     "objectID": "r_setup.html",
@@ -81,13 +130,90 @@
     "href": "github_setup.html#sec-GitHub-account-creation",
     "title": "Appendix B — GitHub setup",
     "section": "B.1 Create a GitHub account",
-    "text": "B.1 Create a GitHub account\nGitHub is a code hosting platform for version control and collaboration.\nTo Create a GitHub account, follow the instructions that are given in slide 3 of the Powerpoint document available at the following link"
+    "text": "B.1 Create a GitHub account\nGitHub is a code hosting platform for version control and collaboration.\nTo Create a GitHub account, follow the instructions that are given in slide 3 of the Powerpoint document available at the following link."
   },
   {
     "objectID": "github_setup.html#sec-GitHub-Desktop-installation",
     "href": "github_setup.html#sec-GitHub-Desktop-installation",
     "title": "Appendix B — GitHub setup",
     "section": "B.2 Install GitHub desktop",
-    "text": "B.2 Install GitHub desktop\nGitHub Desktop is an application that enables you to interact with GitHub using an graphical interface instead of the command line or a web browser.\nYou can install GitHub Desktop on supported Windows or macOS operating systems.\n\nStep 1Step 2Step 3\n\n\n\nVisit the download page for GitHub Desktop.\nClick Download for Windows.\n\n\n\n\n\nIn your computer’s Downloads folder, double-click the GitHub Desktop setup file.\nFollow the instruction in the installation wizard to complete the installation.\n\n\n\nTo connect your GitHub account to GitHub Desktop, follow the instructions that are given in slides 6 to 9 of the Powerpoint document available at the following link"
+    "text": "B.2 Install GitHub desktop\nGitHub Desktop is an application that enables you to interact with GitHub using a graphical interface.\nYou can install GitHub Desktop on supported Windows or macOS operating systems.\n\nStep 1Step 2Step 3\n\n\n\nVisit the download page for GitHub Desktop.\nClick Download for Windows.\n\n\n\n\n\nIn your computer’s Downloads folder, double-click the GitHub Desktop setup file.\nFollow the instruction in the installation wizard to complete the installation.\n\n\n\nTo connect your GitHub account to GitHub Desktop, follow the instructions that are given in slides 6 to 9 of the Powerpoint document available at the following link."
+  },
+  {
+    "objectID": "import_data_from_odk_central.html",
+    "href": "import_data_from_odk_central.html",
+    "title": "Appendix C — Import data from ODK Central",
+    "section": "",
+    "text": "Application Programming Interfaces (APIs) allow you to import data directly from servers.\n\n\n\n\nWe will explore the use of APIs through the example of ruODK for importing data from ODK Central to R."
+  },
+  {
+    "objectID": "import_data_from_odk_central.html#tutorial",
+    "href": "import_data_from_odk_central.html#tutorial",
+    "title": "Appendix C — Import data from ODK Central",
+    "section": "C.2 Tutorial",
+    "text": "C.2 Tutorial\nWhile data digitally captured using ODK Collect or Enketo and stored in ODK Central can be retrieved in bulk through the web interface, ODK Central’s API provides direct access to its data (and functionality). It is a more efficient way to ensure that data are always up-to-date.\nWe will see how to retrieve data through the OData API.\n\n✏️ Exercise 1R\n\n\nConnect to the ODK Central server data set.\n\nodata service: “https://private-anon-24fcfe2426-odkcentral.apiary-mock.com/v1/projects/7/forms/simple.svc”\nEmail: “my.email.address@getodk.org”\nPassword: “my.super.secure.password”.\n\n\n\n\n\n\n\nTip\n\n\n\n\nR: use the ru_setup function from the ruODK package (1).\nPython: use functions from the pyODK package.\n\n\n\n\n```{r}\n# Write your code here\n```\n\n\n\n\n```{r}\nruODK::ru_setup(\n  svc = \"https://private-anon-24fcfe2426-odkcentral.apiary-mock.com/v1/projects/7/forms/simple.svc\",\n  un = \"my.email.address@getodk.org\",\n  pw = \"my.super.secure.password\",\n  verbose = TRUE\n)\n```\n\n<ruODK settings>\n  Default ODK Central Project ID: 7 \n  Default ODK Central Form ID: simple \n  Default ODK Central URL: https://private-anon-24fcfe2426-odkcentral.apiary-mock.com \n  Default ODK Central Username: my.email.address@getodk.org \n  Default ODK Central Password: run ruODK::get_default_pw() to show \n  Default ODK Central Passphrase: run ruODK::get_default_pp() to show \n  Default Time Zone: UTC \n  Default ODK Central Version: 1.1 \n  Default HTTP GET retries: 3 \n  Verbose messages: TRUE \n  Test ODK Central Project ID:  \n  Test ODK Central Form ID:  \n  Test ODK Central Form ID (ZIP tests):  \n  Test ODK Central Form ID (Attachment tests):  \n  Test ODK Central Form ID (Parsing tests):  \n  Test ODK Central Form ID (WKT tests):  \n  Test ODK Central URL:  \n  Test ODK Central Username:  \n  Test ODK Central Password: run ruODK::get_test_pw() to show \n  Test ODK Central Passphrase: run ruODK::get_test_pp() to show \n  Test ODK Central Version: 1.1 \n\n\n\n\n\n\n✏️ Exercise 2R\n\n\nRetrieve data from form and store the data set into a data frame called df4\n\n\n\n\n\n\nTip\n\n\n\n\nR: use the odata_submission_get function from the ruODK package (1).\nPython: use functions from the pyODK package.\n\n\n\n\n```{r}\n# Write your code here\n```\n\n\n\n\n```{r}\nfq_form_schema <- ruODK::form_schema()\n```\n\ni Form schema v1.1\n\n```{r}\nfq_form_schema\n```\n\n# A tibble: 5 x 5\n  name       path             type      binary ruodk_name      \n  <chr>      <chr>            <chr>     <lgl>  <chr>           \n1 meta       /meta            structure NA     meta            \n2 instanceID /meta/instanceID string    NA     meta_instance_id\n3 name       /name            string    NA     name            \n4 age        /age             int       NA     age             \n5 photo      /photo           binary    TRUE   photo           \n\n\n\n```{r}\ndf <- ruODK::odata_service_get()\ndf\n```\n\n# A tibble: 0 x 3\n# ... with 3 variables: name <chr>, kind <chr>, url <chr>"
+  },
+  {
+    "objectID": "import_data_from_odk_central.html#encrypted-data",
+    "href": "import_data_from_odk_central.html#encrypted-data",
+    "title": "Appendix C — Import data from ODK Central",
+    "section": "C.3 Encrypted data",
+    "text": "C.3 Encrypted data\nEncrypted data can only be retrieved using the RESTful API and cannot be retrieved using the oData API. ODK Central supports two modes of encryption - learn about them here. ruODK supports project managed encryption, however the support is limited to exactly one encryption key. The supplied passphrase will be used against the first returned encryption key. Remaining encryption keys are ignored by ruODK.\n\n\n\n\n\n\nImportant\n\n\n\nIf an incorrect passphrase is given, the request is terminated immediately. It has been reported that multiple requests with incorrect passphrases can crash ODK Central.\n\n\n\n```{r}\ndf <- ruODK::submission_export()\n```\n\n<U+2714> Overwriting previous download: \"C:/Users/langhe/switchdrive/Private/Code/R/github/ds4ph/book/simple.zip\"\n\n```{r}\ndf\n```\n\nC:/Users/langhe/switchdrive/Private/Code/R/github/ds4ph/book/simple.zip\n\n\n\n\n\n\n1. Mayer FW. ruODK: Client for the ODK central API [Internet]. 2020. Available from: https://github.com/ropensci/ruODK"
+  },
+  {
+    "objectID": "useful_resources.html",
+    "href": "useful_resources.html",
+    "title": "Appendix D — Useful resources",
+    "section": "",
+    "text": "The Turing way (1) ⭐ ⭐ ⭐ ⭐ ⭐"
+  },
+  {
+    "objectID": "useful_resources.html#sec-resources-git",
+    "href": "useful_resources.html#sec-resources-git",
+    "title": "Appendix D — Useful resources",
+    "section": "D.2 Git and GitHub",
+    "text": "D.2 Git and GitHub\nTo learn more about this topic, we highly recommend the following resources:\n\nCodeacademy\nGitHub Guides\nTry Git tutorial\nHappy Git and GitHub for the useR"
+  },
+  {
+    "objectID": "useful_resources.html#online-trainings",
+    "href": "useful_resources.html#online-trainings",
+    "title": "Appendix D — Useful resources",
+    "section": "D.3 Online trainings",
+    "text": "D.3 Online trainings\n\nD.3.1 Programming\n\n\n\nLink\nLanguage\nRecommendation\n\n\n\n\nThe GRAPH network\nR\n⭐ ⭐ ⭐ ⭐ ⭐\n\n\nJohns Hopkins University Data Science Lab’s courses\nR\n⭐ ⭐ ⭐ ⭐ ⭐\n\n\nafrimapr - mapping data in Africa\nR\n\n\n\nHarvard Data Science workshops materials\nR, Python, Stata\n\n\n\n\n\n\nD.3.2 Machine learning\n\n\n\nMOOC\nLanguage\nRecommendation\n\n\n\n\nMachine learning in Python with scikit-learn\nPython\n⭐ ⭐ ⭐ ⭐ ⭐"
+  },
+  {
+    "objectID": "useful_resources.html#packages",
+    "href": "useful_resources.html#packages",
+    "title": "Appendix D — Useful resources",
+    "section": "D.4 Packages",
+    "text": "D.4 Packages\n\nD.4.1 R\n\n\n\n\ntidyverse\nCollection of R packages designed for data science\n\n\n\nruODK\n\n\n\n\ngtsummary\n\n\n\n\nskimr\n\n\n\n\nsitrep\n\n\n\n\n\n\nD.4.2 Python\n\nPandas\nComparison with Stata\nComparison with R"
+  },
+  {
+    "objectID": "useful_resources.html#books-and-websites",
+    "href": "useful_resources.html#books-and-websites",
+    "title": "Appendix D — Useful resources",
+    "section": "D.5 Books and websites",
+    "text": "D.5 Books and websites\n\nBooks and websites\n\n\nR for applied epidemiology and public health (2)\n⭐ ⭐ ⭐ ⭐ ⭐\n\n\nR for Epidemiology\n\n\n\nR4epis\n\n\n\nR for Data Science\n⭐ ⭐ ⭐ ⭐ ⭐\n\n\nQuarto for scientists"
+  },
+  {
+    "objectID": "useful_resources.html#communities",
+    "href": "useful_resources.html#communities",
+    "title": "Appendix D — Useful resources",
+    "section": "D.6 Communities",
+    "text": "D.6 Communities\n\nR for data science online learning community"
+  },
+  {
+    "objectID": "useful_resources.html#open-data",
+    "href": "useful_resources.html#open-data",
+    "title": "Appendix D — Useful resources",
+    "section": "D.7 Open data",
+    "text": "D.7 Open data\n\nD.7.1 Platforms\n\nopenAfrica\nCode for Africa (CfA)\n\n\n\nD.7.2 Data sets\n\n\n\nDataset\nAssociated publication(s)\n\n\n\n\nData for Good\n\n\n\nPublic health hacilities in sub-Saharan Africa\n(3)"
+  },
+  {
+    "objectID": "useful_resources.html#conferences",
+    "href": "useful_resources.html#conferences",
+    "title": "Appendix D — Useful resources",
+    "section": "D.8 Conferences",
+    "text": "D.8 Conferences\n\nData Science Africa\nhttps://nef.org/\n\n\n\n\n\n1. The Turing Way Community. The Turing Way: A handbook for reproducible, ethical and collaborative research [Internet]. Zenodo; 2022. Available from: https://doi.org/10.5281/zenodo.6909298\n\n\n2. Batra N. The Epidemiologist R Handbook. 2021. \n\n\n3. Maina J, Ouma PO, Macharia PM, Alegana VA, Mitto B, Fall IS, et al. A spatial database of health facilities managed by the public health sector in sub Saharan Africa. Scientific Data [Internet]. 2019 Jul;6(1):134. Available from: https://doi.org/10.1038/s41597-019-0142-2"
   }
 ]

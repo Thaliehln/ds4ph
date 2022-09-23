@@ -23,10 +23,15 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - part: "------------ DAY 1 ------------"
+      chapters:
+        - tools_for_reproducible_data_science.qmd
     - references.qmd
   appendices:
     - r_setup.qmd
     - github_setup.qmd
+    - import_data_from_odk_central.qmd
+    - useful_resources.qmd
   page-footer: 
     left: "This book was built by [Quarto](https://quarto.org/). Copyright 2022, IHI / Swiss TPH"
     right:

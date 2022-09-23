@@ -12,11 +12,10 @@ When reporting scientific results, researchers must document the steps they foll
 Reporting should include negative results as they contribute to the development of a cumulative knowledge as much as positive results do and avoid wasting resources.
 :::
 
-There have been recurrent calls in the recent decades for the scientific community to embrace practices to support research reproducibility and many software tools are now available to facilitate this process.
+![
+Research Diagram vs. Research Reality. "Piled Higher and Deeper" by Jorge Cham www.phdcomics.com](images/paste-95377789.png)
 
-::: callout-note
-Although qualitative research contributes as significantly as quantitative research to knowledge generation, the validation of qualitative research findings is a much more complex and debated concept as qualitative analysis is by essence subjective and contextual. This explains the lower availability of software tools dedicated to qualitative research compared to what is available for quantitative research.
-:::
+There have been recurrent calls in the recent decades for the scientific community to embrace practices to support research reproducibility and many software tools are now available to facilitate this process.
 
 ### Learning objectives
 
@@ -25,8 +24,6 @@ Although qualitative research contributes as significantly as quantitative resea
 -   What software tools are available to support reproducible quantitative research?
 
 ## Reproducible quantitative research
-
-### Definitions
 
 A quantitative analysis is said to be (*computationally*) **reproducible** when the **same analysis steps** performed on the **same dataset** consistently produce the **same quantitative results** [@the_turing_way_community_2022_6909298]. Given the deterministic nature of computer programmes, a quantitative analysis must be reproducible to be **credible**.
 
@@ -54,31 +51,31 @@ The **same analysis** steps are performed on **different datasets** and produce 
 ![This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807](images/paste-222EF473.png){#fig-generalisability width="400"}
 :::
 
-### Documentation for reproducible analyses
+## Good documentation for reproducible analyses
 
 To guarantee that any other researcher can reproduce your analysis, you would need to document and share the full **computational environment**, **tools**, **data** and **code** that were used to generate your results.
 
 ![This image was adapted from an original image created by Scriberia for The Turing Way community (CC-BY licence. DOI: 10.5281/zenodo.3332807).](images/paste-E04E255A.png){#fig-documentation-reproducible-analysis}
 
-### Opportunities and challenges of reproducible research
+## Opportunities and challenges of reproducible research
 
 ::: panel-tabset
-#### :speech_balloon: Discussion
+### :speech_balloon: Discussion
 
 1.  How do you think reproducible quantitative analyses can improve your research?
 2.  Recent investigations have shown that a significant percentage of scientific studies cannot be reproduced, thus contributing to growing mistrust in scientific results [@baker_scientists_2016; @harris_use_2018]. What barriers and challenges to reproducible research do you see in your daily practice?
 
 :clock3: 5 minutes
 
-#### :heavy_plus_sign: Opportunities
+### :heavy_plus_sign: Opportunities
 
 ![This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807](images/paste-9DF4B400.png)
 
-#### :heavy_minus_sign: Barriers and challenges
+### :heavy_minus_sign: Barriers and challenges
 
 ![Example of barriers to reproducibility](images/paste-80DE769E.png){#fig-barriers-reproducibility}
 
-#### Challenges
+### Challenges
 
 In practice, reproducibility is challenging, even for trained data scientists equipped with an arsenal of software tools. Quantitative analyses can often not be fully reproduced because of complexities in how software tools are packaged, installed, and executed and because of limitations associated with how scientists document analysis steps.
 
@@ -92,7 +89,16 @@ As illustrated in @fig-software-tools-across-research-lifecycle, there is now a 
 In this workshop, you will be introduced to following software tools that will help make your quantitative data processing, study and analysis more reproducible:
 
 -   **Git/GitHub** allow you to keep track of various versions of your code, share your code and collaborate with others on code development;
--   **Quarto** allow you to generate (reproducible) dynamic reports to document your data analyses. We will use Quarto within the **R/RStudio** environment;
--   Application Programming Interfaces (APIs) allow you to import data directly from servers. We will explore this through the example of **ruODK** for importing data from ODK Central to R.
+-   **R** is a programming language for statistical computing and graphics and one of main programming language used for data science (with other programming languages such as **Python** and Julia). The ecosystem around R provides an interactive environment for data science science workflows, thus making R is a great start for your data science journey.
+-   **Rstudio** is an integrated development environment (IDE) for R that enables an easier use of R.
+-   **Quarto** allow you to generate (reproducible) dynamic reports to document your data analyses. We will use Quarto within the **R/RStudio** environment.
+
+:::callout-important
+In practice, most data scientists use a mix of languages, often at least R and Python. You will be slightly exposed to R, but the goal of this workshop is
+:::
 
 ![Example of free / open source software tools across the research data lifecycle. This image was adapted from an original image created by Scriberia for The Turing Way community (CC-BY licence. DOI: 10.5281/zenodo.3332807).](images/paste-AF117E41.png){#fig-software-tools-across-research-lifecycle}
+
+::: callout-note
+Although qualitative research contributes as significantly as quantitative research to knowledge generation, the validation of qualitative research findings is a much more complex and debated concept as qualitative analysis is by essence subjective and contextual. This explains the lower availability of software tools dedicated to qualitative research compared to what is available for quantitative research.
+:::

@@ -1,74 +1,26 @@
 {
   "index.qmd": {
-    "index.html": "a7b34cf9"
+    "index.html": "813cb457"
   },
   "intro.qmd": {
-    "intro.html": "83761950"
+    "intro.html": "b9567ee2"
   },
   "tools_for_reproducible_data_science.qmd": {
-    "tools_for_reproducible_data_science.html": "3f87edec"
-  },
-  "version_control_with_git.qmd": {
-    "version_control_with_git.html": "d955a9ef"
-  },
-  "dynamic_documents.qmd": {
-    "dynamic_documents.html": "53ec09d7"
-  },
-  "create_first_quarto_doc.qmd": {
-    "create_first_quarto_doc.html": "8026f0c6"
-  },
-  "use_stata_python_with_quarto.qmd": {
-    "use_stata_python_with_quarto.html": "ab368830"
-  },
-  "import_data.qmd": {
-    "import_data.html": "ac6230e7"
-  },
-  "manipulate_data.qmd": {
-    "manipulate_data.html": "39b6cfc8"
-  },
-  "share_and_collaborate_with_git.qmd": {
-    "share_and_collaborate_with_git.html": "4b0a2bc8"
-  },
-  "data_science_for_public_health.qmd": {
-    "data_science_for_public_health.html": "74e5ce12"
-  },
-  "ds4ph_day2_session01_practical_session.qmd": {
-    "ds4ph_day2_session01_practical_session.html": "cda48dbb"
-  },
-  "big_data_and_artificial_intelligence.qmd": {
-    "big_data_and_artificial_intelligence.html": "7a55a27e"
-  },
-  "ds4ph_day3_session01_practical_session.qmd": {
-    "ds4ph_day3_session01_practical_session.html": "f570813b"
+    "tools_for_reproducible_data_science.html": "513f6e9a"
   },
   "references.qmd": {
-    "references.html": "2df7abf4"
-  },
-  "installations.qmd": {
-    "installations.html": "6b0b7948"
-  },
-  "datasets.qmd": {
-    "datasets.html": "8c3ad065"
-  },
-  "useful_resources.qmd": {
-    "useful_resources.html": "9320b890"
-  },
-  "quarto_vs_rmarkdown.qmd": {
-    "quarto_vs_rmarkdown.html": "b344604b"
-  },
-  "malaria_case_study2.qmd": {
-    "malaria_case_study2.html": "ba08e212"
-  },
-  "malaria_case_study_01.qmd": {
-    "malaria_case_study_01.html": "0e96dac9"
-  },
-  "malaria_case_study_02.qmd": {
-    "malaria_case_study_02.html": "8ff47831"
+    "references.html": "53975e87"
   },
   "r_setup.qmd": {
-    "r_setup.html": "a7b670b6"
+    "r_setup.html": "4aee238c"
   },
   "github_setup.qmd": {
-    "github_setup.html": "7651bae5"
+    "github_setup.html": "ee1cf2c8"
+  },
+  "useful_resources.qmd": {
+    "useful_resources.html": "05104448"
+  },
+  "import_data_from_odk_central.qmd": {
+    "import_data_from_odk_central.html": "898ee6db"
   }
 }

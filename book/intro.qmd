@@ -1,18 +1,27 @@
 ---
 title: "About the workshop"
+execute: 
+  echo: false
+  warning: false
+  error: false
 ---
 
+-----
 :spiral_calendar: September 26-28, 2022\
 :clock9: 09:00 - 17:00\
 :city_sunrise: Dar-es-Salaam, Tanzania
+-----
 
 This workshop targets public health researchers and aims to accompany them in their journey towards Data Science.
 
-# Venue
+## Is this workshop for me?
 
-Protea Hotel Dar es Salaam Courtyard on Seaview Ocean Road
+This workshop is relevant for researchers who answer *yes* at least to one of the following questions:
 
-![](images/paste-67B4C38F.png)
+-   [ ] Do you who want to develop data science projects in public health?
+-   [ ] Do you wants to learn more about how open and reproducible science approaches can be used in your daily practice?
+-   [ ] Are you a Stata user (or any other data analysis language) who would like to expand your data analysis skillset with R?
+-   [ ] Do you want to bridge analyses between data analysis tools (Stata, R or Python) and to more easily collaborate on data analysis with other researchers?
 
 ## Learning objectives
 
@@ -24,16 +33,8 @@ There are two complementary aspects of moving into data science:
 Upon completing the workshop, participants will have gained:
 
 -   exposure to data science approach, tools and collaborative practices
--   hands-on experience on how to interface between Stata and R, learned the basics of working with data in R/RStudio, and how to incrementally incorporate R into your existing data analysis workflows in Stata. The idea is not to replace everything you do in Stata into R but that you can continue your learning after this workshop at your own pace.
-
-## Is this workshop for me?
-
-This workshop is relevant for individuals who answer yes to the following questions:
-
--   [ ] Do you who want to develop data science projects in public health?
--   [ ] Do you wants to learn more about how open and reproducible science approaches can be used in your daily practice?
--   [ ] Are you a Stata user (or any other data analysis language) who would like to expand your data analysis skillset with R?
--   [ ] Do you want to bridge analyses between data analysis tools (Stata, R or Python) and to more easily collaborate with other researchers who use another of these tools?
+-   learned the basics of working with dynamic documents in RStudio, and how to incrementally incorporate R into your existing data analysis workflows
+-   hands-on experience on how to interface between Stata and R and combine them depending on your skills and needs. The idea is not to replace everything you are already doing in Stata into R but that you can continue your learning journey after this workshop at your own pace, also using some of the resources listed in @sec-useful-resources.
 
 ## To do before the workshop
 
@@ -54,13 +55,26 @@ This workshop is relevant for individuals who answer yes to the following questi
     f.  Install GitHub Desktop (@sec-GitHub-Desktop-installation)
 
 ::: callout-note
-* All software used in this workshop are free.
-* If you have any difficulties with the installation, support can be provided on the first day of the workshop before the first session or during breaks.
+-   All software used in this workshop are free.
+-   If you have any difficulties with the installation, support can be provided on the first day of the workshop before the first session or during breaks.
 :::
 
 ::: callout-important
 For those who have already been introduced to Git, R/RStudio and RMarkdown, note that you need to additionally install Quarto for this workshop.
 :::
+
+## Venue
+
+The workshop takes place at **Protea Hotel Dar es Salaam Courtyard** on Seaview Ocean Road. The conference room is **Nelson Hall**.
+
+```{r}
+library(leaflet)
+leaflet::leaflet() %>%
+  addTiles() %>%
+  addMarkers(lng=39.28517045424024,
+             lat=-6.798680620492803,
+             popup="Protea Hotel Dar-es-Salaam Courtyard")
+```
 
 ## Schedule
 
@@ -176,4 +190,4 @@ For those who have already been introduced to Git, R/RStudio and RMarkdown, note
 ## To do after the workshop
 
 1.  Fill out the online post-workshop questionnaire.
-2. This material will stay online, do not hesitate to refer to it if needed.
+2.  This material will stay online, do not hesitate to refer to it if needed.

@@ -1,6 +1,9 @@
 ---
-title: "Useful resources"
+execute: 
+  echo: false
 ---
+
+# Useful resources {#sec-useful-resources}
 
 ## Reproducible research
 
@@ -19,28 +22,28 @@ To learn more about this topic, we highly recommend the following resources:
 
 ### Programming
 
-| Link                                                                                           | Language         |
-|------------------------------------------------------------------------------------------------|------------------|
-| [The GRAPH network](https://thegraphcourses.org)                                               | R                |
-| [Johns Hopkins University Data Science Lab's courses](https://jhudatascience.org/courses.html) | R                |
-| [afrimapr](https://afrimapr.github.io/afrimapr.website/training/) - mapping data in Africa     | R                |
-| https://iqss.github.io/dss-workshops/                                                          | R, Python, Stata |
-|                                                                                                |                  |
-|                                                                                                |                  |
-|                                                                                                |                  |
-|                                                                                                |                  |
-|                                                                                                |                  |
-|                                                                                                |                  |
+| Link                                                                                           | Language         | Recommendation                     |
+|------------------------------------------------------------------------------------------------|------------------|------------------------------------|
+| [The GRAPH network](https://thegraphcourses.org)                                               | R                | :star: :star: :star: :star: :star: |
+| [Johns Hopkins University Data Science Lab's courses](https://jhudatascience.org/courses.html) | R                | :star: :star: :star: :star: :star: |
+| [afrimapr](https://afrimapr.github.io/afrimapr.website/training/) - mapping data in Africa     | R                |                                    |
+| [Harvard Data Science workshops materials](https://iqss.github.io/dss-workshops/)              | R, Python, Stata |                                    |
+
+### Machine learning
+
+| MOOC                                                                                                                     | Language | Recommendation                     |
+|--------------------------------------------------------------------------------------------------------------------------|----------|------------------------------------|
+| [Machine learning in Python with scikit-learn](https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn/) | Python   | :star: :star: :star: :star: :star: |
 
 ## Packages
 
 ### R
 
-| Icon                                        | Name                                                                        | Description                                        |
-|------------------|------------------|------------------------------------|
+|                                             |                                                                             |                                                    |
+|---------------------------------------------|-----------------------------------------------------------------------------|----------------------------------------------------|
 | ![](images/tidyverse-logo.png){width="125"} | [tidyverse](https://www.tidyverse.org/)                                     | Collection of R packages designed for data science |
 | ![RuODK logo](images/logo.png){width="125"} | [ruODK](https://docs.ropensci.org/ruODK/index.html)                         |                                                    |
-| ![](images/logo-01.png){width="125"}        | gtsummary                                                                   |                                                    |
+| ![](images/logo-01.png){width="125"}        | [gtsummary](https://www.danieldsjoberg.com/gtsummary/)                      |                                                    |
 | ![](images/paste-A6E65357.png){width="125"} | [skimr](https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html) |                                                    |
 |                                             | [sitrep](https://github.com/R4EPI/sitrep)                                   |                                                    |
 
@@ -53,7 +56,7 @@ To learn more about this topic, we highly recommend the following resources:
 ## Books and websites
 
 |                                                                                                           |                                    |
-|------------------------------------------------|-----------------------|
+|-----------------------------------------------------------------------------------------------------------|------------------------------------|
 | [R for applied epidemiology and public health](https://epirhandbook.com/en/) [@batra_epidemiologist_2021] | :star: :star: :star: :star: :star: |
 | [R for Epidemiology](https://www.r4epi.com/)                                                              |                                    |
 | [R4epis](https://r4epis.netlify.app/)                                                                     |                                    |
@@ -66,14 +69,6 @@ To learn more about this topic, we highly recommend the following resources:
 
 -   [R for data science online learning community](https://www.rfordatasci.com/)
 
-## Machine learning
-
-| MOOC                                                                                                                     | Recommendation                     |
-|------------------------------------------------|-----------------------|
-| [Machine learning in Python with scikit-learn](https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn/) | :star: :star: :star: :star: :star: |
-|                                                                                                                          |                                    |
-|                                                                                                                          |                                    |
-
 ## Open data
 
 ### Platforms
@@ -85,10 +80,9 @@ To learn more about this topic, we highly recommend the following resources:
 ### Data sets
 
 | Dataset                                                                                                   | Associated publication(s) |
-|----------------------------------------------|-------------------------|
+|-----------------------------------------------------------------------------------------------------------|---------------------------|
 | [Data for Good](https://dataforgood.facebook.com/dfg/tools)                                               |                           |
 | [Public health hacilities in sub-Saharan Africa](https://open.africa/dataset/health-facilities-in-africa) | [@maina_spatial_2019]     |
-|                                                                                                           |                           |
 
 ## Conferences
 

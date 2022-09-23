@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./tools_for_reproducible_data_science.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -60,6 +60,15 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-binding-2.1.1/leaflet.js"></script>
 
 
 </head>
@@ -106,6 +115,21 @@ ul.task-list li input[type="checkbox"] {
   <a href="./intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About the workshop</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">———— DAY 1 ————</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tools_for_reproducible_data_science.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Tools for reproducible quantitative research</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
@@ -113,12 +137,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Appendices</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">R installations</span></a>
@@ -127,6 +151,16 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./github_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">GitHub setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./import_data_from_odk_central.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Import data from ODK Central</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./useful_resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Useful resources</span></a>
   </div>
 </li>
       </ul>
@@ -140,19 +174,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#venue" id="toc-venue" class="nav-link active" data-scroll-target="#venue"><span class="toc-section-number">2</span>  Venue</a>
+  <li><a href="#is-this-workshop-for-me" id="toc-is-this-workshop-for-me" class="nav-link active" data-scroll-target="#is-this-workshop-for-me"><span class="toc-section-number">1.1</span>  Is this workshop for me?</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="toc-section-number">1.2</span>  Learning objectives</a></li>
+  <li><a href="#to-do-before-the-workshop" id="toc-to-do-before-the-workshop" class="nav-link" data-scroll-target="#to-do-before-the-workshop"><span class="toc-section-number">1.3</span>  To do before the workshop</a></li>
+  <li><a href="#venue" id="toc-venue" class="nav-link" data-scroll-target="#venue"><span class="toc-section-number">1.4</span>  Venue</a></li>
+  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule"><span class="toc-section-number">1.5</span>  Schedule</a>
   <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="toc-section-number">2.1</span>  Learning objectives</a></li>
-  <li><a href="#is-this-workshop-for-me" id="toc-is-this-workshop-for-me" class="nav-link" data-scroll-target="#is-this-workshop-for-me"><span class="toc-section-number">2.2</span>  Is this workshop for me?</a></li>
-  <li><a href="#to-do-before-the-workshop" id="toc-to-do-before-the-workshop" class="nav-link" data-scroll-target="#to-do-before-the-workshop"><span class="toc-section-number">2.3</span>  To do before the workshop</a></li>
-  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule"><span class="toc-section-number">2.4</span>  Schedule</a>
-  <ul class="collapse">
-  <li><a href="#day-1" id="toc-day-1" class="nav-link" data-scroll-target="#day-1"><span class="toc-section-number">2.4.1</span>  Day 1</a></li>
-  <li><a href="#day-2" id="toc-day-2" class="nav-link" data-scroll-target="#day-2"><span class="toc-section-number">2.4.2</span>  Day 2</a></li>
-  <li><a href="#day-3" id="toc-day-3" class="nav-link" data-scroll-target="#day-3"><span class="toc-section-number">2.4.3</span>  Day 3</a></li>
+  <li><a href="#day-1" id="toc-day-1" class="nav-link" data-scroll-target="#day-1"><span class="toc-section-number">1.5.1</span>  Day 1</a></li>
+  <li><a href="#day-2" id="toc-day-2" class="nav-link" data-scroll-target="#day-2"><span class="toc-section-number">1.5.2</span>  Day 2</a></li>
+  <li><a href="#day-3" id="toc-day-3" class="nav-link" data-scroll-target="#day-3"><span class="toc-section-number">1.5.3</span>  Day 3</a></li>
   </ul></li>
-  <li><a href="#to-do-after-the-workshop" id="toc-to-do-after-the-workshop" class="nav-link" data-scroll-target="#to-do-after-the-workshop"><span class="toc-section-number">2.5</span>  To do after the workshop</a></li>
-  </ul></li>
+  <li><a href="#to-do-after-the-workshop" id="toc-to-do-after-the-workshop" class="nav-link" data-scroll-target="#to-do-after-the-workshop"><span class="toc-section-number">1.6</span>  To do after the workshop</a></li>
   </ul>
 </nav>
     </div>
@@ -175,16 +207,32 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><span class="emoji" data-emoji="spiral_calendar">🗓️</span> September 26-28, 2022<br>
-<span class="emoji" data-emoji="clock9">🕘</span> 09:00 - 17:00<br>
-<span class="emoji" data-emoji="city_sunrise">🌇</span> Dar-es-Salaam, Tanzania</p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td><span class="emoji" data-emoji="spiral_calendar">🗓️</span> September 26-28, 2022\</td>
+</tr>
+<tr class="even">
+<td><span class="emoji" data-emoji="clock9">🕘</span> 09:00 - 17:00\</td>
+</tr>
+<tr class="odd">
+<td><span class="emoji" data-emoji="city_sunrise">🌇</span> Dar-es-Salaam, Tanzania</td>
+</tr>
+</tbody>
+</table>
 <p>This workshop targets public health researchers and aims to accompany them in their journey towards Data Science.</p>
-<section id="venue" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Venue</h1>
-<p>Protea Hotel Dar es Salaam Courtyard on Seaview Ocean Road</p>
-<p><img src="images/paste-67B4C38F.png" class="img-fluid"></p>
-<section id="learning-objectives" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">2.1</span> Learning objectives</h2>
+<section id="is-this-workshop-for-me" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="is-this-workshop-for-me"><span class="header-section-number">1.1</span> Is this workshop for me?</h2>
+<p>This workshop is relevant for researchers who answer <em>yes</em> at least to one of the following questions:</p>
+<ul class="task-list">
+<li><input type="checkbox" disabled="">Do you who want to develop data science projects in public health?</li>
+<li><input type="checkbox" disabled="">Do you wants to learn more about how open and reproducible science approaches can be used in your daily practice?</li>
+<li><input type="checkbox" disabled="">Are you a Stata user (or any other data analysis language) who would like to expand your data analysis skillset with R?</li>
+<li><input type="checkbox" disabled="">Do you want to bridge analyses between data analysis tools (Stata, R or Python) and to more easily collaborate on data analysis with other researchers?</li>
+</ul>
+</section>
+<section id="learning-objectives" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1.2</span> Learning objectives</h2>
 <p>There are two complementary aspects of moving into data science:</p>
 <ol type="1">
 <li>a <strong>mindset</strong> about how scientists think and collaborate about data, and</li>
@@ -193,21 +241,12 @@ ul.task-list li input[type="checkbox"] {
 <p>Upon completing the workshop, participants will have gained:</p>
 <ul>
 <li>exposure to data science approach, tools and collaborative practices</li>
-<li>hands-on experience on how to interface between Stata and R, learned the basics of working with data in R/RStudio, and how to incrementally incorporate R into your existing data analysis workflows in Stata. The idea is not to replace everything you do in Stata into R but that you can continue your learning after this workshop at your own pace.</li>
+<li>learned the basics of working with dynamic documents in RStudio, and how to incrementally incorporate R into your existing data analysis workflows</li>
+<li>hands-on experience on how to interface between Stata and R and combine them depending on your skills and needs. The idea is not to replace everything you are already doing in Stata into R but that you can continue your learning journey after this workshop at your own pace, also using some of the resources listed in <a href="useful_resources.html"><span>Appendix&nbsp;D</span></a>.</li>
 </ul>
 </section>
-<section id="is-this-workshop-for-me" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="is-this-workshop-for-me"><span class="header-section-number">2.2</span> Is this workshop for me?</h2>
-<p>This workshop is relevant for individuals who answer yes to the following questions:</p>
-<ul class="task-list">
-<li><input type="checkbox" disabled="">Do you who want to develop data science projects in public health?</li>
-<li><input type="checkbox" disabled="">Do you wants to learn more about how open and reproducible science approaches can be used in your daily practice?</li>
-<li><input type="checkbox" disabled="">Are you a Stata user (or any other data analysis language) who would like to expand your data analysis skillset with R?</li>
-<li><input type="checkbox" disabled="">Do you want to bridge analyses between data analysis tools (Stata, R or Python) and to more easily collaborate with other researchers who use another of these tools?</li>
-</ul>
-</section>
-<section id="to-do-before-the-workshop" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="to-do-before-the-workshop"><span class="header-section-number">2.3</span> To do before the workshop</h2>
+<section id="to-do-before-the-workshop" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="to-do-before-the-workshop"><span class="header-section-number">1.3</span> To do before the workshop</h2>
 <ol type="1">
 <li><p>Fill out the online <a href="https://timicodktest.smartforest.de/-/single/cac06e76b3e163e655e49626f8129de8f55a8035ced54f15bc4c6cf527dba8a7?st=DnBRz677PIYh33ML0rE1amWzyhCIYPGFQnmZ6AAou8nJFyikWN6nLM5i3G4I0YZN">pre-workshop questionnaire</a></p></li>
 <li><p>If you have not it yet, please go through the following five steps (about 30 minutes).</p>
@@ -250,13 +289,23 @@ Important
 </div>
 </div>
 </section>
-<section id="schedule" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="schedule"><span class="header-section-number">2.4</span> Schedule</h2>
-<section id="day-1" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="day-1"><span class="header-section-number">2.4.1</span> Day 1</h3>
+<section id="venue" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="venue"><span class="header-section-number">1.4</span> Venue</h2>
+<p>The workshop takes place at <strong>Protea Hotel Dar es Salaam Courtyard</strong> on Seaview Ocean Road. The conference room is <strong>Nelson Hall</strong>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-d254c5374a8289152670" style="width:100%;height:464px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d254c5374a8289152670">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[-6.7986806204928,39.2851704542402,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Protea Hotel Dar-es-Salaam Courtyard",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-6.7986806204928,-6.7986806204928],"lng":[39.2851704542402,39.2851704542402]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="schedule" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="schedule"><span class="header-section-number">1.5</span> Schedule</h2>
+<section id="day-1" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="day-1"><span class="header-section-number">1.5.1</span> Day 1</h3>
 <div id="tbl-day1-schedule" class="anchored">
 <table class="table">
-<caption>Table&nbsp;2.1: Schedule Day 1</caption>
+<caption>Table&nbsp;1.1: Schedule Day 1</caption>
 <colgroup>
 <col style="width: 22%">
 <col style="width: 65%">
@@ -322,11 +371,11 @@ Overview of objectives for Day 1</td>
 </table>
 </div>
 </section>
-<section id="day-2" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="day-2"><span class="header-section-number">2.4.2</span> Day 2</h3>
+<section id="day-2" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="day-2"><span class="header-section-number">1.5.2</span> Day 2</h3>
 <div id="tbl-day2-schedule" class="anchored">
 <table class="table">
-<caption>Table&nbsp;2.2: Schedule Day 2</caption>
+<caption>Table&nbsp;1.2: Schedule Day 2</caption>
 <colgroup>
 <col style="width: 17%">
 <col style="width: 82%">
@@ -399,11 +448,11 @@ Overview of objectives for Day 2</td>
 </table>
 </div>
 </section>
-<section id="day-3" class="level3" data-number="2.4.3">
-<h3 data-number="2.4.3" class="anchored" data-anchor-id="day-3"><span class="header-section-number">2.4.3</span> Day 3</h3>
+<section id="day-3" class="level3" data-number="1.5.3">
+<h3 data-number="1.5.3" class="anchored" data-anchor-id="day-3"><span class="header-section-number">1.5.3</span> Day 3</h3>
 <div id="tbl-day3-schedule" class="anchored">
 <table class="table">
-<caption>Table&nbsp;2.3: Schedule Day 3</caption>
+<caption>Table&nbsp;1.3: Schedule Day 3</caption>
 <colgroup>
 <col style="width: 19%">
 <col style="width: 80%">
@@ -470,15 +519,14 @@ Overview of objectives for Day 2</td>
 </div>
 </section>
 </section>
-<section id="to-do-after-the-workshop" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="to-do-after-the-workshop"><span class="header-section-number">2.5</span> To do after the workshop</h2>
+<section id="to-do-after-the-workshop" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="to-do-after-the-workshop"><span class="header-section-number">1.6</span> To do after the workshop</h2>
 <ol type="1">
 <li>Fill out the online post-workshop questionnaire.</li>
 <li>This material will stay online, do not hesitate to refer to it if needed.</li>
 </ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -587,8 +635,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./tools_for_reproducible_data_science.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Tools for reproducible quantitative research</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
