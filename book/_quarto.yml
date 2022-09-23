@@ -26,6 +26,9 @@ book:
     - part: "------------ DAY 1 ------------"
       chapters:
         - tools_for_reproducible_data_science.qmd
+        - version_control_with_git.qmd
+    - part: "------------ DAY 2 ------------"
+    - part: "------------ DAY 3 ------------"
     - references.qmd
   appendices:
     - r_setup.qmd

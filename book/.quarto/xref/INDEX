@@ -22,5 +22,11 @@
   },
   "import_data_from_odk_central.qmd": {
     "import_data_from_odk_central.html": "898ee6db"
+  },
+  "version_control_with_git.qmd": {
+    "version_control_with_git.html": "8cdbaad5"
+  },
+  "dynamic_documents.qmd": {
+    "dynamic_documents.html": "7cb7ab5d"
   }
 }

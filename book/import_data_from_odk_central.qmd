@@ -90,9 +90,3 @@ Encrypted data can only be retrieved using the RESTful API and cannot be retriev
 ::: callout-important
 If an incorrect passphrase is given, the request is terminated immediately. It has been reported that multiple requests with incorrect passphrases can crash ODK Central.
 :::
-
-```{r}
-#| echo: fenced
-df <- ruODK::submission_export()
-df
-```

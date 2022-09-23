@@ -6,28 +6,30 @@ title: ":books: Dynamic documents"
 
 ### Overview
 
-The final product of a data analysis project is often a report (e.g., scientific publications, news articles based on data, an analysis report for your company, or lecture notes for a class on how to analyze data). Reports are often on paper or in a PDF that includes a textual description of the findings along with some figures and tables resulting from the analysis. Dynamic documents. The goal of this section is to briefly discuss why we want to learn quarto, the benefits, and the barriers to using it.
+The final product of a quantitative research is a report (e.g., scientific publications), i.e. a textual description of your research findings along with figures and tables resulting from your analysis. summary tables and figures. Based on this data, you discuss findings and give recommendations while using the data as evidence that backs up your discussion.
 
-### Learning bjectives
+Imagine the following situations
 
-* What is the value in a reproducible report?
+1. After you have finalised your article for submission to a journal, you are informed that you were given the wrong data set, you are sent a new one and you are asked to run the same analysis with this new data set.
+2. you realize that a mistake was made and need to re-examine the code, fix the error, and re-run the analysis 3. someone you are training wants to see the code and be able to reproduce the results to learn about your approach?
+
+Situations like the ones just described are actually quite common for a data scientist.
+
+In this section, we present how you can keep your data science projects organized with RStudio so that re-running an analysis is straightforward. We then demonstrate how to generate dynamic reports with Quarto in a way that will greatly help with recreating reports with minimal work.
+
+### Learning objectives
+
+The goal of this section is to briefly discuss why we want to learn quarto, the benefits, and the barriers to using it.
+
+* What is a dynamic report?
 * What is Quarto?
-* Can I combine my software and my writing?
-*
 * Think about why you want to use Quarto
-
-Imagine that after you finish the analysis and the report, you are told that you were given the wrong data set, you are sent a new one and you are asked to run the same analysis with this new data set. Or what if you realize that a mistake was made and need to re-examine the code, fix the error, and re-run the analysis? Or imagine that someone you are training wants to see the code and be able to reproduce the results to learn about your approach?
-
-Situations like the ones just described are actually quite common for a data scientist. Here, we describe how you can keep your data science projects organized with RStudio so that re-running an analysis is straight-forward. We then demonstrate how to generate reproducible reports with Quarto in a way that will greatly help with recreating reports with minimal work. This is possible due to the fact that Quarto documents enable code and textual descriptions to be combined into the same document, and the figures and tables produced by the code are automatically added to the document.
 
 Such documents can be produced to update on a routine basis (e.g. daily surveillance reports) and/or run on subsets of data (e.g. reports for each jurisdiction).
 
-### Question
-
-Why are we here?
-Form small groups of 2-4 with your neighbours and discuss how you expect learning Quarto might benefit you.
-
 ## Background to R Markdown
+
+This is possible due to the fact that Quarto documents enable code and textual descriptions to be combined into the same document, and the figures and tables produced by the code are automatically added to the document.
 
 Quarto is a tool that allows you integrate your code, text and figures in a single file in order to make high quality, reproducible reports. A paper published with an included quarto file and data sets can be reproduced by anyone with a computer. R Markdown integrates code and natural language in a way that is called "literate programming" [@knuth_literate_1984].
 
@@ -74,6 +76,15 @@ Pandoc actually convert the output into word/pdf/powerpoint etc. It is a softwar
 :::
 
 The process that happens in the background involves feeding the .Rmd file to knitr, which executes the R code chunks and creates a new .md (markdown) file which includes the R code and its rendered output. The .md file is then processed by pandoc to create the finished product: a Microsoft Word document, HTML file, powerpoint document, pdf, etc.
+
+::: panel-tabset
+### :speech_balloon: Discussion
+
+Form small groups of 2-4 with your neighbours and discuss how you expect learning Quarto might benefit you.
+
+:clock3: 5 minutes
+
+:::
 
 ## References
 

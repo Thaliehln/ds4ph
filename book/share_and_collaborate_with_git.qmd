@@ -4,9 +4,15 @@ title: ":blue_book: Share code and collaborate with Git"
 
 ## Introduction
 
+### Overview
+
+### Learning objectives
+
 ## Sharing your code with Git
 
 Even if we do not take advantage of the advanced and powerful version control functionality, we can still use Git and GitHub to share our code.
+
+## Access a remote GitHub repository
 
 ## Collaborating with Git
 

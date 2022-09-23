@@ -49,7 +49,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./version_control_with_git.html" rel="next">
 <link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -138,7 +138,18 @@ div.csl-indent {
   <a href="./tools_for_reproducible_data_science.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Tools for reproducible quantitative research</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./version_control_with_git.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Version control with Git</span></a>
+  </div>
+</li>
       </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">------------ DAY 2 ------------</span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">------------ DAY 3 ------------</span>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -147,12 +158,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Appendices</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">R installations</span></a>
@@ -233,10 +244,10 @@ Important
 <p>Reporting should include negative results as they contribute to the development of a cumulative knowledge as much as positive results do and avoid wasting resources.</p>
 </div>
 </div>
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-research-diagram-vs-research-reality" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-95377789.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Research Diagram vs.&nbsp;Research Reality. “Piled Higher and Deeper” by Jorge Cham www.phdcomics.com</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.1: Research Diagram vs.&nbsp;Research Reality. “Piled Higher and Deeper” by Jorge Cham www.phdcomics.com</figcaption><p></p>
 </figure>
 </div>
 <p>There have been recurrent calls in the recent decades for the scientific community to embrace practices to support research reproducibility and many software tools are now available to facilitate this process.</p>
@@ -256,7 +267,7 @@ Important
 <div id="fig-reproducibility" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-97E0048A.png" class="img-fluid figure-img" width="400"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2.1: This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.2: This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807</figcaption><p></p>
 </figure>
 </div>
 <p>In addition to (computational) reproducibility, <strong>replicability</strong>, <strong>robustness</strong> and <strong>generalisability</strong> are key to the generation of strong quantitative evidence.</p>
@@ -268,7 +279,7 @@ Important
 <div id="fig-replicability" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-5D367441.png" class="img-fluid figure-img" width="400"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2.2: This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.3: This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -277,7 +288,7 @@ Important
 <div id="fig-robustness" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-1E28AEDC.png" class="img-fluid figure-img" width="400"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2.3: This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.4: This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -286,7 +297,7 @@ Important
 <div id="fig-generalisability" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-222EF473.png" class="img-fluid figure-img" width="400"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2.4: This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.5: This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -299,7 +310,7 @@ Important
 <div id="fig-documentation-reproducible-analysis" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-E04E255A.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2.5: This image was adapted from an original image created by Scriberia for The Turing Way community (CC-BY licence. DOI: 10.5281/zenodo.3332807).</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.6: This image was adapted from an original image created by Scriberia for The Turing Way community (CC-BY licence. DOI: 10.5281/zenodo.3332807).</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -327,7 +338,7 @@ Important
 <div id="fig-barriers-reproducibility" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-80DE769E.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2.6: Example of barriers to reproducibility</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.7: Example of barriers to reproducibility</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -340,7 +351,7 @@ Important
 </section>
 <section id="software-tools-across-the-research-data-lifecycle" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="software-tools-across-the-research-data-lifecycle"><span class="header-section-number">2.5</span> Software tools across the research data lifecycle</h2>
-<p>As illustrated in <a href="#fig-software-tools-across-research-lifecycle">Figure&nbsp;<span>2.7</span></a>, there is now a whole set of free or open source software tools that are available to help you automate your processes and overcome reproducibility challenges across the research data lifecycle.</p>
+<p>As illustrated in <a href="#fig-software-tools-across-research-lifecycle">Figure&nbsp;<span>2.8</span></a>, there is now a whole set of free or open source software tools that are available to help you automate your processes and overcome reproducibility challenges across the research data lifecycle.</p>
 <p>In this workshop, you will be introduced to following software tools that will help make your quantitative data processing, study and analysis more reproducible:</p>
 <ul>
 <li><strong>Git/GitHub</strong> allow you to keep track of various versions of your code, share your code and collaborate with others on code development;</li>
@@ -364,7 +375,7 @@ Important
 <div id="fig-software-tools-across-research-lifecycle" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-AF117E41.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2.7: Example of free / open source software tools across the research data lifecycle. This image was adapted from an original image created by Scriberia for The Turing Way community (CC-BY licence. DOI: 10.5281/zenodo.3332807).</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.8: Example of free / open source software tools across the research data lifecycle. This image was adapted from an original image created by Scriberia for The Turing Way community (CC-BY licence. DOI: 10.5281/zenodo.3332807).</figcaption><p></p>
 </figure>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -501,8 +512,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./version_control_with_git.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Version control with Git</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

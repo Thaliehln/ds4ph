@@ -4,13 +4,42 @@ title: ":blue_book: Version control with Git"
 
 ## Introduction
 
+### Overview
+
 Does the following situation rings a bell?
 
-![Credit: PhD comics](images/paste-2840AEE3.png)
+!["Piled Higher and Deeper" by Jorge Cham www.phdcomics.com](images/paste-2840AEE3.png){#fig-final-doc}
 
-In this chapter, we introduce basic elements of Git and GitHub. To learn more about this powerful tool, we refer the reader to the resources listed in \@sec-resources-git.
+**GitHub** is a code hosting platform for version control and collaboration.
 
-![](images/paste-B5DF25CC.png)
+### Learning objectives
+
+In this chapter, we introduce basic elements of Git and GitHub. To learn more about this powerful tool, we refer the reader to the resources listed in @sec-resources-git.
+
+## Git, GitHub and GitHub Desktop
+
+|                                |                    |                                                                                   |
+|-----------------|-----------------|-------------------------------------|
+| ![](images/paste-5B5DE956.png) | **Git**            | Free and open source version control system                                       |
+| ![](images/paste-A0B6FCC4.png) | **GitHub**         | Cloud-based hosting platform that lets you host and manage Git repositories.  |
+| ![](images/paste-B8632B75.png) | **GitHub Desktop** | Application that allows to interact with GitHub through a graphical interface instead of using the command line (for software developers) or GitHub’s web browser.
+ |
+
+![](images/paste-081F7F03.png)
+
+Please review the following sections for instructions on installation steps:
+
+-   Create a GitHub account (@sec-GitHub-account-creation)
+-   Install GitHub Desktop (@sec-GitHub-Desktop-installation)
+
+## Create a new local GitHub Desktop repository
+
+1.  In the File menu, click New repository.
+2.  Enter a name for your repository.
+3.  Click Choose to select the local directory in which your new repository will be created
+4.  Using Windows Explorer, navigate to the local repository you want to add.
+5.  You can choose to create a READMEfile in the repository (optional)
+6.  Click Create repository.
 
 ## Version control
 
