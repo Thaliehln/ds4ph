@@ -27,9 +27,9 @@ Protea Hotel Dar es Salaam Courtyard on Seaview Ocean Road
 
 2.  If you have not it yet, please go through the following five steps (about 30 minutes).
 
-    a.  [Install R](https://thaliehln.github.io/ds4ph/installations.html#sec-R-installation)
+    a.  [Install R](https://thaliehln.github.io/ds4ph/r_setup.html#sec-R-installation)
 
-    b.  [Install and setup RStudio Desktop](https://thaliehln.github.io/ds4ph/installations.html#sec-RStudio-installation)
+    b.  [Install and setup RStudio Desktop](http://localhost:4271/r_setup.html#sec-RStudio-installation)
 
     c.  [Install Quarto](https://thaliehln.github.io/ds4ph/installations.html#install-quarto)
     

@@ -35,9 +35,7 @@ This workshop is relevant for individuals who answer yes to the following questi
 -   [ ] Are you a Stata user (or any other data analysis language) who would like to expand your data analysis skillset with R?
 -   [ ] Do you want to bridge analyses between data analysis tools (Stata, R or Python) and to more easily collaborate with other researchers who use another of these tools?
 
-## Schedule
-
-### Before the workshop
+## To do before the workshop
 
 1.  Fill out the online [pre-workshop questionnaire](https://timicodktest.smartforest.de/-/single/cac06e76b3e163e655e49626f8129de8f55a8035ced54f15bc4c6cf527dba8a7?st=DnBRz677PIYh33ML0rE1amWzyhCIYPGFQnmZ6AAou8nJFyikWN6nLM5i3G4I0YZN)
 
@@ -63,6 +61,8 @@ This workshop is relevant for individuals who answer yes to the following questi
 ::: callout-important
 For those who have already been introduced to Git, R/RStudio and RMarkdown, note that you need to additionally install Quarto for this workshop.
 :::
+
+## Schedule
 
 ### Day 1
 
@@ -173,6 +173,7 @@ For those who have already been introduced to Git, R/RStudio and RMarkdown, note
 
 : Schedule Day 3 {#tbl-day3-schedule}
 
-### After the workshop
+## To do after the workshop
 
-1.  Fill out the online post-workshop questionnaire
+1.  Fill out the online post-workshop questionnaire.
+2. This material will stay online, do not hesitate to refer to it if needed.
