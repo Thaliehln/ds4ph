@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>📙 Malaria case study - Effect of SPA observations on RCT data</title>
+<title>Data Science for Public Health - 16&nbsp; 📙 Malaria case study - Effect of SPA observations on RCT data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,51 +86,272 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
-<script src="malaria_case_study_02_report_files/libs/clipboard/clipboard.min.js"></script>
-<script src="malaria_case_study_02_report_files/libs/quarto-html/quarto.js"></script>
-<script src="malaria_case_study_02_report_files/libs/quarto-html/popper.min.js"></script>
-<script src="malaria_case_study_02_report_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="malaria_case_study_02_report_files/libs/quarto-html/anchor.min.js"></script>
-<link href="malaria_case_study_02_report_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="malaria_case_study_02_report_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="malaria_case_study_02_report_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="malaria_case_study_02_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="malaria_case_study_02_report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="malaria_case_study_02_report_files/libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<script src="malaria_case_study_02_report_files/libs/d3-4.5.0/d3.min.js"></script>
-<script src="malaria_case_study_02_report_files/libs/sankey-1/sankey.js"></script>
-<script src="malaria_case_study_02_report_files/libs/sankeyNetwork-binding-0.4/sankeyNetwork.js"></script>
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./malaria_case_study_03_report.html" rel="next">
+<link href="./malaria_case_study_01_report.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="site_libs/d3-4.5.0/d3.min.js"></script>
+<script src="site_libs/sankey-1/sankey.js"></script>
+<script src="site_libs/sankeyNetwork-binding-0.4/sankeyNetwork.js"></script>
 
 
 </head>
 
-<body>
+<body class="nav-sidebar floating">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Effect of SPA observations on RCT data</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./" class="sidebar-logo-link">
+      <img src="./images/logo_compact.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Data Science for Public Health</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About the workshop</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">———— DAY 1 ————</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tools_for_reproducible_data_science.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Tools for reproducible quantitative research</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./version_control_with_git.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Version control with Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rstudio_orientation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Dynamic documents</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./version_control_with_git2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Commit your changes with Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Code chunks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./version_control_with_git3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Project history with Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Import external data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./manipulate_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Manipulate data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./share_and_collaborate_with_git.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Share code and collaborate with Git</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">———— DAY 2 ————</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_science_for_public_health.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Data Science for Public Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_presentation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Malaria case study</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_01_report.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_02_report.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Effect of SPA observations on RCT data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_03_report.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Comparison of RCT and SPA entries</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">———— DAY 3 ————</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./big_data_and_artificial_intelligence.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Big data and machine learning</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">R installations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./github_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">GitHub setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./import_data_from_odk_central.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Import data from ODK Central</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./useful_resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Useful resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">1</span>  Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">16.1</span>  Introduction</a>
   <ul class="collapse">
-  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"><span class="toc-section-number">1.1</span>  Import the data</a></li>
+  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"><span class="toc-section-number">16.1.1</span>  Import the data</a></li>
   </ul></li>
-  <li><a href="#population-characteristics" id="toc-population-characteristics" class="nav-link" data-scroll-target="#population-characteristics"><span class="toc-section-number">2</span>  Population characteristics</a>
+  <li><a href="#population-characteristics" id="toc-population-characteristics" class="nav-link" data-scroll-target="#population-characteristics"><span class="toc-section-number">16.2</span>  Population characteristics</a>
   <ul class="collapse">
-  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook"><span class="toc-section-number">2.1</span>  Codebook</a></li>
-  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"><span class="toc-section-number">2.2</span>  Structure of the data</a></li>
+  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook"><span class="toc-section-number">16.2.1</span>  Codebook</a></li>
+  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"><span class="toc-section-number">16.2.2</span>  Structure of the data</a></li>
   </ul></li>
-  <li><a href="#rct-all" id="toc-rct-all" class="nav-link" data-scroll-target="#rct-all"><span class="toc-section-number">3</span>  RCT all</a></li>
-  <li><a href="#spa-subpopulation" id="toc-spa-subpopulation" class="nav-link" data-scroll-target="#spa-subpopulation"><span class="toc-section-number">4</span>  SPA subpopulation</a></li>
+  <li><a href="#rct-all" id="toc-rct-all" class="nav-link" data-scroll-target="#rct-all"><span class="toc-section-number">16.3</span>  RCT all</a></li>
+  <li><a href="#spa-subpopulation" id="toc-spa-subpopulation" class="nav-link" data-scroll-target="#spa-subpopulation"><span class="toc-section-number">16.4</span>  SPA subpopulation</a></li>
   </ul>
 </nav>
-</div>
+    </div>
+<!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Effect of SPA observations on RCT data</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Effect of SPA observations on RCT data</span></h1>
 </div>
 
 
@@ -144,8 +365,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="introduction" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">16.1</span> Introduction</h2>
 <p>Sensitivity analysis definition</p>
 <p>how SPA observations affect RCT consultations and data recording</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
@@ -157,8 +378,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 
 </div>
-<section id="import-the-data" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="import-the-data"><span class="header-section-number">1.1</span> Import the data</h3>
+<section id="import-the-data" class="level3" data-number="16.1.1">
+<h3 data-number="16.1.1" class="anchored" data-anchor-id="import-the-data"><span class="header-section-number">16.1.1</span> Import the data</h3>
 <p>Data are stored in <strong>dataset1.dta</strong>.</p>
 <section id="exercise-1" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="exercise-1"><span class="emoji" data-emoji="pencil2">✏️</span> Exercise 1</h4>
@@ -221,10 +442,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 </section>
 </section>
-<section id="population-characteristics" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="population-characteristics"><span class="header-section-number">2</span> Population characteristics</h2>
-<section id="codebook" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="codebook"><span class="header-section-number">2.1</span> Codebook</h3>
+<section id="population-characteristics" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="population-characteristics"><span class="header-section-number">16.2</span> Population characteristics</h2>
+<section id="codebook" class="level3" data-number="16.2.1">
+<h3 data-number="16.2.1" class="anchored" data-anchor-id="codebook"><span class="header-section-number">16.2.1</span> Codebook</h3>
 <table class="table">
 <colgroup>
 <col style="width: 41%">
@@ -307,8 +528,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </section>
-<section id="structure-of-the-data" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">2.2</span> Structure of the data</h3>
+<section id="structure-of-the-data" class="level3" data-number="16.2.2">
+<h3 data-number="16.2.2" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">16.2.2</span> Structure of the data</h3>
 <section id="exercise-2" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="exercise-2"><span class="emoji" data-emoji="pencil2">✏️</span> Exercise 2</h4>
 <p>Add the following two new variables to data frame <code>df</code></p>
@@ -390,12 +611,12 @@ Tip
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="dnyipaldyb" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="kpfwaehoov" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#dnyipaldyb) .gt_table {
+:where(#kpfwaehoov) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -420,7 +641,7 @@ Tip
   border-left-color: #D3D3D3;
 }
 
-:where(#dnyipaldyb) .gt_heading {
+:where(#kpfwaehoov) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -432,7 +653,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#dnyipaldyb) .gt_title {
+:where(#kpfwaehoov) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -444,7 +665,7 @@ Tip
   border-bottom-width: 0;
 }
 
-:where(#dnyipaldyb) .gt_subtitle {
+:where(#kpfwaehoov) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -456,13 +677,13 @@ Tip
   border-top-width: 0;
 }
 
-:where(#dnyipaldyb) .gt_bottom_border {
+:where(#kpfwaehoov) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#dnyipaldyb) .gt_col_headings {
+:where(#kpfwaehoov) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -477,7 +698,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#dnyipaldyb) .gt_col_heading {
+:where(#kpfwaehoov) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -497,7 +718,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#dnyipaldyb) .gt_column_spanner_outer {
+:where(#kpfwaehoov) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -509,15 +730,15 @@ Tip
   padding-right: 4px;
 }
 
-:where(#dnyipaldyb) .gt_column_spanner_outer:first-child {
+:where(#kpfwaehoov) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#dnyipaldyb) .gt_column_spanner_outer:last-child {
+:where(#kpfwaehoov) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#dnyipaldyb) .gt_column_spanner {
+:where(#kpfwaehoov) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -529,7 +750,7 @@ Tip
   width: 100%;
 }
 
-:where(#dnyipaldyb) .gt_group_heading {
+:where(#kpfwaehoov) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -554,7 +775,7 @@ Tip
   vertical-align: middle;
 }
 
-:where(#dnyipaldyb) .gt_empty_group_heading {
+:where(#kpfwaehoov) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -569,15 +790,15 @@ Tip
   vertical-align: middle;
 }
 
-:where(#dnyipaldyb) .gt_from_md > :first-child {
+:where(#kpfwaehoov) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#dnyipaldyb) .gt_from_md > :last-child {
+:where(#kpfwaehoov) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#dnyipaldyb) .gt_row {
+:where(#kpfwaehoov) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -596,7 +817,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#dnyipaldyb) .gt_stub {
+:where(#kpfwaehoov) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -609,7 +830,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#dnyipaldyb) .gt_stub_row_group {
+:where(#kpfwaehoov) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -623,11 +844,11 @@ Tip
   vertical-align: top;
 }
 
-:where(#dnyipaldyb) .gt_row_group_first td {
+:where(#kpfwaehoov) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#dnyipaldyb) .gt_summary_row {
+:where(#kpfwaehoov) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -637,16 +858,16 @@ Tip
   padding-right: 5px;
 }
 
-:where(#dnyipaldyb) .gt_first_summary_row {
+:where(#kpfwaehoov) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#dnyipaldyb) .gt_first_summary_row.thick {
+:where(#kpfwaehoov) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#dnyipaldyb) .gt_last_summary_row {
+:where(#kpfwaehoov) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -656,7 +877,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#dnyipaldyb) .gt_grand_summary_row {
+:where(#kpfwaehoov) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -666,7 +887,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#dnyipaldyb) .gt_first_grand_summary_row {
+:where(#kpfwaehoov) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -676,11 +897,11 @@ Tip
   border-top-color: #D3D3D3;
 }
 
-:where(#dnyipaldyb) .gt_striped {
+:where(#kpfwaehoov) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#dnyipaldyb) .gt_table_body {
+:where(#kpfwaehoov) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -689,7 +910,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#dnyipaldyb) .gt_footnotes {
+:where(#kpfwaehoov) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -703,7 +924,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#dnyipaldyb) .gt_footnote {
+:where(#kpfwaehoov) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -712,7 +933,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#dnyipaldyb) .gt_sourcenotes {
+:where(#kpfwaehoov) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -726,7 +947,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#dnyipaldyb) .gt_sourcenote {
+:where(#kpfwaehoov) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -734,36 +955,36 @@ Tip
   padding-right: 5px;
 }
 
-:where(#dnyipaldyb) .gt_left {
+:where(#kpfwaehoov) .gt_left {
   text-align: left;
 }
 
-:where(#dnyipaldyb) .gt_center {
+:where(#kpfwaehoov) .gt_center {
   text-align: center;
 }
 
-:where(#dnyipaldyb) .gt_right {
+:where(#kpfwaehoov) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#dnyipaldyb) .gt_font_normal {
+:where(#kpfwaehoov) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#dnyipaldyb) .gt_font_bold {
+:where(#kpfwaehoov) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#dnyipaldyb) .gt_font_italic {
+:where(#kpfwaehoov) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#dnyipaldyb) .gt_super {
+:where(#kpfwaehoov) .gt_super {
   font-size: 65%;
 }
 
-:where(#dnyipaldyb) .gt_two_val_uncert {
+:where(#kpfwaehoov) .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -772,31 +993,31 @@ Tip
   margin-left: 0.1em;
 }
 
-:where(#dnyipaldyb) .gt_footnote_marks {
+:where(#kpfwaehoov) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#dnyipaldyb) .gt_asterisk {
+:where(#kpfwaehoov) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#dnyipaldyb) .gt_slash_mark {
+:where(#kpfwaehoov) .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-:where(#dnyipaldyb) .gt_fraction_numerator {
+:where(#kpfwaehoov) .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-:where(#dnyipaldyb) .gt_fraction_denominator {
+:where(#kpfwaehoov) .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -1010,12 +1231,12 @@ Tip
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="tsiqhauxka" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="rqszkbjsml" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#tsiqhauxka) .gt_table {
+:where(#rqszkbjsml) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1040,7 +1261,7 @@ Tip
   border-left-color: #D3D3D3;
 }
 
-:where(#tsiqhauxka) .gt_heading {
+:where(#rqszkbjsml) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1052,7 +1273,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#tsiqhauxka) .gt_title {
+:where(#rqszkbjsml) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1064,7 +1285,7 @@ Tip
   border-bottom-width: 0;
 }
 
-:where(#tsiqhauxka) .gt_subtitle {
+:where(#rqszkbjsml) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1076,13 +1297,13 @@ Tip
   border-top-width: 0;
 }
 
-:where(#tsiqhauxka) .gt_bottom_border {
+:where(#rqszkbjsml) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#tsiqhauxka) .gt_col_headings {
+:where(#rqszkbjsml) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1097,7 +1318,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#tsiqhauxka) .gt_col_heading {
+:where(#rqszkbjsml) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1117,7 +1338,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#tsiqhauxka) .gt_column_spanner_outer {
+:where(#rqszkbjsml) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1129,15 +1350,15 @@ Tip
   padding-right: 4px;
 }
 
-:where(#tsiqhauxka) .gt_column_spanner_outer:first-child {
+:where(#rqszkbjsml) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#tsiqhauxka) .gt_column_spanner_outer:last-child {
+:where(#rqszkbjsml) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#tsiqhauxka) .gt_column_spanner {
+:where(#rqszkbjsml) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1149,7 +1370,7 @@ Tip
   width: 100%;
 }
 
-:where(#tsiqhauxka) .gt_group_heading {
+:where(#rqszkbjsml) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1174,7 +1395,7 @@ Tip
   vertical-align: middle;
 }
 
-:where(#tsiqhauxka) .gt_empty_group_heading {
+:where(#rqszkbjsml) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1189,15 +1410,15 @@ Tip
   vertical-align: middle;
 }
 
-:where(#tsiqhauxka) .gt_from_md > :first-child {
+:where(#rqszkbjsml) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#tsiqhauxka) .gt_from_md > :last-child {
+:where(#rqszkbjsml) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#tsiqhauxka) .gt_row {
+:where(#rqszkbjsml) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1216,7 +1437,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#tsiqhauxka) .gt_stub {
+:where(#rqszkbjsml) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1229,7 +1450,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#tsiqhauxka) .gt_stub_row_group {
+:where(#rqszkbjsml) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1243,11 +1464,11 @@ Tip
   vertical-align: top;
 }
 
-:where(#tsiqhauxka) .gt_row_group_first td {
+:where(#rqszkbjsml) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#tsiqhauxka) .gt_summary_row {
+:where(#rqszkbjsml) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1257,16 +1478,16 @@ Tip
   padding-right: 5px;
 }
 
-:where(#tsiqhauxka) .gt_first_summary_row {
+:where(#rqszkbjsml) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#tsiqhauxka) .gt_first_summary_row.thick {
+:where(#rqszkbjsml) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#tsiqhauxka) .gt_last_summary_row {
+:where(#rqszkbjsml) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1276,7 +1497,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#tsiqhauxka) .gt_grand_summary_row {
+:where(#rqszkbjsml) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1286,7 +1507,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#tsiqhauxka) .gt_first_grand_summary_row {
+:where(#rqszkbjsml) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1296,11 +1517,11 @@ Tip
   border-top-color: #D3D3D3;
 }
 
-:where(#tsiqhauxka) .gt_striped {
+:where(#rqszkbjsml) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#tsiqhauxka) .gt_table_body {
+:where(#rqszkbjsml) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1309,7 +1530,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#tsiqhauxka) .gt_footnotes {
+:where(#rqszkbjsml) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1323,7 +1544,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#tsiqhauxka) .gt_footnote {
+:where(#rqszkbjsml) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1332,7 +1553,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#tsiqhauxka) .gt_sourcenotes {
+:where(#rqszkbjsml) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1346,7 +1567,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#tsiqhauxka) .gt_sourcenote {
+:where(#rqszkbjsml) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1354,36 +1575,36 @@ Tip
   padding-right: 5px;
 }
 
-:where(#tsiqhauxka) .gt_left {
+:where(#rqszkbjsml) .gt_left {
   text-align: left;
 }
 
-:where(#tsiqhauxka) .gt_center {
+:where(#rqszkbjsml) .gt_center {
   text-align: center;
 }
 
-:where(#tsiqhauxka) .gt_right {
+:where(#rqszkbjsml) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#tsiqhauxka) .gt_font_normal {
+:where(#rqszkbjsml) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#tsiqhauxka) .gt_font_bold {
+:where(#rqszkbjsml) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#tsiqhauxka) .gt_font_italic {
+:where(#rqszkbjsml) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#tsiqhauxka) .gt_super {
+:where(#rqszkbjsml) .gt_super {
   font-size: 65%;
 }
 
-:where(#tsiqhauxka) .gt_two_val_uncert {
+:where(#rqszkbjsml) .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -1392,31 +1613,31 @@ Tip
   margin-left: 0.1em;
 }
 
-:where(#tsiqhauxka) .gt_footnote_marks {
+:where(#rqszkbjsml) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#tsiqhauxka) .gt_asterisk {
+:where(#rqszkbjsml) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#tsiqhauxka) .gt_slash_mark {
+:where(#rqszkbjsml) .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-:where(#tsiqhauxka) .gt_fraction_numerator {
+:where(#rqszkbjsml) .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-:where(#tsiqhauxka) .gt_fraction_denominator {
+:where(#rqszkbjsml) .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -1534,31 +1755,32 @@ Tip
 </section>
 </section>
 </section>
-<section id="rct-all" class="level2 page-columns page-full" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="rct-all"><span class="header-section-number">3</span> RCT all</h2>
+<section id="rct-all" class="level2 page-columns page-full" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="rct-all"><span class="header-section-number">16.3</span> RCT all</h2>
 <div class="column-page">
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-2d6aae2762a74fce723e" style="width:100%;height:464px;" class="sankeyNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2d6aae2762a74fce723e">{"x":{"links":{"source":[0,0,1,1,2,2,3,3,4,4,5,5,6,6,6,6,6,6,7,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15],"target":[5,2,5,2,3,4,13,6,13,6,13,6,7,8,9,10,11,12,15,15,14,15,14,15,14,15,14,15,14,15,16,17,16,17],"value":[6429,796,2842,241,711,326,264,447,44,282,4237,5034,5,1,4665,1032,57,3,5,1,676,3989,967,65,24,33,1,2,132,4413,1072,728,218,8290]},"nodes":{"name":["History of fever","No history of fever","Temperature recorded","Temperature < 37.5°C","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","","Malaria result indeterminate","Malaria result negative","Malaria result positive","Malaria result unknown","Malaria result unreadable","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"],"group":["History of fever","No history of fever","Temperature recorded","Temperature < 37.5°C","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","","Malaria result indeterminate","Malaria result negative","Malaria result positive","Malaria result unknown","Malaria result unreadable","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"children","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":0,"sinksRight":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8b32002e2468b383555a" style="width:100%;height:464px;" class="sankeyNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8b32002e2468b383555a">{"x":{"links":{"source":[0,0,1,1,2,2,3,3,4,4,5,5,6,6,6,6,6,6,7,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15],"target":[5,2,5,2,3,4,13,6,13,6,13,6,7,8,9,10,11,12,15,15,14,15,14,15,14,15,14,15,14,15,16,17,16,17],"value":[6429,796,2842,241,711,326,264,447,44,282,4237,5034,5,1,4665,1032,57,3,5,1,676,3989,967,65,24,33,1,2,132,4413,1072,728,218,8290]},"nodes":{"name":["History of fever","No history of fever","Temperature recorded","Temperature < 37.5°C","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","","Malaria result indeterminate","Malaria result negative","Malaria result positive","Malaria result unknown","Malaria result unreadable","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"],"group":["History of fever","No history of fever","Temperature recorded","Temperature < 37.5°C","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","","Malaria result indeterminate","Malaria result negative","Malaria result positive","Malaria result unknown","Malaria result unreadable","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"children","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":0,"sinksRight":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
 </section>
-<section id="spa-subpopulation" class="level2 page-columns page-full" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="spa-subpopulation"><span class="header-section-number">4</span> SPA subpopulation</h2>
+<section id="spa-subpopulation" class="level2 page-columns page-full" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="spa-subpopulation"><span class="header-section-number">16.4</span> SPA subpopulation</h2>
 <div class="column-page">
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-93c9f815db721d064575" style="width:100%;height:464px;" class="sankeyNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-93c9f815db721d064575">{"x":{"links":{"source":[0,0,1,1,2,2,3,3,4,4,5,5,6,6,6,7,7,8,8,9,10,10,11,11,12,12],"target":[5,2,5,2,3,4,10,6,10,6,10,6,7,8,9,11,12,11,12,12,11,12,13,14,13,14],"value":[411,51,184,10,40,21,9,31,1,20,279,316,289,76,2,33,256,74,2,2,9,280,84,32,30,510]},"nodes":{"name":["History of fever","No history of fever","Temperature recorded","Temperature < 37.5°C","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","Malaria result negative","Malaria result positive","Malaria result unknown","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"],"group":["History of fever","No history of fever","Temperature recorded","Temperature < 37.5°C","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","Malaria result negative","Malaria result positive","Malaria result unknown","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"children","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":0,"sinksRight":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c0baa209797868c95bda" style="width:100%;height:464px;" class="sankeyNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c0baa209797868c95bda">{"x":{"links":{"source":[0,0,1,1,2,2,3,3,4,4,5,5,6,6,6,7,7,8,8,9,10,10,11,11,12,12],"target":[5,2,5,2,3,4,10,6,10,6,10,6,7,8,9,11,12,11,12,12,11,12,13,14,13,14],"value":[411,51,184,10,40,21,9,31,1,20,279,316,289,76,2,33,256,74,2,2,9,280,84,32,30,510]},"nodes":{"name":["History of fever","No history of fever","Temperature recorded","Temperature < 37.5°C","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","Malaria result negative","Malaria result positive","Malaria result unknown","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"],"group":["History of fever","No history of fever","Temperature recorded","Temperature < 37.5°C","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","Malaria result negative","Malaria result positive","Malaria result unknown","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"children","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":0,"sinksRight":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
+
+
 </section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1657,7 +1879,34 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./malaria_case_study_01_report.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./malaria_case_study_03_report.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Comparison of RCT and SPA entries</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">This book was built by <a href="https://quarto.org/">Quarto</a>. Copyright 2022, IHI / Swiss TPH</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Thaliehln/ds4ph/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
