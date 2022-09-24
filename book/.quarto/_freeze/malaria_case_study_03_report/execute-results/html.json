@@ -1,0 +1,14 @@
+{
+  "hash": "f6d0a08ecd5f47e0175ff2c6c3b571cc",
+  "result": {
+    "markdown": "---\ntitle: \":orange_book: Malaria case study - Comparison of RCT and SPA entries\"\nexecute:\n  echo: false\n  warning: false\nfrom: markdown+emoji\ntoc: true\nnumber-sections: true\n---\n\n\n## Introduction\n\nSensitivity analysis definition\n\nhow SPA observations affect RCT consultations and data recording\n\n``` {{r}}\ninstall.packages(\"ggplot2\")\ninstall.packages(\"ggthemes\")\ninstall.packages(\"networkD3\")\ninstall.packages(\"apyramid\")\n```\n\n\n::: {.cell}\n\n:::\n\n\n### Import the data\n\nData are stored in **dataset2.dta**.\n\n#### :pencil2: Exercise 1 {.unnumbered}\n\n1.  Import the dataset and store it into a dataframe called **df**.\n2.  Select columns **child_ID**, **CTX_month**, **CTX_district**, **SDC_age_in_months** for the first **5** rows in data frame `df`.\n3.  Display in a table with the following characteristics:\n    a.  Align the content of the first column to the left and the content of the other 3 columns to the centre.\n    b.  Add a caption.\n\n\n::: {.cell df-print='kable'}\n::: {.cell-output-display}\nTable: Extract of the database\n\n|RCT_child_ID | RCT_CLIN_fever | SPA_CLIN_fever_reported | SPA_CLIN_fever_investigated |\n|:------------|:--------------:|:-----------------------:|:---------------------------:|\n|12           |       1        |            0            |             NA              |\n|31           |       1        |            0            |             NA              |\n|34           |       1        |            0            |             NA              |\n|44           |       0        |            0            |              0              |\n|45           |       1        |            0            |             NA              |\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

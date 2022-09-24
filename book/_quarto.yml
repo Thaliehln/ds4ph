@@ -41,6 +41,8 @@ book:
         - data_science_for_public_health.qmd
         - malaria_case_study_presentation.qmd
         - malaria_case_study_01_report.qmd
+        - malaria_case_study_02_report.qmd
+        - malaria_case_study_03_report.qmd
     - part: "------------ DAY 3 ------------"
       chapters: 
         - big_data_and_artificial_intelligence.qmd

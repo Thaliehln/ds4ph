@@ -1,5 +1,5 @@
 ---
-title: ":orange_book: Malaria case study - RCT sensitivity analysis"
+title: ":orange_book: Malaria case study - Effect of SPA observations on RCT data"
 execute:
   echo: false
   warning: false
@@ -142,6 +142,26 @@ df <- df %>%
   dplyr::mutate(CALC_fever_or_temp = (CLIN_fever == 1) | (CALC_fever == 1))
 ```
 
+```{r}
+df <- df %>%
+  dplyr::mutate(CALC_temperature_measured_char = ifelse(!is.na(MEAS_temperature), "Temperature recorded", "Temperature not recorded")) %>%
+  dplyr::mutate(CALC_fever_char = ifelse(MEAS_temperature >= 37.5, "Temperature >= 37.5°C", "Temperature < 37.5°C")) %>%
+  dplyr::mutate(CLIN_fever_char = ifelse(CLIN_fever == 1, "History of fever", "No history of fever")) %>% 
+  dplyr::mutate(TEST_malaria_done_char = ifelse(TEST_malaria_done == 1, "Malaria test recorded", "Malaria test not recorded")) %>% 
+  dplyr::mutate(
+    TEST_malaria_result_char = dplyr::case_when(
+      TEST_malaria_result == 0 ~ "Malaria result negative",
+      TEST_malaria_result == 1 ~ "Malaria result positive",
+      TEST_malaria_result == 2 ~ "Malaria result indeterminate",
+      TEST_malaria_result == 95 ~ "Malaria result unreadable",
+      TEST_malaria_result == 98 ~ "Malaria result unknown",
+      TRUE ~ ""
+    )
+  ) %>%
+  dplyr::mutate(DX_malaria_char = ifelse(DX_malaria == 1, "Malaria diagnosis", "No malaria diagnosis")) %>% 
+  dplyr::mutate(RX_antimalarials_char = ifelse(RX_antimalarials == 1, "Malaria treatment", "No malaria treatment"))
+```
+
 ### Structure of the data
 
 #### :pencil2: Exercise 2 {.unnumbered}
@@ -256,3 +276,207 @@ df4 %>%
   gtsummary::tbl_summary(by = CTX_SPA_obs, missing_text = "(Missing)") %>%
   gtsummary::add_p()
 ```
+
+## RCT all
+
+::: column-page
+```{r}
+link_CLIN_fever_and_MEAS_temperature <- df %>%
+  select(CLIN_fever_char, CALC_temperature_measured_char) %>%
+  count(CLIN_fever_char, CALC_temperature_measured_char) %>%
+  rename(source = CLIN_fever_char,
+         target = CALC_temperature_measured_char)
+
+fever_measured_links <- df %>%
+  dplyr::filter(CALC_temperature_measured == 1) %>% 
+  select(CALC_temperature_measured_char, CALC_fever_char) %>%
+  count(CALC_temperature_measured_char, CALC_fever_char) %>% 
+  rename(source = CALC_temperature_measured_char,
+         target = CALC_fever_char)
+
+malaria_test_links <- df %>%
+  dplyr::filter(CALC_temperature_measured == 1) %>%
+  select(CALC_fever_char, TEST_malaria_done_char) %>%
+  count(CALC_fever_char, TEST_malaria_done_char) %>%
+  rename(source = CALC_fever_char,
+         target = TEST_malaria_done_char)
+
+malaria_test_links2 <- df %>%
+  dplyr::filter(CALC_temperature_measured == 0) %>%
+  select(CALC_temperature_measured_char, TEST_malaria_done_char) %>%
+  count(CALC_temperature_measured_char, TEST_malaria_done_char) %>%
+  rename(source = CALC_temperature_measured_char,
+         target = TEST_malaria_done_char)
+
+malaria_results_links <- df %>%
+  dplyr::filter(TEST_malaria_done == 1) %>% 
+  select(TEST_malaria_done_char, TEST_malaria_result_char) %>%
+  count(TEST_malaria_done_char, TEST_malaria_result_char) %>%
+  rename(source = TEST_malaria_done_char,
+         target = TEST_malaria_result_char)
+
+malaria_diagnosis_links <- df %>%
+  dplyr::filter(TEST_malaria_done == 1) %>% 
+  select(TEST_malaria_result_char, DX_malaria_char) %>%
+  count(TEST_malaria_result_char, DX_malaria_char) %>%
+  rename(source = TEST_malaria_result_char,
+         target = DX_malaria_char)
+
+malaria_diagnosis_links2 <- df %>%
+  dplyr::filter(TEST_malaria_done == 0) %>% 
+  select(TEST_malaria_done_char, DX_malaria_char) %>%
+  count(TEST_malaria_done_char, DX_malaria_char) %>%
+  rename(source = TEST_malaria_done_char,
+         target = DX_malaria_char)
+
+antimalarials_links <- df %>%
+  select(DX_malaria_char, RX_antimalarials_char) %>%
+  count(DX_malaria_char, RX_antimalarials_char) %>%
+  rename(source = DX_malaria_char,
+         target = RX_antimalarials_char)
+
+# combine links
+links <- bind_rows(link_CLIN_fever_and_MEAS_temperature,
+                   fever_measured_links,
+                   malaria_test_links,
+                   malaria_test_links2,
+                   malaria_results_links,
+                   malaria_diagnosis_links,
+                   malaria_diagnosis_links2,
+                   antimalarials_links)
+
+# The unique node names
+nodes <- data.frame(
+  name=c(as.character(links$source), as.character(links$target)) %>% 
+    unique()
+  )
+
+# match to numbers, not names
+links$IDsource <- match(links$source, nodes$name)-1 
+links$IDtarget <- match(links$target, nodes$name)-1
+
+p <- sankeyNetwork(
+  Links = links,
+  Nodes = nodes,
+  Source = "IDsource",
+  Target = "IDtarget",
+  Value = "n",
+  NodeID = "name",
+  units = "children",
+  fontSize = 12,
+  nodeWidth = 30,
+  iterations = 0,
+  sinksRight = FALSE)        # ensure node order is as in data
+p
+
+#links$group <- as.factor(c("type_a","type_a","type_a","type_b","type_b","type_b"))
+ 
+# Add a 'group' column to each node. Here I decide to put all of them in the same group to make them grey
+#nodes$group <- as.factor(c("my_unique_group"))
+ 
+# Give a color for each group:
+#my_color <- 'd3.scaleOrdinal() .domain(["type_a", "type_b", "my_unique_group"]) .range(["#69b3a2", "steelblue", "grey"])'
+```
+:::
+
+## SPA subpopulation
+
+::: column-page
+```{r}
+link_CLIN_fever_and_MEAS_temperature <- df3 %>%
+  select(CLIN_fever_char, CALC_temperature_measured_char) %>%
+  count(CLIN_fever_char, CALC_temperature_measured_char) %>%
+  rename(source = CLIN_fever_char,
+         target = CALC_temperature_measured_char)
+
+fever_measured_links <- df3 %>%
+  dplyr::filter(CALC_temperature_measured == 1) %>% 
+  select(CALC_temperature_measured_char, CALC_fever_char) %>%
+  count(CALC_temperature_measured_char, CALC_fever_char) %>% 
+  rename(source = CALC_temperature_measured_char,
+         target = CALC_fever_char)
+
+malaria_test_links <- df3 %>%
+  dplyr::filter(CALC_temperature_measured == 1) %>%
+  select(CALC_fever_char, TEST_malaria_done_char) %>%
+  count(CALC_fever_char, TEST_malaria_done_char) %>%
+  rename(source = CALC_fever_char,
+         target = TEST_malaria_done_char)
+
+malaria_test_links2 <- df3 %>%
+  dplyr::filter(CALC_temperature_measured == 0) %>%
+  select(CALC_temperature_measured_char, TEST_malaria_done_char) %>%
+  count(CALC_temperature_measured_char, TEST_malaria_done_char) %>%
+  rename(source = CALC_temperature_measured_char,
+         target = TEST_malaria_done_char)
+
+malaria_results_links <- df3 %>%
+  dplyr::filter(TEST_malaria_done == 1) %>% 
+  select(TEST_malaria_done_char, TEST_malaria_result_char) %>%
+  count(TEST_malaria_done_char, TEST_malaria_result_char) %>%
+  rename(source = TEST_malaria_done_char,
+         target = TEST_malaria_result_char)
+
+malaria_diagnosis_links <- df3 %>%
+  dplyr::filter(TEST_malaria_done == 1) %>% 
+  select(TEST_malaria_result_char, DX_malaria_char) %>%
+  count(TEST_malaria_result_char, DX_malaria_char) %>%
+  rename(source = TEST_malaria_result_char,
+         target = DX_malaria_char)
+
+malaria_diagnosis_links2 <- df3 %>%
+  dplyr::filter(TEST_malaria_done == 0) %>% 
+  select(TEST_malaria_done_char, DX_malaria_char) %>%
+  count(TEST_malaria_done_char, DX_malaria_char) %>%
+  rename(source = TEST_malaria_done_char,
+         target = DX_malaria_char)
+
+antimalarials_links <- df3 %>%
+  select(DX_malaria_char, RX_antimalarials_char) %>%
+  count(DX_malaria_char, RX_antimalarials_char) %>%
+  rename(source = DX_malaria_char,
+         target = RX_antimalarials_char)
+
+# combine links
+links <- bind_rows(link_CLIN_fever_and_MEAS_temperature,
+                   fever_measured_links,
+                   malaria_test_links,
+                   malaria_test_links2,
+                   malaria_results_links,
+                   malaria_diagnosis_links,
+                   malaria_diagnosis_links2,
+                   antimalarials_links)
+
+# The unique node names
+nodes <- data.frame(
+  name=c(as.character(links$source), as.character(links$target)) %>% 
+    unique()
+  )
+
+# match to numbers, not names
+links$IDsource <- match(links$source, nodes$name)-1 
+links$IDtarget <- match(links$target, nodes$name)-1
+
+p <- sankeyNetwork(
+  Links = links,
+  Nodes = nodes,
+  Source = "IDsource",
+  Target = "IDtarget",
+  Value = "n",
+  NodeID = "name",
+  units = "children",
+  fontSize = 12,
+  nodeWidth = 30,
+  iterations = 0,
+  sinksRight = FALSE)        # ensure node order is as in data
+p
+
+#links$group <- as.factor(c("type_a","type_a","type_a","type_b","type_b","type_b"))
+ 
+# Add a 'group' column to each node. Here I decide to put all of them in the same group to make them grey
+#nodes$group <- as.factor(c("my_unique_group"))
+ 
+# Give a color for each group:
+#my_color <- 'd3.scaleOrdinal() .domain(["type_a", "type_b", "my_unique_group"]) .range(["#69b3a2", "steelblue", "grey"])'
+```
+:::

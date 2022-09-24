@@ -1,0 +1,64 @@
+---
+title: ":orange_book: Malaria case study - Comparison of RCT and SPA entries"
+execute:
+  echo: false
+  warning: false
+from: markdown+emoji
+toc: true
+number-sections: true
+---
+
+## Introduction
+
+Sensitivity analysis definition
+
+how SPA observations affect RCT consultations and data recording
+
+``` {{r}}
+install.packages("ggplot2")
+install.packages("ggthemes")
+install.packages("networkD3")
+install.packages("apyramid")
+```
+
+```{r}
+library(openxlsx)
+library(dplyr)
+library(skimr)
+library(gtsummary)
+library(finalfit)
+library(ggplot2)
+library(ggthemes)
+library(networkD3) # For alluvial/Sankey diagrams
+library(tidyverse)
+```
+
+### Import the data
+
+Data are stored in **dataset2.dta**.
+
+#### :pencil2: Exercise 1 {.unnumbered}
+
+1.  Import the dataset and store it into a dataframe called **df**.
+2.  Select columns **RCT_child_ID**, **RCT_CLIN_fever**, **SPA_CLIN_fever_reported**, **SPA_CLIN_fever_investigated** for the first **10** rows in data frame `df`.
+3.  Display in a table with the following characteristics:
+    a.  Align the content of the first column to the left and the content of the other 3 columns to the centre.
+    b.  Add a caption.
+
+```{r}
+#| df-print: kable
+
+# 1. Import the dataset and store it into a dataframe called **df**. 
+df <- openxlsx::read.xlsx("./data/dataset2.xlsx")
+
+df %>%
+  # 2. Select columns **child_ID**, **CTX_month**, **CTX_district**, **SDC_age_in_months** for the first **10** rows in data frame `df`.
+  head(10) %>%
+  dplyr::select(RCT_child_ID,
+                RCT_CLIN_fever,
+                SPA_CLIN_fever_reported,
+                SPA_CLIN_fever_investigated) %>%
+  # 3. Display in a table
+  knitr::kable(align = c('l', 'c', 'c', 'c'),
+               caption = "Extract of the database")
+```
