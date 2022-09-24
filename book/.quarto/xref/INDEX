@@ -43,5 +43,26 @@
   },
   "rstudio_orientation.qmd": {
     "rstudio_orientation.html": "4077e68b"
+  },
+  "manipulate_data.qmd": {
+    "manipulate_data.html": "ea1c2094"
+  },
+  "share_and_collaborate_with_git.qmd": {
+    "share_and_collaborate_with_git.html": "e245aa56"
+  },
+  "version_control_with_git3.qmd": {
+    "version_control_with_git3.html": "3a25cb99"
+  },
+  "malaria_case_study_presentation.qmd": {
+    "malaria_case_study_presentation.html": "f60a7939"
+  },
+  "data_science_for_public_health.qmd": {
+    "data_science_for_public_health.html": "e0e1a160"
+  },
+  "big_data_and_artificial_intelligence.qmd": {
+    "big_data_and_artificial_intelligence.html": "2b3a2cef"
+  },
+  "malaria_case_study_01_report.qmd": {
+    "malaria_case_study_01_report.html": "bfe75d2a"
   }
 }

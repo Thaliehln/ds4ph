@@ -5,11 +5,14 @@ title: ":blue_book: Manipulate data"
 ## Introduction
 
 ::: callout-important
-Remember that with Quarto you can:
-
-* store multiple data sets in memory (stored in different data frames `df1`, `df2`, `df3`, etc),
-* work in parallel on all these data sets.
+Remember that with Quarto you can store multiple data sets in memory (stored in different data frames `df1`, `df2`, `df3`, etc) and work in parallel on all these data sets.
 :::
+
+## Type of data
+
+## Descriptive statistics
+
+## Visualise data
 
 ## Manipulate Python and R data
 

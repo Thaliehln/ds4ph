@@ -38,7 +38,18 @@ How to display data
 #| echo: fenced
 #| df-print: kable
 library(dplyr)
-df %>% knitr::kable()
+knitr::kable(head(df, 10))
+```
+
+The pipe operator
+
+```{r}
+#| echo: fenced
+#| df-print: kable
+library(dplyr)
+df %>%
+  head(10) %>%
+  knitr::kable()
 ```
 
 You can cross-reference your table @tbl-iris
@@ -48,7 +59,8 @@ You can cross-reference your table @tbl-iris
 #| tbl-cap: Iris data set
 #| echo: fenced
 #| df-print: kable
-df %>% knitr::kable()
+df %>% 
+  knitr::kable()
 ```
 
 ## Execute Stata commands within R code chunks

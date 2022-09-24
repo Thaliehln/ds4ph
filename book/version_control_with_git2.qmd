@@ -19,15 +19,7 @@ Over time, commits should tell a story of the history of your repository and how
 
 Commits include lots of metadata in addition to the contents and message, like the author, timestamp, and more.
 
-It also requires that you write something human-readable that will be a breadcrumb for you in the future. be easy to compare versions, and you can easily revert to previous versions. 
-
-## Project history
-
-The version control capabilities of Git permit us to keep track of changes we make to our code. We can also revert back to previous versions of files. Git also permits us to create branches in which we can test out ideas, then decide if we merge the new branch with the original.
-
-In the simplest case, the database contains a linear history: each change is made after the previous one., but you can have a more complex history. We will see this later.
-
-![](images/paste-48384992.png)
+It also requires that you write something human-readable that will be a breadcrumb for you in the future. be easy to compare versions, and you can easily revert to previous versions.
 
 ## Push and Pull
 

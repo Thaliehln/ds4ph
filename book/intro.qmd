@@ -6,11 +6,11 @@ execute:
   error: false
 ---
 
------
 :spiral_calendar: September 26-28, 2022\
 :clock9: 09:00 - 17:00\
 :city_sunrise: Dar-es-Salaam, Tanzania
------
+
+------------------------------------------------------------------------
 
 This workshop targets public health researchers and aims to accompany them in their journey towards Data Science.
 

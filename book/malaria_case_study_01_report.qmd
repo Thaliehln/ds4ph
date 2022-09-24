@@ -1,5 +1,5 @@
 ---
-title: ":orange_book: Malaria case study - Part 1"
+title: ":orange_book: Malaria case study - Report"
 execute:
   echo: false
   warning: false
@@ -9,28 +9,6 @@ number-sections: true
 ---
 
 ## Introduction
-
-### Overview
-
-These pages will demonstrate how to use Quarto to data from Tanzania.
-
-### Learning objectives
-
--   Test
-
-## Malaria research questions
-
-Research questions in an enumerated list
-
-## Getting started
-
-### Access the Quarto template
-
-Download the Quarto template used for this case study (add link) using GitHub.
-
-#### Quarto resources
-
-Review the R Basics page "Reading a RMarkdown Script", or reference these resources: Rmarkdown introduction and Rmarkdown authoring basics.
 
 ``` {{r}}
 install.packages("ggplot2")
@@ -301,18 +279,6 @@ df %>%
   gtsummary::tbl_summary(missing_text = "(Missing)")
 ```
 
-### Missing values
-
-Identify missing values in each variable: missing_plot
-
-```{r}
-explanatory = c("CTX_facility_ID", "CTX_district", "CLIN_fever")
-dependent = "DX_malaria"
-
-df %>% 
-  finalfit::missing_pattern(dependent, explanatory)
-```
-
 ## Healthcare provider actions
 
 ### Codebook
@@ -452,8 +418,6 @@ apyramid::age_pyramid(data = df,
 ```
 
 ## Fever assessment
-
-Comparison of systems effectiveness decay for malaria assessment and treatment in facilities. Steps reflecting adherence to guidelines are shown in blue, non-adherence shown in red, and not applicable in grey.
 
 ```{r}
 df <- df %>%
@@ -777,10 +741,6 @@ Sequence
 -   temp measurement by reported fever; by facility
 
 ```{r}
-chisq.test(df$CLIN_fever, df$TEST_malaria_result)
-```
-
-```{r}
 
 df$CTX_facility_ID <- haven::as_factor(df$CTX_facility_ID) 
 df %>%
@@ -801,10 +761,6 @@ table(df$CALC_fever_or_temp, df$TEST_malaria_result)
 ```
 
 ```{r}
-chisq.test(df$CALC_fever_or_temp, df$TEST_malaria_result)
-```
-
-```{r}
 df$CTX_facility_ID <- haven::as_factor(df$CTX_facility_ID) 
 df %>%
   dplyr::filter(CALC_fever_or_temp == 1) %>%
@@ -821,14 +777,6 @@ df %>%
 df <- df %>%
   dplyr::mutate(TEST_malaria_positive = 1* (TEST_malaria_result == 1))
 table(df$TEST_malaria_result, df$DX_malaria, df$RX_antimalarials) %>% knitr::kable()
-```
-
-```{r}
-chisq.test(df$TEST_malaria_result, df$DX_malaria)
-```
-
-```{r}
-chisq.test(df$TEST_malaria_result, df$RX_antimalarials)
 ```
 
 ```{r}

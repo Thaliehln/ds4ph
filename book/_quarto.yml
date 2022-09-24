@@ -32,9 +32,18 @@ book:
         - create_first_quarto_doc.qmd
         - version_control_with_git2.qmd
         - use_stata_python_with_quarto.qmd
+        - version_control_with_git3.qmd
         - import_data.qmd
+        - manipulate_data.qmd
+        - share_and_collaborate_with_git.qmd
     - part: "------------ DAY 2 ------------"
+      chapters:
+        - data_science_for_public_health.qmd
+        - malaria_case_study_presentation.qmd
+        - malaria_case_study_01_report.qmd
     - part: "------------ DAY 3 ------------"
+      chapters: 
+        - big_data_and_artificial_intelligence.qmd
     - references.qmd
   appendices:
     - r_setup.qmd

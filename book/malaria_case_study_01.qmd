@@ -11,11 +11,7 @@ These pages will demonstrate how to use Quarto to data from Tanzania.
 
 ### Learning objectives
 
--   Test
-
-## Malaria research questions
-
-Research questions in an enumerated list
+-   Apply what you have learnt on Day 1 on real data
 
 ## Getting started
 
@@ -23,31 +19,89 @@ Research questions in an enumerated list
 
 Download the Quarto template used for this case study (add link) using GitHub.
 
-#### Quarto resources
+Please review previous sections on Quarto, data import and manipulation.
 
-Review the R Basics page "Reading a RMarkdown Script", or reference these resources: Rmarkdown introduction and Rmarkdown authoring basics.
-
-::: panel-tabset
-#### :pencil2: Exercise 1
+### Install packages
 
 ``` {{r}}
 install.packages("ggplot2")
 install.packages("ggthemes")
+install.packages("networkD3")
+install.packages("apyramid")
 ```
 
 ```{r}
-library(haven)
-library(RStata)
-library(reticulate)
+#| echo: fenced
+library(openxlsx)
 library(dplyr)
 library(skimr)
-library(openxlsx)
 library(gtsummary)
 library(finalfit)
 library(ggplot2)
 library(ggthemes)
+library(networkD3) # For alluvial/Sankey diagrams
+library(tidyverse)
 ```
+
+### Dataset description
+
+We will be using data and examples from a real consultation data which occurred in Tanzania between **2021-07-29** and **2021-12-17** within the Integrated Management of Childhood Illness (TIMCI) project.
+
+::: callout-important
+Data are made available by the Ifakara Health Institute (IHI) for training purposes only. Please note, that some data has been adapted in order to best achieve training objectives. No personally indentifiable information have been kept in this dataset.
 :::
+
+Information about the consultations of **10,308 children \[1 day - 59 months\]** from **18 facilities** (dispensaries and health centres) in **Kaliua** District, **Sengerema** District and **Tanga** District, Tanzania. 
+
+::: {#fig-study-area layout="[[1,1], [1, 1]]"}
+![](images/tanzania_map-01.png){#fig-tanzania-study-regions}
+
+![](images/mwanza_map.png){#fig-mwanza-study-district}
+
+![](images/kaliua_map.png){#fig-kaliua-study-district}
+
+![](images/tanga_map.png){#fig-tanga-study-district}
+
+Study area
+:::
+
+### Data collection
+
+Data were collected using *ODK* (ODK Collect, ODK Central) between **2021-07-29** and **2021-12-17**. Research assistants recorded the following information from different sources.
+
++-------------------------------------+-------------+--------------------------------------+
+| Information                         | Prefix      | Source                               |
++:====================================+:===========:+:====================================:+
+| Context                             | CTX         | Metadata                             |
++-------------------------------------+-------------+--------------------------------------+
+| Sociodemographics                   | SDC         | Caregiver                            |
++-------------------------------------+-------------+--------------------------------------+
+| Clinical presentation               | CLIN        | Caregiver                            |
++-------------------------------------+-------------+--------------------------------------+
+| Laboratory investigations           | TEST        | Child booklet or facility MTUHA book |
++-------------------------------------+-------------+--------------------------------------+
+| Diagnoses                           | DX          | Child booklet or facility MTUHA book |
++-------------------------------------+-------------+--------------------------------------+
+| Treatments                          | RX          |                                      |
++-------------------------------------+-------------+--------------------------------------+
+| -   before consultation             |             | Caregiver                            |
++-------------------------------------+-------------+--------------------------------------+
+| -   as a result of the consultation |             | Child booklet or facility MTUHA book |
++-------------------------------------+-------------+--------------------------------------+
+| Referral advice                     | MGMT        |                                      |
++-------------------------------------+-------------+--------------------------------------+
+|                                     |             | Caregiver                            |
++-------------------------------------+-------------+--------------------------------------+
+|                                     |             | Child booklet or facility MTUHA book |
++-------------------------------------+-------------+--------------------------------------+
+
+: Types and sources of information
+
+### Data preparation
+
+Data cleaning and data de-identification
+
+Personally identifiable information (PII) were removed.
 
 ### Import the data
 
@@ -103,68 +157,6 @@ df %>%
   knitr::kable()
 ```
 :::
-
-### Dataset description
-
-We will be using data and examples from a real consultation data which occurred in Tanzania between **start date** and **end date**.
-
-DISCLAIMER: The Ifakara Health Institute has approved the use of this data for training purposes. Please note, that some data has been adapted in order to best achieve training objectives. No personally indentifiable information have been kept in this dataset.
-
-Information about the consultations of **10,308 children \[1 day - 59 months\]** from **18 facilities** (dispensaries and health centres) in **Kaliua** District, **Sengerema** District and **Tanga** District, Tanzania.
-
-::: {#fig-study-area layout="[[1,1], [1, 1]]"}
-![](images/tanzania_map-01.png){#fig-tanzania-study-regions}
-
-![](images/mwanza_map.png){#fig-mwanza-study-district}
-
-![](images/kaliua_map.png){#fig-kaliua-study-district}
-
-![](images/tanga_map.png){#fig-tanga-study-district}
-
-Study area
-:::
-
-Data were collected using *ODK* (ODK Collect, ODK Central) between **start date** and **end date**. Data were made available by IHI and Swiss TPH and the Tools for Integrated Management of Childhood Illness (TIMCI) project.
-
-Data are stored in **dataset1.dta**.
-
-### Data collection
-
-Research assistants recorded the following information from different sources.
-
-+-------------------------------------+--------+--------------------------------------+
-| Information                         | Prefix | Source                               |
-+:====================================+:======:+:====================================:+
-| Context                             | CTX    | Metadata                             |
-+-------------------------------------+--------+--------------------------------------+
-| Sociodemographics                   | SDC    | Caregiver                            |
-+-------------------------------------+--------+--------------------------------------+
-| Clinical presentation               | CLIN   | Caregiver                            |
-+-------------------------------------+--------+--------------------------------------+
-| Laboratory investigations           | TEST   | Child booklet or facility MTUHA book |
-+-------------------------------------+--------+--------------------------------------+
-| Diagnoses                           | DX     | Child booklet or facility MTUHA book |
-+-------------------------------------+--------+--------------------------------------+
-| Treatments                          | RX     |                                      |
-+-------------------------------------+--------+--------------------------------------+
-| -   before consultation             |        | Caregiver                            |
-+-------------------------------------+--------+--------------------------------------+
-| -   as a result of the consultation |        | Child booklet or facility MTUHA book |
-+-------------------------------------+--------+--------------------------------------+
-| Referral advice                     | MGMT   |                                      |
-+-------------------------------------+--------+--------------------------------------+
-|                                     |        | Caregiver                            |
-+-------------------------------------+--------+--------------------------------------+
-|                                     |        | Child booklet or facility MTUHA book |
-+-------------------------------------+--------+--------------------------------------+
-
-: Types and sources of information
-
-### Data preparation
-
-Data cleaning and data de-identification
-
-Personally identifiable information (PII) were removed.
 
 ## Population characteristics
 

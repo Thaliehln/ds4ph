@@ -1,0 +1,12 @@
+---
+title: ":blue_book: Project history with Git"
+editor: visual
+---
+
+## Project history
+
+The version control capabilities of Git permit us to keep track of changes we make to our code. We can also revert back to previous versions of files. Git also permits us to create branches in which we can test out ideas, then decide if we merge the new branch with the original.
+
+In the simplest case, the database contains a linear history: each change is made after the previous one., but you can have a more complex history. We will see this later.
+
+![](images/paste-48384992.png)

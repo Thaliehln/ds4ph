@@ -1,0 +1,20 @@
+{
+  "hash": "665c18a2ed0e200e7c4bc50d7c82d133",
+  "result": {
+    "markdown": "---\ntitle: \":blue_book: Manipulate data\"\n---\n\n\n## Introduction\n\n::: callout-important\nRemember that with Quarto you can store multiple data sets in memory (stored in different data frames `df1`, `df2`, `df3`, etc) and work in parallel on all these data sets.\n:::\n\n## Type of data\n\n## Descriptive statistics\n\n## Visualise data\n\n## Manipulate Python and R data\n\n::: {.panel-tabset}\n\n#### :pencil2: Exercise 1\n\n1. Import **dataset1.xlsx** using Stata and store it in `df1`\n\n\n::: {.cell}\n\n````{.cell-code}\n```{{r}}\n# Write your code here\n```\n````\n:::\n\n\n2. Import **dataset1.csv** using Python and store it in `df2`\n\n\n::: {.cell}\n\n````{.cell-code}\n```{{python}}\n# Write your code here\n```\n````\n:::\n\n\n3. Compare `df1`and `df2`. Can you indicate what variable has been modified in **dataset1** between df1 and df2?\n\n::: callout-tip\nUse the R function **comparedf**\n:::\n\n\n::: {.cell}\n\n````{.cell-code}\n```{{r}}\n# Write your code here\n```\n````\n:::\n\n\n#### :eyes: Solution\n\n1. Import **dataset1.xlsx** using Stata and store it in `df1`\n\n\n::: {.cell}\n\n````{.cell-code}\n```{{r}}\nlibrary(RStata)\ndf1 <- RStata::stata(\"import excel ./data/dataset1.xlsx\",\n                     data.out = TRUE)\n```\n````\n\n::: {.cell-output .cell-output-stdout}\n```\n. import excel ./data/dataset1.xlsx\n(51 vars, 10,309 obs)\n```\n:::\n:::\n\n\n2. Import **dataset1.csv** using Python and store it in `df2`\n\n\n\n\n::: {.cell}\n\n````{.cell-code}\n```{{python}}\nimport pandas as pd\ndf2 = pd.read_csv('./data/dataset1.csv')\n```\n````\n:::\n\n\n3. Compare `df1`and `df2`.\n\n\n::: {.cell}\n\n````{.cell-code}\n```{{r}}\nlibrary(reticulate)\n```\n````\n\n::: {.cell-output .cell-output-stderr}\n```\nWarning: Paket 'reticulate' wurde unter R Version 4.1.3 erstellt\n```\n:::\n\n````{.cell-code}\n```{{r}}\narsenal::comparedf(df1, py$df2)\n```\n````\n\n::: {.cell-output .cell-output-stdout}\n```\nCompare Object\n\nFunction Call: \narsenal::comparedf(x = df1, y = py$df2)\n\nShared: 0 non-by variables and 10308 observations.\nNot shared: 102 variables and 1 observations.\n\nDifferences found in 0/0 variables compared.\n0 variables compared have non-identical attributes.\n```\n:::\n:::\n\n\n:::",
+    "supporting": [
+      "manipulate_data_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}
