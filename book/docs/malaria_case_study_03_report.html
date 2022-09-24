@@ -123,6 +123,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="site_libs/d3-4.5.0/d3.min.js"></script>
+<script src="site_libs/sankey-1/sankey.js"></script>
+<script src="site_libs/sankeyNetwork-binding-0.4/sankeyNetwork.js"></script>
 
 
 </head>
@@ -331,12 +335,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">17.1</span>  Introduction</a>
   <ul class="collapse">
   <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"><span class="toc-section-number">17.1.1</span>  Import the data</a></li>
+  <li><a href="#fever" id="toc-fever" class="nav-link" data-scroll-target="#fever"><span class="toc-section-number">17.1.2</span>  Fever</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -354,7 +359,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="introduction" class="level2" data-number="17.1">
+<section id="introduction" class="level2 page-columns page-full" data-number="17.1">
 <h2 data-number="17.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">17.1</span> Introduction</h2>
 <p>Sensitivity analysis definition</p>
 <p>how SPA observations affect RCT consultations and data recording</p>
@@ -374,7 +379,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4 class="unnumbered anchored" data-anchor-id="exercise-1"><span class="emoji" data-emoji="pencil2">✏️</span> Exercise 1</h4>
 <ol type="1">
 <li>Import the dataset and store it into a dataframe called <strong>df</strong>.</li>
-<li>Select columns <strong>child_ID</strong>, <strong>CTX_month</strong>, <strong>CTX_district</strong>, <strong>SDC_age_in_months</strong> for the first <strong>5</strong> rows in data frame <code>df</code>.</li>
+<li>Select columns <strong>RCT_child_ID</strong>, <strong>RCT_CLIN_fever</strong>, <strong>SPA_CLIN_fever_reported</strong>, <strong>SPA_CLIN_fever_investigated</strong> for the first <strong>10</strong> rows in data frame <code>df</code>.</li>
 <li>Display in a table with the following characteristics:
 <ol type="a">
 <li>Align the content of the first column to the left and the content of the other 3 columns to the centre.</li>
@@ -403,40 +408,153 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tr class="odd">
 <td style="text-align: left;">12</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">NA</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">31</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">NA</td>
+<td style="text-align: center;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">34</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">NA</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">44</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">45</td>
 <td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">46</td>
 <td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">47</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">48</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">49</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">50</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">NA</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="fever" class="level3 page-columns page-full" data-number="17.1.2">
+<h3 data-number="17.1.2" class="anchored" data-anchor-id="fever"><span class="header-section-number">17.1.2</span> Fever</h3>
+<div class="cell">
+
+</div>
+<div class="cell" data-df-print="kable">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Fever complaint (SPA)</th>
+<th style="text-align: right;">No fever complaint (SPA)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Fever (RCT)</td>
+<td style="text-align: right;">327</td>
+<td style="text-align: right;">76</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">No fever (RCT)</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">144</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unknown (RCT)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell" data-df-print="kable">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Fever (SPA)</th>
+<th style="text-align: right;">No fever (SPA)</th>
+<th style="text-align: right;">Unknown (SPA)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Fever (RCT)</td>
+<td style="text-align: right;">332</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">No fever (RCT)</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">67</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unknown (RCT)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="malaria_case_study_03_report_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="column-page">
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-ba882743277d641c3907" style="width:100%;height:464px;" class="sankeyNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ba882743277d641c3907">{"x":{"links":{"source":[0,0,1,1,2,2,3,3,4,4,5,5,5],"target":[1,3,4,5,6,7,6,7,6,7,6,7,8],"value":[114,107,6,108,327,39,40,67,5,1,31,76,1]},"nodes":{"name":["No fever complaint (SPA)","Fever asked (SPA)","Fever complaint (SPA)","Fever not asked (SPA)","Fever (SPA)","No fever (SPA)","Fever (RCT)","No fever (RCT)","Unknown (RCT)"],"group":["No fever complaint (SPA)","Fever asked (SPA)","Fever complaint (SPA)","Fever not asked (SPA)","Fever (SPA)","No fever (SPA)","Fever (RCT)","No fever (RCT)","Unknown (RCT)"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"children","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":0,"sinksRight":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+
+
 </section>
 </section>
 

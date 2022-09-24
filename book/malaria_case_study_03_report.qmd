@@ -62,3 +62,133 @@ df %>%
   knitr::kable(align = c('l', 'c', 'c', 'c'),
                caption = "Extract of the database")
 ```
+### Clinical presentation
+
+```{r}
+df <- df %>%
+  dplyr::mutate(SPA_CLIN_fever_reported_char = ifelse(SPA_CLIN_fever_reported == 1, "Fever complaint (SPA)", "No fever complaint (SPA)")) %>%
+  dplyr::mutate(SPA_CLIN_fever_investigated_char = ifelse(SPA_CLIN_fever_investigated == 1, "Fever asked (SPA)", "Fever not asked (SPA)")) %>%
+  dplyr::mutate(SPA_CLIN_fever_char = ifelse(SPA_CLIN_fever == 1, "Fever (SPA)", "No fever (SPA)")) %>%
+  dplyr::mutate(
+    RCT_CLIN_fever_char = dplyr::case_when(
+      RCT_CLIN_fever == 1 ~ "Fever (RCT)",
+      RCT_CLIN_fever == 0 ~ "No fever (RCT)",
+      RCT_CLIN_fever == 98 ~ "Unknown (RCT)",
+      TRUE ~ ""
+    )
+  ) %>%
+  dplyr::mutate(SPA_CLIN_fever_tot_char = ifelse(SPA_CLIN_fever_reported == 1, "Fever (SPA)", SPA_CLIN_fever_char)) %>% 
+  dplyr::mutate(
+    SPA_CLIN_fever_tot_char = dplyr::case_when(
+      SPA_CLIN_fever_reported == 1 ~ "Fever (SPA)",
+      SPA_CLIN_fever_investigated == 1 ~ SPA_CLIN_fever_char,
+      SPA_CLIN_fever_investigated == 0 ~ "Unknown (SPA)",
+      TRUE ~ ""
+    )
+  )
+```
+
+```{r}
+#| df-print: kable
+table(df$RCT_CLIN_fever_char, df$SPA_CLIN_fever_reported_char) %>%
+  knitr::kable()
+```
+```{r}
+#| df-print: kable
+table(df$RCT_CLIN_fever_char, df$SPA_CLIN_fever_tot_char) %>%
+  knitr::kable()
+```
+```{r}
+long_prop <- data.frame(prop.table(table(rct = df$RCT_CLIN_fever_char, spa= df$SPA_CLIN_fever_tot_char)))
+ggplot2::ggplot(data = long_prop)+       # use long data, with proportions as Freq
+  ggplot2::geom_tile(                    # visualize it in tiles
+    aes(
+      x = spa,         # x-axis is case age
+      y = rct,     # y-axis is infector age
+      fill = Freq))+            # color of the tile is the Freq column in the data
+  scale_fill_gradient(          # adjust the fill color of the tiles
+    low = "white",
+    high = "dark green")+
+  labs(                         # labels
+    x = "SPA",
+    y = "RCT",
+    title = "Fever",
+    subtitle = "Frequency matrix",
+    fill = "Proportion of children"     # legend title
+  )
+```
+
+::: column-page
+
+```{r}
+link1 <- df %>%
+  dplyr::filter(SPA_CLIN_fever_reported == 0) %>%
+  select(SPA_CLIN_fever_reported_char, SPA_CLIN_fever_investigated_char) %>%
+  count(SPA_CLIN_fever_reported_char, SPA_CLIN_fever_investigated_char) %>%
+  rename(source = SPA_CLIN_fever_reported_char,
+         target = SPA_CLIN_fever_investigated_char)
+
+link2 <- df %>%
+  dplyr::filter(SPA_CLIN_fever_investigated == 1) %>% 
+  select(SPA_CLIN_fever_investigated_char, SPA_CLIN_fever_char) %>%
+  count(SPA_CLIN_fever_investigated_char, SPA_CLIN_fever_char) %>% 
+  rename(source = SPA_CLIN_fever_investigated_char,
+         target = SPA_CLIN_fever_char)
+
+link3 <- df %>%
+  dplyr::filter(SPA_CLIN_fever_reported == 1) %>% 
+  select(SPA_CLIN_fever_reported_char, RCT_CLIN_fever_char) %>%
+  count(SPA_CLIN_fever_reported_char, RCT_CLIN_fever_char) %>% 
+  rename(source = SPA_CLIN_fever_reported_char,
+         target = RCT_CLIN_fever_char)
+
+link4 <- df %>%
+  dplyr::filter(SPA_CLIN_fever_investigated == 0) %>%
+  select(SPA_CLIN_fever_investigated_char, RCT_CLIN_fever_char) %>%
+  count(SPA_CLIN_fever_investigated_char, RCT_CLIN_fever_char) %>% 
+  rename(source = SPA_CLIN_fever_investigated_char,
+         target = RCT_CLIN_fever_char)
+
+link5 <- df %>%
+  dplyr::filter(SPA_CLIN_fever_investigated == 1) %>%
+  select(SPA_CLIN_fever_char, RCT_CLIN_fever_char) %>%
+  count(SPA_CLIN_fever_char, RCT_CLIN_fever_char) %>% 
+  rename(source = SPA_CLIN_fever_char,
+         target = RCT_CLIN_fever_char)
+
+# combine links
+links <- bind_rows(link1,
+                   link2,
+                   link3,
+                   link4,
+                   link5)
+
+# The unique node names
+nodes <- data.frame(
+  name=c(as.character(links$source), as.character(links$target)) %>% 
+    unique()
+  )
+
+# match to numbers, not names
+links$IDsource <- match(links$source, nodes$name)-1 
+links$IDtarget <- match(links$target, nodes$name)-1
+
+p <- sankeyNetwork(
+  Links = links,
+  Nodes = nodes,
+  Source = "IDsource",
+  Target = "IDtarget",
+  Value = "n",
+  NodeID = "name",
+  units = "children",
+  fontSize = 12,
+  nodeWidth = 30,
+  iterations = 0,
+  sinksRight = FALSE)        # ensure node order is as in data
+p
+```
+:::
+
+### Temperature measurement
+
+### Malaria tests

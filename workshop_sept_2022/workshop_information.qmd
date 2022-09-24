@@ -127,7 +127,7 @@ For those who have already been introduced to Git, R/RStudio and RMarkdown, note
 
 {{< pagebreak >}}
 
-## Day 3: Wednesday September 26th
+## Day 3: Wednesday September 28th
 
 +---------------+-------------------------------------------------------------------+
 | Time          | Session                                                           |
