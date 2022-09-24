@@ -28,67 +28,6 @@ library(ggthemes)
 library(networkD3) # For alluvial/Sankey diagrams
 library(tidyverse)
 ```
-
-### Dataset description
-
-We will be using data and examples from a real consultation data which occurred in Tanzania between **2021-07-29** and **2021-12-17** within the Integrated Management of Childhood Illness (TIMCI) project.
-
-::: callout-important
-Data are made available by the Ifakara Health Institute (IHI) for training purposes only. Please note, that some data has been adapted in order to best achieve training objectives. No personally indentifiable information have been kept in this dataset.
-:::
-
-Information about the consultations of **10,308 children \[1 day - 59 months\]** from **18 facilities** (dispensaries and health centres) in **Kaliua** District, **Sengerema** District and **Tanga** District, Tanzania. 
-
-::: {#fig-study-area layout="[[1,1], [1, 1]]"}
-![](images/tanzania_map-01.png){#fig-tanzania-study-regions}
-
-![](images/mwanza_map.png){#fig-mwanza-study-district}
-
-![](images/kaliua_map.png){#fig-kaliua-study-district}
-
-![](images/tanga_map.png){#fig-tanga-study-district}
-
-Study area
-:::
-
-### Data collection
-
-Data were collected using *ODK* (ODK Collect, ODK Central) between **2021-07-29** and **2021-12-17**. Research assistants recorded the following information from different sources.
-
-+-------------------------------------+-------------+--------------------------------------+
-| Information                         | Prefix      | Source                               |
-+:====================================+:===========:+:====================================:+
-| Context                             | CTX         | Metadata                             |
-+-------------------------------------+-------------+--------------------------------------+
-| Sociodemographics                   | SDC         | Caregiver                            |
-+-------------------------------------+-------------+--------------------------------------+
-| Clinical presentation               | CLIN        | Caregiver                            |
-+-------------------------------------+-------------+--------------------------------------+
-| Laboratory investigations           | TEST        | Child booklet or facility MTUHA book |
-+-------------------------------------+-------------+--------------------------------------+
-| Diagnoses                           | DX          | Child booklet or facility MTUHA book |
-+-------------------------------------+-------------+--------------------------------------+
-| Treatments                          | RX          |                                      |
-+-------------------------------------+-------------+--------------------------------------+
-| -   before consultation             |             | Caregiver                            |
-+-------------------------------------+-------------+--------------------------------------+
-| -   as a result of the consultation |             | Child booklet or facility MTUHA book |
-+-------------------------------------+-------------+--------------------------------------+
-| Referral advice                     | MGMT        |                                      |
-+-------------------------------------+-------------+--------------------------------------+
-|                                     |             | Caregiver                            |
-+-------------------------------------+-------------+--------------------------------------+
-|                                     |             | Child booklet or facility MTUHA book |
-+-------------------------------------+-------------+--------------------------------------+
-
-: Types and sources of information
-
-### Data preparation
-
-Data cleaning and data de-identification
-
-Personally identifiable information (PII) were removed.
-
 ### Import the data
 
 Data are stored in **dataset1.dta**.
@@ -278,6 +217,33 @@ df %>%
                 CTX_facility_type) %>%
   gtsummary::tbl_summary(missing_text = "(Missing)")
 ```
+### Age pyramid
+
+```{r}
+apyramid::age_pyramid(data = df,
+                      age_group = "SDC_age_category",
+                      split_by = "SDC_sex",
+                      na.rm = TRUE)
+```
+
+```{r}
+apyramid::age_pyramid(data = df,
+                      age_group = "SDC_age_category",
+                      split_by = "CLIN_fever",
+                      na.rm = TRUE)
+```
+```{r}
+apyramid::age_pyramid(data = df,
+                      age_group = "SDC_age_category",
+                      split_by = "CLIN_cough",
+                      na.rm = TRUE)
+```
+```{r}
+apyramid::age_pyramid(data = df,
+                      age_group = "SDC_age_category",
+                      split_by = "CLIN_diarrhoea",
+                      na.rm = TRUE)
+```
 
 ## Healthcare provider actions
 
@@ -408,15 +374,6 @@ df %>%
   ggthemes::theme_hc()
 ```
 
-### Age pyramid
-
-```{r}
-apyramid::age_pyramid(data = df,
-                      age_group = "SDC_age_category",
-                      split_by = "SDC_sex",
-                      na.rm = FALSE)
-```
-
 ## Fever assessment
 
 ```{r}
@@ -541,12 +498,13 @@ p
 
 :::
 
-### Facility F4153
+### Facility F9514
 
 :::{.column-page}
 
 ```{r}
-facility1_df <- df %>% dplyr::filter(CTX_facility_ID == "F4153")
+facility1_df <- df %>%
+  dplyr::filter(CTX_facility_ID == "F9514")
 
 link_CLIN_fever_and_MEAS_temperature <- facility1_df %>%
   select(CLIN_fever_char, CALC_temperature_measured_char) %>%
@@ -638,12 +596,12 @@ p
 ```
 :::
 
-### Facility F9222
+### Facility F7476
 
 :::{.column-page}
 
 ```{r}
-facility1_df <- df %>% dplyr::filter(CTX_facility_ID == "F9222")
+facility1_df <- df %>% dplyr::filter(CTX_facility_ID == "F7476")
 
 link_CLIN_fever_and_MEAS_temperature <- facility1_df %>%
   select(CLIN_fever_char, CALC_temperature_measured_char) %>%
