@@ -1,0 +1,258 @@
+---
+title: ":orange_book: Malaria case study - RCT sensitivity analysis"
+execute:
+  echo: false
+  warning: false
+from: markdown+emoji
+toc: true
+number-sections: true
+---
+
+## Introduction
+
+Sensitivity analysis definition
+
+how SPA observations affect RCT consultations and data recording
+
+``` {{r}}
+install.packages("ggplot2")
+install.packages("ggthemes")
+install.packages("networkD3")
+install.packages("apyramid")
+```
+
+```{r}
+library(openxlsx)
+library(dplyr)
+library(skimr)
+library(gtsummary)
+library(finalfit)
+library(ggplot2)
+library(ggthemes)
+library(networkD3) # For alluvial/Sankey diagrams
+library(tidyverse)
+```
+
+### Import the data
+
+Data are stored in **dataset1.dta**.
+
+#### :pencil2: Exercise 1 {.unnumbered}
+
+1.  Import the dataset and store it into a dataframe called **df**.
+2.  Select columns **child_ID**, **CTX_month**, **CTX_district**, **SDC_age_in_months** for the first **5** rows in data frame `df`.
+3.  Display in a table with the following characteristics:
+    a.  Align the content of the first column to the left and the content of the other 3 columns to the centre.
+    b.  Add a caption.
+
+```{r}
+#| df-print: kable
+
+# 1. Import the dataset and store it into a dataframe called **df**. 
+df <- openxlsx::read.xlsx("./data/dataset1.xlsx")
+
+df %>%
+  # 2. Select columns **child_ID**, **CTX_month**, **CTX_district**, **SDC_age_in_months** for the first **5** rows in data frame `df`.
+  head(5) %>%
+  dplyr::select(child_ID,
+                CTX_month,
+                CTX_district,
+                SDC_age_in_months) %>%
+  # 3. Display in a table
+  knitr::kable(align = c('l', 'c', 'c', 'c'),
+               caption = "Extract of the database")
+```
+
+## Population characteristics
+
+### Codebook
+
++-----------------------------+---------------+
+| Variable                    | Coding        |
++=============================+===============+
+| SDC_age_in_months           | |             |
++-----------------------------+---------------+
+| SDC_sex                     | 1: male       |
+|                             |               |
+|                             | 2: female     |
+|                             |               |
+|                             | 98: unknown   |
++-----------------------------+---------------+
+| CLIN_fever                  | 0: no         |
+|                             |               |
+|                             | 1: yes        |
+|                             |               |
+|                             | 98: not sure  |
++-----------------------------+---------------+
+| CLIN_fever_onset            |               |
++-----------------------------+---------------+
+| CLIN_cough                  | 0: no         |
+|                             |               |
+|                             | 1: yes        |
+|                             |               |
+|                             | 98: not sure  |
++-----------------------------+---------------+
+| CLIN_diarrhoea              | 0: no         |
+|                             |               |
+|                             | 1: yes        |
+|                             |               |
+|                             | 98: not sure  |
++-----------------------------+---------------+
+| RX_preconsult_antibiotics   | 0: no         |
+|                             |               |
+|                             | 1: yes        |
++-----------------------------+---------------+
+| RX_preconsult_antimalarials | 0: no         |
+|                             |               |
+|                             | 1: yes        |
++-----------------------------+---------------+
+| CTX_district                | Kaliua        |
+|                             |               |
+|                             | Sengerema     |
+|                             |               |
+|                             | Tanga         |
++-----------------------------+---------------+
+| CTX_area                    | urban         |
+|                             |               |
+|                             | rural         |
++-----------------------------+---------------+
+| CTX_facility_type           | dispensary    |
+|                             |               |
+|                             | health centre |
++-----------------------------+---------------+
+
+```{r}
+df$SDC_sex = as.factor(df$SDC_sex)
+df$CLIN_fever = as.factor(df$CLIN_fever)
+df$CLIN_cough = as.factor(df$CLIN_cough)
+df$CLIN_diarrhoea = as.factor(df$CLIN_diarrhoea)
+df$RX_preconsult_antibiotics = as.factor(df$RX_preconsult_antibiotics)
+df$RX_preconsult_antimalarials = as.factor(df$RX_preconsult_antimalarials)
+df$CTX_district = as.factor(df$CTX_district)
+df$CTX_area = as.factor(df$CTX_area)
+df$CTX_facility_type = as.factor(df$CTX_facility_type)
+df$CTX_SPA_obs = as.factor(df$CTX_SPA_obs)
+df$CTX_SPA_obs_after_lab = as.factor(df$CTX_SPA_obs_after_lab)
+```
+
+```{r}
+df <- df %>%
+  dplyr::mutate(CALC_temperature_measured = 1 * (!is.na(MEAS_temperature))) %>%
+  dplyr::mutate(CALC_fever = 1 * (MEAS_temperature >= 37.5)) %>%
+  dplyr::mutate(CALC_fever_or_temp = (CLIN_fever == 1) | (CALC_fever == 1))
+```
+
+### Structure of the data
+
+#### :pencil2: Exercise 2 {.unnumbered}
+
+Add the following two new variables to data frame `df`
+
++---------------------------+---------------+
+| Variable                  | Coding        |
++===========================+===============+
+| SDC_age_category          | \<2 months    |
+|                           |               |
+|                           | 2-11 months   |
+|                           |               |
+|                           | 12-23 months  |
+|                           |               |
+|                           | 24-35 months  |
+|                           |               |
+|                           | 36-47 months  |
+|                           |               |
+|                           | 48-59 months  |
++---------------------------+---------------+
+| CLIN_fever_onset_category | \<2 days      |
+|                           |               |
+|                           | 2-3 days      |
+|                           |               |
+|                           | 4-6 days      |
+|                           |               |
+|                           | ≥ 7 days      |
++---------------------------+---------------+
+
+::: callout-tip
+-   Stata: use the gen command
+-   R: use the [mutate](https://dplyr.tidyverse.org/reference/mutate.html) and [case_when](https://dplyr.tidyverse.org/reference/case_when.html) functions from the `dplyr` package
+:::
+
+```{r}
+df <- df %>%
+  dplyr::mutate(
+    SDC_age_category = dplyr::case_when(
+      SDC_age_in_months < 2 ~ "<2 months",
+      SDC_age_in_months >= 2 & SDC_age_in_months < 12 ~ "02-11 months",
+      SDC_age_in_months >= 12 & SDC_age_in_months < 24 ~ "12-23 months",
+      SDC_age_in_months >= 24 & SDC_age_in_months < 36 ~ "24-35 months",
+      SDC_age_in_months >= 36 & SDC_age_in_months < 48 ~ "36-47 months",
+      SDC_age_in_months >= 48 & SDC_age_in_months < 60 ~ "48-59 months",
+      TRUE ~ ""
+    )
+  ) %>% 
+  dplyr::mutate(
+    CLIN_fever_onset_category = dplyr::case_when(
+      CLIN_fever_onset < 2 ~ "<2 days",
+      CLIN_fever_onset >= 2 & CLIN_fever_onset < 4 ~ "2-3 days",
+      CLIN_fever_onset >= 4 & CLIN_fever_onset < 7 ~ "4-6 days",
+      CLIN_fever_onset >= 7 ~ ">= 7 days",
+      TRUE ~ ""
+    )
+  )
+```
+
+```{r}
+df$SDC_age_category = as.factor(df$SDC_age_category)
+df$CLIN_fever_onset = as.factor(df$CLIN_fever_onset)
+```
+
+#### :pencil2: Exercise 4 {.unnumbered}
+
+Display descriptive statistics for the population characteristics.
+
+::: callout-tip
+-   Stata
+-   R: use the [tbl_summary](https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html) function from the `gtsummary` package
+:::
+
+```{r}
+df2 <- data.frame(df)
+df2$CTX_SPA_obs <- "All"
+df3 <- df %>%
+  dplyr::filter(CTX_SPA_obs == 1 | CTX_SPA_obs_after_lab == 1)
+df3$CTX_SPA_obs <- "Observed"
+df4 <- rbind(df2, df3)
+```
+
+```{r}
+df4 %>%
+  dplyr::select(SDC_age_category,
+                SDC_sex,
+                CLIN_fever,
+                CLIN_fever_onset_category,
+                CLIN_diarrhoea,
+                CLIN_cough,
+                RX_preconsult_antibiotics,
+                RX_preconsult_antimalarials,
+                CTX_district,
+                CTX_area,
+                CTX_facility_type,
+                CTX_SPA_obs) %>%
+  gtsummary::tbl_summary(by = CTX_SPA_obs, missing_text = "(Missing)") %>%
+  gtsummary::add_p()
+```
+```{r}
+df4 %>%
+  dplyr::select(CALC_temperature_measured,
+                CALC_fever,
+                CALC_fever_or_temp,
+                TEST_malaria_done,
+                TEST_malaria_result,
+                DX_malaria,
+                RX_antimalarials,
+                MGMT_referral_src_caregiver,
+                MGMT_referral_src_registry,
+                CTX_SPA_obs) %>%
+  gtsummary::tbl_summary(by = CTX_SPA_obs, missing_text = "(Missing)") %>%
+  gtsummary::add_p()
+```
