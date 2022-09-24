@@ -28,6 +28,7 @@ library(ggthemes)
 library(networkD3) # For alluvial/Sankey diagrams
 library(tidyverse)
 ```
+
 ### Import the data
 
 Data are stored in **dataset1.dta**.
@@ -65,38 +66,54 @@ df %>%
 +-----------------------------+---------------+
 | Variable                    | Coding        |
 +=============================+===============+
-| SDC_age_in_months            |               |
+| SDC_age_in_months           | |             |
 +-----------------------------+---------------+
-| SDC_sex                     | 1: male\      |
-|                             | 2: female\    |
+| SDC_sex                     | 1: male       |
+|                             |               |
+|                             | 2: female     |
+|                             |               |
 |                             | 98: unknown   |
 +-----------------------------+---------------+
-| CLIN_fever                  | 0: no\        |
-|                             | 1: yes\       |
+| CLIN_fever                  | 0: no         |
+|                             |               |
+|                             | 1: yes        |
+|                             |               |
 |                             | 98: not sure  |
 +-----------------------------+---------------+
 | CLIN_fever_onset            |               |
 +-----------------------------+---------------+
-| CLIN_cough                  | 0: no\        |
-|                             | 1: yes\       |
+| CLIN_cough                  | 0: no         |
+|                             |               |
+|                             | 1: yes        |
+|                             |               |
 |                             | 98: not sure  |
 +-----------------------------+---------------+
-| CLIN_diarrhoea              | 0: no\        |
-|                             | 1: yes\       |
+| CLIN_diarrhoea              | 0: no         |
+|                             |               |
+|                             | 1: yes        |
+|                             |               |
 |                             | 98: not sure  |
 +-----------------------------+---------------+
-| RX_preconsult_antibiotics   |               |
+| RX_preconsult_antibiotics   | 0: no         |
+|                             |               |
+|                             | 1: yes        |
 +-----------------------------+---------------+
-| RX_preconsult_antimalarials |               |
+| RX_preconsult_antimalarials | 0: no         |
+|                             |               |
+|                             | 1: yes        |
 +-----------------------------+---------------+
-| CTX_district            | Kaliua\       |
-|                             | Sengerema\    |
+| CTX_district                | Kaliua        |
+|                             |               |
+|                             | Sengerema     |
+|                             |               |
 |                             | Tanga         |
 +-----------------------------+---------------+
-| CTX_area                | urban\        |
+| CTX_area                    | urban         |
+|                             |               |
 |                             | rural         |
 +-----------------------------+---------------+
-| CTX_facility_type       | dispensary\   |
+| CTX_facility_type           | dispensary    |
+|                             |               |
 |                             | health centre |
 +-----------------------------+---------------+
 
@@ -121,16 +138,24 @@ Add the following two new variables to data frame `df`
 +---------------------------+---------------+
 | Variable                  | Coding        |
 +===========================+===============+
-| SDC_age_category          | \<2 months\   |
-|                           | 2-11 months\  |
-|                           | 12-23 months\ |
-|                           | 24-35 months\ |
-|                           | 36-47 months\ |
+| SDC_age_category          | \<2 months    |
+|                           |               |
+|                           | 2-11 months   |
+|                           |               |
+|                           | 12-23 months  |
+|                           |               |
+|                           | 24-35 months  |
+|                           |               |
+|                           | 36-47 months  |
+|                           |               |
 |                           | 48-59 months  |
 +---------------------------+---------------+
-| CLIN_fever_onset_category | \<2 days\     |
-|                           | 2-3 days\     |
-|                           | 4-6 days\     |
+| CLIN_fever_onset_category | \<2 days      |
+|                           |               |
+|                           | 2-3 days      |
+|                           |               |
+|                           | 4-6 days      |
+|                           |               |
 |                           | ≥ 7 days      |
 +---------------------------+---------------+
 
@@ -167,7 +192,6 @@ df <- df %>%
 df$SDC_age_category = as.factor(df$SDC_age_category)
 df$CLIN_fever_onset = as.factor(df$CLIN_fever_onset)
 ```
-
 
 #### :pencil2: Exercise 3 {.unnumbered}
 
@@ -217,6 +241,7 @@ df %>%
                 CTX_facility_type) %>%
   gtsummary::tbl_summary(missing_text = "(Missing)")
 ```
+
 ### Age pyramid
 
 ```{r}
@@ -232,12 +257,14 @@ apyramid::age_pyramid(data = df,
                       split_by = "CLIN_fever",
                       na.rm = TRUE)
 ```
+
 ```{r}
 apyramid::age_pyramid(data = df,
                       age_group = "SDC_age_category",
                       split_by = "CLIN_cough",
                       na.rm = TRUE)
 ```
+
 ```{r}
 apyramid::age_pyramid(data = df,
                       age_group = "SDC_age_category",
@@ -396,8 +423,7 @@ df <- df %>%
   dplyr::mutate(RX_antimalarials_char = ifelse(RX_antimalarials == 1, "Malaria treatment", "No malaria treatment"))
 ```
 
-:::{.column-page}
-
+::: column-page
 ```{r}
 link_CLIN_fever_and_MEAS_temperature <- df %>%
   select(CLIN_fever_char, CALC_temperature_measured_char) %>%
@@ -495,13 +521,11 @@ p
 # Give a color for each group:
 #my_color <- 'd3.scaleOrdinal() .domain(["type_a", "type_b", "my_unique_group"]) .range(["#69b3a2", "steelblue", "grey"])'
 ```
-
 :::
 
 ### Facility F9514
 
-:::{.column-page}
-
+::: column-page
 ```{r}
 facility1_df <- df %>%
   dplyr::filter(CTX_facility_ID == "F9514")
@@ -598,8 +622,7 @@ p
 
 ### Facility F7476
 
-:::{.column-page}
-
+::: column-page
 ```{r}
 facility1_df <- df %>% dplyr::filter(CTX_facility_ID == "F7476")
 
@@ -691,7 +714,6 @@ p <- sankeyNetwork(
   sinksRight = FALSE)        # ensure node order is as in data
 p
 ```
-
 :::
 
 Sequence
