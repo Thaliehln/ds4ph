@@ -11,12 +11,17 @@ This tutorial is adapted from the excellent [Machine learning in Python with sci
 
 ### Learning objectives
 
+-   explore data
+-   prepare data
+-   fit a **k-nearest neighbors** model on a training dataset
+-   evaluate its generalization performance on the testing data
+
 ## Question
 
-We are interested in predicting **referral in children under 5** based on two of the clinical measurements at the consultation:
+We are interested in predicting the age of the child based on height and weight measured during the consultation.
 
--   **age in months** and
--   **param2**.
+-   **MEAS_weight_in_kg** and
+-   **MEAS_height_in_cm**.
 
 ```{r}
 #| echo: fenced
@@ -24,19 +29,35 @@ library(tidyverse) # includes dplyr and tibble
 library(skimr)
 library(ggplot2)
 library(DataExplorer)
+library(reticulate)
 ```
 
 ## Load the data
 
-The dataset is stored in **dataset1.dta**.
+The dataset is stored in **dataset4.xlsx**.
 
 Read the dataset and store it into a dataframe called **df**.
 
-Let’s first load the entire adult dataset containing both numerical and categorical data.
+```{r}
+#| echo: fenced
+df <- openxlsx::read.xlsx("./data/dataset4.xlsx")
+```
 
 ```{r}
 #| echo: fenced
-df <- openxlsx::read.xlsx("./data/dataset3.xlsx")
+df <- df %>%
+  dplyr::mutate(
+    SDC_age_category = dplyr::case_when(
+      SDC_age_in_months < 12 ~ "<11 months",
+      SDC_age_in_months >= 12 & SDC_age_in_months < 36 ~ "12-35 months",
+      SDC_age_in_months >= 36 & SDC_age_in_months < 60 ~ "36-59 months",
+      TRUE ~ ""
+    )
+  ) %>%
+  tibble::remove_rownames() %>%
+  tibble::column_to_rownames(var="child_ID") %>%
+  dplyr::mutate(across(c(SDC_sex,
+                         SDC_age_category), factor))
 ```
 
 ## Data exploration
@@ -52,10 +73,10 @@ We want to do some data exploration to get an initial understanding of the data.
 ::: panel-tabset
 #### :pencil2: Exercise 1
 
-Examine the structure of the data, including variable names, labels. 
+Examine the structure of the data, including variable names, labels.
 
-1. How many variables are numerical?
-2. How many features are categorical?
+1.  How many variables are numerical?
+2.  How many features are categorical?
 
 ::: callout-tip
 -   Stata: use the [codebook](https://www.stata.com/manuals/dcodebook.pdf) command
@@ -81,85 +102,56 @@ Display the variables/features **child_id**, **test** and **test** for the **10 
 df %>%
   skimr::skim()
 ```
-
-```{r}
-#| echo: fenced
-df <- df %>%
-  tibble::remove_rownames() %>%
-  tibble::column_to_rownames(var="RCT_child_ID") %>% 
-  dplyr::mutate(across(c(RCT_CTX_month,
-                         RCT_CTX_day_of_week,
-                         RCT_SDC_sex, 
-                         RCT_CLIN_fever,
-                         RCT_CLIN_cough,
-                         RCT_CLIN_diarrhoea,
-                         RCT_RX_preconsult_antibiotics,
-                         RCT_RX_preconsult_antimalarials,
-                         RCT_CTX_district,
-                         RCT_CTX_area,
-                         RCT_CTX_facility_type,
-                         RCT_TEST_malaria_done,
-                         RCT_TEST_malaria_type,
-                         RCT_TEST_malaria_result,
-                         RCT_DX_malaria,
-                         RCT_DX_malaria_severe,
-                         SPA_CLIN_fever_reported,
-                         SPA_CLIN_fever_investigated,
-                         SPA_CLIN_fever,
-                         RCT_DX_severe,
-                         RCT_RX_antimalarials,
-                         RCT_RX_antimalarial_parenteral,
-                         RCT_RX_ACT,
-                         RCT_RX_AL,
-                         RCT_RX_artemether,
-                         RCT_RX_artesunate,
-                         RCT_RX_primaquine,
-                         RCT_RX_quinine,
-                         RCT_RX_antibiotics,
-                         RCT_RX_antibiotics_src_text,
-                         RCT_MGMT_referral_src_caregiver,
-                         RCT_MGMT_referral_src_registry,
-                         RCT_CTX_SPA_obs,
-                         RCT_CTX_SPA_obs_after_lab,
-                         SPA_MEAS_temperature_done,
-                         SPA_MGMT_admission,
-                         SPA_MGMT_referral_other_facility,
-                         SPA_MGMT_referral_other_provider,
-                         SPA_TEST_malaria_ordered,
-                         SPA_RX_prereferral),
-                       factor))
-```
-
-```{r}
-#| echo: fenced
-df %>%
-  skimr::skim()
-```
-
 :::
 
 Numerical variables can be naturally handled by machine learning algorithms that are typically composed of a sequence of arithmetic instructions such as additions and multiplications.
 
+## Missing data
+
 ```{r}
+#| echo: fenced
 DataExplorer::plot_missing(df,
                            geom_label_args = list(size = 2, label.padding = unit(0.2, "lines")))
 ```
 
 ```{r}
-DataExplorer::plot_bar(df %>% 
-                         dplyr::select(-RCT_CTX_facility_ID),
-                       by = "RCT_CTX_district")
+#| echo: fenced
+DataExplorer::plot_histogram(df)
+```
+
+```{r}
+#| echo: fenced
+df %>%  ggplot2::ggplot(aes(x = MEAS_height_in_cm,
+                            fill = SDC_age_category)) +
+  geom_histogram(binwidth = 2, alpha = 0.5, position = "identity") +
+  theme_minimal()
+```
+
+```{r}
+#| echo: fenced
+df %>%  ggplot2::ggplot(aes(x = MEAS_weight_in_kg,
+                            fill = SDC_age_category)) +
+  geom_histogram(binwidth = 1, alpha = 0.5, position = "identity") +
+  theme_minimal()
+```
+
+```{python}
+#| echo: fenced
+import seaborn
+import matplotlib.pyplot
+pairplot_figure = seaborn.pairplot(r.df, hue = "SDC_age_category")
+matplotlib.pyplot.show()
 ```
 
 ### Target classes
 
 ::: panel-tabset
-
 ### :pencil2: Exercise 1
 
-What are the different antibiotic treatment classes available in the dataset and how many observations/samples of each types are there?
+What are the different age categories available in the dataset and how many observations/samples of each types are there?
 
 ::: callout-tip
+-   R: use `table`
 -   Python: select the right column and use the `value_counts` method.
 :::
 
@@ -172,18 +164,17 @@ What are the different antibiotic treatment classes available in the dataset and
 
 ```{r}
 #| echo: fenced
-df %>%
-  skimr::skim(RCT_CTX_facility_ID)
+table(df$SDC_age_category)
 ```
-
 :::
 
 ## Variable/feature distribution
 
-Let's look at the distribution of individual features, to get some insights about the data. We can start by plotting histograms, note that this only works for features containing numerical values.
+Let's look at the distribution of individual features, to get some insights about the data.
+
+We can start by plotting histograms, note that this only works for features containing numerical values.
 
 ::: panel-tabset
-
 ### :pencil2: Exercise 2
 
 Plot histograms for the numerical variables/features
@@ -203,21 +194,23 @@ Plot histograms for the numerical variables/features
 ```{r}
 DataExplorer::plot_histogram(df)
 ```
-
 :::
 
 ::: panel-tabset
-
 ### :pencil2: Exercise 3
 
-Show variable/feature distribution for each class.
+Show variable/feature distribution for each age category.
 
-Looking at these distributions, how difficult do you think it will be to classify the sick children using the `param1` and `param2` variables/features?
+Looking at these distributions, how hard do you think it will be to classify the age category only using height and weight?
 
 ```{r}
 #| echo: fenced
 # Write your code here
 ```
+
+Looking at the previous scatter-plot showing height and weight, the age categories are reasonably well separated.
+
+There is some small overlap between the age categories, so we can expect a statistical model to perform well on this dataset but not perfectly.
 
 ### R
 
@@ -229,30 +222,123 @@ Looking at these distributions, how difficult do you think it will be to classif
 ```{r}
 #dummy <- caret::dummyVars(" ~ .", data=df)
 ```
-
-```{r}
-ggplot2::ggplot(data = df, aes(x = RCT_SDC_age_in_months, fill = RCT_TEST_malaria_done)) +
-  geom_histogram(binwidth = 1, alpha = 0.5, position = "identity") +
-  theme_minimal()
-```
-```{r}
-ggplot2::ggplot(data = df, aes(x = RCT_CLIN_fever_onset, fill = RCT_TEST_malaria_done)) +
-  geom_histogram(binwidth = 1, alpha = 0.5, position = "identity") +
-  theme_minimal()
-```
-
-```{r}
-ggplot2::ggplot(data = df, aes(x = RCT_CLIN_fever_onset, fill = RCT_TEST_malaria_done)) +
-  geom_histogram(binwidth = 1, alpha = 0.5, position = "identity") +
-  theme_minimal()
-```
-
-```{r}
-ggplot2::ggplot(data = df, aes(x = RCT_MEAS_temperature, fill = RCT_TEST_malaria_done)) +
-  geom_histogram(binwidth = 0.5, alpha = 0.5, position = "identity") +
-  theme_minimal()
-```
-
 :::
 
+## Train-test data split
+
+When building a machine learning model, it is important to evaluate the trained model on data that was not used to fit it, as generalization is more than memorization (meaning we want a rule that generalizes to new data, without comparing to data we memorized).
+
+Correct evaluation is easily done by leaving out a subset of the data when training the model and using it afterwards for model evaluation.
+
+The data used to fit a model is called **training** data.
+
+The data used to assess a model is called **testing** data.
+
+We can load more data, which was actually left-out from the original data set.
+
+### Separate the data and the target
+
+In general, we do not have separate data sets in two distinct files. Most of the time, we have a single file containing all the data that we need to split once loaded in the memory.
+
+```{r}
+df <- df[!is.na(df$MEAS_height_in_cm), ]
+df %>% head(5)
+```
+
+```{r}
+#make this example reproducible
+set.seed(1)
+
+#create ID column
+df$id <- 1:nrow(df)
+
+#use 70% of dataset as training set and 30% as test set 
+train_df <- df %>%
+  dplyr::sample_frac(0.70)
+test_df  <- dplyr::anti_join(df,
+                             train_df, by = 'id')
+```
+
+```{r}
+train_target <- train_df["SDC_age_category"] 
+```
+
+```{r}
+test_target <- test_df["SDC_age_category"] 
+```
+
+```{r}
+train_df <- train_df %>%
+  dplyr::select(-SDC_age_category,
+                -SDC_age_in_months)
+```
+
+```{r}
+test_df <- test_df %>%
+  dplyr::select(-SDC_age_category,
+                -SDC_age_in_months)
+```
+
+[**`sklearn.neighbors`**](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.neighbors "sklearn.neighbors") provides functionality for unsupervised and supervised neighbors-based learning methods. Unsupervised nearest neighbors is the foundation of many other learning methods, notably manifold learning and spectral clustering. Supervised neighbors-based learning comes in two flavors: [classification](https://scikit-learn.org/stable/modules/neighbors.html#classification) for data with discrete labels, and [regression](https://scikit-learn.org/stable/modules/neighbors.html#regression) for data with continuous labels.
+
+The principle behind nearest neighbor methods is to find a predefined number of training samples closest in distance to the new point, and predict the label from these. The number of samples can be a user-defined constant (k-nearest neighbor learning), or vary based on the local density of points (radius-based neighbor learning). The distance can, in general, be any metric measure: standard Euclidean distance is the most common choice. Neighbors-based methods are known as *non-generalizing* machine learning methods, since they simply \"remember\" all of its training data (possibly transformed into a fast indexing structure such as a [Ball Tree](https://scikit-learn.org/stable/modules/neighbors.html#ball-tree) or [KD Tree](https://scikit-learn.org/stable/modules/neighbors.html#kd-tree)).
+
+Despite its simplicity, nearest neighbors has been successful in a large number of classification and regression problems, including handwritten digits and satellite image scenes. Being a non-parametric method, it is often successful in classification situations where the decision boundary is very irregular.
+
+```{python}
+#| echo: fenced
+from sklearn.neighbors import KNeighborsClassifier
+
+model = KNeighborsClassifier()
+_ = model.fit(r.train_df, r.train_target.values.ravel())
+```
+
+```{python}
+#| echo: fenced
+target_predicted = model.predict(r.test_df)
+```
+
+```{r}
+#| echo: fenced
+data.frame(py$target_predicted) %>%
+  head(5)
+```
+
+```{r}
+#| echo: fenced
+test_target %>%
+  head(5)
+```
+
+```{r}
+#| echo: fenced
+#| df-print: kable
+combined <- cbind(test_target, py$target_predicted)
+colnames(combined) <- c("target", "prediction") 
+combined <- combined %>% 
+  dplyr::mutate(correct = 1 * (target == prediction))
+combined %>%  head(5)
+```
+
+```{r}
+perf <- mean(combined$correct)
+perf
+```
+
+Number of correct prediction: `r perf`
+
+```{python}
+accuracy = model.score(r.test_df, r.test_target)
+model_name = model.__class__.__name__
+
+print(f"The test accuracy using a {model_name} is "
+      f"{accuracy:.3f}")
+```
+
+It is harder to conclude on never-seen instances than on already seen ones.
+
 The score of a model will in general depend on the way we make the training / test split. One downside of doing a single split is that it does not give any information about this variability. Another downside, in a setting where the amount of data is small, is that the data available for training and testing will be even smaller after splitting.
+
+## Estimators
+
+![Scikit-learn navigation map: what machine learning estimators for what data problem](https://scikit-learn.org/stable/_static/ml_map.png){alt="Scikit-learn map of machine learning estimators"}

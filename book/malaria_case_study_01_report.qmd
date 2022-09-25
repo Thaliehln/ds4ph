@@ -416,9 +416,6 @@ df <- df %>%
 
 ::: column-page
 ```{r}
-#| label: fig-malaria-decay-global
-#| fig-cap: "Malaria decay"
-
 link_CLIN_fever_and_MEAS_temperature <- df %>%
   select(CLIN_fever_char, CALC_temperature_measured_char) %>%
   count(CLIN_fever_char, CALC_temperature_measured_char) %>%
@@ -519,9 +516,6 @@ p
 
 ::: column-page
 ```{r}
-#| label: fig-malaria-decay-no-temp
-#| fig-cap: "Malaria decay for facility F8793"
-
 facility1_df <- df %>%
   dplyr::filter(CTX_facility_ID == "F8793")
 
@@ -617,9 +611,6 @@ p
 
 ::: column-page
 ```{r}
-#| label: fig-malaria-decay-temp-measured
-#| fig-cap: "Malaria decay for facility F7729"
-#| 
 facility1_df <- df %>% dplyr::filter(CTX_facility_ID == "F7729")
 
 link_CLIN_fever_and_MEAS_temperature <- facility1_df %>%

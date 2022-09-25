@@ -28,6 +28,8 @@ When reporting scientific results, researchers must document the steps they foll
 Reporting should include negative results as they contribute to the development of a cumulative knowledge as much as positive results do and avoid wasting resources.
 :::
 
+![Research Diagram vs. Research Reality. "Piled Higher and Deeper" by Jorge Cham www.phdcomics.com](images/paste-95377789.png){#fig-research-diagram-vs-research-reality}
+
 There have been recurrent calls in the recent decades for the scientific community to embrace practices to support research reproducibility and many software tools are now available to facilitate this process.
 
 ::: callout-note
@@ -89,7 +91,7 @@ To guarantee that any other researcher can reproduce your analysis, you would ne
 
 ![This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807](images/paste-9DF4B400.png)
 
-::: {.notes}
+::: notes
 Speaker notes go here.
 :::
 

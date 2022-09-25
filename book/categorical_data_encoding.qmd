@@ -1,5 +1,5 @@
 ---
-title: "Strategies to encode categorical data"
+title: ":orange_book: Encode categorical data"
 execute: 
   echo: true
   warning: false

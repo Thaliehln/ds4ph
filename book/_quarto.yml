@@ -50,7 +50,6 @@ book:
         - ds4ph_day3_session01_practical_session.qmd
         - cross_validation.qmd
         - categorical_data_encoding.qmd
-        - ds4ph_day3_session02_practical_session.qmd
     - references.qmd
   appendices:
     - r_setup.qmd

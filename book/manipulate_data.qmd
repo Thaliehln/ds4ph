@@ -1,5 +1,7 @@
 ---
 title: ":blue_book: Manipulate data"
+execute: 
+  warning: false
 ---
 
 ## Introduction
@@ -8,7 +10,71 @@ title: ":blue_book: Manipulate data"
 Remember that with Quarto you can store multiple data sets in memory (stored in different data frames `df1`, `df2`, `df3`, etc) and work in parallel on all these data sets.
 :::
 
-## Type of data
+## Import data
+
+::: {.panel-tabset}
+
+#### :pencil2: Exercise 1
+
+Import **dataset1.xlsx** using Stata and store it in `df1`
+
+```{r}
+#| echo: fenced
+# Write your code here
+```
+
+#### :eyes: Solution
+
+```{r}
+#| echo: fenced
+df1 <- openxlsx::read.xlsx("./data/dataset1a.xlsx")
+```
+
+:::
+
+## Piping
+
+Package `dplyr`
+
+Pipes are a powerful tool for clearly expressing a sequence of multiple operations. So far, you’ve been using them without knowing how they work, or what the alternatives are. Now, in this chapter, it’s time to explore the pipe in more detail. You’ll learn the alternatives to the pipe, when you shouldn’t use the pipe, and some useful related tools.
+
+## Structure of the data
+
+### Inspect the structure of the data
+
+```{r}
+#| echo: fenced
+library(skimr)
+```
+
+```{r}
+#| echo: fenced
+df1 <- df1 %>%
+  tibble::remove_rownames() %>%
+  tibble::column_to_rownames(var="child_ID")
+```
+
+
+```{r}
+#| echo: fenced
+df1 %>%
+  skimr::skim()
+```
+A categorical variable is:
+
+a) a variable with only two different possible values
+b) a variable with continuous numerical values
+c) a variable with a finite set of possible values
+
+Select a single answer
+
+### Convert 
+
+Function mutate across
+
+### Add new columns
+
+Function mutate
 
 ## Descriptive statistics
 
@@ -18,7 +84,52 @@ Package `gtsummary`
 install.packages("gtsummary")
 ```
 
+```{r}
+#| echo: fenced
+library(gtsummary)
+```
+
+```{r}
+#| echo: fenced
+df1 %>% 
+  gtsummary::tbl_summary()
+```
+## Filter data
+
+## Concatenate data
+
+cbind
+rbind
+
 ## Visualise data
+
+## Plot
+
+Package `ggplot2`
+
+```{{r}}
+install.packages("ggplot2")
+```
+
+## Explore data
+
+Package `DataExplorer`
+
+```{{r}}
+install.packages("DataExplorer")
+```
+
+```{r}
+library(DataExplorer)
+```
+
+```{r}
+DataExplorer::plot_missing(df1)
+```
+
+```{r}
+DataExplorer::plot_missing(df1)
+```
 
 ## Manipulate Python and R data
 
@@ -84,41 +195,3 @@ library(reticulate)
 arsenal::comparedf(df1, py$df2)
 ```
 :::
-
-## Explore data
-
-Package `dplyr`
-
-Pipes are a powerful tool for clearly expressing a sequence of multiple operations. So far, you’ve been using them without knowing how they work, or what the alternatives are. Now, in this chapter, it’s time to explore the pipe in more detail. You’ll learn the alternatives to the pipe, when you shouldn’t use the pipe, and some useful related tools.
-
-## Descriptive summaries
-
-Packages `skimr`and `gtsummary`
-
-```{{r}}
-install.packages("skimr")
-```
-
-```{{r}}
-install.packages("gtsummary")
-```
-
-## Plot
-
-Package `ggplot2`
-
-```{{r}}
-install.packages("ggplot2")
-```
-
-## Explore data
-
-Package `DataExplorer`
-
-```{{r}}
-install.packages("DataExplorer")
-```
-
-```{r}
-DataExplorer::plot_missing(df1)
-```

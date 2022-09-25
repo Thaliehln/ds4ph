@@ -21,21 +21,21 @@ bibliography: references.bib
 
 A document that contains:
 
-* programming language instructions
-* output associated with these instructions (plot, table, etc)
-* structured text
-* possibly other types of content such as for instance mathematical notations, images, etc
-* in a format where the output gets updated automatically every time the code is run.
+-   programming language instructions
+-   output associated with these instructions (plot, table, etc)
+-   structured text
+-   possibly other types of content such as for instance mathematical notations, images, etc
+-   in a format where the output gets updated automatically every time the code is run.
 
 ## Output formats
 
 A dynamic document can be rendered into to many output formats including:
 
-* HTML documents
-* PDF documents
-* Word documents
-* PPT documents
-* and many more formats
+-   HTML documents
+-   PDF documents
+-   Word documents
+-   PPT documents
+-   and many more formats
 
 ## Why using dynamic documents?
 

@@ -1,5 +1,5 @@
 ---
-title: "Cross-validation"
+title: ":orange_book: Cross-validation"
 ---
 
 To overcome the challenges of train/test split, we can use cross-validation. It consists of repeating the procedure such that the training and testing sets are different each time.
