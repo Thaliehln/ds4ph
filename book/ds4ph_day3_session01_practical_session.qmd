@@ -15,8 +15,16 @@ This tutorial is adapted from the excellent [Machine learning in Python with sci
 
 We are interested in predicting **referral in children under 5** based on two of the clinical measurements at the consultation:
 
--   **param1** and
+-   **age in months** and
 -   **param2**.
+
+```{r}
+#| echo: fenced
+library(tidyverse) # includes dplyr and tibble
+library(skimr)
+library(ggplot2)
+library(DataExplorer)
+```
 
 ## Load the data
 
@@ -24,26 +32,35 @@ The dataset is stored in **dataset1.dta**.
 
 Read the dataset and store it into a dataframe called **df**.
 
-```{r}
-#| echo: fenced
-# Write your code here
-```
+Let’s first load the entire adult dataset containing both numerical and categorical data.
 
 ```{r}
 #| echo: fenced
-library(haven)
-df <- haven::read_dta("./data/dataset10.dta")
+df <- openxlsx::read.xlsx("./data/dataset3.xlsx")
 ```
 
-## Visual inspection of the data
+## Data exploration
 
-We want to do some data exploration to get an initial understanding of the data. Before building a predictive model, it is a good idea to look at the data:
+We want to do some data exploration to get an initial understanding of the data. Before building a predictive model, it is always a good idea to look at the data:
 
 -   maybe the task you are trying to achieve can be solved without machine learning;
 -   you need to check that the information you need for your task is actually present in the dataset;
 -   inspecting the data is a good way to find peculiarities. These can arise during data collection (for example, malfunctioning sensor or missing values), or from the way the data is processed afterwards (for example capped values).
 
-### Observations/Samples
+### Variables / features
+
+::: panel-tabset
+#### :pencil2: Exercise 1
+
+Examine the structure of the data, including variable names, labels. 
+
+1. How many variables are numerical?
+2. How many features are categorical?
+
+::: callout-tip
+-   Stata: use the [codebook](https://www.stata.com/manuals/dcodebook.pdf) command
+-   R: use the [skim](https://docs.ropensci.org/skimr/reference/skim.html) function from the `skimr` package
+:::
 
 Display the variables/features **child_id**, **test** and **test** for the **10 first observations/samples** in the data.
 
@@ -57,40 +74,82 @@ Display the variables/features **child_id**, **test** and **test** for the **10 
 # Write your code here
 ```
 
+#### R
+
 ```{r}
 #| echo: fenced
-library(dplyr)
 df %>%
-  head(10) %>% 
-  dplyr::select("child_ID") %>%
-  knitr::kable()
+  skimr::skim()
 ```
-
-### Variables/Features
-
-::: panel-tabset
-
-### :pencil2: Exercise 1
-
-How many variables/features are numerical in the dataset?
 
 ```{r}
 #| echo: fenced
-# Write your code here
+df <- df %>%
+  tibble::remove_rownames() %>%
+  tibble::column_to_rownames(var="RCT_child_ID") %>% 
+  dplyr::mutate(across(c(RCT_CTX_month,
+                         RCT_CTX_day_of_week,
+                         RCT_SDC_sex, 
+                         RCT_CLIN_fever,
+                         RCT_CLIN_cough,
+                         RCT_CLIN_diarrhoea,
+                         RCT_RX_preconsult_antibiotics,
+                         RCT_RX_preconsult_antimalarials,
+                         RCT_CTX_district,
+                         RCT_CTX_area,
+                         RCT_CTX_facility_type,
+                         RCT_TEST_malaria_done,
+                         RCT_TEST_malaria_type,
+                         RCT_TEST_malaria_result,
+                         RCT_DX_malaria,
+                         RCT_DX_malaria_severe,
+                         SPA_CLIN_fever_reported,
+                         SPA_CLIN_fever_investigated,
+                         SPA_CLIN_fever,
+                         RCT_DX_severe,
+                         RCT_RX_antimalarials,
+                         RCT_RX_antimalarial_parenteral,
+                         RCT_RX_ACT,
+                         RCT_RX_AL,
+                         RCT_RX_artemether,
+                         RCT_RX_artesunate,
+                         RCT_RX_primaquine,
+                         RCT_RX_quinine,
+                         RCT_RX_antibiotics,
+                         RCT_RX_antibiotics_src_text,
+                         RCT_MGMT_referral_src_caregiver,
+                         RCT_MGMT_referral_src_registry,
+                         RCT_CTX_SPA_obs,
+                         RCT_CTX_SPA_obs_after_lab,
+                         SPA_MEAS_temperature_done,
+                         SPA_MGMT_admission,
+                         SPA_MGMT_referral_other_facility,
+                         SPA_MGMT_referral_other_provider,
+                         SPA_TEST_malaria_ordered,
+                         SPA_RX_prereferral),
+                       factor))
 ```
-
-How many variables/features are categorical in the dataset?
 
 ```{r}
 #| echo: fenced
-# Write your code here
+df %>%
+  skimr::skim()
 ```
-
-### Python
-
-To be completed
 
 :::
+
+Numerical variables can be naturally handled by machine learning algorithms that are typically composed of a sequence of arithmetic instructions such as additions and multiplications.
+
+```{r}
+DataExplorer::plot_missing(df,
+                           geom_label_args = list(size = 2, label.padding = unit(0.2, "lines")))
+```
+
+```{r}
+DataExplorer::plot_bar(df %>% 
+                         dplyr::select(-RCT_CTX_facility_ID),
+                       by = "RCT_CTX_district")
+```
 
 ### Target classes
 
@@ -98,7 +157,7 @@ To be completed
 
 ### :pencil2: Exercise 1
 
-What are the different classes available in the dataset and how many observations/samples of each types are there?
+What are the different antibiotic treatment classes available in the dataset and how many observations/samples of each types are there?
 
 ::: callout-tip
 -   Python: select the right column and use the `value_counts` method.
@@ -109,9 +168,13 @@ What are the different classes available in the dataset and how many observation
 # Write your code here
 ```
 
-### Python
+### R
 
-To be completed
+```{r}
+#| echo: fenced
+df %>%
+  skimr::skim(RCT_CTX_facility_ID)
+```
 
 :::
 
@@ -130,9 +193,16 @@ Plot histograms for the numerical variables/features
 # Write your code here
 ```
 
-### Python
+### R
 
-To be completed
+```{r}
+#| echo: fenced
+# Write your code here
+```
+
+```{r}
+DataExplorer::plot_histogram(df)
+```
 
 :::
 
@@ -142,19 +212,47 @@ To be completed
 
 Show variable/feature distribution for each class.
 
-::: callout-tip
--   Python: use `seaborn.pairplot`
-:::
+Looking at these distributions, how difficult do you think it will be to classify the sick children using the `param1` and `param2` variables/features?
 
 ```{r}
 #| echo: fenced
 # Write your code here
 ```
 
-### Python
+### R
 
-To be completed
+```{r}
+#| echo: fenced
+# Write your code here
+```
+
+```{r}
+#dummy <- caret::dummyVars(" ~ .", data=df)
+```
+
+```{r}
+ggplot2::ggplot(data = df, aes(x = RCT_SDC_age_in_months, fill = RCT_TEST_malaria_done)) +
+  geom_histogram(binwidth = 1, alpha = 0.5, position = "identity") +
+  theme_minimal()
+```
+```{r}
+ggplot2::ggplot(data = df, aes(x = RCT_CLIN_fever_onset, fill = RCT_TEST_malaria_done)) +
+  geom_histogram(binwidth = 1, alpha = 0.5, position = "identity") +
+  theme_minimal()
+```
+
+```{r}
+ggplot2::ggplot(data = df, aes(x = RCT_CLIN_fever_onset, fill = RCT_TEST_malaria_done)) +
+  geom_histogram(binwidth = 1, alpha = 0.5, position = "identity") +
+  theme_minimal()
+```
+
+```{r}
+ggplot2::ggplot(data = df, aes(x = RCT_MEAS_temperature, fill = RCT_TEST_malaria_done)) +
+  geom_histogram(binwidth = 0.5, alpha = 0.5, position = "identity") +
+  theme_minimal()
+```
 
 :::
 
-Looking at these distributions, how difficult do you think it will be to classify the sick children using the `param1` and `param2` variables/features?
+The score of a model will in general depend on the way we make the training / test split. One downside of doing a single split is that it does not give any information about this variability. Another downside, in a setting where the amount of data is small, is that the data available for training and testing will be even smaller after splitting.

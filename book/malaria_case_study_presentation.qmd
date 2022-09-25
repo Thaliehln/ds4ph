@@ -144,3 +144,19 @@ Personally identifiable information (PII) were removed.
 | CONSULT_facility_type       | dispensary\   |
 |                             | health centre |
 +-----------------------------+---------------+
+
+::: panel-tabset
+#### :pencil2: Exercise 1
+
+How many variables are numerical? How many features are categorical?
+
+::: callout-note
+
+A **numerical variable** is a quantity represented by a real or integer number.
+
+A **categorical variable** has discrete values, typically represented by string labels (but not only) taken from a finite list of possible choices.
+:::
+
+For instance, the variable native-country in our dataset is a categorical variable because it encodes the data using a finite list of possible countries (along with the ? symbol when this information is missing)
+
+:::

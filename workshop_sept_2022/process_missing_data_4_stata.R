@@ -14,8 +14,8 @@ haven::write_dta(df1, "./data/dataset1.dta")
 df11 <- haven::read_dta("./data/dataset1.dta")
 write.csv(df11,"./data/dataset1.csv", row.names = FALSE)
 
-df2 <- openxlsx::read.xlsx("./data/dataset2.xlsx")
-write.csv(df2,"./data/dataset2.csv", row.names = FALSE)
+df2 <- haven::read_dta("./data/dataset2.dta")
+#write.csv(df2,"./data/dataset2.csv", row.names = FALSE)
 
 for (colname in names(df2)) {
   if (is.character(df2[[colname]])) {

@@ -1,21 +1,15 @@
 ---
-title: ":orange_book: Malaria case study - Report"
+title: ":orange_book: Malaria case study - Report #1"
 execute:
   echo: false
   warning: false
 from: markdown+emoji
 toc: true
 number-sections: true
+visual: true
 ---
 
 ## Introduction
-
-``` {{r}}
-install.packages("ggplot2")
-install.packages("ggthemes")
-install.packages("networkD3")
-install.packages("apyramid")
-```
 
 ```{r}
 library(openxlsx)
@@ -29,23 +23,13 @@ library(networkD3) # For alluvial/Sankey diagrams
 library(tidyverse)
 ```
 
-### Import the data
-
-Data are stored in **dataset1.dta**.
-
-#### :pencil2: Exercise 1 {.unnumbered}
-
-1.  Import the dataset and store it into a dataframe called **df**.
-2.  Select columns **child_ID**, **CTX_month**, **CTX_district**, **SDC_age_in_months** for the first **5** rows in data frame `df`.
-3.  Display in a table with the following characteristics:
-    a.  Align the content of the first column to the left and the content of the other 3 columns to the centre.
-    b.  Add a caption.
+The data set used for this report is stored in **dataset2.dta**.
 
 ```{r}
 #| df-print: kable
 
 # 1. Import the dataset and store it into a dataframe called **df**. 
-df <- openxlsx::read.xlsx("./data/dataset1.xlsx")
+df <- openxlsx::read.xlsx("./data/dataset2.xlsx")
 
 df %>%
   # 2. Select columns **child_ID**, **CTX_month**, **CTX_district**, **SDC_age_in_months** for the first **5** rows in data frame `df`.
@@ -58,16 +42,40 @@ df %>%
   knitr::kable(align = c('l', 'c', 'c', 'c'),
                caption = "Extract of the database")
 ```
+## Number of consultations by facility
+
+```{r}
+df %>%
+  dplyr::group_by(CTX_district,
+                  CTX_facility_ID) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = CTX_district,
+                      y = n)) + 
+  ggplot2::geom_bar(position = position_dodge2(preserve = "single"),
+                    stat="identity") +
+  ggplot2::labs(x = "", y = "No. consultations") +
+  ggthemes::theme_hc()
+```
 
 ## Population characteristics
 
 ### Codebook
 
+#### Numerical variables
+
++-----------------------------+
+| Variable                    |
++=============================+
+| SDC_age_in_months           |
++-----------------------------+
+| CLIN_fever_onset            |
++-----------------------------+
+
+#### Categorical variables
+
 +-----------------------------+---------------+
 | Variable                    | Coding        |
 +=============================+===============+
-| SDC_age_in_months           | |             |
-+-----------------------------+---------------+
 | SDC_sex                     | 1: male       |
 |                             |               |
 |                             | 2: female     |
@@ -79,8 +87,6 @@ df %>%
 |                             | 1: yes        |
 |                             |               |
 |                             | 98: not sure  |
-+-----------------------------+---------------+
-| CLIN_fever_onset            |               |
 +-----------------------------+---------------+
 | CLIN_cough                  | 0: no         |
 |                             |               |
@@ -117,21 +123,7 @@ df %>%
 |                             | health centre |
 +-----------------------------+---------------+
 
-```{r}
-df$SDC_sex = as.factor(df$SDC_sex)
-df$CLIN_fever = as.factor(df$CLIN_fever)
-df$CLIN_cough = as.factor(df$CLIN_cough)
-df$CLIN_diarrhoea = as.factor(df$CLIN_diarrhoea)
-df$RX_preconsult_antibiotics = as.factor(df$RX_preconsult_antibiotics)
-df$RX_preconsult_antimalarials = as.factor(df$RX_preconsult_antimalarials)
-df$CTX_district = as.factor(df$CTX_district)
-df$CTX_area = as.factor(df$CTX_area)
-df$CTX_facility_type = as.factor(df$CTX_facility_type)
-```
-
 ### Structure of the data
-
-#### :pencil2: Exercise 2 {.unnumbered}
 
 Add the following two new variables to data frame `df`
 
@@ -159,11 +151,6 @@ Add the following two new variables to data frame `df`
 |                           | ≥ 7 days      |
 +---------------------------+---------------+
 
-::: callout-tip
--   Stata: use the gen command
--   R: use the [mutate](https://dplyr.tidyverse.org/reference/mutate.html) and [case_when](https://dplyr.tidyverse.org/reference/case_when.html) functions from the `dplyr` package
-:::
-
 ```{r}
 df <- df %>%
   dplyr::mutate(
@@ -189,18 +176,22 @@ df <- df %>%
 ```
 
 ```{r}
-df$SDC_age_category = as.factor(df$SDC_age_category)
-df$CLIN_fever_onset = as.factor(df$CLIN_fever_onset)
+df <- df %>%
+  tibble::remove_rownames() %>%
+  tibble::column_to_rownames(var="child_ID") %>% 
+  dplyr::mutate(across(c(SDC_sex, 
+                         CLIN_fever,
+                         CLIN_cough,
+                         CLIN_diarrhoea,
+                         RX_preconsult_antibiotics,
+                         RX_preconsult_antimalarials,
+                         CTX_district,
+                         CTX_area,
+                         CTX_facility_type,
+                         SDC_age_category,
+                         CLIN_fever_onset_category),
+                       factor))
 ```
-
-#### :pencil2: Exercise 3 {.unnumbered}
-
-Examine the structure of the data, including variable names, labels.
-
-::: callout-tip
--   Stata: use the [codebook](https://www.stata.com/manuals/dcodebook.pdf) command
--   R: use the [skim](https://docs.ropensci.org/skimr/reference/skim.html) function from the `skimr` package
-:::
 
 ```{r}
 df %>%
@@ -216,15 +207,7 @@ df %>%
        CTX_area,
        CTX_facility_type)
 ```
-
-#### :pencil2: Exercise 4 {.unnumbered}
-
-Display descriptive statistics for the population characteristics.
-
-::: callout-tip
--   Stata
--   R: use the [tbl_summary](https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html) function from the `gtsummary` package
-:::
+### Descriptive statistics
 
 ```{r}
 df %>%
@@ -251,6 +234,8 @@ apyramid::age_pyramid(data = df,
                       na.rm = TRUE)
 ```
 
+### Clincial presentation
+
 ```{r}
 apyramid::age_pyramid(data = df,
                       age_group = "SDC_age_category",
@@ -272,24 +257,23 @@ apyramid::age_pyramid(data = df,
                       na.rm = TRUE)
 ```
 
-## Healthcare provider actions
+## Clinical management
 
 ### Codebook
 
--   Temperature measured
-    -   Fever measured
--   Fever (temp or history)
--   Malaria test
--   Any severe diagnosis
--   Malaria diagnosis
--   Malaria treatment
--   Referral
+#### Numeric variables
+
++-----------------------------+
+| Variable                    | 
++=============================+
+| MEAS_temperature            |
++-----------------------------+
+
+#### Categorical variables
 
 +-----------------------------+------------------------+
 | Variable                    | Coding                 |
 +=============================+========================+
-| MEAS_temperature            |                        |
-+-----------------------------+------------------------+
 |                             |                        |
 +-----------------------------+------------------------+
 | TEST_malaria_result         | 0: negative\           |
@@ -301,7 +285,16 @@ apyramid::age_pyramid(data = df,
 | DX_malaria                  | 0: no\                 |
 |                             | 1: yes                 |
 +-----------------------------+------------------------+
+| DX_malaria_severe           | 0: no\                 |
+|                             | 1: yes                 |
++-----------------------------+------------------------+
 | RX_antimalarials            | 0: no\                 |
+|                             | 1: yes                 |
++-----------------------------+------------------------+
+| RX_artemether               | 0: no\                 |
+|                             | 1: yes                 |
++-----------------------------+------------------------+
+| RX_antibiotics              | 0: no\                 |
 |                             | 1: yes                 |
 +-----------------------------+------------------------+
 | MGMT_referral_src_caregiver |                        |
@@ -311,97 +304,95 @@ apyramid::age_pyramid(data = df,
 
 ### Structure of the data
 
-#### :pencil2: Exercise 5
-
-Examine the structure of the data, including variable names, labels.
-
-::: callout-tip
--   Stata: use the [codebook](https://www.stata.com/manuals/dcodebook.pdf) command
--   R: use the [skim](https://docs.ropensci.org/skimr/reference/skim.html) function from the `skimr` package
-:::
-
-#### R
+```{r}
+df <- df %>%
+  dplyr::mutate(across(c(TEST_malaria_done,
+                         TEST_malaria_type,
+                         TEST_malaria_result,
+                         DX_severe,
+                         DX_malaria,
+                         DX_malaria_severe,
+                         RX_antimalarials,
+                         RX_antimalarial_parenteral,
+                         RX_artemether,
+                         RX_antibiotics,
+                         MGMT_referral_src_caregiver,
+                         MGMT_referral_src_registry),
+                       factor))
+```
 
 ```{r}
-
-df$TEST_malaria_done = as.factor(df$TEST_malaria_done)
-
 df %>%
   skimr::skim(MEAS_temperature,
               TEST_malaria_done,
+              TEST_malaria_type,
               TEST_malaria_result,
+              DX_severe,
               DX_malaria,
+              DX_malaria_severe,
               RX_antimalarials,
+              RX_antimalarial_parenteral,
+              RX_artemether,
+              RX_antibiotics,
               MGMT_referral_src_caregiver,
               MGMT_referral_src_registry)
 ```
-
-#### :pencil2: Exercise 3
-
-Add the following two new variables to data frame `df`
-
--   MEAS_fever
--   Fever (temp or history)
-
-::: callout-tip
--   Stata: use the gen command
--   R: use the mutate function from the `dplyr` package
-:::
+### Descriptive statistics
 
 ```{r}
 df <- df %>%
   dplyr::mutate(CALC_temperature_measured = 1 * (!is.na(MEAS_temperature))) %>%
-  dplyr::mutate(CALC_fever = 1 * (MEAS_temperature >= 37.5)) %>%
-  dplyr::mutate(CALC_fever_or_temp = (CLIN_fever == 1) | (CALC_fever == 1))
+  dplyr::mutate(CALC_fever_measured = 1 * (MEAS_temperature >= 37.5)) %>%
+  dplyr::mutate(CALC_fever_all = 1 * ((CLIN_fever == 1) | (!is.na(CALC_fever_measured) & (CALC_fever_measured == 1)))) %>% 
+  dplyr::mutate(across(c(CALC_temperature_measured,
+                         CALC_fever_measured,
+                         CALC_fever_all),
+                       factor))
 ```
-
-#### :pencil2: Exercise 6
-
-Display descriptive statistics for the following healthcare provider actions:
-
-::: callout-tip
--   R: use the [tbl_summary](https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html) function from the `gtsummary` package
-:::
 
 ```{r}
 df %>%
   dplyr::select(CALC_temperature_measured,
-                CALC_fever,
-                CALC_fever_or_temp,
+                CALC_fever_measured,
+                CALC_fever_all,
                 TEST_malaria_done,
+                TEST_malaria_type,
                 TEST_malaria_result,
+                DX_severe,
                 DX_malaria,
+                DX_malaria_severe,
                 RX_antimalarials,
+                RX_antimalarial_parenteral,
+                RX_antibiotics,
                 MGMT_referral_src_caregiver,
                 MGMT_referral_src_registry) %>%
   gtsummary::tbl_summary(missing_text = "(Missing)")
 ```
-
-## Number of consultations by facility
-
-### :pencil2: Exercise 6
-
-Plot the number of consultations by facility in bars, grouped by district.
-
-::: callout-tip
--   Stata:
--   R:
-:::
+## Fever assessment
 
 ```{r}
+#| label: fig-temperature-range
+#| fig.height: 8
+#| fig-cap: "Range of temperature measurements for children with fever (1), without fever (2) and with unkwnown fever presentation (98) by facility"
 df %>%
-  dplyr::group_by(CTX_district,
-                  CTX_facility_ID) %>%
-  count() %>% 
-  ggplot2::ggplot(aes(x = haven::as_factor(CTX_district),
-                      y = n)) + 
-  ggplot2::geom_bar(position = position_dodge2(preserve = "single"),
-                    stat="identity") +
-  ggplot2::labs(x = "", y = "No. consultations") +
-  ggthemes::theme_hc()
+  ggplot2::ggplot(aes(x = CTX_facility_ID,
+                      y = MEAS_temperature,
+                      fill = CLIN_fever)) +
+  ggplot2::ylim(34, 43) + 
+  ggplot2::geom_boxplot() + 
+  labs(y = "Temperature (in °C)", x = "Facility") +
+  coord_flip()
 ```
-
-## Fever assessment
+```{r}
+#| label: fig-fever-prevalence
+#| fig.height: 5
+#| fig.width: 7
+#| fig-cap: "Prevalence of fever when of whole clinic vs of those who measure to indicate bias"
+DataExplorer::plot_bar(df %>% 
+                         dplyr::select(CALC_fever_all, CALC_temperature_measured),
+                       by = "CALC_fever_all")
+```
+## From fever assessment to malaria treatment
 
 ```{r}
 df <- df %>%
@@ -425,6 +416,9 @@ df <- df %>%
 
 ::: column-page
 ```{r}
+#| label: fig-malaria-decay-global
+#| fig-cap: "Malaria decay"
+
 link_CLIN_fever_and_MEAS_temperature <- df %>%
   select(CLIN_fever_char, CALC_temperature_measured_char) %>%
   count(CLIN_fever_char, CALC_temperature_measured_char) %>%
@@ -523,12 +517,13 @@ p
 ```
 :::
 
-### Facility F9514
-
 ::: column-page
 ```{r}
+#| label: fig-malaria-decay-no-temp
+#| fig-cap: "Malaria decay for facility F8793"
+
 facility1_df <- df %>%
-  dplyr::filter(CTX_facility_ID == "F9514")
+  dplyr::filter(CTX_facility_ID == "F8793")
 
 link_CLIN_fever_and_MEAS_temperature <- facility1_df %>%
   select(CLIN_fever_char, CALC_temperature_measured_char) %>%
@@ -619,12 +614,13 @@ p <- sankeyNetwork(
 p
 ```
 :::
-
-### Facility F7476
 
 ::: column-page
 ```{r}
-facility1_df <- df %>% dplyr::filter(CTX_facility_ID == "F7476")
+#| label: fig-malaria-decay-temp-measured
+#| fig-cap: "Malaria decay for facility F7729"
+#| 
+facility1_df <- df %>% dplyr::filter(CTX_facility_ID == "F7729")
 
 link_CLIN_fever_and_MEAS_temperature <- facility1_df %>%
   select(CLIN_fever_char, CALC_temperature_measured_char) %>%
@@ -715,35 +711,18 @@ p <- sankeyNetwork(
 p
 ```
 :::
-
-Sequence
-
--   temp measurement by reported fever; by facility
-
-```{r}
-
-df$CTX_facility_ID <- haven::as_factor(df$CTX_facility_ID) 
-df %>%
-  dplyr::select(MEAS_temperature,
-                CTX_facility_ID) %>%
-  gtsummary::tbl_summary(by = CTX_facility_ID) %>%
-  add_p()
-```
-
--   also showing 'prevalence' of fever when of whole clinic vs of those who measure to indicate bias
 
 ## Malaria tests
 
 -   malaria tests of those with history or measured fever
 
 ```{r}
-table(df$CALC_fever_or_temp, df$TEST_malaria_result)
+table(df$CALC_fever_all, df$TEST_malaria_result)
 ```
 
 ```{r}
-df$CTX_facility_ID <- haven::as_factor(df$CTX_facility_ID) 
 df %>%
-  dplyr::filter(CALC_fever_or_temp == 1) %>%
+  dplyr::filter(CALC_fever_all == 1) %>%
   dplyr::select(TEST_malaria_result,
                 CTX_facility_ID) %>%
   gtsummary::tbl_summary(by = CTX_facility_ID)
@@ -751,16 +730,16 @@ df %>%
 
 ## Malaria treatments
 
--   malaria diagnoses vs. positive tests vs. treatment.
+-   malaria diagnoses vs. positive tests vs. treatments
 
 ```{r}
 df <- df %>%
   dplyr::mutate(TEST_malaria_positive = 1* (TEST_malaria_result == 1))
-table(df$TEST_malaria_result, df$DX_malaria, df$RX_antimalarials) %>% knitr::kable()
+table(df$TEST_malaria_result, df$DX_malaria, df$RX_antimalarials) %>% 
+  knitr::kable()
 ```
 
 ```{r}
-df$CTX_facility_ID <- haven::as_factor(df$CTX_facility_ID) 
 df %>%
   dplyr::filter(TEST_malaria_positive == 1) %>%
   dplyr::select(DX_malaria,
@@ -768,3 +747,20 @@ df %>%
                 CTX_facility_ID) %>%
   gtsummary::tbl_summary(by = CTX_facility_ID)
 ```
+
+```{r}
+UpSetR::upset(df %>%
+                dplyr::select(RX_ACT, RX_AL, RX_artemether, RX_artesunate, RX_primaquine, RX_quinine) %>% 
+                dplyr::mutate(across(c(RX_ACT, RX_AL, RX_artemether, RX_artesunate, RX_primaquine, RX_quinine), as.integer)),
+  sets = c("RX_ACT", "RX_AL", "RX_artemether", "RX_artesunate", "RX_primaquine", "RX_quinine"),
+  order.by = "freq",
+  sets.bar.color = c("blue", "red", "yellow", "darkgreen", "orange", "green"), # optional colors
+  empty.intersections = "on",
+  # nsets = 3,
+  number.angles = 0,
+  point.size = 3.5,
+  line.size = 2, 
+  mainbar.y.label = "Antimalarial prescriptions",
+  sets.x.label = "Children with antimalarials")
+```
+

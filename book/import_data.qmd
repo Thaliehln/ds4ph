@@ -57,10 +57,13 @@ Use the [import excel](https://www.stata.com/manuals/dimportexcel.pdf) Stata com
 
 ```{r}
 #| echo: fenced
+#| df-print: kable
 library(RStata)
 
-df1 <- RStata::stata("import excel ./data/dataset1.xlsx",
+df1_stata <- RStata::stata("import excel ./data/dataset1a.xlsx",
                      data.out = TRUE)
+df1_stata_sub <- head(df1_stata, 5)
+knitr::kable(df1_stata_sub)
 ```
 
 #### R
@@ -71,7 +74,9 @@ Use the [read.xlsx](https://www.rdocumentation.org/packages/openxlsx/versions/4.
 #| echo: fenced
 library(openxlsx)
 
-df1 <- openxlsx::read.xlsx("./data/dataset1.xlsx")
+df1_r <- openxlsx::read.xlsx("./data/dataset1a.xlsx")
+df1_r_sub <- head(df1_r, 5)
+knitr::kable(df1_r_sub)
 ```
 
 #### Python
@@ -82,8 +87,15 @@ Use the [read_excel](https://pandas.pydata.org/docs/reference/api/pandas.read_ex
 #| echo: fenced
 import pandas
 
-df1 = pandas.read_excel('./data/dataset1.xlsx')
+df1_python = pandas.read_excel('./data/dataset1a.xlsx')
+df1_python_sub = df1_python.head(5)
 ```
+
+```{r}
+library(reticulate)
+knitr::kable(py$df1_python_sub)
+```
+
 :::
 
 ### Import CSV data
@@ -109,17 +121,19 @@ Read the CSV data set **dataset1.csv** and store it into a data frame called **d
 
 ```{r}
 #| echo: fenced
-# library(RStata)
-# 
-# df2 <- RStata::stata("import delimited ./data/dataset1.csv",
-#                      data.out = TRUE)
+library(RStata)
+
+df2 <- RStata::stata("import delimited ./data/dataset1b.csv",
+                     data.out = TRUE)
 ```
 
 #### R
 
 ```{r}
 #| echo: fenced
-df2 <- read.csv("./data/dataset1.csv")
+df2_r <- read.csv("./data/dataset1b.csv")
+df2_r_sub <- head(df2_r, 5)
+knitr::kable(df2_r_sub)
 ```
 
 #### Python
@@ -130,7 +144,7 @@ Use the [read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.
 #| echo: fenced
 import pandas
 
-df2 = pandas.read_csv('./data/dataset1.csv')
+df2 = pandas.read_csv('./data/dataset1b.csv')
 ```
 :::
 
@@ -158,7 +172,7 @@ Read the Stata data set **dataset1.dta** and store it into a data frame called *
 #| echo: fenced
 library(RStata)
 
-df3 <- RStata::stata("use ./data/dataset1.dta",
+df3 <- RStata::stata("use ./data/dataset1c.dta",
                      data.out = TRUE)
 ```
 
@@ -168,7 +182,7 @@ df3 <- RStata::stata("use ./data/dataset1.dta",
 #| echo: fenced
 library(haven)
 
-df3 <- haven::read_dta("./data/dataset1.dta")
+df3 <- haven::read_dta("./data/dataset1c.dta")
 ```
 
 #### Python
@@ -179,7 +193,7 @@ Use the [read_stata](https://pandas.pydata.org/docs/reference/api/pandas.read_st
 #| echo: fenced
 import pandas
 
-df3 = pandas.read_stata('./data/dataset1.dta')
+df3 = pandas.read_stata('./data/dataset1c.dta')
 ```
 :::
 

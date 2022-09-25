@@ -8,11 +8,16 @@ title: ":books: Big data and machine learning"
 
 ### Learning objectives
 
--   key dates and vcabular from the Artificial Intelligence community
+-   key dates and vocabular from the Artificial Intelligence community
 
 -   machine learning vs. statistics
 
 -   trade-off between accuracy and generalisability
+
+## Big data
+
+Big data is a combination of structured, semistructured and unstructured data collected by organizations that can be mined for information and used in
+Big data refers to data sets that are too large or complex to be dealt with by traditional data-processing application software.
 
 ## Development of Artificial Intelligence
 
@@ -33,5 +38,9 @@ title: ":books: Big data and machine learning"
 ## Learning From Data: Accuracy or Generalizability?
 
 ![](images/paste-FC3A1160.png)
+
+### Train / test split
+
+We can split the original data into a training set and a testing set.
 
 ![](images/paste-7D73149D.png)

@@ -12,6 +12,12 @@ Remember that with Quarto you can store multiple data sets in memory (stored in 
 
 ## Descriptive statistics
 
+Package `gtsummary`
+
+```{{r}}
+install.packages("gtsummary")
+```
+
 ## Visualise data
 
 ## Manipulate Python and R data
@@ -52,7 +58,7 @@ Use the R function **comparedf**
 ```{r}
 #| echo: fenced
 library(RStata)
-df1 <- RStata::stata("import excel ./data/dataset1.xlsx",
+df1 <- RStata::stata("import excel ./data/dataset1a.xlsx",
                      data.out = TRUE)
 ```
 
@@ -67,7 +73,7 @@ warnings.filterwarnings('ignore')
 ```{python}
 #| echo: fenced
 import pandas as pd
-df2 = pd.read_csv('./data/dataset1.csv')
+df2 = pd.read_csv('./data/dataset1b.csv')
 ```
 
 3. Compare `df1`and `df2`.
@@ -77,5 +83,42 @@ df2 = pd.read_csv('./data/dataset1.csv')
 library(reticulate)
 arsenal::comparedf(df1, py$df2)
 ```
-
 :::
+
+## Explore data
+
+Package `dplyr`
+
+Pipes are a powerful tool for clearly expressing a sequence of multiple operations. So far, you’ve been using them without knowing how they work, or what the alternatives are. Now, in this chapter, it’s time to explore the pipe in more detail. You’ll learn the alternatives to the pipe, when you shouldn’t use the pipe, and some useful related tools.
+
+## Descriptive summaries
+
+Packages `skimr`and `gtsummary`
+
+```{{r}}
+install.packages("skimr")
+```
+
+```{{r}}
+install.packages("gtsummary")
+```
+
+## Plot
+
+Package `ggplot2`
+
+```{{r}}
+install.packages("ggplot2")
+```
+
+## Explore data
+
+Package `DataExplorer`
+
+```{{r}}
+install.packages("DataExplorer")
+```
+
+```{r}
+DataExplorer::plot_missing(df1)
+```

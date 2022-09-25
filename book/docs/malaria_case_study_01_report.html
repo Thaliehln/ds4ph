@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science for Public Health - 15&nbsp; 📙 Malaria case study - Report</title>
+<title>Data Science for Public Health - 16&nbsp; 📙 Malaria case study - Report #1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,69 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -94,7 +31,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./malaria_case_study_02_report.html" rel="next">
-<link href="./malaria_case_study_presentation.html" rel="prev">
+<link href="./malaria_case_study_01.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -137,7 +74,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #1</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -258,17 +195,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_01_report.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report</span></a>
+  <a href="./malaria_case_study_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_02_report.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Effect of SPA observations on RCT data</span></a>
+  <a href="./malaria_case_study_01_report.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_03_report.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Comparison of RCT and SPA entries</span></a>
+  <a href="./malaria_case_study_02_report.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_03_report.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #3</span></a>
   </div>
 </li>
       </ul>
@@ -283,7 +225,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./big_data_and_artificial_intelligence.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Big data and machine learning</span></a>
+  <a href="./big_data_and_artificial_intelligence.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Big data and machine learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Practical</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cross_validation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cross-validation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./categorical_data_encoding.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Strategies to encode categorical data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ds4ph_day3_session02_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Data Science for Public Health - Day 3 - Session 2</span></a>
   </div>
 </li>
       </ul>
@@ -332,32 +294,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">15.1</span>  Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">16.1</span>  Introduction</a></li>
+  <li><a href="#number-of-consultations-by-facility" id="toc-number-of-consultations-by-facility" class="nav-link" data-scroll-target="#number-of-consultations-by-facility"><span class="toc-section-number">16.2</span>  Number of consultations by facility</a></li>
+  <li><a href="#population-characteristics" id="toc-population-characteristics" class="nav-link" data-scroll-target="#population-characteristics"><span class="toc-section-number">16.3</span>  Population characteristics</a>
   <ul class="collapse">
-  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data"><span class="toc-section-number">15.1.1</span>  Import the data</a></li>
+  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook"><span class="toc-section-number">16.3.1</span>  Codebook</a></li>
+  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"><span class="toc-section-number">16.3.2</span>  Structure of the data</a></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"><span class="toc-section-number">16.3.3</span>  Descriptive statistics</a></li>
+  <li><a href="#age-pyramid" id="toc-age-pyramid" class="nav-link" data-scroll-target="#age-pyramid"><span class="toc-section-number">16.3.4</span>  Age pyramid</a></li>
+  <li><a href="#clincial-presentation" id="toc-clincial-presentation" class="nav-link" data-scroll-target="#clincial-presentation"><span class="toc-section-number">16.3.5</span>  Clincial presentation</a></li>
   </ul></li>
-  <li><a href="#population-characteristics" id="toc-population-characteristics" class="nav-link" data-scroll-target="#population-characteristics"><span class="toc-section-number">15.2</span>  Population characteristics</a>
+  <li><a href="#clinical-management" id="toc-clinical-management" class="nav-link" data-scroll-target="#clinical-management"><span class="toc-section-number">16.4</span>  Clinical management</a>
   <ul class="collapse">
-  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook"><span class="toc-section-number">15.2.1</span>  Codebook</a></li>
-  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"><span class="toc-section-number">15.2.2</span>  Structure of the data</a></li>
-  <li><a href="#age-pyramid" id="toc-age-pyramid" class="nav-link" data-scroll-target="#age-pyramid"><span class="toc-section-number">15.2.3</span>  Age pyramid</a></li>
+  <li><a href="#codebook-1" id="toc-codebook-1" class="nav-link" data-scroll-target="#codebook-1"><span class="toc-section-number">16.4.1</span>  Codebook</a></li>
+  <li><a href="#structure-of-the-data-1" id="toc-structure-of-the-data-1" class="nav-link" data-scroll-target="#structure-of-the-data-1"><span class="toc-section-number">16.4.2</span>  Structure of the data</a></li>
+  <li><a href="#descriptive-statistics-1" id="toc-descriptive-statistics-1" class="nav-link" data-scroll-target="#descriptive-statistics-1"><span class="toc-section-number">16.4.3</span>  Descriptive statistics</a></li>
   </ul></li>
-  <li><a href="#healthcare-provider-actions" id="toc-healthcare-provider-actions" class="nav-link" data-scroll-target="#healthcare-provider-actions"><span class="toc-section-number">15.3</span>  Healthcare provider actions</a>
-  <ul class="collapse">
-  <li><a href="#codebook-1" id="toc-codebook-1" class="nav-link" data-scroll-target="#codebook-1"><span class="toc-section-number">15.3.1</span>  Codebook</a></li>
-  <li><a href="#structure-of-the-data-1" id="toc-structure-of-the-data-1" class="nav-link" data-scroll-target="#structure-of-the-data-1"><span class="toc-section-number">15.3.2</span>  Structure of the data</a></li>
-  </ul></li>
-  <li><a href="#number-of-consultations-by-facility" id="toc-number-of-consultations-by-facility" class="nav-link" data-scroll-target="#number-of-consultations-by-facility"><span class="toc-section-number">15.4</span>  Number of consultations by facility</a>
-  <ul class="collapse">
-  <li><a href="#exercise-6-1" id="toc-exercise-6-1" class="nav-link" data-scroll-target="#exercise-6-1"><span class="toc-section-number">15.4.1</span>  <span class="emoji" data-emoji="pencil2">✏️</span> Exercise 6</a></li>
-  </ul></li>
-  <li><a href="#fever-assessment" id="toc-fever-assessment" class="nav-link" data-scroll-target="#fever-assessment"><span class="toc-section-number">15.5</span>  Fever assessment</a>
-  <ul class="collapse">
-  <li><a href="#facility-f9514" id="toc-facility-f9514" class="nav-link" data-scroll-target="#facility-f9514"><span class="toc-section-number">15.5.1</span>  Facility F9514</a></li>
-  <li><a href="#facility-f7476" id="toc-facility-f7476" class="nav-link" data-scroll-target="#facility-f7476"><span class="toc-section-number">15.5.2</span>  Facility F7476</a></li>
-  </ul></li>
-  <li><a href="#malaria-tests" id="toc-malaria-tests" class="nav-link" data-scroll-target="#malaria-tests"><span class="toc-section-number">15.6</span>  Malaria tests</a></li>
-  <li><a href="#malaria-treatments" id="toc-malaria-treatments" class="nav-link" data-scroll-target="#malaria-treatments"><span class="toc-section-number">15.7</span>  Malaria treatments</a></li>
+  <li><a href="#fever-assessment" id="toc-fever-assessment" class="nav-link" data-scroll-target="#fever-assessment"><span class="toc-section-number">16.5</span>  Fever assessment</a></li>
+  <li><a href="#from-fever-assessment-to-malaria-treatment" id="toc-from-fever-assessment-to-malaria-treatment" class="nav-link" data-scroll-target="#from-fever-assessment-to-malaria-treatment"><span class="toc-section-number">16.6</span>  From fever assessment to malaria treatment</a></li>
+  <li><a href="#malaria-tests" id="toc-malaria-tests" class="nav-link" data-scroll-target="#malaria-tests"><span class="toc-section-number">16.7</span>  Malaria tests</a></li>
+  <li><a href="#malaria-treatments" id="toc-malaria-treatments" class="nav-link" data-scroll-target="#malaria-treatments"><span class="toc-section-number">16.8</span>  Malaria treatments</a></li>
   </ul>
 </nav>
     </div>
@@ -366,7 +322,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #1</span></h1>
 </div>
 
 
@@ -380,31 +336,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="introduction" class="level2" data-number="15.1">
-<h2 data-number="15.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">15.1</span> Introduction</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggthemes"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"networkD3"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"apyramid"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="introduction" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">16.1</span> Introduction</h2>
 <div class="cell">
 
 </div>
-<section id="import-the-data" class="level3" data-number="15.1.1">
-<h3 data-number="15.1.1" class="anchored" data-anchor-id="import-the-data"><span class="header-section-number">15.1.1</span> Import the data</h3>
-<p>Data are stored in <strong>dataset1.dta</strong>.</p>
-<section id="exercise-1" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="exercise-1"><span class="emoji" data-emoji="pencil2">✏️</span> Exercise 1</h4>
-<ol type="1">
-<li>Import the dataset and store it into a dataframe called <strong>df</strong>.</li>
-<li>Select columns <strong>child_ID</strong>, <strong>CTX_month</strong>, <strong>CTX_district</strong>, <strong>SDC_age_in_months</strong> for the first <strong>5</strong> rows in data frame <code>df</code>.</li>
-<li>Display in a table with the following characteristics:
-<ol type="a">
-<li>Align the content of the first column to the left and the content of the other 3 columns to the centre.</li>
-<li>Add a caption.</li>
-</ol></li>
-</ol>
+<p>The data set used for this report is stored in <strong>dataset2.dta</strong>.</p>
 <div class="cell" data-df-print="kable">
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
@@ -453,12 +390,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
+<section id="number-of-consultations-by-facility" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="number-of-consultations-by-facility"><span class="header-section-number">16.2</span> Number of consultations by facility</h2>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="malaria_case_study_01_report_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
+<section id="population-characteristics" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="population-characteristics"><span class="header-section-number">16.3</span> Population characteristics</h2>
+<section id="codebook" class="level3" data-number="16.3.1">
+<h3 data-number="16.3.1" class="anchored" data-anchor-id="codebook"><span class="header-section-number">16.3.1</span> Codebook</h3>
+<section id="numerical-variables" class="level4" data-number="16.3.1.1">
+<h4 data-number="16.3.1.1" class="anchored" data-anchor-id="numerical-variables"><span class="header-section-number">16.3.1.1</span> Numerical variables</h4>
+<table class="table">
+<colgroup>
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SDC_age_in_months</td>
+</tr>
+<tr class="even">
+<td>CLIN_fever_onset</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="population-characteristics" class="level2" data-number="15.2">
-<h2 data-number="15.2" class="anchored" data-anchor-id="population-characteristics"><span class="header-section-number">15.2</span> Population characteristics</h2>
-<section id="codebook" class="level3" data-number="15.2.1">
-<h3 data-number="15.2.1" class="anchored" data-anchor-id="codebook"><span class="header-section-number">15.2.1</span> Codebook</h3>
+<section id="categorical-variables" class="level4" data-number="16.3.1.2">
+<h4 data-number="16.3.1.2" class="anchored" data-anchor-id="categorical-variables"><span class="header-section-number">16.3.1.2</span> Categorical variables</h4>
 <table class="table">
 <colgroup>
 <col style="width: 41%">
@@ -472,24 +438,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </thead>
 <tbody>
 <tr class="odd">
-<td>SDC_age_in_months</td>
-<td></td>
-</tr>
-<tr class="even">
 <td>SDC_sex</td>
 <td><p>1: male</p>
 <p>2: female</p>
 <p>98: unknown</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>CLIN_fever</td>
 <td><p>0: no</p>
 <p>1: yes</p>
 <p>98: not sure</p></td>
-</tr>
-<tr class="even">
-<td>CLIN_fever_onset</td>
-<td></td>
 </tr>
 <tr class="odd">
 <td>CLIN_cough</td>
@@ -531,14 +489,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div class="cell">
-
-</div>
 </section>
-<section id="structure-of-the-data" class="level3" data-number="15.2.2">
-<h3 data-number="15.2.2" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">15.2.2</span> Structure of the data</h3>
-<section id="exercise-2" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="exercise-2"><span class="emoji" data-emoji="pencil2">✏️</span> Exercise 2</h4>
+</section>
+<section id="structure-of-the-data" class="level3" data-number="16.3.2">
+<h3 data-number="16.3.2" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">16.3.2</span> Structure of the data</h3>
 <p>Add the following two new variables to data frame <code>df</code></p>
 <table class="table">
 <colgroup>
@@ -570,47 +524,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Stata: use the gen command</li>
-<li>R: use the <a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a> and <a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a> functions from the <code>dplyr</code> package</li>
-</ul>
-</div>
-</div>
 <div class="cell">
 
 </div>
 <div class="cell">
 
-</div>
-</section>
-<section id="exercise-3" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="exercise-3"><span class="emoji" data-emoji="pencil2">✏️</span> Exercise 3</h4>
-<p>Examine the structure of the data, including variable names, labels.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Stata: use the <a href="https://www.stata.com/manuals/dcodebook.pdf">codebook</a> command</li>
-<li>R: use the <a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a> function from the <code>skimr</code> package</li>
-</ul>
-</div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -627,7 +545,7 @@ Tip
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
-<td style="text-align: left;">44</td>
+<td style="text-align: left;">40</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">_______________________</td>
@@ -639,11 +557,11 @@ Tip
 </tr>
 <tr class="even">
 <td style="text-align: left;">factor</td>
-<td style="text-align: left;">10</td>
+<td style="text-align: left;">9</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">numeric</td>
-<td style="text-align: left;">1</td>
+<td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">________________________</td>
@@ -663,7 +581,7 @@ Tip
 <col style="width: 13%">
 <col style="width: 7%">
 <col style="width: 8%">
-<col style="width: 33%">
+<col style="width: 31%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -679,7 +597,7 @@ Tip
 <tr class="odd">
 <td style="text-align: left;">SDC_sex</td>
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: left;">1: 5229, 2: 5075</td>
@@ -687,71 +605,63 @@ Tip
 <tr class="even">
 <td style="text-align: left;">CLIN_fever</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: left;">1: 7225, 0: 3068, 98: 15</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">CLIN_fever_onset</td>
-<td style="text-align: right;">3083</td>
-<td style="text-align: right;">0.7</td>
-<td style="text-align: left;">FALSE</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: left;">2: 2469, 1: 1997, 3: 1917, 4: 337</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">CLIN_diarrhoea</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: left;">0: 7982, 1: 2306, 98: 20</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">CLIN_cough</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: left;">1: 5635, 0: 4658, 98: 15</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">RX_preconsult_antibiotics</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: left;">0: 8573, 1: 1735</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">RX_preconsult_antimalarials</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: left;">0: 9866, 1: 442</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">CTX_district</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: left;">Tan: 5176, Sen: 2703, Kal: 2429</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">CTX_area</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: left;">urb: 6220, rur: 4088</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">CTX_facility_type</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: left;">dis: 5599, hea: 4709</td>
@@ -765,7 +675,7 @@ Tip
 <col style="width: 8%">
 <col style="width: 12%">
 <col style="width: 5%">
-<col style="width: 4%">
+<col style="width: 5%">
 <col style="width: 2%">
 <col style="width: 3%">
 <col style="width: 3%">
@@ -792,9 +702,9 @@ Tip
 <tr class="odd">
 <td style="text-align: left;">SDC_age_in_months</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">1.0</td>
 <td style="text-align: right;">18.75</td>
-<td style="text-align: right;">14.9</td>
+<td style="text-align: right;">14.90</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: right;">15</td>
@@ -802,39 +712,35 @@ Tip
 <td style="text-align: right;">59</td>
 <td style="text-align: left;">▇▆▃▂▁</td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">CLIN_fever_onset</td>
+<td style="text-align: right;">3083</td>
+<td style="text-align: right;">0.7</td>
+<td style="text-align: right;">2.50</td>
+<td style="text-align: right;">1.93</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">▇▅▁▁▁</td>
+</tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-<section id="exercise-4" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="exercise-4"><span class="emoji" data-emoji="pencil2">✏️</span> Exercise 4</h4>
-<p>Display descriptive statistics for the population characteristics.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Stata</li>
-<li>R: use the <a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html">tbl_summary</a> function from the <code>gtsummary</code> package</li>
-</ul>
-</div>
-</div>
+<section id="descriptive-statistics" class="level3" data-number="16.3.3">
+<h3 data-number="16.3.3" class="anchored" data-anchor-id="descriptive-statistics"><span class="header-section-number">16.3.3</span> Descriptive statistics</h3>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="dasusoseov" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="zenvbgfbth" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#dasusoseov) .gt_table {
+:where(#zenvbgfbth) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -859,7 +765,7 @@ Tip
   border-left-color: #D3D3D3;
 }
 
-:where(#dasusoseov) .gt_heading {
+:where(#zenvbgfbth) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -871,7 +777,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#dasusoseov) .gt_title {
+:where(#zenvbgfbth) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -883,7 +789,7 @@ Tip
   border-bottom-width: 0;
 }
 
-:where(#dasusoseov) .gt_subtitle {
+:where(#zenvbgfbth) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -895,13 +801,13 @@ Tip
   border-top-width: 0;
 }
 
-:where(#dasusoseov) .gt_bottom_border {
+:where(#zenvbgfbth) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#dasusoseov) .gt_col_headings {
+:where(#zenvbgfbth) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -916,7 +822,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#dasusoseov) .gt_col_heading {
+:where(#zenvbgfbth) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -936,7 +842,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#dasusoseov) .gt_column_spanner_outer {
+:where(#zenvbgfbth) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -948,15 +854,15 @@ Tip
   padding-right: 4px;
 }
 
-:where(#dasusoseov) .gt_column_spanner_outer:first-child {
+:where(#zenvbgfbth) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#dasusoseov) .gt_column_spanner_outer:last-child {
+:where(#zenvbgfbth) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#dasusoseov) .gt_column_spanner {
+:where(#zenvbgfbth) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -968,7 +874,7 @@ Tip
   width: 100%;
 }
 
-:where(#dasusoseov) .gt_group_heading {
+:where(#zenvbgfbth) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -993,7 +899,7 @@ Tip
   vertical-align: middle;
 }
 
-:where(#dasusoseov) .gt_empty_group_heading {
+:where(#zenvbgfbth) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1008,15 +914,15 @@ Tip
   vertical-align: middle;
 }
 
-:where(#dasusoseov) .gt_from_md > :first-child {
+:where(#zenvbgfbth) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#dasusoseov) .gt_from_md > :last-child {
+:where(#zenvbgfbth) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#dasusoseov) .gt_row {
+:where(#zenvbgfbth) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1035,7 +941,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#dasusoseov) .gt_stub {
+:where(#zenvbgfbth) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1048,7 +954,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#dasusoseov) .gt_stub_row_group {
+:where(#zenvbgfbth) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1062,11 +968,11 @@ Tip
   vertical-align: top;
 }
 
-:where(#dasusoseov) .gt_row_group_first td {
+:where(#zenvbgfbth) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#dasusoseov) .gt_summary_row {
+:where(#zenvbgfbth) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1076,16 +982,16 @@ Tip
   padding-right: 5px;
 }
 
-:where(#dasusoseov) .gt_first_summary_row {
+:where(#zenvbgfbth) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#dasusoseov) .gt_first_summary_row.thick {
+:where(#zenvbgfbth) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#dasusoseov) .gt_last_summary_row {
+:where(#zenvbgfbth) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1095,7 +1001,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#dasusoseov) .gt_grand_summary_row {
+:where(#zenvbgfbth) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1105,7 +1011,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#dasusoseov) .gt_first_grand_summary_row {
+:where(#zenvbgfbth) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1115,11 +1021,11 @@ Tip
   border-top-color: #D3D3D3;
 }
 
-:where(#dasusoseov) .gt_striped {
+:where(#zenvbgfbth) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#dasusoseov) .gt_table_body {
+:where(#zenvbgfbth) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1128,7 +1034,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#dasusoseov) .gt_footnotes {
+:where(#zenvbgfbth) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1142,7 +1048,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#dasusoseov) .gt_footnote {
+:where(#zenvbgfbth) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1151,7 +1057,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#dasusoseov) .gt_sourcenotes {
+:where(#zenvbgfbth) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1165,7 +1071,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#dasusoseov) .gt_sourcenote {
+:where(#zenvbgfbth) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1173,36 +1079,36 @@ Tip
   padding-right: 5px;
 }
 
-:where(#dasusoseov) .gt_left {
+:where(#zenvbgfbth) .gt_left {
   text-align: left;
 }
 
-:where(#dasusoseov) .gt_center {
+:where(#zenvbgfbth) .gt_center {
   text-align: center;
 }
 
-:where(#dasusoseov) .gt_right {
+:where(#zenvbgfbth) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#dasusoseov) .gt_font_normal {
+:where(#zenvbgfbth) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#dasusoseov) .gt_font_bold {
+:where(#zenvbgfbth) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#dasusoseov) .gt_font_italic {
+:where(#zenvbgfbth) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#dasusoseov) .gt_super {
+:where(#zenvbgfbth) .gt_super {
   font-size: 65%;
 }
 
-:where(#dasusoseov) .gt_two_val_uncert {
+:where(#zenvbgfbth) .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -1211,31 +1117,31 @@ Tip
   margin-left: 0.1em;
 }
 
-:where(#dasusoseov) .gt_footnote_marks {
+:where(#zenvbgfbth) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#dasusoseov) .gt_asterisk {
+:where(#zenvbgfbth) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#dasusoseov) .gt_slash_mark {
+:where(#zenvbgfbth) .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-:where(#dasusoseov) .gt_fraction_numerator {
+:where(#zenvbgfbth) .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-:where(#dasusoseov) .gt_fraction_denominator {
+:where(#zenvbgfbth) .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -1352,14 +1258,16 @@ Tip
 </div>
 </div>
 </section>
-</section>
-<section id="age-pyramid" class="level3" data-number="15.2.3">
-<h3 data-number="15.2.3" class="anchored" data-anchor-id="age-pyramid"><span class="header-section-number">15.2.3</span> Age pyramid</h3>
+<section id="age-pyramid" class="level3" data-number="16.3.4">
+<h3 data-number="16.3.4" class="anchored" data-anchor-id="age-pyramid"><span class="header-section-number">16.3.4</span> Age pyramid</h3>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="malaria_case_study_01_report_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
+<section id="clincial-presentation" class="level3" data-number="16.3.5">
+<h3 data-number="16.3.5" class="anchored" data-anchor-id="clincial-presentation"><span class="header-section-number">16.3.5</span> Clincial presentation</h3>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="malaria_case_study_01_report_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
@@ -1377,22 +1285,30 @@ Tip
 </div>
 </section>
 </section>
-<section id="healthcare-provider-actions" class="level2" data-number="15.3">
-<h2 data-number="15.3" class="anchored" data-anchor-id="healthcare-provider-actions"><span class="header-section-number">15.3</span> Healthcare provider actions</h2>
-<section id="codebook-1" class="level3" data-number="15.3.1">
-<h3 data-number="15.3.1" class="anchored" data-anchor-id="codebook-1"><span class="header-section-number">15.3.1</span> Codebook</h3>
-<ul>
-<li>Temperature measured
-<ul>
-<li>Fever measured</li>
-</ul></li>
-<li>Fever (temp or history)</li>
-<li>Malaria test</li>
-<li>Any severe diagnosis</li>
-<li>Malaria diagnosis</li>
-<li>Malaria treatment</li>
-<li>Referral</li>
-</ul>
+<section id="clinical-management" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="clinical-management"><span class="header-section-number">16.4</span> Clinical management</h2>
+<section id="codebook-1" class="level3" data-number="16.4.1">
+<h3 data-number="16.4.1" class="anchored" data-anchor-id="codebook-1"><span class="header-section-number">16.4.1</span> Codebook</h3>
+<section id="numeric-variables" class="level4" data-number="16.4.1.1">
+<h4 data-number="16.4.1.1" class="anchored" data-anchor-id="numeric-variables"><span class="header-section-number">16.4.1.1</span> Numeric variables</h4>
+<table class="table">
+<colgroup>
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MEAS_temperature</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="categorical-variables-1" class="level4" data-number="16.4.1.2">
+<h4 data-number="16.4.1.2" class="anchored" data-anchor-id="categorical-variables-1"><span class="header-section-number">16.4.1.2</span> Categorical variables</h4>
 <table class="table">
 <colgroup>
 <col style="width: 41%">
@@ -1406,14 +1322,10 @@ Tip
 </thead>
 <tbody>
 <tr class="odd">
-<td>MEAS_temperature</td>
+<td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
 <td>TEST_malaria_result</td>
 <td>0: negative<br>
 1: positive<br>
@@ -1421,13 +1333,28 @@ Tip
 95: unreadable result<br>
 98: not sure</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>DX_malaria</td>
+<td>0: no<br>
+1: yes</td>
+</tr>
+<tr class="even">
+<td>DX_malaria_severe</td>
 <td>0: no<br>
 1: yes</td>
 </tr>
 <tr class="odd">
 <td>RX_antimalarials</td>
+<td>0: no<br>
+1: yes</td>
+</tr>
+<tr class="even">
+<td>RX_artemether</td>
+<td>0: no<br>
+1: yes</td>
+</tr>
+<tr class="odd">
+<td>RX_antibiotics</td>
 <td>0: no<br>
 1: yes</td>
 </tr>
@@ -1442,30 +1369,12 @@ Tip
 </tbody>
 </table>
 </section>
-<section id="structure-of-the-data-1" class="level3" data-number="15.3.2">
-<h3 data-number="15.3.2" class="anchored" data-anchor-id="structure-of-the-data-1"><span class="header-section-number">15.3.2</span> Structure of the data</h3>
-<section id="exercise-5" class="level4" data-number="15.3.2.1">
-<h4 data-number="15.3.2.1" class="anchored" data-anchor-id="exercise-5"><span class="header-section-number">15.3.2.1</span> <span class="emoji" data-emoji="pencil2">✏️</span> Exercise 5</h4>
-<p>Examine the structure of the data, including variable names, labels.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Stata: use the <a href="https://www.stata.com/manuals/dcodebook.pdf">codebook</a> command</li>
-<li>R: use the <a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a> function from the <code>skimr</code> package</li>
-</ul>
-</div>
-</div>
 </section>
-<section id="r" class="level4" data-number="15.3.2.2">
-<h4 data-number="15.3.2.2" class="anchored" data-anchor-id="r"><span class="header-section-number">15.3.2.2</span> R</h4>
+<section id="structure-of-the-data-1" class="level3" data-number="16.4.2">
+<h3 data-number="16.4.2" class="anchored" data-anchor-id="structure-of-the-data-1"><span class="header-section-number">16.4.2</span> Structure of the data</h3>
+<div class="cell">
+
+</div>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
@@ -1481,7 +1390,7 @@ Tip
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
-<td style="text-align: left;">44</td>
+<td style="text-align: left;">40</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">_______________________</td>
@@ -1493,11 +1402,11 @@ Tip
 </tr>
 <tr class="even">
 <td style="text-align: left;">factor</td>
-<td style="text-align: left;">1</td>
+<td style="text-align: left;">12</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">numeric</td>
-<td style="text-align: left;">6</td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">________________________</td>
@@ -1512,12 +1421,12 @@ Tip
 <p><strong>Variable type: factor</strong></p>
 <table class="table table-sm table-striped">
 <colgroup>
-<col style="width: 23%">
+<col style="width: 27%">
+<col style="width: 9%">
 <col style="width: 13%">
-<col style="width: 18%">
-<col style="width: 10%">
-<col style="width: 11%">
-<col style="width: 22%">
+<col style="width: 7%">
+<col style="width: 8%">
+<col style="width: 31%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1533,27 +1442,115 @@ Tip
 <tr class="odd">
 <td style="text-align: left;">TEST_malaria_done</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: left;">1: 5763, 0: 4545</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TEST_malaria_type</td>
+<td style="text-align: right;">4550</td>
+<td style="text-align: right;">0.56</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">1: 5371, 2: 340, 98: 45, 95: 2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TEST_malaria_result</td>
+<td style="text-align: right;">4550</td>
+<td style="text-align: right;">0.56</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">0: 4665, 1: 1032, 98: 57, 95: 3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DX_severe</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">0: 10054, 1: 254</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DX_malaria</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">0: 8508, 1: 1800</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DX_malaria_severe</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">0: 10160, 1: 148</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RX_antimalarials</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">0: 9018, 1: 1290</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RX_antimalarial_parenteral</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">0: 10059, 1: 249</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RX_artemether</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">0: 10248, 1: 60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RX_antibiotics</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">1: 5430, 0: 4878</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MGMT_referral_src_caregiver</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">0: 10122, 1: 164, 98: 13, 97: 9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MGMT_referral_src_registry</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">0: 10194, 1: 114</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
 <table class="table table-sm table-striped">
 <colgroup>
-<col style="width: 21%">
-<col style="width: 7%">
-<col style="width: 10%">
+<col style="width: 14%">
+<col style="width: 8%">
+<col style="width: 11%">
+<col style="width: 5%">
+<col style="width: 4%">
+<col style="width: 4%">
 <col style="width: 4%">
 <col style="width: 3%">
-<col style="width: 3%">
-<col style="width: 3%">
-<col style="width: 3%">
-<col style="width: 3%">
-<col style="width: 3%">
-<col style="width: 32%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 35%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1574,7 +1571,7 @@ Tip
 <tr class="odd">
 <td style="text-align: left;">MEAS_temperature</td>
 <td style="text-align: right;">9271</td>
-<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">0.1</td>
 <td style="text-align: right;">37.08</td>
 <td style="text-align: right;">0.98</td>
 <td style="text-align: right;">34.5</td>
@@ -1584,130 +1581,25 @@ Tip
 <td style="text-align: right;">42.5</td>
 <td style="text-align: left;">▃▇▃▁▁</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">TEST_malaria_result</td>
-<td style="text-align: right;">4550</td>
-<td style="text-align: right;">0.56</td>
-<td style="text-align: right;">1.20</td>
-<td style="text-align: right;">9.93</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">98.0</td>
-<td style="text-align: left;">▇▁▁▁▁</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">DX_malaria</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">0.17</td>
-<td style="text-align: right;">0.38</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">1.0</td>
-<td style="text-align: left;">▇▁▁▁▂</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">RX_antimalarials</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">0.13</td>
-<td style="text-align: right;">0.33</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">1.0</td>
-<td style="text-align: left;">▇▁▁▁▁</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">MGMT_referral_src_caregiver</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">0.22</td>
-<td style="text-align: right;">4.50</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">98.0</td>
-<td style="text-align: left;">▇▁▁▁▁</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">MGMT_referral_src_registry</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">0.01</td>
-<td style="text-align: right;">0.10</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">1.0</td>
-<td style="text-align: left;">▇▁▁▁▁</td>
-</tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-<section id="exercise-3-1" class="level4" data-number="15.3.2.3">
-<h4 data-number="15.3.2.3" class="anchored" data-anchor-id="exercise-3-1"><span class="header-section-number">15.3.2.3</span> <span class="emoji" data-emoji="pencil2">✏️</span> Exercise 3</h4>
-<p>Add the following two new variables to data frame <code>df</code></p>
-<ul>
-<li>MEAS_fever</li>
-<li>Fever (temp or history)</li>
-</ul>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Stata: use the gen command</li>
-<li>R: use the mutate function from the <code>dplyr</code> package</li>
-</ul>
-</div>
-</div>
+<section id="descriptive-statistics-1" class="level3" data-number="16.4.3">
+<h3 data-number="16.4.3" class="anchored" data-anchor-id="descriptive-statistics-1"><span class="header-section-number">16.4.3</span> Descriptive statistics</h3>
 <div class="cell">
 
-</div>
-</section>
-<section id="exercise-6" class="level4" data-number="15.3.2.4">
-<h4 data-number="15.3.2.4" class="anchored" data-anchor-id="exercise-6"><span class="header-section-number">15.3.2.4</span> <span class="emoji" data-emoji="pencil2">✏️</span> Exercise 6</h4>
-<p>Display descriptive statistics for the following healthcare provider actions:</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>R: use the <a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html">tbl_summary</a> function from the <code>gtsummary</code> package</li>
-</ul>
-</div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="rqtjbapyev" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="vcxlqilvvz" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#rqtjbapyev) .gt_table {
+:where(#vcxlqilvvz) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1732,7 +1624,7 @@ Tip
   border-left-color: #D3D3D3;
 }
 
-:where(#rqtjbapyev) .gt_heading {
+:where(#vcxlqilvvz) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1744,7 +1636,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#rqtjbapyev) .gt_title {
+:where(#vcxlqilvvz) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1756,7 +1648,7 @@ Tip
   border-bottom-width: 0;
 }
 
-:where(#rqtjbapyev) .gt_subtitle {
+:where(#vcxlqilvvz) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1768,13 +1660,13 @@ Tip
   border-top-width: 0;
 }
 
-:where(#rqtjbapyev) .gt_bottom_border {
+:where(#vcxlqilvvz) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#rqtjbapyev) .gt_col_headings {
+:where(#vcxlqilvvz) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1789,7 +1681,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#rqtjbapyev) .gt_col_heading {
+:where(#vcxlqilvvz) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1809,7 +1701,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#rqtjbapyev) .gt_column_spanner_outer {
+:where(#vcxlqilvvz) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1821,15 +1713,15 @@ Tip
   padding-right: 4px;
 }
 
-:where(#rqtjbapyev) .gt_column_spanner_outer:first-child {
+:where(#vcxlqilvvz) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#rqtjbapyev) .gt_column_spanner_outer:last-child {
+:where(#vcxlqilvvz) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#rqtjbapyev) .gt_column_spanner {
+:where(#vcxlqilvvz) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1841,7 +1733,7 @@ Tip
   width: 100%;
 }
 
-:where(#rqtjbapyev) .gt_group_heading {
+:where(#vcxlqilvvz) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1866,7 +1758,7 @@ Tip
   vertical-align: middle;
 }
 
-:where(#rqtjbapyev) .gt_empty_group_heading {
+:where(#vcxlqilvvz) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1881,15 +1773,15 @@ Tip
   vertical-align: middle;
 }
 
-:where(#rqtjbapyev) .gt_from_md > :first-child {
+:where(#vcxlqilvvz) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#rqtjbapyev) .gt_from_md > :last-child {
+:where(#vcxlqilvvz) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#rqtjbapyev) .gt_row {
+:where(#vcxlqilvvz) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1908,7 +1800,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#rqtjbapyev) .gt_stub {
+:where(#vcxlqilvvz) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1921,7 +1813,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#rqtjbapyev) .gt_stub_row_group {
+:where(#vcxlqilvvz) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1935,11 +1827,11 @@ Tip
   vertical-align: top;
 }
 
-:where(#rqtjbapyev) .gt_row_group_first td {
+:where(#vcxlqilvvz) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#rqtjbapyev) .gt_summary_row {
+:where(#vcxlqilvvz) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1949,16 +1841,16 @@ Tip
   padding-right: 5px;
 }
 
-:where(#rqtjbapyev) .gt_first_summary_row {
+:where(#vcxlqilvvz) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#rqtjbapyev) .gt_first_summary_row.thick {
+:where(#vcxlqilvvz) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#rqtjbapyev) .gt_last_summary_row {
+:where(#vcxlqilvvz) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1968,7 +1860,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#rqtjbapyev) .gt_grand_summary_row {
+:where(#vcxlqilvvz) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1978,7 +1870,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#rqtjbapyev) .gt_first_grand_summary_row {
+:where(#vcxlqilvvz) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1988,11 +1880,11 @@ Tip
   border-top-color: #D3D3D3;
 }
 
-:where(#rqtjbapyev) .gt_striped {
+:where(#vcxlqilvvz) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#rqtjbapyev) .gt_table_body {
+:where(#vcxlqilvvz) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2001,7 +1893,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#rqtjbapyev) .gt_footnotes {
+:where(#vcxlqilvvz) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2015,7 +1907,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#rqtjbapyev) .gt_footnote {
+:where(#vcxlqilvvz) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2024,7 +1916,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#rqtjbapyev) .gt_sourcenotes {
+:where(#vcxlqilvvz) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2038,7 +1930,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#rqtjbapyev) .gt_sourcenote {
+:where(#vcxlqilvvz) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2046,36 +1938,36 @@ Tip
   padding-right: 5px;
 }
 
-:where(#rqtjbapyev) .gt_left {
+:where(#vcxlqilvvz) .gt_left {
   text-align: left;
 }
 
-:where(#rqtjbapyev) .gt_center {
+:where(#vcxlqilvvz) .gt_center {
   text-align: center;
 }
 
-:where(#rqtjbapyev) .gt_right {
+:where(#vcxlqilvvz) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#rqtjbapyev) .gt_font_normal {
+:where(#vcxlqilvvz) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#rqtjbapyev) .gt_font_bold {
+:where(#vcxlqilvvz) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#rqtjbapyev) .gt_font_italic {
+:where(#vcxlqilvvz) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#rqtjbapyev) .gt_super {
+:where(#vcxlqilvvz) .gt_super {
   font-size: 65%;
 }
 
-:where(#rqtjbapyev) .gt_two_val_uncert {
+:where(#vcxlqilvvz) .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -2084,31 +1976,31 @@ Tip
   margin-left: 0.1em;
 }
 
-:where(#rqtjbapyev) .gt_footnote_marks {
+:where(#vcxlqilvvz) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#rqtjbapyev) .gt_asterisk {
+:where(#vcxlqilvvz) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#rqtjbapyev) .gt_slash_mark {
+:where(#vcxlqilvvz) .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-:where(#rqtjbapyev) .gt_fraction_numerator {
+:where(#vcxlqilvvz) .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-:where(#rqtjbapyev) .gt_fraction_denominator {
+:where(#vcxlqilvvz) .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -2124,21 +2016,43 @@ Tip
   </thead>
   <tbody class="gt_table_body">
     <tr><td class="gt_row gt_left">CALC_temperature_measured</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">9,271 (90%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
 <td class="gt_row gt_center">1,037 (10%)</td></tr>
-    <tr><td class="gt_row gt_left">CALC_fever</td>
+    <tr><td class="gt_row gt_left">CALC_fever_measured</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">711 (69%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
 <td class="gt_row gt_center">326 (31%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">(Missing)</td>
 <td class="gt_row gt_center">9,271</td></tr>
-    <tr><td class="gt_row gt_left">CALC_fever_or_temp</td>
-<td class="gt_row gt_center">7,252 (97%)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">(Missing)</td>
-<td class="gt_row gt_center">2,842</td></tr>
+    <tr><td class="gt_row gt_left">CALC_fever_all</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">3,056 (30%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">7,252 (70%)</td></tr>
     <tr><td class="gt_row gt_left">TEST_malaria_done</td>
 <td class="gt_row gt_center"></td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
 <td class="gt_row gt_center">4,545 (44%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
 <td class="gt_row gt_center">5,763 (56%)</td></tr>
+    <tr><td class="gt_row gt_left">TEST_malaria_type</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5,371 (93%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
+<td class="gt_row gt_center">340 (5.9%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">95</td>
+<td class="gt_row gt_center">2 (&lt;0.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
+<td class="gt_row gt_center">45 (0.8%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">(Missing)</td>
+<td class="gt_row gt_center">4,550</td></tr>
     <tr><td class="gt_row gt_left">TEST_malaria_result</td>
 <td class="gt_row gt_center"></td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
@@ -2153,10 +2067,42 @@ Tip
 <td class="gt_row gt_center">57 (1.0%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">(Missing)</td>
 <td class="gt_row gt_center">4,550</td></tr>
+    <tr><td class="gt_row gt_left">DX_severe</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">10,054 (98%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">254 (2.5%)</td></tr>
     <tr><td class="gt_row gt_left">DX_malaria</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">8,508 (83%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
 <td class="gt_row gt_center">1,800 (17%)</td></tr>
+    <tr><td class="gt_row gt_left">DX_malaria_severe</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">10,160 (99%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">148 (1.4%)</td></tr>
     <tr><td class="gt_row gt_left">RX_antimalarials</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">9,018 (87%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
 <td class="gt_row gt_center">1,290 (13%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_antimalarial_parenteral</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">10,059 (98%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">249 (2.4%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_antibiotics</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">4,878 (47%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
+<td class="gt_row gt_center">5,430 (53%)</td></tr>
     <tr><td class="gt_row gt_left">MGMT_referral_src_caregiver</td>
 <td class="gt_row gt_center"></td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
@@ -2168,6 +2114,10 @@ Tip
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
 <td class="gt_row gt_center">13 (0.1%)</td></tr>
     <tr><td class="gt_row gt_left">MGMT_referral_src_registry</td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">10,194 (99%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
 <td class="gt_row gt_center">114 (1.1%)</td></tr>
   </tbody>
   
@@ -2182,596 +2132,90 @@ Tip
 </div>
 </section>
 </section>
-</section>
-<section id="number-of-consultations-by-facility" class="level2" data-number="15.4">
-<h2 data-number="15.4" class="anchored" data-anchor-id="number-of-consultations-by-facility"><span class="header-section-number">15.4</span> Number of consultations by facility</h2>
-<section id="exercise-6-1" class="level3" data-number="15.4.1">
-<h3 data-number="15.4.1" class="anchored" data-anchor-id="exercise-6-1"><span class="header-section-number">15.4.1</span> <span class="emoji" data-emoji="pencil2">✏️</span> Exercise 6</h3>
-<p>Plot the number of consultations by facility in bars, grouped by district.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="fever-assessment" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="fever-assessment"><span class="header-section-number">16.5</span> Fever assessment</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-temperature-range" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="malaria_case_study_01_report_files/figure-html/fig-temperature-range-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.1: Range of temperature measurements for children with fever (1), without fever (2) and with unkwnown fever presentation (98) by facility</figcaption><p></p>
+</figure>
 </div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Stata:</li>
-<li>R:</li>
-</ul>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="malaria_case_study_01_report_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+<div id="fig-fever-prevalence" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="malaria_case_study_01_report_files/figure-html/fig-fever-prevalence-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.2: Prevalence of fever when of whole clinic vs of those who measure to indicate bias</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
-</section>
-<section id="fever-assessment" class="level2 page-columns page-full" data-number="15.5">
-<h2 data-number="15.5" class="anchored" data-anchor-id="fever-assessment"><span class="header-section-number">15.5</span> Fever assessment</h2>
+<section id="from-fever-assessment-to-malaria-treatment" class="level2 page-columns page-full" data-number="16.6">
+<h2 data-number="16.6" class="anchored" data-anchor-id="from-fever-assessment-to-malaria-treatment"><span class="header-section-number">16.6</span> From fever assessment to malaria treatment</h2>
 <div class="cell">
 
 </div>
 <div class="column-page">
 <div class="cell">
-<div class="cell-output-display">
-<div id="htmlwidget-950db7398c2375aafa78" style="width:100%;height:464px;" class="sankeyNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-950db7398c2375aafa78">{"x":{"links":{"source":[0,0,1,1,2,2,3,3,4,4,5,5,6,6,6,6,6,6,7,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15],"target":[5,2,5,2,3,4,13,6,13,6,13,6,7,8,9,10,11,12,15,15,14,15,14,15,14,15,14,15,14,15,16,17,16,17],"value":[6429,796,2842,241,711,326,264,447,44,282,4237,5034,5,1,4665,1032,57,3,5,1,676,3989,967,65,24,33,1,2,132,4413,1072,728,218,8290]},"nodes":{"name":["History of fever","No history of fever","Temperature recorded","Temperature < 37.5°C","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","","Malaria result indeterminate","Malaria result negative","Malaria result positive","Malaria result unknown","Malaria result unreadable","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"],"group":["History of fever","No history of fever","Temperature recorded","Temperature < 37.5°C","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","","Malaria result indeterminate","Malaria result negative","Malaria result positive","Malaria result unknown","Malaria result unreadable","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"children","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":0,"sinksRight":false}},"evals":[],"jsHooks":[]}</script>
+<div id="fig-malaria-decay-global" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div id="htmlwidget-008ea8431acab034144e" style="width:100%;height:464px;" class="sankeyNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-008ea8431acab034144e">{"x":{"links":{"source":[0,0,1,1,2,2,3,3,4,4,5,5,6,6,6,6,6,6,7,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15],"target":[5,2,5,2,3,4,13,6,13,6,13,6,7,8,9,10,11,12,15,15,14,15,14,15,14,15,14,15,14,15,16,17,16,17],"value":[6429,796,2842,241,711,326,264,447,44,282,4237,5034,5,1,4665,1032,57,3,5,1,676,3989,967,65,24,33,1,2,132,4413,1072,728,218,8290]},"nodes":{"name":["History of fever","No history of fever","Temperature recorded","Temperature < 37.5°C","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","","Malaria result indeterminate","Malaria result negative","Malaria result positive","Malaria result unknown","Malaria result unreadable","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"],"group":["History of fever","No history of fever","Temperature recorded","Temperature < 37.5°C","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","","Malaria result indeterminate","Malaria result negative","Malaria result positive","Malaria result unknown","Malaria result unreadable","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"children","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":0,"sinksRight":false}},"evals":[],"jsHooks":[]}</script>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.3: Malaria decay</figcaption><p></p>
+</figure>
 </div>
 </div>
 </div>
-<section id="facility-f9514" class="level3 page-columns page-full" data-number="15.5.1">
-<h3 data-number="15.5.1" class="anchored" data-anchor-id="facility-f9514"><span class="header-section-number">15.5.1</span> Facility F9514</h3>
 <div class="column-page">
 <div class="cell">
-<div class="cell-output-display">
-<div id="htmlwidget-74ce8f7a07ff4a65d8b6" style="width:100%;height:464px;" class="sankeyNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-74ce8f7a07ff4a65d8b6">{"x":{"links":{"source":[],"target":[],"value":[]},"nodes":{"name":[],"group":[]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"children","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":0,"sinksRight":false}},"evals":[],"jsHooks":[]}</script>
+<div id="fig-malaria-decay-no-temp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div id="htmlwidget-ce3a00828b406b2322b7" style="width:100%;height:464px;" class="sankeyNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ce3a00828b406b2322b7">{"x":{"links":{"source":[0,0,1,2,3,4,4,5,5,5,5,5,6,7,7,8,8,9,10,11,11,12,12,13,13],"target":[4,2,4,3,5,11,5,6,7,8,9,10,13,12,13,12,13,12,13,12,13,14,15,14,15],"value":[778,2,174,2,2,303,649,1,359,288,2,1,1,10,349,285,3,2,1,3,300,286,14,2,652]},"nodes":{"name":["History of fever","No history of fever","Temperature recorded","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","Malaria result indeterminate","Malaria result negative","Malaria result positive","Malaria result unknown","Malaria result unreadable","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"],"group":["History of fever","No history of fever","Temperature recorded","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","Malaria result indeterminate","Malaria result negative","Malaria result positive","Malaria result unknown","Malaria result unreadable","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"children","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":0,"sinksRight":false}},"evals":[],"jsHooks":[]}</script>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.4: Malaria decay for facility F8793</figcaption><p></p>
+</figure>
 </div>
 </div>
 </div>
-</section>
-<section id="facility-f7476" class="level3 page-columns page-full" data-number="15.5.2">
-<h3 data-number="15.5.2" class="anchored" data-anchor-id="facility-f7476"><span class="header-section-number">15.5.2</span> Facility F7476</h3>
 <div class="column-page">
 <div class="cell">
-<div class="cell-output-display">
-<div id="htmlwidget-b571986d0e3942220632" style="width:100%;height:464px;" class="sankeyNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b571986d0e3942220632">{"x":{"links":{"source":[],"target":[],"value":[]},"nodes":{"name":[],"group":[]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"children","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":0,"sinksRight":false}},"evals":[],"jsHooks":[]}</script>
+<div id="fig-malaria-decay-temp-measured" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div id="htmlwidget-da69b1fdaf4d993282fe" style="width:100%;height:464px;" class="sankeyNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-da69b1fdaf4d993282fe">{"x":{"links":{"source":[0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11],"target":[5,2,5,2,3,4,9,6,9,6,9,6,7,8,10,11,10,11,10,11,12,13,12,13],"value":[70,127,16,27,121,33,49,72,2,31,24,62,137,28,32,105,27,1,1,74,26,34,1,179]},"nodes":{"name":["History of fever","No history of fever","Temperature recorded","Temperature < 37.5°C","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","Malaria result negative","Malaria result positive","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"],"group":["History of fever","No history of fever","Temperature recorded","Temperature < 37.5°C","Temperature >= 37.5°C","Temperature not recorded","Malaria test recorded","Malaria result negative","Malaria result positive","Malaria test not recorded","Malaria diagnosis","No malaria diagnosis","Malaria treatment","No malaria treatment"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"children","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":0,"sinksRight":false}},"evals":[],"jsHooks":[]}</script>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.5: Malaria decay for facility F7729</figcaption><p></p>
+</figure>
 </div>
 </div>
 </div>
-<p>Sequence</p>
-<ul>
-<li>temp measurement by reported fever; by facility</li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-
-<div id="vnxzmdvkyu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
-}
-
-:where(#vnxzmdvkyu) .gt_table {
-  display: table;
-  border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-:where(#vnxzmdvkyu) .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-:where(#vnxzmdvkyu) .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-:where(#vnxzmdvkyu) .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-:where(#vnxzmdvkyu) .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-:where(#vnxzmdvkyu) .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-:where(#vnxzmdvkyu) .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-:where(#vnxzmdvkyu) .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-:where(#vnxzmdvkyu) .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-:where(#vnxzmdvkyu) .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-:where(#vnxzmdvkyu) .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-:where(#vnxzmdvkyu) .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-:where(#vnxzmdvkyu) .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-:where(#vnxzmdvkyu) .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-:where(#vnxzmdvkyu) .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-:where(#vnxzmdvkyu) .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-:where(#vnxzmdvkyu) .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-:where(#vnxzmdvkyu) .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-:where(#vnxzmdvkyu) .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-:where(#vnxzmdvkyu) .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-:where(#vnxzmdvkyu) .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-:where(#vnxzmdvkyu) .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-:where(#vnxzmdvkyu) .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-:where(#vnxzmdvkyu) .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-:where(#vnxzmdvkyu) .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-:where(#vnxzmdvkyu) .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-:where(#vnxzmdvkyu) .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-:where(#vnxzmdvkyu) .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-:where(#vnxzmdvkyu) .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-:where(#vnxzmdvkyu) .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-:where(#vnxzmdvkyu) .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-:where(#vnxzmdvkyu) .gt_left {
-  text-align: left;
-}
-
-:where(#vnxzmdvkyu) .gt_center {
-  text-align: center;
-}
-
-:where(#vnxzmdvkyu) .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-:where(#vnxzmdvkyu) .gt_font_normal {
-  font-weight: normal;
-}
-
-:where(#vnxzmdvkyu) .gt_font_bold {
-  font-weight: bold;
-}
-
-:where(#vnxzmdvkyu) .gt_font_italic {
-  font-style: italic;
-}
-
-:where(#vnxzmdvkyu) .gt_super {
-  font-size: 65%;
-}
-
-:where(#vnxzmdvkyu) .gt_two_val_uncert {
-  display: inline-block;
-  line-height: 1em;
-  text-align: right;
-  font-size: 60%;
-  vertical-align: -0.25em;
-  margin-left: 0.1em;
-}
-
-:where(#vnxzmdvkyu) .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
-  font-size: 75%;
-  vertical-align: 0.4em;
-}
-
-:where(#vnxzmdvkyu) .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-:where(#vnxzmdvkyu) .gt_slash_mark {
-  font-size: 0.7em;
-  line-height: 0.7em;
-  vertical-align: 0.15em;
-}
-
-:where(#vnxzmdvkyu) .gt_fraction_numerator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: 0.45em;
-}
-
-:where(#vnxzmdvkyu) .gt_fraction_denominator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: -0.05em;
-}
-</style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9362</strong>, N = 267<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9485</strong>, N = 821<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F3816</strong>, N = 954<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F2846</strong>, N = 240<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6764</strong>, N = 496<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6308</strong>, N = 344<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F5724</strong>, N = 470<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9516</strong>, N = 645<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6054</strong>, N = 790<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9907</strong>, N = 441<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F2444</strong>, N = 858<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F1532</strong>, N = 1,001<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9932</strong>, N = 387<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F1147</strong>, N = 81<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6980</strong>, N = 486<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F8707</strong>, N = 498<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F3886</strong>, N = 902<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F0289</strong>, N = 627<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>p-value</strong><sup class="gt_footnote_marks">2</sup></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">MEAS_temperature</td>
-<td class="gt_row gt_center">37.50 (37.00, 37.50)</td>
-<td class="gt_row gt_center">NA (NA, NA)</td>
-<td class="gt_row gt_center">39.50 (39.25, 39.75)</td>
-<td class="gt_row gt_center">36.50 (36.50, 37.00)</td>
-<td class="gt_row gt_center">36.50 (36.00, 37.00)</td>
-<td class="gt_row gt_center">37.00 (37.00, 37.00)</td>
-<td class="gt_row gt_center">38.50 (37.00, 38.50)</td>
-<td class="gt_row gt_center">37.00 (36.50, 38.00)</td>
-<td class="gt_row gt_center">37.25 (37.00, 38.88)</td>
-<td class="gt_row gt_center">37.00 (37.00, 38.00)</td>
-<td class="gt_row gt_center">37.00 (37.00, 37.50)</td>
-<td class="gt_row gt_center">38.00 (37.62, 38.38)</td>
-<td class="gt_row gt_center">38.25 (38.12, 38.38)</td>
-<td class="gt_row gt_center">39.00 (38.25, 39.50)</td>
-<td class="gt_row gt_center">37.00 (36.50, 38.00)</td>
-<td class="gt_row gt_center">36.50 (36.50, 37.50)</td>
-<td class="gt_row gt_center">37.00 (36.50, 37.50)</td>
-<td class="gt_row gt_center">36.00 (36.00, 37.00)</td>
-<td class="gt_row gt_center">&lt;0.001</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
-<td class="gt_row gt_center">210</td>
-<td class="gt_row gt_center">821</td>
-<td class="gt_row gt_center">952</td>
-<td class="gt_row gt_center">86</td>
-<td class="gt_row gt_center">467</td>
-<td class="gt_row gt_center">338</td>
-<td class="gt_row gt_center">445</td>
-<td class="gt_row gt_center">586</td>
-<td class="gt_row gt_center">776</td>
-<td class="gt_row gt_center">202</td>
-<td class="gt_row gt_center">837</td>
-<td class="gt_row gt_center">995</td>
-<td class="gt_row gt_center">385</td>
-<td class="gt_row gt_center">78</td>
-<td class="gt_row gt_center">322</td>
-<td class="gt_row gt_center">297</td>
-<td class="gt_row gt_center">880</td>
-<td class="gt_row gt_center">594</td>
-<td class="gt_row gt_center"></td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="20"><sup class="gt_footnote_marks">1</sup> Median (IQR)</td>
-    </tr>
-    <tr>
-      <td class="gt_footnote" colspan="20"><sup class="gt_footnote_marks">2</sup> Kruskal-Wallis rank sum test</td>
-    </tr>
-  </tfoot>
-</table>
-</div>
-</div>
-</div>
-<ul>
-<li>also showing ‘prevalence’ of fever when of whole clinic vs of those who measure to indicate bias</li>
-</ul>
 </section>
-</section>
-<section id="malaria-tests" class="level2" data-number="15.6">
-<h2 data-number="15.6" class="anchored" data-anchor-id="malaria-tests"><span class="header-section-number">15.6</span> Malaria tests</h2>
+<section id="malaria-tests" class="level2" data-number="16.7">
+<h2 data-number="16.7" class="anchored" data-anchor-id="malaria-tests"><span class="header-section-number">16.7</span> Malaria tests</h2>
 <ul>
 <li>malaria tests of those with history or measured fever</li>
 </ul>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>       
-           0    1    2   95   98
-  FALSE   70    2    0    1    1
-  TRUE  3952  966    1    2   47</code></pre>
+<pre><code>   
+       0    1    2   95   98
+  0  713   66    0    1   10
+  1 3952  966    1    2   47</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="ophkfywvry" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="aoidkquuoo" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#ophkfywvry) .gt_table {
+:where(#aoidkquuoo) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2796,7 +2240,7 @@ Tip
   border-left-color: #D3D3D3;
 }
 
-:where(#ophkfywvry) .gt_heading {
+:where(#aoidkquuoo) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2808,7 +2252,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#ophkfywvry) .gt_title {
+:where(#aoidkquuoo) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2820,7 +2264,7 @@ Tip
   border-bottom-width: 0;
 }
 
-:where(#ophkfywvry) .gt_subtitle {
+:where(#aoidkquuoo) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2832,13 +2276,13 @@ Tip
   border-top-width: 0;
 }
 
-:where(#ophkfywvry) .gt_bottom_border {
+:where(#aoidkquuoo) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#ophkfywvry) .gt_col_headings {
+:where(#aoidkquuoo) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2853,7 +2297,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#ophkfywvry) .gt_col_heading {
+:where(#aoidkquuoo) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2873,7 +2317,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#ophkfywvry) .gt_column_spanner_outer {
+:where(#aoidkquuoo) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2885,15 +2329,15 @@ Tip
   padding-right: 4px;
 }
 
-:where(#ophkfywvry) .gt_column_spanner_outer:first-child {
+:where(#aoidkquuoo) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#ophkfywvry) .gt_column_spanner_outer:last-child {
+:where(#aoidkquuoo) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#ophkfywvry) .gt_column_spanner {
+:where(#aoidkquuoo) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2905,7 +2349,7 @@ Tip
   width: 100%;
 }
 
-:where(#ophkfywvry) .gt_group_heading {
+:where(#aoidkquuoo) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2930,7 +2374,7 @@ Tip
   vertical-align: middle;
 }
 
-:where(#ophkfywvry) .gt_empty_group_heading {
+:where(#aoidkquuoo) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2945,15 +2389,15 @@ Tip
   vertical-align: middle;
 }
 
-:where(#ophkfywvry) .gt_from_md > :first-child {
+:where(#aoidkquuoo) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#ophkfywvry) .gt_from_md > :last-child {
+:where(#aoidkquuoo) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#ophkfywvry) .gt_row {
+:where(#aoidkquuoo) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2972,7 +2416,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#ophkfywvry) .gt_stub {
+:where(#aoidkquuoo) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2985,7 +2429,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#ophkfywvry) .gt_stub_row_group {
+:where(#aoidkquuoo) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2999,11 +2443,11 @@ Tip
   vertical-align: top;
 }
 
-:where(#ophkfywvry) .gt_row_group_first td {
+:where(#aoidkquuoo) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#ophkfywvry) .gt_summary_row {
+:where(#aoidkquuoo) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3013,16 +2457,16 @@ Tip
   padding-right: 5px;
 }
 
-:where(#ophkfywvry) .gt_first_summary_row {
+:where(#aoidkquuoo) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#ophkfywvry) .gt_first_summary_row.thick {
+:where(#aoidkquuoo) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#ophkfywvry) .gt_last_summary_row {
+:where(#aoidkquuoo) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3032,7 +2476,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#ophkfywvry) .gt_grand_summary_row {
+:where(#aoidkquuoo) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3042,7 +2486,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#ophkfywvry) .gt_first_grand_summary_row {
+:where(#aoidkquuoo) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3052,11 +2496,11 @@ Tip
   border-top-color: #D3D3D3;
 }
 
-:where(#ophkfywvry) .gt_striped {
+:where(#aoidkquuoo) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#ophkfywvry) .gt_table_body {
+:where(#aoidkquuoo) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3065,7 +2509,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#ophkfywvry) .gt_footnotes {
+:where(#aoidkquuoo) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3079,7 +2523,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#ophkfywvry) .gt_footnote {
+:where(#aoidkquuoo) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -3088,7 +2532,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#ophkfywvry) .gt_sourcenotes {
+:where(#aoidkquuoo) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3102,7 +2546,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#ophkfywvry) .gt_sourcenote {
+:where(#aoidkquuoo) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3110,36 +2554,36 @@ Tip
   padding-right: 5px;
 }
 
-:where(#ophkfywvry) .gt_left {
+:where(#aoidkquuoo) .gt_left {
   text-align: left;
 }
 
-:where(#ophkfywvry) .gt_center {
+:where(#aoidkquuoo) .gt_center {
   text-align: center;
 }
 
-:where(#ophkfywvry) .gt_right {
+:where(#aoidkquuoo) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#ophkfywvry) .gt_font_normal {
+:where(#aoidkquuoo) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#ophkfywvry) .gt_font_bold {
+:where(#aoidkquuoo) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#ophkfywvry) .gt_font_italic {
+:where(#aoidkquuoo) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#ophkfywvry) .gt_super {
+:where(#aoidkquuoo) .gt_super {
   font-size: 65%;
 }
 
-:where(#ophkfywvry) .gt_two_val_uncert {
+:where(#aoidkquuoo) .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -3148,31 +2592,31 @@ Tip
   margin-left: 0.1em;
 }
 
-:where(#ophkfywvry) .gt_footnote_marks {
+:where(#aoidkquuoo) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#ophkfywvry) .gt_asterisk {
+:where(#aoidkquuoo) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#ophkfywvry) .gt_slash_mark {
+:where(#aoidkquuoo) .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-:where(#ophkfywvry) .gt_fraction_numerator {
+:where(#aoidkquuoo) .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-:where(#ophkfywvry) .gt_fraction_denominator {
+:where(#aoidkquuoo) .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -3183,24 +2627,24 @@ Tip
   <thead class="gt_col_headings">
     <tr>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9362</strong>, N = 190<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9485</strong>, N = 581<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F3816</strong>, N = 780<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F2846</strong>, N = 197<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6764</strong>, N = 406<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6308</strong>, N = 209<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F5724</strong>, N = 358<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9516</strong>, N = 467<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6054</strong>, N = 491<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9907</strong>, N = 301<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F2444</strong>, N = 550<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F1532</strong>, N = 603<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9932</strong>, N = 270<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F1147</strong>, N = 62<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6980</strong>, N = 358<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F8707</strong>, N = 330<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F3886</strong>, N = 683<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F0289</strong>, N = 416<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F0542</strong>, N = 683<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F3366</strong>, N = 603<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F4024</strong>, N = 550<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F4056</strong>, N = 62<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F4848</strong>, N = 406<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F5145</strong>, N = 491<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F5560</strong>, N = 358<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F5656</strong>, N = 416<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6552</strong>, N = 301<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6813</strong>, N = 330<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F7327</strong>, N = 270<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F7729</strong>, N = 197<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F8195</strong>, N = 581<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F8379</strong>, N = 467<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F8444</strong>, N = 209<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F8529</strong>, N = 190<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F8793</strong>, N = 780<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9109</strong>, N = 358<sup class="gt_footnote_marks">1</sup></th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -3224,119 +2668,119 @@ Tip
 <td class="gt_row gt_center"></td>
 <td class="gt_row gt_center"></td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
-<td class="gt_row gt_center">83 (67%)</td>
-<td class="gt_row gt_center">151 (33%)</td>
-<td class="gt_row gt_center">319 (54%)</td>
-<td class="gt_row gt_center">125 (82%)</td>
-<td class="gt_row gt_center">285 (75%)</td>
-<td class="gt_row gt_center">135 (98%)</td>
-<td class="gt_row gt_center">159 (95%)</td>
-<td class="gt_row gt_center">371 (93%)</td>
-<td class="gt_row gt_center">226 (95%)</td>
-<td class="gt_row gt_center">213 (96%)</td>
-<td class="gt_row gt_center">221 (97%)</td>
-<td class="gt_row gt_center">346 (97%)</td>
-<td class="gt_row gt_center">21 (25%)</td>
-<td class="gt_row gt_center">32 (57%)</td>
-<td class="gt_row gt_center">242 (92%)</td>
-<td class="gt_row gt_center">225 (91%)</td>
 <td class="gt_row gt_center">511 (90%)</td>
-<td class="gt_row gt_center">287 (97%)</td></tr>
+<td class="gt_row gt_center">346 (97%)</td>
+<td class="gt_row gt_center">221 (97%)</td>
+<td class="gt_row gt_center">32 (57%)</td>
+<td class="gt_row gt_center">285 (75%)</td>
+<td class="gt_row gt_center">226 (95%)</td>
+<td class="gt_row gt_center">242 (92%)</td>
+<td class="gt_row gt_center">287 (97%)</td>
+<td class="gt_row gt_center">213 (96%)</td>
+<td class="gt_row gt_center">225 (91%)</td>
+<td class="gt_row gt_center">21 (25%)</td>
+<td class="gt_row gt_center">125 (82%)</td>
+<td class="gt_row gt_center">151 (33%)</td>
+<td class="gt_row gt_center">371 (93%)</td>
+<td class="gt_row gt_center">135 (98%)</td>
+<td class="gt_row gt_center">83 (67%)</td>
+<td class="gt_row gt_center">319 (54%)</td>
+<td class="gt_row gt_center">159 (95%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
-<td class="gt_row gt_center">38 (31%)</td>
-<td class="gt_row gt_center">300 (66%)</td>
-<td class="gt_row gt_center">270 (46%)</td>
-<td class="gt_row gt_center">28 (18%)</td>
-<td class="gt_row gt_center">95 (25%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">2 (1.2%)</td>
-<td class="gt_row gt_center">25 (6.3%)</td>
-<td class="gt_row gt_center">7 (2.9%)</td>
-<td class="gt_row gt_center">4 (1.8%)</td>
-<td class="gt_row gt_center">6 (2.6%)</td>
-<td class="gt_row gt_center">6 (1.7%)</td>
-<td class="gt_row gt_center">59 (69%)</td>
-<td class="gt_row gt_center">20 (36%)</td>
-<td class="gt_row gt_center">20 (7.6%)</td>
-<td class="gt_row gt_center">21 (8.5%)</td>
 <td class="gt_row gt_center">55 (9.7%)</td>
-<td class="gt_row gt_center">10 (3.4%)</td></tr>
+<td class="gt_row gt_center">6 (1.7%)</td>
+<td class="gt_row gt_center">6 (2.6%)</td>
+<td class="gt_row gt_center">20 (36%)</td>
+<td class="gt_row gt_center">95 (25%)</td>
+<td class="gt_row gt_center">7 (2.9%)</td>
+<td class="gt_row gt_center">20 (7.6%)</td>
+<td class="gt_row gt_center">10 (3.4%)</td>
+<td class="gt_row gt_center">4 (1.8%)</td>
+<td class="gt_row gt_center">21 (8.5%)</td>
+<td class="gt_row gt_center">59 (69%)</td>
+<td class="gt_row gt_center">28 (18%)</td>
+<td class="gt_row gt_center">300 (66%)</td>
+<td class="gt_row gt_center">25 (6.3%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">38 (31%)</td>
+<td class="gt_row gt_center">270 (46%)</td>
+<td class="gt_row gt_center">2 (1.2%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
 <td class="gt_row gt_center">0 (0%)</td>
 <td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
 <td class="gt_row gt_center">1 (0.2%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
 <td class="gt_row gt_center">0 (0%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">95</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
 <td class="gt_row gt_center">1 (0.8%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
 <td class="gt_row gt_center">1 (0.2%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
 <td class="gt_row gt_center">0 (0%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
-<td class="gt_row gt_center">2 (1.6%)</td>
-<td class="gt_row gt_center">5 (1.1%)</td>
-<td class="gt_row gt_center">1 (0.2%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
-<td class="gt_row gt_center">3 (2.2%)</td>
-<td class="gt_row gt_center">6 (3.6%)</td>
-<td class="gt_row gt_center">2 (0.5%)</td>
-<td class="gt_row gt_center">6 (2.5%)</td>
-<td class="gt_row gt_center">6 (2.7%)</td>
-<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">3 (0.5%)</td>
 <td class="gt_row gt_center">3 (0.8%)</td>
-<td class="gt_row gt_center">5 (5.9%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
 <td class="gt_row gt_center">4 (7.1%)</td>
 <td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">6 (2.5%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">6 (2.7%)</td>
 <td class="gt_row gt_center">1 (0.4%)</td>
-<td class="gt_row gt_center">3 (0.5%)</td>
-<td class="gt_row gt_center">0 (0%)</td></tr>
+<td class="gt_row gt_center">5 (5.9%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">5 (1.1%)</td>
+<td class="gt_row gt_center">2 (0.5%)</td>
+<td class="gt_row gt_center">3 (2.2%)</td>
+<td class="gt_row gt_center">2 (1.6%)</td>
+<td class="gt_row gt_center">1 (0.2%)</td>
+<td class="gt_row gt_center">6 (3.6%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
-<td class="gt_row gt_center">66</td>
-<td class="gt_row gt_center">125</td>
-<td class="gt_row gt_center">188</td>
-<td class="gt_row gt_center">44</td>
-<td class="gt_row gt_center">26</td>
-<td class="gt_row gt_center">71</td>
-<td class="gt_row gt_center">191</td>
-<td class="gt_row gt_center">69</td>
-<td class="gt_row gt_center">252</td>
-<td class="gt_row gt_center">78</td>
-<td class="gt_row gt_center">323</td>
-<td class="gt_row gt_center">248</td>
-<td class="gt_row gt_center">185</td>
-<td class="gt_row gt_center">6</td>
-<td class="gt_row gt_center">96</td>
-<td class="gt_row gt_center">83</td>
 <td class="gt_row gt_center">114</td>
-<td class="gt_row gt_center">119</td></tr>
+<td class="gt_row gt_center">248</td>
+<td class="gt_row gt_center">323</td>
+<td class="gt_row gt_center">6</td>
+<td class="gt_row gt_center">26</td>
+<td class="gt_row gt_center">252</td>
+<td class="gt_row gt_center">96</td>
+<td class="gt_row gt_center">119</td>
+<td class="gt_row gt_center">78</td>
+<td class="gt_row gt_center">83</td>
+<td class="gt_row gt_center">185</td>
+<td class="gt_row gt_center">44</td>
+<td class="gt_row gt_center">125</td>
+<td class="gt_row gt_center">69</td>
+<td class="gt_row gt_center">71</td>
+<td class="gt_row gt_center">66</td>
+<td class="gt_row gt_center">188</td>
+<td class="gt_row gt_center">191</td></tr>
   </tbody>
   
   <tfoot class="gt_footnotes">
@@ -3349,10 +2793,10 @@ Tip
 </div>
 </div>
 </section>
-<section id="malaria-treatments" class="level2" data-number="15.7">
-<h2 data-number="15.7" class="anchored" data-anchor-id="malaria-treatments"><span class="header-section-number">15.7</span> Malaria treatments</h2>
+<section id="malaria-treatments" class="level2" data-number="16.8">
+<h2 data-number="16.8" class="anchored" data-anchor-id="malaria-treatments"><span class="header-section-number">16.8</span> Malaria treatments</h2>
 <ul>
-<li>malaria diagnoses vs.&nbsp;positive tests vs.&nbsp;treatment.</li>
+<li>malaria diagnoses vs.&nbsp;positive tests vs.&nbsp;treatments</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -3493,12 +2937,12 @@ Tip
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="nozccgshxb" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="aclaldcxjr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#nozccgshxb) .gt_table {
+:where(#aclaldcxjr) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -3523,7 +2967,7 @@ Tip
   border-left-color: #D3D3D3;
 }
 
-:where(#nozccgshxb) .gt_heading {
+:where(#aclaldcxjr) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3535,7 +2979,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#nozccgshxb) .gt_title {
+:where(#aclaldcxjr) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3547,7 +2991,7 @@ Tip
   border-bottom-width: 0;
 }
 
-:where(#nozccgshxb) .gt_subtitle {
+:where(#aclaldcxjr) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3559,13 +3003,13 @@ Tip
   border-top-width: 0;
 }
 
-:where(#nozccgshxb) .gt_bottom_border {
+:where(#aclaldcxjr) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#nozccgshxb) .gt_col_headings {
+:where(#aclaldcxjr) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3580,7 +3024,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#nozccgshxb) .gt_col_heading {
+:where(#aclaldcxjr) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3600,7 +3044,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#nozccgshxb) .gt_column_spanner_outer {
+:where(#aclaldcxjr) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3612,15 +3056,15 @@ Tip
   padding-right: 4px;
 }
 
-:where(#nozccgshxb) .gt_column_spanner_outer:first-child {
+:where(#aclaldcxjr) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#nozccgshxb) .gt_column_spanner_outer:last-child {
+:where(#aclaldcxjr) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#nozccgshxb) .gt_column_spanner {
+:where(#aclaldcxjr) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3632,7 +3076,7 @@ Tip
   width: 100%;
 }
 
-:where(#nozccgshxb) .gt_group_heading {
+:where(#aclaldcxjr) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3657,7 +3101,7 @@ Tip
   vertical-align: middle;
 }
 
-:where(#nozccgshxb) .gt_empty_group_heading {
+:where(#aclaldcxjr) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3672,15 +3116,15 @@ Tip
   vertical-align: middle;
 }
 
-:where(#nozccgshxb) .gt_from_md > :first-child {
+:where(#aclaldcxjr) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#nozccgshxb) .gt_from_md > :last-child {
+:where(#aclaldcxjr) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#nozccgshxb) .gt_row {
+:where(#aclaldcxjr) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3699,7 +3143,7 @@ Tip
   overflow-x: hidden;
 }
 
-:where(#nozccgshxb) .gt_stub {
+:where(#aclaldcxjr) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3712,7 +3156,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#nozccgshxb) .gt_stub_row_group {
+:where(#aclaldcxjr) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3726,11 +3170,11 @@ Tip
   vertical-align: top;
 }
 
-:where(#nozccgshxb) .gt_row_group_first td {
+:where(#aclaldcxjr) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#nozccgshxb) .gt_summary_row {
+:where(#aclaldcxjr) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3740,16 +3184,16 @@ Tip
   padding-right: 5px;
 }
 
-:where(#nozccgshxb) .gt_first_summary_row {
+:where(#aclaldcxjr) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#nozccgshxb) .gt_first_summary_row.thick {
+:where(#aclaldcxjr) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#nozccgshxb) .gt_last_summary_row {
+:where(#aclaldcxjr) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3759,7 +3203,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#nozccgshxb) .gt_grand_summary_row {
+:where(#aclaldcxjr) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3769,7 +3213,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#nozccgshxb) .gt_first_grand_summary_row {
+:where(#aclaldcxjr) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3779,11 +3223,11 @@ Tip
   border-top-color: #D3D3D3;
 }
 
-:where(#nozccgshxb) .gt_striped {
+:where(#aclaldcxjr) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#nozccgshxb) .gt_table_body {
+:where(#aclaldcxjr) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3792,7 +3236,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-:where(#nozccgshxb) .gt_footnotes {
+:where(#aclaldcxjr) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3806,7 +3250,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#nozccgshxb) .gt_footnote {
+:where(#aclaldcxjr) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -3815,7 +3259,7 @@ Tip
   padding-right: 5px;
 }
 
-:where(#nozccgshxb) .gt_sourcenotes {
+:where(#aclaldcxjr) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3829,7 +3273,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-:where(#nozccgshxb) .gt_sourcenote {
+:where(#aclaldcxjr) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3837,36 +3281,36 @@ Tip
   padding-right: 5px;
 }
 
-:where(#nozccgshxb) .gt_left {
+:where(#aclaldcxjr) .gt_left {
   text-align: left;
 }
 
-:where(#nozccgshxb) .gt_center {
+:where(#aclaldcxjr) .gt_center {
   text-align: center;
 }
 
-:where(#nozccgshxb) .gt_right {
+:where(#aclaldcxjr) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#nozccgshxb) .gt_font_normal {
+:where(#aclaldcxjr) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#nozccgshxb) .gt_font_bold {
+:where(#aclaldcxjr) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#nozccgshxb) .gt_font_italic {
+:where(#aclaldcxjr) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#nozccgshxb) .gt_super {
+:where(#aclaldcxjr) .gt_super {
   font-size: 65%;
 }
 
-:where(#nozccgshxb) .gt_two_val_uncert {
+:where(#aclaldcxjr) .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -3875,31 +3319,31 @@ Tip
   margin-left: 0.1em;
 }
 
-:where(#nozccgshxb) .gt_footnote_marks {
+:where(#aclaldcxjr) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#nozccgshxb) .gt_asterisk {
+:where(#aclaldcxjr) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#nozccgshxb) .gt_slash_mark {
+:where(#aclaldcxjr) .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-:where(#nozccgshxb) .gt_fraction_numerator {
+:where(#aclaldcxjr) .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-:where(#nozccgshxb) .gt_fraction_denominator {
+:where(#aclaldcxjr) .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -3910,74 +3354,148 @@ Tip
   <thead class="gt_col_headings">
     <tr>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9362</strong>, N = 41<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9485</strong>, N = 320<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F3816</strong>, N = 288<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F2846</strong>, N = 28<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6764</strong>, N = 105<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6308</strong>, N = 0<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F5724</strong>, N = 2<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9516</strong>, N = 25<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6054</strong>, N = 7<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9907</strong>, N = 4<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F2444</strong>, N = 6<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F1532</strong>, N = 9<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9932</strong>, N = 61<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F1147</strong>, N = 21<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6980</strong>, N = 22<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F8707</strong>, N = 21<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F3886</strong>, N = 59<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F0289</strong>, N = 13<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F0542</strong>, N = 59<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F3366</strong>, N = 9<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F4024</strong>, N = 6<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F4056</strong>, N = 21<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F4848</strong>, N = 105<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F5145</strong>, N = 7<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F5560</strong>, N = 22<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F5656</strong>, N = 13<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6552</strong>, N = 4<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F6813</strong>, N = 21<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F7327</strong>, N = 61<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F7729</strong>, N = 28<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F8195</strong>, N = 320<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F8379</strong>, N = 25<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F8529</strong>, N = 41<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F8793</strong>, N = 288<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>F9109</strong>, N = 2<sup class="gt_footnote_marks">1</sup></th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr><td class="gt_row gt_left">DX_malaria</td>
-<td class="gt_row gt_center">40 (98%)</td>
-<td class="gt_row gt_center">311 (97%)</td>
-<td class="gt_row gt_center">285 (99%)</td>
-<td class="gt_row gt_center">27 (96%)</td>
-<td class="gt_row gt_center">71 (68%)</td>
-<td class="gt_row gt_center">0 (NA%)</td>
-<td class="gt_row gt_center">2 (100%)</td>
-<td class="gt_row gt_center">17 (68%)</td>
-<td class="gt_row gt_center">5 (71%)</td>
-<td class="gt_row gt_center">4 (100%)</td>
-<td class="gt_row gt_center">6 (100%)</td>
-<td class="gt_row gt_center">6 (67%)</td>
-<td class="gt_row gt_center">59 (97%)</td>
-<td class="gt_row gt_center">21 (100%)</td>
-<td class="gt_row gt_center">22 (100%)</td>
-<td class="gt_row gt_center">21 (100%)</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">2 (3.4%)</td>
+<td class="gt_row gt_center">3 (33%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">34 (32%)</td>
+<td class="gt_row gt_center">2 (29%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">2 (3.3%)</td>
+<td class="gt_row gt_center">1 (3.6%)</td>
+<td class="gt_row gt_center">9 (2.8%)</td>
+<td class="gt_row gt_center">8 (32%)</td>
+<td class="gt_row gt_center">1 (2.4%)</td>
+<td class="gt_row gt_center">3 (1.0%)</td>
+<td class="gt_row gt_center">0 (0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
 <td class="gt_row gt_center">57 (97%)</td>
-<td class="gt_row gt_center">13 (100%)</td></tr>
-    <tr><td class="gt_row gt_left">RX_antimalarials</td>
-<td class="gt_row gt_center">40 (98%)</td>
-<td class="gt_row gt_center">288 (90%)</td>
-<td class="gt_row gt_center">283 (98%)</td>
-<td class="gt_row gt_center">26 (93%)</td>
-<td class="gt_row gt_center">104 (99%)</td>
-<td class="gt_row gt_center">0 (NA%)</td>
-<td class="gt_row gt_center">2 (100%)</td>
-<td class="gt_row gt_center">23 (92%)</td>
+<td class="gt_row gt_center">6 (67%)</td>
+<td class="gt_row gt_center">6 (100%)</td>
+<td class="gt_row gt_center">21 (100%)</td>
+<td class="gt_row gt_center">71 (68%)</td>
 <td class="gt_row gt_center">5 (71%)</td>
+<td class="gt_row gt_center">22 (100%)</td>
+<td class="gt_row gt_center">13 (100%)</td>
+<td class="gt_row gt_center">4 (100%)</td>
+<td class="gt_row gt_center">21 (100%)</td>
+<td class="gt_row gt_center">59 (97%)</td>
+<td class="gt_row gt_center">27 (96%)</td>
+<td class="gt_row gt_center">311 (97%)</td>
+<td class="gt_row gt_center">17 (68%)</td>
+<td class="gt_row gt_center">40 (98%)</td>
+<td class="gt_row gt_center">285 (99%)</td>
+<td class="gt_row gt_center">2 (100%)</td></tr>
+    <tr><td class="gt_row gt_left">RX_antimalarials</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
+<td class="gt_row gt_center">4 (6.8%)</td>
+<td class="gt_row gt_center">4 (44%)</td>
+<td class="gt_row gt_center">2 (33%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">1 (1.0%)</td>
+<td class="gt_row gt_center">2 (29%)</td>
+<td class="gt_row gt_center">1 (4.5%)</td>
+<td class="gt_row gt_center">2 (15%)</td>
 <td class="gt_row gt_center">2 (50%)</td>
-<td class="gt_row gt_center">4 (67%)</td>
-<td class="gt_row gt_center">5 (56%)</td>
-<td class="gt_row gt_center">57 (93%)</td>
-<td class="gt_row gt_center">21 (100%)</td>
-<td class="gt_row gt_center">21 (95%)</td>
-<td class="gt_row gt_center">21 (100%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">4 (6.6%)</td>
+<td class="gt_row gt_center">2 (7.1%)</td>
+<td class="gt_row gt_center">32 (10%)</td>
+<td class="gt_row gt_center">2 (8.0%)</td>
+<td class="gt_row gt_center">1 (2.4%)</td>
+<td class="gt_row gt_center">5 (1.7%)</td>
+<td class="gt_row gt_center">0 (0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
 <td class="gt_row gt_center">55 (93%)</td>
-<td class="gt_row gt_center">11 (85%)</td></tr>
+<td class="gt_row gt_center">5 (56%)</td>
+<td class="gt_row gt_center">4 (67%)</td>
+<td class="gt_row gt_center">21 (100%)</td>
+<td class="gt_row gt_center">104 (99%)</td>
+<td class="gt_row gt_center">5 (71%)</td>
+<td class="gt_row gt_center">21 (95%)</td>
+<td class="gt_row gt_center">11 (85%)</td>
+<td class="gt_row gt_center">2 (50%)</td>
+<td class="gt_row gt_center">21 (100%)</td>
+<td class="gt_row gt_center">57 (93%)</td>
+<td class="gt_row gt_center">26 (93%)</td>
+<td class="gt_row gt_center">288 (90%)</td>
+<td class="gt_row gt_center">23 (92%)</td>
+<td class="gt_row gt_center">40 (98%)</td>
+<td class="gt_row gt_center">283 (98%)</td>
+<td class="gt_row gt_center">2 (100%)</td></tr>
   </tbody>
   
   <tfoot class="gt_footnotes">
     <tr>
-      <td class="gt_footnote" colspan="19"><sup class="gt_footnote_marks">1</sup> n (%)</td>
+      <td class="gt_footnote" colspan="18"><sup class="gt_footnote_marks">1</sup> n (%)</td>
     </tr>
   </tfoot>
 </table>
 </div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="malaria_case_study_01_report_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
@@ -4085,13 +3603,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./malaria_case_study_presentation.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Malaria case study</span></span>
+      <a href="./malaria_case_study_01.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 1</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./malaria_case_study_02_report.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Effect of SPA observations on RCT data</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #2</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -70,5 +70,20 @@
   },
   "malaria_case_study_03_report.qmd": {
     "malaria_case_study_03_report.html": "e23384ef"
+  },
+  "ds4ph_day3_session01_practical_session.qmd": {
+    "ds4ph_day3_session01_practical_session.html": "e5ef1b84"
+  },
+  "cross_validation.qmd": {
+    "cross_validation.html": "bf1b03e9"
+  },
+  "categorical_data_encoding.qmd": {
+    "categorical_data_encoding.html": "b985f6c5"
+  },
+  "ds4ph_day3_session02_practical_session.qmd": {
+    "ds4ph_day3_session02_practical_session.html": "ed4f4e2d"
+  },
+  "malaria_case_study_01.qmd": {
+    "malaria_case_study_01.html": "d6341e66"
   }
 }

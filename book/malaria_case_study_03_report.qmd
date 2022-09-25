@@ -1,5 +1,5 @@
 ---
-title: ":orange_book: Malaria case study - Comparison of RCT and SPA entries"
+title: ":orange_book: Malaria case study - Report #3"
 execute:
   echo: false
   warning: false
@@ -9,17 +9,6 @@ number-sections: true
 ---
 
 ## Introduction
-
-Sensitivity analysis definition
-
-how SPA observations affect RCT consultations and data recording
-
-``` {{r}}
-install.packages("ggplot2")
-install.packages("ggthemes")
-install.packages("networkD3")
-install.packages("apyramid")
-```
 
 ```{r}
 library(openxlsx)
@@ -33,23 +22,13 @@ library(networkD3) # For alluvial/Sankey diagrams
 library(tidyverse)
 ```
 
-### Import the data
-
-Data are stored in **dataset2.dta**.
-
-#### :pencil2: Exercise 1 {.unnumbered}
-
-1.  Import the dataset and store it into a dataframe called **df**.
-2.  Select columns **RCT_child_ID**, **RCT_CLIN_fever**, **SPA_CLIN_fever_reported**, **SPA_CLIN_fever_investigated** for the first **10** rows in data frame `df`.
-3.  Display in a table with the following characteristics:
-    a.  Align the content of the first column to the left and the content of the other 3 columns to the centre.
-    b.  Add a caption.
+Data are stored in **dataset3.dta**.
 
 ```{r}
 #| df-print: kable
 
 # 1. Import the dataset and store it into a dataframe called **df**. 
-df <- openxlsx::read.xlsx("./data/dataset2.xlsx")
+df <- openxlsx::read.xlsx("./data/dataset3.xlsx")
 
 df %>%
   # 2. Select columns **child_ID**, **CTX_month**, **CTX_district**, **SDC_age_in_months** for the first **10** rows in data frame `df`.
@@ -99,22 +78,26 @@ table(df$RCT_CLIN_fever_char, df$SPA_CLIN_fever_tot_char) %>%
   knitr::kable()
 ```
 ```{r}
-long_prop <- data.frame(prop.table(table(rct = df$RCT_CLIN_fever_char, spa= df$SPA_CLIN_fever_tot_char)))
+long_prop <- data.frame(prop.table(table(rct = df$RCT_CLIN_fever_char,
+                                         spa = df$SPA_CLIN_fever_tot_char)))
+```
+
+```{r}
 ggplot2::ggplot(data = long_prop)+       # use long data, with proportions as Freq
   ggplot2::geom_tile(                    # visualize it in tiles
     aes(
-      x = spa,         # x-axis is case age
-      y = rct,     # y-axis is infector age
-      fill = Freq))+            # color of the tile is the Freq column in the data
-  scale_fill_gradient(          # adjust the fill color of the tiles
+      x = spa,                           # x-axis is SPA value
+      y = rct,                           # y-axis is RCT value
+      fill = Freq))+                     # color of the tile is the Freq column in the data
+  scale_fill_gradient(                   # adjust the fill color of the tiles
     low = "white",
     high = "dark green")+
-  labs(                         # labels
+  labs(                                  # labels
     x = "SPA",
     y = "RCT",
     title = "Fever",
     subtitle = "Frequency matrix",
-    fill = "Proportion of children"     # legend title
+    fill = "Proportion of children"      # legend title
   )
 ```
 
@@ -157,9 +140,9 @@ link5 <- df %>%
          target = RCT_CLIN_fever_char)
 
 # combine links
-links <- bind_rows(link1,
+links <- bind_rows(link3,
+                   link1,
                    link2,
-                   link3,
                    link4,
                    link5)
 

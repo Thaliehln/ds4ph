@@ -33,82 +33,22 @@ install.packages("apyramid")
 ```{r}
 #| echo: fenced
 library(openxlsx)
-library(dplyr)
+library(tidyverse)
 library(skimr)
+library(DataExplorer)
 library(gtsummary)
 library(finalfit)
 library(ggplot2)
 library(ggthemes)
 library(networkD3) # For alluvial/Sankey diagrams
-library(tidyverse)
 ```
-
-### Dataset description
-
-We will be using data and examples from a real consultation data which occurred in Tanzania between **2021-07-29** and **2021-12-17** within the Integrated Management of Childhood Illness (TIMCI) project.
-
-::: callout-important
-Data are made available by the Ifakara Health Institute (IHI) for training purposes only. Please note, that some data has been adapted in order to best achieve training objectives. No personally indentifiable information have been kept in this dataset.
-:::
-
-Information about the consultations of **10,308 children \[1 day - 59 months\]** from **18 facilities** (dispensaries and health centres) in **Kaliua** District, **Sengerema** District and **Tanga** District, Tanzania. 
-
-::: {#fig-study-area layout="[[1,1], [1, 1]]"}
-![](images/tanzania_map-01.png){#fig-tanzania-study-regions}
-
-![](images/mwanza_map.png){#fig-mwanza-study-district}
-
-![](images/kaliua_map.png){#fig-kaliua-study-district}
-
-![](images/tanga_map.png){#fig-tanga-study-district}
-
-Study area
-:::
-
-### Data collection
-
-Data were collected using *ODK* (ODK Collect, ODK Central) between **2021-07-29** and **2021-12-17**. Research assistants recorded the following information from different sources.
-
-+-------------------------------------+-------------+--------------------------------------+
-| Information                         | Prefix      | Source                               |
-+:====================================+:===========:+:====================================:+
-| Context                             | CTX         | Metadata                             |
-+-------------------------------------+-------------+--------------------------------------+
-| Sociodemographics                   | SDC         | Caregiver                            |
-+-------------------------------------+-------------+--------------------------------------+
-| Clinical presentation               | CLIN        | Caregiver                            |
-+-------------------------------------+-------------+--------------------------------------+
-| Laboratory investigations           | TEST        | Child booklet or facility MTUHA book |
-+-------------------------------------+-------------+--------------------------------------+
-| Diagnoses                           | DX          | Child booklet or facility MTUHA book |
-+-------------------------------------+-------------+--------------------------------------+
-| Treatments                          | RX          |                                      |
-+-------------------------------------+-------------+--------------------------------------+
-| -   before consultation             |             | Caregiver                            |
-+-------------------------------------+-------------+--------------------------------------+
-| -   as a result of the consultation |             | Child booklet or facility MTUHA book |
-+-------------------------------------+-------------+--------------------------------------+
-| Referral advice                     | MGMT        |                                      |
-+-------------------------------------+-------------+--------------------------------------+
-|                                     |             | Caregiver                            |
-+-------------------------------------+-------------+--------------------------------------+
-|                                     |             | Child booklet or facility MTUHA book |
-+-------------------------------------+-------------+--------------------------------------+
-
-: Types and sources of information
-
-### Data preparation
-
-Data cleaning and data de-identification
-
-Personally identifiable information (PII) were removed.
 
 ### Import the data
 
 ::: panel-tabset
 #### :pencil2: Exercise 1
 
-Import the dataset and store it into a dataframe called **df**. Display the first 5 rows and columns `child_ID`, `CONSULT_month`, `CONSULT_district`, `SDC_age_in_month`
+Import the dataset and store it into a dataframe called **df**. Display the first 5 rows and columns `child_ID`, `CTX_month`, `CTX_district`, `SDC_age_in_months`
 
 ::: callout-tip
 Refer to @sec-import-data-from-files
@@ -123,7 +63,7 @@ Refer to @sec-import-data-from-files
 
 ```{r}
 #| echo: fenced
-stata_df <- haven::read_dta("./data/dataset1.dta")
+stata_df <- haven::read_dta("./data/dataset2.dta")
 ```
 
 ```{r}
@@ -132,9 +72,9 @@ stata_df <- haven::read_dta("./data/dataset1.dta")
 stata_df %>%
   head(5) %>%
   dplyr::select(child_ID,
-                CONSULT_month,
-                CONSULT_district,
-                SDC_age_in_month) %>%
+                CTX_month,
+                CTX_district,
+                SDC_age_in_months) %>%
   knitr::kable()
 ```
 
@@ -142,7 +82,7 @@ stata_df %>%
 
 ```{r}
 #| echo: fenced
-df <- openxlsx::read.xlsx("./data/dataset1.xlsx")
+df <- openxlsx::read.xlsx("./data/dataset2.xlsx")
 ```
 
 ```{r}
@@ -151,9 +91,9 @@ df <- openxlsx::read.xlsx("./data/dataset1.xlsx")
 df %>%
   head(5) %>%
   dplyr::select(child_ID,
-                CONSULT_month,
-                CONSULT_district,
-                SDC_age_in_month) %>%
+                CTX_month,
+                CTX_district,
+                SDC_age_in_months) %>%
   knitr::kable()
 ```
 :::
@@ -165,7 +105,7 @@ df %>%
 +-----------------------------+---------------+
 | Variable                    | Coding        |
 +=============================+===============+
-| SDC_age_in_month            |               |
+| SDC_age_in_months           |               |
 +-----------------------------+---------------+
 | SDC_sex                     | 1: male\      |
 |                             | 2: female\    |
@@ -189,15 +129,15 @@ df %>%
 +-----------------------------+---------------+
 | RX_preconsult_antimalarials |               |
 +-----------------------------+---------------+
-| CONSULT_district            | Kaliua\       |
+| CTX_district                | Kaliua\       |
 |                             | Sengerema\    |
 |                             | Tanga         |
 +-----------------------------+---------------+
-| CONSULT_area                | urban\        |
+| CTX_area                    | Urban\        |
 |                             | rural         |
 +-----------------------------+---------------+
-| CONSULT_facility_type       | dispensary\   |
-|                             | health centre |
+| CTX_facility_type           | Dispensary\   |
+|                             | Health centre |
 +-----------------------------+---------------+
 
 ### Structure of the data
@@ -221,7 +161,7 @@ Examine the structure of the data, including variable names, labels.
 
 ```{r}
 #| echo: fenced
-RStata::stata("codebook SDC_age_in_month SDC_sex CLIN_fever CLIN_fever_onset CLIN_diarrhoea CLIN_cough RX_preconsult_antibiotics RX_preconsult_antimalarials CONSULT_district CONSULT_area CONSULT_facility_type",
+RStata::stata("codebook SDC_age_in_months SDC_sex CLIN_fever CLIN_fever_onset CLIN_diarrhoea CLIN_cough RX_preconsult_antibiotics RX_preconsult_antimalarials CTX_district CTX_area CTX_facility_type",
               data.in = stata_df)
 ```
 
@@ -230,7 +170,7 @@ RStata::stata("codebook SDC_age_in_month SDC_sex CLIN_fever CLIN_fever_onset CLI
 ```{r}
 #| echo: fenced
 df %>%
-  skim(SDC_age_in_month,
+  skim(SDC_age_in_months,
        SDC_sex,
        CLIN_fever,
        CLIN_fever_onset,
@@ -238,11 +178,44 @@ df %>%
        CLIN_cough,
        RX_preconsult_antibiotics,
        RX_preconsult_antimalarials,
-       CONSULT_district,
-       CONSULT_area,
-       CONSULT_facility_type)
+       CTX_district,
+       CTX_area,
+       CTX_facility_type)
 ```
+```{r}
+#| echo: fenced
+df <- df %>%
+  tibble::remove_rownames() %>%
+  tibble::column_to_rownames(var="child_ID") %>% 
+  dplyr::mutate(across(c(SDC_sex, 
+                         CLIN_fever,
+                         CLIN_cough,
+                         CLIN_diarrhoea,
+                         RX_preconsult_antibiotics,
+                         RX_preconsult_antimalarials,
+                         CTX_district,
+                         CTX_area,
+                         CTX_facility_type),
+                       factor))
+```
+
 :::
+
+#### Identify missing values
+
+Identify missing values in each variable
+
+```{r}
+#| fig.height: 10
+DataExplorer::plot_missing(df,
+                           geom_label_args = list(size = 2, label.padding = unit(0.2, "lines")))
+```
+
+```{r}
+DataExplorer::plot_bar(df %>% 
+                         dplyr::select(-CTX_facility_ID),
+                       by = "CTX_district")
+```
 
 ::: panel-tabset
 #### :pencil2: Exercise 3
@@ -284,12 +257,12 @@ Add the following two new variables to data frame `df`
 df <- df %>%
   dplyr::mutate(
     SDC_age_category = dplyr::case_when(
-      SDC_age_in_month < 2 ~ "<2 months",
-      SDC_age_in_month >= 2 & SDC_age_in_month < 12 ~ "02-11 months",
-      SDC_age_in_month >= 12 & SDC_age_in_month < 24 ~ "12-23 months",
-      SDC_age_in_month >= 24 & SDC_age_in_month < 36 ~ "24-35 months",
-      SDC_age_in_month >= 36 & SDC_age_in_month < 48 ~ "36-47 months",
-      SDC_age_in_month >= 48 & SDC_age_in_month < 60 ~ "48-59 months",
+      SDC_age_in_months < 2 ~ "<2 months",
+      SDC_age_in_months >= 2 & SDC_age_in_months < 12 ~ "02-11 months",
+      SDC_age_in_months >= 12 & SDC_age_in_months < 24 ~ "12-23 months",
+      SDC_age_in_months >= 24 & SDC_age_in_months < 36 ~ "24-35 months",
+      SDC_age_in_months >= 36 & SDC_age_in_months < 48 ~ "36-47 months",
+      SDC_age_in_months >= 48 & SDC_age_in_months < 60 ~ "48-59 months",
       TRUE ~ ""
     )
   ) %>% 
@@ -334,9 +307,9 @@ RStata::stata('tabulate SDC_age_category
               tabulate CLIN_cough
               tabulate RX_preconsult_antibiotics
               tabulate RX_preconsult_antimalarials
-              tabulate CONSULT_district
-              tabulate CONSULT_area
-              tabulate CONSULT_facility_type',
+              tabulate CTX_district
+              tabulate CTX_area
+              tabulate CTX_facility_type',
               data.in = stata_df)
 ```
 
@@ -353,24 +326,12 @@ df %>%
                 CLIN_cough,
                 RX_preconsult_antibiotics,
                 RX_preconsult_antimalarials,
-                CONSULT_district,
-                CONSULT_area,
-                CONSULT_facility_type) %>%
+                CTX_district,
+                CTX_area,
+                CTX_facility_type) %>%
   gtsummary::tbl_summary(missing_text = "(Missing)")
 ```
 :::
-
-#### Identify missing values
-
-Identify missing values in each variable: missing_plot
-
-```{r}
-explanatory = c("CONSULT_facility_ID", "CONSULT_district", "CLIN_fever")
-dependent = "DX_malaria"
-
-df %>% 
-  finalfit::missing_pattern(dependent, explanatory)
-```
 
 ## Healthcare provider actions
 
@@ -531,7 +492,7 @@ Plot the number of consultations by facility in bars, grouped by district.
 ```{r}
 #| echo: fenced
 stata_cmd <- '
-graph bar (count) child_ID, over(CONSULT_facility_ID, axis(off)) over(CONSULT_district, relabel(1 "Kaliua" 2 "Sengerema" 3 "Tanga")) nofill ytitle(No. consultations) title(No. consultations by facility)
+graph bar (count) child_ID, over(CTX_facility_ID, axis(off)) over(CTX_district, relabel(1 "Kaliua" 2 "Sengerema" 3 "Tanga")) nofill ytitle(No. consultations) title(No. consultations by facility)
 graph export ./images/day02_stata_plot.png, replace
 '
 RStata::stata(stata_cmd,
@@ -545,10 +506,10 @@ RStata::stata(stata_cmd,
 ```{r}
 #| echo: fenced
 df %>%
-  dplyr::group_by(CONSULT_district,
-                  CONSULT_facility_ID) %>%
+  dplyr::group_by(CTX_district,
+                  CTX_facility_ID) %>%
   count() %>% 
-  ggplot2::ggplot(aes(x = haven::as_factor(CONSULT_district),
+  ggplot2::ggplot(aes(x = haven::as_factor(CTX_district),
                       y = n)) + 
   ggplot2::geom_bar(position = position_dodge2(preserve = "single"),
                     stat="identity") +
@@ -572,12 +533,12 @@ chisq.test(df$CLIN_fever, df$TEST_malaria_result)
 
 ```{r}
 #| echo: fenced
-df$CONSULT_facility_ID <- haven::as_factor(df$CONSULT_facility_ID) 
+df$CTX_facility_ID <- haven::as_factor(df$CTX_facility_ID) 
 df %>%
   dplyr::filter(CLIN_fever == 1) %>%
   dplyr::select(MEAS_temperature,
-                CONSULT_facility_ID) %>%
-  gtsummary::tbl_summary(by = CONSULT_facility_ID) %>%
+                CTX_facility_ID) %>%
+  gtsummary::tbl_summary(by = CTX_facility_ID) %>%
   add_p()
 ```
 
@@ -608,12 +569,12 @@ chisq.test(df$CALC_fever_or_temp, df$TEST_malaria_result)
 
 ```{r}
 #| echo: fenced
-df$CONSULT_facility_ID <- haven::as_factor(df$CONSULT_facility_ID) 
+df$CTX_facility_ID <- haven::as_factor(df$CTX_facility_ID) 
 df %>%
   dplyr::filter(CALC_fever_or_temp == 1) %>%
   dplyr::select(TEST_malaria_result,
-                CONSULT_facility_ID) %>%
-  gtsummary::tbl_summary(by = CONSULT_facility_ID)
+                CTX_facility_ID) %>%
+  gtsummary::tbl_summary(by = CTX_facility_ID)
 ```
 
 ## Malaria treatments
@@ -642,11 +603,11 @@ chisq.test(df$TEST_malaria_result, df$RX_antimalarials)
 
 ```{r}
 #| echo: fenced
-df$CONSULT_facility_ID <- haven::as_factor(df$CONSULT_facility_ID) 
-df %>%
-  dplyr::filter(TEST_malaria_positive == 1) %>%
-  dplyr::select(DX_malaria,
-                RX_antimalarials,
-                CONSULT_facility_ID) %>%
-  gtsummary::tbl_summary(by = CONSULT_facility_ID)
+# df$CTX_facility_ID <- haven::as_factor(df$CTX_facility_ID) 
+# df %>%
+#   dplyr::filter(TEST_malaria_positive == 1) %>%
+#   dplyr::select(DX_malaria,
+#                 RX_antimalarials,
+#                 CTX_facility_ID) %>%
+#   gtsummary::tbl_summary(by = CTX_facility_ID)
 ```

@@ -1,5 +1,5 @@
 ---
-title: ":orange_book: Malaria case study - Effect of SPA observations on RCT data"
+title: ":orange_book: Malaria case study - Report #2"
 execute:
   echo: false
   warning: false
@@ -10,16 +10,11 @@ number-sections: true
 
 ## Introduction
 
-Sensitivity analysis definition
+In this section we will explore the impact of the presence of research staff observing consultations as part of a Service Provision Assessment (SPA) on RCT data.
 
-how SPA observations affect RCT consultations and data recording
-
-``` {{r}}
-install.packages("ggplot2")
-install.packages("ggthemes")
-install.packages("networkD3")
-install.packages("apyramid")
-```
+:::callout-note
+Add sensitivity analysis definition
+:::
 
 ```{r}
 library(openxlsx)
@@ -33,94 +28,12 @@ library(networkD3) # For alluvial/Sankey diagrams
 library(tidyverse)
 ```
 
-### Import the data
-
-Data are stored in **dataset1.dta**.
-
-#### :pencil2: Exercise 1 {.unnumbered}
-
-1.  Import the dataset and store it into a dataframe called **df**.
-2.  Select columns **child_ID**, **CTX_month**, **CTX_district**, **SDC_age_in_months** for the first **5** rows in data frame `df`.
-3.  Display in a table with the following characteristics:
-    a.  Align the content of the first column to the left and the content of the other 3 columns to the centre.
-    b.  Add a caption.
+The data set used for this report is stored in **dataset2.dta**.
 
 ```{r}
-#| df-print: kable
-
 # 1. Import the dataset and store it into a dataframe called **df**. 
-df <- openxlsx::read.xlsx("./data/dataset1.xlsx")
-
-df %>%
-  # 2. Select columns **child_ID**, **CTX_month**, **CTX_district**, **SDC_age_in_months** for the first **5** rows in data frame `df`.
-  head(5) %>%
-  dplyr::select(child_ID,
-                CTX_month,
-                CTX_district,
-                SDC_age_in_months) %>%
-  # 3. Display in a table
-  knitr::kable(align = c('l', 'c', 'c', 'c'),
-               caption = "Extract of the database")
+df <- openxlsx::read.xlsx("./data/dataset2.xlsx")
 ```
-
-## Population characteristics
-
-### Codebook
-
-+-----------------------------+---------------+
-| Variable                    | Coding        |
-+=============================+===============+
-| SDC_age_in_months           | |             |
-+-----------------------------+---------------+
-| SDC_sex                     | 1: male       |
-|                             |               |
-|                             | 2: female     |
-|                             |               |
-|                             | 98: unknown   |
-+-----------------------------+---------------+
-| CLIN_fever                  | 0: no         |
-|                             |               |
-|                             | 1: yes        |
-|                             |               |
-|                             | 98: not sure  |
-+-----------------------------+---------------+
-| CLIN_fever_onset            |               |
-+-----------------------------+---------------+
-| CLIN_cough                  | 0: no         |
-|                             |               |
-|                             | 1: yes        |
-|                             |               |
-|                             | 98: not sure  |
-+-----------------------------+---------------+
-| CLIN_diarrhoea              | 0: no         |
-|                             |               |
-|                             | 1: yes        |
-|                             |               |
-|                             | 98: not sure  |
-+-----------------------------+---------------+
-| RX_preconsult_antibiotics   | 0: no         |
-|                             |               |
-|                             | 1: yes        |
-+-----------------------------+---------------+
-| RX_preconsult_antimalarials | 0: no         |
-|                             |               |
-|                             | 1: yes        |
-+-----------------------------+---------------+
-| CTX_district                | Kaliua        |
-|                             |               |
-|                             | Sengerema     |
-|                             |               |
-|                             | Tanga         |
-+-----------------------------+---------------+
-| CTX_area                    | urban         |
-|                             |               |
-|                             | rural         |
-+-----------------------------+---------------+
-| CTX_facility_type           | dispensary    |
-|                             |               |
-|                             | health centre |
-+-----------------------------+---------------+
-
 ```{r}
 df$SDC_sex = as.factor(df$SDC_sex)
 df$CLIN_fever = as.factor(df$CLIN_fever)
@@ -162,41 +75,6 @@ df <- df %>%
   dplyr::mutate(RX_antimalarials_char = ifelse(RX_antimalarials == 1, "Malaria treatment", "No malaria treatment"))
 ```
 
-### Structure of the data
-
-#### :pencil2: Exercise 2 {.unnumbered}
-
-Add the following two new variables to data frame `df`
-
-+---------------------------+---------------+
-| Variable                  | Coding        |
-+===========================+===============+
-| SDC_age_category          | \<2 months    |
-|                           |               |
-|                           | 2-11 months   |
-|                           |               |
-|                           | 12-23 months  |
-|                           |               |
-|                           | 24-35 months  |
-|                           |               |
-|                           | 36-47 months  |
-|                           |               |
-|                           | 48-59 months  |
-+---------------------------+---------------+
-| CLIN_fever_onset_category | \<2 days      |
-|                           |               |
-|                           | 2-3 days      |
-|                           |               |
-|                           | 4-6 days      |
-|                           |               |
-|                           | ≥ 7 days      |
-+---------------------------+---------------+
-
-::: callout-tip
--   Stata: use the gen command
--   R: use the [mutate](https://dplyr.tidyverse.org/reference/mutate.html) and [case_when](https://dplyr.tidyverse.org/reference/case_when.html) functions from the `dplyr` package
-:::
-
 ```{r}
 df <- df %>%
   dplyr::mutate(
@@ -226,14 +104,16 @@ df$SDC_age_category = as.factor(df$SDC_age_category)
 df$CLIN_fever_onset = as.factor(df$CLIN_fever_onset)
 ```
 
-#### :pencil2: Exercise 4 {.unnumbered}
-
-Display descriptive statistics for the population characteristics.
-
-::: callout-tip
--   Stata
--   R: use the [tbl_summary](https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html) function from the `gtsummary` package
-:::
+```{r}
+df <- df %>%
+  dplyr::mutate(CALC_temperature_measured = 1 * (!is.na(MEAS_temperature))) %>%
+  dplyr::mutate(CALC_fever_measured = 1 * (MEAS_temperature >= 37.5)) %>%
+  dplyr::mutate(CALC_fever_all = 1 * ((CLIN_fever == 1) | (!is.na(CALC_fever_measured) & (CALC_fever_measured == 1)))) %>% 
+  dplyr::mutate(across(c(CALC_temperature_measured,
+                         CALC_fever_measured,
+                         CALC_fever_all),
+                       factor))
+```
 
 ```{r}
 df2 <- data.frame(df)
@@ -243,6 +123,10 @@ df3 <- df %>%
 df3$CTX_SPA_obs <- "Observed"
 df4 <- rbind(df2, df3)
 ```
+
+## Descriptive statistics
+
+### Population characteristics
 
 ```{r}
 df4 %>%
@@ -261,15 +145,22 @@ df4 %>%
   gtsummary::tbl_summary(by = CTX_SPA_obs, missing_text = "(Missing)") %>%
   gtsummary::add_p()
 ```
+### Clinical management
+
 ```{r}
 df4 %>%
   dplyr::select(CALC_temperature_measured,
-                CALC_fever,
-                CALC_fever_or_temp,
+                CALC_fever_measured,
+                CALC_fever_all,
                 TEST_malaria_done,
+                TEST_malaria_type,
                 TEST_malaria_result,
+                DX_severe,
                 DX_malaria,
+                DX_malaria_severe,
                 RX_antimalarials,
+                RX_antimalarial_parenteral,
+                RX_antibiotics,
                 MGMT_referral_src_caregiver,
                 MGMT_referral_src_registry,
                 CTX_SPA_obs) %>%
@@ -277,7 +168,9 @@ df4 %>%
   gtsummary::add_p()
 ```
 
-## RCT all
+## From fever assessment to malaria treatment
+
+### RCT population
 
 ::: column-page
 ```{r}
@@ -379,7 +272,7 @@ p
 ```
 :::
 
-## SPA subpopulation
+### SPA (sub)-population
 
 ::: column-page
 ```{r}
