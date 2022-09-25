@@ -43,7 +43,7 @@ Version control allows you to discard recent updates and restore an earlier vers
 ## Git, GitHub and GitHub Desktop
 
 |                                             |                    |                                                                                                                                                                                     |
-|:-------------------------------------------:|:------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|:-----------:|:-----------:|----------------------------------------------|
 |       ![](images/paste-5B5DE956.png)        |      **Git**       | Free and open programme that tracks changes to your files over time.                                                                                                                |
 |       ![](images/paste-A0B6FCC4.png)        |     **GitHub**     | Cloud-based hosting platform that lets you host and manage Git repositories. GitHub synchronizes your local files online and enables you to collaborate with others (and yourself). |
 | ![](images/paste-B8632B75.png){width="120"} | **GitHub Desktop** | Application that allows to use Git commands seamlessly through a visual interface instead of using the command line (for software developers) or GitHub's website.                  |
