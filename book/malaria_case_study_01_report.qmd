@@ -23,7 +23,14 @@ library(networkD3) # For alluvial/Sankey diagrams
 library(tidyverse)
 ```
 
-The data set used for this report is stored in **dataset2.dta**.
+### Instructions
+
+The data set used for this report is stored in **dataset2.dta** or **dataset2.xlsx** or **dataset2.csv**.
+
+1. Derive new variables to data frame `df`
+2. Describe and critically discuss the distribution of consultations by facilities depending on their characteristics (urban vs. rural, health centre vs. dispensary, district)
+3. Describe and critically discuss the demographics, clinical presentation and clinical history of patients.
+4. Describe and critically discuss the clinical assessments (fever assessment, malaria test) conducted during the consultation.
 
 ```{r}
 #| df-print: kable
@@ -42,22 +49,6 @@ df %>%
   knitr::kable(align = c('l', 'c', 'c', 'c'),
                caption = "Extract of the database")
 ```
-## Number of consultations by facility
-
-```{r}
-df %>%
-  dplyr::group_by(CTX_district,
-                  CTX_facility_ID) %>%
-  count() %>% 
-  ggplot2::ggplot(aes(x = CTX_district,
-                      y = n)) + 
-  ggplot2::geom_bar(position = position_dodge2(preserve = "single"),
-                    stat="identity") +
-  ggplot2::labs(x = "", y = "No. consultations") +
-  ggthemes::theme_hc()
-```
-
-## Population characteristics
 
 ### Codebook
 
@@ -70,60 +61,87 @@ df %>%
 +-----------------------------+
 | CLIN_fever_onset            |
 +-----------------------------+
+| MEAS_temperature            |
++-----------------------------+
 
 #### Categorical variables
 
-+-----------------------------+---------------+
-| Variable                    | Coding        |
-+=============================+===============+
-| SDC_sex                     | 1: male       |
-|                             |               |
-|                             | 2: female     |
-|                             |               |
-|                             | 98: unknown   |
-+-----------------------------+---------------+
-| CLIN_fever                  | 0: no         |
-|                             |               |
-|                             | 1: yes        |
-|                             |               |
-|                             | 98: not sure  |
-+-----------------------------+---------------+
-| CLIN_cough                  | 0: no         |
-|                             |               |
-|                             | 1: yes        |
-|                             |               |
-|                             | 98: not sure  |
-+-----------------------------+---------------+
-| CLIN_diarrhoea              | 0: no         |
-|                             |               |
-|                             | 1: yes        |
-|                             |               |
-|                             | 98: not sure  |
-+-----------------------------+---------------+
-| RX_preconsult_antibiotics   | 0: no         |
-|                             |               |
-|                             | 1: yes        |
-+-----------------------------+---------------+
-| RX_preconsult_antimalarials | 0: no         |
-|                             |               |
-|                             | 1: yes        |
-+-----------------------------+---------------+
-| CTX_district                | Kaliua        |
-|                             |               |
-|                             | Sengerema     |
-|                             |               |
-|                             | Tanga         |
-+-----------------------------+---------------+
-| CTX_area                    | urban         |
-|                             |               |
-|                             | rural         |
-+-----------------------------+---------------+
-| CTX_facility_type           | dispensary    |
-|                             |               |
-|                             | health centre |
-+-----------------------------+---------------+
++-----------------------------+------------------------+
+| Variable                    | Coding                 |
++=============================+========================+
+| SDC_sex                     | 1: male                |
+|                             |                        |
+|                             | 2: female              |
+|                             |                        |
+|                             | 98: unknown            |
++-----------------------------+------------------------+
+| CLIN_fever                  | 0: no                  |
+|                             |                        |
+|                             | 1: yes                 |
+|                             |                        |
+|                             | 98: not sure           |
++-----------------------------+------------------------+
+| CLIN_cough                  | 0: no                  |
+|                             |                        |
+|                             | 1: yes                 |
+|                             |                        |
+|                             | 98: not sure           |
++-----------------------------+------------------------+
+| CLIN_diarrhoea              | 0: no                  |
+|                             |                        |
+|                             | 1: yes                 |
+|                             |                        |
+|                             | 98: not sure           |
++-----------------------------+------------------------+
+| RX_preconsult_antibiotics   | 0: no                  |
+|                             |                        |
+|                             | 1: yes                 |
++-----------------------------+------------------------+
+| RX_preconsult_antimalarials | 0: no                  |
+|                             |                        |
+|                             | 1: yes                 |
++-----------------------------+------------------------+
+| CTX_district                | Kaliua                 |
+|                             |                        |
+|                             | Sengerema              |
+|                             |                        |
+|                             | Tanga                  |
++-----------------------------+------------------------+
+| CTX_area                    | urban                  |
+|                             |                        |
+|                             | rural                  |
++-----------------------------+------------------------+
+| CTX_facility_type           | dispensary             |
+|                             |                        |
+|                             | health centre          |
++-----------------------------+------------------------+
+| TEST_malaria_result         | 0: negative\           |
+|                             | 1: positive\           |
+|                             | 2: indeterminate\      |
+|                             | 95: unreadable result\ |
+|                             | 98: not sure           |
++-----------------------------+------------------------+
+| DX_malaria                  | 0: no\                 |
+|                             | 1: yes                 |
++-----------------------------+------------------------+
+| DX_malaria_severe           | 0: no\                 |
+|                             | 1: yes                 |
++-----------------------------+------------------------+
+| RX_antimalarials            | 0: no\                 |
+|                             | 1: yes                 |
++-----------------------------+------------------------+
+| RX_artemether               | 0: no\                 |
+|                             | 1: yes                 |
++-----------------------------+------------------------+
+| RX_antibiotics              | 0: no\                 |
+|                             | 1: yes                 |
++-----------------------------+------------------------+
+| MGMT_referral_src_caregiver |                        |
++-----------------------------+------------------------+
+| MGMT_referral_src_registry  |                        |
++-----------------------------+------------------------+
 
-### Structure of the data
+### Derive new variables
 
 Add the following two new variables to data frame `df`
 
@@ -156,7 +174,7 @@ df <- df %>%
   dplyr::mutate(
     SDC_age_category = dplyr::case_when(
       SDC_age_in_months < 2 ~ "<2 months",
-      SDC_age_in_months >= 2 & SDC_age_in_months < 12 ~ "02-11 months",
+      SDC_age_in_months >= 2 & SDC_age_in_months < 12 ~ "2-11 months",
       SDC_age_in_months >= 12 & SDC_age_in_months < 24 ~ "12-23 months",
       SDC_age_in_months >= 24 & SDC_age_in_months < 36 ~ "24-35 months",
       SDC_age_in_months >= 36 & SDC_age_in_months < 48 ~ "36-47 months",
@@ -166,7 +184,7 @@ df <- df %>%
   ) %>% 
   dplyr::mutate(
     CLIN_fever_onset_category = dplyr::case_when(
-      CLIN_fever_onset < 2 ~ "<2 days",
+      CLIN_fever_onset < 2 ~ "< 2 days",
       CLIN_fever_onset >= 2 & CLIN_fever_onset < 4 ~ "2-3 days",
       CLIN_fever_onset >= 4 & CLIN_fever_onset < 7 ~ "4-6 days",
       CLIN_fever_onset >= 7 ~ ">= 7 days",
@@ -193,6 +211,8 @@ df <- df %>%
                        factor))
 ```
 
+### Structure of the data
+
 ```{r}
 df %>%
   skim(SDC_age_in_months,
@@ -207,103 +227,6 @@ df %>%
        CTX_area,
        CTX_facility_type)
 ```
-### Descriptive statistics
-
-```{r}
-df %>%
-  dplyr::select(SDC_age_category,
-                SDC_sex,
-                CLIN_fever,
-                CLIN_fever_onset_category,
-                CLIN_diarrhoea,
-                CLIN_cough,
-                RX_preconsult_antibiotics,
-                RX_preconsult_antimalarials,
-                CTX_district,
-                CTX_area,
-                CTX_facility_type) %>%
-  gtsummary::tbl_summary(missing_text = "(Missing)")
-```
-
-### Age pyramid
-
-```{r}
-apyramid::age_pyramid(data = df,
-                      age_group = "SDC_age_category",
-                      split_by = "SDC_sex",
-                      na.rm = TRUE)
-```
-
-### Clincial presentation
-
-```{r}
-apyramid::age_pyramid(data = df,
-                      age_group = "SDC_age_category",
-                      split_by = "CLIN_fever",
-                      na.rm = TRUE)
-```
-
-```{r}
-apyramid::age_pyramid(data = df,
-                      age_group = "SDC_age_category",
-                      split_by = "CLIN_cough",
-                      na.rm = TRUE)
-```
-
-```{r}
-apyramid::age_pyramid(data = df,
-                      age_group = "SDC_age_category",
-                      split_by = "CLIN_diarrhoea",
-                      na.rm = TRUE)
-```
-
-## Clinical management
-
-### Codebook
-
-#### Numeric variables
-
-+-----------------------------+
-| Variable                    | 
-+=============================+
-| MEAS_temperature            |
-+-----------------------------+
-
-#### Categorical variables
-
-+-----------------------------+------------------------+
-| Variable                    | Coding                 |
-+=============================+========================+
-|                             |                        |
-+-----------------------------+------------------------+
-| TEST_malaria_result         | 0: negative\           |
-|                             | 1: positive\           |
-|                             | 2: indeterminate\      |
-|                             | 95: unreadable result\ |
-|                             | 98: not sure           |
-+-----------------------------+------------------------+
-| DX_malaria                  | 0: no\                 |
-|                             | 1: yes                 |
-+-----------------------------+------------------------+
-| DX_malaria_severe           | 0: no\                 |
-|                             | 1: yes                 |
-+-----------------------------+------------------------+
-| RX_antimalarials            | 0: no\                 |
-|                             | 1: yes                 |
-+-----------------------------+------------------------+
-| RX_artemether               | 0: no\                 |
-|                             | 1: yes                 |
-+-----------------------------+------------------------+
-| RX_antibiotics              | 0: no\                 |
-|                             | 1: yes                 |
-+-----------------------------+------------------------+
-| MGMT_referral_src_caregiver |                        |
-+-----------------------------+------------------------+
-| MGMT_referral_src_registry  |                        |
-+-----------------------------+------------------------+
-
-### Structure of the data
-
 ```{r}
 df <- df %>%
   dplyr::mutate(across(c(TEST_malaria_done,
@@ -318,6 +241,17 @@ df <- df %>%
                          RX_antibiotics,
                          MGMT_referral_src_caregiver,
                          MGMT_referral_src_registry),
+                       factor))
+```
+
+```{r}
+df <- df %>%
+  dplyr::mutate(CALC_temperature_measured = 1 * (!is.na(MEAS_temperature))) %>%
+  dplyr::mutate(CALC_fever_measured = 1 * (MEAS_temperature >= 37.5)) %>%
+  dplyr::mutate(CALC_fever_all = 1 * ((CLIN_fever == 1) | (!is.na(CALC_fever_measured) & (CALC_fever_measured == 1)))) %>% 
+  dplyr::mutate(across(c(CALC_temperature_measured,
+                         CALC_fever_measured,
+                         CALC_fever_all),
                        factor))
 ```
 
@@ -337,18 +271,440 @@ df %>%
               MGMT_referral_src_caregiver,
               MGMT_referral_src_registry)
 ```
-### Descriptive statistics
+## Facility characteristics
+
+Describe and critically discuss the distribution of consultations by facilities depending on their characteristics (urban vs. rural, health centre vs. dispensary, district) 
 
 ```{r}
-df <- df %>%
-  dplyr::mutate(CALC_temperature_measured = 1 * (!is.na(MEAS_temperature))) %>%
-  dplyr::mutate(CALC_fever_measured = 1 * (MEAS_temperature >= 37.5)) %>%
-  dplyr::mutate(CALC_fever_all = 1 * ((CLIN_fever == 1) | (!is.na(CALC_fever_measured) & (CALC_fever_measured == 1)))) %>% 
-  dplyr::mutate(across(c(CALC_temperature_measured,
-                         CALC_fever_measured,
-                         CALC_fever_all),
-                       factor))
+df %>%
+  dplyr::select(CTX_facility_type,
+                CTX_area,
+                CTX_district) %>%
+  gtsummary::tbl_summary(missing_text = "(Missing)")
 ```
+
+### Urban / rural consultations
+
+Describe the distribution of consultations in urban vs. rural facilities
+
+```{r}
+prop.table(table(Area = df$CTX_area)) %>% 
+  knitr::kable()
+```
+
+```{r}
+N <- nrow(df)
+df %>%
+  dplyr::group_by(CTX_area) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = 1, y = n, fill = CTX_area)) +
+  geom_bar(stat="identity") +
+  ylab("Number of consultations") +
+  geom_text(aes(label=paste0(sprintf("%1.1f", 100 * n / N),"%")),
+            position=position_stack(vjust=0.5)) +
+  ggtitle("Distribution of consultations between rural and urban areas") +
+  xlim(-1, 3) +
+  theme_hc() +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+```
+
+```{r}
+df %>%
+  dplyr::group_by(CTX_area,
+                  CTX_facility_ID) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = CTX_area,
+                      y = n)) + 
+  ggplot2::geom_bar(position = position_dodge2(preserve = "single"),
+                    stat="identity") +
+  ggplot2::labs(x = "", y = "No. consultations") +
+  ggthemes::theme_hc()
+```
+```{r}
+df %>% 
+  dplyr::group_by(CTX_area,
+                  CTX_facility_ID) %>%
+  count %>% 
+  ggplot2::ggplot(aes(x = CTX_area,
+                      y = n)) + 
+  ggplot2::geom_boxplot()  +
+  ggplot2::coord_flip()
+```
+
+### Consultations by type of facility
+
+Describe the distribution of consultations in dispensaries vs. health centres.
+
+```{r}
+prop.table(table(Type = df$CTX_facility_type)) %>% 
+  knitr::kable()
+```
+
+```{r}
+N <- nrow(df)
+df %>%
+  dplyr::group_by(CTX_facility_type) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = 1, y = n, fill = CTX_facility_type)) +
+  geom_bar(stat="identity") +
+  ylab("Number of consultations") +
+  geom_text(aes(label=paste0(sprintf("%1.1f", 100 * n / N),"%")),
+            position=position_stack(vjust=0.5)) +
+  ggtitle("Distribution of consultations between dispensaries and health centres") +
+  xlim(-1, 3) +
+  theme_hc() +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+```
+```{r}
+df %>%
+  dplyr::group_by(CTX_facility_type,
+                  CTX_facility_ID) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = CTX_facility_type,
+                      y = n)) + 
+  ggplot2::geom_bar(position = position_dodge2(preserve = "single"),
+                    stat="identity") +
+  ggplot2::labs(x = "", y = "No. consultations") +
+  ggthemes::theme_hc()
+```
+```{r}
+df %>% 
+  dplyr::group_by(CTX_facility_type,
+                  CTX_facility_ID) %>%
+  count %>% 
+  ggplot2::ggplot(aes(x = CTX_facility_type,
+                      y = n)) + 
+  geom_boxplot() +
+  ggplot2::coord_flip()
+```
+
+### Consultations by district
+
+Describe the distribution of consultations by district (Kaliua vs. Sengerema vs. tanga)
+
+```{r}
+prop.table(table(District = df$CTX_district)) %>% 
+  knitr::kable()
+```
+
+```{r}
+N <- nrow(df)
+df %>%
+  dplyr::group_by(CTX_district) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = 1, y = n, fill = CTX_district)) +
+  geom_bar(stat="identity") +
+  ylab("Number of consultations") +
+  geom_text(aes(label=paste0(sprintf("%1.1f", 100 * n / N),"%")),
+            position=position_stack(vjust=0.5)) +
+  ggtitle("Distribution of consultations between districts") +
+  xlim(-1, 3) +
+  theme_hc() +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+```
+
+#### Number of consultations by facility within each district
+
+```{r}
+#| label: fig-nb-consultations-by-district
+#| caption: Number of consultations by facility within each district.
+df %>%
+  dplyr::group_by(CTX_district,
+                  CTX_facility_ID) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = CTX_district,
+                      y = n)) + 
+  ggplot2::geom_bar(position = position_dodge2(preserve = "single"),
+                    stat="identity") +
+  ggplot2::labs(x = "", y = "No. consultations") +
+  ggthemes::theme_hc()
+```
+
+```{r}
+df %>% 
+  dplyr::group_by(CTX_district,
+                  CTX_facility_ID) %>%
+  count %>% 
+  ggplot2::ggplot(aes(x = CTX_district,
+                      y = n)) + 
+  ggplot2::geom_boxplot() +
+  ggplot2::coord_flip()
+```
+### Consultations by area, type of facility and district
+
+```{r}
+#| df-print: kable
+table(Area = df$CTX_area,
+      Type = df$CTX_facility_type,
+      District = df$CTX_district) %>%
+  knitr::kable()
+```
+## Patient characteristics
+
+Describe and critically discuss the demographics, clinical presentation and clinical history of patients.
+
+```{r}
+df %>%
+  dplyr::select(SDC_age_category,
+                SDC_sex,
+                CLIN_fever,
+                CLIN_fever_onset_category,
+                CLIN_diarrhoea,
+                CLIN_cough,
+                RX_preconsult_antibiotics,
+                RX_preconsult_antimalarials) %>%
+  gtsummary::tbl_summary(missing_text = "(Missing)")
+```
+```{r}
+df %>%
+  dplyr::select(SDC_age_category,
+                SDC_sex,
+                CLIN_fever,
+                CLIN_fever_onset_category,
+                CLIN_diarrhoea,
+                CLIN_cough,
+                RX_preconsult_antibiotics,
+                RX_preconsult_antimalarials,
+                CTX_facility_type) %>%
+  gtsummary::tbl_summary(by = CTX_facility_type, missing_text = "(Missing)")
+```
+
+### Demographics
+
+```{r}
+apyramid::age_pyramid(data = df,
+                      age_group = "SDC_age_category",
+                      split_by = "SDC_sex",
+                      na.rm = TRUE)
+```
+```{r}
+df %>% 
+  dplyr::group_by(CTX_facility_type,
+                  SDC_age_category) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = SDC_age_category,
+                      y = n,
+                      fill = CTX_facility_type,
+                      label = n)) +
+  ggplot2::geom_col(position = "fill") +
+  ggplot2::geom_text(aes(label=n),
+            position=position_fill(vjust=0.5)) +
+  scale_y_continuous(labels = scales::percent)
+```
+
+### Clinical presentation
+
+#### Fever
+
+```{r}
+df %>% 
+  dplyr::group_by(CLIN_fever,
+                  SDC_age_category) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = SDC_age_category,
+                      y = n,
+                      fill = CLIN_fever,
+                      label = n)) +
+  ggplot2::geom_col(position = "fill") +
+  ggplot2::geom_text(aes(label=n),
+            position=position_fill(vjust=0.5)) +
+  scale_y_continuous(labels = scales::percent)
+```
+
+```{r}
+df %>%
+  ggplot2::ggplot(aes(SDC_age_in_months, fill = CLIN_fever)) +
+  ggplot2::geom_histogram(bins = 60) +
+  xlab('Age in months')
+```
+
+#### Cough
+
+```{r}
+df %>% 
+  dplyr::group_by(CLIN_cough,
+                  SDC_age_category) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = SDC_age_category,
+                      y = n,
+                      fill = CLIN_cough,
+                      label = n)) +
+  ggplot2::geom_col(position = "fill") +
+  ggplot2::geom_text(aes(label=n),
+            position=position_fill(vjust=0.5)) +
+  scale_y_continuous(labels = scales::percent)
+```
+
+```{r}
+df %>%
+  ggplot2::ggplot(aes(SDC_age_in_months, fill = CLIN_cough)) +
+  ggplot2::geom_histogram(bins = 60) +
+  xlab('Age in months')
+```
+#### Diarrhoea
+
+```{r}
+df %>% 
+  dplyr::group_by(CLIN_diarrhoea,
+                  SDC_age_category) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = SDC_age_category,
+                      y = n,
+                      fill = CLIN_diarrhoea,
+                      label = n)) +
+  ggplot2::geom_col(position = "fill") +
+  ggplot2::geom_text(aes(label=n),
+            position=position_fill(vjust=0.5)) +
+  scale_y_continuous(labels = scales::percent)
+```
+
+```{r}
+df %>%
+  ggplot2::ggplot(aes(SDC_age_in_months, fill = CLIN_diarrhoea)) +
+  ggplot2::geom_histogram(bins = 60) +
+  xlab('Age in months')
+```
+#### Combination of symptoms
+
+```{r}
+UpSetR::upset(df %>%
+                dplyr::mutate(Fever = 1 * (CLIN_fever == 1)) %>% 
+                dplyr::mutate(Cough = 1 * (CLIN_cough == 1)) %>% 
+                dplyr::mutate(Diarrhoea = 1 * (CLIN_diarrhoea == 1)) %>% 
+                dplyr::select(Cough, Fever, Diarrhoea),
+  sets = c("Cough", "Fever", "Diarrhoea"),
+  order.by = "freq",
+  sets.bar.color = c("blue", "red", "black"), # optional colors
+  empty.intersections = "on",
+  # nsets = 3,
+  number.angles = 0,
+  point.size = 3.5,
+  line.size = 2, 
+  mainbar.y.label = "Combination of symptoms",
+  sets.x.label = "Children")
+```
+
+```{r}
+UpSetR::upset(df %>%
+                dplyr::filter(SDC_age_category == "<2 months") %>% 
+                dplyr::mutate(Fever = 1 * (CLIN_fever == 1)) %>% 
+                dplyr::mutate(Cough = 1 * (CLIN_cough == 1)) %>% 
+                dplyr::mutate(Diarrhoea = 1 * (CLIN_diarrhoea == 1)) %>% 
+                dplyr::select(Cough, Fever, Diarrhoea),
+  sets = c("Cough", "Fever", "Diarrhoea"),
+  order.by = "freq",
+  sets.bar.color = c("blue", "red", "black"), # optional colors
+  empty.intersections = "on",
+  # nsets = 3,
+  number.angles = 0,
+  point.size = 3.5,
+  line.size = 2, 
+  mainbar.y.label = "Combination of symptoms",
+  sets.x.label = "Children < 2 months")
+```
+```{r}
+UpSetR::upset(df %>%
+                dplyr::filter(SDC_age_category == "2-11 months") %>% 
+                dplyr::mutate(Fever = 1 * (CLIN_fever == 1)) %>% 
+                dplyr::mutate(Cough = 1 * (CLIN_cough == 1)) %>% 
+                dplyr::mutate(Diarrhoea = 1 * (CLIN_diarrhoea == 1)) %>% 
+                dplyr::select(Cough, Fever, Diarrhoea),
+  sets = c("Cough", "Fever", "Diarrhoea"),
+  order.by = "freq",
+  sets.bar.color = c("blue", "red", "black"), # optional colors
+  empty.intersections = "on",
+  # nsets = 3,
+  number.angles = 0,
+  point.size = 3.5,
+  line.size = 2, 
+  mainbar.y.label = "Combination of symptoms",
+  sets.x.label = "Children 2-11 months")
+```
+
+```{r}
+UpSetR::upset(df %>%
+                dplyr::filter(SDC_age_category == "12-23 months") %>% 
+                dplyr::mutate(Fever = 1 * (CLIN_fever == 1)) %>% 
+                dplyr::mutate(Cough = 1 * (CLIN_cough == 1)) %>% 
+                dplyr::mutate(Diarrhoea = 1 * (CLIN_diarrhoea == 1)) %>% 
+                dplyr::select(Cough, Fever, Diarrhoea),
+  sets = c("Cough", "Fever", "Diarrhoea"),
+  order.by = "freq",
+  sets.bar.color = c("blue", "red", "black"), # optional colors
+  empty.intersections = "on",
+  # nsets = 3,
+  number.angles = 0,
+  point.size = 3.5,
+  line.size = 2, 
+  mainbar.y.label = "Combination of symptoms",
+  sets.x.label = "Children 12-23 months")
+```
+
+```{r}
+UpSetR::upset(df %>%
+                dplyr::filter(SDC_age_category == "24-35 months") %>% 
+                dplyr::mutate(Fever = 1 * (CLIN_fever == 1)) %>% 
+                dplyr::mutate(Cough = 1 * (CLIN_cough == 1)) %>% 
+                dplyr::mutate(Diarrhoea = 1 * (CLIN_diarrhoea == 1)) %>% 
+                dplyr::select(Cough, Fever, Diarrhoea),
+  sets = c("Cough", "Fever", "Diarrhoea"),
+  order.by = "freq",
+  sets.bar.color = c("blue", "red", "black"), # optional colors
+  empty.intersections = "on",
+  # nsets = 3,
+  number.angles = 0,
+  point.size = 3.5,
+  line.size = 2, 
+  mainbar.y.label = "Combination of symptoms",
+  sets.x.label = "Children 24-35 months")
+```
+
+```{r}
+UpSetR::upset(df %>%
+                dplyr::filter(SDC_age_category == "36-47 months") %>% 
+                dplyr::mutate(Fever = 1 * (CLIN_fever == 1)) %>% 
+                dplyr::mutate(Cough = 1 * (CLIN_cough == 1)) %>% 
+                dplyr::mutate(Diarrhoea = 1 * (CLIN_diarrhoea == 1)) %>% 
+                dplyr::select(Cough, Fever, Diarrhoea),
+  sets = c("Cough", "Fever", "Diarrhoea"),
+  order.by = "freq",
+  sets.bar.color = c("blue", "red", "black"), # optional colors
+  empty.intersections = "on",
+  # nsets = 3,
+  number.angles = 0,
+  point.size = 3.5,
+  line.size = 2, 
+  mainbar.y.label = "Combination of symptoms",
+  sets.x.label = "Children 36-47 months")
+```
+
+```{r}
+UpSetR::upset(df %>%
+                dplyr::filter(SDC_age_category == "48-59 months") %>% 
+                dplyr::mutate(Fever = 1 * (CLIN_fever == 1)) %>% 
+                dplyr::mutate(Cough = 1 * (CLIN_cough == 1)) %>% 
+                dplyr::mutate(Diarrhoea = 1 * (CLIN_diarrhoea == 1)) %>% 
+                dplyr::select(Cough, Fever, Diarrhoea),
+  sets = c("Cough", "Fever", "Diarrhoea"),
+  order.by = "freq",
+  sets.bar.color = c("blue", "red", "black"), # optional colors
+  empty.intersections = "on",
+  # nsets = 3,
+  number.angles = 0,
+  point.size = 3.5,
+  line.size = 2, 
+  mainbar.y.label = "Combination of symptoms",
+  sets.x.label = "Children 48-59 months")
+```
+## Clinical assessments conducted during the consultation
+
+Describe and critically discuss the clinical assessments (fever assessment, malaria test) conducted during the consultation.
 
 ```{r}
 df %>%
@@ -368,7 +724,159 @@ df %>%
                 MGMT_referral_src_registry) %>%
   gtsummary::tbl_summary(missing_text = "(Missing)")
 ```
-## Fever assessment
+```{r}
+df %>%
+  dplyr::select(CALC_temperature_measured,
+                CALC_fever_measured,
+                CALC_fever_all,
+                TEST_malaria_done,
+                TEST_malaria_type,
+                TEST_malaria_result,
+                DX_severe,
+                DX_malaria,
+                DX_malaria_severe,
+                RX_antimalarials,
+                RX_antimalarial_parenteral,
+                RX_antibiotics,
+                MGMT_referral_src_caregiver,
+                MGMT_referral_src_registry,
+                CTX_facility_type) %>%
+  gtsummary::tbl_summary(by = CTX_facility_type,
+                         missing_text = "(Missing)")
+```
+
+### Temperature measurement
+
+Distribution of temperature measurements and associated factors
+
+```{r}
+N <- nrow(df)
+df %>%
+  dplyr::group_by(CALC_temperature_measured) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = 1, y = n, fill = CALC_temperature_measured)) +
+  geom_bar(stat="identity") +
+  ylab("Number of consultations") +
+  geom_text(aes(label=paste0(sprintf("%1.1f", 100 * n / N),"%")),
+            position=position_stack(vjust=0.5)) +
+  ggtitle("Proportion of consultations with a temperature measurement recorded") +
+  xlim(-1, 3) +
+  theme_hc() +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+```
+```{r}
+df %>% 
+  dplyr::group_by(CALC_temperature_measured,
+                  CTX_facility_type) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = CTX_facility_type,
+                      y = n,
+                      fill = CALC_temperature_measured,
+                      label = n)) +
+  ggplot2::geom_col(position = "fill") +
+  ggplot2::geom_text(aes(label=n),
+            position=position_fill(vjust=0.5)) +
+  scale_y_continuous(labels = scales::percent)
+```
+
+```{r}
+#| fig.height: 10
+df %>% 
+  dplyr::group_by(CALC_temperature_measured,
+                  CTX_facility_ID,
+                  CTX_district,
+                  CTX_facility_type) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = CTX_facility_ID,
+                      y = n,
+                      fill = CALC_temperature_measured,
+                      label = n)) +
+  ggplot2::geom_col(position = "fill") +
+  ggplot2::geom_text(aes(label=n),
+            position=position_fill(vjust=0.5)) +
+  scale_y_continuous(labels = scales::percent) +
+  facet_grid( CTX_district ~ CTX_facility_type, space = "free", scales = "free")
+```
+
+```{r}
+#| label: fig-temperature-range-global
+#| fig.height: 3
+#| fig-cap: "Distribution of temperature measurements"
+df %>%
+  ggplot2::ggplot(aes(x = 1,
+                      y = MEAS_temperature)) +
+  ggplot2::ylim(34, 43) + 
+  ggplot2::xlim(-1, 3) + 
+  ggplot2::geom_boxplot() + 
+  labs(y = "Temperature (in °C)", x = "Facility") +
+  theme_hc() +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+```
+
+```{r}
+#| label: fig-temperature-range-by-facility-type
+#| fig.height: 3
+#| fig-cap: "Distribution of temperature measurements by type of facility"
+df %>%
+  ggplot2::ggplot(aes(x = 1,
+                      y = MEAS_temperature,
+                      fill = CTX_facility_type)) +
+  ggplot2::ylim(34, 43) + 
+  ggplot2::xlim(0, 2) + 
+  ggplot2::geom_boxplot() + 
+  labs(y = "Temperature (in °C)", x = "Facility") +
+  theme_hc() +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+```
+
+### Fever assessment
+
+Distribution of measured fever
+
+```{r}
+#| label: fig-measured-fever
+#| fig-cap: "Proportion of consultations with a temperature superior or equal to 37.5°C among children with a temperature measurement"
+df_temp <- df %>%
+  dplyr::filter(CALC_temperature_measured == 1) 
+N <- nrow(df_temp)
+df_temp %>% 
+  dplyr::group_by(CALC_fever_measured) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = 1, y = n, fill = CALC_fever_measured)) +
+  geom_bar(stat="identity") +
+  ylab("Number of consultations") +
+  geom_text(aes(label=paste0(sprintf("%1.1f", 100 * n / N),"%")),
+            position=position_stack(vjust=0.5)) +
+  xlim(-1, 3) +
+  theme_hc() +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+```
+
+```{r}
+N <- nrow(df)
+df %>%
+  dplyr::group_by(CALC_fever_measured) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = 1, y = n, fill = CALC_fever_measured)) +
+  geom_bar(stat="identity") +
+  ylab("Number of consultations") +
+  geom_text(aes(label=paste0(sprintf("%1.1f", 100 * n / N),"%")),
+            position=position_stack(vjust=0.5)) +
+  ggtitle("Proportion of consultations with a temperature superior or equal to 37.5°C among all children") +
+  xlim(-1, 3) +
+  theme_hc() +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+```
 
 ```{r}
 #| label: fig-temperature-range
@@ -381,18 +889,186 @@ df %>%
   ggplot2::ylim(34, 43) + 
   ggplot2::geom_boxplot() + 
   labs(y = "Temperature (in °C)", x = "Facility") +
-  coord_flip()
+  facet_grid( CTX_district ~ CTX_facility_type, space = "free", scales = "free")
+```
+
+```{r}
+library(finalfit)
+explanatory = c("SDC_age_category", 
+                "CTX_district",
+                "CTX_area",
+                "CTX_facility_type", 
+                "CLIN_fever")
+dependent = "MEAS_temperature"
+df %>% 
+  finalfit::missing_compare(dependent, explanatory) %>% 
+    knitr::kable(row.names=FALSE, align = c("l", "l", "r", "r", "r"))
+```
+### Malaria tests
+
+```{r}
+table("Fever measured" = df$CALC_fever_measured,
+      "Malaria test done" = df$TEST_malaria_done) %>% 
+  knitr::kable()
+```
+
+```{r}
+#|fig-caption: Malaria treatment if malaria diagnosis / no malaria diagnosis
+df %>% 
+  dplyr::group_by(TEST_malaria_done,
+                  CALC_fever_measured) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = CALC_fever_measured,
+                      y = n,
+                      fill = TEST_malaria_done,
+                      label = n)) +
+  ggplot2::geom_col(position = "fill") +
+  ggplot2::geom_text(aes(label=n),
+            position=position_fill(vjust=0.5)) +
+  scale_y_continuous(labels = scales::percent)
 ```
 ```{r}
-#| label: fig-fever-prevalence
-#| fig.height: 5
-#| fig.width: 7
-#| fig-cap: "Prevalence of fever when of whole clinic vs of those who measure to indicate bias"
-DataExplorer::plot_bar(df %>% 
-                         dplyr::select(CALC_fever_all, CALC_temperature_measured),
-                       by = "CALC_fever_all")
+#|fig-caption: Malaria treatment if malaria diagnosis / no malaria diagnosis
+df %>% 
+  dplyr::group_by(TEST_malaria_done,
+                  CLIN_fever) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = CLIN_fever,
+                      y = n,
+                      fill = TEST_malaria_done,
+                      label = n)) +
+  ggplot2::geom_col(position = "fill") +
+  ggplot2::geom_text(aes(label=n),
+            position=position_fill(vjust=0.5)) +
+  scale_y_continuous(labels = scales::percent)
 ```
-## From fever assessment to malaria treatment
+
+### Malaria diagnoses
+
+```{r}
+#|fig-caption: Malaria diagnoses by malaria test conducted
+df %>% 
+  dplyr::group_by(DX_malaria,
+                  TEST_malaria_done) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = TEST_malaria_done,
+                      y = n,
+                      fill = DX_malaria,
+                      label = n)) +
+  ggplot2::geom_col(position = "fill") +
+  ggplot2::geom_text(aes(label=n),
+            position=position_fill(vjust=0.5)) +
+  scale_y_continuous(labels = scales::percent)
+```
+```{r}
+#|fig-caption: Malaria diagnoses by test results
+df %>% 
+  dplyr::filter(TEST_malaria_done == 1) %>% 
+  dplyr::group_by(DX_malaria,
+                  TEST_malaria_result) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = TEST_malaria_result,
+                      y = n,
+                      fill = DX_malaria,
+                      label = n)) +
+  ggplot2::geom_col(position = "fill") +
+  ggplot2::geom_text(aes(label=n),
+            position=position_fill(vjust=0.5)) +
+  scale_y_continuous(labels = scales::percent)
+```
+### Malaria treatments
+
+```{r}
+#|fig-caption: Malaria treatment if malaria diagnosis / no malaria diagnosis
+df %>% 
+  dplyr::group_by(RX_antimalarials,
+                  DX_malaria) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = DX_malaria,
+                      y = n,
+                      fill = RX_antimalarials,
+                      label = n)) +
+  ggplot2::geom_col(position = "fill") +
+  ggplot2::geom_text(aes(label=n),
+            position=position_fill(vjust=0.5)) +
+  scale_y_continuous(labels = scales::percent)
+```
+```{r}
+#|fig-caption: Parenteral treatment if severe malaria diagnosis / non-severe malaria diagnosis
+df %>% 
+  dplyr::group_by(RX_antimalarials,
+                  DX_malaria) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = DX_malaria,
+                      y = n,
+                      fill = RX_antimalarials,
+                      label = n)) +
+  ggplot2::geom_col(position = "fill") +
+  ggplot2::geom_text(aes(label=n),
+            position=position_fill(vjust=0.5)) +
+  scale_y_continuous(labels = scales::percent)
+```
+
+```{r}
+#|fig-caption: Malaria treatment by malaria test results (positive / negative)
+df %>% 
+  dplyr::filter(TEST_malaria_done == 1) %>% 
+  dplyr::group_by(RX_antimalarials,
+                  TEST_malaria_result) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = TEST_malaria_result,
+                      y = n,
+                      fill = RX_antimalarials,
+                      label = n)) +
+  ggplot2::geom_col(position = "fill") +
+  ggplot2::geom_text(aes(label=n),
+            position=position_fill(vjust=0.5)) +
+  scale_y_continuous(labels = scales::percent)
+```
+```{r}
+#|fig-caption: Malaria treatment by fever and neither positive test / malaria diagnosis
+df %>% 
+  dplyr::filter((TEST_malaria_result != 1)) %>% 
+  dplyr::group_by(RX_antimalarials,
+                  CLIN_fever) %>%
+  count() %>% 
+  ggplot2::ggplot(aes(x = CLIN_fever,
+                      y = n,
+                      fill = RX_antimalarials,
+                      label = n)) +
+  ggplot2::geom_col(position = "fill") +
+  ggplot2::geom_text(aes(label=n),
+            position=position_fill(vjust=0.5)) +
+  scale_y_continuous(labels = scales::percent)
+```
+```{r}
+df <- df %>%
+  dplyr::mutate(TEST_malaria_positive = 1* (TEST_malaria_result == 1))
+table(Result = df$TEST_malaria_result,
+      Diagnosis = df$DX_malaria,
+      Antimalarials = df$RX_antimalarials) %>% 
+  knitr::kable()
+```
+
+#### Combination of treatments
+
+```{r}
+UpSetR::upset(df %>%
+                dplyr::select(RX_ACT, RX_AL, RX_artemether, RX_artesunate, RX_primaquine, RX_quinine) %>% 
+                dplyr::mutate(across(c(RX_ACT, RX_AL, RX_artemether, RX_artesunate, RX_primaquine, RX_quinine), as.integer)),
+  sets = c("RX_ACT", "RX_AL", "RX_artemether", "RX_artesunate", "RX_primaquine", "RX_quinine"),
+  order.by = "freq",
+  sets.bar.color = c("blue", "red", "yellow", "darkgreen", "orange", "green"), # optional colors
+  empty.intersections = "on",
+  # nsets = 3,
+  number.angles = 0,
+  point.size = 3.5,
+  line.size = 2, 
+  mainbar.y.label = "Antimalarial prescriptions",
+  sets.x.label = "Children with antimalarials")
+```
+
+## Data flow from fever assessment to malaria treatment (Sankey diagrams)
 
 ```{r}
 df <- df %>%
@@ -514,6 +1190,8 @@ p
 ```
 :::
 
+### Facility F8793
+
 ::: column-page
 ```{r}
 facility1_df <- df %>%
@@ -609,6 +1287,8 @@ p
 ```
 :::
 
+### Facility F7729
+
 ::: column-page
 ```{r}
 facility1_df <- df %>% dplyr::filter(CTX_facility_ID == "F7729")
@@ -702,56 +1382,3 @@ p <- sankeyNetwork(
 p
 ```
 :::
-
-## Malaria tests
-
--   malaria tests of those with history or measured fever
-
-```{r}
-table(df$CALC_fever_all, df$TEST_malaria_result)
-```
-
-```{r}
-df %>%
-  dplyr::filter(CALC_fever_all == 1) %>%
-  dplyr::select(TEST_malaria_result,
-                CTX_facility_ID) %>%
-  gtsummary::tbl_summary(by = CTX_facility_ID)
-```
-
-## Malaria treatments
-
--   malaria diagnoses vs. positive tests vs. treatments
-
-```{r}
-df <- df %>%
-  dplyr::mutate(TEST_malaria_positive = 1* (TEST_malaria_result == 1))
-table(df$TEST_malaria_result, df$DX_malaria, df$RX_antimalarials) %>% 
-  knitr::kable()
-```
-
-```{r}
-df %>%
-  dplyr::filter(TEST_malaria_positive == 1) %>%
-  dplyr::select(DX_malaria,
-                RX_antimalarials,
-                CTX_facility_ID) %>%
-  gtsummary::tbl_summary(by = CTX_facility_ID)
-```
-
-```{r}
-UpSetR::upset(df %>%
-                dplyr::select(RX_ACT, RX_AL, RX_artemether, RX_artesunate, RX_primaquine, RX_quinine) %>% 
-                dplyr::mutate(across(c(RX_ACT, RX_AL, RX_artemether, RX_artesunate, RX_primaquine, RX_quinine), as.integer)),
-  sets = c("RX_ACT", "RX_AL", "RX_artemether", "RX_artesunate", "RX_primaquine", "RX_quinine"),
-  order.by = "freq",
-  sets.bar.color = c("blue", "red", "yellow", "darkgreen", "orange", "green"), # optional colors
-  empty.intersections = "on",
-  # nsets = 3,
-  number.angles = 0,
-  point.size = 3.5,
-  line.size = 2, 
-  mainbar.y.label = "Antimalarial prescriptions",
-  sets.x.label = "Children with antimalarials")
-```
-

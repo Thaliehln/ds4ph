@@ -68,27 +68,17 @@ We want to do some data exploration to get an initial understanding of the data.
 -   you need to check that the information you need for your task is actually present in the dataset;
 -   inspecting the data is a good way to find peculiarities. These can arise during data collection (for example, malfunctioning sensor or missing values), or from the way the data is processed afterwards (for example capped values).
 
-### Variables / features
+### Data structure
 
 ::: panel-tabset
 #### :pencil2: Exercise 1
 
 Examine the structure of the data, including variable names, labels.
 
-1.  How many variables are numerical?
+1.  How many features are numerical?
 2.  How many features are categorical?
 
-::: callout-tip
--   Stata: use the [codebook](https://www.stata.com/manuals/dcodebook.pdf) command
--   R: use the [skim](https://docs.ropensci.org/skimr/reference/skim.html) function from the `skimr` package
-:::
-
-Display the variables/features **child_id**, **test** and **test** for the **10 first observations/samples** in the data.
-
-::: callout-tip
--   Stata hint: use the the combination of `describe` and `list` command to inspect the data
--   R hint: you need to load the `dplyr` library to use piping
-:::
+Display the variables/features **child_id**, **MEAS_weight_in_kg** and **MEAS_height_in_cm** for the **10 first samples** in the data.
 
 ```{r}
 #| echo: fenced
@@ -102,22 +92,85 @@ Display the variables/features **child_id**, **test** and **test** for the **10 
 df %>%
   skimr::skim()
 ```
+
 :::
 
 Numerical variables can be naturally handled by machine learning algorithms that are typically composed of a sequence of arithmetic instructions such as additions and multiplications.
 
-## Missing data
+### Data preparation
+
+#### Missing data
 
 ```{r}
 #| echo: fenced
 DataExplorer::plot_missing(df,
                            geom_label_args = list(size = 2, label.padding = unit(0.2, "lines")))
 ```
+#### Encoding of categorical data
+
+```{r}
+sex_df <- df %>%
+  dplyr::select(SDC_sex)
+```
+
+```{python}
+#| echo: fenced
+from sklearn.preprocessing import OneHotEncoder
+
+encoder = OneHotEncoder(sparse = False)
+sex_encoded = encoder.fit_transform(r.sex_df)
+```
+
+```{r}
+df <- cbind(df,
+            data.frame(py$sex_encoded)) %>% 
+  dplyr::rename(sex_male = X1,
+                sex_female = X2)
+df %>%
+  head(10) %>%
+  knitr::kable()
+```
+
+### Target classes
+
+::: panel-tabset
+#### :pencil2: Exercise 2
+
+What are the different age categories available in the dataset and how many observations/samples of each types are there?
+
+::: callout-tip
+-   R: use `table`
+-   Python: select the right column and use the `value_counts` method.
+:::
 
 ```{r}
 #| echo: fenced
-DataExplorer::plot_histogram(df)
+# Write your code here
 ```
+
+#### R
+
+```{r}
+#| echo: fenced
+table(df$SDC_age_category)
+```
+:::
+
+### Feature distribution
+
+::: panel-tabset
+#### :pencil2: Exercise 3
+
+Let us now look at the distribution of individual features, to get more insights about the data.
+
+```{r}
+#| echo: fenced
+# Write your code here
+```
+
+#### R
+
+We can start by plotting histograms, note that this only works for features containing numerical values
 
 ```{r}
 #| echo: fenced
@@ -135,6 +188,8 @@ df %>%  ggplot2::ggplot(aes(x = MEAS_weight_in_kg,
   theme_minimal()
 ```
 
+#### Python
+
 ```{python}
 #| echo: fenced
 import seaborn
@@ -143,57 +198,6 @@ pairplot_figure = seaborn.pairplot(r.df, hue = "SDC_age_category")
 matplotlib.pyplot.show()
 ```
 
-### Target classes
-
-::: panel-tabset
-### :pencil2: Exercise 1
-
-What are the different age categories available in the dataset and how many observations/samples of each types are there?
-
-::: callout-tip
--   R: use `table`
--   Python: select the right column and use the `value_counts` method.
-:::
-
-```{r}
-#| echo: fenced
-# Write your code here
-```
-
-### R
-
-```{r}
-#| echo: fenced
-table(df$SDC_age_category)
-```
-:::
-
-## Variable/feature distribution
-
-Let's look at the distribution of individual features, to get some insights about the data.
-
-We can start by plotting histograms, note that this only works for features containing numerical values.
-
-::: panel-tabset
-### :pencil2: Exercise 2
-
-Plot histograms for the numerical variables/features
-
-```{r}
-#| echo: fenced
-# Write your code here
-```
-
-### R
-
-```{r}
-#| echo: fenced
-# Write your code here
-```
-
-```{r}
-DataExplorer::plot_histogram(df)
-```
 :::
 
 ::: panel-tabset
@@ -218,97 +222,97 @@ There is some small overlap between the age categories, so we can expect a stati
 #| echo: fenced
 # Write your code here
 ```
-
-```{r}
-#dummy <- caret::dummyVars(" ~ .", data=df)
-```
 :::
 
 ## Train-test data split
 
-When building a machine learning model, it is important to evaluate the trained model on data that was not used to fit it, as generalization is more than memorization (meaning we want a rule that generalizes to new data, without comparing to data we memorized).
+When building a machine learning model, it is important to evaluate the trained model on data that was not used to fit it, as generalization is more than memorization (meaning we want a rule that generalizes to new data, without evaluating on data we memorized). The data used to fit a model is called **training** data.
 
-Correct evaluation is easily done by leaving out a subset of the data when training the model and using it afterwards for model evaluation.
+Correct evaluation is easily done by leaving out a subset of the data when training the model and using it afterwards for model evaluation. The data used to assess a model is called **testing** data.
 
-The data used to fit a model is called **training** data.
-
-The data used to assess a model is called **testing** data.
-
-We can load more data, which was actually left-out from the original data set.
-
-### Separate the data and the target
-
-In general, we do not have separate data sets in two distinct files. Most of the time, we have a single file containing all the data that we need to split once loaded in the memory.
+### Remove missing data
 
 ```{r}
+#| echo: fenced
 df <- df[!is.na(df$MEAS_height_in_cm), ]
-df %>% head(5)
+df %>% 
+  head(5) %>% 
+  knitr::kable()
 ```
 
+### Generate the training / test sampling
+
+Use a seed to make the sampling reproducible (i.e. the same sampling will be generated each time we run this code)
+
 ```{r}
-#make this example reproducible
+#| echo: fenced
 set.seed(1)
+```
 
-#create ID column
+Create ID column
+
+```{r}
+#| echo: fenced
 df$id <- 1:nrow(df)
+```
 
-#use 70% of dataset as training set and 30% as test set 
+Use 70% of dataset as training set and 30% as test set 
+
+```{r}
+#| echo: fenced
 train_df <- df %>%
   dplyr::sample_frac(0.70)
 test_df  <- dplyr::anti_join(df,
-                             train_df, by = 'id')
+                             train_df,
+                             by = 'id')
 ```
 
+### Separate the data and the target
+
+Create the target.
+
 ```{r}
+#| echo: fenced
 train_target <- train_df["SDC_age_category"] 
-```
-
-```{r}
 test_target <- test_df["SDC_age_category"] 
 ```
 
+Remove the target from the training and test dataset to create the data matrix.
+
 ```{r}
-train_df <- train_df %>%
+#| echo: fenced
+train_data_matrix <- train_df %>%
+  dplyr::select(-SDC_age_category,
+                -SDC_age_in_months)
+test_data_matrix <- test_df %>%
   dplyr::select(-SDC_age_category,
                 -SDC_age_in_months)
 ```
 
-```{r}
-test_df <- test_df %>%
-  dplyr::select(-SDC_age_category,
-                -SDC_age_in_months)
-```
+## Train the classifier
 
-[**`sklearn.neighbors`**](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.neighbors "sklearn.neighbors") provides functionality for unsupervised and supervised neighbors-based learning methods. Unsupervised nearest neighbors is the foundation of many other learning methods, notably manifold learning and spectral clustering. Supervised neighbors-based learning comes in two flavors: [classification](https://scikit-learn.org/stable/modules/neighbors.html#classification) for data with discrete labels, and [regression](https://scikit-learn.org/stable/modules/neighbors.html#regression) for data with continuous labels.
+Let us now use a nearest neighbour approach for learning the target from the training data matrix of weights and heights. The principle behind [**nearest neighbor methods**](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.neighbors "sklearn.neighbors") is to find a predefined number of training samples closest in distance to the new point, and predict the label from these.
 
-The principle behind nearest neighbor methods is to find a predefined number of training samples closest in distance to the new point, and predict the label from these. The number of samples can be a user-defined constant (k-nearest neighbor learning), or vary based on the local density of points (radius-based neighbor learning). The distance can, in general, be any metric measure: standard Euclidean distance is the most common choice. Neighbors-based methods are known as *non-generalizing* machine learning methods, since they simply \"remember\" all of its training data (possibly transformed into a fast indexing structure such as a [Ball Tree](https://scikit-learn.org/stable/modules/neighbors.html#ball-tree) or [KD Tree](https://scikit-learn.org/stable/modules/neighbors.html#kd-tree)).
-
-Despite its simplicity, nearest neighbors has been successful in a large number of classification and regression problems, including handwritten digits and satellite image scenes. Being a non-parametric method, it is often successful in classification situations where the decision boundary is very irregular.
+Despite its simplicity, nearest neighbors has been successful in a large number of classification and regression problems. Supervised neighbors-based learning comes in two flavors:
+* [classification](https://scikit-learn.org/stable/modules/neighbors.html#classification) for data with discrete labels
+* [regression](https://scikit-learn.org/stable/modules/neighbors.html#regression) for data with continuous labels.
 
 ```{python}
 #| echo: fenced
 from sklearn.neighbors import KNeighborsClassifier
 
 model = KNeighborsClassifier()
-_ = model.fit(r.train_df, r.train_target.values.ravel())
+_ = model.fit(r.train_data_matrix, r.train_target.values.ravel())
 ```
+
+## Evaluate the performance of the classifier
 
 ```{python}
 #| echo: fenced
-target_predicted = model.predict(r.test_df)
+target_predicted = model.predict(r.test_data_matrix)
 ```
 
-```{r}
-#| echo: fenced
-data.frame(py$target_predicted) %>%
-  head(5)
-```
-
-```{r}
-#| echo: fenced
-test_target %>%
-  head(5)
-```
+Confusion matrix
 
 ```{r}
 #| echo: fenced
@@ -322,22 +326,22 @@ combined %>%  head(5)
 
 ```{r}
 perf <- mean(combined$correct)
-perf
 ```
 
 Number of correct prediction: `r perf`
 
 ```{python}
-accuracy = model.score(r.test_df, r.test_target)
+accuracy = model.score(r.test_data_matrix, r.test_target)
 model_name = model.__class__.__name__
-
-print(f"The test accuracy using a {model_name} is "
-      f"{accuracy:.3f}")
 ```
+The test accuracy using a `r py$model_name` is `r py$accuracy`.
 
-It is harder to conclude on never-seen instances than on already seen ones.
+:::callout-important
+The score of a model will in general depend on the way we make the training / test split. 
 
-The score of a model will in general depend on the way we make the training / test split. One downside of doing a single split is that it does not give any information about this variability. Another downside, in a setting where the amount of data is small, is that the data available for training and testing will be even smaller after splitting.
+* One downside of doing a single split is that it does not give any information about this variability.
+* Another downside, in a setting where the amount of data is small, is that the data available for training and testing will be even smaller after splitting.
+:::
 
 ## Estimators
 

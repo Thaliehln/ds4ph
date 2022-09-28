@@ -1,0 +1,411 @@
+---
+title: "Data Science for Public Health Workshop"
+subtitle: "Day 03 - Big Data and Machine Learning"
+institute: "Ifakara Health Institute / Swiss Tropical and Public Health Institute"
+date: "2022-09-28"
+format:
+  revealjs:
+    slide-number: true
+    chalkboard: true
+    html-q-tags: true
+    fontsize: 0.9em
+    logo: ./images/logo_compact.png
+    footer: "Data Science for Public Health"
+editor: visual
+from: markdown+emoji
+execute:
+  echo: true
+  warning: false
+  message: false
+engine: knitr
+bibliography: ../book/references.bib
+ft.shadow: false
+number-sections: true
+---
+
+```{r}
+#| echo: false
+library(dplyr)
+library(flextable)
+library(ggplot2)
+```
+
+## Schedule (morning) {.smaller}
+
++---------------+-------------------------------------------------------------------+
+| Time          | Session (all)                                                     |
++:=============:+:==================================================================+
+| 08.30 - 10.00 | Feedback on practicals                                            |
++---------------+-------------------------------------------------------------------+
+| 10.00 - 10.30 | Interdisciplinary introduction to big data and machine Learning   |
++---------------+-------------------------------------------------------------------+
+| 10.30 - 11.00 | :tea: :coffee: Break                                              |
++---------------+-------------------------------------------------------------------+
+| 11.00 - 12.15 | Discussion on secondary data sources                              |
+|               |                                                                   |
+|               | (Public Datasets, e.g. DHS, Facebook, facilities, etc)            |
+|               |                                                                   |
+|               | Benefits and drawbacks between primary and secondary data sources |
++---------------+-------------------------------------------------------------------+
+| 11.00 - 12.15 | Analysis: Introduction to machine learning\                       |
+|               | Interpretation: Critically discuss data surveys/reports           |
++---------------+-------------------------------------------------------------------+
+| 13:00-14:00   | :fork_and_knife: Lunch break                                      |
++---------------+-------------------------------------------------------------------+
+
+## Schedule (afternoon) {.smaller}
+
++---------------+-------------------------------------------------------------------+
+| Time          | Session (all)                                                     |
++:=============:+:==================================================================+
+| 13:00-14:00   | :fork_and_knife: Lunch break                                      |
++---------------+-------------------------------------------------------------------+
+| 14.00 - 15.30 | Discussion on secondary data sources                              |
+|               |                                                                   |
+|               | (Public Datasets, e.g. DHS, Facebook, facilities, etc)            |
+|               |                                                                   |
+|               | Benefits and drawbacks between primary and secondary data sources |
++---------------+-------------------------------------------------------------------+
+| 14.00 - 15.30 | Analysis: Introduction to machine learning\                       |
+|               | Interpretation: Critically discuss data surveys/reports           |
++---------------+-------------------------------------------------------------------+
+| 15:30-16:30\  | Feedback on workshop - Wrap-up\                                   |
++---------------+-------------------------------------------------------------------+
+
+## Big data
+
+-   Combination of structured, semistructured and unstructured data collected by organizations that can be mined for information
+
+-   Data sets that are too large or complex to be dealt with by traditional data-processing application software.
+
+##  {.smaller .unnumbered}
+
+![](images/paste-45243952.png)
+
+<https://dataforgood.facebook.com/>
+
+## Artificial Intelligence and Machine learning {.smaller}
+
+Machine learning is a sub-area of Artificial Intelligence that enables machines to automatically learn and improve from experience/past data.
+
+![](/images/paste-FA238456.png)
+
+## What is the age of this child? {.smaller}
+
+```{r}
+#| echo: false
+df1 <- openxlsx::read.xlsx("../book/data/dataset4.xlsx")
+```
+
+```{r}
+#| echo: false
+knitr::opts_chunk$set("ft.shadow" = FALSE)
+df1 <- df1 %>%
+  dplyr::mutate(
+    SDC_age_category = dplyr::case_when(
+      SDC_age_in_months < 12 ~ "<11 months",
+      SDC_age_in_months >= 12 & SDC_age_in_months < 36 ~ "12-35 months",
+      SDC_age_in_months >= 36 & SDC_age_in_months < 60 ~ "36-59 months",
+      TRUE ~ ""
+    )
+  ) %>%
+  tibble::remove_rownames() %>%
+  tibble::column_to_rownames(var="child_ID") %>%
+  dplyr::mutate(across(c(SDC_sex,
+                         SDC_age_category), factor))
+df1 %>% 
+  dplyr::select(MEAS_weight_in_kg,
+                MEAS_height_in_cm,
+                SDC_age_category) %>% 
+  filter(!is.na(MEAS_height_in_cm)) %>% 
+  head(10) %>% 
+  flextable() %>% 
+  bg(., i= ~ SDC_age_category == "36-59 months", part = "body", bg = "#FBBAB6") %>%
+  bg(., i= ~ SDC_age_category == "12-35 months", part = "body", bg = "#7FDC9B") %>%
+  bg(., i= ~ SDC_age_category == "<11 months", part = "body", bg = "#AFCCFE")
+```
+
+![](images/paste-67393E8E.png)
+
+## Is temperature measured for this child? {.smaller}
+
+```{r}
+#| echo: false
+df2 <- openxlsx::read.xlsx("../book/data/dataset2.xlsx")
+```
+
+```{r}
+#| echo: false
+knitr::opts_chunk$set("ft.shadow" = FALSE)
+df2 <- df2 %>%
+  dplyr::mutate(CALC_temperature_measured = 1 * (!is.na(MEAS_temperature))) %>%
+  dplyr::mutate(CALC_fever = 1 * (MEAS_temperature >= 37.5)) %>%
+  tibble::remove_rownames() %>%
+  tibble::column_to_rownames(var="child_ID") %>%
+  dplyr::mutate(across(c(CLIN_fever,
+                         CTX_facility_ID,
+                         CTX_area,
+                         CTX_facility_type,
+                         CTX_district,
+                         MEAS_temperature,
+                         CALC_temperature_measured,
+                         CALC_fever), factor))
+```
+
+```{r}
+#| echo: false
+df2_print <- df2[sample(nrow(df2), 10), ]
+df2_print %>% 
+  dplyr::select(CLIN_fever,
+                CTX_facility_ID,
+                CALC_temperature_measured) %>% 
+  flextable() %>% 
+  bg(., i= ~ CALC_temperature_measured == 0, part = "body", bg = "#FBBAB6") %>%
+  bg(., i= ~ CALC_temperature_measured == 1, part = "body", bg = "#7FDC9B")
+```
+
+![](images/paste-34895B73.png)
+
+## Machine learning
+
+-   Machine learning is about **engineering decision rules** from the data that **generalises** to new observations.
+
+::: callout-tip
+Example of decision rules:
+
+-   what weight/height threshold should you use to separate the different age groups?
+:::
+
+::: callout-important
+Experts can also engineer decision rules from their knowledge of the problem.
+:::
+
+## Data matrix
+
+-   Rows are different observations or **samples**
+-   Columns are different variables (descriptors) or **features**
+
+```{r}
+#| echo: false
+df1 %>% 
+  dplyr::select(MEAS_weight_in_kg,
+                MEAS_height_in_cm) %>% 
+  filter(!is.na(MEAS_height_in_cm)) %>% 
+  head(5) %>% 
+  knitr::kable(row.names = FALSE)
+```
+
+## Supervised machine learning {.smaller}
+
+-   Data matrix *X* with *n* samples
+-   Target *y* (as a **property** of each sample)
+-   Goal: **predict** *y* knowing *X*
+
+```{r}
+#| echo: false
+df1 %>% 
+  filter(!is.na(MEAS_height_in_cm)) %>% 
+  dplyr::select(MEAS_weight_in_kg,
+                MEAS_height_in_cm) %>% 
+  head(10) %>% 
+  flextable()
+```
+
+```{r}
+#| echo: false
+knitr::opts_chunk$set("ft.shadow" = FALSE)
+df1 %>% 
+  filter(!is.na(MEAS_height_in_cm)) %>% 
+  dplyr::select(SDC_age_category) %>% 
+  head(10) %>% 
+  flextable() %>% 
+  bg(., i= ~ SDC_age_category == "36-59 months", part = "body", bg = "#FBBAB6") %>%
+  bg(., i= ~ SDC_age_category == "12-35 months", part = "body", bg = "#7FDC9B") %>%
+  bg(., i= ~ SDC_age_category == "<11 months", part = "body", bg = "#AFCCFE")
+```
+
+![](images/paste-5CB9D696.png){fig-align="center"}
+
+## Unsupervised machine learning {.smaller}
+
+-   Data matrix *X* with *n* samples
+-   Unlabelled data (no target)
+-   The goal is to **extract structures** from *X* that **generalises** to new data
+
+```{r}
+#| echo: false
+df1 %>% 
+  filter(!is.na(MEAS_height_in_cm)) %>% 
+  dplyr::select(MEAS_weight_in_kg,
+                MEAS_height_in_cm) %>% 
+  head(10) %>% 
+  flextable()
+```
+
+![](images/paste-5083C22C.png){fig-align="center"}
+
+## Regression and classification
+
+Supervised learning: predicting a target *y*
+
+-   **Classification** problem: *y* is discrete, made of different classes (categorical variable)
+
+-   **Regression** problem: *y* is continuous, a numerical quantity (numerical variable)
+
+## Clustering {.smaller}
+
+**Unsupervised learning** (extract structures that generalises to new data)
+
+**Clustering** problem: group data in different classes or clusters
+
+![](images/paste-F5D138A3.png){fig-align="center"}
+
+## Inference
+
+![](/images/paste-C70B4C10.png)
+
+## Prediction
+
+![](/images/paste-2C4E6936.png)
+
+## Quizz
+
+> "Great for entertaining: spacious, updated 2 bedroom, 1 bathroom apartment in Lakeview, 97630. The house will be available from May 1st. Close to nightlife with private backyard. Price \~\$1,000,000."
+
+We are interested in predicting house prices from their description.
+
+One potential use case for this would be, as a buyer, to find houses that are cheap compared to their market value.
+
+## Question 1
+
+**We are interested in predicting house prices from their description.**
+
+**What kind of problem is it?**
+
+1.  a supervised problem
+2.  an unsupervised problem
+3.  a classification problem
+4.  a regression problem
+
+Select all answers that apply
+
+## Question 2
+
+**What are the features?**
+
+1.  the number of rooms might be a feature
+2.  the post code of the house might be a feature
+3.  the price of the house might be a feature
+
+Select all answers that apply
+
+## Question 3
+
+**What is the target variable?**
+
+1.  the full text description is the target
+2.  the price of the house is the target
+3.  only house description with no price mentioned are the target
+
+Select a single answer
+
+## Question 4
+
+**What is an observation / sample?**
+
+1.  each house description is a record
+2.  each house price is a record
+3.  each kind of description (as the house size) is a record
+
+Select a single answer
+
+## Accuracy or Generalizability?
+
+![](images/paste-FC3A1160.png){fig-align="center"}
+
+## Train / test split
+
+We can split the original data into a **training** set and a **testing** set.
+
+![](images/paste-7D73149D.png){fig-align="center"}
+
+## Dimensionality {.smaller}
+
+The more features are fed into a model, the more the dimensionality of the data increases.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+![A single feature does not result in a perfect separation of our training data.](images/1Dproblem-01.png)
+
+![Training data with 3 dimensions (3 features)](images/3Dproblem.png)
+:::
+
+## Dimensionality and classification {.smaller}
+
+-   The more features we use, the higher the likelihood that we can successfully separate the classes perfectly.
+
+    ![](images/3Dproblem_separated.png){fig-align="center"}
+
+## Dimensionality and overfitting {.smaller}
+
+-   The performance of a model only benefits from more features up until a certain point.
+-   As the dimensionality increases, overfitting becomes more likely.
+
+![](images/overfitting.png){width="250"}
+
+## Dimensionality reduction {.smaller}
+
+There are multiple techniques that can be used to fight overfitting, **dimensionality reduction** is one of the most effective techniques. Dimensionality reduction is part of **Unsupervised learning** (extract structures that generalises to new data).
+
+Dimensionality reduction selects the most important components of the feature space, preserving them and dropping the other components.
+
+![](images/0-zZJpdsZgX2lJc3bs.png)
+
+## Supervised machine learning workflow
+
+1.  Explore your data
+2.  Process / transform your data
+3.  Split your dataset in train/test
+4.  Run your model on the training dataset
+5.  Evaluate performance on the test dataset
+
+## Machine learning models
+
+![Scikit-learn navigation map: what machine learning estimators for what data problem](https://scikit-learn.org/stable/_static/ml_map.png){alt="Scikit-learn map of machine learning estimators"}
+
+## Classification problem
+
+## Explore your data
+
+* Look at your features?
+* How many features are numerical? How many features are categorical?
+* What are the different classes available in the dataset and how many samples of each classes are there?
+* Show features distribution for each class
+* Looking at these distributions, how hard do you think it will be to classify samples using those features?
+
+## Distribution of weight and height {.smaller}
+
+::: {layout-ncol="2"}
+```{r}
+#| echo: fenced
+df1 %>%  ggplot2::ggplot(aes(x = MEAS_weight_in_kg,
+                            fill = SDC_age_category)) +
+  ggplot2::geom_histogram(binwidth = 1,
+                          alpha = 0.5,
+                          position = "identity") +
+  theme_minimal() +
+  theme(legend.position = c(.8, .8))
+```
+
+```{r}
+#| echo: fenced
+df1 %>%  ggplot2::ggplot(aes(x = MEAS_height_in_cm,
+                            fill = SDC_age_category)) +
+  ggplot2::geom_histogram(binwidth = 5,
+                          alpha = 0.5,
+                          position = "identity") +
+  theme_minimal() +
+  theme(legend.position = c(.2, .8)) 
+```
+:::
+
+##  {.smaller}

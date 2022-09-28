@@ -35,7 +35,15 @@ number-sections: true
     e.  Create a **GitHub account**
     f.  Install **GitHub Desktop**
 
+## Introduction round {.unnumbered}
+
+:clock3: 5 minutes
+
+![](images/roundtable-discussions-reefs.jpg)
+
 # Tools for reproducible quantitative research
+
+:woman_teacher: Hélène
 
 ![Research Diagram vs. Research Reality. "Piled Higher and Deeper" by Jorge Cham www.phdcomics.com](images/paste-95377789.png)
 
@@ -43,11 +51,7 @@ number-sections: true
 When reporting scientific results, researchers must document the steps they followed so that independent researchers within the broader research community are able to trust and build upon their findings (*cumulative knowledge*).
 
 There have been recurrent calls in the recent decades for the scientific community to embrace practices to support research reproducibility and many software tools are now available to facilitate this process.
-:::
 
-##  {.unnumbered}
-
-::: callout-important
 Reporting should include negative results as they contribute to the development of a cumulative knowledge as much as positive results do and avoid wasting resources.
 :::
 
@@ -99,7 +103,7 @@ The **same analysis** steps are performed on **different datasets** and produce 
 To guarantee that any other researcher can reproduce your analysis, you would need to document and share the full **computational environment**, **tools**, **data** and **code** you used to generate your results.
 :::
 
-## :speech_balloon: Discussion
+## :speech_balloon: Discussion {.unnumbered}
 
 How do you think reproducible quantitative analyses can improve your research?
 
@@ -118,14 +122,14 @@ How do you think reproducible quantitative analyses can improve your research?
 6.  Ensure continuity of your work
 :::
 
-## :speech_balloon: Discussion
+## :speech_balloon: Discussion {.unnumbered}
 
 Recent investigations have shown that a significant percentage of scientific studies cannot be reproduced, thus contributing to growing mistrust in scientific results [@baker_scientists_2016; @harris_use_2018].
 
 1.  Are you surprised by these findings?
 2.  What barriers to reproducible research do you see in your daily practice?
 
-:clock3: 2 minutes
+:clock3: 3 minutes
 
 ## :heavy_minus_sign: Barriers
 
@@ -141,7 +145,9 @@ The barriers to reproducible research can be described in 3 main groups.
 
 ## Challenges
 
-In practice, reproducibility is challenging, even for trained data scientists equipped with an arsenal of software tools. Quantitative analyses can often not be fully reproduced because of complexities in how software tools are packaged, installed, and executed and because of limitations associated with how scientists document analysis steps.
+In practice, reproducibility is challenging, even for trained data scientists equipped with an arsenal of software tools.
+
+Quantitative analyses can often not be fully reproduced because of complexities in how software tools are packaged, installed, and executed and because of limitations associated with how scientists document analysis steps.
 
 ## Software tools across the research data lifecycle
 
@@ -153,17 +159,37 @@ There is now a whole set of free or open source software tools that are availabl
 
 ## Tools
 
-In this workshop, you will be introduced to following software tools that will help make your quantitative data processing, study and analysis more reproducible:
+In this workshop, you will be introduced to following software tools that will help make your quantitative data processing, study and analysis more reproducible.
 
--   **Git/GitHub** allow you to keep track of various versions of your code, share your code and collaborate with others on code development;
--   **Quarto** allow you to generate (reproducible) dynamic reports to document your data analyses. We will use Quarto within the **R/RStudio** environment;
--   Application Programming Interfaces (APIs) allow you to import data directly from servers. We will explore this through the example of **ruODK** for importing data from ODK Central to R.
+The ecosystem around R provides an interactive environment for data science science workflows, thus making R is a great start for your data science journey.
+
+In practice, most data scientists use a mix of languages, often at least R and Python. You will be slightly exposed to R, but the goal of this workshop is to introduce you to the concepts rather than teaching you the basics of R.
+
+## Git/GitHub
+
+Keep track of various versions of your code, share your code and collaborate with others on code development
+
+![](images/paste-B5DF25CC.png)
+
+## R and RStudio
+
+-   **R**: Programming language for statistical computing and graphics and one of main programming language used for data science (with other programming languages such as **Python** and Julia).
+
+-   **Rstudio:** integrated development environment (IDE) for R that enables an easier use of R.
+
+## Quarto
+
+Generate (reproducible) dynamic reports to document your data analyses. We will use Quarto within the **R/RStudio** environment.
+
+![](images/paste-66B6E7A1.png)
 
 ## Learning objectives for Day 1 {.smaller}
 
 -   What is meant by *reproducible quantitative research* and why does it matters?
--   Tool for version control, code sharing and collaboration
--   Tool
+-   How to do version control, code sharing and collaboration with GitHub?
+-   How to organise your research projects with R/RStudio?
+-   How to generate dynamic documents?
+-   How to create basic dynamic documents using R, Stata or Python?
 
 ## Schedule Day 1 - Morning {.smaller}
 
@@ -186,21 +212,21 @@ In this workshop, you will be introduced to following software tools that will h
 
 ## Schedule Day 1 - Afternoon {.smaller}
 
-+---------------+--------------------------------------------+
-| Time          | Session                                    |
-+:=============:+:===========================================+
-| 12.15 - 13.15 | :fork_and_knife: Lunch break               |
-+---------------+--------------------------------------------+
-| 13.15 - 14.00 | Import external data                       |
-+---------------+--------------------------------------------+
-| 14.00 - 15.00 | Manipulate data                            |
-+---------------+--------------------------------------------+
-| 15.00 - 15.30 | :tea: :coffee: Break                       |
-+---------------+--------------------------------------------+
-| 15.30 - 16.15 | Visualise data                             |
-+---------------+--------------------------------------------+
-| 16.15 - 17.00 | Share code and collaborate with Git        |
-+---------------+--------------------------------------------+
++---------------+-------------------------------------+
+| Time          | Session                             |
++:=============:+:====================================+
+| 12.15 - 13.15 | :fork_and_knife: Lunch break        |
++---------------+-------------------------------------+
+| 13.15 - 14.00 | Import external data                |
++---------------+-------------------------------------+
+| 14.00 - 15.00 | Manipulate data                     |
++---------------+-------------------------------------+
+| 15.00 - 15.30 | :tea: :coffee: Break                |
++---------------+-------------------------------------+
+| 15.30 - 16.15 | Visualise data                      |
++---------------+-------------------------------------+
+| 16.15 - 17.00 | Share code and collaborate with Git |
++---------------+-------------------------------------+
 
 ## What about qualitative research?
 
@@ -208,9 +234,16 @@ In this workshop, you will be introduced to following software tools that will h
 Although qualitative research contributes as significantly as quantitative research to knowledge generation, the validation of qualitative research findings is a much more complex and debated concept as qualitative analysis is by essence subjective and contextual. This explains the lower availability of software tools dedicated to qualitative research compared to what is available for quantitative research.
 :::
 
-. . .
+...
 
 # Git
+
+:woman_teacher: Hélène
+
+-   [Create a GitHub account](https://thaliehln.github.io/ds4ph/github_setup.html#sec-GitHub-account-creation)
+-   [Install GitHub Desktop](https://thaliehln.github.io/ds4ph/github_setup.html#sec-GitHub-Desktop-installation)
+
+## A familiar situation?
 
 Does the following situation seem familiar? What challenges do you see in this situation?
 
@@ -219,10 +252,6 @@ Does the following situation seem familiar? What challenges do you see in this s
 ::: notes
 The challenge here is not only that you have no idea which draft is actually the latest version of the document, but also that it is almost impossible to understand what decision on the document content was taken when.
 :::
-
-## Version control
-
-Version control is the process by which the development of a document is clearly identified. It provides huge benefits to organization, archiving, and being able to find your files easily when you need them. Git is a tool that
 
 ## Learning objectives
 
@@ -234,21 +263,53 @@ In this chapter, we introduce the basic elements of version control. We will lea
 
 ## Version control
 
+Process by which the development of a document is clearly identified.
+
+It provides huge benefits to organization, archiving, and being able to find your files easily when you need them.
+
+## {.unnumbered}
+
 Version control generally applies at a level of a project. It tracks and manages different drafts and versions for each document in the project.
 
 ::: callout-important
 With version control, you will only see a single file, which is the most recent version (*final* version). This helps avoiding confusion.
 :::
 
+## {.unnumbered}
+
+![This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807](images/paste-EB447856.png)
+
+:::notes
+
 Version control provides an audit trail for the revisions and updates of final versions.
 
-::: callout-tip
 Version control tracks **what** changes have been made, **by whom** and **when**, so that you do no longer need to save a copy of your documents with your name or the date in the filename.
-:::
 
 Version control allows you to discard recent updates and restore an earlier version of our project if needed.
 
-![This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807](images/paste-EB447856.png)
+:::
+
+## Open GitHub Desktop
+
+![](images/paste-EFF40D72.png)
+
+## Create a new Git repository
+
+In GitHub Desktop, you can create a new repository by selecting **File** \> **New repository**.
+
+![](images/paste-A85BE0C6.png)
+
+## {.unnumbered}
+
+![](images/paste-D831B36F.png)
+
+:::notes
+
+1.  Enter **data_science_workshop_sept_2022** as the name of your new repository.
+2.  Click **Choose...** to select the local directory in which your new repository will be created. Using Windows Explorer, navigate to the local repository of your choice.
+3.  Check **Initialize this repository with a README** to create a README file in your new repository. This is *optional* and you will be able to create a README file later if you wish to do so.
+4.  Click on **Create repository**.
+:::
 
 # Getting started with RStudio
 
@@ -256,50 +317,61 @@ Version control allows you to discard recent updates and restore an earlier vers
 
 Please review the following sections for instructions on installation steps:
 
--   Downloading R (@sec-R-installation)
--   Downloading and configuring RStudio (@sec-RStudio-installation)
+-   [Install R](https://thaliehln.github.io/ds4ph/r_setup.html#sec-R-installation)
+-   [Install and setup RStudio Desktop](https://thaliehln.github.io/ds4ph/r_setup.html#sec-RStudio-installation)
 
 ## Learning objectives
 
-1.  Familiarise with RStudio
-2.  Get set up with not storing the RStudio workspace
+-   Familiarise with RStudio
+-   Create a new RStudio project
 
-## Orientation to the RStudio interface
+## Open RStudio
 
 Open RStudio
 
-By default RStudio displays four rectangle panes.
+![](images/paste-A3F7827B.png)
 
-::: callout-tip
-If your RStudio displays only one left pane it is because you have no scripts open yet.
+## Orientation to the RStudio interface
+
+![](images/paste-B22C47AE.png)
+
+::: notes
+First time you open it RStudio displays 3 rectangle panes with only one left pane. When you will have R scripts or projects opened, you will have 4 rectangle panes.
 :::
 
 ## R Console Pane
 
+![](images/paste-119B1BEB.png)
+
+::: notes
 The R Console, by default the left or lower-left pane in R Studio, is the home of the R "engine". This is where the commands are actually run and non-graphic outputs and error/warning messages appear. You can directly enter and run commands in the R Console, but realize that these commands are not saved as they are when running commands from a script.
+:::
 
 ::: callout-tip
 This pane is similar to the Stata Command and the Results windows.
 :::
 
-## Source Pane (upper-left)
-
-Space to edit and run your scripts, including the RMarkdown outbreak and survey templates. This pane can also display datasets (data frames) for viewing.
-
-::: callout-tip
-This pane is similar to the Stata Do-file and Data Editor windows.
-:::
-
 ## Environment Pane (upper right)
 
-Most often used to see brief summaries of objects in the R Environment in the current session. These objects could include imported, modified, or created datasets, parameters you have defined (e.g. a specific epi week for the analysis), or vectors or lists you have defined during analysis (e.g. names of regions). Click on the arrow next to a dataframe name to see its variables.
+![](images/paste-F23D05AD.png)
 
 ::: callout-tip
 This pane is similar to the Stata Variables Manager window.
 :::
 
+::: notes
+Most often used to see brief summaries of objects in the R Environment in the current session. These objects could include imported, modified, or created datasets, parameters you have defined (e.g. a specific epi week for the analysis), or vectors or lists you have defined during analysis (e.g. names of regions). Click on the arrow next to a dataframe name to see its variables.
+:::
+
 ## Lower-right pane
 
+![](images/paste-E39F2082.png)
+
+::: callout-tip
+This pane contains the Stata equivalents of the Plots Manager and Project Manager windows.
+:::
+
+::: notes
 The lower-right pane includes several tabs:
 
 -   Files (library of files)
@@ -308,14 +380,21 @@ The lower-right pane includes several tabs:
 -   Help
 -   Viewer
 -   Presentation.
+:::
+
+## Source Pane (upper-left)
+
+![](images/paste-A8741156.png)
+
+::: notes
+Space to edit and run your scripts, including the RMarkdown outbreak and survey templates. This pane can also display datasets (data frames) for viewing.
+:::
 
 ::: callout-tip
-This pane contains the Stata equivalents of the Plots Manager and Project Manager windows.
+This pane is similar to the Stata Do-file and Data Editor windows.
 :::
 
-:::
-
-## Open a new R project
+## Open a new RStudio project
 
 In RStudio, you can create a new project by selecting
 
@@ -323,56 +402,109 @@ In RStudio, you can create a new project by selecting
 
 ![](images/paste-CCA1D5A5.png){width="350"}
 
-##  {.unnumbered}
+## Select Existing Directory
 
-Select **New Directory**
+![](images/paste-68F461A2.png)
+
+## Look for your GitHub Directory
+
+![](images/paste-591E42F9.png)
+
+## Select a New Directory
 
 ![](images/paste-DCC39BB5.png)
 
-##  {.unnumbered}
-
-Select **New Project**
+## Select New Project
 
 ![](images/paste-30A4402B.png)
 
-##  {.unnumbered}
-
-Select a location to save the new R project (this creates a new folder).
+## Select a location to save the new RStudio project
 
 ![](images/paste-C05F97BD.png){width="500"}
 
-Save all relevant data files into this new R project folder.
-
-::: callout-import
-We will use this project for the duration of the workshop.
+::: notes
+This will create a new folder
 :::
+
+##  {.unnumbered}
+
+We will use this RStudio project for the duration of the workshop.
+
+Save all files created during this workshop into your RStudio project.
+
+# Using Git for version control
+
+:woman_teacher: Hélène
+
+## Working copy
+
+Version control uses a *working copy* where you do your work.
+
+::: callout-note
+You can `update` your working copy to incorporate any new edits or versions that have been added to the repository since the last time you updated.
+:::
+
+You make arbitrary edits to this copy, without affecting your teammates. When you are happy with your edits, you `commit` your changes to a *repository*.
+
+## Commit
+
+Snapshot of your entire repository at a specific time.
+
+Over time, commits should tell a story of the history of your repository and how it came to be the way that it currently is.
+
+Commits include lots of metadata in addition to the contents and message, like the author, timestamp, and more.
+
+It also requires that you write something human-readable that will be a breadcrumb for you in the future. be easy to compare versions, and you can easily revert to previous versions.
+
+## Push and Pull
+
+![](images/paste-A340C143.png)
 
 # Dynamic documents
 
-The final product of a quantitative research is a report (e.g., scientific publications), i.e. a textual description of your research findings along with figures and tables resulting from your analysis. summary tables and figures. Based on this data, you discuss findings and give recommendations while using the data as evidence that backs up your discussion.
+:woman_teacher: Hélène
 
-Imagine the following situations
+The final product of a quantitative research is often a **report**, i.e. a textual description of your research findings along with figures and tables resulting from your analysis. 
+
+Based on this data, you discuss findings and give recommendations while using the data as evidence that backs up your discussion.
+
+## Discussion {.unnumbered}
+
+Can you give examples of reports you produce as part of your research?
+
+:clock3: 1 minutes
+
+## Scenarios {.unnumbered}
+
+Discuss the following situations:
 
 1.  you are informed that you were given the wrong data set just when you have finalised your article for submission to a journal. You are sent a new one and you are asked to run the same analysis with this new data set.
-2.  you realize that a mistake was made and need to re-examine the code, fix the error, and re-run the analysis 3. someone you are training wants to see the code and be able to reproduce the results to learn about your approach?
+2.  you realize that a mistake was made and need to re-examine the code, fix the error, and re-run the analysis.
+3.  Someone you are training wants to see the code and be able to reproduce the results to learn about your approach
+
+:clock3: 3 minutes
+
+## {.unnumbered}
 
 Situations like the ones just described are actually quite common for a data scientist.
 
-It is actually possible to keep your data science projects organized with RStudio so that re-running an analysis and recreating reports is straightforward and can be done with minimal effort.Dynamic documents can be produced to update on a routine basis (e.g. daily surveillance reports) and/or run on subsets of data (e.g. reports for each jurisdiction).
+It is actually possible to keep your data science projects organized with RStudio so that re-running an analysis and recreating reports is straightforward and can be done with minimal effort.
+
+Dynamic documents can be produced to update on a routine basis (e.g. daily surveillance reports) and/or run on subsets of data (e.g. reports for each research project, study).
 
 ## Learning objectives
-
-The goal of this section is to briefly discuss why we want to learn quarto, the benefits, and the barriers to using it.
 
 -   What is a dynamic report?
 -   What is Quarto?
 -   Think about why you want to use Quarto
 
-## Background to R Markdown
+## Background to R Quarto
 
-This is possible due to the fact that Quarto documents enable code and textual descriptions to be combined into the same document, and the figures and tables produced by the code are automatically added to the document.
+Quarto documents enable code and textual descriptions to be combined into the same document, and the figures and tables produced by the code are automatically added to the document.
 
-Quarto is a tool that allows you integrate your code, text and figures in a single file in order to make high quality, reproducible reports. A paper published with an included quarto file and data sets can be reproduced by anyone with a computer. R Markdown integrates code and natural language in a way that is called "literate programming" [@knuth_literate_1984].
+A paper published with an included quarto file and data sets can be reproduced by anyone with a computer.
+
+Quarto integrates code and natural language in a way that is called "literate programming" [@knuth_literate_1984].
 
 ## Markdown
 
@@ -394,15 +526,18 @@ It is the R package: This is used by R to render the .Rmd file into the desired 
 
 ## Quarto
 
-Quarto is the successor to R Markdown. As a R Markdown document, a Quarto document intersperces code and text such that the script actually becomes your output document. You can create an entire formatted document, including narrative text (can be dynamic to change based on your data), tables, figures, bullets/numbers, bibliographies, etc.
+Quarto is the successor to R Markdown. As a R Markdown document, a Quarto document intersperces code and text such that the script actually becomes your output document. 
 
-Quatro uses a mark-up language similar to HyperText Markup Language (HTML) or LaTeX, in comparison to a "What You See Is What You Get" (WYSIWYG) language, such as Microsoft Word. This means that all the aspects are consistent, for instance, all top-level heading will look the same. But it means that we use symbols to designate how we would like certain aspects to appear. And it is only when we build the mark-up that we get to see what it looks like. A visual editor option can also be used which hides the need for the user to do this mark-up themselves.
+You can create an entire formatted document, including narrative text (can be dynamic to change based on your data), tables, figures, bullets/numbers, bibliographies, etc.
 
-Quarto is not tied to the R language.
+Quarto files have a `.Qmd` extension.
 
-Quarto files have a `.Qmd` extension. :::
+## {.unnumbered}
 
-::: panel-tabset
+Quarto uses a mark-up language similar to HyperText Markup Language (HTML) or LaTeX, in comparison to a "What You See Is What You Get" (WYSIWYG) language, such as Microsoft Word. A visual editor option can also be used which hides the need for the user to do this mark-up themselves.
+
+Quarto is not tied to the R language. We can use Python, Julia and other programming languages as well.
+
 ## knitr
 
 This R package will read the code chunks, execute it, and 'knit' it back into the document. This is how tables and graphs are included alongside the text.
@@ -410,26 +545,27 @@ This R package will read the code chunks, execute it, and 'knit' it back into th
 ## Pandoc
 
 Pandoc actually convert the output into word/pdf/powerpoint etc. It is a software separate from R but is installed automatically with RStudio.
-:::
+
+## Quarto document generation
 
 ![](images/paste-ABFB521E.png)
 
+:::notes
 The process that happens in the background involves feeding the .Rmd file to knitr, which executes the R code chunks and creates a new .md (markdown) file which includes the R code and its rendered output. The .md file is then processed by Pandoc to create the final product: a Microsoft Word document, HTML file, PowerPoint document, PDF, etc.
-
-::: panel-tabset
-## :speech_balloon: Discussion
-
-Form small groups of 2-4 with your neighbours and discuss how you expect learning Quarto might benefit you.
-
-:clock3: 5 minutes
 :::
+
+## Discussion {.unnumbered}
+
+Form small groups of 2-4 with your neighbours and discuss how you expect learning Quarto might benefit you?
+
+:clock3: 3 minutes
 
 # Getting started with Quarto
 
 Please review the following sections for instructions on installation steps:
 
--   Downloading Quarto (@sec-Quarto-installation)
--   Installing the rmarkdown package
+-   [Install Quarto](https://thaliehln.github.io/ds4ph/r_setup.html#sec-Quarto-installation)
+-   [Install the rmarkdown R package](https://thaliehln.github.io/ds4ph/r_setup.html#sec-rmarkdown-installation)
 
 ## Learning objectives
 
@@ -437,11 +573,11 @@ Please review the following sections for instructions on installation steps:
 
 ## Create a new Quarto document
 
-While it makes sense to use Quarto going forward, there are still a lot of resources written for and in R Markdown. For this reason we provide the R Markdown equivalents for this section in Appendix.
-
 In RStudio, you can create a new Quarto document by selecting **File** \> **New File** \> **Quarto Document...**
 
 ![](images/paste-A7DE8B60.png)
+
+## Template
 
 When you create a new Quarto document, RStudio tries to be helpful by allowing you to select a template which explains the different section of an R Markdown script. R Studio will enable you select options to pick from to generate a template Quarto document to start from.
 
@@ -511,30 +647,6 @@ iris %>%
 ```
 
 The `echo: false` option disables the printing of code (only output is displayed).
-
-# Git commit
-
-## Commit
-
-Version control uses a *working copy* where you do your work.
-
-::: callout-note
-You can `update` your working copy to incorporate any new edits or versions that have been added to the repository since the last time you updated.
-:::
-
-You make arbitrary edits to this copy, without affecting your teammates. When you are happy with your edits, you `commit` your changes to a *repository*.
-
-Snapshot of your entire repository at a specific time.
-
-Over time, commits should tell a story of the history of your repository and how it came to be the way that it currently is.
-
-Commits include lots of metadata in addition to the contents and message, like the author, timestamp, and more.
-
-It also requires that you write something human-readable that will be a breadcrumb for you in the future. be easy to compare versions, and you can easily revert to previous versions.
-
-## Push and Pull
-
-![](images/paste-A340C143.png)
 
 # Code chunks in Quarto
 

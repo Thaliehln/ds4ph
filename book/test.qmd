@@ -1,0 +1,22 @@
+---
+title: "Untitled"
+editor: visual
+---
+
+```{python}
+var = 10
+```
+
+```{r}
+library(reticulate)
+print(py$var)
+var <- 5
+```
+
+The value of my variable is `r var`
+
+| My values | Col2 | Col3 |
+|-----------|------|------|
+| `r var`   |      |      |
+|           |      |      |
+|           |      |      |

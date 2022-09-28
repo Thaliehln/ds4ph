@@ -16,8 +16,7 @@ title: ":books: Big data and machine learning"
 
 ## Big data
 
-Big data is a combination of structured, semistructured and unstructured data collected by organizations that can be mined for information and used in
-Big data refers to data sets that are too large or complex to be dealt with by traditional data-processing application software.
+Big data is a combination of structured, semistructured and unstructured data collected by organizations that can be mined for information and used in Big data refers to data sets that are too large or complex to be dealt with by traditional data-processing application software.
 
 ## Development of Artificial Intelligence
 

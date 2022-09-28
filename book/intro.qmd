@@ -1,82 +1,38 @@
 ---
-title: "About the workshop"
-execute: 
-  echo: false
-  warning: false
-  error: false
+title: "Introduction"
 ---
-
-:spiral_calendar: September 26-28, 2022\
-:clock9: 09:00 - 17:00\
-:city_sunrise: Dar-es-Salaam, Tanzania
-
-------------------------------------------------------------------------
-
-This workshop targets public health researchers and aims to accompany them in their journey towards Data Science.
-
-## Is this workshop for me?
-
-This workshop is relevant for researchers who answer *yes* at least to one of the following questions:
-
--   [ ] Do you who want to develop data science projects in public health?
--   [ ] Do you wants to learn more about how open and reproducible science approaches can be used in your daily practice?
--   [ ] Are you a Stata user (or any other data analysis language) who would like to expand your data analysis skillset with R?
--   [ ] Do you want to bridge analyses between data analysis tools (Stata, R or Python) and to more easily collaborate on data analysis with other researchers?
 
 ## Learning objectives
 
-There are two complementary aspects of moving into data science:
+Two complementary aspects of moving into data science are:
 
-1.  a **mindset** about how scientists think and collaborate about data, and
-2.  a **skillset** which is composed of an ecosystem of tools (mostly open-source) and practices.
+1.  the mindset about how scientists think and collaborate about data, and
+2.  the skillsets which is composed of an ecosystem of tools (mostly open-source) and practices.
 
 Upon completing the workshop, participants will have gained:
 
 -   exposure to data science approach, tools and collaborative practices
--   learned the basics of working with dynamic documents in RStudio, and how to incrementally incorporate R into your existing data analysis workflows
--   hands-on experience on how to interface between Stata and R and combine them depending on your skills and needs. The idea is not to replace everything you are already doing in Stata into R but that you can continue your learning journey after this workshop at your own pace, also using some of the resources listed in @sec-useful-resources.
+-   hands-on experience on how to interface between Stata and R, learned the basics of working with data in R/RStudio, and how to incrementally incorporate R into your existing data analysis workflows in Stata. The idea is not to replace everything you do in Stata into R but that you can continue your learning after this workshop at your own pace.
 
-## To do before the workshop
+## Is this workshop for me?
 
-1.  Fill out the online [pre-workshop questionnaire](https://timicodktest.smartforest.de/-/single/cac06e76b3e163e655e49626f8129de8f55a8035ced54f15bc4c6cf527dba8a7?st=DnBRz677PIYh33ML0rE1amWzyhCIYPGFQnmZ6AAou8nJFyikWN6nLM5i3G4I0YZN)
+This workshop is relevant for individuals who answer yes to the following questions:
 
-2.  If you have not it yet, please go through the following five steps (about 30 minutes).
-
-    a.  Install R (@sec-R-installation)
-
-    b.  Install and setup RStudio Desktop (@sec-RStudio-installation)
-
-    c.  Install Quarto (@sec-Quarto-installation)
-
-    d.  Install the rmarkdown R package (@sec-rmarkdown-installation)
-
-    e.  Create a GitHub account (@sec-GitHub-account-creation)
-
-    f.  Install GitHub Desktop (@sec-GitHub-Desktop-installation)
-
-::: callout-note
--   All software used in this workshop are free.
--   If you have any difficulties with the installation, support can be provided on the first day of the workshop before the first session or during breaks.
-:::
-
-::: callout-important
-For those who have already been introduced to Git, R/RStudio and RMarkdown, note that you need to additionally install Quarto for this workshop.
-:::
-
-## Venue
-
-The workshop takes place at **Protea Hotel Dar es Salaam Courtyard** on Seaview Ocean Road. The conference room is **Nelson Hall**.
-
-```{r}
-library(leaflet)
-leaflet::leaflet() %>%
-  addTiles() %>%
-  addMarkers(lng=39.28517045424024,
-             lat=-6.798680620492803,
-             popup="Protea Hotel Dar-es-Salaam Courtyard")
-```
+-   [ ] Do you who want to develop data science projects in public health?
+-   [ ] Do you wants to learn more about how open and reproducible science approaches can be used in your daily practice?
+-   [ ] Are you a Stata user (or any other data analysis language) who would like to expand your data analysis skillset with R?
+-   [ ] Do you want to bridge analyses between data analysis tools (Stata, R or Python) and to more easily collaborate with other researchers who use another of these tools?
 
 ## Schedule
+
+:spiral_calendar: September 26-28, 2022\
+:clock9: 09:00 - 17:00\
+:city_sunrise: Dar-es-Salaam, Tanzania (Protea Hotel by Marriott Dar es Salaam Courtyard)
+
+### Before the workshop
+
+1.  Fill out the online pre-workshop questionnaire
+2.  Install on your laptop the (free) data science software that will be used during the workshop. If you have any difficulties with the installation, support can be provided on the first day of the workshop before the first session or during breaks.
 
 ### Day 1
 
@@ -89,63 +45,62 @@ leaflet::leaflet() %>%
 | 09.00 - 09.15 | Introduction to data science tools\          |
 |               | Overview of objectives for Day 1             |
 +---------------+----------------------------------------------+
-| 09.15 - 10.15 | Version control with Git                     |
+| 09.15 - 10.30 | Version control with Git                     |
 +---------------+----------------------------------------------+
-| 10.15 - 10.45 | :tea: :coffee: Break                         |
+| 10.30 - 11.00 | :tea: :coffee: Break                         |
 +---------------+----------------------------------------------+
-| 10.45 -11.45  | Introduction to dynamic documents and Quarto |
+| 11.00 -12.00  | Introduction to dynamic documents and Quarto |
 +---------------+----------------------------------------------+
-| 11.45 - 12.15 | Use Quarto with Stata                        |
+| 12.00 - 13.00 | Use Quarto with Stata                        |
 +---------------+----------------------------------------------+
-| 12.15 - 13.15 | :fork_and_knife: Lunch break                 |
+| 13.00 - 14.00 | :fork_and_knife: Lunch break                 |
 +---------------+----------------------------------------------+
-| 13.15 - 14.00 | Import external data                         |
+| 14.00 - 15.00 | Import and manipulate external data (1)      |
 +---------------+----------------------------------------------+
-| 14.00 - 15.00 | Manipulate data                              |
+| 15.00 - 15.30 | Import and manipulate external data (2)      |
 +---------------+----------------------------------------------+
-| 15.00 - 15.30 | :tea: :coffee: Break                         |
+| 15.30 - 16.00 | :tea: :coffee: Break                         |
 +---------------+----------------------------------------------+
-| 15.30 - 16.15 | Visualise data                               |
-+---------------+----------------------------------------------+
-| 16.15 - 17.00 | Share code and collaborate with Git          |
+| 16.00 - 17.00 | Share code and Collaborate with Git          |
 +---------------+----------------------------------------------+
 
 : Schedule Day 1 {#tbl-day1-schedule}
 
 ### Day 2
 
-+---------------+-----------------------------------------------------------------------------+
-| Time          | Session (all)                                                               |
-+:=============:+:============================================================================+
-| 08.30 - 09.00 | Welcome                                                                     |
-+---------------+-----------------------------------------------------------------------------+
-| 09.00 - 09.20 | Introduction to Data Science for Public Health\                             |
-|               | Overview of objectives for Day 2                                            |
-+---------------+-----------------------------------------------------------------------------+
-| 09.20 - 10.15 | Discussion on concepts related to to public health data for decision-making |
-+---------------+-----------------------------------------------------------------------------+
-| 10.15 - 10.45 | :tea: :coffee: Break                                                        |
-+---------------+-----------------------------------------------------------------------------+
-| 10:45-12:15   | Malaria practical #1                                                        |
-+---------------+-----------------------------------------------------------------------------+
-| 12.15- 13.15  | :fork_and_knife: Lunch break                                                |
-+---------------+-----------------------------------------------------------------------------+
-| 13.15- 13.30  | Prepare presentation of data findings                                       |
-+---------------+-----------------------------------------------------------------------------+
-| 13.30 - 14.00 | Present and discuss data findings                                           |
-+---------------+-----------------------------------------------------------------------------+
-| 14.00 - 14.30 | Interdisciplinary discussion on malaria, dataset, uncertainties, challenges |
-+---------------+-----------------------------------------------------------------------------+
-| 14.00 - 14.30 | Malaria practical #2                                                        |
-+---------------+-----------------------------------------------------------------------------+
-| 15.00 - 15.30 | :tea: :coffee: Break                                                        |
-+---------------+-----------------------------------------------------------------------------+
-| 15.30 - 16.15 | Malaria practical #2                                                        |
-+---------------+-----------------------------------------------------------------------------+
-| 16.15 - 16.30 | Prepare presentation of data findings                                       |
-+---------------+-----------------------------------------------------------------------------+
-| 16.30 - 17.00 | Present and discuss data findings                                           |
-+---------------+-----------------------------------------------------------------------------+
++---------------+----------------------------------------------------------------------+
+| Time          | Session (all)                                                        |
++:=============:+:=====================================================================+
+| 08.30 - 09.00 | Welcome                                                              |
++---------------+----------------------------------------------------------------------+
+| 09.00 - 09.15 | Introduction to Data Science for Public Health\                      |
+|               | Overview of objectives for Day 2                                     |
++---------------+----------------------------------------------------------------------+
+| 09.15 - 10.30 | Discussion on concepts related to to health data for decision-making |
++---------------+----------------------------------------------------------------------+
+| 10.30 - 11.00 | :tea: :coffee: Break                                                 |
++---------------+----------------------------------------------------------------------+
+| 11:00-11:15   | Malaria use case - Presentation of the data                          |
++---------------+----------------------------------------------------------------------+
+| 11.15 - 11.45 | Malaria use case - Interdisciplinary discussion                      |
++---------------+----------------------------------------------------------------------+
+| 11.45 - 12.30 | Malaria use case - Data practicals by interdisciplinary groups       |
++---------------+----------------------------------------------------------------------+
+| 12.30 - 13.00 | Malaria use case - Feedback on findings from practicals              |
++---------------+----------------------------------------------------------------------+
+| 13.00 - 14.00 | :fork_and_knife: Lunch break                                         |
++---------------+----------------------------------------------------------------------+
+| 14.00 - 14.30 | Malaria use case - Interdisciplinary discussion                      |
++---------------+----------------------------------------------------------------------+
+| 14.00 - 15.30 | Malaria use case                                                     |
+|               |                                                                      |
+|               | Analysis: data practicals\                                           |
+|               | Interpretation: discussion on data sources and interpretation        |
++---------------+----------------------------------------------------------------------+
+| 15.30 - 16.00 | :tea: :coffee: Break                                                 |
++---------------+----------------------------------------------------------------------+
+| 16.00 - 17.00 | Malaria use case - Feedback on praticals                             |
++---------------+----------------------------------------------------------------------+
 
 : Schedule Day 2 {#tbl-day2-schedule}
 
@@ -156,38 +111,76 @@ leaflet::leaflet() %>%
 +:=============:+:==================================================================+
 | 08.30 - 09.00 | Welcome                                                           |
 +---------------+-------------------------------------------------------------------+
-| 09.00 - 09.20 | Interdisciplinary introduction to big data and machine Learning   |
+| 09.00 - 09.15 | Interdisciplinary introduction to big data and machine Learning   |
 |               |                                                                   |
 |               | Overview of objectives for Day 3                                  |
 +---------------+-------------------------------------------------------------------+
-| 09.20 - 10.15 | Discussion on secondary data sources                              |
+| 09.15 - 10.00 | Discussion on secondary data sources                              |
 |               |                                                                   |
 |               | (Public Datasets, e.g. DHS, Facebook, facilities, etc)            |
 |               |                                                                   |
 |               | Benefits and drawbacks between primary and secondary data sources |
 +---------------+-------------------------------------------------------------------+
-| 10.15 - 10.45 | :tea: :coffee: Break                                              |
+| 10.00 - 10.30 | :tea: :coffee: Break                                              |
 +---------------+-------------------------------------------------------------------+
-| 10.45 - 12.15 | \[Analysis stream\] Introduction to machine learning\             |
-|               | \[Interpretation stream\] Critically discuss data surveys/reports |
+| 11.00 - 13.00 | Analysis: Introduction to machine learning\                       |
+|               | Interpretation: Critically discuss data surveys/reports           |
 +---------------+-------------------------------------------------------------------+
-| 12:15-13:15   | :fork_and_knife: Lunch break                                      |
+| 13:00-14:00   | :fork_and_knife: Lunch break                                      |
 +---------------+-------------------------------------------------------------------+
-| 13:15-13:45   | Speed talks - research presentations                              |
+| 14:00-14:30   | Speed talks - research presentations                              |
 +---------------+-------------------------------------------------------------------+
-| 13:45-15.00   | \[Analysis stream\] Data practical\                               |
-|               | \[Interpretation stream\] Critically discuss data surveys/reports |
+| 14:30-15:30   | Feedback on findings from practicals                              |
 +---------------+-------------------------------------------------------------------+
-| 15.00 - 15.30 | :tea: :coffee: Break                                              |
-+---------------+-------------------------------------------------------------------+
-| 15:30-16:00   | Feedback on findings from practicals                              |
-+---------------+-------------------------------------------------------------------+
-| 16:00-16:30\  | Feedback on workshop - Wrap-up                                    |
+| 15:30-16:30\  | Feedback on workshop - Wrap-up\                                   |
 +---------------+-------------------------------------------------------------------+
 
 : Schedule Day 3 {#tbl-day3-schedule}
 
-## To do after the workshop
+### After the workshop
 
-1.  Fill out the online post-workshop questionnaire.
-2.  This material will stay online, do not hesitate to refer to it if needed.
+1.  Fill out the online post-workshop questionnaire
+
+## Scope
+
+This workshop aims to accompany researchers to progress on the following development axes:
+
+### Data science mindset
+
+-   Use of reproducible research practices in public health
+-   Data provenance
+    -   Use of distinct data sources for the development of public health indicators
+    -   Research data vs. real world evidence data
+-   Ethical data science
+-   Data papers
+
+### Data science skillset
+
+-   Programming tools
+    -   Move from Stata to R (prerequisite: Stata)
+    -   R programming
+        -   dplyr
+    -   Python programming
+        -   pandas
+        -   scikit-learn (prerequisite: independent Python user)
+-   Coding with best practices (R/RStudio/tidyverse)
+    -   Versioning using GitHub (all)
+    -   Using targets (prerequisite: independent R user)
+-   Reporting and publishing: Dynamic report generation
+-   Reproducible data
+    -   Use APIs (prerequisite: IT programming basics)
+    -   Open access data (all)
+-   Statistical methods for reproducible research (advanced)
+
+### What is not covered
+
+-   Reproducible workflows (targets)
+-   Reproducible environments (Binder, Docker, renv, etc)
+
+## Conventions
+
+Discussion activity :speech_balloon:
+
+Reflection activity :thought_balloon:
+
+Coding activity :computer:

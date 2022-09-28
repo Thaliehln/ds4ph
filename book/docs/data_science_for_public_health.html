@@ -122,7 +122,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About the workshop</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -311,6 +311,7 @@ div.csl-indent {
   </ul></li>
   <li><a href="#what-do-experts-say-about-data-science" id="toc-what-do-experts-say-about-data-science" class="nav-link" data-scroll-target="#what-do-experts-say-about-data-science"><span class="toc-section-number">13.3</span>  What do experts say about Data Science?</a></li>
   <li><a href="#a-tentative-definition" id="toc-a-tentative-definition" class="nav-link" data-scroll-target="#a-tentative-definition"><span class="toc-section-number">13.4</span>  A tentative definition</a></li>
+  <li><a href="#uncertainty" id="toc-uncertainty" class="nav-link" data-scroll-target="#uncertainty"><span class="toc-section-number">13.5</span>  Uncertainty</a></li>
   </ul>
 </nav>
     </div>
@@ -343,6 +344,7 @@ div.csl-indent {
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p><span class="emoji" data-emoji="clock3">🕒</span> 3 minutes: You have probably already heard about data science as this is a main Data Science is today one of the main buzzwords, but what does <strong>Data Science</strong> mean for you?</p>
+<p><img src="images/paste-4EA2A26C.png" class="img-fluid"></p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p><q>The statistics profession faces a choice in its future research between continuing concentration on traditional topics – based largely on data analysis supported by mathematical statistics – and a broader viewpoint – based on an inclusive concept of <strong>learning from data</strong>. The latter course present severe challenges as well as exciting opportunities. The former risks seeing statistics become increasingly marginal…</q> <span class="citation" data-cites="chambers93">(<a href="references.html#ref-chambers93" role="doc-biblioref">1</a>)</span></p>
@@ -382,9 +384,7 @@ div.csl-indent {
 </section>
 <section id="what-do-experts-say-about-data-science" class="level2" data-number="13.3">
 <h2 data-number="13.3" class="anchored" data-anchor-id="what-do-experts-say-about-data-science"><span class="header-section-number">13.3</span> What do experts say about Data Science?</h2>
-<p><q>The statistics profession faces a choice in its future research between continuing concentration on traditional topics – based largely on data analysis supported by mathematical statistics – and a broader viewpoint – based on an inclusive concept of learning from data. The latter course present severe challenges as well as exciting opportunities. The former risks seeing statistics become increasingly marginal…</q> John Chambers<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <span class="citation" data-cites="chambers93">(<a href="references.html#ref-chambers93" role="doc-biblioref">1</a>)</span></p>
-<p><q>“Data science is the science of learning from data; it studies the methods involved in the analysis and processing of data and proposes technology to improve methods in an evidence-based manner. The scope and impact of this science will expand enormously in coming decades as scientific data and data about science itself become ubiquitously available.</q> David Donoho<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <span class="citation" data-cites="donoho17">(<a href="references.html#ref-donoho17" role="doc-biblioref">2</a>)</span>.</p>
-<p><q>Public health data science is the study of formulating and rigorously answering questions in order to advance health and well-being using a data-centric process that emphasizes clarity, reproducibility, effective communication, and ethical practices. […] Data science implies a perspective that is shaped by […] interdisciplinary work.</q> Goldsmith J, Sun Y, Fried LP, Wing J, Miller GW and Berhane K (2021) The Emergence and Future of Public Health Data Science. Public Health Rev 42:1604023.</p>
+<p><q>Public health data science is the study of formulating and rigorously answering questions in order to advance health and well-being using a data-centric process that emphasizes clarity, reproducibility, effective communication, and ethical practices. […] Data science implies a perspective that is shaped by […] interdisciplinary work.</q> <span class="citation" data-cites="goldsmith_emergence_2021">(<a href="references.html#ref-goldsmith_emergence_2021" role="doc-biblioref">3</a>)</span>.</p>
 </section>
 <section id="a-tentative-definition" class="level2" data-number="13.4">
 <h2 data-number="13.4" class="anchored" data-anchor-id="a-tentative-definition"><span class="header-section-number">13.4</span> A tentative definition</h2>
@@ -399,6 +399,16 @@ div.csl-indent {
 <li>Generation of actionable insights</li>
 <li>Effective communication to decision-makers</li>
 </ul>
+</section>
+<section id="uncertainty" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="uncertainty"><span class="header-section-number">13.5</span> Uncertainty</h2>
+<p>There are many reasons why a data analysis might still leave us in a position of uncertainty.</p>
+<p><strong>Our data consists of a sample</strong>, and we want to generalize from facts about that sample to facts about the wider population from which it was drawn. This process of generalizing from a sample to a population is inherently uncertain, because we haven’t sampled everyone.</p>
+<p><img src="images/paste-6D803DF2.png" class="img-fluid"></p>
+<p><strong>Our data come from a randomized experiment.</strong> Historically, the tools of statistical inference have been designed to address concerns just like this.</p>
+<p><strong>We want to use our data to make a prediction about the future, and we expect the future to be similar to the past.</strong></p>
+<p><strong>Our observations are subject to measurement or reporting error.</strong> Most measurements are subject to at least some kind of error, and sometimes those errors are large enough to matter.</p>
+<p><strong>Our data arise from an intrinsically random or variable process.</strong></p>
 
 
 <div id="refs" class="references csl-bib-body" role="doc-bibliography" style="display: none">
@@ -412,13 +422,6 @@ div.csl-indent {
 <div class="csl-left-margin">3. </div><div class="csl-right-inline">Goldsmith J, Sun Y, Fried L, Wing J, Miller G, Berhane K. The emergence and future of public health data science. Public Health Reviews [Internet]. 2021;42. Available from: <a href="https://www.ssph-journal.org/articles/10.3389/phrs.2021.1604023">https://www.ssph-journal.org/articles/10.3389/phrs.2021.1604023</a></div>
 </div>
 </div>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>John Chambers is a PhD in Statistics, the creator of the S programming language, and a core member of the R programming language project.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>David Donoho is a Professor of Statistics at Stanford University.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->

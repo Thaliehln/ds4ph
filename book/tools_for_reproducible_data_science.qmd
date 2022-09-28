@@ -101,3 +101,8 @@ In practice, most data scientists use a mix of languages, often at least R and P
 ::: callout-note
 Although qualitative research contributes as significantly as quantitative research to knowledge generation, the validation of qualitative research findings is a much more complex and debated concept as qualitative analysis is by essence subjective and contextual. This explains the lower availability of software tools dedicated to qualitative research compared to what is available for quantitative research.
 :::
+
+## To go further with reproducibility
+
+* Binder/Docker: reproducible environments
+* Targets: reproducible workflows
