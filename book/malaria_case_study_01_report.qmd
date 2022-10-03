@@ -227,6 +227,7 @@ df %>%
        CTX_area,
        CTX_facility_type)
 ```
+
 ```{r}
 df <- df %>%
   dplyr::mutate(across(c(TEST_malaria_done,

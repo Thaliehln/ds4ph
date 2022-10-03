@@ -18,6 +18,9 @@ book:
     - name: Silvia Cicconi
       affiliations:
         - name: Swiss Tropical and Public Health Institute
+    - name: Gillian Levine
+      affiliations:
+        - name: Swiss Tropical and Public Health Institute
   logo: images/logo_compact.png
   date: today
   chapters:

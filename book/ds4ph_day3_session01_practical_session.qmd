@@ -325,15 +325,18 @@ combined %>%  head(5)
 ```
 
 ```{r}
+#| echo: fenced
 perf <- mean(combined$correct)
 ```
 
 Number of correct prediction: `r perf`
 
 ```{python}
+#| echo: fenced
 accuracy = model.score(r.test_data_matrix, r.test_target)
 model_name = model.__class__.__name__
 ```
+
 The test accuracy using a `r py$model_name` is `r py$accuracy`.
 
 :::callout-important
