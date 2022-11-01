@@ -1,0 +1,50 @@
+---
+execute: 
+  echo: false
+---
+
+# Useful data resources {#sec-data-resources}
+
+## Open data
+
+### Platforms
+
+-   [openAfrica](https://open.africa/)
+
+-   [Code for Africa (CfA)](https://github.com/CodeForAfrica/)
+
+-   [WHO Afro](https://aho.afro.who.int/data-and-statistics/)
+
+### Data sets
+
++-----------------------------------------------------------------------------------------------------------+---------------------------+
+| Link                                                                                                      | Associated publication(s) |
++===========================================================================================================+===========================+
+| [Data for Good](https://dataforgood.facebook.com/dfg/tools)                                               |                           |
++-----------------------------------------------------------------------------------------------------------+---------------------------+
+| [Public health hacilities in sub-Saharan Africa](https://open.africa/dataset/health-facilities-in-africa) | [@maina_spatial_2019]     |
++-----------------------------------------------------------------------------------------------------------+---------------------------+
+
+## Journals
+
+### Data papers
+
+-   [International Journal of Epidemiology - Data Resource Profiles](https://academic.oup.com/ije/pages/general_instructions#Data%20Resource%20Profiles)
+
+-   [Scientific Data](https://www.nature.com/sdata/author-instructions)
+
+-   [GigaScience](https://academic.oup.com/gigascience/pages/data_note)
+
+-   [JMIR Data](https://data.jmir.org/)
+
+### Medical imaging
+
+-   [Medical Image Analysis](https://www.sciencedirect.com/journal/medical-image-analysis)
+
+-   [IEEE Transactions on Medical Imaging](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=42)
+
+## Conferences
+
+-   [Data Science Africa](http://www.datascienceafrica.org/)
+
+-   <https://nef.org/>

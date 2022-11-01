@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Data Science for Public Health - Appendix C — Technical resources for beginner data scientists</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./useful_resources_advanced.html" rel="next">
+<link href="./github_setup.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Appendix C — Technical resources for beginner data scientists</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./" class="sidebar-logo-link">
+      <img src="./images/logo_compact.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Data Science for Public Health</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">———— DAY 1 ————</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tools_for_reproducible_data_science.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Tools for reproducible quantitative research</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./version_control_with_git.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Version control with Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rstudio_orientation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Dynamic documents</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./version_control_with_git2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Commit your changes with Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Code chunks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./version_control_with_git3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Project history with Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./import_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Import external data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./manipulate_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Manipulate data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./share_and_collaborate_with_git.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Share code and collaborate with Git</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">———— DAY 2 ————</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_science_for_public_health.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Data Science for Public Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_presentation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Malaria case study</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_01_report.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_02_report.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_03_report.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #3</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">———— DAY 3 ————</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./big_data_and_artificial_intelligence.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Big data and machine learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Practical</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cross_validation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Cross-validation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./categorical_data_encoding.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Encode categorical data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">R installations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./github_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">GitHub setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./useful_resources_beginner.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Technical resources for beginner data scientists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./useful_resources_advanced.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Technical resources for intermediate to advanced data scientists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./useful_resources_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Useful data resources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./import_data_from_odk_central.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Import data from ODK Central</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#online-trainings" id="toc-online-trainings" class="nav-link active" data-scroll-target="#online-trainings"><span class="toc-section-number">C.1</span>  Online trainings</a>
+  <ul class="collapse">
+  <li><a href="#sec-resources-git" id="toc-sec-resources-git" class="nav-link" data-scroll-target="#sec-resources-git"><span class="toc-section-number">C.1.1</span>  Git and GitHub</a></li>
+  <li><a href="#r-programming" id="toc-r-programming" class="nav-link" data-scroll-target="#r-programming"><span class="toc-section-number">C.1.2</span>  R programming</a></li>
+  <li><a href="#interface-r-with-stata" id="toc-interface-r-with-stata" class="nav-link" data-scroll-target="#interface-r-with-stata"><span class="toc-section-number">C.1.3</span>  Interface R with Stata</a></li>
+  <li><a href="#comprehensive-lectures" id="toc-comprehensive-lectures" class="nav-link" data-scroll-target="#comprehensive-lectures"><span class="toc-section-number">C.1.4</span>  Comprehensive lectures</a></li>
+  </ul></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><span class="toc-section-number">C.2</span>  Packages</a>
+  <ul class="collapse">
+  <li><a href="#r-programming-1" id="toc-r-programming-1" class="nav-link" data-scroll-target="#r-programming-1"><span class="toc-section-number">C.2.1</span>  R programming</a></li>
+  <li><a href="#python-programming" id="toc-python-programming" class="nav-link" data-scroll-target="#python-programming"><span class="toc-section-number">C.2.2</span>  Python programming</a></li>
+  </ul></li>
+  <li><a href="#books-and-websites" id="toc-books-and-websites" class="nav-link" data-scroll-target="#books-and-websites"><span class="toc-section-number">C.3</span>  Books and websites</a>
+  <ul class="collapse">
+  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link" data-scroll-target="#git-and-github"><span class="toc-section-number">C.3.1</span>  Git and GitHub</a></li>
+  <li><a href="#reproducible-research" id="toc-reproducible-research" class="nav-link" data-scroll-target="#reproducible-research"><span class="toc-section-number">C.3.2</span>  Reproducible research</a></li>
+  </ul></li>
+  <li><a href="#communities" id="toc-communities" class="nav-link" data-scroll-target="#communities"><span class="toc-section-number">C.4</span>  Communities</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-useful-resources" class="quarto-section-identifier d-none d-lg-block">Appendix C — Technical resources for beginner data scientists</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="online-trainings" class="level2" data-number="C.1">
+<h2 data-number="C.1" class="anchored" data-anchor-id="online-trainings"><span class="header-section-number">C.1</span> Online trainings</h2>
+<section id="sec-resources-git" class="level3" data-number="C.1.1">
+<h3 data-number="C.1.1" class="anchored" data-anchor-id="sec-resources-git"><span class="header-section-number">C.1.1</span> Git and GitHub</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Link</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://www.codecademy.com/learn/learn-git">Codeacademy</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="r-programming" class="level3" data-number="C.1.2">
+<h3 data-number="C.1.2" class="anchored" data-anchor-id="r-programming"><span class="header-section-number">C.1.2</span> R programming</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Link</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://thegraphcourses.org">The GRAPH network</a></td>
+<td><span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span></td>
+</tr>
+<tr class="even">
+<td><a href="https://www.coursera.org/learn/r-programming-environment">The R programing environment</a></td>
+<td><span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="interface-r-with-stata" class="level3" data-number="C.1.3">
+<h3 data-number="C.1.3" class="anchored" data-anchor-id="interface-r-with-stata"><span class="header-section-number">C.1.3</span> Interface R with Stata</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th><a href="https://rpubs.com/quarcs-lab/stata-from-Rstudio" class="uri">https://rpubs.com/quarcs-lab/stata-from-Rstudio</a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://www.stata.com/features/overview/markdown/" class="uri">https://www.stata.com/features/overview/markdown/</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://ignacioriveros1.github.io/r/2020/03/22/r_and_stata.html" class="uri">https://ignacioriveros1.github.io/r/2020/03/22/r_and_stata.html</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.emmanuelteitelbaum.com/post/stata-and-markdown/" class="uri">https://www.emmanuelteitelbaum.com/post/stata-and-markdown/</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://www.stata.com/python/pystata/install.html" class="uri">https://www.stata.com/python/pystata/install.html</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://data.princeton.edu/stata/markdown" class="uri">https://data.princeton.edu/stata/markdown</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://github.com/Hemken/Statamarkdown" class="uri">https://github.com/Hemken/Statamarkdown</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="comprehensive-lectures" class="level3" data-number="C.1.4">
+<h3 data-number="C.1.4" class="anchored" data-anchor-id="comprehensive-lectures"><span class="header-section-number">C.1.4</span> Comprehensive lectures</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Link</th>
+<th>Tools</th>
+<th>Recommendation</th>
+<th>Pricing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://www.edx.org/course/principles-statistical-and-computational-tools-for">Principles, Statistical and Computational Tools for Reproducible Data Science</a></td>
+<td><p>R and Rstudio</p>
+<p>Python, Git, and GitHub</p></td>
+<td></td>
+<td><ul>
+<li><p>Free (audit track)</p></li>
+<li><p>99 USD (verified track)</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td><a href="https://www.edx.org/course/collaborative-data-science-for-healthcare">Collaborative Data Science for Healthcare</a></td>
+<td>Experience with R, Python and/or SQL is required</td>
+<td></td>
+<td><ul>
+<li><p>Free (audit track)</p></li>
+<li><p>49 USD (verified track)</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="packages" class="level2" data-number="C.2">
+<h2 data-number="C.2" class="anchored" data-anchor-id="packages"><span class="header-section-number">C.2</span> Packages</h2>
+<section id="r-programming-1" class="level3" data-number="C.2.1">
+<h3 data-number="C.2.1" class="anchored" data-anchor-id="r-programming-1"><span class="header-section-number">C.2.1</span> R programming</h3>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td><img src="images/tidyverse-logo.png" class="img-fluid" width="125"></td>
+<td><a href="https://www.tidyverse.org/">tidyverse</a></td>
+<td>Collection of R packages designed for data science</td>
+</tr>
+<tr class="even">
+<td><img src="images/logo.png" title="fig:" class="img-fluid" width="125" alt="RuODK logo"></td>
+<td><a href="https://docs.ropensci.org/ruODK/index.html">ruODK</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><img src="images/logo-01.png" class="img-fluid" width="125"></td>
+<td><a href="https://www.danieldsjoberg.com/gtsummary/">gtsummary</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="images/paste-A6E65357.png" class="img-fluid" width="125"></td>
+<td><a href="https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html">skimr</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="https://github.com/R4EPI/sitrep">sitrep</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="python-programming" class="level3" data-number="C.2.2">
+<h3 data-number="C.2.2" class="anchored" data-anchor-id="python-programming"><span class="header-section-number">C.2.2</span> Python programming</h3>
+<ul>
+<li><strong>Pandas</strong><br>
+<a href="https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_stata.html">Comparison with Stata</a><br>
+<a href="https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_r.html">Comparison with R</a></li>
+</ul>
+</section>
+</section>
+<section id="books-and-websites" class="level2" data-number="C.3">
+<h2 data-number="C.3" class="anchored" data-anchor-id="books-and-websites"><span class="header-section-number">C.3</span> Books and websites</h2>
+<section id="git-and-github" class="level3" data-number="C.3.1">
+<h3 data-number="C.3.1" class="anchored" data-anchor-id="git-and-github"><span class="header-section-number">C.3.1</span> Git and GitHub</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Link</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://guides.github.com/activities/hello-world/">GitHub Guides</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="http://happygitwithr.com/">Happy Git and GitHub for the useR</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reproducible-research" class="level3" data-number="C.3.2">
+<h3 data-number="C.3.2" class="anchored" data-anchor-id="reproducible-research"><span class="header-section-number">C.3.2</span> Reproducible research</h3>
+<ul>
+<li><a href="https://the-turing-way.netlify.app/welcome.html">The Turing way</a> <span class="citation" data-cites="the_turing_way_community_2022_6909298">(<a href="references.html#ref-the_turing_way_community_2022_6909298" role="doc-biblioref">1</a>)</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span></li>
+</ul>
+<table class="table">
+<caption>Books and websites</caption>
+<thead>
+<tr class="header">
+<th>Link</th>
+<th>Language</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://epirhandbook.com/en/">R for applied epidemiology and public health</a> <span class="citation" data-cites="batra_epidemiologist_2021">(<a href="references.html#ref-batra_epidemiologist_2021" role="doc-biblioref">2</a>)</span></td>
+<td>R</td>
+<td><span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span></td>
+</tr>
+<tr class="even">
+<td><a href="https://www.r4epi.com/">R for Epidemiology</a></td>
+<td>R</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="https://r4epis.netlify.app/">R4epis</a></td>
+<td>R</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="https://r4ds.had.co.nz/">R for Data Science</a></td>
+<td>R</td>
+<td><span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span> <span class="emoji" data-emoji="star">⭐</span></td>
+</tr>
+<tr class="odd">
+<td><a href="https://qmd4sci.njtierney.com/">Quarto for scientists</a></td>
+<td>R</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="https://jhudatascience.org/tidyversecourse/">Tidyverse Skills for Data Science (jhudatascience.org)</a></td>
+<td>R</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="communities" class="level2" data-number="C.4">
+<h2 data-number="C.4" class="anchored" data-anchor-id="communities"><span class="header-section-number">C.4</span> Communities</h2>
+<ul>
+<li><a href="https://www.rfordatasci.com/">R for data science online learning community</a></li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body" role="doc-bibliography" style="display: none">
+<div id="ref-the_turing_way_community_2022_6909298" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">The Turing Way Community. <span class="nocase">The Turing Way: A handbook for reproducible, ethical and collaborative research</span> [Internet]. Zenodo; 2022. Available from: <a href="https://doi.org/10.5281/zenodo.6909298">https://doi.org/10.5281/zenodo.6909298</a></div>
+</div>
+<div id="ref-batra_epidemiologist_2021" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Batra N. <span>The Epidemiologist R Handbook</span>. 2021. </div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./github_setup.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">GitHub setup</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./useful_resources_advanced.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Technical resources for intermediate to advanced data scientists</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">This book was built by <a href="https://quarto.org/">Quarto</a>. Copyright 2022, IHI / Swiss TPH</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Thaliehln/ds4ph/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

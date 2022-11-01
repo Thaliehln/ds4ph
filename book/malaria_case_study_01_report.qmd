@@ -174,7 +174,7 @@ df <- df %>%
   dplyr::mutate(
     SDC_age_category = dplyr::case_when(
       SDC_age_in_months < 2 ~ "<2 months",
-      SDC_age_in_months >= 2 & SDC_age_in_months < 12 ~ "2-11 months",
+      SDC_age_in_months >= 2 & SDC_age_in_months < 12 ~ "02-11 months",
       SDC_age_in_months >= 12 & SDC_age_in_months < 24 ~ "12-23 months",
       SDC_age_in_months >= 24 & SDC_age_in_months < 36 ~ "24-35 months",
       SDC_age_in_months >= 36 & SDC_age_in_months < 48 ~ "36-47 months",
@@ -611,7 +611,7 @@ UpSetR::upset(df %>%
 ```
 ```{r}
 UpSetR::upset(df %>%
-                dplyr::filter(SDC_age_category == "2-11 months") %>% 
+                dplyr::filter(SDC_age_category == "02-11 months") %>% 
                 dplyr::mutate(Fever = 1 * (CLIN_fever == 1)) %>% 
                 dplyr::mutate(Cough = 1 * (CLIN_cough == 1)) %>% 
                 dplyr::mutate(Diarrhoea = 1 * (CLIN_diarrhoea == 1)) %>% 

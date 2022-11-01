@@ -21,6 +21,12 @@ book:
     - name: Gillian Levine
       affiliations:
         - name: Swiss Tropical and Public Health Institute
+    - name: Ibrahim Mtebene
+      affiliations:
+        - name: Ifakara Health Institute
+    - name: Fabian Schär
+      affiliations:
+        - name: Swiss Tropical and Public Health Institute
   logo: images/logo_compact.png
   date: today
   chapters:
@@ -57,8 +63,10 @@ book:
   appendices:
     - r_setup.qmd
     - github_setup.qmd
+    - useful_resources_beginner.qmd
+    - useful_resources_advanced.qmd
+    - useful_resources_data.qmd
     - import_data_from_odk_central.qmd
-    - useful_resources.qmd
   page-footer: 
     left: "This book was built by [Quarto](https://quarto.org/). Copyright 2022, IHI / Swiss TPH"
     right:

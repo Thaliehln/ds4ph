@@ -1,0 +1,155 @@
+---
+execute: 
+  echo: false
+---
+
+# Technical resources for intermediate to advanced data scientists {#sec-advanced-resources}
+
+## Online trainings
+
+### R programming
+
+#### Tidyverse
+
++------------------------------------------------------------------------------------------------------------------------------+------------------------------------+
+| Link                                                                                                                         | Recommendation                     |
++==============================================================================================================================+====================================+
+| [Introduction to the Tidyverse (JHU Data Science Lab's lectures)](https://www.coursera.org/learn/tidyverse)                  | :star: :star: :star: :star: :star: |
++------------------------------------------------------------------------------------------------------------------------------+------------------------------------+
+| [Importing data in the Tidyverse (JHU Data Science Lab's lectures)](https://www.coursera.org/learn/tidyverse-importing-data) | :star: :star: :star: :star: :star: |
++------------------------------------------------------------------------------------------------------------------------------+------------------------------------+
+| [Wranging data in the Tidyverse](https://www.coursera.org/learn/tidyverse-data-wrangling)                                    |                                    |
++------------------------------------------------------------------------------------------------------------------------------+------------------------------------+
+| Visualizing data in the Tidyverse                                                                                            |                                    |
++------------------------------------------------------------------------------------------------------------------------------+------------------------------------+
+| Modeling Data in the Tidyverse                                                                                               |                                    |
++------------------------------------------------------------------------------------------------------------------------------+------------------------------------+
+
+| Col1                                                | Col2 |
+|-----------------------------------------------------|------|
+| https://www.coursera.org/learn/advanced-r           |      |
+| https://www.coursera.org/learn/r-packages           |      |
+| https://www.coursera.org/learn/r-data-visualization |      |
+
+#### Spatial analyses
+
++--------------------------------------------------------------------------------------------+----------------+
+| Link                                                                                       | Recommendation |
++============================================================================================+================+
+| [afrimapr](https://afrimapr.github.io/afrimapr.website/training/) - mapping data in Africa |                |
++--------------------------------------------------------------------------------------------+----------------+
+
+| <https://afrimapr.github.io/afrimapr.website/>                       |
+|----------------------------------------------------------------------|
+| <https://geocompr.robinlovelace.net/>                                |
+| <https://www.paulamoraga.com/book-geospatial/>                       |
+| <https://andysouth.shinyapps.io/afrilearnr-crash-course/>            |
+| <https://andysouth.shinyapps.io/intro-to-spatial-r/#section-summary> |
+
+### Literature review
+
+Here is the R package I briefly mentioned about literature reviews, it is truly excellent (although it does not necessarily makes things quicker in the end, as you just end up going deeper in the findings/complexity)
+https://elizagrames.github.io/litsearchr/
+
+and associated (very well documented) vignettes/tutorials
+https://luketudge.github.io/litsearchr-tutorial/litsearchr_tutorial.html
+https://elizagrames.github.io/litsearchr/litsearchr_vignette.html
+https://elizagrames.github.io/litsearchr/introduction_vignette_v010.html
+
+It belongs to the metaverse ecosystem, of which goal is to collect, integrate and expand the universe of available functions for evidence synthesis generation (i.e., the process of identifying, collating and synthesising primary scientific research such as articles and reports for the purposes of providing reliable, transparent summaries).
+
+https://rmetaverse.github.io/
+
+### Multilanguage programming
+
++-----------------------------------------------------------------------------------+------------------+----------------+
+| Link                                                                              | Language         | Recommendation |
++===================================================================================+==================+================+
+| [Harvard Data Science workshops materials](https://iqss.github.io/dss-workshops/) | R, Python, Stata |                |
++-----------------------------------------------------------------------------------+------------------+----------------+
+
+### Machine learning
+
++--------------------------------------------------------------------------------------------------------------------------+-----------+------------------------------------+
+| MOOC                                                                                                                     | Language  | Recommendation                     |
++==========================================================================================================================+===========+====================================+
+| [Machine learning in Python with scikit-learn](https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn/) | Python    | :star: :star: :star: :star: :star: |
++--------------------------------------------------------------------------------------------------------------------------+-----------+------------------------------------+
+
+### Comprehensive lectures
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+----------------+-----------------------------+
+| Link                                                                                                                                                           | Tools                                            | Recommendation | Pricing                     |
++================================================================================================================================================================+==================================================+================+=============================+
+| [Principles, Statistical and Computational Tools for Reproducible Data Science](https://www.edx.org/course/principles-statistical-and-computational-tools-for) | R and Rstudio                                    |                | -   Free (audit track)      |
+|                                                                                                                                                                |                                                  |                |                             |
+|                                                                                                                                                                | Python, Git, and GitHub                          |                | -   99 USD (verified track) |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+----------------+-----------------------------+
+| [Collaborative Data Science for Healthcare](https://www.edx.org/course/collaborative-data-science-for-healthcare)                                              | Experience with R, Python and/or SQL is required |                | -   Free (audit track)      |
+|                                                                                                                                                                |                                                  |                |                             |
+|                                                                                                                                                                |                                                  |                | -   49 USD (verified track) |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+----------------+-----------------------------+
+| https://www.coursera.org/learn/data-public-health                                                                                                              |                                                  |                |                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+----------------+-----------------------------+
+|                                                                                                                                                                |                                                  |                |                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+----------------+-----------------------------+
+
+## Packages
+
+### R programming
+
++---------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------+
+| ![](images/tidyverse-logo.png){width="125"} | [tidyverse](https://www.tidyverse.org/)                                     | Collection of R packages designed for data science |
++---------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------+
+| ![RuODK logo](images/logo.png){width="125"} | [ruODK](https://docs.ropensci.org/ruODK/index.html)                         |                                                    |
++---------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------+
+| ![](images/logo-01.png){width="125"}        | [gtsummary](https://www.danieldsjoberg.com/gtsummary/)                      |                                                    |
++---------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------+
+| ![](images/paste-A6E65357.png){width="125"} | [skimr](https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html) |                                                    |
++---------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------+
+|                                             | [sitrep](https://github.com/R4EPI/sitrep)                                   |                                                    |
++---------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------+
+
+### Python programming
+
+-   **Pandas**\
+    [Comparison with Stata](https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_stata.html)\
+    [Comparison with R](https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_r.html)
+
+## Books and websites
+
+### Git and GitHub
+
++--------------------------------------------------------------------+----------------+
+| Link                                                               | Recommendation |
++====================================================================+================+
+| [GitHub Guides](https://guides.github.com/activities/hello-world/) |                |
++--------------------------------------------------------------------+----------------+
+| [Happy Git and GitHub for the useR](http://happygitwithr.com/)     |                |
++--------------------------------------------------------------------+----------------+
+
+### Reproducible research
+
+-   [The Turing way](https://the-turing-way.netlify.app/welcome.html) [@the_turing_way_community_2022_6909298] :star: :star: :star: :star: :star:
+
++-----------------------------------------------------------------------------------------------------------+------------+------------------------------------+
+| Link                                                                                                      | Language   | Recommendation                     |
++===========================================================================================================+============+====================================+
+| [R for applied epidemiology and public health](https://epirhandbook.com/en/) [@batra_epidemiologist_2021] | R          | :star: :star: :star: :star: :star: |
++-----------------------------------------------------------------------------------------------------------+------------+------------------------------------+
+| [R for Epidemiology](https://www.r4epi.com/)                                                              | R          |                                    |
++-----------------------------------------------------------------------------------------------------------+------------+------------------------------------+
+| [R4epis](https://r4epis.netlify.app/)                                                                     | R          |                                    |
++-----------------------------------------------------------------------------------------------------------+------------+------------------------------------+
+| [R for Data Science](https://r4ds.had.co.nz/)                                                             | R          | :star: :star: :star: :star: :star: |
++-----------------------------------------------------------------------------------------------------------+------------+------------------------------------+
+| [Quarto for scientists](https://qmd4sci.njtierney.com/)                                                   | R          |                                    |
++-----------------------------------------------------------------------------------------------------------+------------+------------------------------------+
+| [Tidyverse Skills for Data Science (jhudatascience.org)](https://jhudatascience.org/tidyversecourse/)     | R          |                                    |
++-----------------------------------------------------------------------------------------------------------+------------+------------------------------------+
+
+: Books and websites
+
+## Communities
+
+-   [R for data science online learning community](https://www.rfordatasci.com/)
