@@ -92,7 +92,6 @@ Display the variables/features **child_id**, **MEAS_weight_in_kg** and **MEAS_he
 df %>%
   skimr::skim()
 ```
-
 :::
 
 Numerical variables can be naturally handled by machine learning algorithms that are typically composed of a sequence of arithmetic instructions such as additions and multiplications.
@@ -106,6 +105,7 @@ Numerical variables can be naturally handled by machine learning algorithms that
 DataExplorer::plot_missing(df,
                            geom_label_args = list(size = 2, label.padding = unit(0.2, "lines")))
 ```
+
 #### Encoding of categorical data
 
 ```{r}
@@ -197,7 +197,6 @@ import matplotlib.pyplot
 pairplot_figure = seaborn.pairplot(r.df, hue = "SDC_age_category")
 matplotlib.pyplot.show()
 ```
-
 :::
 
 ::: panel-tabset
@@ -256,7 +255,7 @@ Create ID column
 df$id <- 1:nrow(df)
 ```
 
-Use 70% of dataset as training set and 30% as test set 
+Use 70% of dataset as training set and 30% as test set
 
 ```{r}
 #| echo: fenced
@@ -293,9 +292,7 @@ test_data_matrix <- test_df %>%
 
 Let us now use a nearest neighbour approach for learning the target from the training data matrix of weights and heights. The principle behind [**nearest neighbor methods**](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.neighbors "sklearn.neighbors") is to find a predefined number of training samples closest in distance to the new point, and predict the label from these.
 
-Despite its simplicity, nearest neighbors has been successful in a large number of classification and regression problems. Supervised neighbors-based learning comes in two flavors:
-* [classification](https://scikit-learn.org/stable/modules/neighbors.html#classification) for data with discrete labels
-* [regression](https://scikit-learn.org/stable/modules/neighbors.html#regression) for data with continuous labels.
+Despite its simplicity, nearest neighbors has been successful in a large number of classification and regression problems. Supervised neighbors-based learning comes in two flavors: \* [classification](https://scikit-learn.org/stable/modules/neighbors.html#classification) for data with discrete labels \* [regression](https://scikit-learn.org/stable/modules/neighbors.html#regression) for data with continuous labels.
 
 ```{python}
 #| echo: fenced
@@ -339,13 +336,13 @@ model_name = model.__class__.__name__
 
 The test accuracy using a `r py$model_name` is `r py$accuracy`.
 
-:::callout-important
-The score of a model will in general depend on the way we make the training / test split. 
+::: callout-important
+The score of a model will in general depend on the way we make the training / test split.
 
-* One downside of doing a single split is that it does not give any information about this variability.
-* Another downside, in a setting where the amount of data is small, is that the data available for training and testing will be even smaller after splitting.
+-   One downside of doing a single split is that it does not give any information about this variability.
+-   Another downside, in a setting where the amount of data is small, is that the data available for training and testing will be even smaller after splitting.
 :::
 
 ## Estimators
 
-![Scikit-learn navigation map: what machine learning estimators for what data problem](https://scikit-learn.org/stable/_static/ml_map.png){alt="Scikit-learn map of machine learning estimators"}
+![Scikit-learn map of machine learning estimators](https://scikit-learn.org/stable/_static/ml_map.png)

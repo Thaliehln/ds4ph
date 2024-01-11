@@ -5,11 +5,13 @@ execute:
 
 # Technical resources for intermediate to advanced data scientists {#sec-advanced-resources}
 
-## Online trainings
+## R programming
 
-### R programming
+### Tidyverse
 
-#### Tidyverse
++---------------------------------------------+-----------------------------------------+----------------------------------------------------+
+| ![](images/tidyverse-logo.png){width="125"} | [tidyverse](https://www.tidyverse.org/) | Collection of R packages designed for data science |
++---------------------------------------------+-----------------------------------------+----------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------------------+------------------------------------+
 | Link                                                                                                                         | Recommendation                     |
@@ -20,18 +22,22 @@ execute:
 +------------------------------------------------------------------------------------------------------------------------------+------------------------------------+
 | [Wranging data in the Tidyverse](https://www.coursera.org/learn/tidyverse-data-wrangling)                                    |                                    |
 +------------------------------------------------------------------------------------------------------------------------------+------------------------------------+
-| Visualizing data in the Tidyverse                                                                                            |                                    |
+| [Visualizing data in the Tidyverse](https://www.coursera.org/learn/tidyverse-visualize-data)                                 |                                    |
 +------------------------------------------------------------------------------------------------------------------------------+------------------------------------+
-| Modeling Data in the Tidyverse                                                                                               |                                    |
+| [Modeling Data in the Tidyverse](https://www.coursera.org/learn/tidyverse-modelling-data)                                    |                                    |
 +------------------------------------------------------------------------------------------------------------------------------+------------------------------------+
 
-| Col1                                                | Col2 |
-|-----------------------------------------------------|------|
-| https://www.coursera.org/learn/advanced-r           |      |
-| https://www.coursera.org/learn/r-packages           |      |
-| https://www.coursera.org/learn/r-data-visualization |      |
++------------------------------------------------------------------------------------------+----------+
+| Link                                                                                     |          |
++==========================================================================================+==========+
+| [Advanced R Programming](https://www.coursera.org/learn/advanced-r)                      |          |
++------------------------------------------------------------------------------------------+----------+
+| [Building R packages](https://www.coursera.org/learn/r-packages)                         |          |
++------------------------------------------------------------------------------------------+----------+
+| [Building Data Visualization Tools](https://www.coursera.org/learn/r-data-visualization) |          |
++------------------------------------------------------------------------------------------+----------+
 
-#### Spatial analyses
+### Spatial analyses
 
 +--------------------------------------------------------------------------------------------+----------------+
 | Link                                                                                       | Recommendation |
@@ -46,19 +52,19 @@ execute:
 | <https://andysouth.shinyapps.io/afrilearnr-crash-course/>            |
 | <https://andysouth.shinyapps.io/intro-to-spatial-r/#section-summary> |
 
-### Literature review
+### Literature reviews
 
-Here is the R package I briefly mentioned about literature reviews, it is truly excellent (although it does not necessarily makes things quicker in the end, as you just end up going deeper in the findings/complexity)
-https://elizagrames.github.io/litsearchr/
++------------------+---------------------------------------------------------+------------------------------------------------------------------+
+|                  | [metaverse](https://rmetaverse.github.io/)              | Collection of R packages designed for data science               |
++------------------+---------------------------------------------------------+------------------------------------------------------------------+
+|                  | [litsearchr](https://elizagrames.github.io/litsearchr/) | Excellent R package for supporting evidence synthesis generation |
++------------------+---------------------------------------------------------+------------------------------------------------------------------+
 
-and associated (very well documented) vignettes/tutorials
-https://luketudge.github.io/litsearchr-tutorial/litsearchr_tutorial.html
-https://elizagrames.github.io/litsearchr/litsearchr_vignette.html
-https://elizagrames.github.io/litsearchr/introduction_vignette_v010.html
+There are very well documented) vignettes/tutorials
 
-It belongs to the metaverse ecosystem, of which goal is to collect, integrate and expand the universe of available functions for evidence synthesis generation (i.e., the process of identifying, collating and synthesising primary scientific research such as articles and reports for the purposes of providing reliable, transparent summaries).
-
-https://rmetaverse.github.io/
+-   https://luketudge.github.io/litsearchr-tutorial/litsearchr_tutorial.html
+-   https://elizagrames.github.io/litsearchr/litsearchr_vignette.html
+-   https://elizagrames.github.io/litsearchr/introduction_vignette_v010.html
 
 ### Multilanguage programming
 
@@ -75,6 +81,12 @@ https://rmetaverse.github.io/
 +==========================================================================================================================+===========+====================================+
 | [Machine learning in Python with scikit-learn](https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn/) | Python    | :star: :star: :star: :star: :star: |
 +--------------------------------------------------------------------------------------------------------------------------+-----------+------------------------------------+
+| [Machine learning for healthcare](https://ocw.mit.edu/courses/6-s897-machine-learning-for-healthcare-spring-2019/)       |           |                                    |
++--------------------------------------------------------------------------------------------------------------------------+-----------+------------------------------------+
+
+https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/
+
+https://ocw.mit.edu/courses/6-438-algorithms-for-inference-fall-2014/
 
 ### Comprehensive lectures
 
@@ -98,17 +110,11 @@ https://rmetaverse.github.io/
 
 ### R programming
 
-+---------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------+
-| ![](images/tidyverse-logo.png){width="125"} | [tidyverse](https://www.tidyverse.org/)                                     | Collection of R packages designed for data science |
-+---------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------+
-| ![RuODK logo](images/logo.png){width="125"} | [ruODK](https://docs.ropensci.org/ruODK/index.html)                         |                                                    |
-+---------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------+
-| ![](images/logo-01.png){width="125"}        | [gtsummary](https://www.danieldsjoberg.com/gtsummary/)                      |                                                    |
-+---------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------+
-| ![](images/paste-A6E65357.png){width="125"} | [skimr](https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html) |                                                    |
-+---------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------+
-|                                             | [sitrep](https://github.com/R4EPI/sitrep)                                   |                                                    |
-+---------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------+
++---------------------------------------------+-----------------------------------------------------+--------------+
+| ![RuODK logo](images/logo.png){width="125"} | [ruODK](https://docs.ropensci.org/ruODK/index.html) |              |
++---------------------------------------------+-----------------------------------------------------+--------------+
+|                                             | [sitrep](https://github.com/R4EPI/sitrep)           |              |
++---------------------------------------------+-----------------------------------------------------+--------------+
 
 ### Python programming
 
@@ -153,3 +159,17 @@ https://rmetaverse.github.io/
 ## Communities
 
 -   [R for data science online learning community](https://www.rfordatasci.com/)
+
+Conferences
+
+https://www.r-project.org/conferences/
+in general in June-July
+Fees for Tanzanian participants around 6 USD / person
+
+## Statistics
+
+https://rmisstastic.netlify.app/
+
++---------------------------------------------+-----------------------------------------------------+--------------+
+|                                             | [grf](https://grf-labs.github.io/grf/)              |              |
++---------------------------------------------+-----------------------------------------------------+--------------+

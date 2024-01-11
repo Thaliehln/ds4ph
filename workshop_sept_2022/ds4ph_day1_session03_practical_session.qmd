@@ -1,0 +1,56 @@
+---
+title: "Use Stata and Python in your Quarto document"
+subtitle: "Data Science for Public Health - Day 01 - Session 02"
+date: "2022-09-26"
+format:
+  html:
+    toc: true
+    number-sections: true
+editor: visual
+engine: knitr
+bibliography: references.bib
+---
+
+# Introduction
+
+The number of languages and runtimes used for scientific discourse is very broad (and the RStudio and Jupyter ecosystems in particular are extraordinarily popular).
+
+Quarto was developed to be multilingual, beginning with R, Python, Javascript, and Julia, with the idea that it will work even for languages that don't yet exist.
+
+# Use Stata
+
+# For (advanced) Python/R Markdown users only
+
+You still need to import the R package `reticulate` if you want to use the Knitr engine and manipulate Python objects within R code chunks.
+
+```{r}
+#| echo: true
+library(reticulate)
+```
+
+## Manipulation of R objects in Python code chunks
+
+R objects can be manipulated in Python code chunks by referring to them as `r.`
+
+```{r}
+#| echo: true
+val <- 10
+```
+
+```{python}
+#| echo: true
+val = 5
+print(r.val)
+```
+
+## Manipulation of Python objects in R code chunks
+
+Python objects can be manipulated in R code chunks by referring to them as `py$`
+
+```{r}
+#| echo: true
+print(val)
+print(py$val)
+```
+
+## References

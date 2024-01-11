@@ -8,7 +8,7 @@ This electronic book was created by Hélène Langet, Fenella Beynon, Fabian Sch�
 
 The goal of this workshop is to enable researchers from the Ifakara Health Institute (IHI) to strengthen their expertise in the area and to lay the foundations for the development of a data science curriculum that is adapted to IHI's needs.
 
-This work is the product of interdisciplinary discussions with Abdallah Mkopi, Grace Mhalu, Robert Moshiro from IHI and feedback from Hajirani Msuya and Martine Masonda, the first group to use these notebooks.
+This work is the product of interdisciplinary discussions with Abdallah Mkopi, Grace Mhalu, Robert Moshiro from IHI and feedback from Charles Festo, Hajirani Msuya and Martine Masonda, among the first IHI collaborators to test this material.
 
 ## License
 
@@ -28,6 +28,7 @@ Under the following terms:
 ## Update History
 
 * September 25, 2022: First edition.
+* November 1st, 2022: Updated resources.
 
 ## Acknowledgement
 
