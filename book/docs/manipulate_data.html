@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reproducible Data Science for Public Health - 11&nbsp; 📘 Manipulate data</title>
+<title>Reproducible Data Science for Public Health - 5&nbsp; 📘 Manipulate data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./share_and_collaborate_with_git.html" rel="next">
-<link href="./import_data.html" rel="prev">
+<link href="./useful_resources_beginner.html" rel="next">
+<link href="./use_stata_with_r.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tools_for_reproducible_data_science.html">———— DAY 1 ————</a></li><li class="breadcrumb-item"><a href="./manipulate_data.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">:blue_book: Manipulate data</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rstudio_orientation.html"><strong>R QUICK START</strong></a></li><li class="breadcrumb-item"><a href="./manipulate_data.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">:blue_book: Manipulate data</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -142,16 +142,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">———— DAY 1 ————</span></a>
+ <span class="menu-text"><strong>INTRODUCTION</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -159,44 +153,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./data_science_for_public_health.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Data Science for Public Health</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./tools_for_reproducible_data_science.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Tools for reproducible quantitative research</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./version_control_with_git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Version control with Git</span></span></a>
-  </div>
-</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text"><strong>R QUICK START</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./rstudio_orientation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with RStudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Dynamic documents</span></span></a>
+  <a href="./use_stata_with_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> From Stata to R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with Quarto</span></span></a>
+  <a href="./manipulate_data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Manipulate data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./useful_resources_beginner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Technical resources for beginner data scientists</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text"><strong>REPRODUCIBLE CODING</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./version_control_with_git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Version control with Git</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./version_control_with_git2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Commit your changes with Git</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Code chunks</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Commit your changes with Git</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -207,102 +229,136 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./import_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Import external data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./manipulate_data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Manipulate data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./share_and_collaborate_with_git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Share code and collaborate with Git</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Share code and collaborate with Git</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">———— DAY 2 ————</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text"><strong>REPRODUCIBLE REPORTING</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_science_for_public_health.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Data Science for Public Health</span></span></a>
+  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Dynamic documents</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Malaria case study</span></span></a>
+  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with Quarto</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 1</span></span></a>
+  <a href="./use_python_within_quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Use Python within Quarto</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_01_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #1</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_02_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #2</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_03_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #3</span></span></a>
+  <a href="./import_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Import external data</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">———— DAY 3 ————</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text"><strong>MACHINE LEARNING</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./big_data_and_artificial_intelligence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Big data and machine learning</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Big data and machine learning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Practical</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Practical</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cross_validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Cross-validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Cross-validation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical_data_encoding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Encode categorical data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Encode categorical data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text"><strong>PRACTICAL</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_presentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Malaria case study</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_01_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_02_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_03_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #3</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+ <span class="menu-text"><strong>WORKSHOP</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">2022 Tanzania</span></span></a>
   </div>
 </li>
       </ul>
@@ -315,13 +371,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r_setup.html" class="sidebar-item-text sidebar-link">
@@ -337,7 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./useful_resources_beginner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Technical resources for beginner data scientists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Technical resources for beginner data scientists</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -370,22 +426,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">11.1</span> Introduction</a></li>
-  <li><a href="#import-data" id="toc-import-data" class="nav-link" data-scroll-target="#import-data"><span class="header-section-number">11.2</span> Import data</a></li>
-  <li><a href="#piping" id="toc-piping" class="nav-link" data-scroll-target="#piping"><span class="header-section-number">11.3</span> Piping</a></li>
-  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"><span class="header-section-number">11.4</span> Structure of the data</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">5.1</span> Introduction</a></li>
+  <li><a href="#import-data" id="toc-import-data" class="nav-link" data-scroll-target="#import-data"><span class="header-section-number">5.2</span> Import data</a></li>
+  <li><a href="#piping" id="toc-piping" class="nav-link" data-scroll-target="#piping"><span class="header-section-number">5.3</span> Piping</a></li>
+  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"><span class="header-section-number">5.4</span> Structure of the data</a>
   <ul class="collapse">
-  <li><a href="#inspect-the-structure-of-the-data" id="toc-inspect-the-structure-of-the-data" class="nav-link" data-scroll-target="#inspect-the-structure-of-the-data"><span class="header-section-number">11.4.1</span> Inspect the structure of the data</a></li>
-  <li><a href="#convert" id="toc-convert" class="nav-link" data-scroll-target="#convert"><span class="header-section-number">11.4.2</span> Convert</a></li>
-  <li><a href="#add-new-columns" id="toc-add-new-columns" class="nav-link" data-scroll-target="#add-new-columns"><span class="header-section-number">11.4.3</span> Add new columns</a></li>
+  <li><a href="#inspect-the-structure-of-the-data" id="toc-inspect-the-structure-of-the-data" class="nav-link" data-scroll-target="#inspect-the-structure-of-the-data"><span class="header-section-number">5.4.1</span> Inspect the structure of the data</a></li>
+  <li><a href="#convert" id="toc-convert" class="nav-link" data-scroll-target="#convert"><span class="header-section-number">5.4.2</span> Convert</a></li>
+  <li><a href="#add-new-columns" id="toc-add-new-columns" class="nav-link" data-scroll-target="#add-new-columns"><span class="header-section-number">5.4.3</span> Add new columns</a></li>
   </ul></li>
-  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"><span class="header-section-number">11.5</span> Descriptive statistics</a></li>
-  <li><a href="#filter-data" id="toc-filter-data" class="nav-link" data-scroll-target="#filter-data"><span class="header-section-number">11.6</span> Filter data</a></li>
-  <li><a href="#concatenate-data" id="toc-concatenate-data" class="nav-link" data-scroll-target="#concatenate-data"><span class="header-section-number">11.7</span> Concatenate data</a></li>
-  <li><a href="#visualise-data" id="toc-visualise-data" class="nav-link" data-scroll-target="#visualise-data"><span class="header-section-number">11.8</span> Visualise data</a></li>
-  <li><a href="#plot" id="toc-plot" class="nav-link" data-scroll-target="#plot"><span class="header-section-number">11.9</span> Plot</a></li>
-  <li><a href="#explore-data" id="toc-explore-data" class="nav-link" data-scroll-target="#explore-data"><span class="header-section-number">11.10</span> Explore data</a></li>
-  <li><a href="#manipulate-python-and-r-data" id="toc-manipulate-python-and-r-data" class="nav-link" data-scroll-target="#manipulate-python-and-r-data"><span class="header-section-number">11.11</span> Manipulate Python and R data</a></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"><span class="header-section-number">5.5</span> Descriptive statistics</a></li>
+  <li><a href="#filter-data" id="toc-filter-data" class="nav-link" data-scroll-target="#filter-data"><span class="header-section-number">5.6</span> Filter data</a></li>
+  <li><a href="#concatenate-data" id="toc-concatenate-data" class="nav-link" data-scroll-target="#concatenate-data"><span class="header-section-number">5.7</span> Concatenate data</a></li>
+  <li><a href="#visualise-data" id="toc-visualise-data" class="nav-link" data-scroll-target="#visualise-data"><span class="header-section-number">5.8</span> Visualise data</a></li>
+  <li><a href="#plot" id="toc-plot" class="nav-link" data-scroll-target="#plot"><span class="header-section-number">5.9</span> Plot</a></li>
+  <li><a href="#explore-data" id="toc-explore-data" class="nav-link" data-scroll-target="#explore-data"><span class="header-section-number">5.10</span> Explore data</a></li>
+  <li><a href="#manipulate-python-and-r-data" id="toc-manipulate-python-and-r-data" class="nav-link" data-scroll-target="#manipulate-python-and-r-data"><span class="header-section-number">5.11</span> Manipulate Python and R data</a></li>
   </ul>
 </nav>
     </div>
@@ -394,7 +450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">:blue_book: Manipulate data</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">:blue_book: Manipulate data</span></h1>
 </div>
 
 
@@ -409,8 +465,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="introduction" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">11.1</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> Introduction</h2>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -425,8 +481,8 @@ Important
 </div>
 </div>
 </section>
-<section id="import-data" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="import-data"><span class="header-section-number">11.2</span> Import data</h2>
+<section id="import-data" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="import-data"><span class="header-section-number">5.2</span> Import data</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page"><span class="emoji" data-emoji="pencil2">✏️</span> Exercise 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><span class="emoji" data-emoji="eyes">👀</span> Solution</a></li></ul>
 <div class="tab-content">
@@ -448,15 +504,15 @@ Important
 </div>
 </div>
 </section>
-<section id="piping" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="piping"><span class="header-section-number">11.3</span> Piping</h2>
+<section id="piping" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="piping"><span class="header-section-number">5.3</span> Piping</h2>
 <p>Package <code>dplyr</code></p>
 <p>Pipes are a powerful tool for clearly expressing a sequence of multiple operations. So far, you’ve been using them without knowing how they work, or what the alternatives are. Now, in this chapter, it’s time to explore the pipe in more detail. You’ll learn the alternatives to the pipe, when you shouldn’t use the pipe, and some useful related tools.</p>
 </section>
-<section id="structure-of-the-data" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">11.4</span> Structure of the data</h2>
-<section id="inspect-the-structure-of-the-data" class="level3" data-number="11.4.1">
-<h3 data-number="11.4.1" class="anchored" data-anchor-id="inspect-the-structure-of-the-data"><span class="header-section-number">11.4.1</span> Inspect the structure of the data</h3>
+<section id="structure-of-the-data" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">5.4</span> Structure of the data</h2>
+<section id="inspect-the-structure-of-the-data" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="inspect-the-structure-of-the-data"><span class="header-section-number">5.4.1</span> Inspect the structure of the data</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
@@ -515,17 +571,17 @@ Important
 <p><strong>Variable type: numeric</strong></p>
 <table class="table table-sm table-striped small">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 8%">
+<col style="width: 22%">
 <col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 3%">
 <col style="width: 5%">
 <col style="width: 5%">
-<col style="width: 2%">
-<col style="width: 3%">
-<col style="width: 3%">
-<col style="width: 3%">
-<col style="width: 4%">
-<col style="width: 35%">
+<col style="width: 5%">
+<col style="width: 6%">
+<col style="width: 7%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -633,17 +689,17 @@ Important
 </ol>
 <p>Select a single answer</p>
 </section>
-<section id="convert" class="level3" data-number="11.4.2">
-<h3 data-number="11.4.2" class="anchored" data-anchor-id="convert"><span class="header-section-number">11.4.2</span> Convert</h3>
+<section id="convert" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="convert"><span class="header-section-number">5.4.2</span> Convert</h3>
 <p>Function mutate across</p>
 </section>
-<section id="add-new-columns" class="level3" data-number="11.4.3">
-<h3 data-number="11.4.3" class="anchored" data-anchor-id="add-new-columns"><span class="header-section-number">11.4.3</span> Add new columns</h3>
+<section id="add-new-columns" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="add-new-columns"><span class="header-section-number">5.4.3</span> Add new columns</h3>
 <p>Function mutate</p>
 </section>
 </section>
-<section id="descriptive-statistics" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="descriptive-statistics"><span class="header-section-number">11.5</span> Descriptive statistics</h2>
+<section id="descriptive-statistics" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="descriptive-statistics"><span class="header-section-number">5.5</span> Descriptive statistics</h2>
 <p>Package <code>gtsummary</code></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"gtsummary"</span>)</span>
@@ -660,14 +716,26 @@ Important
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="btjxxowfna" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="rscqqwounc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rscqqwounc table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#btjxxowfna .gt_table {
+#rscqqwounc thead, #rscqqwounc tbody, #rscqqwounc tfoot, #rscqqwounc tr, #rscqqwounc td, #rscqqwounc th {
+  border-style: none;
+}
+
+#rscqqwounc p {
+  margin: 0;
+  padding: 0;
+}
+
+#rscqqwounc .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -690,19 +758,12 @@ Important
   border-left-color: #D3D3D3;
 }
 
-#btjxxowfna .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
+#rscqqwounc .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
-#btjxxowfna .gt_title {
+#rscqqwounc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -714,25 +775,37 @@ Important
   border-bottom-width: 0;
 }
 
-#btjxxowfna .gt_subtitle {
+#rscqqwounc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-#btjxxowfna .gt_bottom_border {
+#rscqqwounc .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rscqqwounc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#btjxxowfna .gt_col_headings {
+#rscqqwounc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -747,7 +820,7 @@ Important
   border-right-color: #D3D3D3;
 }
 
-#btjxxowfna .gt_col_heading {
+#rscqqwounc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -767,7 +840,7 @@ Important
   overflow-x: hidden;
 }
 
-#btjxxowfna .gt_column_spanner_outer {
+#rscqqwounc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -779,15 +852,15 @@ Important
   padding-right: 4px;
 }
 
-#btjxxowfna .gt_column_spanner_outer:first-child {
+#rscqqwounc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#btjxxowfna .gt_column_spanner_outer:last-child {
+#rscqqwounc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#btjxxowfna .gt_column_spanner {
+#rscqqwounc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -799,7 +872,11 @@ Important
   width: 100%;
 }
 
-#btjxxowfna .gt_group_heading {
+#rscqqwounc .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#rscqqwounc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -822,9 +899,10 @@ Important
   border-right-width: 1px;
   border-right-color: #D3D3D3;
   vertical-align: middle;
+  text-align: left;
 }
 
-#btjxxowfna .gt_empty_group_heading {
+#rscqqwounc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -839,15 +917,15 @@ Important
   vertical-align: middle;
 }
 
-#btjxxowfna .gt_from_md > :first-child {
+#rscqqwounc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#btjxxowfna .gt_from_md > :last-child {
+#rscqqwounc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#btjxxowfna .gt_row {
+#rscqqwounc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -866,7 +944,7 @@ Important
   overflow-x: hidden;
 }
 
-#btjxxowfna .gt_stub {
+#rscqqwounc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -879,7 +957,7 @@ Important
   padding-right: 5px;
 }
 
-#btjxxowfna .gt_stub_row_group {
+#rscqqwounc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -893,11 +971,15 @@ Important
   vertical-align: top;
 }
 
-#btjxxowfna .gt_row_group_first td {
+#rscqqwounc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#btjxxowfna .gt_summary_row {
+#rscqqwounc .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#rscqqwounc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -907,16 +989,16 @@ Important
   padding-right: 5px;
 }
 
-#btjxxowfna .gt_first_summary_row {
+#rscqqwounc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#btjxxowfna .gt_first_summary_row.thick {
+#rscqqwounc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#btjxxowfna .gt_last_summary_row {
+#rscqqwounc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -926,7 +1008,7 @@ Important
   border-bottom-color: #D3D3D3;
 }
 
-#btjxxowfna .gt_grand_summary_row {
+#rscqqwounc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -936,7 +1018,7 @@ Important
   padding-right: 5px;
 }
 
-#btjxxowfna .gt_first_grand_summary_row {
+#rscqqwounc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -946,11 +1028,21 @@ Important
   border-top-color: #D3D3D3;
 }
 
-#btjxxowfna .gt_striped {
+#rscqqwounc .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rscqqwounc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#btjxxowfna .gt_table_body {
+#rscqqwounc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -959,7 +1051,7 @@ Important
   border-bottom-color: #D3D3D3;
 }
 
-#btjxxowfna .gt_footnotes {
+#rscqqwounc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -973,30 +1065,8 @@ Important
   border-right-color: #D3D3D3;
 }
 
-#btjxxowfna .gt_footnote {
+#rscqqwounc .gt_footnote {
   margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#btjxxowfna .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#btjxxowfna .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1004,190 +1074,166 @@ Important
   padding-right: 5px;
 }
 
-#btjxxowfna .gt_left {
+#rscqqwounc .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rscqqwounc .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rscqqwounc .gt_left {
   text-align: left;
 }
 
-#btjxxowfna .gt_center {
+#rscqqwounc .gt_center {
   text-align: center;
 }
 
-#btjxxowfna .gt_right {
+#rscqqwounc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#btjxxowfna .gt_font_normal {
+#rscqqwounc .gt_font_normal {
   font-weight: normal;
 }
 
-#btjxxowfna .gt_font_bold {
+#rscqqwounc .gt_font_bold {
   font-weight: bold;
 }
 
-#btjxxowfna .gt_font_italic {
+#rscqqwounc .gt_font_italic {
   font-style: italic;
 }
 
-#btjxxowfna .gt_super {
+#rscqqwounc .gt_super {
   font-size: 65%;
 }
 
-#btjxxowfna .gt_two_val_uncert {
-  display: inline-block;
-  line-height: 1em;
-  text-align: right;
-  font-size: 60%;
-  vertical-align: -0.25em;
-  margin-left: 0.1em;
-}
-
-#btjxxowfna .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
+#rscqqwounc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
-#btjxxowfna .gt_asterisk {
+#rscqqwounc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#btjxxowfna .gt_slash_mark {
-  font-size: 0.7em;
-  line-height: 0.7em;
-  vertical-align: 0.15em;
+#rscqqwounc .gt_indent_1 {
+  text-indent: 5px;
 }
 
-#btjxxowfna .gt_fraction_numerator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: 0.45em;
+#rscqqwounc .gt_indent_2 {
+  text-indent: 10px;
 }
 
-#btjxxowfna .gt_fraction_denominator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: -0.05em;
+#rscqqwounc .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#rscqqwounc .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#rscqqwounc .gt_indent_5 {
+  text-indent: 25px;
 }
 </style>
-
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
-<thead class="gt_col_headings">
-<tr class="header">
-<th class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th"><strong>Characteristic</strong></th>
-<th class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th"><strong>N = 10,308</strong><sup>1</sup></th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left">SDC_sex</td>
-<td class="gt_row gt_center"></td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
-<td class="gt_row gt_center">5,229 (51%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">2</td>
-<td class="gt_row gt_center">5,075 (49%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
-<td class="gt_row gt_center">4</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left">SDC_age_in_months</td>
-<td class="gt_row gt_center">15 (7, 27)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left">CLIN_fever</td>
-<td class="gt_row gt_center"></td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
-<td class="gt_row gt_center">3,068 (30%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
-<td class="gt_row gt_center">7,225 (70%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
-<td class="gt_row gt_center">15 (0.1%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left">CLIN_fever_onset</td>
-<td class="gt_row gt_center">2.00 (1.00, 3.00)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Unknown</td>
-<td class="gt_row gt_center">3,083</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left">CLIN_cough</td>
-<td class="gt_row gt_center"></td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
-<td class="gt_row gt_center">4,658 (45%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
-<td class="gt_row gt_center">5,635 (55%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
-<td class="gt_row gt_center">15 (0.1%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left">CLIN_diarrhoea</td>
-<td class="gt_row gt_center"></td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">0</td>
-<td class="gt_row gt_center">7,982 (77%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
-<td class="gt_row gt_center">2,306 (22%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">98</td>
-<td class="gt_row gt_center">20 (0.2%)</td>
-</tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="even">
-<td colspan="2" class="gt_footnote"><sup>1</sup> n (%); Median (IQR)</td>
-</tr>
-</tfoot>
-
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>N = 10,308</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>"><strong>N = 10,308</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="label" class="gt_row gt_left">SDC_sex</td>
+<td headers="stat_0" class="gt_row gt_center"><br></td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td headers="stat_0" class="gt_row gt_center">5,229 (51%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
+<td headers="stat_0" class="gt_row gt_center">5,075 (49%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td headers="stat_0" class="gt_row gt_center">4</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">SDC_age_in_months</td>
+<td headers="stat_0" class="gt_row gt_center">15 (7, 27)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">CLIN_fever</td>
+<td headers="stat_0" class="gt_row gt_center"><br></td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;0</td>
+<td headers="stat_0" class="gt_row gt_center">3,068 (30%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td headers="stat_0" class="gt_row gt_center">7,225 (70%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;98</td>
+<td headers="stat_0" class="gt_row gt_center">15 (0.1%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">CLIN_fever_onset</td>
+<td headers="stat_0" class="gt_row gt_center">2.00 (1.00, 3.00)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td headers="stat_0" class="gt_row gt_center">3,083</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">CLIN_cough</td>
+<td headers="stat_0" class="gt_row gt_center"><br></td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;0</td>
+<td headers="stat_0" class="gt_row gt_center">4,658 (45%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td headers="stat_0" class="gt_row gt_center">5,635 (55%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;98</td>
+<td headers="stat_0" class="gt_row gt_center">15 (0.1%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">CLIN_diarrhoea</td>
+<td headers="stat_0" class="gt_row gt_center"><br></td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;0</td>
+<td headers="stat_0" class="gt_row gt_center">7,982 (77%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td headers="stat_0" class="gt_row gt_center">2,306 (22%)</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;98</td>
+<td headers="stat_0" class="gt_row gt_center">20 (0.2%)</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="2"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> n (%); Median (IQR)</td>
+    </tr>
+  </tfoot>
 </table>
-
 </div>
 </div>
 </div>
 </section>
-<section id="filter-data" class="level2" data-number="11.6">
-<h2 data-number="11.6" class="anchored" data-anchor-id="filter-data"><span class="header-section-number">11.6</span> Filter data</h2>
+<section id="filter-data" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="filter-data"><span class="header-section-number">5.6</span> Filter data</h2>
 </section>
-<section id="concatenate-data" class="level2" data-number="11.7">
-<h2 data-number="11.7" class="anchored" data-anchor-id="concatenate-data"><span class="header-section-number">11.7</span> Concatenate data</h2>
+<section id="concatenate-data" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="concatenate-data"><span class="header-section-number">5.7</span> Concatenate data</h2>
 <p>cbind rbind</p>
 </section>
-<section id="visualise-data" class="level2" data-number="11.8">
-<h2 data-number="11.8" class="anchored" data-anchor-id="visualise-data"><span class="header-section-number">11.8</span> Visualise data</h2>
+<section id="visualise-data" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="visualise-data"><span class="header-section-number">5.8</span> Visualise data</h2>
 </section>
-<section id="plot" class="level2" data-number="11.9">
-<h2 data-number="11.9" class="anchored" data-anchor-id="plot"><span class="header-section-number">11.9</span> Plot</h2>
+<section id="plot" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="plot"><span class="header-section-number">5.9</span> Plot</h2>
 <p>Package <code>ggplot2</code></p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="explore-data" class="level2" data-number="11.10">
-<h2 data-number="11.10" class="anchored" data-anchor-id="explore-data"><span class="header-section-number">11.10</span> Explore data</h2>
+<section id="explore-data" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="explore-data"><span class="header-section-number">5.10</span> Explore data</h2>
 <p>Package <code>DataExplorer</code></p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"DataExplorer"</span>)</span>
@@ -1208,8 +1254,8 @@ Important
 </div>
 </div>
 </section>
-<section id="manipulate-python-and-r-data" class="level2" data-number="11.11">
-<h2 data-number="11.11" class="anchored" data-anchor-id="manipulate-python-and-r-data"><span class="header-section-number">11.11</span> Manipulate Python and R data</h2>
+<section id="manipulate-python-and-r-data" class="level2" data-number="5.11">
+<h2 data-number="5.11" class="anchored" data-anchor-id="manipulate-python-and-r-data"><span class="header-section-number">5.11</span> Manipulate Python and R data</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><span class="emoji" data-emoji="pencil2">✏️</span> Exercise 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><span class="emoji" data-emoji="eyes">👀</span> Solution</a></li></ul>
 <div class="tab-content">
@@ -1540,13 +1586,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./import_data.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Import external data</span></span>
+      <a href="./use_stata_with_r.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> From Stata to R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./share_and_collaborate_with_git.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Share code and collaborate with Git</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./useful_resources_beginner.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Technical resources for beginner data scientists</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

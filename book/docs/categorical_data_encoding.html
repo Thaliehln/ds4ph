@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reproducible Data Science for Public Health - 22&nbsp; 📙 Encode categorical data</title>
+<title>Reproducible Data Science for Public Health - 18&nbsp; 📙 Encode categorical data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./malaria_case_study_presentation.html" rel="next">
 <link href="./cross_validation.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./big_data_and_artificial_intelligence.html">———— DAY 3 ————</a></li><li class="breadcrumb-item"><a href="./categorical_data_encoding.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">:orange_book: Encode categorical data</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./big_data_and_artificial_intelligence.html"><strong>MACHINE LEARNING</strong></a></li><li class="breadcrumb-item"><a href="./categorical_data_encoding.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">:orange_book: Encode categorical data</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -142,16 +142,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">———— DAY 1 ————</span></a>
+ <span class="menu-text"><strong>INTRODUCTION</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -159,44 +153,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./data_science_for_public_health.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Data Science for Public Health</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./tools_for_reproducible_data_science.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Tools for reproducible quantitative research</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./version_control_with_git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Version control with Git</span></span></a>
-  </div>
-</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text"><strong>R QUICK START</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./rstudio_orientation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with RStudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Dynamic documents</span></span></a>
+  <a href="./use_stata_with_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> From Stata to R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with Quarto</span></span></a>
+  <a href="./manipulate_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Manipulate data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./useful_resources_beginner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Technical resources for beginner data scientists</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text"><strong>REPRODUCIBLE CODING</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./version_control_with_git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Version control with Git</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./version_control_with_git2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Commit your changes with Git</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Code chunks</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Commit your changes with Git</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -207,102 +229,136 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./import_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Import external data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./manipulate_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Manipulate data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./share_and_collaborate_with_git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Share code and collaborate with Git</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Share code and collaborate with Git</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">———— DAY 2 ————</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text"><strong>REPRODUCIBLE REPORTING</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_science_for_public_health.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Data Science for Public Health</span></span></a>
+  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Dynamic documents</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Malaria case study</span></span></a>
+  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with Quarto</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 1</span></span></a>
+  <a href="./use_python_within_quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Use Python within Quarto</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_01_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #1</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_02_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #2</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_03_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #3</span></span></a>
+  <a href="./import_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Import external data</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">———— DAY 3 ————</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text"><strong>MACHINE LEARNING</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./big_data_and_artificial_intelligence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Big data and machine learning</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Big data and machine learning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Practical</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Practical</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cross_validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Cross-validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Cross-validation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical_data_encoding.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Encode categorical data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Encode categorical data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text"><strong>PRACTICAL</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_presentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Malaria case study</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_01_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_02_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_03_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #3</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+ <span class="menu-text"><strong>WORKSHOP</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">2022 Tanzania</span></span></a>
   </div>
 </li>
       </ul>
@@ -315,13 +371,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r_setup.html" class="sidebar-item-text sidebar-link">
@@ -337,7 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./useful_resources_beginner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Technical resources for beginner data scientists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Technical resources for beginner data scientists</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -370,14 +426,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">23</span> Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">19</span> Introduction</a>
   <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">23.1</span> Overview</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">23.2</span> Learning objectives</a></li>
-  <li><a href="#identify-categorical-data" id="toc-identify-categorical-data" class="nav-link" data-scroll-target="#identify-categorical-data"><span class="header-section-number">23.3</span> Identify categorical data</a></li>
-  <li><a href="#ordinal-encoding" id="toc-ordinal-encoding" class="nav-link" data-scroll-target="#ordinal-encoding"><span class="header-section-number">23.4</span> Ordinal encoding</a></li>
-  <li><a href="#encoding-nominal-categories-without-assuming-any-order" id="toc-encoding-nominal-categories-without-assuming-any-order" class="nav-link" data-scroll-target="#encoding-nominal-categories-without-assuming-any-order"><span class="header-section-number">23.5</span> Encoding nominal categories (without assuming any order)</a></li>
-  <li><a href="#choosing-an-encoding-strategy" id="toc-choosing-an-encoding-strategy" class="nav-link" data-scroll-target="#choosing-an-encoding-strategy"><span class="header-section-number">23.6</span> Choosing an encoding strategy</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">19.1</span> Overview</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">19.2</span> Learning objectives</a></li>
+  <li><a href="#identify-categorical-data" id="toc-identify-categorical-data" class="nav-link" data-scroll-target="#identify-categorical-data"><span class="header-section-number">19.3</span> Identify categorical data</a></li>
+  <li><a href="#ordinal-encoding" id="toc-ordinal-encoding" class="nav-link" data-scroll-target="#ordinal-encoding"><span class="header-section-number">19.4</span> Ordinal encoding</a></li>
+  <li><a href="#encoding-nominal-categories-without-assuming-any-order" id="toc-encoding-nominal-categories-without-assuming-any-order" class="nav-link" data-scroll-target="#encoding-nominal-categories-without-assuming-any-order"><span class="header-section-number">19.5</span> Encoding nominal categories (without assuming any order)</a></li>
+  <li><a href="#choosing-an-encoding-strategy" id="toc-choosing-an-encoding-strategy" class="nav-link" data-scroll-target="#choosing-an-encoding-strategy"><span class="header-section-number">19.6</span> Choosing an encoding strategy</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -387,7 +443,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">:orange_book: Encode categorical data</span></h1>
+<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">:orange_book: Encode categorical data</span></h1>
 </div>
 
 
@@ -402,14 +458,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="introduction" class="level1" data-number="23">
-<h1 data-number="23"><span class="header-section-number">23</span> Introduction</h1>
-<section id="overview" class="level2" data-number="23.1">
-<h2 data-number="23.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">23.1</span> Overview</h2>
+<section id="introduction" class="level1" data-number="19">
+<h1 data-number="19"><span class="header-section-number">19</span> Introduction</h1>
+<section id="overview" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">19.1</span> Overview</h2>
 <p>Most ML algorithms only work with numeric values In this notebook, we will present typical ways of dealing with categorical variables by encoding them, namely ordinal encoding and one-hot encoding.</p>
 </section>
-<section id="learning-objectives" class="level2" data-number="23.2">
-<h2 data-number="23.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">23.2</span> Learning objectives</h2>
+<section id="learning-objectives" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">19.2</span> Learning objectives</h2>
 <ul>
 <li>seen two common strategies for encoding categorical features: ordinal encoding and one-hot encoding;</li>
 <li>used a pipeline to use a one-hot encoder before fitting a logistic regression.</li>
@@ -421,8 +477,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="identify-categorical-data" class="level2" data-number="23.3">
-<h2 data-number="23.3" class="anchored" data-anchor-id="identify-categorical-data"><span class="header-section-number">23.3</span> Identify categorical data</h2>
+<section id="identify-categorical-data" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="identify-categorical-data"><span class="header-section-number">19.3</span> Identify categorical data</h2>
 <p>Let’s first load the entire adult dataset containing both numerical and categorical data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
@@ -1062,17 +1118,17 @@ Tip
 </div>
 </div>
 </section>
-<section id="ordinal-encoding" class="level2" data-number="23.4">
-<h2 data-number="23.4" class="anchored" data-anchor-id="ordinal-encoding"><span class="header-section-number">23.4</span> Ordinal encoding</h2>
+<section id="ordinal-encoding" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="ordinal-encoding"><span class="header-section-number">19.4</span> Ordinal encoding</h2>
 <p>The most intuitive strategy is to encode each category with a different number. This means that there is an order in the resulting categories (e.g.&nbsp;0 &lt; 1 &lt; 2). If a categorical variable does not carry any meaningful order information then this encoding might be misleading to downstream statistical models and you might consider using one-hot encoding instead (see below).</p>
 </section>
-<section id="encoding-nominal-categories-without-assuming-any-order" class="level2" data-number="23.5">
-<h2 data-number="23.5" class="anchored" data-anchor-id="encoding-nominal-categories-without-assuming-any-order"><span class="header-section-number">23.5</span> Encoding nominal categories (without assuming any order)</h2>
+<section id="encoding-nominal-categories-without-assuming-any-order" class="level2" data-number="19.5">
+<h2 data-number="19.5" class="anchored" data-anchor-id="encoding-nominal-categories-without-assuming-any-order"><span class="header-section-number">19.5</span> Encoding nominal categories (without assuming any order)</h2>
 <p>One-hot encoding is an alternative encoder that prevents the downstream models to make a false assumption about the ordering of categories. For a given feature, it will create as many new columns as there are possible categories. For a given sample, the value of the column corresponding to the category will be set to 1 while all the columns of the other categories will be set to 0.</p>
 <p>We see that encoding a single feature will give a table full of zeros and ones. Sparse matrices are efficient data structures when most of your matrix elements are zero. If you want more details about them, you can look at this. (https://scipy-lectures.org/advanced/scipy_sparse/introduction.html#why-sparse-matrices)</p>
 </section>
-<section id="choosing-an-encoding-strategy" class="level2" data-number="23.6">
-<h2 data-number="23.6" class="anchored" data-anchor-id="choosing-an-encoding-strategy"><span class="header-section-number">23.6</span> Choosing an encoding strategy</h2>
+<section id="choosing-an-encoding-strategy" class="level2" data-number="19.6">
+<h2 data-number="19.6" class="anchored" data-anchor-id="choosing-an-encoding-strategy"><span class="header-section-number">19.6</span> Choosing an encoding strategy</h2>
 <p>Choosing an encoding strategy will depend on the underlying models and the type of categories (i.e.&nbsp;ordinal vs.&nbsp;nominal).</p>
 <p>In general One-Hot encoding is the encoding strategy used when the downstream models are linear models while ordinal encoding is often a good strategy with tree-based models. Using an OrdinalEncoder will output ordinal categories.The impact of violating this ordering assumption is really dependent on the downstream models. Linear models will be impacted by misordered categories while tree-based models will not. One-hot encoding categorical variables with high cardinality can cause computational inefficiency in tree-based models. Because of this, it is not recommended to use OneHotEncoder in such cases even if the original categories do not have a given order.</p>
 <p>You can still use an ordinall encoding with linear models but you need to be sure that:</p>
@@ -1322,12 +1378,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./cross_validation.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Cross-validation</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Cross-validation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./malaria_case_study_presentation.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Malaria case study</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

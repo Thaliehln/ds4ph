@@ -1,8 +1,8 @@
 # Preface {.unnumbered}
 
-## Introduction
-
 Data science and artificial intelligence have the potential to generate fundamentally new insights on global health policies in Africa, but the full realization of this potential depends on the availability of a critical mass of highly trained health data scientists on the continent.
+
+## Background
 
 This electronic book was originally created by Hélène Langet, Fenella Beynon, Silvia Cicconi and Gillian Levine from the [Swiss Tropical & Public Health Institute (Swiss TPH)](https://www.swisstph.ch) and Samwel Lwambura from the [Ifakara Health Institute (IHI)](https://ihi.or.tz/) to accompany the **Data Science for Public Health** workshop which was held in Dar-es-Salaam from Monday,September 26th to Wednesday, September 28th 2022. The goal of this workshop was to enable IHI researchers to strengthen their expertise in the area and to lay the foundations for the development of a data science curriculum that is adapted to IHI's needs.
 
@@ -33,8 +33,8 @@ Under the following terms:
 
 This work was funded by the [Leading House Africa (LHA)](https://www.swisstph.ch/en/research/leading-house-africa/) which promotes and fosters bilateral collaboration with partner institutions in Africa.
 
-This work was not led in isolation and is the product of interdisciplinary discussions with the following research and public health professionals in Europe and in Sub-Saharan Africa:
+This work was not led in isolation and is the product of interdisciplinary discussions with the following research and public health professionals in Switzerland and in Sub-Saharan Africa:
+
 * Ms Moniek Bresser, Dr Aurelio Di Pasquale, Prof Manuel Hetzel, Dr Marek Kwiatkowski, Dr Fabian Schär from Swiss TPH (Switzerland)
 * M. Ibrahim Mtebene, Dr Abdallah Mkopi, Dr Grace Mhalu, and Dr Robert Moshiro from IHI, Charles Festo, Hajirani Msuya and Martine Masonda from IHI (Tanzania)
-* Prof Jean Augustin Tine from the Cheikh Anta Diop University of Dakar (UCAD, Senegal)
 * M. Francis Njiri from University of Nairobi (UoN, Kenya)

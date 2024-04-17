@@ -86,6 +86,71 @@ You can add options to executable code like this
 
 The `echo: false` option disables the printing of code (only output is displayed).
 
+
+## Multilanguage
+
+As the number of programming languages used for scientific discourse is very broad, Quarto was developed to be multilingual, beginning with R, Python, Javascript, and Julia. building on the RStudio (R) and Jupyter (Python, Julia) ecosystems which are very popular. Stata is not a language supported by Quarto.
+
+## Create code chunks
+
+To write and execute code in Quarto, you will use **code chunks**.
+
+::: callout-tip
+
+Here are some tips for creating code chunks in RStudio
+
+* **Backticks**: use three backticks to start and end a code chunk.
+* **Toolbar icon**: you can also start a code chunk by clicking the appropriate icon in the toolbar.
+* **Keyboard shortcut**: for a quicker method, use the keyboard shortcut `Ctrl` + `Alt` + `I`
+
+:::
+
+## Write R code chunks
+
+In this section, we will see how to use and mix R, Stata and Python within Quarto so that you can make the most out of it.
+
+::: callout-note
+A **data frame** is a two-dimensional array-like structure that contains rows and columns.
+:::
+
+To store the content of the *iris* dataset into a data frame named `df`, you can use `=` (*equal*) but good practice recommend using `<-` (*back arrow*) to indicate the direction of your allocation.
+
+```{r}
+#| echo: fenced
+df <- iris
+```
+
+How to display data
+
+```{r}
+#| echo: fenced
+#| df-print: kable
+library(dplyr)
+knitr::kable(head(df, 10))
+```
+
+The pipe operator
+
+```{r}
+#| echo: fenced
+#| df-print: kable
+library(dplyr)
+df %>%
+  head(10) %>%
+  knitr::kable()
+```
+
+You can cross-reference your table @tbl-iris
+
+```{r}
+#| label: tbl-iris
+#| tbl-cap: Iris data set
+#| echo: fenced
+#| df-print: kable
+df %>% 
+  knitr::kable()
+```
+
 ## References
 
 -   The Epidemiologist R Handbook (https://epirhandbook.com)

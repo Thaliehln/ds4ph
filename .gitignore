@@ -7,3 +7,5 @@ rsconnect
 workshop_sept_2022/process_missing_data_4_stata.R
 03_jupyter_notebook_examples/.pyodk_config.toml
 book/.pyodk_config.toml
+/book/.quarto/_freeze
+/book/.quarto

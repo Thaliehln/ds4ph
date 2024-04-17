@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reproducible Data Science for Public Health - 6&nbsp; 📘 Getting started with Quarto</title>
+<title>Reproducible Data Science for Public Health - 12&nbsp; 📘 Getting started with Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./version_control_with_git2.html" rel="next">
+<link href="./use_python_within_quarto.html" rel="next">
 <link href="./dynamic_documents.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tools_for_reproducible_data_science.html">———— DAY 1 ————</a></li><li class="breadcrumb-item"><a href="./create_first_quarto_doc.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">:blue_book: Getting started with Quarto</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dynamic_documents.html"><strong>REPRODUCIBLE REPORTING</strong></a></li><li class="breadcrumb-item"><a href="./create_first_quarto_doc.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">:blue_book: Getting started with Quarto</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -142,16 +142,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">———— DAY 1 ————</span></a>
+ <span class="menu-text"><strong>INTRODUCTION</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -159,44 +153,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./data_science_for_public_health.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Data Science for Public Health</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./tools_for_reproducible_data_science.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Tools for reproducible quantitative research</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./version_control_with_git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Version control with Git</span></span></a>
-  </div>
-</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text"><strong>R QUICK START</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./rstudio_orientation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with RStudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Dynamic documents</span></span></a>
+  <a href="./use_stata_with_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> From Stata to R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with Quarto</span></span></a>
+  <a href="./manipulate_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Manipulate data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./useful_resources_beginner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Technical resources for beginner data scientists</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text"><strong>REPRODUCIBLE CODING</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./version_control_with_git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Version control with Git</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./version_control_with_git2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Commit your changes with Git</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./use_stata_python_with_quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Code chunks</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Commit your changes with Git</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -207,102 +229,136 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./import_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Import external data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./manipulate_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Manipulate data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./share_and_collaborate_with_git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Share code and collaborate with Git</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Share code and collaborate with Git</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">———— DAY 2 ————</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text"><strong>REPRODUCIBLE REPORTING</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_science_for_public_health.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Data Science for Public Health</span></span></a>
+  <a href="./dynamic_documents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Dynamic documents</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Malaria case study</span></span></a>
+  <a href="./create_first_quarto_doc.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Getting started with Quarto</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 1</span></span></a>
+  <a href="./use_python_within_quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Use Python within Quarto</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_01_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #1</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_02_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #2</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./malaria_case_study_03_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #3</span></span></a>
+  <a href="./import_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Import external data</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">———— DAY 3 ————</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text"><strong>MACHINE LEARNING</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./big_data_and_artificial_intelligence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Big data and machine learning</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Big data and machine learning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ds4ph_day3_session01_practical_session.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Practical</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Practical</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cross_validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Cross-validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Cross-validation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical_data_encoding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Encode categorical data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Encode categorical data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text"><strong>PRACTICAL</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_presentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Malaria case study</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Part 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_01_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_02_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./malaria_case_study_03_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="orange_book">📙</span> Malaria case study - Report #3</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+ <span class="menu-text"><strong>WORKSHOP</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">2022 Tanzania</span></span></a>
   </div>
 </li>
       </ul>
@@ -315,13 +371,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r_setup.html" class="sidebar-item-text sidebar-link">
@@ -337,7 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./useful_resources_beginner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Technical resources for beginner data scientists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Technical resources for beginner data scientists</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -370,16 +426,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">6.1</span> Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">12.1</span> Introduction</a>
   <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">6.1.1</span> Overview</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">6.1.2</span> Learning objectives</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">12.1.1</span> Overview</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">12.1.2</span> Learning objectives</a></li>
   </ul></li>
-  <li><a href="#create-a-new-quarto-document" id="toc-create-a-new-quarto-document" class="nav-link" data-scroll-target="#create-a-new-quarto-document"><span class="header-section-number">6.2</span> Create a new Quarto document</a></li>
-  <li><a href="#visual-editor" id="toc-visual-editor" class="nav-link" data-scroll-target="#visual-editor"><span class="header-section-number">6.3</span> Visual Editor</a></li>
-  <li><a href="#quarto-document-structure" id="toc-quarto-document-structure" class="nav-link" data-scroll-target="#quarto-document-structure"><span class="header-section-number">6.4</span> Quarto document structure</a></li>
-  <li><a href="#quarto-render" id="toc-quarto-render" class="nav-link" data-scroll-target="#quarto-render"><span class="header-section-number">6.5</span> Quarto render</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">6.6</span> References</a></li>
+  <li><a href="#create-a-new-quarto-document" id="toc-create-a-new-quarto-document" class="nav-link" data-scroll-target="#create-a-new-quarto-document"><span class="header-section-number">12.2</span> Create a new Quarto document</a></li>
+  <li><a href="#visual-editor" id="toc-visual-editor" class="nav-link" data-scroll-target="#visual-editor"><span class="header-section-number">12.3</span> Visual Editor</a></li>
+  <li><a href="#quarto-document-structure" id="toc-quarto-document-structure" class="nav-link" data-scroll-target="#quarto-document-structure"><span class="header-section-number">12.4</span> Quarto document structure</a></li>
+  <li><a href="#quarto-render" id="toc-quarto-render" class="nav-link" data-scroll-target="#quarto-render"><span class="header-section-number">12.5</span> Quarto render</a></li>
+  <li><a href="#multilanguage" id="toc-multilanguage" class="nav-link" data-scroll-target="#multilanguage"><span class="header-section-number">12.6</span> Multilanguage</a></li>
+  <li><a href="#create-code-chunks" id="toc-create-code-chunks" class="nav-link" data-scroll-target="#create-code-chunks"><span class="header-section-number">12.7</span> Create code chunks</a></li>
+  <li><a href="#write-r-code-chunks" id="toc-write-r-code-chunks" class="nav-link" data-scroll-target="#write-r-code-chunks"><span class="header-section-number">12.8</span> Write R code chunks</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">12.9</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -388,7 +447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">:blue_book: Getting started with Quarto</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">:blue_book: Getting started with Quarto</span></h1>
 </div>
 
 
@@ -403,25 +462,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="introduction" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">6.1</span> Introduction</h2>
-<section id="overview" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">6.1.1</span> Overview</h3>
+<section id="introduction" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">12.1</span> Introduction</h2>
+<section id="overview" class="level3" data-number="12.1.1">
+<h3 data-number="12.1.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">12.1.1</span> Overview</h3>
 <p>Please review the following sections for instructions on installation steps:</p>
 <ul>
-<li>Downloading Quarto (<a href="#sec-Quarto-installation"><span class="quarto-unresolved-ref">sec-Quarto-installation</span></a>)</li>
+<li>Downloading Quarto (<a href="r_setup.html#sec-Quarto-installation"><span>Section&nbsp;A.3</span></a>)</li>
 <li>Installing the rmarkdown package</li>
 </ul>
 </section>
-<section id="learning-objectives" class="level3" data-number="6.1.2">
-<h3 data-number="6.1.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">6.1.2</span> Learning objectives</h3>
+<section id="learning-objectives" class="level3" data-number="12.1.2">
+<h3 data-number="12.1.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">12.1.2</span> Learning objectives</h3>
 <ol type="1">
 <li>Learn how to use Quarto</li>
 </ol>
 </section>
 </section>
-<section id="create-a-new-quarto-document" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="create-a-new-quarto-document"><span class="header-section-number">6.2</span> Create a new Quarto document</h2>
+<section id="create-a-new-quarto-document" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="create-a-new-quarto-document"><span class="header-section-number">12.2</span> Create a new Quarto document</h2>
 <p>While it makes sense to use Quarto going forward, there are still a lot of resources written for and in R Markdown. For this reason we provide the R Markdown equivalents for this section in Appendix.</p>
 <p>In RStudio, you can create a new Quarto document by selecting <strong>File</strong> &gt; <strong>New File</strong> &gt; <strong>Quarto Document…</strong></p>
 <p><img src="images/paste-A7DE8B60.png" class="img-fluid"></p>
@@ -431,13 +490,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Click on create to open up a new Quarto (.Qmd) document.</p>
 <p><img src="images/paste-67B97E04.png" class="img-fluid"></p>
 </section>
-<section id="visual-editor" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="visual-editor"><span class="header-section-number">6.3</span> Visual Editor</h2>
+<section id="visual-editor" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="visual-editor"><span class="header-section-number">12.3</span> Visual Editor</h2>
 <p>The RStudio Visual Editor is quite new and has features that improve your writing experience. Working in the Visual Editor feels a bit like working in a Google Doc.</p>
 <p>Here’s an example showing the same file in the original Source Editor with content in markdown format and in the Visual Editor with content that looks more like it will appear in a live site. You can switch freely between these modes.</p>
 </section>
-<section id="quarto-document-structure" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="quarto-document-structure"><span class="header-section-number">6.4</span> Quarto document structure</h2>
+<section id="quarto-document-structure" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="quarto-document-structure"><span class="header-section-number">12.4</span> Quarto document structure</h2>
 <p>An R Markdown document can be edited in RStudio.</p>
 <p>There are three basic components to a Quarto document, similar to the components of a R Markdown document:</p>
 <ul>
@@ -461,8 +520,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="quarto-render" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="quarto-render"><span class="header-section-number">6.5</span> Quarto render</h2>
+<section id="quarto-render" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="quarto-render"><span class="header-section-number">12.5</span> Quarto render</h2>
 <p>When you click the <strong>Render</strong> button a document will be generated that includes both content and the output of embedded code.</p>
 <p><img src="images/paste-A8386DC4.png" class="img-fluid"> ## Code options</p>
 <p>You can embed code like this:</p>
@@ -480,8 +539,1340 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
 </section>
-<section id="references" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="references"><span class="header-section-number">6.6</span> References</h2>
+<section id="multilanguage" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="multilanguage"><span class="header-section-number">12.6</span> Multilanguage</h2>
+<p>As the number of programming languages used for scientific discourse is very broad, Quarto was developed to be multilingual, beginning with R, Python, Javascript, and Julia. building on the RStudio (R) and Jupyter (Python, Julia) ecosystems which are very popular. Stata is not a language supported by Quarto.</p>
+</section>
+<section id="create-code-chunks" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="create-code-chunks"><span class="header-section-number">12.7</span> Create code chunks</h2>
+<p>To write and execute code in Quarto, you will use <strong>code chunks</strong>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Here are some tips for creating code chunks in RStudio</p>
+<ul>
+<li><strong>Backticks</strong>: use three backticks to start and end a code chunk.</li>
+<li><strong>Toolbar icon</strong>: you can also start a code chunk by clicking the appropriate icon in the toolbar.</li>
+<li><strong>Keyboard shortcut</strong>: for a quicker method, use the keyboard shortcut <code>Ctrl</code> + <code>Alt</code> + <code>I</code></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="write-r-code-chunks" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="write-r-code-chunks"><span class="header-section-number">12.8</span> Write R code chunks</h2>
+<p>In this section, we will see how to use and mix R, Stata and Python within Quarto so that you can make the most out of it.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>data frame</strong> is a two-dimensional array-like structure that contains rows and columns.</p>
+</div>
+</div>
+<p>To store the content of the <em>iris</em> dataset into a data frame named <code>df</code>, you can use <code>=</code> (<em>equal</em>) but good practice recommend using <code>&lt;-</code> (<em>back arrow</em>) to indicate the direction of your allocation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> iris</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>How to display data</p>
+<div class="cell" data-df-print="kable">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| df-print: kable</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attache Paket: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Die folgenden Objekte sind maskiert von 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Die folgenden Objekte sind maskiert von 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| df-print: kable</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(df, <span class="dv">10</span>))</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Sepal.Length</th>
+<th style="text-align: right;">Sepal.Width</th>
+<th style="text-align: right;">Petal.Length</th>
+<th style="text-align: right;">Petal.Width</th>
+<th style="text-align: left;">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.3</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.1</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The pipe operator</p>
+<div class="cell" data-df-print="kable">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| df-print: kable</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Sepal.Length</th>
+<th style="text-align: right;">Sepal.Width</th>
+<th style="text-align: right;">Petal.Length</th>
+<th style="text-align: right;">Petal.Width</th>
+<th style="text-align: left;">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.3</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.1</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>You can cross-reference your table <a href="#tbl-iris">Table&nbsp;<span>12.1</span></a></p>
+<div class="cell" data-df-print="kable">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-iris</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Iris data set</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| df-print: kable</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="tbl-iris" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Table&nbsp;12.1: Iris data set</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Sepal.Length</th>
+<th style="text-align: right;">Sepal.Width</th>
+<th style="text-align: right;">Petal.Length</th>
+<th style="text-align: right;">Petal.Width</th>
+<th style="text-align: left;">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.3</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.1</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">3.7</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">1.6</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.1</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">0.1</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.7</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.3</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.7</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: right;">0.3</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.3</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.7</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">1.9</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.6</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">1.6</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.2</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.2</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">1.6</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.6</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.2</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.1</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.1</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.3</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.3</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.6</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">1.9</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.3</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">1.6</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.3</td>
+<td style="text-align: right;">3.7</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7.0</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.4</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.9</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.5</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.7</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">1.6</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">2.4</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.6</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.2</td>
+<td style="text-align: right;">2.7</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.9</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.0</td>
+<td style="text-align: right;">2.2</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.1</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">2.7</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.2</td>
+<td style="text-align: right;">2.2</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.9</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.1</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.1</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.4</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.6</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.8</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.0</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.7</td>
+<td style="text-align: right;">2.6</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">2.4</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">2.4</td>
+<td style="text-align: right;">3.7</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">2.7</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.0</td>
+<td style="text-align: right;">2.7</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">1.6</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.0</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">1.6</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">2.6</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.1</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">2.6</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">2.7</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.7</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.7</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.2</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.7</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: left;">versicolor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">6.0</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">2.7</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">1.9</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7.1</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">5.9</td>
+<td style="text-align: right;">2.1</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.5</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">2.2</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7.6</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">6.6</td>
+<td style="text-align: right;">2.1</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7.3</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7.2</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">6.1</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.5</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.4</td>
+<td style="text-align: right;">2.7</td>
+<td style="text-align: right;">5.3</td>
+<td style="text-align: right;">1.9</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.8</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">2.1</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.7</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">2.4</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.4</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">5.3</td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.5</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7.7</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">2.2</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7.7</td>
+<td style="text-align: right;">2.6</td>
+<td style="text-align: right;">6.9</td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.0</td>
+<td style="text-align: right;">2.2</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.9</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">5.7</td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7.7</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">2.7</td>
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">5.7</td>
+<td style="text-align: right;">2.1</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7.2</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">6.0</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.2</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.1</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.4</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">2.1</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7.2</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">1.6</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7.4</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">6.1</td>
+<td style="text-align: right;">1.9</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7.9</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">6.4</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.4</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">2.2</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.1</td>
+<td style="text-align: right;">2.6</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7.7</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">6.1</td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">2.4</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.4</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.0</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.9</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">2.1</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">2.4</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.9</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">2.7</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">1.9</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.8</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">5.9</td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">5.7</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">5.2</td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">1.9</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.5</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">5.2</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.2</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.9</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: left;">virginica</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="references" class="level2" data-number="12.9">
+<h2 data-number="12.9" class="anchored" data-anchor-id="references"><span class="header-section-number">12.9</span> References</h2>
 <ul>
 <li>The Epidemiologist R Handbook (https://epirhandbook.com)</li>
 </ul>
@@ -726,12 +2117,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./dynamic_documents.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Dynamic documents</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="books">📚</span> Dynamic documents</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./version_control_with_git2.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Commit your changes with Git</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./use_python_within_quarto.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><span class="emoji" data-emoji="blue_book">📘</span> Use Python within Quarto</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

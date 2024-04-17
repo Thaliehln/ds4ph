@@ -94,5 +94,11 @@
   },
   "useful_resources_data.qmd": {
     "useful_resources_data.html": "afef2112"
+  },
+  "use_stata_with_r.qmd": {
+    "use_stata_with_r.html": "d1073ead"
+  },
+  "use_python_within_quarto.qmd": {
+    "use_python_within_quarto.html": "63ec30d9"
   }
 }

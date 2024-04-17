@@ -1,5 +1,6 @@
 ---
 title: ":books: Dynamic documents"
+from: markdown+emoji
 ---
 
 ## Introduction

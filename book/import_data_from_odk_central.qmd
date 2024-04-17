@@ -1,5 +1,6 @@
 ---
 title: "Import data from ODK Central"
+from: markdown+emoji
 ---
 
 ## Introduction
@@ -43,28 +44,28 @@ Connect to the ODK Central server data set.
 
 ```{r}
 #| echo: fenced
-ruODK::ru_setup(
-  svc = "https://private-anon-24fcfe2426-odkcentral.apiary-mock.com/v1/projects/7/forms/simple.svc",
-  un = "my.email.address@getodk.org",
-  pw = "my.super.secure.password",
-  verbose = TRUE
-)
+# ruODK::ru_setup(
+#   svc = "https://private-anon-24fcfe2426-odkcentral.apiary-mock.com/v1/projects/7/forms/simple.svc",
+#   un = "my.email.address@getodk.org",
+#   pw = "my.super.secure.password",
+#   verbose = TRUE
+# )
 ```
 
 ### Python
 
 ```{r}
 library(reticulate)
-reticulate::use_condaenv("pyodk_test", required = TRUE)
-reticulate::py_discover_config()
+#reticulate::use_condaenv("pyodk_test", required = TRUE)
+#reticulate::py_discover_config()
 ```
 
 https://docs.google.com/presentation/d/1oJdAdmeCIsGTp9083vAS-c5S5rnaO7e3pxzfFYe9-UI/edit#slide=id.g16c4e809b19_0_178
 
 ```{python}
-from pyodk.client import Client
-client = Client()
-client.open()
+#from pyodk.client import Client
+#client = Client()
+#client.open()
 ```
 
 :::
@@ -89,14 +90,14 @@ Retrieve data from form and store the data set into a data frame called df4
 
 ```{r}
 #| echo: fenced
-fq_form_schema <- ruODK::form_schema()
-fq_form_schema
+#fq_form_schema <- ruODK::form_schema()
+#fq_form_schema
 ```
 
 ```{r}
 #| echo: fenced
-df <- ruODK::odata_service_get()
-df
+#df <- ruODK::odata_service_get()
+#df
 ```
 
 :::

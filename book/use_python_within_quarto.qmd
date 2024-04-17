@@ -1,0 +1,43 @@
+---
+title: ":blue_book: Use Python within Quarto"
+warning: false
+from: markdown+emoji
+---
+
+## Python code chunks
+
+::: callout-warning
+This section is for (advanced) Python/R Markdown users only
+:::
+
+You still need to import the R package `reticulate` if you want to use the Knitr engine and manipulate Python objects within R code chunks.
+
+```{r}
+#| echo: fenced
+library(reticulate)
+```
+
+### Call R objects in Python code chunks
+
+R objects can be manipulated in Python code chunks by referring to them as `r.`
+
+```{r}
+#| echo: fenced
+val <- 10
+```
+
+```{python}
+#| echo: fenced
+val = 5
+print(r.val)
+```
+
+### Call Python objects in R code chunks
+
+Python objects can be manipulated in R code chunks by referring to them as `py$`
+
+```{r}
+#| echo: fenced
+print(val)
+print(py$val)
+```

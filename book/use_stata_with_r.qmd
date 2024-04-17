@@ -1,0 +1,116 @@
+---
+title: ":blue_book: From Stata to R"
+warning: false
+from: markdown+emoji
+---
+
+To reduce the learning curve and associated costs of switching from one programming language to the other for users moving from Stata to R, it can be helpful to note that Stata commands can be called from R.
+
+## Execute Stata commands within R programmes
+
+To use Stata within R, you have to use the [RStata](https://cran.r-project.org/web/packages/RStata/README.html) R package, which is a simple R / Stata interface that enables you to:
+
+* execute Stata commands from R (inline or from a `.do` file);
+* pass a R data frame to Stata commands;
+* return Stata command outputs to R (including modified data frames).
+
+```{r}
+#| echo: fenced
+if ( !require(RStata) ) {
+  install.packages('RStata')
+}
+library(RStata)
+```
+
+### Configure RStudio to execute Stata
+
+#### Find your Stata binary path
+
+The function `chooseStataBin` from the `RStata` library allows you to browse and set the path to your Stata binary executable.
+
+```{{r}}
+stata_bin_path <- RStata::chooseStataBin()
+```
+
+```{{r}}
+print(stata_bin_path)
+```
+
+When you run this code, you should normally get a path which is of the format: **"\"C:\\Program Files\\Stata16\\StataIC-64\""**. Note that the `.exe` extension has been removed from this path. It is important that you keep the format as is, as otherwise your Stata engine will not be recognised.
+
+#### Add your Stata binary path to your .Rprofile
+
+The Stata binary path setting we just created is just for your current RStudio session and it will be lost once your RStudio is closed.
+To keep this setting each time you are using RStudio and avoid havin to reconfigure RStata each time you are restarting RStudio, let us add the Stata binary path as an option to `.Rprofile`, which is your user-specific R configuration file.
+
+```{r}
+library(usethis)
+```
+
+::: callout-note
+
+`usethis` is a workflow package: it automates repetitive tasks that arise during project setup and development, both for R packages and non-package projects.
+
+:::
+
+The function `edit_r_profile` from the `usethis` library allows to open your configuration file `.Rprofile`.
+
+```{{r}}
+usethis::edit_r_profile("user")
+```
+
+Add the following two lines in the Rprofile file that you have just opened:
+
+```{{r}}
+options("RStata.StataPath" = ...)
+options("RStata.StataVersion" = ...)
+```
+
+You need to indicate the path to your Stata binary executable in the `RStata.StataPath` option (e.g., "\"C:\\Program Files\\Stata16\\StataIC-64\"") and the version of your Stata (e.g., 16) in the `RStata.StataVersion` option.
+
+after indicating the path and version your code should look as specified below
+
+```{{r}}
+options("RStata.StataPath" = "\"C:\\Program Files (x86)\\Stata15\\Stata-64\"")
+options("RStata.StataVersion" = 15)
+```
+
+Once you are done, save and close your `.Rprofile`.
+
+## Python code chunks
+
+::: callout-warning
+This section is for (advanced) Python/R Markdown users only
+:::
+
+You still need to import the R package `reticulate` if you want to use the Knitr engine and manipulate Python objects within R code chunks.
+
+```{r}
+#| echo: fenced
+library(reticulate)
+```
+
+### Call R objects in Python code chunks
+
+R objects can be manipulated in Python code chunks by referring to them as `r.`
+
+```{r}
+#| echo: fenced
+val <- 10
+```
+
+```{python}
+#| echo: fenced
+val = 5
+print(r.val)
+```
+
+### Call Python objects in R code chunks
+
+Python objects can be manipulated in R code chunks by referring to them as `py$`
+
+```{r}
+#| echo: fenced
+print(val)
+print(py$val)
+```

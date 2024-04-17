@@ -10,22 +10,23 @@ book:
       affiliations:
         - name: Swiss Tropical and Public Health Institute
       orcid: 0000-0002-6758-2397
+    - name: Jean Augustin Diégane Tine
+      affiliations:
+        - name: Cheikh Anta Diop University of Dakar
+      orcid: 0000-0002-6636-7548
     - name: Samwel Lwambura
       affiliations:
         - name: Ifakara Health Institute
+      orcid: 0000-0002-6706-1380
     - name: Fenella Beynon
       affiliations:
         - name: Swiss Tropical and Public Health Institute
+      orcid: 0000-0002-4758-8847
     - name: Silvia Cicconi
       affiliations:
         - name: Swiss Tropical and Public Health Institute
+      orcid: 0000-0001-5507-6203
     - name: Gillian Levine
-      affiliations:
-        - name: Swiss Tropical and Public Health Institute
-    - name: Ibrahim Mtebene
-      affiliations:
-        - name: Ifakara Health Institute
-    - name: Fabian Schär
       affiliations:
         - name: Swiss Tropical and Public Health Institute
   sidebar:
@@ -33,34 +34,44 @@ book:
   date: today
   chapters:
     - index.qmd
-    - intro.qmd
-    - part: "------------ DAY 1 ------------"
-      chapters:
-        - tools_for_reproducible_data_science.qmd
-        - version_control_with_git.qmd
-        - rstudio_orientation.qmd
-        - dynamic_documents.qmd
-        - create_first_quarto_doc.qmd
-        - version_control_with_git2.qmd
-        - use_stata_python_with_quarto.qmd
-        - version_control_with_git3.qmd
-        - import_data.qmd
-        - manipulate_data.qmd
-        - share_and_collaborate_with_git.qmd
-    - part: "------------ DAY 2 ------------"
+    - part: "**INTRODUCTION**"
       chapters:
         - data_science_for_public_health.qmd
-        - malaria_case_study_presentation.qmd
-        - malaria_case_study_01.qmd
-        - malaria_case_study_01_report.qmd
-        - malaria_case_study_02_report.qmd
-        - malaria_case_study_03_report.qmd
-    - part: "------------ DAY 3 ------------"
+        - tools_for_reproducible_data_science.qmd
+    - part: "**R QUICK START**"
+      chapters:
+        - rstudio_orientation.qmd
+        - use_stata_with_r.qmd
+        - manipulate_data.qmd
+        - useful_resources_beginner.qmd
+    - part: "**REPRODUCIBLE CODING**"
+      chapters:
+        - version_control_with_git.qmd
+        - version_control_with_git2.qmd
+        - version_control_with_git3.qmd
+        - share_and_collaborate_with_git.qmd
+    - part: "**REPRODUCIBLE REPORTING**"
+      chapters:
+        - dynamic_documents.qmd
+        - create_first_quarto_doc.qmd
+        - use_python_within_quarto.qmd
+        - import_data.qmd
+    - part: "**MACHINE LEARNING**"
       chapters: 
         - big_data_and_artificial_intelligence.qmd
         - ds4ph_day3_session01_practical_session.qmd
         - cross_validation.qmd
         - categorical_data_encoding.qmd
+    - part: "**PRACTICAL**"
+      chapters:
+        - malaria_case_study_presentation.qmd
+        - malaria_case_study_01.qmd
+        - malaria_case_study_01_report.qmd
+        - malaria_case_study_02_report.qmd
+        - malaria_case_study_03_report.qmd
+    - part: "**WORKSHOP**"
+      chapters:
+        - intro.qmd
     - references.qmd
   appendices:
     - r_setup.qmd
