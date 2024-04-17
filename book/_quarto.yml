@@ -3,12 +3,13 @@ project:
   output-dir: docs
 
 book:
-  title: "Data Science for Public Health"
-  subtitle: "Test"
+  title: "Reproducible Data Science for Public Health"
+  subtitle: "A practical guide for researchers"
   author:
     - name: Hélène Langet
       affiliations:
         - name: Swiss Tropical and Public Health Institute
+      orcid: 0000-0002-6758-2397
     - name: Samwel Lwambura
       affiliations:
         - name: Ifakara Health Institute
@@ -27,7 +28,8 @@ book:
     - name: Fabian Schär
       affiliations:
         - name: Swiss Tropical and Public Health Institute
-  logo: images/logo_compact.png
+  sidebar:
+    logo: images/logo_compact.png
   date: today
   chapters:
     - index.qmd
@@ -67,12 +69,7 @@ book:
     - useful_resources_advanced.qmd
     - useful_resources_data.qmd
     - import_data_from_odk_central.qmd
-  page-footer: 
-    left: "This book was built by [Quarto](https://quarto.org/). Copyright 2022, IHI / Swiss TPH"
-    right:
-      - icon: github
-        href: https://github.com/Thaliehln/ds4ph/
-
+  
 bibliography: references.bib
 csl: vancouver.csl
 
