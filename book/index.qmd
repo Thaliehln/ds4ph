@@ -4,11 +4,9 @@
 
 Data science and artificial intelligence have the potential to generate fundamentally new insights on global health policies in Africa, but the full realization of this potential depends on the availability of a critical mass of highly trained health data scientists on the continent.
 
-This electronic book was created by Hélène Langet, Fenella Beynon, Fabian Schär, Silvia Cicconi and Gillian Levine from the [Swiss Tropical & Public Health Institute (Swiss TPH)](https://www.swisstph.ch) and Samwel Lwambura (IHI) from the [Ifakara Health Institute (IHI)](https://ihi.or.tz/) to accompany the **Data Science for Public Health** workshop which will be held in Dar-es-Salaam from Monday,September 26th to Wednesday, September 28th 2022. 
+This electronic book was originally created by Hélène Langet, Fenella Beynon, Silvia Cicconi and Gillian Levine from the [Swiss Tropical & Public Health Institute (Swiss TPH)](https://www.swisstph.ch) and Samwel Lwambura from the [Ifakara Health Institute (IHI)](https://ihi.or.tz/) to accompany the **Data Science for Public Health** workshop which was held in Dar-es-Salaam from Monday,September 26th to Wednesday, September 28th 2022. The goal of this workshop was to enable IHI researchers to strengthen their expertise in the area and to lay the foundations for the development of a data science curriculum that is adapted to IHI's needs.
 
-The goal of this workshop is to enable researchers from the Ifakara Health Institute (IHI) to strengthen their expertise in the area and to lay the foundations for the development of a data science curriculum that is adapted to IHI's needs.
-
-This work is the product of interdisciplinary discussions with Abdallah Mkopi, Grace Mhalu, Robert Moshiro from IHI and feedback from Charles Festo, Hajirani Msuya and Martine Masonda, among the first IHI collaborators to test this material.
+The content of this electronic book is currently being updated and restructured. This revision aims to incorporate some of the latest technical developments and to refine explanations of key reproducible research and data science concepts to better suit the needs of a graduate-level public health audience.
 
 ## License
 
@@ -29,7 +27,14 @@ Under the following terms:
 
 * September 25, 2022: First edition.
 * November 1st, 2022: Updated resources.
+* Q2 2024: planned release of the second edition, reflecting insights gained from teaching at Swiss TPH.
 
 ## Acknowledgement
 
 This work was funded by the [Leading House Africa (LHA)](https://www.swisstph.ch/en/research/leading-house-africa/) which promotes and fosters bilateral collaboration with partner institutions in Africa.
+
+This work was not led in isolation and is the product of interdisciplinary discussions with the following research and public health professionals in Europe and in Sub-Saharan Africa:
+* Ms Moniek Bresser, Dr Aurelio Di Pasquale, Prof Manuel Hetzel, Dr Marek Kwiatkowski, Dr Fabian Schär from Swiss TPH (Switzerland)
+* M. Ibrahim Mtebene, Dr Abdallah Mkopi, Dr Grace Mhalu, and Dr Robert Moshiro from IHI, Charles Festo, Hajirani Msuya and Martine Masonda from IHI (Tanzania)
+* Prof Jean Augustin Tine from the Cheikh Anta Diop University of Dakar (UCAD, Senegal)
+* M. Francis Njiri from University of Nairobi (UoN, Kenya)
