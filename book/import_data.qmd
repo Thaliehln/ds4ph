@@ -227,8 +227,8 @@ Here, because quotes are already used for the Stata command, you need to use the
 #| echo: fenced
 library(RStata)
 
-df2 <- RStata::stata('import delimited "https://open.africa/dataset/d7335980-29d5-476c-bf7a-feb4e22cf631/resource/e2432e8a-cf15-4a8b-b8c3-567f443c1459/download/cfa-data-hospitals-in-africa-00-ssa-mfl-130219.xlsx-ssa-mfl.csv"',
-                     data.out = TRUE)
+#df2 <- RStata::stata('import delimited "https://open.africa/dataset/d7335980-29d5-476c-bf7a-feb4e22cf631/resource/e2432e8a-cf15-4a8b-b8c3-567f443c1459/download/cfa-data-hospitals-in-africa-00-ssa-mfl-130219.xlsx-ssa-mfl.csv"',
+                     # data.out = TRUE)
 ```
 
 #### R
@@ -237,8 +237,8 @@ Use the [read.xlsx](https://www.rdocumentation.org/packages/openxlsx/versions/4.
 
 ```{r}
 #| echo: fenced
-csv_url <- "https://open.africa/dataset/d7335980-29d5-476c-bf7a-feb4e22cf631/resource/e2432e8a-cf15-4a8b-b8c3-567f443c1459/download/cfa-data-hospitals-in-africa-00-ssa-mfl-130219.xlsx-ssa-mfl.csv"
-df4 <- read.csv(csv_url)
+#csv_url <- "https://open.africa/dataset/d7335980-29d5-476c-bf7a-feb4e22cf631/resource/e2432e8a-cf15-4a8b-b8c3-567f443c1459/download/cfa-data-hospitals-in-africa-00-ssa-mfl-130219.xlsx-ssa-mfl.csv"
+#df4 <- read.csv(csv_url)
 ```
 
 #### Python
@@ -249,7 +249,7 @@ Use the [read_excel](https://pandas.pydata.org/docs/reference/api/pandas.read_ex
 #| echo: fenced
 import pandas
 
-csv_url = "https://open.africa/dataset/d7335980-29d5-476c-bf7a-feb4e22cf631/resource/e2432e8a-cf15-4a8b-b8c3-567f443c1459/download/cfa-data-hospitals-in-africa-00-ssa-mfl-130219.xlsx-ssa-mfl.csv"
-df1 = pandas.read_csv(csv_url)
+#csv_url = "https://open.africa/dataset/d7335980-29d5-476c-bf7a-feb4e22cf631/resource/e2432e8a-cf15-4a8b-b8c3-567f443c1459/download/cfa-data-hospitals-in-africa-00-ssa-mfl-130219.xlsx-ssa-mfl.csv"
+#df1 = pandas.read_csv(csv_url)
 ```
 :::
