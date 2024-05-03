@@ -4,35 +4,50 @@
     "href": "index.html",
     "title": "Reproducible Data Science for Public Health",
     "section": "",
-    "text": "Preface\nData science and artificial intelligence have the potential to generate fundamentally new insights on global health policies in Africa, but the full realization of this potential depends on the availability of a critical mass of highly trained health data scientists on the continent."
+    "text": "Preface\nData science and artificial intelligence have the potential to generate fundamentally new insights on global health policies in Africa, but the full realization of this potential depends on the availability of a critical mass of highly trained health data scientists on the continent.",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#background",
     "href": "index.html#background",
     "title": "Reproducible Data Science for Public Health",
     "section": "Background",
-    "text": "Background\nThis electronic book was originally created by Hélène Langet, Fenella Beynon, Silvia Cicconi and Gillian Levine from the Swiss Tropical & Public Health Institute (Swiss TPH) and Samwel Lwambura from the Ifakara Health Institute (IHI) to accompany the Data Science for Public Health workshop which was held in Dar-es-Salaam from Monday,September 26th to Wednesday, September 28th 2022. The goal of this workshop was to enable IHI researchers to strengthen their expertise in the area and to lay the foundations for the development of a data science curriculum that is adapted to IHI’s needs.\nThe content of this electronic book is currently being updated and restructured. This revision aims to incorporate some of the latest technical developments and to refine explanations of key reproducible research and data science concepts to better suit the needs of a graduate-level public health audience."
+    "text": "Background\nThis electronic book was originally created by Hélène Langet, Fenella Beynon, Silvia Cicconi and Gillian Levine from the Swiss Tropical & Public Health Institute (Swiss TPH) and Samwel Lwambura from the Ifakara Health Institute (IHI) to accompany the Data Science for Public Health workshop which was held in Dar-es-Salaam from Monday,September 26th to Wednesday, September 28th 2022. The goal of this workshop was to enable IHI researchers to strengthen their expertise in the area and to lay the foundations for the development of a data science curriculum that is adapted to IHI’s needs.\nThe content of this electronic book is currently being updated and restructured. This revision aims to incorporate some of the latest technical developments and to refine explanations of key reproducible research and data science concepts to better suit the needs of a graduate-level public health audience.",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#license",
     "href": "index.html#license",
     "title": "Reproducible Data Science for Public Health",
     "section": "License",
-    "text": "License\n This book is licensed under a Attribution 4.0 International (CC BY 4.0).\nYou are free to:\n\nShare — copy and redistribute the material in any medium or format\nAdapt — remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nNo additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits."
+    "text": "License\n This book is licensed under a Attribution 4.0 International (CC BY 4.0).\nYou are free to:\n\nShare — copy and redistribute the material in any medium or format\nAdapt — remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nNo additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#update-history",
     "href": "index.html#update-history",
     "title": "Reproducible Data Science for Public Health",
     "section": "Update History",
-    "text": "Update History\n\nSeptember 25, 2022: First edition.\nNovember 1st, 2022: Updated resources.\nQ2 2024: planned release of the second edition, reflecting insights gained from teaching at Swiss TPH."
+    "text": "Update History\n\nSeptember 25, 2022: First edition.\nNovember 1st, 2022: Updated resources.\nQ2 2024: planned release of the second edition, reflecting insights gained from teaching at Swiss TPH.",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#acknowledgement",
     "href": "index.html#acknowledgement",
     "title": "Reproducible Data Science for Public Health",
     "section": "Acknowledgement",
-    "text": "Acknowledgement\nThis work was funded by the Leading House Africa (LHA) which promotes and fosters bilateral collaboration with partner institutions in Africa.\nThis work was not led in isolation and is the product of interdisciplinary discussions with the following research and public health professionals in Switzerland and in Sub-Saharan Africa:\n\nMs Moniek Bresser, Dr Aurelio Di Pasquale, Prof Manuel Hetzel, Dr Marek Kwiatkowski, Dr Fabian Schär from Swiss TPH (Switzerland)\nM. Ibrahim Mtebene, Dr Abdallah Mkopi, Dr Grace Mhalu, and Dr Robert Moshiro from IHI, Charles Festo, Hajirani Msuya and Martine Masonda from IHI (Tanzania)\nM. Francis Njiri from University of Nairobi (UoN, Kenya)"
+    "text": "Acknowledgement\nThis work was funded by the Leading House Africa (LHA) which promotes and fosters bilateral collaboration with partner institutions in Africa.\nThis work was not led in isolation and is the product of interdisciplinary discussions with the following research and public health professionals in Switzerland and in Sub-Saharan Africa:\n\nMs Moniek Bresser, Dr Aurelio Di Pasquale, Prof Manuel Hetzel, Dr Marek Kwiatkowski, Dr Fabian Schär from Swiss TPH (Switzerland)\nM. Ibrahim Mtebene, Dr Abdallah Mkopi, Dr Grace Mhalu, and Dr Robert Moshiro from IHI, Charles Festo, Hajirani Msuya and Martine Masonda from IHI (Tanzania)\nM. Francis Njiri from University of Nairobi (UoN, Kenya)",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "data_science_for_public_health.html#what-is-data-science",
@@ -46,28 +61,44 @@
     "href": "data_science_for_public_health.html#data-science",
     "title": "1  :books: Data Science for Public Health",
     "section": "1.2 Data Science",
-    "text": "1.2 Data Science\n\nActivity 1 ❓Quote 1 💬Quote 2 💬Quote 1\n\n\n🕒 3 minutes: You have probably already heard about data science as this is a main Data Science is today one of the main buzzwords, but what does Data Science mean for you?\n\n\n\nThe statistics profession faces a choice in its future research between continuing concentration on traditional topics – based largely on data analysis supported by mathematical statistics – and a broader viewpoint – based on an inclusive concept of learning from data. The latter course present severe challenges as well as exciting opportunities. The former risks seeing statistics become increasingly marginal… (1)\nJohn Chambers (PhD in Statistics) is the creator of the S programming language, and a core member of the R programming language project.\n\n\nData science is the science of learning from data; it studies the methods involved in the analysis and processing of data and proposes technology to improve methods in an evidence-based manner. The scope and impact of this science will expand enormously in coming decades as scientific data and data about science itself become ubiquitously available. (2).\nDavid Donoho is a Professor of Statistics at Stanford University.\n\n\n\nGrowing field with computational power and data generation\nSet of collective evidence-based processes, theories, concepts, tools and technologies\nExtraction of valuable knowledge and information from data (learning from data)\n\n\n\n\nQualitative thinking currently does not receive nearly as much attention as quantitative thinking in data science.\n\nDiscussion 💬From literature\n\n\nWhat does Data Science mean for you?\n\n\n\nHad you thought of any of those words? Word cloud generated by MonkeyLearn from (3)\n\n\n\n\n\n1.2.1 Where do you see yourself on this Venn diagram"
+    "text": "1.2 Data Science\n\nActivity 1 ❓Quote 1 💬Quote 2 💬Quote 1\n\n\n🕒 3 minutes: You have probably already heard about data science as this is a main Data Science is today one of the main buzzwords, but what does Data Science mean for you?\n\n\n\nThe statistics profession faces a choice in its future research between continuing concentration on traditional topics – based largely on data analysis supported by mathematical statistics – and a broader viewpoint – based on an inclusive concept of learning from data. The latter course present severe challenges as well as exciting opportunities. The former risks seeing statistics become increasingly marginal… (1)\nJohn Chambers (PhD in Statistics) is the creator of the S programming language, and a core member of the R programming language project.\n\n\nData science is the science of learning from data; it studies the methods involved in the analysis and processing of data and proposes technology to improve methods in an evidence-based manner. The scope and impact of this science will expand enormously in coming decades as scientific data and data about science itself become ubiquitously available. (2).\nDavid Donoho is a Professor of Statistics at Stanford University.\n\n\n\nGrowing field with computational power and data generation\nSet of collective evidence-based processes, theories, concepts, tools and technologies\nExtraction of valuable knowledge and information from data (learning from data)\n\n\n\n\nQualitative thinking currently does not receive nearly as much attention as quantitative thinking in data science.\n\nDiscussion 💬From literature\n\n\nWhat does Data Science mean for you?\n\n\n\nHad you thought of any of those words? Word cloud generated by MonkeyLearn from (3)\n\n\n\n\n\n1.2.1 Where do you see yourself on this Venn diagram",
+    "crumbs": [
+      "**INTRODUCTION**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>:books: Data Science for Public Health</span>"
+    ]
   },
   {
     "objectID": "data_science_for_public_health.html#what-do-experts-say-about-data-science",
     "href": "data_science_for_public_health.html#what-do-experts-say-about-data-science",
     "title": "1  :books: Data Science for Public Health",
     "section": "1.3 What do experts say about Data Science?",
-    "text": "1.3 What do experts say about Data Science?\nPublic health data science is the study of formulating and rigorously answering questions in order to advance health and well-being using a data-centric process that emphasizes clarity, reproducibility, effective communication, and ethical practices. […] Data science implies a perspective that is shaped by […] interdisciplinary work. (3)."
+    "text": "1.3 What do experts say about Data Science?\nPublic health data science is the study of formulating and rigorously answering questions in order to advance health and well-being using a data-centric process that emphasizes clarity, reproducibility, effective communication, and ethical practices. […] Data science implies a perspective that is shaped by […] interdisciplinary work. (3).",
+    "crumbs": [
+      "**INTRODUCTION**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>:books: Data Science for Public Health</span>"
+    ]
   },
   {
     "objectID": "data_science_for_public_health.html#a-tentative-definition",
     "href": "data_science_for_public_health.html#a-tentative-definition",
     "title": "1  :books: Data Science for Public Health",
     "section": "1.4 A tentative definition",
-    "text": "1.4 A tentative definition\nNIH defines data science as “the interdisciplinary field of inquiry in which quantitative and analytical approaches, processes, and systems are developed and used to extract knowledge and insights from increasingly large and/or complex sets of data”\nIn this book, we define data science as\nData science is an interdisciplinary collaborative field that tries to answer rigorously formulated public health questions by relying on a set of collective evidence-based processes, theories, concepts, tools and technologies that enable the extraction of valuable knowledge and information from data to generate actionable insights that effectively communicated to decision-makers can advance health and well-being.\n\nInterdisciplinary collaborative field\nRigorous public health question formulation\nSet of collective evidence-based processes, theories, concepts, tools and technologies\nExtraction of valuable knowledge and information from data\nGeneration of actionable insights\nEffective communication to decision-makers"
+    "text": "1.4 A tentative definition\nNIH defines data science as “the interdisciplinary field of inquiry in which quantitative and analytical approaches, processes, and systems are developed and used to extract knowledge and insights from increasingly large and/or complex sets of data”\nIn this book, we define data science as\nData science is an interdisciplinary collaborative field that tries to answer rigorously formulated public health questions by relying on a set of collective evidence-based processes, theories, concepts, tools and technologies that enable the extraction of valuable knowledge and information from data to generate actionable insights that effectively communicated to decision-makers can advance health and well-being.\n\nInterdisciplinary collaborative field\nRigorous public health question formulation\nSet of collective evidence-based processes, theories, concepts, tools and technologies\nExtraction of valuable knowledge and information from data\nGeneration of actionable insights\nEffective communication to decision-makers",
+    "crumbs": [
+      "**INTRODUCTION**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>:books: Data Science for Public Health</span>"
+    ]
   },
   {
     "objectID": "data_science_for_public_health.html#uncertainty",
     "href": "data_science_for_public_health.html#uncertainty",
     "title": "1  :books: Data Science for Public Health",
     "section": "1.5 Uncertainty",
-    "text": "1.5 Uncertainty\nThere are many reasons why a data analysis might still leave us in a position of uncertainty.\nOur data consists of a sample, and we want to generalize from facts about that sample to facts about the wider population from which it was drawn. This process of generalizing from a sample to a population is inherently uncertain, because we haven’t sampled everyone.\n\nOur data come from a randomized experiment. Historically, the tools of statistical inference have been designed to address concerns just like this.\nWe want to use our data to make a prediction about the future, and we expect the future to be similar to the past.\nOur observations are subject to measurement or reporting error. Most measurements are subject to at least some kind of error, and sometimes those errors are large enough to matter.\nOur data arise from an intrinsically random or variable process.\n\n\n\n\n1. Chambers J. Greater or lesser statistics, a choice for future research. 1993; \n\n\n2. Donoho D. 50 years of data science. Journal of Computational and Graphical Statistics. 2017;26(4):745–6. \n\n\n3. Goldsmith J, Sun Y, Fried L, Wing J, Miller G, Berhane K. The emergence and future of public health data science. Public Health Reviews [Internet]. 2021;42. Available from: https://www.ssph-journal.org/articles/10.3389/phrs.2021.1604023"
+    "text": "1.5 Uncertainty\nThere are many reasons why a data analysis might still leave us in a position of uncertainty.\nOur data consists of a sample, and we want to generalize from facts about that sample to facts about the wider population from which it was drawn. This process of generalizing from a sample to a population is inherently uncertain, because we haven’t sampled everyone.\n\nOur data come from a randomized experiment. Historically, the tools of statistical inference have been designed to address concerns just like this.\nWe want to use our data to make a prediction about the future, and we expect the future to be similar to the past.\nOur observations are subject to measurement or reporting error. Most measurements are subject to at least some kind of error, and sometimes those errors are large enough to matter.\nOur data arise from an intrinsically random or variable process.\n\n\n\n\n1. Chambers J. Greater or lesser statistics, a choice for future research. 1993; \n\n\n2. Donoho D. 50 years of data science. Journal of Computational and Graphical Statistics. 2017;26(4):745–6. \n\n\n3. Goldsmith J, Sun Y, Fried L, Wing J, Miller G, Berhane K. The emergence and future of public health data science. Public Health Reviews [Internet]. 2021;42. Available from: https://www.ssph-journal.org/articles/10.3389/phrs.2021.1604023",
+    "crumbs": [
+      "**INTRODUCTION**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>:books: Data Science for Public Health</span>"
+    ]
   },
   {
     "objectID": "tools_for_reproducible_data_science.html#introduction",
@@ -255,50 +286,78 @@
     "objectID": "version_control_with_git.html#introduction",
     "href": "version_control_with_git.html#introduction",
     "title": "7  :books: Version control with Git",
-    "section": "7.1 Introduction",
-    "text": "7.1 Introduction\n\n7.1.1 Overview\nDoes the following situation seem sadly familiar? The challenge here is not only that you have no idea which draft is actually the latest version of the document, but also that it is almost impossible to understand what decision on the document content was taken when.\n\n\n\nFigure 7.1: “Piled Higher and Deeper” by Jorge Cham www.phdcomics.com\n\n\nVersion control is the process by which the development of a document is clearly identified. It provides huge benefits to organization, archiving, and being able to find your files easily when you need them. Git is a tool that\n\n\n7.1.2 Learning objectives\nIn this chapter, we introduce the basic elements of version control. We will learn the terminology and practice version control on a need-to-know basis across the workshop.\n\nWhat is version control?\nWhat tools are available to support version control?\nHow to set up Git version control for a project?"
+    "section": "",
+    "text": "7.1.1 Overview\nDoes the following situation seem sadly familiar? The challenge here is not only that you have no idea which draft is actually the latest version of the document, but also that it is almost impossible to understand what decision on the document content was taken when.\n\n\n\n\n\n\nFigure 7.1: “Piled Higher and Deeper” by Jorge Cham www.phdcomics.com\n\n\n\nVersion control is the process by which the development of a document is clearly identified. It provides huge benefits to organization, archiving, and being able to find your files easily when you need them. Git is a tool that\n\n\n7.1.2 Learning objectives\nIn this chapter, we introduce the basic elements of version control. We will learn the terminology and practice version control on a need-to-know basis across the workshop.\n\nWhat is version control?\nWhat tools are available to support version control?\nHow to set up Git version control for a project?",
+    "crumbs": [
+      "**REPRODUCIBLE CODING**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>:books: Version control with Git</span>"
+    ]
   },
   {
     "objectID": "version_control_with_git.html#version-control",
     "href": "version_control_with_git.html#version-control",
     "title": "7  :books: Version control with Git",
     "section": "7.2 Version control",
-    "text": "7.2 Version control\nVersion control generally applies at a level of a project. It tracks and manages different drafts and versions for each document in the project.\n\n\n\n\n\n\nImportant\n\n\n\nWith version control, you will only see a single file, which is the most recent version (final version). This helps avoiding confusion.\n\n\nVersion control provides an audit trail for the revisions and updates of final versions.\n\n\n\n\n\n\nTip\n\n\n\nVersion control tracks what changes have been made, by whom and when, so that you do no longer need to save a copy of your documents with your name or the date in the filename.\n\n\nVersion control allows you to discard recent updates and restore an earlier version of our project if needed.\n\n\n\nThis image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807"
+    "text": "7.2 Version control\nVersion control generally applies at a level of a project. It tracks and manages different drafts and versions for each document in the project.\n\n\n\n\n\n\nImportant\n\n\n\nWith version control, you will only see a single file, which is the most recent version (final version). This helps avoiding confusion.\n\n\nVersion control provides an audit trail for the revisions and updates of final versions.\n\n\n\n\n\n\nTip\n\n\n\nVersion control tracks what changes have been made, by whom and when, so that you do no longer need to save a copy of your documents with your name or the date in the filename.\n\n\nVersion control allows you to discard recent updates and restore an earlier version of our project if needed.\n\n\n\nThis image was created by Scriberia for The Turing Way community and is used under a CC-BY licence. DOI: 10.5281/zenodo.3332807",
+    "crumbs": [
+      "**REPRODUCIBLE CODING**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>:books: Version control with Git</span>"
+    ]
   },
   {
     "objectID": "version_control_with_git.html#git-github-and-github-desktop",
     "href": "version_control_with_git.html#git-github-and-github-desktop",
     "title": "7  :books: Version control with Git",
     "section": "7.3 Git, GitHub and GitHub Desktop",
-    "text": "7.3 Git, GitHub and GitHub Desktop\n\n\n\n\n\n\n\n\n\nGit\nFree and open programme that tracks changes to your files over time.\n\n\n\nGitHub\nCloud-based hosting platform that lets you host and manage Git repositories. GitHub synchronizes your local files online and enables you to collaborate with others (and yourself).\n\n\n\nGitHub Desktop\nApplication that allows to use Git commands seamlessly through a visual interface instead of using the command line (for software developers) or GitHub’s website.\n\n\n\nWe will always use these three tools together.\nPlease refer to the following sections for instructions on creation/installation steps:\n\nCreate a GitHub account (Section B.1)\nInstall GitHub Desktop (Section B.2)"
+    "text": "7.3 Git, GitHub and GitHub Desktop\n\n\n\n\n\n\n\n\n\nGit\nFree and open programme that tracks changes to your files over time.\n\n\n\nGitHub\nCloud-based hosting platform that lets you host and manage Git repositories. GitHub synchronizes your local files online and enables you to collaborate with others (and yourself).\n\n\n\nGitHub Desktop\nApplication that allows to use Git commands seamlessly through a visual interface instead of using the command line (for software developers) or GitHub’s website.\n\n\n\nWe will always use these three tools together.\nPlease refer to the following sections for instructions on creation/installation steps:\n\nCreate a GitHub account (Section B.1)\nInstall GitHub Desktop (Section B.2)",
+    "crumbs": [
+      "**REPRODUCIBLE CODING**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>:books: Version control with Git</span>"
+    ]
   },
   {
     "objectID": "version_control_with_git.html#set-up-git-version-control-for-a-project",
     "href": "version_control_with_git.html#set-up-git-version-control-for-a-project",
     "title": "7  :books: Version control with Git",
     "section": "7.4 Set up Git version control for a project",
-    "text": "7.4 Set up Git version control for a project\n\n\n\n\n\n\nNote\n\n\n\nA repository is a database of all changes in your project. You will have a personal copy of all the final versions of the documents in the project (working copy) which will appear on your computer as a folder.\n\n\n\nStep 1Step 2Step 3\n\n\nOpen GitHub Desktop\n\n\n\nIn GitHub Desktop, you can create a new repository by selecting File &gt; New repository.\n\n\n\n\nEnter data_science_workshop_sept_2022 as the name of your new repository.\nClick Choose… to select the local directory in which your new repository will be created. Using Windows Explorer, navigate to the local repository of your choice.\nCheck Initialize this repository with a README to create a README file in your new repository. This is optional and you will be able to create a README file later if you wish to do so.\nClick on Create repository."
+    "text": "7.4 Set up Git version control for a project\n\n\n\n\n\n\nNote\n\n\n\nA repository is a database of all changes in your project. You will have a personal copy of all the final versions of the documents in the project (working copy) which will appear on your computer as a folder.\n\n\n\nStep 1Step 2Step 3\n\n\nOpen GitHub Desktop\n\n\n\nIn GitHub Desktop, you can create a new repository by selecting File &gt; New repository.\n\n\n\n\nEnter data_science_workshop_sept_2022 as the name of your new repository.\nClick Choose… to select the local directory in which your new repository will be created. Using Windows Explorer, navigate to the local repository of your choice.\nCheck Initialize this repository with a README to create a README file in your new repository. This is optional and you will be able to create a README file later if you wish to do so.\nClick on Create repository.",
+    "crumbs": [
+      "**REPRODUCIBLE CODING**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>:books: Version control with Git</span>"
+    ]
   },
   {
     "objectID": "version_control_with_git.html#to-go-further",
     "href": "version_control_with_git.html#to-go-further",
     "title": "7  :books: Version control with Git",
     "section": "7.5 To go further",
-    "text": "7.5 To go further\nTo learn more about Git, we refer you to the resources listed in Section 6.1."
+    "text": "7.5 To go further\nTo learn more about Git, we refer you to the resources listed in Section 6.1.",
+    "crumbs": [
+      "**REPRODUCIBLE CODING**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>:books: Version control with Git</span>"
+    ]
   },
   {
     "objectID": "version_control_with_git2.html#commit",
     "href": "version_control_with_git2.html#commit",
     "title": "8  :blue_book: Commit your changes with Git",
-    "section": "8.1 Commit",
-    "text": "8.1 Commit\nVersion control uses a working copy where you do your work.\n\n\n\n\n\n\nNote\n\n\n\nYou can update your working copy to incorporate any new edits or versions that have been added to the repository since the last time you updated.\n\n\nYou make arbitrary edits to this copy, without affecting your teammates. When you are happy with your edits, you commit your changes to a repository.\nSnapshot of your entire repository at a specific time.\nOver time, commits should tell a story of the history of your repository and how it came to be the way that it currently is.\nCommits include lots of metadata in addition to the contents and message, like the author, timestamp, and more.\nIt also requires that you write something human-readable that will be a breadcrumb for you in the future. be easy to compare versions, and you can easily revert to previous versions."
+    "section": "",
+    "text": "Note\n\n\n\nYou can update your working copy to incorporate any new edits or versions that have been added to the repository since the last time you updated.",
+    "crumbs": [
+      "**REPRODUCIBLE CODING**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>:blue_book: Commit your changes with Git</span>"
+    ]
   },
   {
     "objectID": "version_control_with_git2.html#push-and-pull",
     "href": "version_control_with_git2.html#push-and-pull",
     "title": "8  :blue_book: Commit your changes with Git",
     "section": "8.2 Push and Pull",
-    "text": "8.2 Push and Pull"
+    "text": "8.2 Push and Pull",
+    "crumbs": [
+      "**REPRODUCIBLE CODING**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>:blue_book: Commit your changes with Git</span>"
+    ]
   },
   {
     "objectID": "version_control_with_git3.html#project-history",
@@ -821,58 +880,90 @@
   {
     "objectID": "useful_resources_advanced.html#r-programming",
     "href": "useful_resources_advanced.html#r-programming",
-    "title": "Appendix D — Technical resources for intermediate to advanced data scientists",
-    "section": "D.1 R programming",
-    "text": "D.1 R programming\n\nD.1.1 Tidyverse\n\n\n\n\ntidyverse\nCollection of R packages designed for data science\n\n\n\n\n\n\nLink\nRecommendation\n\n\n\n\nIntroduction to the Tidyverse (JHU Data Science Lab’s lectures)\n⭐ ⭐ ⭐ ⭐ ⭐\n\n\nImporting data in the Tidyverse (JHU Data Science Lab’s lectures)\n⭐ ⭐ ⭐ ⭐ ⭐\n\n\nWranging data in the Tidyverse\n\n\n\nVisualizing data in the Tidyverse\n\n\n\nModeling Data in the Tidyverse\n\n\n\n\n\n\n\nLink\n\n\n\n\n\nAdvanced R Programming\n\n\n\nBuilding R packages\n\n\n\nBuilding Data Visualization Tools\n\n\n\nAdvanced R and solutions\n\n\n\n\n\n\nD.1.2 Spatial analyses\n\n\n\nLink\nRecommendation\n\n\n\n\nafrimapr - mapping data in Africa\n\n\n\n\n\n\n\nhttps://afrimapr.github.io/afrimapr.website/\n\n\n\n\nhttps://geocompr.robinlovelace.net/\n\n\nhttps://www.paulamoraga.com/book-geospatial/\n\n\nhttps://andysouth.shinyapps.io/afrilearnr-crash-course/\n\n\nhttps://andysouth.shinyapps.io/intro-to-spatial-r/#section-summary\n\n\n\n\n\nD.1.3 Literature reviews\n\n\n\n\nmetaverse\nCollection of R packages designed for data science\n\n\n\nlitsearchr\nExcellent R package for supporting evidence synthesis generation\n\n\n\nThere are very well documented) vignettes/tutorials\n\nhttps://luketudge.github.io/litsearchr-tutorial/litsearchr_tutorial.html\nhttps://elizagrames.github.io/litsearchr/litsearchr_vignette.html\nhttps://elizagrames.github.io/litsearchr/introduction_vignette_v010.html\n\n\n\nD.1.4 Multilanguage programming\n\n\n\nLink\nLanguage\nRecommendation\n\n\n\n\nHarvard Data Science workshops materials\nR, Python, Stata\n\n\n\n\n\n\nD.1.5 Machine learning\n\n\n\nMOOC\nLanguage\nRecommendation\n\n\n\n\nMachine learning in Python with scikit-learn\nPython\n⭐ ⭐ ⭐ ⭐ ⭐\n\n\nMachine learning for healthcare\n\n\n\n\n\nSupervised Machine Learning for Text Analysis in R\nhttps://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/\nhttps://ocw.mit.edu/courses/6-438-algorithms-for-inference-fall-2014/\n\n\nD.1.6 Comprehensive lectures\n\n\n\nLink\nTools\nRecommendation\nPricing\n\n\n\n\nPrinciples, Statistical and Computational Tools for Reproducible Data Science\nR and Rstudio\nPython, Git, and GitHub\n\n\nFree (audit track)\n99 USD (verified track)\n\n\n\nCollaborative Data Science for Healthcare\nExperience with R, Python and/or SQL is required\n\n\nFree (audit track)\n49 USD (verified track)\n\n\n\nhttps://www.coursera.org/learn/data-public-health"
+    "title": "Appendix C — Technical resources for intermediate to advanced data scientists",
+    "section": "",
+    "text": "C.1.1 Tidyverse\n\n\n\n\ntidyverse\nCollection of R packages designed for data science\n\n\n\n\n\n\nLink\nRecommendation\n\n\n\n\nIntroduction to the Tidyverse (JHU Data Science Lab’s lectures)\n⭐ ⭐ ⭐ ⭐ ⭐\n\n\nImporting data in the Tidyverse (JHU Data Science Lab’s lectures)\n⭐ ⭐ ⭐ ⭐ ⭐\n\n\nWranging data in the Tidyverse\n\n\n\nVisualizing data in the Tidyverse\n\n\n\nModeling Data in the Tidyverse\n\n\n\n\n\n\n\nLink\n\n\n\n\n\nAdvanced R Programming\n\n\n\nBuilding R packages\n\n\n\nBuilding Data Visualization Tools\n\n\n\nAdvanced R and solutions\n\n\n\n\n\n\nC.1.2 Spatial analyses\n\n\n\nLink\nRecommendation\n\n\n\n\nafrimapr - mapping data in Africa\n\n\n\n\n\n\n\nhttps://afrimapr.github.io/afrimapr.website/\n\n\n\n\nhttps://geocompr.robinlovelace.net/\n\n\nhttps://www.paulamoraga.com/book-geospatial/\n\n\nhttps://andysouth.shinyapps.io/afrilearnr-crash-course/\n\n\nhttps://andysouth.shinyapps.io/intro-to-spatial-r/#section-summary\n\n\n\n\n\nC.1.3 Literature reviews\n\n\n\n\nmetaverse\nCollection of R packages designed for data science\n\n\n\nlitsearchr\nExcellent R package for supporting evidence synthesis generation\n\n\n\nThere are very well documented) vignettes/tutorials\n\nhttps://luketudge.github.io/litsearchr-tutorial/litsearchr_tutorial.html\nhttps://elizagrames.github.io/litsearchr/litsearchr_vignette.html\nhttps://elizagrames.github.io/litsearchr/introduction_vignette_v010.html\n\n\n\nC.1.4 Multilanguage programming\n\n\n\nLink\nLanguage\nRecommendation\n\n\n\n\nHarvard Data Science workshops materials\nR, Python, Stata\n\n\n\n\n\n\nC.1.5 Machine learning\n\n\n\nMOOC\nLanguage\nRecommendation\n\n\n\n\nMachine learning in Python with scikit-learn\nPython\n⭐ ⭐ ⭐ ⭐ ⭐\n\n\nMachine learning for healthcare\n\n\n\n\n\nSupervised Machine Learning for Text Analysis in R\nhttps://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/\nhttps://ocw.mit.edu/courses/6-438-algorithms-for-inference-fall-2014/\n\n\nC.1.6 Comprehensive lectures\n\n\n\nLink\nTools\nRecommendation\nPricing\n\n\n\n\nPrinciples, Statistical and Computational Tools for Reproducible Data Science\nR and Rstudio\nPython, Git, and GitHub\n\n\nFree (audit track)\n99 USD (verified track)\n\n\n\nCollaborative Data Science for Healthcare\nExperience with R, Python and/or SQL is required\n\n\nFree (audit track)\n49 USD (verified track)\n\n\n\nhttps://www.coursera.org/learn/data-public-health",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Technical resources for intermediate to advanced data scientists</span>"
+    ]
   },
   {
     "objectID": "useful_resources_advanced.html#data-collection-workflows",
     "href": "useful_resources_advanced.html#data-collection-workflows",
-    "title": "Appendix D — Technical resources for intermediate to advanced data scientists",
-    "section": "D.2 Data collection workflows",
-    "text": "D.2 Data collection workflows\n\n\n\n\nruODK\n\n\n\n\nsitrep\n\n\n\n\nREDCap+R\n\n\n\n\nREDCapTidieR\n\n\n\n\n\nD.2.1 Python programming\n\nPandas\nComparison with Stata\nComparison with R"
+    "title": "Appendix C — Technical resources for intermediate to advanced data scientists",
+    "section": "C.2 Data collection workflows",
+    "text": "C.2 Data collection workflows\n\n\n\n\n\n\nRuODK logo\n\n\nruODK\n\n\n\n\nsitrep\n\n\n\n\nREDCap+R\n\n\n\n\nREDCapTidieR\n\n\n\n\n\nC.2.1 Python programming\n\nPandas\nComparison with Stata\nComparison with R",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Technical resources for intermediate to advanced data scientists</span>"
+    ]
   },
   {
     "objectID": "useful_resources_advanced.html#books-and-websites",
     "href": "useful_resources_advanced.html#books-and-websites",
-    "title": "Appendix D — Technical resources for intermediate to advanced data scientists",
-    "section": "D.3 Books and websites",
-    "text": "D.3 Books and websites\n\nD.3.1 Git and GitHub\n\n\n\nLink\nRecommendation\n\n\n\n\nGitHub Guides\n\n\n\nHappy Git and GitHub for the useR\n\n\n\n\n\n\nD.3.2 Reproducible research\n\nThe Turing way (1) ⭐ ⭐ ⭐ ⭐ ⭐\n\n\nBooks and websites\n\n\nLink\nLanguage\nRecommendation\n\n\n\n\nR for applied epidemiology and public health (2)\nR\n⭐ ⭐ ⭐ ⭐ ⭐\n\n\nR for Epidemiology\nR\n\n\n\nR4epis\nR\n\n\n\nR for Data Science\nR\n⭐ ⭐ ⭐ ⭐ ⭐\n\n\nQuarto for scientists\nR\n\n\n\nTidyverse Skills for Data Science (jhudatascience.org)\nR"
+    "title": "Appendix C — Technical resources for intermediate to advanced data scientists",
+    "section": "C.3 Books and websites",
+    "text": "C.3 Books and websites\n\nC.3.1 Git and GitHub\n\n\n\nLink\nRecommendation\n\n\n\n\nGitHub Guides\n\n\n\nHappy Git and GitHub for the useR\n\n\n\n\n\n\nC.3.2 Reproducible research\n\nThe Turing way (1) ⭐ ⭐ ⭐ ⭐ ⭐\n\n\nBooks and websites\n\n\nLink\nLanguage\nRecommendation\n\n\n\n\nR for applied epidemiology and public health (2)\nR\n⭐ ⭐ ⭐ ⭐ ⭐\n\n\nR for Epidemiology\nR\n\n\n\nR4epis\nR\n\n\n\nR for Data Science\nR\n⭐ ⭐ ⭐ ⭐ ⭐\n\n\nQuarto for scientists\nR\n\n\n\nTidyverse Skills for Data Science (jhudatascience.org)\nR",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Technical resources for intermediate to advanced data scientists</span>"
+    ]
   },
   {
     "objectID": "useful_resources_advanced.html#communities",
     "href": "useful_resources_advanced.html#communities",
-    "title": "Appendix D — Technical resources for intermediate to advanced data scientists",
-    "section": "D.4 Communities",
-    "text": "D.4 Communities\n\nR for data science online learning community\n\nConferences\nhttps://www.r-project.org/conferences/ in general in June-July Fees for Tanzanian participants around 6 USD / person"
+    "title": "Appendix C — Technical resources for intermediate to advanced data scientists",
+    "section": "C.4 Communities",
+    "text": "C.4 Communities\n\nR for data science online learning community\n\nConferences\nhttps://www.r-project.org/conferences/ in general in June-July Fees for Tanzanian participants around 6 USD / person",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Technical resources for intermediate to advanced data scientists</span>"
+    ]
   },
   {
     "objectID": "useful_resources_advanced.html#statistics",
     "href": "useful_resources_advanced.html#statistics",
-    "title": "Appendix D — Technical resources for intermediate to advanced data scientists",
-    "section": "D.5 Statistics",
-    "text": "D.5 Statistics\nhttps://rmisstastic.netlify.app/\n\n\n\n\ngrf\n\n\n\n\n\n\n\n\n1. The Turing Way Community. The Turing Way: A handbook for reproducible, ethical and collaborative research [Internet]. Zenodo; 2022. Available from: https://doi.org/10.5281/zenodo.6909298\n\n\n2. Batra N. The Epidemiologist R Handbook. 2021."
+    "title": "Appendix C — Technical resources for intermediate to advanced data scientists",
+    "section": "C.5 Statistics",
+    "text": "C.5 Statistics\nhttps://rmisstastic.netlify.app/\n\n\n\n\ngrf",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Technical resources for intermediate to advanced data scientists</span>"
+    ]
   },
   {
     "objectID": "useful_resources_data.html#open-data",
     "href": "useful_resources_data.html#open-data",
-    "title": "Appendix E — Useful data resources",
-    "section": "E.1 Open data",
-    "text": "E.1 Open data\n\nE.1.1 Platforms\n\nopenAfrica\nCode for Africa (CfA)\nWHO Afro\n\n\n\nE.1.2 Data sets\n\n\n\nLink\nAssociated publication(s)\n\n\n\n\nData for Good\n\n\n\nPublic health hacilities in sub-Saharan Africa\n(1)"
+    "title": "Appendix D — Useful data resources",
+    "section": "",
+    "text": "D.1.1 Platforms\n\nopenAfrica\nCode for Africa (CfA)\nWHO Afro\n\n\n\nD.1.2 Data sets\n\n\n\nLink\nAssociated publication(s)\n\n\n\n\nData for Good\n\n\n\nPublic health hacilities in sub-Saharan Africa\n(1)",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Useful data resources</span>"
+    ]
   },
   {
     "objectID": "useful_resources_data.html#journals",
     "href": "useful_resources_data.html#journals",
-    "title": "Appendix E — Useful data resources",
-    "section": "E.2 Journals",
-    "text": "E.2 Journals\n\nE.2.1 Data papers\n\nInternational Journal of Epidemiology - Data Resource Profiles\nScientific Data\nGigaScience\nJMIR Data\n\n\n\nE.2.2 Medical imaging\n\nMedical Image Analysis\nIEEE Transactions on Medical Imaging"
+    "title": "Appendix D — Useful data resources",
+    "section": "D.2 Journals",
+    "text": "D.2 Journals\n\nD.2.1 Data papers\n\nInternational Journal of Epidemiology - Data Resource Profiles\nScientific Data\nGigaScience\nJMIR Data\n\n\n\nD.2.2 Medical imaging\n\nMedical Image Analysis\nIEEE Transactions on Medical Imaging",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Useful data resources</span>"
+    ]
   },
   {
     "objectID": "useful_resources_data.html#conferences",
     "href": "useful_resources_data.html#conferences",
-    "title": "Appendix E — Useful data resources",
-    "section": "E.3 Conferences",
-    "text": "E.3 Conferences\n\nData Science Africa\nhttps://nef.org/\n\n\n\n\n\n1. Maina J, Ouma PO, Macharia PM, Alegana VA, Mitto B, Fall IS, et al. A spatial database of health facilities managed by the public health sector in sub Saharan Africa. Scientific Data [Internet]. 2019 Jul;6(1):134. Available from: https://doi.org/10.1038/s41597-019-0142-2"
+    "title": "Appendix D — Useful data resources",
+    "section": "D.3 Conferences",
+    "text": "D.3 Conferences\n\nData Science Africa\nhttps://nef.org/\n\n\n\n\n\n1. Maina J, Ouma PO, Macharia PM, Alegana VA, Mitto B, Fall IS, et al. A spatial database of health facilities managed by the public health sector in sub Saharan Africa. Scientific Data [Internet]. 2019 Jul;6(1):134. Available from: https://doi.org/10.1038/s41597-019-0142-2",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Useful data resources</span>"
+    ]
   },
   {
     "objectID": "import_data_from_odk_central.html#introduction",
@@ -894,5 +985,93 @@
     "title": "Appendix F — Import data from ODK Central",
     "section": "F.3 Encrypted data",
     "text": "F.3 Encrypted data\nEncrypted data can only be retrieved using the RESTful API and cannot be retrieved using the oData API. ODK Central supports two modes of encryption - learn about them here. ruODK supports project managed encryption, however the support is limited to exactly one encryption key. The supplied passphrase will be used against the first returned encryption key. Remaining encryption keys are ignored by ruODK.\n\n\n\n\n\n\nImportant\n\n\n\nIf an incorrect passphrase is given, the request is terminated immediately. It has been reported that multiple requests with incorrect passphrases can crash ODK Central.\n\n\n\n\n\n\n1. Mayer FW. ruODK: Client for the ODK central API [Internet]. 2020. Available from: https://github.com/ropensci/ruODK"
+  },
+  {
+    "objectID": "use_stata_with_r.html",
+    "href": "use_stata_with_r.html",
+    "title": "4  :blue_book: From Stata to R",
+    "section": "",
+    "text": "4.1 Configure RStudio to execute Stata",
+    "crumbs": [
+      "**R QUICK START**",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>:blue_book: From Stata to R</span>"
+    ]
+  },
+  {
+    "objectID": "use_stata_with_r.html#configure-rstudio-to-execute-stata",
+    "href": "use_stata_with_r.html#configure-rstudio-to-execute-stata",
+    "title": "4  :blue_book: From Stata to R",
+    "section": "",
+    "text": "4.1.1 Find your Stata binary path\nThe function chooseStataBin from the RStata library allows you to browse and set the path to your Stata binary executable.\n```{r}\nstata_bin_path &lt;- RStata::chooseStataBin()\n```\n```{r}\nprint(stata_bin_path)\n```\nWhen you run this code, you should normally get a path which is of the format: “\"C:\\Program Files\\Stata16\\StataIC-64\"”. Note that the .exe extension has been removed from this path. It is important that you keep the format as is, as otherwise your Stata engine will not be recognised.\n\n\n4.1.2 Add your Stata binary path to your .Rprofile\nThe Stata binary path setting we just created is just for your current RStudio session and it will be lost once your RStudio is closed. To keep this setting each time you are using RStudio and avoid havin to reconfigure RStata each time you are restarting RStudio, let us add the Stata binary path as an option to .Rprofile, which is your user-specific R configuration file.\n\nlibrary(usethis)\n\n\n\n\n\n\n\nNote\n\n\n\nusethis is a workflow package: it automates repetitive tasks that arise during project setup and development, both for R packages and non-package projects.\n\n\nThe function edit_r_profile from the usethis library allows to open your configuration file .Rprofile.\n```{r}\nusethis::edit_r_profile(\"user\")\n```\nAdd the following two lines in the Rprofile file that you have just opened:\n```{r}\noptions(\"RStata.StataPath\" = ...)\noptions(\"RStata.StataVersion\" = ...)\n```\nYou need to indicate the path to your Stata binary executable in the RStata.StataPath option (e.g., “\"C:\\Program Files\\Stata16\\StataIC-64\"”) and the version of your Stata (e.g., 16) in the RStata.StataVersion option.\nafter indicating the path and version your code should look as specified below\n```{r}\noptions(\"RStata.StataPath\" = \"\\\"C:\\\\Program Files (x86)\\\\Stata15\\\\Stata-64\\\"\")\noptions(\"RStata.StataVersion\" = 15)\n```\nOnce you are done, save and close your .Rprofile.",
+    "crumbs": [
+      "**R QUICK START**",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>:blue_book: From Stata to R</span>"
+    ]
+  },
+  {
+    "objectID": "useful_resources_advanced.html",
+    "href": "useful_resources_advanced.html",
+    "title": "Appendix C — Technical resources for intermediate to advanced data scientists",
+    "section": "",
+    "text": "C.1 R programming",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Technical resources for intermediate to advanced data scientists</span>"
+    ]
+  },
+  {
+    "objectID": "useful_resources_advanced.html#quarto",
+    "href": "useful_resources_advanced.html#quarto",
+    "title": "Appendix C — Technical resources for intermediate to advanced data scientists",
+    "section": "C.6 Quarto",
+    "text": "C.6 Quarto\nStyling PDF documents with Quarto extensions - April 2024\nResource from Nicola Rennie\n\n\n\n\n1. The Turing Way Community. The Turing Way: A handbook for reproducible, ethical and collaborative research [Internet]. Zenodo; 2022. Available from: https://doi.org/10.5281/zenodo.6909298\n\n\n2. Batra N. The Epidemiologist R Handbook. 2021.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Technical resources for intermediate to advanced data scientists</span>"
+    ]
+  },
+  {
+    "objectID": "data_science_for_public_health.html",
+    "href": "data_science_for_public_health.html",
+    "title": "1  :books: Data Science for Public Health",
+    "section": "",
+    "text": "1.1 What is Data Science",
+    "crumbs": [
+      "**INTRODUCTION**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>:books: Data Science for Public Health</span>"
+    ]
+  },
+  {
+    "objectID": "useful_resources_data.html",
+    "href": "useful_resources_data.html",
+    "title": "Appendix D — Useful data resources",
+    "section": "",
+    "text": "D.1 Open data",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Useful data resources</span>"
+    ]
+  },
+  {
+    "objectID": "version_control_with_git.html",
+    "href": "version_control_with_git.html",
+    "title": "7  :books: Version control with Git",
+    "section": "",
+    "text": "7.1 Introduction",
+    "crumbs": [
+      "**REPRODUCIBLE CODING**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>:books: Version control with Git</span>"
+    ]
+  },
+  {
+    "objectID": "version_control_with_git2.html",
+    "href": "version_control_with_git2.html",
+    "title": "8  :blue_book: Commit your changes with Git",
+    "section": "",
+    "text": "8.1 Commit\nVersion control uses a working copy where you do your work.\nYou make arbitrary edits to this copy, without affecting your teammates. When you are happy with your edits, you commit your changes to a repository.\nSnapshot of your entire repository at a specific time.\nOver time, commits should tell a story of the history of your repository and how it came to be the way that it currently is.\nCommits include lots of metadata in addition to the contents and message, like the author, timestamp, and more.\nIt also requires that you write something human-readable that will be a breadcrumb for you in the future. be easy to compare versions, and you can easily revert to previous versions.",
+    "crumbs": [
+      "**REPRODUCIBLE CODING**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>:blue_book: Commit your changes with Git</span>"
+    ]
   }
 ]

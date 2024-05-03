@@ -76,7 +76,6 @@ book:
   appendices:
     - r_setup.qmd
     - github_setup.qmd
-    - useful_resources_beginner.qmd
     - useful_resources_advanced.qmd
     - useful_resources_data.qmd
     - import_data_from_odk_central.qmd

@@ -180,3 +180,9 @@ https://rmisstastic.netlify.app/
 +---------------------------------------------+-----------------------------------------------------+--------------+
 |                                             | [grf](https://grf-labs.github.io/grf/)              |              |
 +---------------------------------------------+-----------------------------------------------------+--------------+
+
+## Quarto
+
+[Styling PDF documents with Quarto extensions - April 2024](https://nrennie.rbind.io/talks/satrdays-london-2024/slides.html)
+
+Resource from Nicola Rennie
